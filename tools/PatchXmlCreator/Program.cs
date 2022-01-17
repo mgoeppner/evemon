@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace EVEMon.PatchXmlCreator
@@ -12,6 +12,7 @@ namespace EVEMon.PatchXmlCreator
         private static void Main()
         {
             Application.EnableVisualStyles();
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.SetCompatibleTextRenderingDefault(false);
 
             Action action = Helper.SelectAction();
