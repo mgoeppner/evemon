@@ -87,6 +87,7 @@ namespace EVEMon.SkillPlanner
             this.pbWILImplants = new EVEMon.SkillPlanner.AttributeBarControl();
             this.pbMEMImplants = new EVEMon.SkillPlanner.AttributeBarControl();
             this.pbUnassigned = new EVEMon.SkillPlanner.AttributeBarControl();
+            this.lblBooster = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -701,11 +702,21 @@ namespace EVEMon.SkillPlanner
             this.pbUnassigned.TabStop = false;
             this.pbUnassigned.Value = ((long)(0));
             // 
+            // lblBooster
+            // 
+            this.lblBooster.Location = new System.Drawing.Point(332, 335);
+            this.lblBooster.Name = "lblBooster";
+            this.lblBooster.Size = new System.Drawing.Size(103, 16);
+            this.lblBooster.TabIndex = 119;
+            this.lblBooster.Text = "Active Booster: +99";
+            this.lblBooster.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // AttributesOptimizerControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.lblBooster);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.pictureBox8);
@@ -833,5 +844,6 @@ namespace EVEMon.SkillPlanner
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.Label lblBooster;
     }
 }

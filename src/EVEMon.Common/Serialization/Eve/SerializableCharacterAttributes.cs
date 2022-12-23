@@ -11,6 +11,7 @@ namespace EVEMon.Common.Serialization.Eve
         public SerializableCharacterAttributes()
         {
             Intelligence = Memory = Perception = Charisma = Willpower = 1;
+            Booster = 0;
         }
 
         [XmlElement("intelligence")]
@@ -27,5 +28,8 @@ namespace EVEMon.Common.Serialization.Eve
 
         [XmlElement("charisma")]
         public long Charisma { get; set; }
+
+        [XmlElement("booster")]
+        public long Booster { get; set; }
     }
 }

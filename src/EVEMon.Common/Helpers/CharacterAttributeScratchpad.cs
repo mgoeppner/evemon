@@ -15,6 +15,7 @@ namespace EVEMon.Common.Helpers
 
         private long m_base;
         private long m_implantBonus;
+        private long m_boosterBonus;
 
         /// <summary>
         /// Constructor from a character attribute.
@@ -30,10 +31,11 @@ namespace EVEMon.Common.Helpers
         /// </summary>
         /// <param name="baseAttribute"></param>
         /// <param name="implantBonus"></param>
-        internal void Reset(long baseAttribute, long implantBonus)
+        internal void Reset(long baseAttribute, long implantBonus, long boosterBonus)
         {
             m_base = baseAttribute;
             m_implantBonus = implantBonus;
+            m_boosterBonus = boosterBonus;
             UpdateEffectiveAttribute();
         }
 
@@ -45,6 +47,7 @@ namespace EVEMon.Common.Helpers
         {
             m_base = src.Base;
             m_implantBonus = src.ImplantBonus;
+            m_boosterBonus = src.BoosterBonus;
             UpdateEffectiveAttribute();
         }
 
@@ -53,7 +56,7 @@ namespace EVEMon.Common.Helpers
         /// </summary>
         internal void UpdateEffectiveAttribute()
         {
-            EffectiveValue = m_base + m_implantBonus;
+            EffectiveValue = m_base + m_implantBonus + m_boosterBonus;
         }
 
         /// <summary>
@@ -83,6 +86,19 @@ namespace EVEMon.Common.Helpers
         }
 
         /// <summary>
+        /// Gets or sets the bonus applied from cerebral accelerators
+        /// </summary>
+        public long BoosterBonus
+        {
+            get { return m_boosterBonus; }
+            set
+            {
+                m_boosterBonus = value;
+                UpdateEffectiveAttribute();
+            }
+        }
+
+        /// <summary>
         /// Gets the effective attribute value.
         /// </summary>
         public long EffectiveValue { get; private set; }
@@ -97,6 +113,7 @@ namespace EVEMon.Common.Helpers
         /// <item>%i for implant bonus</item>
         /// <item>%r for remapping points</item>
         /// <item>%e for effective value</item>
+        /// <item>%x for booster bonus</item>
         /// </list>
         /// </summary>
         /// <returns>The formatted string.</returns>
@@ -112,6 +129,7 @@ namespace EVEMon.Common.Helpers
             format = format.Replace("%i", ImplantBonus.ToString(CultureConstants.DefaultCulture));
             format = format.Replace("%r", (m_base - EveConstants.CharacterBaseAttributePoints).ToString(CultureConstants.DefaultCulture));
             format = format.Replace("%e", EffectiveValue.ToString("0", CultureConstants.DefaultCulture));
+            format = format.Replace("%x", BoosterBonus.ToString(CultureConstants.DefaultCulture));
             return format;
         }
 

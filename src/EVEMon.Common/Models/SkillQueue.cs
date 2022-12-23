@@ -62,6 +62,11 @@ namespace EVEMon.Common.Models
         public DateTime EndTime => !Items.Any() ? DateTime.UtcNow : Items.Last().EndTime;
 
         /// <summary>
+        /// Gets the expected booster duration
+        /// </summary>
+        public TimeSpan BoosterDuration => !Items.Any() ? TimeSpan.Zero : TimeSpan.FromHours(Items.Select(i => i.BoosterDuration.TotalHours).Sum());
+
+        /// <summary>
         /// Gets the skill currently in training.
         /// </summary>
         public QueuedSkill CurrentlyTraining => Items.FirstOrDefault();

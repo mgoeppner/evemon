@@ -37,6 +37,7 @@ namespace EVEMon.Controls
             this.lblSkillInTraining = new EVEMon.Controls.OverviewLabel();
             this.lblRemainingTime = new EVEMon.Controls.OverviewLabel();
             this.lblBalance = new EVEMon.Controls.OverviewLabel();
+            this.lblBoosterDuration = new EVEMon.Controls.OverviewLabel();
             this.SuspendLayout();
             // 
             // pbCharacterPortrait
@@ -61,14 +62,14 @@ namespace EVEMon.Controls
             this.lblTotalSkillPoints.TabIndex = 4;
             this.lblTotalSkillPoints.Text = "100,000,000 SP";
             // 
-            // lblLocation
+            // lblExtraInfo
             // 
             this.lblExtraInfo.AutoEllipsis = true;
             this.lblExtraInfo.BackColor = System.Drawing.Color.Transparent;
             this.lblExtraInfo.Enabled = false;
             this.lblExtraInfo.ForeColor = System.Drawing.Color.DimGray;
             this.lblExtraInfo.Location = new System.Drawing.Point(9, 101);
-            this.lblExtraInfo.Name = "lblLocation";
+            this.lblExtraInfo.Name = "lblExtraInfo";
             this.lblExtraInfo.Size = new System.Drawing.Size(92, 13);
             this.lblExtraInfo.TabIndex = 1;
             this.lblExtraInfo.Text = "Egghelende";
@@ -145,10 +146,24 @@ namespace EVEMon.Controls
             this.lblBalance.TabIndex = 3;
             this.lblBalance.Text = "124,534,125,453.02 ISK";
             // 
+            // lblBoosterDuration
+            // 
+            this.lblBoosterDuration.AutoEllipsis = true;
+            this.lblBoosterDuration.BackColor = System.Drawing.Color.Transparent;
+            this.lblBoosterDuration.Enabled = false;
+            this.lblBoosterDuration.ForeColor = System.Drawing.Color.DimGray;
+            this.lblBoosterDuration.Location = new System.Drawing.Point(107, 114);
+            this.lblBoosterDuration.Name = "lblBoosterDuration";
+            this.lblBoosterDuration.Size = new System.Drawing.Size(215, 13);
+            this.lblBoosterDuration.TabIndex = 9;
+            this.lblBoosterDuration.Text = "No active booster";
+            this.lblBoosterDuration.Visible = false;
+            // 
             // OverviewItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblBoosterDuration);
             this.Controls.Add(this.lblTotalSkillPoints);
             this.Controls.Add(this.lblExtraInfo);
             this.Controls.Add(this.lblSkillQueueTrainingTime);
@@ -160,7 +175,7 @@ namespace EVEMon.Controls
             this.Controls.Add(this.pbCharacterPortrait);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "OverviewItem";
-            this.Size = new System.Drawing.Size(330, 120);
+            this.Size = new System.Drawing.Size(330, 132);
             this.ResumeLayout(false);
 
         }
@@ -176,5 +191,6 @@ namespace EVEMon.Controls
         private OverviewLabel lblCompletionTime;
         private OverviewLabel lblSkillQueueTrainingTime;
         private OverviewLabel lblExtraInfo;
+        private OverviewLabel lblBoosterDuration;
     }
 }

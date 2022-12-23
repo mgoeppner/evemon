@@ -86,6 +86,8 @@ namespace EVEMon.SkillPlanner
             UpdateAttributeControls(remapping, EveAttribute.Intelligence, lbINT, pbINTRemappable, pbINTImplants);
             UpdateAttributeControls(remapping, EveAttribute.Charisma, lbCHA, pbCHARemappable, pbCHAImplants);
 
+            lblBooster.Text = String.Format("Active Booster: +{0}", character.Intelligence.BoosterBonus);
+
             // Update the description label
             labelDescription.Text = description;
 

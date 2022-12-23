@@ -170,8 +170,8 @@ namespace EVEMon.XmlGenerator.Datafiles
                     ID = agent.ID,
                     Level = agent.Level,
                     Quality = agent.Quality,
-                    Name = Database.InvNamesTable[agent.ID].Name,
-                    DivisionName = Database.CrpNPCDivisionsTable[agent.DivisionID].DivisionName,
+                    Name = Database.InvNamesTable.Where(n => n.ID == agent.ID).FirstOrDefault()?.Name ?? "",
+                    DivisionName = Database.CrpNPCDivisionsTable.Where(d => d.ID == agent.DivisionID).FirstOrDefault()?.DivisionName ?? "",
                     AgentType = Database.AgtAgentTypesTable[agent.AgentTypeID].AgentType,
                     ResearchSkillID = Database.AgtResearchAgentsTable.Any(x => x.ID == agent.ID)
                         ? Database.AgtResearchAgentsTable[agent.ID].ResearchSkillID

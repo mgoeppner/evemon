@@ -107,6 +107,17 @@ namespace EVEMon.Common.Models
         }
 
         /// <summary>
+        /// Computes the SP per hour for the given skill, without factoring in the newbies bonus abd without boosters.
+        /// </summary>
+        /// <param name="skill">The skill.</param>
+        /// <returns>SP earned per hour.</returns>
+        /// <exception cref="System.ArgumentNullException">skill</exception>
+        public virtual float GetBaseSPPerHourWithoutBoosters(StaticSkill skill)
+        {
+            return GetOmegaSPPerHourWithoutBoosters(skill) * EffectiveCharacterStatus.GetTrainingRate();
+        }
+
+        /// <summary>
         /// Computes the SP per hour for the given skill for an Omega clone, without factoring
         /// in the newbies bonus.
         /// </summary>
@@ -122,6 +133,28 @@ namespace EVEMon.Common.Models
 
             float primAttr = GetAttribute(skill.PrimaryAttribute).EffectiveValue;
             float secondaryAttr = GetAttribute(skill.SecondaryAttribute).EffectiveValue;
+            return primAttr * 60.0f + secondaryAttr * 30.0f;
+        }
+
+        /// <summary>
+        /// Computes the SP per hour for the given skill for an Omega clone, without factoring
+        /// in the newbies bonus and without boosters.
+        /// </summary>
+        /// <param name="skill">The skill.</param>
+        /// <returns>SP earned per hour.</returns>
+        /// <exception cref="System.ArgumentNullException">skill</exception>
+        protected float GetOmegaSPPerHourWithoutBoosters(StaticSkill skill)
+        {
+            skill.ThrowIfNull(nameof(skill));
+
+            if (skill.PrimaryAttribute == EveAttribute.None || skill.SecondaryAttribute == EveAttribute.None)
+                return 0.0f;
+
+            var p = GetAttribute(skill.PrimaryAttribute);
+            var s = GetAttribute(skill.SecondaryAttribute);
+
+            float primAttr = p.EffectiveValue - s.BoosterBonus;
+            float secondaryAttr = s.EffectiveValue - s.BoosterBonus;
             return primAttr * 60.0f + secondaryAttr * 30.0f;
         }
 
@@ -166,6 +199,15 @@ namespace EVEMon.Common.Models
         /// <returns></returns>
         public TimeSpan GetTimeSpanForPoints(StaticSkill skill, long points) 
             => GetTrainingTime(points, GetBaseSPPerHour(skill));
+
+        /// <summary>
+        /// Gets the time span for a specific number of skill points without boosters.
+        /// </summary>
+        /// <param name="points">The points to calculate points.</param>
+        /// <param name="skill">The skill to train.</param>
+        /// <returns></returns>
+        public TimeSpan GetTimeSpanForPointsWithoutBoosters(StaticSkill skill, long level)
+            => GetTrainingTimeWithoutBoosters(skill, level);
 
         /// <summary>
         /// Gets the required skill injectors for the specified skill points.
@@ -307,12 +349,26 @@ namespace EVEMon.Common.Models
         }
 
         /// <summary>
+        /// Computes the training time for the given skill without boosters.
+        /// </summary>
+        /// <param name="skill"></param>
+        /// <param name="level"></param>
+        /// <param name="origin"></param>
+        /// <returns></returns>
+        public TimeSpan GetTrainingTimeWithoutBoosters(StaticSkill skill, long level, TrainingOrigin origin = TrainingOrigin.FromCurrent)
+        {
+            float spPerHour = GetBaseSPPerHourWithoutBoosters(skill);
+            long sp = GetSPToTrain(skill, level, origin);
+            return GetTrainingTime(sp, spPerHour);
+        }
+
+        /// <summary>
         /// Gets the time to train the given SP at the provided speed.
         /// </summary>
         /// <param name="sp"></param>
         /// <param name="spPerHour"></param>
         /// <returns></returns>
-        private static TimeSpan GetTrainingTime(long sp, float spPerHour)
+        internal static TimeSpan GetTrainingTime(long sp, float spPerHour)
             => Math.Abs(spPerHour) < float.Epsilon ? TimeSpan.FromDays(999.0) : TimeSpan.FromHours(sp / spPerHour);
 
         /// <summary>

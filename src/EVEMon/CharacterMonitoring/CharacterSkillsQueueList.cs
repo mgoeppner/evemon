@@ -234,15 +234,15 @@ namespace EVEMon.CharacterMonitoring
                 skill.Skill.StaticData.GetPointsRequiredForLevel(Math.Min(skill.Level, 5));
             long pointsLeft = skillPointsToNextLevel - skillPoints;
             TimeSpan timeSpanFromPoints = !hasSkill ? skill.EndTime.Subtract(DateTime.UtcNow) :
-                skill.Skill.GetTimeSpanForPoints(pointsLeft);
+                skill.GetTimeSpanForPoints(pointsLeft);
             string remainingTimeText = timeSpanFromPoints.ToDescriptiveText(
                 DescriptiveTextOptions.SpaceBetween);
 
             double fractionCompleted = e.Index == 0 ? skill.FractionCompleted : 0.0;
 
-            string indexText = $"{e.Index + 1}. ";
+            string indexText = $"{e.Index + 1}. {(skill.BoosterDuration > TimeSpan.Zero ? "\u26a1" : "")}";
             string rankText = $" (Rank {(skill.Skill == null ? 0 : skill.Rank)})";
-            string spPerHourText = $" SP/Hour: {skill.SkillPointsPerHour}";
+            string spPerHourText = $" SP/Hour: {(skill.BoosterDuration > TimeSpan.Zero ? skill.SkillPointsPerHour : skill.SkillPointsPerHourWithoutBoosters)}";
             string spText = $"SP: {skillPoints:N0}/{skillPointsToNextLevel:N0}";
             string trainingTimeText = $" Training Time: {remainingTimeText}";
             string levelText = $"Level {skill.Level}";
@@ -646,7 +646,7 @@ namespace EVEMon.CharacterMonitoring
             long pointsLeft = nextLevelSP - sp;
             TimeSpan timeSpanFromPoints = skill.Skill == Skill.UnknownSkill
                 ? skill.EndTime.Subtract(DateTime.UtcNow)
-                : skill.Skill.GetTimeSpanForPoints(pointsLeft);
+                : skill.GetTimeSpanForPoints(pointsLeft);
             string remainingTimeText = timeSpanFromPoints.ToDescriptiveText(
                 DescriptiveTextOptions.IncludeCommas | DescriptiveTextOptions.UppercaseText);
 
@@ -769,7 +769,7 @@ namespace EVEMon.CharacterMonitoring
             toolTip.AppendLine().AppendLine(skill.Skill.Description.WordWrap(100));
             toolTip.Append("Primary: ").Append(skill.Skill.PrimaryAttribute).Append(", ");
             toolTip.Append("Secondary: ").Append(skill.Skill.SecondaryAttribute).Append(" (");
-            toolTip.AppendFormat("{0:F0}", skill.SkillPointsPerHour).Append(" SP/Hour)");
+            toolTip.AppendFormat("{0:F0}", skill.BoosterDuration > TimeSpan.Zero ? skill.SkillPointsPerHour : skill.SkillPointsPerHourWithoutBoosters).Append(" SP/Hour)");
         }
 
         /// <summary>

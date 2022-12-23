@@ -1,102 +1,96 @@
 ﻿<?xml version="1.0"?>
 <evemon xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <newest>
-    <date>06 February 2022</date>
-    <version>4.1.3.5017</version>
-    <md5>1ddc4a74b0e26764d922fd0b22939e0b</md5>
-    <url>https://github.com/mgoeppner/evemon/releases/tag/4.1.3/</url>
-    <autopatchurl>https://github.com/mgoeppner/evemon/releases/download/4.1.3/EVEMon-install-4.1.2.exe</autopatchurl>
+    <date>23 December 2022</date>
+    <version>4.2.1.5035</version>
+    <md5>e8d4a63513b948697bb0b1386cc6887f</md5>
+    <url>https://github.com/mgoeppner/evemon/releases/tag/4.2.1/</url>
+    <autopatchurl>https://github.com/mgoeppner/evemon/releases/download/4.2.1/EVEMon-install-4.2.1.exe</autopatchurl>
     <autopatchargs>/S /AUTORUN /SKIPDOTNET</autopatchargs>
     <additionalargs>/D=%EVEMON_EXECUTABLE_PATH%</additionalargs>
-    <message><![CDATA[## Features
-- Show total SP, allocated, and unallocated SP on the character sheet (#17) 
+    <message><![CDATA[# Features
+- Add support for attribute boosters on the overview and character sheet!
 
-## Bug Fixes
-- Fix NullReferenceException with owned skill book in skill browser. (thanks @luyi1888)]]></message>
+# Bug Fixes
+- Typo fix in PI warning: singular/plural (thanks @NevarrTivianne)]]></message>
   </newest>
   <releases>
     <release>
-      <date>14 April 2022</date>
-      <version>4.2.0.5030</version>
-      <md5>123356362285a82d3f37f9d578b00699</md5>
-      <url>https://github.com/mgoeppner/evemon/releases/tag/4.2.0/</url>
-      <autopatchurl>https://github.com/mgoeppner/evemon/releases/download/4.2.0/EVEMon-install-4.2.0.exe</autopatchurl>
+      <date>23 December 2022</date>
+      <version>4.2.2.5040</version>
+      <md5>346e05fe0eeb384ae46468e053c64efe</md5>
+      <url>https://github.com/mgoeppner/evemon/releases/tag/4.2.2/</url>
+      <autopatchurl>https://github.com/mgoeppner/evemon/releases/download/4.2.2/EVEMon-install-4.2.2.exe</autopatchurl>
       <autopatchargs>/S /AUTORUN /SKIPDOTNET</autopatchargs>
       <additionalargs>/D=%EVEMON_EXECUTABLE_PATH%</additionalargs>
-      <message><![CDATA[## Features
-- Upgrade to .net framework 4.8. 4.2.1 will go EOL on 2022-04-26.
-- Improved HttpRequest logging, thanks @wvdvegt!
-- Display number of skills remaining, thanks @luyi1888!
+      <message><![CDATA[# Bug Fixes
 
-## Bug Fixes
-- Fixed unicode character encoding for ship names, thanks @luyi1888!
-- Use pool.ntp.org instead of 0.pool.ntp.org, thanks @wvdvegt!
-- Disable hammertime, thanks @wvdvegt!Type your message here.]]></message>
+- Fix a crash on startup with blank local characters or characters with expired ESI tokens.]]></message>
     </release>
   </releases>
   <datafiles>
     <datafile>
       <name>eve-blueprints-en-US.xml.gzip</name>
-      <date>14 April 2022</date>
-      <md5>410280ee6121f561ac7f09354972ce38</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/New Dawn/2031493</url>
-      <message><![CDATA[New Dawn 20.04 (2031493) blueprints data file by the EVEMon Development Team
+      <date>12 November 2022</date>
+      <md5>75d32177171a550e1b268514f7506b35</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Uprising/2156070</url>
+      <message><![CDATA[Uprising 20.10 (2156070) blueprints data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-certificates-en-US.xml.gzip</name>
       <date>18 January 2022</date>
       <md5>540000f7c111354769a54fa31e57d411</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/New Dawn/2031493</url>
-      <message><![CDATA[New Dawn 20.04 (2031493) certificates data file by the EVEMon Development Team
+      <url>https://mgoeppner.github.io/evemon-datafiles/Uprising/2156070</url>
+      <message><![CDATA[Uprising 20.10 (2156070) certificates data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-geography-en-US.xml.gzip</name>
-      <date>14 April 2022</date>
-      <md5>957829e60281e4d412a0eef3020aeef9</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/New Dawn/2031493</url>
-      <message><![CDATA[New Dawn 20.04 (2031493) geography data file by the EVEMon Development Team
+      <date>12 November 2022</date>
+      <md5>26e0fb4abc67d508c78d68ff80dc286e</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Uprising/2156070</url>
+      <message><![CDATA[Uprising 20.10 (2156070) geography data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-items-en-US.xml.gzip</name>
-      <date>14 April 2022</date>
-      <md5>a551e809290c88c634953b1c713daa1b</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/New Dawn/2031493</url>
-      <message><![CDATA[New Dawn 20.04 (2031493) items data file by the EVEMon Development Team
+      <date>12 November 2022</date>
+      <md5>24aaf0e9708b8034be89415ebac1bdd9</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Uprising/2156070</url>
+      <message><![CDATA[Uprising 20.10 (2156070) items data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-masteries-en-US.xml.gzip</name>
       <date>18 January 2022</date>
       <md5>3668b50996fc40a0c0853fec427b5712</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/New Dawn/2031493</url>
-      <message><![CDATA[New Dawn 20.04 (2031493) masteries data file by the EVEMon Development Team
+      <url>https://mgoeppner.github.io/evemon-datafiles/Uprising/2156070</url>
+      <message><![CDATA[Uprising 20.10 (2156070) masteries data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-properties-en-US.xml.gzip</name>
-      <date>14 April 2022</date>
-      <md5>2b61fbc476da11385fc1ab2f058d91e8</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/New Dawn/2031493</url>
-      <message><![CDATA[New Dawn 20.04 (2031493) properties data file by the EVEMon Development Team
+      <date>12 November 2022</date>
+      <md5>3e0d7f712f8a4567047450b1882e498a</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Uprising/2156070</url>
+      <message><![CDATA[Uprising 20.10 (2156070) properties data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-reprocessing-en-US.xml.gzip</name>
-      <date>14 April 2022</date>
-      <md5>8d9835c8b474942685888927396f4b7a</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/New Dawn/2031493</url>
-      <message><![CDATA[New Dawn 20.04 (2031493) reprocessing data file by the EVEMon Development Team
+      <date>12 November 2022</date>
+      <md5>82e24f4699edeb85bbe8160dd5646760</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Uprising/2156070</url>
+      <message><![CDATA[Uprising 20.10 (2156070) reprocessing data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-skills-en-US.xml.gzip</name>
-      <date>14 April 2022</date>
-      <md5>0a84e91dcbece4b0d8d1e56f2619f5c5</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/New Dawn/2031493</url>
-      <message><![CDATA[New Dawn 20.04 (2031493) skills data file by the EVEMon Development Team
+      <date>12 November 2022</date>
+      <md5>8e17b179c6a95bf79a6fc7b19f260014</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Uprising/2156070</url>
+      <message><![CDATA[Uprising 20.10 (2156070) skills data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
   </datafiles>

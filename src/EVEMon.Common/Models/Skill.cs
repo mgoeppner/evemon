@@ -295,6 +295,11 @@ namespace EVEMon.Common.Models
         /// </summary>
         public int SkillPointsPerHour => (int)Math.Round(Character?.GetBaseSPPerHour(this) ?? 0);
 
+        /// <summary>
+        /// Gets the training speed without boosters.
+        /// </summary>
+        public int SkillPointsPerHourWithoutBoosters => (int)Math.Round(Character?.GetBaseSPPerHourWithoutBoosters(this) ?? 0);
+
         #endregion
 
 
@@ -496,8 +501,25 @@ namespace EVEMon.Common.Models
         /// </summary>
         /// <param name="points">The amount of skill points.</param>
         /// <returns>Time it will take.</returns>
-        public TimeSpan GetTimeSpanForPoints(long points)
+        public TimeSpan GetTimeSpanForPoints(long points) 
             => Character?.GetTimeSpanForPoints(this, points) ?? TimeSpan.Zero;
+
+        public TimeSpan GetTimeSpanForPoints(long points, float normalRate, float boostedRate, TimeSpan boostedDuration)
+        {
+            var boostedPoints = (long)Math.Round(boostedRate * boostedDuration.TotalHours);
+            var normalPoints = points - boostedPoints;
+
+            var boostedTime = BaseCharacter.GetTrainingTime(boostedPoints, boostedRate);
+            var normalTime = BaseCharacter.GetTrainingTime(normalPoints, normalRate);
+
+            if (normalPoints <= 0)
+            {
+                // Skill will complete training while booster is active!
+                return boostedTime;
+            }
+
+            return normalTime + boostedTime;
+        }
 
         /// <summary>
         /// Calculates the cumulative points required to reach the given level of this skill, starting from the current SP.

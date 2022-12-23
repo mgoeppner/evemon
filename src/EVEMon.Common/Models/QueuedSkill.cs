@@ -120,8 +120,7 @@ namespace EVEMon.Common.Models
         {
             get
             {
-                int estimatedSP = (int)(EndSP - EndTime.Subtract(DateTime.UtcNow).TotalHours *
-                    SkillPointsPerHour);
+                var estimatedSP = (int)(StartSP + (DateTime.UtcNow.Subtract(StartTime).TotalHours * SkillPointsPerHour));
                 return IsTraining ? Math.Max(estimatedSP, StartSP) : StartSP;
             }
         }
@@ -184,6 +183,31 @@ namespace EVEMon.Common.Models
         }
 
         /// <summary>
+        /// Gets the training speed without boosters.
+        /// </summary>
+        /// <returns></returns>
+        public double SkillPointsPerHourWithoutBoosters
+        {
+            get
+            {
+                double rate;
+                if (Skill == Skill.UnknownSkill)
+                {
+                    // Based on estimated end time - start time
+                    double time = EndTime.Subtract(StartTime).TotalHours;
+                    if (time <= 0.0)
+                        // Do not divide by zero
+                        rate = 0.0;
+                    else
+                        rate = Math.Ceiling((EndSP - StartSP) / time);
+                }
+                else
+                    rate = Skill.SkillPointsPerHourWithoutBoosters;
+                return rate;
+            }
+        }
+
+        /// <summary>
         /// Computes the remaining time.
         /// </summary>
         /// <value>The remaining time.</value>
@@ -213,10 +237,68 @@ namespace EVEMon.Common.Models
             }
         }
 
+        public TimeSpan BoosterDuration
+        {
+            get
+            {
+                var remainingTime = RemainingTime;
+                var queueTime = EndTime - StartTime;
+
+                var expectedTime = Owner.GetTimeSpanForPointsWithoutBoosters(Skill.StaticData, Level);
+
+                var actualSPRate = Owner.GetBaseSPPerHour(Skill.StaticData);
+                var expectedSPRate = Owner.GetBaseSPPerHourWithoutBoosters(Skill.StaticData);
+
+                if (expectedTime > remainingTime || !IsTraining && (expectedTime > queueTime))
+                {
+                    // Booster detected!
+                    var remainingSP = EndSP - CurrentSP;
+                    var expectedSPInActualTime = IsTraining ?
+                        Math.Round(remainingTime.TotalHours * expectedSPRate) : Math.Round(queueTime.TotalHours * expectedSPRate);
+
+                    var spRateDiff = actualSPRate - expectedSPRate;
+
+                    if (spRateDiff <= 0)
+                    {
+                        return TimeSpan.Zero;
+                    }
+
+                    var boosterHours = (remainingSP - expectedSPInActualTime) / spRateDiff;
+
+                    return TimeSpan.FromHours(boosterHours);
+                }
+                return TimeSpan.Zero;
+            }
+        }
+
         /// <summary>
         /// Gets true if the training has been completed, false otherwise.
         /// </summary>
         public bool IsCompleted => EndTime <= DateTime.UtcNow;
+
+        /// <summary>
+        /// Calculate the time it will take to train a certain amount of skill points.
+        /// </summary>
+        /// <param name="points">The amount of skill points.</param>
+        /// <returns>Time it will take.</returns>
+        public TimeSpan GetTimeSpanForPoints(long points)
+        {
+            if (BoosterDuration > TimeSpan.Zero)
+            {
+                var c = Owner as CCPCharacter;
+                if (c == null)
+                {
+                    return TimeSpan.Zero;
+                }
+
+                var actualSPRate = c.GetBaseSPPerHour(Skill.StaticData);
+                var expectedSPRate = c.GetBaseSPPerHourWithoutBoosters(Skill.StaticData);
+
+                return Skill.GetTimeSpanForPoints(points, expectedSPRate, actualSPRate, BoosterDuration);
+            }
+
+            return Skill.GetTimeSpanForPoints(points);
+        }
 
         public override bool Equals(object obj)
         {

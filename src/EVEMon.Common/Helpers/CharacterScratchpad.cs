@@ -410,7 +410,7 @@ namespace EVEMon.Common.Helpers
             for (int i = 0; i < m_attributes.Length; i++)
             {
                 ICharacterAttribute attrib = m_character[(EveAttribute)i];
-                m_attributes[i].Reset(attrib.Base, attrib.ImplantBonus);
+                m_attributes[i].Reset(attrib.Base, attrib.ImplantBonus, attrib.BoosterBonus);
             }
 
             // Initialize skills

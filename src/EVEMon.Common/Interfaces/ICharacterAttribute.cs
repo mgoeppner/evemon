@@ -6,6 +6,9 @@ namespace EVEMon.Common.Interfaces
     {
         long Base { get; }
         long ImplantBonus { get; }
+
+        long BoosterBonus { get; }
+
         long EffectiveValue { get; }
 
         /// <summary>

@@ -127,6 +127,7 @@ namespace EVEMon.Controls
             lblCompletionTime.Font = FontFactory.GetFont("Tahoma", m_regularFontSize);
             lblSkillQueueTrainingTime.Font = FontFactory.GetFont("Tahoma", m_regularFontSize);
             lblExtraInfo.Font = FontFactory.GetFont("Tahoma", m_regularFontSize);
+            lblBoosterDuration.Font = FontFactory.GetFont("Tahoma", m_regularFontSize);
 
             // Initializes the portrait
             pbCharacterPortrait.Hide();
@@ -318,6 +319,7 @@ namespace EVEMon.Controls
             lblRemainingTime.ForeColor = m_settingsForeColor;
             lblSkillInTraining.ForeColor = m_settingsForeColor;
             lblCompletionTime.ForeColor = m_settingsForeColor;
+            lblBoosterDuration.ForeColor = m_settingsForeColor;
         }
 
         /// <summary>
@@ -380,6 +382,20 @@ namespace EVEMon.Controls
                 m_hasRemainingTime = false;
                 m_hasSkillQueueTrainingTime = false;
             }
+
+            var boosterDuration = ccpCharacter?.SkillQueue.BoosterDuration ?? TimeSpan.Zero;
+
+            if (boosterDuration > TimeSpan.Zero)
+            {
+                lblBoosterDuration.Visible = true;
+                lblBoosterDuration.Text = string.Format("Booster Duration: ~{0}:{1}", (int)boosterDuration.TotalHours, boosterDuration.ToString("mm"));
+            }
+            else
+            {
+                lblBoosterDuration.Visible = false;
+                lblBoosterDuration.Text = "No active booster";
+            }
+
             UpdateExtraData();
             // Adjusts all the controls layout
             PerformCustomLayout(m_isTooltip);
@@ -799,6 +815,14 @@ namespace EVEMon.Controls
                 }
                 else
                     top += smallLabelHeight;
+            }
+            if (lblBoosterDuration.Visible)
+            {
+                size = GetSizeForLabel(lblBoosterDuration, m_regularFontSize, left, top,
+                    rightPad, labelWidth, smallLabelHeight);
+                labelWidth = size.Width;
+                smallLabelHeight = size.Height;
+                top += smallLabelHeight;
             }
             Width = m_preferredWidth = left + labelWidth + margin;
             Height = m_preferredHeight = margin + (showPortrait ? Math.Max(top, lh + margin) :

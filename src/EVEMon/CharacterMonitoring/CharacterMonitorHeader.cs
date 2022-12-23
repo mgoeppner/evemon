@@ -995,7 +995,7 @@ namespace EVEMon.CharacterMonitoring
 
             // Format the values for the tooltip
             ICharacterAttribute attribute = m_character[eveAttribute];
-            string toolTip = attribute.ToString("%e (%B base + %r remap points + %i implants)");
+            string toolTip = attribute.ToString("%e (%B base + %r remap points + %i implants + %x booster)");
             ToolTip.SetToolTip(attributeLabel, toolTip);
         }
 
