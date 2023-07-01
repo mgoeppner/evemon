@@ -137,5 +137,7 @@
     <row flagID="180" flagName="StructureDeedBay" flagText="Structure Deed Bay" />
     <row flagID="181" flagName="SpecializedIceHold" flagText="Specialized Ice Hold" />
     <row flagID="182" flagName="SpecializedAsteroidHold" flagText="Specialized Asteroid Hold" />
+    <row flagID="183" flagName="MobileDepot" flagText="Mobile Depot" />
+    <row flagID="184" flagName="CorpProjectsHangar" flagText="Corporation Projects Hangar" />
   </rowset>
 </invFlags>
