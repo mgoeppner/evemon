@@ -29,66 +29,66 @@
   <datafiles>
     <datafile>
       <name>eve-blueprints-en-US.xml.gzip</name>
-      <date>24 March 2023</date>
-      <md5>208afd8b80f09d614910af6506a179ca</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Uprising/2236572</url>
-      <message><![CDATA[Uprising 21.03 (2236572) blueprints data file by the EVEMon Development Team
+      <date>19 June 2023</date>
+      <md5>881582dbbf90e4ceeb68a3a92ad5fb05</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Viridian/2296006</url>
+      <message><![CDATA[Viridian 21.05 (2296006) blueprints data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-certificates-en-US.xml.gzip</name>
       <date>18 January 2022</date>
       <md5>540000f7c111354769a54fa31e57d411</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Uprising/2236572</url>
-      <message><![CDATA[Uprising 21.03 (2236572) certificates data file by the EVEMon Development Team
+      <url>https://mgoeppner.github.io/evemon-datafiles/Viridian/2296006</url>
+      <message><![CDATA[Viridian 21.05 (2296006) certificates data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-geography-en-US.xml.gzip</name>
-      <date>24 March 2023</date>
-      <md5>5f957d390b34fe57f971a30f480ff1a6</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Uprising/2236572</url>
-      <message><![CDATA[Uprising 21.03 (2236572) geography data file by the EVEMon Development Team
+      <date>19 June 2023</date>
+      <md5>bf28397b579b77afad83da9c748d5694</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Viridian/2296006</url>
+      <message><![CDATA[Viridian 21.05 (2296006) geography data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-items-en-US.xml.gzip</name>
-      <date>24 March 2023</date>
-      <md5>fe7e6f529c3b6f9b401ac5f7502ed92f</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Uprising/2236572</url>
-      <message><![CDATA[Uprising 21.03 (2236572) items data file by the EVEMon Development Team
+      <date>19 June 2023</date>
+      <md5>85b31b43771fb593979ef09b864e7fba</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Viridian/2296006</url>
+      <message><![CDATA[Viridian 21.05 (2296006) items data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-masteries-en-US.xml.gzip</name>
       <date>18 January 2022</date>
       <md5>3668b50996fc40a0c0853fec427b5712</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Uprising/2236572</url>
-      <message><![CDATA[Uprising 21.03 (2236572) masteries data file by the EVEMon Development Team
+      <url>https://mgoeppner.github.io/evemon-datafiles/Viridian/2296006</url>
+      <message><![CDATA[Viridian 21.05 (2296006) masteries data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-properties-en-US.xml.gzip</name>
-      <date>24 March 2023</date>
-      <md5>939d20318306c606d4fe290dfde72c06</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Uprising/2236572</url>
-      <message><![CDATA[Uprising 21.03 (2236572) properties data file by the EVEMon Development Team
+      <date>19 June 2023</date>
+      <md5>63e778ccf4c7ca639f9587ca913476d8</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Viridian/2296006</url>
+      <message><![CDATA[Viridian 21.05 (2296006) properties data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-reprocessing-en-US.xml.gzip</name>
-      <date>24 March 2023</date>
-      <md5>139646f9fc2a97b76030ab5d19c76879</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Uprising/2236572</url>
-      <message><![CDATA[Uprising 21.03 (2236572) reprocessing data file by the EVEMon Development Team
+      <date>19 June 2023</date>
+      <md5>8559d3f1a0e013f880655e4c4c4646fe</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Viridian/2296006</url>
+      <message><![CDATA[Viridian 21.05 (2296006) reprocessing data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-skills-en-US.xml.gzip</name>
-      <date>24 March 2023</date>
-      <md5>f56eb59ce4050cc3ad360ce08753ce4e</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Uprising/2236572</url>
-      <message><![CDATA[Uprising 21.03 (2236572) skills data file by the EVEMon Development Team
+      <date>19 June 2023</date>
+      <md5>bfe90ea8fcb5ba855e872f375ea1bf2b</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Viridian/2296006</url>
+      <message><![CDATA[Viridian 21.05 (2296006) skills data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
   </datafiles>

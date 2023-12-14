@@ -214,3 +214,4 @@ ModelManifest.xml
 /*.rb
 /*.bat
 /tools/XmlGenerator/*.sqlite
+tools/XmlGenerator/sqlite-latest.sqlite-journal

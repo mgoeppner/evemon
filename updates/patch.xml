@@ -29,66 +29,66 @@
   <datafiles>
     <datafile>
       <name>eve-blueprints-en-US.xml.gzip</name>
-      <date>19 June 2023</date>
-      <md5>881582dbbf90e4ceeb68a3a92ad5fb05</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Viridian/2296006</url>
-      <message><![CDATA[Viridian 21.05 (2296006) blueprints data file by the EVEMon Development Team
+      <date>01 December 2023</date>
+      <md5>4285b6221590a724bfe6738dc9d8d28d</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Havoc/2438956</url>
+      <message><![CDATA[Havoc 21.06 (2438956) blueprints data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-certificates-en-US.xml.gzip</name>
       <date>18 January 2022</date>
       <md5>540000f7c111354769a54fa31e57d411</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Viridian/2296006</url>
-      <message><![CDATA[Viridian 21.05 (2296006) certificates data file by the EVEMon Development Team
+      <url>https://mgoeppner.github.io/evemon-datafiles/Havoc/2438956</url>
+      <message><![CDATA[Havoc 21.06 (2438956) certificates data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-geography-en-US.xml.gzip</name>
-      <date>19 June 2023</date>
-      <md5>bf28397b579b77afad83da9c748d5694</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Viridian/2296006</url>
-      <message><![CDATA[Viridian 21.05 (2296006) geography data file by the EVEMon Development Team
+      <date>01 December 2023</date>
+      <md5>c076080a9c3b23b64a47871b424032c6</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Havoc/2438956</url>
+      <message><![CDATA[Havoc 21.06 (2438956) geography data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-items-en-US.xml.gzip</name>
-      <date>19 June 2023</date>
-      <md5>85b31b43771fb593979ef09b864e7fba</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Viridian/2296006</url>
-      <message><![CDATA[Viridian 21.05 (2296006) items data file by the EVEMon Development Team
+      <date>01 December 2023</date>
+      <md5>97a2204565d3d646d5c41f4f7ed2743c</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Havoc/2438956</url>
+      <message><![CDATA[Havoc 21.06 (2438956) items data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-masteries-en-US.xml.gzip</name>
       <date>18 January 2022</date>
       <md5>3668b50996fc40a0c0853fec427b5712</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Viridian/2296006</url>
-      <message><![CDATA[Viridian 21.05 (2296006) masteries data file by the EVEMon Development Team
+      <url>https://mgoeppner.github.io/evemon-datafiles/Havoc/2438956</url>
+      <message><![CDATA[Havoc 21.06 (2438956) masteries data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-properties-en-US.xml.gzip</name>
-      <date>19 June 2023</date>
-      <md5>63e778ccf4c7ca639f9587ca913476d8</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Viridian/2296006</url>
-      <message><![CDATA[Viridian 21.05 (2296006) properties data file by the EVEMon Development Team
+      <date>01 December 2023</date>
+      <md5>063a8f19917c3a20bd535fa85280d442</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Havoc/2438956</url>
+      <message><![CDATA[Havoc 21.06 (2438956) properties data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-reprocessing-en-US.xml.gzip</name>
-      <date>19 June 2023</date>
-      <md5>8559d3f1a0e013f880655e4c4c4646fe</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Viridian/2296006</url>
-      <message><![CDATA[Viridian 21.05 (2296006) reprocessing data file by the EVEMon Development Team
+      <date>01 December 2023</date>
+      <md5>acefb6908f1480ad4b879d0513cf0bfc</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Havoc/2438956</url>
+      <message><![CDATA[Havoc 21.06 (2438956) reprocessing data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-skills-en-US.xml.gzip</name>
-      <date>19 June 2023</date>
-      <md5>bfe90ea8fcb5ba855e872f375ea1bf2b</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Viridian/2296006</url>
-      <message><![CDATA[Viridian 21.05 (2296006) skills data file by the EVEMon Development Team
+      <date>01 December 2023</date>
+      <md5>92ddb90546807d0fe3fb64ba14270e9e</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Havoc/2438956</url>
+      <message><![CDATA[Havoc 21.06 (2438956) skills data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
   </datafiles>
