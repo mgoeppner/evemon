@@ -23,12 +23,6 @@ namespace EVEMon.Common.Service
         public const int PORT = 4916;
         // Used for initializing the responses properly
         private static readonly object RESPONSE_LOCK = new object();
-        // Time before idle HTTP connections are closed
-        private static readonly TimeSpan TIMEOUT_IDLE = TimeSpan.FromSeconds(10.0);
-        // Time before connections are closed while waiting for read data
-        private static readonly TimeSpan TIMEOUT_READ = TimeSpan.FromSeconds(3.0);
-        // Time before connections are closed while waiting for write data
-        private static readonly TimeSpan TIMEOUT_WRITE = TimeSpan.FromSeconds(2.0);
 
         // Encoded responses for client requests
         private static byte[] responseOK = null;
@@ -63,12 +57,6 @@ namespace EVEMon.Common.Service
             listener.Prefixes.Add(prefix);
             // Where would the exception go otherwise?
             listener.IgnoreWriteExceptions = true;
-            // Set up the desired timeouts
-            listener.TimeoutManager.IdleConnection = TIMEOUT_IDLE;
-            listener.TimeoutManager.DrainEntityBody = TIMEOUT_WRITE;
-            listener.TimeoutManager.EntityBody = TIMEOUT_READ;
-            listener.TimeoutManager.HeaderWait = TIMEOUT_READ;
-            listener.TimeoutManager.RequestQueue = TIMEOUT_WRITE;
             InitResponses();
         }
 
@@ -82,8 +70,7 @@ namespace EVEMon.Common.Service
         {
             if (string.IsNullOrEmpty(state))
                 throw new ArgumentNullException("state");
-            WaitForCodeAsync(state).ContinueWith((result) => Dispatcher.Invoke(() =>
-                callback?.Invoke(result)));
+            WaitForCodeAsync(state).ContinueWith((result) => Dispatcher.Invoke(() => callback?.Invoke(result)));
         }
 
         public void Dispose()

@@ -10,6 +10,7 @@ using ICSharpCode.SharpZipLib.GZip;
 using ICSharpCode.SharpZipLib.Zip.Compression.Streams;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
@@ -46,7 +47,28 @@ namespace EVEMon.Common
 
             try
             {
-                Process.Start(url.AbsoluteUri);
+                // Fix for process.start uri not found is here https://github.com/mono/mono/pull/20833
+                // Distros are slow though.
+
+                int platform = (int)Environment.OSVersion.Platform;
+                switch (platform)
+                {
+                    // OS X
+                    case 6:
+                        Process.Start("open", url.AbsoluteUri);
+                        break;
+
+                    // Linux
+                    case 4:
+                        Process.Start("xdg-open", url.AbsoluteUri);
+                        break;
+
+                    // Linux OR OS X, no idea which... YOLO and hope the bug is fixed for these poor souls
+                    case 128:
+                    default:
+                        Process.Start(url.AbsoluteUri);
+                        break;
+                }                
             }
             catch (FileNotFoundException ex)
             {

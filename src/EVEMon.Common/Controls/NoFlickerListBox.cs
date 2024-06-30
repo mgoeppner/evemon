@@ -22,7 +22,7 @@ namespace EVEMon.Common.Controls
         /// Raises the <see cref="E:System.Windows.Forms.ListBox.DrawItem"/> event.
         /// </summary>
         /// <param name="e">A <see cref="T:System.Windows.Forms.DrawItemEventArgs"/> that contains the event data.</param>
-        protected override void OnDrawItem(DrawItemEventArgs e)
+        /*protected override void OnDrawItem(DrawItemEventArgs e)
         {
             var newBounds = new Rectangle(0, 0, e.Bounds.Width, e.Bounds.Height);
 
@@ -41,7 +41,7 @@ namespace EVEMon.Common.Controls
 
                 NativeMethods.CopyGraphics(e.Graphics, e.Bounds, bufferedGraphics.Graphics, new Point(0, 0));
             }
-        }
+        }*/
         
         /// <summary>
         /// The list's window procedure.
