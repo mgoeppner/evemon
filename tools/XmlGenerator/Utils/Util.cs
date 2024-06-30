@@ -1,11 +1,11 @@
-﻿using System;
+﻿using EVEMon.Common.Data;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
-using EVEMon.Common.Data;
 
 namespace EVEMon.XmlGenerator.Utils
 {

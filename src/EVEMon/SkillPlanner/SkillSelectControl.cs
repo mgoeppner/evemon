@@ -408,8 +408,8 @@ namespace EVEMon.SkillPlanner
             }
 
             string groupDirectory = $"{AppDomain.CurrentDomain.BaseDirectory}Resources\\Skill_Select\\Group";
-            string defaultResourcesPath = $"{groupDirectory}0\\Default.resources";
-            string groupResourcesPath = $"{groupDirectory}{index}\\{groupname}.resources";
+            string defaultResourcesPath = $"{groupDirectory}0\\Default.resx";
+            string groupResourcesPath = $"{groupDirectory}{index}\\{groupname}.resx";
 
             if (!File.Exists(defaultResourcesPath) ||
                 (!string.IsNullOrEmpty(groupname) && !File.Exists(groupResourcesPath)))

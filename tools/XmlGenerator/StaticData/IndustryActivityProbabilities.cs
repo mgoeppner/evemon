@@ -4,18 +4,18 @@ using System.Xml.Serialization;
 namespace EVEMon.XmlGenerator.StaticData
 {
     public sealed class IndustryActivityProbabilities : IRelation
-	{
-		[XmlElement("typeID")]
-		public int BlueprintTypeID { get; set; }
+    {
+        [XmlElement("typeID")]
+        public int BlueprintTypeID { get; set; }
 
         [XmlElement("activityID")]
-		public int ActivityID { get; set; }
+        public int ActivityID { get; set; }
 
         [XmlElement("productTypeID")]
-		public int ProductTypeID { get; set; }
+        public int ProductTypeID { get; set; }
 
         [XmlElement("probability")]
-		public decimal? Probability { get; set; }
+        public decimal? Probability { get; set; }
 
         #region IRelation Members
 

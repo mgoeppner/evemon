@@ -175,7 +175,7 @@ namespace EVEMon
             }
 
             // Start the one-second timer 
-            EveMonClient.Run(Thread.CurrentThread);
+            EveMonClient.Run(TaskScheduler.FromCurrentSynchronizationContext());
 
             // Check with NIST that the local clock is synchronized
             TimeCheck.ScheduleCheck(TimeSpan.FromSeconds(1));

@@ -366,12 +366,10 @@ namespace EVEMon.InstallBuilder
             {
                 string nsisScript = Path.Combine(ProjectDirectory, OutputPath, "EVEMonInstallerScript.nsi");
                 string resourcesDir = Path.Combine(SolutionDirectory, @"src\\EVEMon.Common\Resources");
-                string appCopyright = ((AssemblyCopyrightAttribute)Attribute.GetCustomAttribute(
-                    typeof(Program).Assembly, typeof(AssemblyCopyrightAttribute))).Copyright;
-                string productName = string.Format(CultureInfo.InvariantCulture, "/DPRODUCTNAME=\"{0}\"", Application.ProductName);
-                string companyName = string.Format(CultureInfo.InvariantCulture, "/DCOMPANYNAME=\"{0}\"", Application.CompanyName);
-                string copyright = string.Format(CultureInfo.InvariantCulture, "/DCOPYRIGHT=\"{0}\"", appCopyright);
-                string description = string.Format(CultureInfo.InvariantCulture, "/DDESCRIPTION=\"{0}\"", Application.ProductName);
+                string productName = string.Format(CultureInfo.InvariantCulture, "/DPRODUCTNAME=\"{0}\"", "EVEMon");
+                string companyName = string.Format(CultureInfo.InvariantCulture, "/DCOMPANYNAME=\"{0}\"", "EVEMon Development Team");
+                string copyright = string.Format(CultureInfo.InvariantCulture, "/DCOPYRIGHT=\"{0}\"", "Copyright © 2006-2022, EVEMon Development Team");
+                string description = string.Format(CultureInfo.InvariantCulture, "/DDESCRIPTION=\"{0}\"", "EVEMon");
                 string version = string.Format(CultureInfo.InvariantCulture, "/DVERSION={0}", s_fileVersionInfo.ProductVersion);
                 string fullVersion = string.Format(CultureInfo.InvariantCulture, "/DFULLVERSION={0}",
                     s_fileVersionInfo.FileVersion);

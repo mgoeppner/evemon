@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 namespace EVEMon.XmlGenerator.StaticData
 {
     public sealed class IndustryActivityProducts : IRelation
-	{
+    {
         [XmlElement("typeID")]
         public int BlueprintTypeID { get; set; }
 

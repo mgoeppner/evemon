@@ -1,270 +1,68 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9366D54A-B516-4A1D-987B-B1BCE31D2A72}</ProjectGuid>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <OutputType>Exe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EVEMon.XmlGenerator</RootNamespace>
     <AssemblyName>EVEMonXmlGenerator</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
-    <TargetFrameworkProfile />
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Debug\</OutputPath>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
     <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <DefineConstants>TRACE</DefineConstants>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <OutputPath>bin\Release\</OutputPath>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
     <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DefineConstants>TRACE</DefineConstants>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Snapshot|AnyCPU'">
-    <OutputPath>bin\Release\</OutputPath>
     <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
     <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DefineConstants>TRACE</DefineConstants>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Collections\BagCollection.cs" />
-    <Compile Include="Interfaces\IHasLongId.cs" />
-    <Compile Include="Models\cloneStates.cs" />
-    <Compile Include="Models\industryActivitySkills.cs" />
-    <Compile Include="Models\industryActivityRaces.cs" />
-    <Compile Include="Models\industryActivityProducts.cs" />
-    <Compile Include="Models\industryActivityProbabilities.cs" />
-    <Compile Include="Models\industryActivityMaterials.cs" />
-    <Compile Include="Models\industryActivity.cs" />
-    <Compile Include="Models\industryBlueprints.cs" />
-    <Compile Include="Providers\Database.cs" />
-    <Compile Include="Datafiles\Blueprints.cs" />
-    <Compile Include="Datafiles\Geography.cs" />
-    <Compile Include="Datafiles\Items.cs" />
-    <Compile Include="Datafiles\Properties.cs" />
-    <Compile Include="Datafiles\Reprocessing.cs" />
-    <Compile Include="Datafiles\Skills.cs" />
-    <Compile Include="Models\agtAgents.cs" />
-    <Compile Include="Models\agtAgentTypes.cs" />
-    <Compile Include="Models\agtResearchAgents.cs" />
-    <Compile Include="Models\chrAncestries.cs" />
-    <Compile Include="Models\chrAttributes.cs" />
-    <Compile Include="Models\chrBloodlines.cs" />
-    <Compile Include="Models\chrFactions.cs" />
-    <Compile Include="Models\chrRaces.cs" />
-    <Compile Include="Models\crpActivities.cs" />
-    <Compile Include="Models\crpNPCCorporationDivisions.cs" />
-    <Compile Include="Models\crpNPCCorporationResearchFields.cs" />
-    <Compile Include="Models\crpNPCCorporations.cs" />
-    <Compile Include="Models\crpNPCCorporationTrades.cs" />
-    <Compile Include="Models\crpNPCDivisions.cs" />
-    <Compile Include="Models\certCerts.cs" />
-    <Compile Include="Models\dgmAttributeCategories.cs" />
-    <Compile Include="Models\dgmAttributeTypes.cs" />
-    <Compile Include="Models\dgmEffects.cs" />
-    <Compile Include="Models\dgmExpressions.cs" />
-    <Compile Include="Models\invTraits.cs" />
-    <Compile Include="Models\dgmTypeAttributes.cs" />
-    <Compile Include="Models\dgmTypeEffects.cs" />
-    <Compile Include="Models\eveGraphics.cs" />
-    <Compile Include="Models\eveIcons.cs" />
-    <Compile Include="Models\EveStaticData.cs" />
-    <Compile Include="Models\eveUnits.cs" />
-    <Compile Include="Models\invCategories.cs" />
-    <Compile Include="Models\invContrabandTypes.cs" />
-    <Compile Include="Models\invControlTowerResourcePurposes.cs" />
-    <Compile Include="Models\invControlTowerResources.cs" />
-    <Compile Include="Models\invFlags.cs" />
-    <Compile Include="Models\invGroups.cs" />
-    <Compile Include="Models\invItems.cs" />
-    <Compile Include="Models\invMarketGroups.cs" />
-    <Compile Include="Models\invMetaGroups.cs" />
-    <Compile Include="Models\invMetaTypes.cs" />
-    <Compile Include="Models\invNames.cs" />
-    <Compile Include="Models\invPositions.cs" />
-    <Compile Include="Models\invTypeMaterials.cs" />
-    <Compile Include="Models\invTypeReactions.cs" />
-    <Compile Include="Models\invTypes.cs" />
-    <Compile Include="Models\invUniqueNames.cs" />
-    <Compile Include="Models\mapCelestialStatistics.cs" />
-    <Compile Include="Models\mapConstellationJumps.cs" />
-    <Compile Include="Models\mapConstellations.cs" />
-    <Compile Include="Models\mapDenormalize.cs" />
-    <Compile Include="Models\mapJumps.cs" />
-    <Compile Include="Models\mapLandmarks.cs" />
-    <Compile Include="Models\mapLocationScenes.cs" />
-    <Compile Include="Models\mapLocationWormholeClasses.cs" />
-    <Compile Include="Models\mapRegionJumps.cs" />
-    <Compile Include="Models\mapRegions.cs" />
-    <Compile Include="Models\mapSolarSystemJumps.cs" />
-    <Compile Include="Models\mapSolarSystems.cs" />
-    <Compile Include="Models\mapUniverse.cs" />
-    <Compile Include="Models\planetSchematics.cs" />
-    <Compile Include="Models\planetSchematicsPinMap.cs" />
-    <Compile Include="Models\planetSchematicsTypeMap.cs" />
-    <Compile Include="Models\ramActivities.cs" />
-    <Compile Include="Models\ramAssemblyLineStations.cs" />
-    <Compile Include="Models\ramAssemblyLineTypeDetailPerCategory.cs" />
-    <Compile Include="Models\ramAssemblyLineTypeDetailPerGroup.cs" />
-    <Compile Include="Models\ramAssemblyLineTypes.cs" />
-    <Compile Include="Models\ramInstallationTypeContents.cs" />
-    <Compile Include="Models\sknLicenses.cs" />
-    <Compile Include="Models\sknMaterials.cs" />
-    <Compile Include="Models\sknSkins.cs" />
-    <Compile Include="Models\staOperations.cs" />
-    <Compile Include="Models\staOperationServices.cs" />
-    <Compile Include="Models\staServices.cs" />
-    <Compile Include="Models\staStations.cs" />
-    <Compile Include="Models\staStationTypes.cs" />
-    <Compile Include="Models\translationTables.cs" />
-    <Compile Include="Models\trnTranslationColumns.cs" />
-    <Compile Include="Models\trnTranslationLanguages.cs" />
-    <Compile Include="Models\trnTranslations.cs" />
-    <Compile Include="Models\warCombatZones.cs" />
-    <Compile Include="Models\warCombatZoneSystems.cs" />
-    <Compile Include="Providers\HoboleaksAlphaSkills.cs" />
-    <Compile Include="StaticData\ChrFactions.cs" />
-    <Compile Include="StaticData\CrtCertificates.cs" />
-    <Compile Include="StaticData\CrtRecommendations.cs" />
-    <Compile Include="StaticData\CrtRelationships.cs" />
-    <Compile Include="StaticData\DgmMasteries.cs" />
-    <Compile Include="StaticData\IndustryActivity.cs" />
-    <Compile Include="StaticData\IndustryActivityMaterials.cs" />
-    <Compile Include="StaticData\IndustryActivityProbabilities.cs" />
-    <Compile Include="StaticData\IndustryActivityProducts.cs" />
-    <Compile Include="StaticData\IndustryActivitySkills.cs" />
-    <Compile Include="StaticData\IndustryBlueprints.cs" />
-    <Compile Include="StaticData\InvItems.cs" />
-    <Compile Include="StaticData\InvTraits.cs" />
-    <Compile Include="StaticData\InvControlTowerResources.cs" />
-    <Compile Include="StaticData\InvControlTowerResourcePurposes.cs" />
-    <Compile Include="StaticData\InvFlags.cs" />
-    <Compile Include="StaticData\InvTypeReactions.cs" />
-    <Compile Include="Xmlfiles\Flags.cs" />
-    <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Interfaces\IHasId.cs" />
-    <Compile Include="Collections\RelationSetCollection.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Interfaces\IRelation.cs" />
-    <Compile Include="StaticData\AgtAgents.cs" />
-    <Compile Include="StaticData\AgtAgentTypes.cs" />
-    <Compile Include="StaticData\AgtResearchAgents.cs" />
-    <Compile Include="StaticData\CrpNPCDivisions.cs" />
-    <Compile Include="StaticData\InvCategories.cs" />
-    <Compile Include="StaticData\InvNames.cs" />
-    <Compile Include="StaticData\InvTypeMaterials.cs" />
-    <Compile Include="Extensions\StringCleaning.cs" />
-    <Compile Include="Utils\Util.cs" />
-    <Compile Include="StaticData\DgmAttributeTypes.cs" />
-    <Compile Include="StaticData\DgmAttributeCategories.cs" />
-    <Compile Include="StaticData\DgmTypeAttributes.cs" />
-    <Compile Include="StaticData\DgmTypeEffects.cs" />
-    <Compile Include="StaticData\EveIcons.cs" />
-    <Compile Include="StaticData\EveUnits.cs" />
-    <Compile Include="StaticData\InvGroups.cs" />
-    <Compile Include="StaticData\InvMarketGroups.cs" />
-    <Compile Include="StaticData\InvMetaTypes.cs" />
-    <Compile Include="StaticData\InvTypes.cs" />
-    <Compile Include="StaticData\MapConstellations.cs" />
-    <Compile Include="StaticData\MapRegions.cs" />
-    <Compile Include="StaticData\MapSolarSystems.cs" />
-    <Compile Include="StaticData\MapSolarSystemsJump.cs" />
-    <Compile Include="StaticData\StaStations.cs" />
-    <Compile Include="Collections\IndexedCollection.cs" />
-    <Compile Include="Xmlfiles\Serialization\SerialiazableRowset.cs" />
-    <Compile Include="Xmlfiles\Serialization\SerializableInvFlagsRow.cs" />
-    <Compile Include="Xmlfiles\Serialization\SerializableRoot.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\EVEMon.Common\EVEMon.Common.csproj">
-      <Project>{C0665275-3E0B-4117-81B0-751206ED03CD}</Project>
-      <Name>EVEMon.Common</Name>
-      <Private>True</Private>
-      <Properties>SkipValidatePackageReferences=true</Properties>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="App.config" />
+    <ProjectReference Include="..\..\src\EVEMon.Common\EVEMon.Common.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="sqlite-latest.sqlite" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.6" />
+    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="8.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="8.0.6" />
+    <PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.8" />
+    <PackageReference Include="SQLitePCLRaw.core" Version="2.1.8" />
+    <PackageReference Include="SQLitePCLRaw.lib.e_sqlite3" Version="2.1.8" />
+    <PackageReference Include="SQLitePCLRaw.provider.sqlite3" Version="2.1.8" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="EntityFramework">
-      <Version>6.5.1</Version>
-    </PackageReference>
-    <PackageReference Include="Newtonsoft.Json">
-      <Version>13.0.3</Version>
-    </PackageReference>
-    <PackageReference Include="System.Data.SQLite">
-      <Version>1.0.118</Version>
-    </PackageReference>
-    <PackageReference Include="System.Data.SQLite.EF6">
-      <Version>1.0.118</Version>
-    </PackageReference>
+    <Compile Remove="Datafiles\Certificates.cs" />
+    <Compile Remove="Datafiles\Masteries.cs" />
+    <Compile Remove="Models\crtCertificates.cs" />
+    <Compile Remove="Models\crtClasses.cs" />
+    <Compile Remove="Models\crtRecommendations.cs" />
+    <Compile Remove="Models\crtRelationships.cs" />
+    <Compile Remove="Models\dgmMasteries.cs" />
+    <Compile Remove="Models\dgmTraits.cs" />
+    <Compile Remove="Models\dgmTypeMasteries.cs" />
+    <Compile Remove="Models\dgmTypeTraits.cs" />
+    <Compile Remove="StaticData\CrtClasses.cs" />
+    <Compile Remove="StaticData\DgmTraits.cs" />
+    <Compile Remove="StaticData\DgmTypeMasteries.cs" />
+    <Compile Remove="StaticData\DgmTypeTraits.cs" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>rd /s /q "$(TargetDir)"Resources
-del "$(TargetDir)"Google*
-del "$(TargetDir)"*office*
-del "$(TargetDir)"*outlook*
-del "$(TargetDir)"*SharpZipLib*
-del "$(TargetDir)"YamlDotNet*
-del "$(TargetDir)"Dropbox*
-del "$(TargetDir)"OneDrive*
-del "$(TargetDir)"Microsoft*
-del "$(TargetDir)"Zlib*
-if exist "$(TargetDir)"stdole.dll del "$(TargetDir)"stdole.dll</PostBuildEvent>
+    <AssemblyTitle>XmlGenerator</AssemblyTitle>
+    <Company>EVEMon Development Team</Company>
+    <Product>EVEMonXmlGenerator</Product>
+    <Copyright>Copyright © 2009-2016, EVEMon Development Team</Copyright>
+    <AssemblyVersion>1.0.%2a</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <InformationalVersion>1.0.0</InformationalVersion>
+    <NeutralLanguage>en-US</NeutralLanguage>
   </PropertyGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

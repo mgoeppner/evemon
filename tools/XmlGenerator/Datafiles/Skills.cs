@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using EVEMon.Common.Collections;
+﻿using EVEMon.Common.Collections;
 using EVEMon.Common.Constants;
 using EVEMon.Common.Enumerations;
 using EVEMon.Common.Serialization.Datafiles;
@@ -10,6 +6,11 @@ using EVEMon.XmlGenerator.Interfaces;
 using EVEMon.XmlGenerator.Providers;
 using EVEMon.XmlGenerator.StaticData;
 using EVEMon.XmlGenerator.Utils;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace EVEMon.XmlGenerator.Datafiles
 {
@@ -18,7 +19,7 @@ namespace EVEMon.XmlGenerator.Datafiles
         /// <summary>
         /// Generate the skills datafile.
         /// </summary>
-        internal static void GenerateDatafile()
+        internal static async void GenerateDatafile()
         {
             Stopwatch stopwatch = Stopwatch.StartNew();
             Util.ResetCounters();
@@ -38,8 +39,10 @@ namespace EVEMon.XmlGenerator.Datafiles
                     Name = group.Name,
                 };
 
+                var skills = await ExportSkillsInGroup(group);
+
                 // Add skills in skill group
-                skillGroup.Skills.AddRange(ExportSkillsInGroup(group).OrderBy(x => x.Name));
+                skillGroup.Skills.AddRange(skills.OrderBy(x => x.Name));
 
                 // Add skill group
                 listOfSkillGroups.Add(skillGroup);
@@ -59,11 +62,11 @@ namespace EVEMon.XmlGenerator.Datafiles
         /// </summary>
         /// <param name="group">The group.</param>
         /// <returns></returns>
-        private static IEnumerable<SerializableSkill> ExportSkillsInGroup(IHasID group)
+        private static async Task<IEnumerable<SerializableSkill>> ExportSkillsInGroup(IHasID group)
         {
             List<SerializableSkill> listOfSkillsInGroup = new List<SerializableSkill>();
 
-            var alphaLimit = HoboleaksAlphaSkills.GetAlphaSkillLimits();
+            var alphaLimit = await HoboleaksAlphaSkills.GetAlphaSkillLimits();
             var l5 = new SerializableSkillPrerequisite()
             {
                 ID = 3348, // Leadership

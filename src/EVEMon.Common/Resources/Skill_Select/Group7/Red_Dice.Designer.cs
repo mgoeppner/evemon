@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EVEMon.Common.Resources.Skill_Select.Group4 {
+namespace EVEMon.Common.Resources.Skill_Select.Group7 {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace EVEMon.Common.Resources.Skill_Select.Group4 {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Pentagons {
+    public class Red_Dice {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Pentagons() {
+        internal Red_Dice() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace EVEMon.Common.Resources.Skill_Select.Group4 {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EVEMon.Common.Resources.Skill_Select.Group4.Pentagons", typeof(Pentagons).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("EVEMon.Common.Resources.Skill_Select.Group7.Red_Dice", typeof(Red_Dice).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

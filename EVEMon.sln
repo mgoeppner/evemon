@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34916.146
@@ -9,34 +9,34 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B2FD94FF
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{9AB16E7E-E520-4444-8E8E-165129CC93B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVEMon", "src\EVEMon\EVEMon.csproj", "{A2E5EFE0-614A-4567-95E5-92A4D94169AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EVEMon", "src\EVEMon\EVEMon.csproj", "{A2E5EFE0-614A-4567-95E5-92A4D94169AC}"
 	ProjectSection(ProjectDependencies) = postProject
 		{696E929A-6A4A-4C6D-A8B2-C4F25F781940} = {696E929A-6A4A-4C6D-A8B2-C4F25F781940}
 		{8C4A87A0-780E-4765-ADD0-146091FE26F4} = {8C4A87A0-780E-4765-ADD0-146091FE26F4}
 		{87682BB1-CCE5-4CA4-BDE8-1A2ACF0B3CE0} = {87682BB1-CCE5-4CA4-BDE8-1A2ACF0B3CE0}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVEMon.Common", "src\EVEMon.Common\EVEMon.Common.csproj", "{C0665275-3E0B-4117-81B0-751206ED03CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EVEMon.Common", "src\EVEMon.Common\EVEMon.Common.csproj", "{C0665275-3E0B-4117-81B0-751206ED03CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVEMon.PieChart", "src\EVEMon.PieChart\EVEMon.PieChart.csproj", "{696E929A-6A4A-4C6D-A8B2-C4F25F781940}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EVEMon.PieChart", "src\EVEMon.PieChart\EVEMon.PieChart.csproj", "{696E929A-6A4A-4C6D-A8B2-C4F25F781940}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVEMon.WindowsApi", "src\EVEMon.WindowsApi\EVEMon.WindowsApi.csproj", "{D942D976-6185-4ECD-A83B-60260100D12E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EVEMon.WindowsApi", "src\EVEMon.WindowsApi\EVEMon.WindowsApi.csproj", "{D942D976-6185-4ECD-A83B-60260100D12E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EVEMon.Watchdog", "src\EVEMon.Watchdog\EVEMon.Watchdog.csproj", "{8C4A87A0-780E-4765-ADD0-146091FE26F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EVEMon.Watchdog", "src\EVEMon.Watchdog\EVEMon.Watchdog.csproj", "{8C4A87A0-780E-4765-ADD0-146091FE26F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.EVEMon.Common", "tests\Tests.EVEMon.Common\Tests.EVEMon.Common.csproj", "{C61CB94F-31DF-48BE-8053-FCE7DC6ECD7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests.EVEMon.Common", "tests\Tests.EVEMon.Common\Tests.EVEMon.Common.csproj", "{C61CB94F-31DF-48BE-8053-FCE7DC6ECD7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstallBuilder", "tools\InstallBuilder\InstallBuilder.csproj", "{5CE8E302-3577-41BC-A35F-C88AC625F7A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InstallBuilder", "tools\InstallBuilder\InstallBuilder.csproj", "{5CE8E302-3577-41BC-A35F-C88AC625F7A7}"
 	ProjectSection(ProjectDependencies) = postProject
 		{87682BB1-CCE5-4CA4-BDE8-1A2ACF0B3CE0} = {87682BB1-CCE5-4CA4-BDE8-1A2ACF0B3CE0}
 		{A2E5EFE0-614A-4567-95E5-92A4D94169AC} = {A2E5EFE0-614A-4567-95E5-92A4D94169AC}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlGenerator", "tools\XmlGenerator\XmlGenerator.csproj", "{9366D54A-B516-4A1D-987B-B1BCE31D2A72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XmlGenerator", "tools\XmlGenerator\XmlGenerator.csproj", "{9366D54A-B516-4A1D-987B-B1BCE31D2A72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatchXmlCreator", "tools\PatchXmlCreator\PatchXmlCreator.csproj", "{E6907BAD-CDF4-4B3C-AF2E-E854D2E2D959}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PatchXmlCreator", "tools\PatchXmlCreator\PatchXmlCreator.csproj", "{E6907BAD-CDF4-4B3C-AF2E-E854D2E2D959}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResFileCreator", "tools\ResFileCreator\ResFileCreator.csproj", "{87682BB1-CCE5-4CA4-BDE8-1A2ACF0B3CE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ResFileCreator", "tools\ResFileCreator\ResFileCreator.csproj", "{87682BB1-CCE5-4CA4-BDE8-1A2ACF0B3CE0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A7AC1A9C-97FC-4937-A8CA-684650A99D01}"
 	ProjectSection(SolutionItems) = preProject
@@ -45,9 +45,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		SharedAssemblyInfo.template.cs = SharedAssemblyInfo.template.cs
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.EVEMon", "tests\Tests.EVEMon\Tests.EVEMon.csproj", "{FD639BF6-3414-4FB2-8325-61744D44F028}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests.EVEMon", "tests\Tests.EVEMon\Tests.EVEMon.csproj", "{FD639BF6-3414-4FB2-8325-61744D44F028}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.Helpers", "tests\Tests.Helpers\Tests.Helpers.csproj", "{1917E258-0979-4333-8B20-5D66E8986E1C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests.Helpers", "tests\Tests.Helpers\Tests.Helpers.csproj", "{1917E258-0979-4333-8B20-5D66E8986E1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

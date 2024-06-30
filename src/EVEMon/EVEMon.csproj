@@ -1,20 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A2E5EFE0-614A-4567-95E5-92A4D94169AC}</ProjectGuid>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <OutputType>WinExe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EVEMon</RootNamespace>
-    <AssemblyName>EVEMon</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -26,1171 +13,231 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationVersion>5.0.0</ApplicationVersion>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PublishSingleFile>true</PublishSingleFile>
   </PropertyGroup>
   <PropertyGroup>
     <Win32Resource>EVEMon.res</Win32Resource>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Debug\</OutputPath>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
     <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <DefineConstants>DEBUG</DefineConstants>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <OutputPath>bin\Release\</OutputPath>
-    <Optimize>true</Optimize>
     <DebugType>none</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
     <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-    <Prefer32Bit>false</Prefer32Bit>
     <DefineConstants>
     </DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Snapshot|AnyCPU'">
-    <OutputPath>bin\Release\</OutputPath>
     <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
     <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <DefineConstants>SNAPSHOT</DefineConstants>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
-  <PropertyGroup />
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Windows.Forms.DataVisualization" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="About\AboutWindow.cs">
-      <SubType>Form</SubType>
+    <Compile Update="ApiCredentialsManagement\EsiKeysListBox.cs" />
+    <Compile Update="ApiErrorHandling\HttpTimeoutTroubleshooter.cs" />
+    <Compile Update="BlankCharacter\BlankCharacterControl.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="About\AboutWindow.Designer.cs">
-      <DependentUpon>AboutWindow.cs</DependentUpon>
+    <Compile Update="CharacterMonitoring\CharacterAssetsList.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ApiCredentialsManagement\EsiKeyDeletionWindow.cs">
-      <SubType>Form</SubType>
+    <Compile Update="CharacterMonitoring\CharacterContactList.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ApiCredentialsManagement\EsiKeyDeletionWindow.Designer.cs">
-      <DependentUpon>EsiKeyDeletionWindow.cs</DependentUpon>
+    <Compile Update="CharacterMonitoring\CharacterFactionalWarfareStatsList.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ApiCredentialsManagement\EsiKeysListBox.cs">
+    <Compile Update="CharacterMonitoring\CharacterKillLogList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="CharacterMonitoring\CharacterLoyaltyList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="CharacterMonitoring\CharacterMedalsList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="CharacterMonitoring\CharacterMonitorBody.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="CharacterMonitoring\CharacterMonitorFooter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="CharacterMonitoring\CharacterPlanetaryList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="CharacterMonitoring\CharacterWalletJournalList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="CharacterMonitoring\CharacterWalletTransactionsList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="CharacterMonitoring\CharacterContractsList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="CharacterMonitoring\CharacterEmploymentHistoryList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="CharacterMonitoring\CharacterMonitor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="CharacterMonitoring\CharacterMonitorHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controls\KillReportAttacker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controls\KillReportFittingContent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controls\KillReportVictim.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controls\KillReportInvolvedParties.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="CharacterMonitoring\CharacterStandingsList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controls\ReadingPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="CharacterMonitoring\CharacterEveNotificationsList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="CharacterMonitoring\CharacterIndustryJobsList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="CharacterMonitoring\CharacterEveMailMessagesList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="CharacterMonitoring\CharacterResearchPointsList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="SettingsUI\CloudStorageServiceControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="SettingsUI\EmailNotificationsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="SettingsUI\ExternalCalendarControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="SettingsUI\PortableEveClientsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="SettingsUI\SettingsFileStorageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="SettingsUI\UpdateSettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="CharacterMonitoring\CharacterMarketOrdersList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="CharacterMonitoring\CharacterSkillsList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controls\NotificationList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controls\Overview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controls\OverviewItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controls\OverviewLabel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ApiCredentialsManagement\EsiKeysManagementWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ApiCredentialsManagement\EsiKeysManagementWindow.Designer.cs">
-      <DependentUpon>EsiKeysManagementWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ApiCredentialsManagement\CharacterDeletionWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ApiCredentialsManagement\CharacterDeletionWindow.Designer.cs">
-      <DependentUpon>CharacterDeletionWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ApiCredentialsManagement\CharacterImportationWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ApiCredentialsManagement\CharacterImportationWindow.Designer.cs">
-      <DependentUpon>CharacterImportationWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ApiErrorHandling\ApiErrorWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ApiErrorHandling\ApiErrorWindow.Designer.cs">
-      <DependentUpon>ApiErrorWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ApiErrorHandling\HttpTimeoutTroubleshooter.cs">
+    <Compile Update="SkillPlanner\CertificateBrowserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ApiErrorHandling\HttpTimeoutTroubleshooter.Designer.cs">
-      <DependentUpon>HttpTimeoutTroubleshooter.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ApiCredentialsManagement\EsiKeyUpdateOrAdditionWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ApiCredentialsManagement\EsiKeyUpdateOrAdditionWindow.Designer.cs">
-      <DependentUpon>EsiKeyUpdateOrAdditionWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BlankCharacter\BlankCharacterControl.cs">
+    <Compile Update="SkillPlanner\CertificateSelectControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="BlankCharacter\BlankCharacterControl.Designer.cs">
-      <DependentUpon>BlankCharacterControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BlankCharacter\BlankCharacterWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BlankCharacter\BlankCharacterWindow.Designer.cs">
-      <DependentUpon>BlankCharacterWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterMonitoring\AssetsColumnsSelectWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterAssetsList.cs">
+    <Compile Update="SkillPlanner\CertificateTreeDisplayControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CharacterMonitoring\CharacterAssetsList.Designer.cs">
-      <DependentUpon>CharacterAssetsList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterContactList.cs">
+    <Compile Update="SkillPlanner\MasteryTreeDisplayControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CharacterMonitoring\CharacterContactList.Designer.cs">
-      <DependentUpon>CharacterContactList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterFactionalWarfareStatsList.cs">
+    <Compile Update="SettingsUI\NotificationsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CharacterMonitoring\CharacterFactionalWarfareStatsList.Designer.cs">
-      <DependentUpon>CharacterFactionalWarfareStatsList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterKillLogList.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterKillLogList.Designer.cs">
-      <DependentUpon>CharacterKillLogList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterLoyaltyList.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterLoyaltyList.Designer.cs">
-      <DependentUpon>CharacterLoyaltyList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterMedalsList.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterMedalsList.Designer.cs">
-      <DependentUpon>CharacterMedalsList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterMonitorBody.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterMonitorBody.Designer.cs">
-      <DependentUpon>CharacterMonitorBody.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterMonitorFooter.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterMonitorFooter.Designer.cs">
-      <DependentUpon>CharacterMonitorFooter.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterPlanetaryList.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterPlanetaryList.Designer.cs">
-      <DependentUpon>CharacterPlanetaryList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterWalletJournalList.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterWalletJournalList.Designer.cs">
-      <DependentUpon>CharacterWalletJournalList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterWalletTransactionsList.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterWalletTransactionsList.Designer.cs">
-      <DependentUpon>CharacterWalletTransactionsList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterMonitoring\PlanetaryColumnsSelectWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CharacterMonitoring\PlanetaryColumnsSelectWindow.Designer.cs">
-      <DependentUpon>PlanetaryColumnsSelectWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DetailsWindow\WalletJournalChartWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DetailsWindow\WalletJournalChartWindow.Designer.cs">
-      <DependentUpon>WalletJournalChartWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterMonitoring\WalletJournalColumnsSelectWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CharacterMonitoring\WalletTransactionsColumnsSelectWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CharactersComparison\CharactersComparisonWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CharactersComparison\CharactersComparisonWindow.Designer.cs">
-      <DependentUpon>CharactersComparisonWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterContractsList.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterContractsList.Designer.cs">
-      <DependentUpon>CharacterContractsList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterEmploymentHistoryList.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterEmploymentHistoryList.Designer.cs">
-      <DependentUpon>CharacterEmploymentHistoryList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterMonitor.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterMonitor.Designer.cs">
-      <DependentUpon>CharacterMonitor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterMonitorHeader.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterMonitorHeader.Designer.cs">
-      <DependentUpon>CharacterMonitorHeader.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\KillReportAttacker.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\KillReportAttacker.Designer.cs">
-      <DependentUpon>KillReportAttacker.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\KillReportFittingContent.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\KillReportFittingContent.Designer.cs">
-      <DependentUpon>KillReportFittingContent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\KillReportVictim.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\KillReportVictim.Designer.cs">
-      <DependentUpon>KillReportVictim.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\KillReportInvolvedParties.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\KillReportInvolvedParties.Designer.cs">
-      <DependentUpon>KillReportInvolvedParties.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DetailsWindow\ContractDetailsWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DetailsWindow\ContractDetailsWindow.Designer.cs">
-      <DependentUpon>ContractDetailsWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterMonitoring\ContractsColumnsSelectWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NotificationWindow\ContractsWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NotificationWindow\ContractsWindow.Designer.cs">
-      <DependentUpon>ContractsWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterMonitoring\EveMailMessagesColumnsSelectWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="CharacterMonitoring\CharacterStandingsList.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterStandingsList.Designer.cs">
-      <DependentUpon>CharacterStandingsList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DetailsWindow\KillReportWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DetailsWindow\KillReportWindow.Designer.cs">
-      <DependentUpon>KillReportWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NotificationWindow\OwnedSkillBooksWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NotificationWindow\OwnedSkillBooksWindow.Designer.cs">
-      <DependentUpon>OwnedSkillBooksWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NotificationWindow\PlanetaryPinsWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NotificationWindow\PlanetaryPinsWindow.Designer.cs">
-      <DependentUpon>PlanetaryPinsWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\ReadingPane.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\ReadingPane.Designer.cs">
-      <DependentUpon>ReadingPane.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DetailsWindow\EveMessageWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DetailsWindow\EveMessageWindow.Designer.cs">
-      <DependentUpon>EveMessageWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterMonitoring\EveNotificationsColumnsSelectWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CharacterMonitoring\IndustryJobsColumnsSelectWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NotificationWindow\IndustryJobsWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NotificationWindow\IndustryJobsWindow.Designer.cs">
-      <DependentUpon>IndustryJobsWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterEveNotificationsList.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterEveNotificationsList.Designer.cs">
-      <DependentUpon>CharacterEveNotificationsList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterIndustryJobsList.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterIndustryJobsList.Designer.cs">
-      <DependentUpon>CharacterIndustryJobsList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterEveMailMessagesList.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterEveMailMessagesList.Designer.cs">
-      <DependentUpon>CharacterEveMailMessagesList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterResearchPointsList.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterResearchPointsList.Designer.cs">
-      <DependentUpon>CharacterResearchPointsList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterMonitoring\ResearchColumnsSelectWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="SettingsUI\CloudStorageServiceControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SettingsUI\CloudStorageServiceControl.Designer.cs">
-      <DependentUpon>CloudStorageServiceControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SettingsUI\EmailNotificationsControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SettingsUI\EmailNotificationsControl.Designer.cs">
-      <DependentUpon>EmailNotificationsControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SettingsUI\ExternalCalendarControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SettingsUI\ExternalCalendarControl.Designer.cs">
-      <DependentUpon>ExternalCalendarControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SettingsUI\PortableEveClientsControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SettingsUI\PortableEveClientsControl.Designer.cs">
-      <DependentUpon>PortableEveClientsControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SettingsUI\SettingsFileStorageControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SettingsUI\SettingsFileStorageControl.Designer.cs">
-      <DependentUpon>SettingsFileStorageControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SettingsUI\TrayBaseWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SettingsUI\TrayBaseWindow.Designer.cs">
-      <DependentUpon>TrayBaseWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SettingsUI\UpdateSettingsControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SettingsUI\UpdateSettingsControl.Designer.cs">
-      <DependentUpon>UpdateSettingsControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NotificationWindow\SkillCompletionWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NotificationWindow\SkillCompletionWindow.Designer.cs">
-      <DependentUpon>SkillCompletionWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ImplantControls\ImplantTooltip.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ImplantControls\ImplantTooltip.Designer.cs">
-      <DependentUpon>ImplantTooltip.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterMarketOrdersList.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterMarketOrdersList.Designer.cs">
-      <DependentUpon>CharacterMarketOrdersList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterSkillsList.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterSkillsList.Designer.cs">
-      <DependentUpon>CharacterSkillsList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterMonitoring\MarketOrdersColumnsSelectWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NotificationWindow\MarketOrdersWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NotificationWindow\MarketOrdersWindow.Designer.cs">
-      <DependentUpon>MarketOrdersWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\NotificationList.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\NotificationList.Designer.cs">
-      <DependentUpon>NotificationList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Overview.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\Overview.Designer.cs">
-      <DependentUpon>Overview.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\OverviewItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\OverviewItem.Designer.cs">
-      <DependentUpon>OverviewItem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\OverviewLabel.cs">
+    <Compile Update="SkillPlanner\AttributeButtonControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="SkillPlanner\CertificateBrowserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SkillPlanner\CertificateBrowserControl.Designer.cs">
-      <DependentUpon>CertificateBrowserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\CertificateSelectControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SkillPlanner\CertificateSelectControl.Designer.cs">
-      <DependentUpon>CertificateSelectControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\CertificateTreeDisplayControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SkillPlanner\CertificateTreeDisplayControl.Designer.cs">
-      <DependentUpon>CertificateTreeDisplayControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\MasteryTreeDisplayControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SkillPlanner\MasteryTreeDisplayControl.Designer.cs">
-      <DependentUpon>MasteryTreeDisplayControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Updater\DataUpdateDownloadForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Updater\DataUpdateDownloadForm.Designer.cs">
-      <DependentUpon>DataUpdateDownloadForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Updater\DataUpdateNotifyForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Updater\DataUpdateNotifyForm.Designer.cs">
-      <DependentUpon>DataUpdateNotifyForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ImplantControls\ImplantSetsWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ImplantControls\ImplantSetsWindow.Designer.cs">
-      <DependentUpon>ImplantSetsWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainWindow.Designer.cs">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ApiCredentialsManagement\EsiKeyDeletionWindow.resx">
-      <DependentUpon>EsiKeyDeletionWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ApiCredentialsManagement\EsiKeysManagementWindow.resx">
-      <DependentUpon>EsiKeysManagementWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ApiCredentialsManagement\EsiKeyUpdateOrAdditionWindow.resx">
-      <DependentUpon>EsiKeyUpdateOrAdditionWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ApiCredentialsManagement\CharacterDeletionWindow.resx">
-      <DependentUpon>CharacterDeletionWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ApiCredentialsManagement\CharacterImportationWindow.resx">
-      <DependentUpon>CharacterImportationWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BlankCharacter\BlankCharacterControl.resx">
-      <DependentUpon>BlankCharacterControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BlankCharacter\BlankCharacterWindow.resx">
-      <DependentUpon>BlankCharacterWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CharacterMonitoring\CharacterAssetsList.resx">
-      <DependentUpon>CharacterAssetsList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CharacterMonitoring\CharacterContactList.resx">
-      <DependentUpon>CharacterContactList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CharacterMonitoring\CharacterFactionalWarfareStatsList.resx">
-      <DependentUpon>CharacterFactionalWarfareStatsList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CharacterMonitoring\CharacterKillLogList.resx">
-      <DependentUpon>CharacterKillLogList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CharacterMonitoring\CharacterLoyaltyList.resx">
-      <DependentUpon>CharacterLoyaltyList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CharacterMonitoring\CharacterMedalsList.resx">
-      <DependentUpon>CharacterMedalsList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CharacterMonitoring\CharacterMonitorBody.resx">
-      <DependentUpon>CharacterMonitorBody.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CharacterMonitoring\CharacterMonitorFooter.resx">
-      <DependentUpon>CharacterMonitorFooter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CharacterMonitoring\CharacterPlanetaryList.resx">
-      <DependentUpon>CharacterPlanetaryList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CharacterMonitoring\CharacterWalletJournalList.resx">
-      <DependentUpon>CharacterWalletJournalList.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CharacterMonitoring\CharacterWalletTransactionsList.resx">
-      <DependentUpon>CharacterWalletTransactionsList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DetailsWindow\WalletJournalChartWindow.resx">
-      <DependentUpon>WalletJournalChartWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CharactersComparison\CharactersComparisonWindow.resx">
-      <DependentUpon>CharactersComparisonWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CharacterMonitoring\CharacterContractsList.resx">
-      <DependentUpon>CharacterContractsList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CharacterMonitoring\CharacterEmploymentHistoryList.resx">
-      <DependentUpon>CharacterEmploymentHistoryList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CharacterMonitoring\CharacterMonitor.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>CharacterMonitor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\KillReportAttacker.resx">
-      <DependentUpon>KillReportAttacker.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\KillReportFittingContent.resx">
-      <DependentUpon>KillReportFittingContent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\KillReportInvolvedParties.resx">
-      <DependentUpon>KillReportInvolvedParties.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\KillReportVictim.resx">
-      <DependentUpon>KillReportVictim.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DetailsWindow\ContractDetailsWindow.resx">
-      <DependentUpon>ContractDetailsWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NotificationWindow\ContractsWindow.resx">
-      <DependentUpon>ContractsWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DetailsWindow\KillReportWindow.resx">
-      <DependentUpon>KillReportWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NotificationWindow\OwnedSkillBooksWindow.resx">
-      <DependentUpon>OwnedSkillBooksWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NotificationWindow\PlanetaryPinsWindow.resx">
-      <DependentUpon>PlanetaryPinsWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CharacterMonitoring\CharacterStandingsList.resx">
-      <DependentUpon>CharacterStandingsList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ReadingPane.resx">
-      <DependentUpon>ReadingPane.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DetailsWindow\EveMessageWindow.resx">
-      <DependentUpon>EveMessageWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainWindow.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CharacterMonitoring\CharacterEveMailMessagesList.resx">
-      <DependentUpon>CharacterEveMailMessagesList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CharacterMonitoring\CharacterEveNotificationsList.resx">
-      <DependentUpon>CharacterEveNotificationsList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CharacterMonitoring\CharacterResearchPointsList.resx">
-      <DependentUpon>CharacterResearchPointsList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SettingsUI\CloudStorageServiceControl.resx">
-      <DependentUpon>CloudStorageServiceControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SettingsUI\EmailNotificationsControl.resx">
-      <DependentUpon>EmailNotificationsControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SettingsUI\ExternalCalendarControl.resx">
-      <DependentUpon>ExternalCalendarControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SettingsUI\PortableEveClientsControl.resx">
-      <DependentUpon>PortableEveClientsControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SettingsUI\SettingsFileStorageControl.resx">
-      <DependentUpon>SettingsFileStorageControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SettingsUI\TrayBaseWindow.resx">
-      <DependentUpon>TrayBaseWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SettingsUI\UpdateSettingsControl.resx">
-      <DependentUpon>UpdateSettingsControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\CertificateBrowserControl.resx">
-      <DependentUpon>CertificateBrowserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\CertificateSelectControl.resx">
-      <DependentUpon>CertificateSelectControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\CertificateTreeDisplayControl.resx">
-      <DependentUpon>CertificateTreeDisplayControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\MasteryTreeDisplayControl.resx">
-      <DependentUpon>MasteryTreeDisplayControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Updater\DataUpdateDownloadForm.resx">
-      <DependentUpon>DataUpdateDownloadForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Updater\UpdateNotifyForm.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>UpdateNotifyForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <Compile Include="SettingsUI\NotificationsControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SettingsUI\NotificationsControl.Designer.cs">
-      <DependentUpon>NotificationsControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SettingsUI\ProxyAuthenticationWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SettingsUI\ProxyAuthenticationWindow.Designer.cs">
-      <DependentUpon>ProxyAuthenticationWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SettingsUI\SettingsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SettingsUI\SettingsForm.Designer.cs">
-      <DependentUpon>SettingsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SettingsUI\TrayPopupConfigForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SettingsUI\TrayPopupConfigForm.Designer.cs">
-      <DependentUpon>TrayPopupConfigForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SettingsUI\TrayTooltipConfigForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SettingsUI\TrayTooltipConfigForm.Designer.cs">
-      <DependentUpon>TrayTooltipConfigForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\AttributeButtonControl.cs">
+    <Compile Update="SkillPlanner\AttributeBarControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="SkillPlanner\AttributeBarControl.cs">
+    <Compile Update="SkillPlanner\AttributesOptimizerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="SkillPlanner\BlueprintBrowserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="SkillPlanner\BlueprintSelectControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="SkillPlanner\OverridenTreeView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="SkillPlanner\AttributesOptimizerControl.cs">
+    <Compile Update="SkillPlanner\EveObjectBrowserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SkillPlanner\AttributesOptimizerControl.Designer.cs">
-      <DependentUpon>AttributesOptimizerControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\AttributesOptimizerWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SkillPlanner\AttributesOptimizerWindow.Designer.cs">
-      <DependentUpon>AttributesOptimizerWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\AttributesOptimizerOptionsWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SkillPlanner\AttributesOptimizerOptionsWindow.Designer.cs">
-      <DependentUpon>AttributesOptimizerOptionsWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\BlueprintBrowserControl.cs">
+    <Compile Update="SkillPlanner\ItemSelectControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SkillPlanner\BlueprintBrowserControl.Designer.cs">
-      <DependentUpon>BlueprintBrowserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\BlueprintSelectControl.cs">
+    <Compile Update="SkillPlanner\RequiredSkillsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SkillPlanner\BlueprintSelectControl.Designer.cs">
-      <DependentUpon>BlueprintSelectControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\ObsoleteEntriesWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SkillPlanner\ObsoleteEntriesWindow.Designer.cs">
-      <DependentUpon>ObsoleteEntriesWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\OverridenTreeView.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="SkillPlanner\PlanColumnSelectWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SkillPlanner\PlanPrioritiesEditorWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SkillPlanner\PlanPrioritiesEditorWindow.Designer.cs">
-      <DependentUpon>PlanPrioritiesEditorWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\LoadoutImportationWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SkillPlanner\LoadoutImportationWindow.Designer.cs">
-      <DependentUpon>LoadoutImportationWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\EveObjectBrowserControl.cs">
+    <Compile Update="SkillPlanner\EveObjectSelectControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SkillPlanner\EveObjectBrowserControl.Designer.cs">
-      <DependentUpon>EveObjectBrowserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\ItemSelectControl.cs">
+    <Compile Update="SkillPlanner\ShipSelectControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SkillPlanner\ItemSelectControl.Designer.cs">
-      <DependentUpon>ItemSelectControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\PlanToOperationWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SkillPlanner\PlanToOperationWindow.Designer.cs">
-      <DependentUpon>PlanToOperationWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\ShipLoadoutSelectWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SkillPlanner\ShipLoadoutSelectWindow.Designer.cs">
-      <DependentUpon>ShipLoadoutSelectWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\RequiredSkillsControl.cs">
+    <Compile Update="SkillPlanner\SkillBrowserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SkillPlanner\RequiredSkillsControl.Designer.cs">
-      <DependentUpon>RequiredSkillsControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\PlanImportationFromCharacterWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SkillPlanner\PlanImportationFromCharacterWindow.Designer.cs">
-      <DependentUpon>PlanImportationFromCharacterWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\EveObjectSelectControl.cs">
+    <Compile Update="SkillPlanner\ItemBrowserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SkillPlanner\EveObjectSelectControl.Designer.cs">
-      <DependentUpon>EveObjectSelectControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\ShipSelectControl.cs">
+    <Compile Update="SkillPlanner\PlanEditorControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SkillPlanner\ShipSelectControl.Designer.cs">
-      <DependentUpon>ShipSelectControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\SkillBrowserControl.cs">
+    <Compile Update="SkillPlanner\ShipBrowserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SkillPlanner\SkillBrowserControl.Designer.cs">
-      <DependentUpon>SkillBrowserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\PlanNotesEditorWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SkillPlanner\PlanNotesEditorWindow.Designer.cs">
-      <DependentUpon>PlanNotesEditorWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\ImplantCalculatorWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SkillPlanner\ImplantCalculatorWindow.Designer.cs">
-      <DependentUpon>ImplantCalculatorWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\ItemBrowserControl.cs">
+    <Compile Update="SkillPlanner\SkillSelectControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SkillPlanner\ItemBrowserControl.Designer.cs">
-      <DependentUpon>ItemBrowserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\PlanWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SkillPlanner\PlanWindow.Designer.cs">
-      <DependentUpon>PlanWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\NewPlanWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SkillPlanner\NewPlanWindow.Designer.cs">
-      <DependentUpon>NewPlanWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\PlanEditorControl.cs">
+    <Compile Update="SkillPlanner\SkillTreeDisplayControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SkillPlanner\PlanEditorControl.Designer.cs">
-      <DependentUpon>PlanEditorControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\PlanManagementWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SkillPlanner\PlanManagementWindow.Designer.cs">
-      <DependentUpon>PlanManagementWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\ShipBrowserControl.cs">
+    <Compile Update="CharacterMonitoring\CharacterSkillsQueueList.cs">
       <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SkillPlanner\ShipBrowserControl.Designer.cs">
-      <DependentUpon>ShipBrowserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\SkillExplorerWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SkillPlanner\SkillExplorerWindow.Designer.cs">
-      <DependentUpon>SkillExplorerWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\SkillSelectControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SkillPlanner\SkillSelectControl.Designer.cs">
-      <DependentUpon>SkillSelectControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SkillPlanner\SkillTreeDisplayControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SkillPlanner\SkillTreeDisplayControl.Designer.cs">
-      <DependentUpon>SkillTreeDisplayControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NotificationWindow\TimeCheckNotification.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NotificationWindow\TimeCheckNotification.Designer.cs">
-      <DependentUpon>TimeCheckNotification.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SettingsUI\TrayPopupWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SettingsUI\TrayTooltipWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ExceptionHandling\UnhandledExceptionWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ExceptionHandling\UnhandledExceptionWindow.Designer.cs">
-      <DependentUpon>UnhandledExceptionWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Updater\UpdateDownloadForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Updater\UpdateDownloadForm.Designer.cs">
-      <DependentUpon>UpdateDownloadForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Updater\UpdateNotifyForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Updater\UpdateNotifyForm.Designer.cs">
-      <DependentUpon>UpdateNotifyForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterSkillsQueueList.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CharacterMonitoring\CharacterSkillsQueueList.Designer.cs">
-      <DependentUpon>CharacterSkillsQueueList.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="About\AboutWindow.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>AboutWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CharacterMonitoring\CharacterSkillsList.resx">
-      <DependentUpon>CharacterSkillsList.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Overview.resx">
-      <DependentUpon>Overview.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\OverviewItem.resx">
-      <DependentUpon>OverviewItem.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Updater\DataUpdateNotifyForm.resx">
-      <DependentUpon>DataUpdateNotifyForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ImplantControls\ImplantSetsWindow.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>ImplantSetsWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\AttributesOptimizerControl.resx">
-      <DependentUpon>AttributesOptimizerControl.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\AttributesOptimizerWindow.resx">
-      <DependentUpon>AttributesOptimizerWindow.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\AttributesOptimizerOptionsWindow.resx">
-      <DependentUpon>AttributesOptimizerOptionsWindow.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\PlanPrioritiesEditorWindow.resx">
-      <DependentUpon>PlanPrioritiesEditorWindow.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\PlanImportationFromCharacterWindow.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>PlanImportationFromCharacterWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\LoadoutImportationWindow.resx">
-      <DependentUpon>LoadoutImportationWindow.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\EveObjectBrowserControl.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>EveObjectBrowserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\EveObjectSelectControl.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>EveObjectSelectControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\ItemSelectControl.resx">
-      <DependentUpon>ItemSelectControl.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\ShipLoadoutSelectWindow.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>ShipLoadoutSelectWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\RequiredSkillsControl.resx">
-      <DependentUpon>RequiredSkillsControl.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\SkillBrowserControl.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>SkillBrowserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\PlanNotesEditorWindow.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>PlanNotesEditorWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\ImplantCalculatorWindow.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>ImplantCalculatorWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\ItemBrowserControl.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>ItemBrowserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\PlanWindow.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>PlanWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\NewPlanWindow.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>NewPlanWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\PlanEditorControl.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>PlanEditorControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\PlanManagementWindow.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>PlanManagementWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\ShipBrowserControl.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>ShipBrowserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\SkillExplorerWindow.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>SkillExplorerWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\SkillSelectControl.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>SkillSelectControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\SkillTreeDisplayControl.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>SkillTreeDisplayControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NotificationWindow\TimeCheckNotification.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>TimeCheckNotification.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ExceptionHandling\UnhandledExceptionWindow.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>UnhandledExceptionWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Updater\UpdateDownloadForm.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>UpdateDownloadForm.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="app.manifest" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="SkillPlanner\BrowserClasses.cd" />
-    <EmbeddedResource Include="ApiErrorHandling\ApiErrorWindow.resx">
-      <DependentUpon>ApiErrorWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ApiErrorHandling\HttpTimeoutTroubleshooter.resx">
-      <DependentUpon>HttpTimeoutTroubleshooter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CharacterMonitoring\CharacterMonitorHeader.resx">
-      <DependentUpon>CharacterMonitorHeader.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NotificationWindow\IndustryJobsWindow.resx">
-      <DependentUpon>IndustryJobsWindow.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CharacterMonitoring\CharacterIndustryJobsList.resx">
-      <DependentUpon>CharacterIndustryJobsList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NotificationWindow\SkillCompletionWindow.resx">
-      <DependentUpon>SkillCompletionWindow.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ImplantControls\ImplantTooltip.resx">
-      <DependentUpon>ImplantTooltip.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CharacterMonitoring\CharacterMarketOrdersList.resx">
-      <DependentUpon>CharacterMarketOrdersList.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CharacterMonitoring\CharacterSkillsQueueList.resx">
-      <DependentUpon>CharacterSkillsQueueList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NotificationWindow\MarketOrdersWindow.resx">
-      <DependentUpon>MarketOrdersWindow.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\NotificationList.resx">
-      <DependentUpon>NotificationList.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SettingsUI\NotificationsControl.resx">
-      <DependentUpon>NotificationsControl.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SettingsUI\ProxyAuthenticationWindow.resx">
-      <DependentUpon>ProxyAuthenticationWindow.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SettingsUI\SettingsForm.resx">
-      <DependentUpon>SettingsForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SettingsUI\TrayPopupConfigForm.resx">
-      <DependentUpon>TrayPopupConfigForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SettingsUI\TrayTooltipConfigForm.resx">
-      <DependentUpon>TrayTooltipConfigForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\BlueprintBrowserControl.resx">
-      <DependentUpon>BlueprintBrowserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\BlueprintSelectControl.resx">
-      <DependentUpon>BlueprintSelectControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\ObsoleteEntriesWindow.resx">
-      <DependentUpon>ObsoleteEntriesWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\PlanToOperationWindow.resx">
-      <DependentUpon>PlanToOperationWindow.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SkillPlanner\ShipSelectControl.resx">
-      <DependentUpon>ShipSelectControl.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EVEMon.Common\EVEMon.Common.csproj">
-      <Project>{C0665275-3E0B-4117-81B0-751206ED03CD}</Project>
-      <Name>EVEMon.Common</Name>
-      <Private>True</Private>
-      <Properties>SkipValidatePackageReferences=true</Properties>
-    </ProjectReference>
-    <ProjectReference Include="..\EVEMon.Watchdog\EVEMon.Watchdog.csproj">
-      <Project>{8C4A87A0-780E-4765-ADD0-146091FE26F4}</Project>
-      <Name>EVEMon.Watchdog</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EVEMon.WindowsApi\EVEMon.WindowsApi.csproj">
-      <Project>{D942D976-6185-4ECD-A83B-60260100D12E}</Project>
-      <Name>EVEMon.WindowsApi</Name>
-      <Private>True</Private>
-    </ProjectReference>
-    <ProjectReference Include="..\EVEMon.PieChart\EVEMon.PieChart.csproj">
-      <Project>{696E929A-6A4A-4C6D-A8B2-C4F25F781940}</Project>
-      <Name>EVEMon.PieChart</Name>
-      <Private>True</Private>
-    </ProjectReference>
+    <ProjectReference Include="..\EVEMon.Common\EVEMon.Common.csproj" />
+    <ProjectReference Include="..\EVEMon.Watchdog\EVEMon.Watchdog.csproj" />
+    <ProjectReference Include="..\EVEMon.WindowsApi\EVEMon.WindowsApi.csproj" />
+    <ProjectReference Include="..\EVEMon.PieChart\EVEMon.PieChart.csproj" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
@@ -1204,20 +251,44 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <ItemGroup>
+    <Compile Remove="BlankCharacterControl.cs" />
+    <Compile Remove="BlankCharacterControl.Designer.cs" />
+    <Compile Remove="BlankCharacterWindow.cs" />
+    <Compile Remove="BlankCharacterWindow.Designer.cs" />
+    <Compile Remove="Schedule\CalendarControl.cs" />
+    <Compile Remove="Schedule\CalendarControl.Designer.cs" />
+    <Compile Remove="Schedule\DateSelectWindow.cs" />
+    <Compile Remove="Schedule\DateSelectWindow.Designer.cs" />
+    <Compile Remove="Schedule\EditScheduleEntryWindow.cs" />
+    <Compile Remove="Schedule\EditScheduleEntryWindow.Designer.cs" />
+    <Compile Remove="Schedule\ScheduleCalendar.cs" />
+    <Compile Remove="Schedule\ScheduleEditorWindow.cs" />
+    <Compile Remove="Schedule\ScheduleEditorWindow.Designer.cs" />
+    <Compile Remove="SkillPlanner\EveObjectBrowserSimple.cs" />
+    <Compile Remove="SkillPlanner\EveObjectBrowserSimple.Designer.cs" />
+    <Compile Remove="SkillPlanner\SuggestionWindow.cs" />
+    <Compile Remove="SkillPlanner\SuggestionWindow.Designer.cs" />
+    <EmbeddedResource Remove="BlankCharacterControl.resx" />
+    <EmbeddedResource Remove="BlankCharacterWindow.resx" />
+    <EmbeddedResource Remove="Schedule\CalendarControl.resx" />
+    <EmbeddedResource Remove="Schedule\DateSelectWindow.resx" />
+    <EmbeddedResource Remove="Schedule\EditScheduleEntryWindow.resx" />
+    <EmbeddedResource Remove="Schedule\ScheduleEditorWindow.resx" />
+    <EmbeddedResource Remove="SkillPlanner\EveObjectBrowserSimple.resx" />
+    <EmbeddedResource Remove="SkillPlanner\SuggestionWindow.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="WinForms.DataVisualization" Version="1.9.2" />
+  </ItemGroup>
   <PropertyGroup>
-    <PreBuildEvent>cd $(SolutionDir)tools\ResFileCreator\$(OutDir)
-EVEMonResFileCreator.exe</PreBuildEvent>
+    <PreBuildEvent>
+        cd "$(SolutionDir)tools\ResFileCreator\bin\$(Configuration)\net8.0-windows\"
+        EVEMonResFileCreator.exe
+    </PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>del "$(ProjectDir)"EVEMon.res
+    <PostBuildEvent>del "$(MSBuildProjectDirectory)"\EVEMon.res
 if exist "$(TargetDir)"EVEMon.exe.config del "$(TargetDir)"EVEMon.exe.config
 if exist "$(TargetDir)"stdole.dll del "$(TargetDir)"stdole.dll</PostBuildEvent>
   </PropertyGroup>

@@ -228,7 +228,7 @@ namespace EVEMon.Common.Net
             if (param.IfModifiedSince != null)
                 headers.IfModifiedSince = param.IfModifiedSince;
             headers.Pragma.TryParseAdd("no-cache");
-            headers.UserAgent.TryParseAdd(HttpWebClientServiceState.UserAgent);
+            headers.UserAgent.TryParseAdd(HttpWebClientServiceState.UserAgent.ToString());
             // Encoding support
             if (param.AcceptEncoded)
                 headers.AcceptEncoding.ParseAdd("gzip,deflate;q=0.8");

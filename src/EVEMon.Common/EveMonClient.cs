@@ -76,9 +76,9 @@ namespace EVEMon.Common
         /// Starts the event processing on a multi-threaded model, with the UI actor being the main actor.
         /// </summary>
         /// <param name="thread">The thread.</param>
-        public static void Run(Thread thread)
+        public static void Run(TaskScheduler taskScheduler)
         {
-            Dispatcher.Run(thread);
+            Dispatcher.Run(taskScheduler);
             Trace();
         }
 

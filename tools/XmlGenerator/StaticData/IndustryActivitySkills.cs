@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 namespace EVEMon.XmlGenerator.StaticData
 {
     public sealed class IndustryActivitySkills : IRelation
-	{
+    {
         [XmlElement("typeID")]
         public int BlueprintTypeID { get; set; }
 
@@ -15,7 +15,7 @@ namespace EVEMon.XmlGenerator.StaticData
         public int SkillID { get; set; }
 
         [XmlElement("level")]
-		public int? Level { get; set; }
+        public int? Level { get; set; }
 
         #region IRelation Members
 

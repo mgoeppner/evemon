@@ -544,7 +544,7 @@ namespace EVEMon.SettingsUI
             // External calendar settings
             m_settings.Calendar.Enabled = externalCalendarCheckbox.Checked;
             externalCalendarControl.ApplyExternalCalendarSettings(m_settings);
-            
+
             // Run at startup
             if (!runAtStartupComboBox.Enabled)
                 return;
@@ -560,7 +560,7 @@ namespace EVEMon.SettingsUI
             else
                 rk.DeleteValue("EVEMon", false);
         }
-        
+
         /// <summary>
         /// Populates the combobox for the market price providers.
         /// </summary>
@@ -791,7 +791,7 @@ namespace EVEMon.SettingsUI
                 trayPopupRadio.Checked = true;
             }
         }
-        
+
         /// <summary>
         /// Reset the priorities conflict custom message box.
         /// </summary>
@@ -836,8 +836,8 @@ namespace EVEMon.SettingsUI
             }
 
             string groupDirectory = $"{AppDomain.CurrentDomain.BaseDirectory}Resources\\Skill_Select\\Group";
-            string defaultResourcesPath = $"{groupDirectory}0\\Default.resources";
-            string groupResourcesPath = $"{groupDirectory}{index}\\{groupname}.resources";
+            string defaultResourcesPath = $"{groupDirectory}0\\Default.resx";
+            string groupResourcesPath = $"{groupDirectory}{index}\\{groupname}.resx";
 
             if (!File.Exists(defaultResourcesPath) ||
                 (!string.IsNullOrEmpty(groupname) && !File.Exists(groupResourcesPath)))
@@ -993,5 +993,10 @@ namespace EVEMon.SettingsUI
         }
 
         #endregion
+
+        private void generalPage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

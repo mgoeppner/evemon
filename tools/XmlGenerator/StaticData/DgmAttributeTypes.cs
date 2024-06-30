@@ -1,5 +1,5 @@
-﻿using System.Xml.Serialization;
-using EVEMon.XmlGenerator.Interfaces;
+﻿using EVEMon.XmlGenerator.Interfaces;
+using System.Xml.Serialization;
 
 namespace EVEMon.XmlGenerator.StaticData
 {

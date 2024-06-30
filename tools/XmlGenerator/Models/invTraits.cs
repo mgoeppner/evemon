@@ -1,10 +1,7 @@
 namespace EVEMon.XmlGenerator.Models
 {
-    using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     public partial class invTraits
     {
@@ -12,11 +9,11 @@ namespace EVEMon.XmlGenerator.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int traitID { get; set; }
 
-		public int? typeID { get; set; }
+        public int? typeID { get; set; }
 
-		public int? skillID { get; set; }
+        public int? skillID { get; set; }
 
-		public float? bonus { get; set; }
+        public float? bonus { get; set; }
 
         [Required]
         [StringLength(500)]

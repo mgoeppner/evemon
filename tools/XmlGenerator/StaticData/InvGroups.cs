@@ -1,5 +1,5 @@
-﻿using System.Xml.Serialization;
-using EVEMon.XmlGenerator.Interfaces;
+﻿using EVEMon.XmlGenerator.Interfaces;
+using System.Xml.Serialization;
 
 namespace EVEMon.XmlGenerator.StaticData
 {
@@ -20,9 +20,9 @@ namespace EVEMon.XmlGenerator.StaticData
         [XmlElement("published")]
         public bool? Published { get; set; }
 
-		public bool? UseBasePrice { get; set; }
-		public bool? Anchored { get; set; }
-		public bool? Anchorable { get; set; }
-		public bool? FittableNonSingleton { get; set; }
+        public bool? UseBasePrice { get; set; }
+        public bool? Anchored { get; set; }
+        public bool? Anchorable { get; set; }
+        public bool? FittableNonSingleton { get; set; }
     }
 }

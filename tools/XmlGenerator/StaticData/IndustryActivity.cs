@@ -4,15 +4,15 @@ using System.Xml.Serialization;
 namespace EVEMon.XmlGenerator.StaticData
 {
     public sealed class IndustryActivity : IRelation
-	{
-		[XmlElement("typeID")]
+    {
+        [XmlElement("typeID")]
         public int BlueprintTypeID { get; set; }
 
         [XmlElement("activityID")]
-		public int ActivityID { get; set; }
+        public int ActivityID { get; set; }
 
         [XmlElement("time")]
-		public int? Time { get; set; }
+        public int? Time { get; set; }
 
         #region IRelation Members
 

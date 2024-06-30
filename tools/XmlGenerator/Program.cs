@@ -1,11 +1,12 @@
-﻿using System;
-using System.Diagnostics;
-using System.Globalization;
-using System.Threading;
-using EVEMon.XmlGenerator.Datafiles;
+﻿using EVEMon.XmlGenerator.Datafiles;
+using EVEMon.XmlGenerator.Models;
 using EVEMon.XmlGenerator.Providers;
 using EVEMon.XmlGenerator.Utils;
 using EVEMon.XmlGenerator.Xmlfiles;
+using System;
+using System.Diagnostics;
+using System.Globalization;
+using System.Threading;
 
 namespace EVEMon.XmlGenerator
 {
@@ -18,6 +19,8 @@ namespace EVEMon.XmlGenerator
         [STAThread]
         private static void Main()
         {
+            SQLitePCL.Batteries_V2.Init();
+
             Stopwatch stopwatch = Stopwatch.StartNew();
 
             // Setting a standard format for the generated files
@@ -36,7 +39,7 @@ namespace EVEMon.XmlGenerator
 
             Geography.GenerateDatafile();
             Blueprints.GenerateDatafile();
-			Items.GenerateDatafile(); // Requires GenerateProperties()
+            Items.GenerateDatafile(); // Requires GenerateProperties()
             Reprocessing.GenerateDatafile(); // Requires GenerateItems()
 
             // Generate MD5 Sums file

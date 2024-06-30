@@ -1,1228 +1,229 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C0665275-3E0B-4117-81B0-751206ED03CD}</ProjectGuid>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EVEMon.Common</RootNamespace>
-    <AssemblyName>EVEMon.Common</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
-    <TargetFrameworkProfile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>TRACE;NO_THREAD_SAFETY</DefineConstants>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
     <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE;NO_THREAD_SAFETY</DefineConstants>
-    <Optimize>true</Optimize>
     <DebugType>none</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
     <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Snapshot|AnyCPU'">
-    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE;NO_THREAD_SAFETY</DefineConstants>
     <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
     <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Management" />
-    <Reference Include="System.Net" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Net.Http.WebRequest" />
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System" />
-    <Reference Include="System.configuration" />
-    <Reference Include="System.Design" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
-  </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="AsyncPump.cs" />
-    <Compile Include="Attributes\ParentAttribute.cs" />
-    <Compile Include="CloudStorageServices\AuthenticationSteps.cs" />
-    <Compile Include="Collections\Global\GlobalAPIProviderCollection.cs" />
-    <Compile Include="Constants\NetworkConstants1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NetworkConstants.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\CustomCursors.cs" />
-    <Compile Include="CustomEventArgs\LabelChangedEventArgs.cs" />
-    <Compile Include="Data\Faction.cs" />
-    <Compile Include="Data\Planet.cs" />
-    <Compile Include="Enumerations\AttributeOptimizationStrategy.cs" />
-    <Compile Include="Enumerations\BlinkAction.cs" />
-    <Compile Include="Enumerations\CCPAPI\CCPAPIContactType.cs" />
-    <Compile Include="Enumerations\CCPAPI\ESIAPIGenericMethods.cs" />
-    <Compile Include="Enumerations\CCPAPI\CCPAPILocationType.cs" />
-    <Compile Include="Enumerations\CCPAPI\CCPAPIPlanetTypes.cs" />
-    <Compile Include="Enumerations\UISettings\AssetGrouping.cs" />
-    <Compile Include="Enumerations\UISettings\CalendarProvider.cs" />
-    <Compile Include="Enumerations\UISettings\CloseBehaviour.cs" />
-    <Compile Include="Enumerations\UISettings\ContractGrouping.cs" />
-    <Compile Include="Enumerations\UISettings\EVEMailMessagesGrouping.cs" />
-    <Compile Include="Enumerations\UISettings\EVENotificationsGrouping.cs" />
-    <Compile Include="Enumerations\UISettings\GoogleCalendarReminder.cs" />
-    <Compile Include="Enumerations\UISettings\IndustryJobGrouping.cs" />
-    <Compile Include="Enumerations\UISettings\MainWindowTitleFormat.cs" />
-    <Compile Include="Enumerations\UISettings\MarketOrderGrouping.cs" />
-    <Compile Include="Enumerations\UISettings\MarkupType.cs" />
-    <Compile Include="Enumerations\UISettings\ObsoleteEntryRemovalBehaviour.cs" />
-    <Compile Include="Enumerations\UISettings\PlanetaryGrouping.cs" />
-    <Compile Include="Enumerations\UISettings\PortraitSizes.cs" />
-    <Compile Include="Enumerations\UISettings\ReadingPanePositioning.cs" />
-    <Compile Include="Enumerations\UISettings\SystemTrayBehaviour.cs" />
-    <Compile Include="Enumerations\UISettings\ThreeStateSortOrder.cs" />
-    <Compile Include="Enumerations\UISettings\TrayPopupGrouping.cs" />
-    <Compile Include="Enumerations\UISettings\TrayPopupSort.cs" />
-    <Compile Include="Enumerations\UISettings\TrayPopupStyles.cs" />
-    <Compile Include="Enumerations\UISettings\UpdatePeriod.cs" />
-    <Compile Include="Enumerations\UISettings\WalletJournalGrouping.cs" />
-    <Compile Include="Enumerations\UISettings\WalletTransactionGrouping.cs" />
-    <Compile Include="EveMonClient.Events.cs" />
-    <Compile Include="Exceptions\APIException.cs" />
-    <Compile Include="CustomEventArgs\TimeCheckSyncEventArgs.cs" />
-    <Compile Include="Extensions\EventHandlerExtensions.cs" />
-    <Compile Include="Enumerations\CharacterSaveFormat.cs" />
-    <Compile Include="Extensions\HttpExtensions.cs" />
-    <Compile Include="Extensions\ObjectExtensions.cs" />
-    <Compile Include="Helpers\BlankCharacterUIHelper.cs" />
-    <Compile Include="Helpers\ImageHelper.cs" />
-    <Compile Include="Helpers\TaskHelper.cs" />
-    <Compile Include="MarketPricer\Fuzzworks\FuzzworksItemPricer.cs" />
-    <Compile Include="Models\AccountStatus.cs" />
-    <Compile Include="Models\ESIMethod.cs" />
-    <Compile Include="Models\Extended\ESIMethods.cs" />
-    <Compile Include="Models\Loyalty.cs" />
-    <Compile Include="Models\Collections\LoyaltyCollection.cs" />
-    <Compile Include="Net\HttpWebClientService.StringDownload.cs" />
-    <Compile Include="Net\RequestParams.cs" />
-    <Compile Include="Net\ResponseParams.cs" />
-    <Compile Include="QueryMonitor\CCPQueryMonitorBase.cs" />
-    <Compile Include="QueryMonitor\PagedQueryMonitor.cs" />
-    <Compile Include="Serialization\Datafiles\SerializablePlanet.cs" />
-    <Compile Include="Serialization\Esi\EsiLoyaltyListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIContactsList.cs" />
-    <Compile Include="Serialization\Esi\EsiAPILoyalty.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIMedals.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIPlanet.cs" />
-    <Compile Include="Serialization\Esi\EsiErrors.cs" />
-    <Compile Include="Serialization\Eve\SerializableLocation.cs" />
-    <Compile Include="Serialization\Fuzzworks\SerializableFuzzworksPriceItem.cs" />
-    <Compile Include="Serialization\Fuzzworks\SerializableFuzzworksPriceListItem.cs" />
-    <Compile Include="Serialization\JsonResult.cs" />
-    <Compile Include="Serialization\Esi\EsiResult.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIError.cs" />
-    <Compile Include="Serialization\Esi\EsiAPITokenInfo.cs" />
-    <Compile Include="Serialization\Esi\EsiAccountBalanceListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiAPICorpAccountBalance.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIAssetList.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIAttributes.cs" />
-    <Compile Include="Serialization\Esi\EsiAPICalendarEvent.cs" />
-    <Compile Include="Serialization\Esi\EsiAPICalendarEventAttendees.cs" />
-    <Compile Include="Serialization\Esi\EsiAPICalendarEvents.cs" />
-    <Compile Include="Serialization\Esi\EsiAPICharacterNames.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIClones.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIContactNotifications.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIContractBids.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIContractItems.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIContracts.cs" />
-    <Compile Include="Serialization\Esi\EsiAPICorporationSheet.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIDivisions.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIEmploymentHistory.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIEveFactionalWarfareStats.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIFactionalWarfareStats.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIEveFactionWars.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIIndustryJobs.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIJumpFatigue.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIKillLog.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIKillMail.cs" />
-    <Compile Include="Serialization\Esi\EsiAPILocation.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIMailBody.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIMailingLists.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIMailMessages.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIMarketOrders.cs" />
-    <Compile Include="Serialization\Esi\EsiAPINotifications.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIPlanetaryColoniesList.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIPlanetaryColony.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIResearchPoints.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIServerStatus.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIShip.cs" />
-    <Compile Include="Serialization\Esi\EsiAPISkillQueue.cs" />
-    <Compile Include="Serialization\Esi\EsiAPISkills.cs" />
-    <Compile Include="Serialization\Esi\EsiAPISovStructures.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIStandings.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIStation.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIStructure.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIType.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIWalletJournal.cs" />
-    <Compile Include="Serialization\Esi\EsiAPIWalletTransactions.cs" />
-    <Compile Include="Serialization\Esi\EsiAssetListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiCalendarEventAttendeeListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiCalendarEventListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiJumpCloneListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiCharacterBase.cs" />
-    <Compile Include="Serialization\Esi\EsiCharacterNameListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiAPICharacterSheet.cs" />
-    <Compile Include="Serialization\Esi\EsiSkillListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiContactListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiContactNotifyListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiContractBidsListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiContractItemsListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiContractListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiDivisionListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiEmploymentHistoryListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiEveFactionalWarfareStatsListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiEveFactionWarsListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiEveFactionWarfareTotals.cs" />
-    <Compile Include="Serialization\Esi\EsiJobListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiKillLogAttackersListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiKillLogItemListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiKillLogListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiKillLogVictim.cs" />
-    <Compile Include="Serialization\Esi\EsiLocationBase.cs" />
-    <Compile Include="Serialization\Esi\EsiMailBase.cs" />
-    <Compile Include="Serialization\Esi\EsiMailingListsListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiMailMessagesListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiMailRecipientListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiMedalsListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiNotificationsListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiOrderListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiPlanetaryColonyListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiPlanetaryContentsListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiPlanetaryExtractorDetails.cs" />
-    <Compile Include="Serialization\Esi\EsiPlanetaryExtractorHead.cs" />
-    <Compile Include="Serialization\Esi\EsiPlanetaryFactoryDetails.cs" />
-    <Compile Include="Serialization\Esi\EsiPlanetaryLink.cs" />
-    <Compile Include="Serialization\Esi\EsiPlanetaryPin.cs" />
-    <Compile Include="Serialization\Esi\EsiPlanetaryRoute.cs" />
-    <Compile Include="Serialization\Esi\EsiPosition.cs" />
-    <Compile Include="Serialization\Esi\EsiSkillQueueListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiRefTypeString.cs" />
-    <Compile Include="Serialization\Esi\EsiResearchListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiStandingsListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiSovStructureListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiWalletJournalListItem.cs" />
-    <Compile Include="Serialization\Esi\EsiWalletTransactionsListItem.cs" />
-    <Compile Include="Serialization\SerializableAPIError.cs" />
-    <Compile Include="CloudStorageServices\CloudStorageServiceAPIFile.cs" />
-    <Compile Include="Serialization\SerializableAPIResult.cs" />
-    <Compile Include="CloudStorageServices\CloudStorageServiceProvider.cs" />
-    <Compile Include="Serialization\SerializableAPICredentials.cs" />
-    <Compile Include="CloudStorageServices\CloudStorageServiceResources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CloudStorageServiceResources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="CloudStorageServices\Dropbox\DropboxCloudStorageServiceProvider.cs" />
-    <Compile Include="CloudStorageServices\Dropbox\DropboxCloudStorageServiceSettings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>DropboxCloudStorageServiceSettings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="CloudStorageServices\GoogleDrive\GoogleDriveCloudStorageServiceProvider.cs" />
-    <Compile Include="CloudStorageServices\GoogleDrive\GoogleDriveCloudStorageServiceSettings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>GoogleDriveCloudStorageServiceSettings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="CloudStorageServices\OneDrive\OneDriveCloudStorageServiceProvider.cs" />
-    <Compile Include="CloudStorageServices\OneDrive\OneDriveCloudStorageServiceSettings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>OneDriveCloudStorageServiceSettings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="Constants\EveConstants.cs" />
-    <Compile Include="Constants\EveMonConstants.cs" />
-    <Compile Include="CustomEventArgs\LoadoutEventArgs.cs" />
-    <Compile Include="CustomEventArgs\LoadoutFeedEventArgs.cs" />
-    <Compile Include="Data\MasteryCertificate.cs" />
-    <Compile Include="Data\Mastery.cs" />
-    <Compile Include="Data\MasteryShipCollection.cs" />
-    <Compile Include="Data\MasteryShip.cs" />
-    <Compile Include="Data\StaticMasteries.cs" />
-    <Compile Include="Enumerations\AbbreviationFormat.cs" />
-    <Compile Include="Enumerations\ActiveJobState.cs" />
-    <Compile Include="Enumerations\AgentType.cs" />
-    <Compile Include="Enumerations\AmarrMilitiaRank.cs" />
-    <Compile Include="Enumerations\Ancestry.cs" />
-    <Compile Include="Enumerations\CCPAPI\ESIAPICharacterMethods.cs" />
-    <Compile Include="Enumerations\CCPAPI\ESIAPICorporationMethods.cs" />
-    <Compile Include="Enumerations\CCPAPI\CCPAPIKeyType.cs" />
-    <Compile Include="Enumerations\CCPAPI\CCPAPIMethodsEnum.cs" />
-    <Compile Include="Enumerations\CCPAPI\APIErrorType.cs" />
-    <Compile Include="Enumerations\CCPAPI\CCPJobCompletedStatus.cs" />
-    <Compile Include="Enumerations\CCPAPI\CCPOrderState.cs" />
-    <Compile Include="Enumerations\Bloodline.cs" />
-    <Compile Include="Enumerations\BlueprintActivity.cs" />
-    <Compile Include="Enumerations\BlueprintType.cs" />
-    <Compile Include="Enumerations\CaldariMilitiaRank.cs" />
-    <Compile Include="Enumerations\CertificateFilter.cs" />
-    <Compile Include="Enumerations\CertificateGrade.cs" />
-    <Compile Include="Enumerations\CertificateSort.cs" />
-    <Compile Include="Enumerations\CertificateStatus.cs" />
-    <Compile Include="Enumerations\CharacterSortCriteria.cs" />
-    <Compile Include="Enumerations\ConnectionStatus.cs" />
-    <Compile Include="Enumerations\ContactGroup.cs" />
-    <Compile Include="Enumerations\ContactType.cs" />
-    <Compile Include="Enumerations\ContractAvailability.cs" />
-    <Compile Include="Enumerations\ContractState.cs" />
-    <Compile Include="Enumerations\ContractType.cs" />
-    <Compile Include="Enumerations\DataCompression.cs" />
-    <Compile Include="Enumerations\DescriptiveTextOptions.cs" />
-    <Compile Include="Enumerations\EveAttribute.cs" />
-    <Compile Include="Enumerations\EveImageSize.cs" />
-    <Compile Include="Enumerations\EveImageSizeMode.cs" />
-    <Compile Include="Enumerations\EveMailState.cs" />
-    <Compile Include="Enumerations\GallenteMilitiaRank.cs" />
-    <Compile Include="Enumerations\Gender.cs" />
-    <Compile Include="Enumerations\ImplantSlots.cs" />
-    <Compile Include="Enumerations\IssuedFor.cs" />
-    <Compile Include="Enumerations\ItemFamily.cs" />
-    <Compile Include="Enumerations\ItemMetaGroup.cs" />
-    <Compile Include="Enumerations\ItemSlot.cs" />
-    <Compile Include="Enumerations\JobState.cs" />
-    <Compile Include="Enumerations\KillGroup.cs" />
-    <Compile Include="Enumerations\LearningOptions.cs" />
-    <Compile Include="Enumerations\LoadoutFormat.cs" />
-    <Compile Include="Enumerations\MasteryStatus.cs" />
-    <Compile Include="Enumerations\MedalGroup.cs" />
-    <Compile Include="Enumerations\MinmatarMilitiaRank.cs" />
-    <Compile Include="Enumerations\ObjectActivityFilter.cs" />
-    <Compile Include="Enumerations\ObjectUsabilityFilter.cs" />
-    <Compile Include="Enumerations\ObsoleteRemovalPolicy.cs" />
-    <Compile Include="Enumerations\OrderState.cs" />
-    <Compile Include="Enumerations\PathSearchCriteria.cs" />
-    <Compile Include="Enumerations\PlanChange.cs" />
-    <Compile Include="Enumerations\PlanEntrySort.cs" />
-    <Compile Include="Enumerations\PlanEntryType.cs" />
-    <Compile Include="Enumerations\PlanetaryPinState.cs" />
-    <Compile Include="Enumerations\PlanFormat.cs" />
-    <Compile Include="Enumerations\PlanOperations.cs" />
-    <Compile Include="Enumerations\PlanSort.cs" />
-    <Compile Include="Enumerations\QueryStatus.cs" />
-    <Compile Include="Enumerations\Race.cs" />
-    <Compile Include="Enumerations\RemappingPointStatus.cs" />
-    <Compile Include="Enumerations\ServerStatus.cs" />
-    <Compile Include="Enumerations\SkillFilter.cs" />
-    <Compile Include="Enumerations\SkillSort.cs" />
-    <Compile Include="Enumerations\SortOrder.cs" />
-    <Compile Include="Enumerations\StandingGroup.cs" />
-    <Compile Include="Enumerations\StandingStatus.cs" />
-    <Compile Include="Enumerations\ThrobberState.cs" />
-    <Compile Include="Enumerations\TrainingOrigin.cs" />
-    <Compile Include="Enumerations\TransactionType.cs" />
-    <Compile Include="Collections\CollectionExtensions.cs" />
-    <Compile Include="Collections\IReadonlyKeyedCollection.cs" />
-    <Compile Include="Helpers\LoadoutBase.cs" />
-    <Compile Include="Helpers\GAnalyticsTracker.cs" />
-    <Compile Include="Helpers\Loadout.cs" />
-    <Compile Include="Helpers\LoadoutExporter.cs" />
-    <Compile Include="Helpers\LoadoutInfo.cs" />
-    <Compile Include="Interfaces\ILoadoutInfo.cs" />
-    <Compile Include="Helpers\LoadoutHelper.cs" />
-    <Compile Include="Helpers\PlanHelper.cs" />
-    <Compile Include="Loadouts\LoadoutsProvider.cs" />
-    <Compile Include="Loadouts\Osmium\OsmiumLoadoutsProvider.cs" />
-    <Compile Include="Net\DownloadResult.cs" />
-    <Compile Include="Net\HttpClientServiceRequest.cs" />
-    <Compile Include="Net\HttpWebClientService.cs" />
-    <Compile Include="Net\HttpWebClientService.StreamDownload.cs" />
-    <Compile Include="Net\HttpWebClientService.XmlDownload.cs" />
-    <Compile Include="Serialization\FittingClf\SerializableClfFittingChargeType.cs" />
-    <Compile Include="Serialization\FittingClf\SerializableClfFittingDroneType.cs" />
-    <Compile Include="Serialization\FittingClf\SerializableClfFittingDroneSet.cs" />
-    <Compile Include="Serialization\FittingClf\SerializableClfFitting.cs" />
-    <Compile Include="Serialization\FittingClf\SerializableClfFittingMetaData.cs" />
-    <Compile Include="Serialization\FittingClf\SerializableClfFittingModule.cs" />
-    <Compile Include="Serialization\FittingClf\SerializableClfFittingPreset.cs" />
-    <Compile Include="Serialization\FittingClf\SerializableClfFittingShipType.cs" />
-    <Compile Include="Serialization\Osmium\Loadout\SerializableOsmiumLoadoutAuthor.cs" />
-    <Compile Include="Serialization\Osmium\Loadout\SerializableOsmiumLoadoutFeed.cs" />
-    <Compile Include="Models\Asset.cs" />
-    <Compile Include="Data\Certificate.cs" />
-    <Compile Include="Data\CertificateLevel.cs" />
-    <Compile Include="Data\CertificateGroup.cs" />
-    <Compile Include="Data\CertificateCategoryCollection.cs" />
-    <Compile Include="Data\CertificateClass.cs" />
-    <Compile Include="Data\CertificateClassCollection.cs" />
-    <Compile Include="Data\CertificateCollection.cs" />
-    <Compile Include="Models\Corporation.cs" />
-    <Compile Include="Models\ContractItem.cs" />
-    <Compile Include="Models\Contract.cs" />
-    <Compile Include="Models\ContractBid.cs" />
-    <Compile Include="Models\Contact.cs" />
-    <Compile Include="Models\Collections\AssetCollection.cs" />
-    <Compile Include="Models\Collections\CharacterIdentityIgnoreList.cs" />
-    <Compile Include="Models\Collections\ContactCollection.cs" />
-    <Compile Include="Models\Collections\ContractCollection.cs" />
-    <Compile Include="Models\Comparers\AssetComparer.cs" />
-    <Compile Include="Models\Comparers\ContractComparer.cs" />
-    <Compile Include="Models\Comparers\ContractItemComparer.cs" />
-    <Compile Include="Serialization\EveMarketer\MarketPricer\SerializableECItemPriceItem.cs" />
-    <Compile Include="Serialization\EveMarketer\MarketPricer\SerializableECItemPriceListItem.cs" />
-    <Compile Include="Serialization\EveMarketer\MarketPricer\SerializableECItemPrices.cs" />
-    <Compile Include="Serialization\Eve\SerializableCharacterCertificate.cs" />
-    <Compile Include="Serialization\Datafiles\MasteriesDatafile.cs" />
-    <Compile Include="Serialization\Datafiles\SerializableMastery.cs" />
-    <Compile Include="Serialization\Datafiles\SerializableMasteryCertificate.cs" />
-    <Compile Include="Serialization\Datafiles\SerializableMasteryShip.cs" />
-    <Compile Include="Models\Comparers\SerializableSettingsComparer.cs" />
-    <Compile Include="Serialization\Datafiles\SerializableStationList.cs" />
-    <Compile Include="Service\ISSOWebServer.cs" />
-    <Compile Include="Service\SSOWebServerHttpListener.cs" />
-    <Compile Include="Service\CodeCompiler.cs" />
-    <Compile Include="Controls\AutoEllipsisToolStripRenderer.cs" />
-    <Compile Include="Controls\BorderPanel.cs">
+    <Compile Update="Controls\BorderPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\ColumnSelectWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Controls\ColumnSelectWindow.Designer.cs">
-      <DependentUpon>ColumnSelectWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\InfiniteDisplayToolTip.cs">
+    <Compile Update="Controls\InfiniteDisplayToolTip.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\DraggableListView.cs">
+    <Compile Update="Controls\DraggableListView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\DraggableTabControl.cs">
+    <Compile Update="Controls\DraggableTabControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\DropDownMouseMoveComboBox.cs">
+    <Compile Update="Controls\DropDownMouseMoveComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\ExpandablePanelControl.cs">
+    <Compile Update="Controls\ExpandablePanelControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\IntuitiveDataGridView.cs">
+    <Compile Update="Controls\IntuitiveDataGridView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\ListViewDragEventArgs.cs" />
-    <Compile Include="Controls\ListViewHelper.cs" />
-    <Compile Include="Controls\ListViewItemComparerByTag.cs" />
-    <Compile Include="Controls\MultiPanel\Design\MultiPanelDesigner.cs" />
-    <Compile Include="Controls\MultiPanel\Design\MultiPanelDesignerHelper.cs" />
-    <Compile Include="Controls\MultiPanel\Design\MultiPanelPageDesigner.cs" />
-    <Compile Include="Controls\MultiPanel\Design\MultiPanelSelectionEditor.cs" />
-    <Compile Include="Controls\MultiPanel\MultiPanel.cs">
+    <Compile Update="Controls\MultiPanel\MultiPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\MultiPanel\MultiPanelPage.cs">
+    <Compile Update="Controls\MultiPanel\MultiPanelPage.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\MultiPanel\MultiPanelSelectionChangeEventArgs.cs" />
-    <Compile Include="Controls\NativeMethods.cs" />
-    <Compile Include="Controls\NoFlickerListBox.cs">
+    <Compile Update="Controls\NoFlickerListBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\NoFlickerPanel.cs">
+    <Compile Update="Controls\NoFlickerPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\PersistentSplitContainer.cs">
+    <Compile Update="Controls\PersistentSplitContainer.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\PrintOptionsDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Controls\PrintOptionsDialog.Designer.cs">
-      <DependentUpon>PrintOptionsDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\SkillQueueControl.cs">
+    <Compile Update="Controls\SkillQueueControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\Throbber.cs">
+    <Compile Update="Controls\Throbber.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\TipWindow.cs">
+    <Compile Update="Controls\TipWindow.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Controls\TipWindow.Designer.cs">
-      <DependentUpon>TipWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\TrayIcon.cs">
+    <Compile Update="Controls\TrayIcon.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\TrayIcon.Designer.cs">
-      <DependentUpon>TrayIcon.cs</DependentUpon>
+    <Compile Update="Controls\CheckedComboBox.cs">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="QueryMonitor\ESIKeyQueryMonitor.cs" />
-    <Compile Include="QueryMonitor\CharacterDataQuerying.cs" />
-    <Compile Include="QueryMonitor\CorporationDataQuerying.cs" />
-    <Compile Include="QueryMonitor\CorporationQueryMonitor.cs" />
-    <Compile Include="CustomEventArgs\ApiErrorTroubleshooterEventArgs.cs" />
-    <Compile Include="CustomEventArgs\ESIKeyCreationEventArgs.cs" />
-    <Compile Include="CustomEventArgs\ESIKeyInfoChangedEventArgs.cs" />
-    <Compile Include="CustomEventArgs\AttributeChangedEventArgs.cs" />
-    <Compile Include="CustomEventArgs\CloudStorageServiceProviderEventArgs.cs" />
-    <Compile Include="CustomEventArgs\CharacterChangedEventArgs.cs" />
-    <Compile Include="CustomEventArgs\CharacterIdentityChangedEventArgs.cs" />
-    <Compile Include="CustomEventArgs\ContractsEventArgs.cs" />
-    <Compile Include="CustomEventArgs\DataUpdateAvailableEventArgs.cs" />
-    <Compile Include="CustomEventArgs\DaySelectedEventArgs.cs" />
-    <Compile Include="CustomEventArgs\DropDownMouseMoveEventArgs.cs" />
-    <Compile Include="CustomEventArgs\EveServerEventArgs.cs" />
-    <Compile Include="CustomEventArgs\AttributeHighlightingEventArgs.cs" />
-    <Compile Include="CustomEventArgs\IndustryJobsEventArgs.cs" />
-    <Compile Include="CustomEventArgs\MarketOrdersEventArgs.cs" />
-    <Compile Include="CustomEventArgs\PlanChangedEventArgs.cs" />
-    <Compile Include="CustomEventArgs\PlanetaryPinsEventArgs.cs" />
-    <Compile Include="CustomEventArgs\QueuedSkillsEventArgs.cs" />
-    <Compile Include="CustomEventArgs\SkillClickedEventArgs.cs" />
-    <Compile Include="CustomEventArgs\UpdateAvailableEventArgs.cs" />
-    <Compile Include="CustomEventArgs\UriCharacterEventArgs.cs" />
-    <Compile Include="CustomEventArgs\AttributeValueChangedEventArgs.cs" />
-    <Compile Include="CustomEventArgs\AttributeValueChangingEventArgs.cs" />
-    <Compile Include="Data\Agent.cs" />
-    <Compile Include="Data\ControlTowerFuel.cs" />
-    <Compile Include="Data\ControlTowerFuelCollection.cs" />
-    <Compile Include="Data\ImplantCollection.cs" />
-    <Compile Include="Data\EvePropertyCollection.cs" />
-    <Compile Include="Data\MaterialCollection.cs" />
-    <Compile Include="Data\NPCCorporation.cs" />
-    <Compile Include="Data\ReactionMaterialCollection.cs" />
-    <Compile Include="Data\ReactionMaterial.cs" />
-    <Compile Include="Data\StaticCertificate.cs" />
-    <Compile Include="Data\StaticCertificateClass.cs" />
-    <Compile Include="Data\StaticCertificateGroup.cs" />
-    <Compile Include="Data\StaticCertificates.cs" />
-    <Compile Include="Data\StaticRecommendations.cs" />
-    <Compile Include="Data\StaticReprocessing.cs" />
-    <Compile Include="EmailProvider\DefaultProvider.cs" />
-    <Compile Include="EmailProvider\EmailProviders.cs" />
-    <Compile Include="EmailProvider\GmxProvider.cs" />
-    <Compile Include="EmailProvider\GoogleProvider.cs" />
-    <Compile Include="EmailProvider\HotmailProvider.cs" />
-    <Compile Include="EmailProvider\IEmailProvider.cs" />
-    <Compile Include="EmailProvider\YahooPlusProvider.cs" />
-    <Compile Include="EmailProvider\YahooProvider.cs" />
-    <Compile Include="Models\Collections\EmploymentRecordCollection.cs" />
-    <Compile Include="Models\EmploymentRecord.cs" />
-    <Compile Include="Models\EveFactionWarfareStats.cs" />
-    <Compile Include="Models\Collections\EveFactionWarfareStatsCollection.cs" />
-    <Compile Include="Models\EveFactionWar.cs" />
-    <Compile Include="Models\Collections\EveFactionWarsCollection.cs" />
-    <Compile Include="Service\EveFlag.cs" />
-    <Compile Include="Models\EveMailingList.cs" />
-    <Compile Include="Models\Collections\EveMailingListCollection.cs" />
-    <Compile Include="Models\Extended\InternalEveNotificationTextParser.cs" />
-    <Compile Include="Models\Extended\EveNotificationTextParser.cs" />
-    <Compile Include="Service\EveIDToStation.cs" />
-    <Compile Include="Service\EveNotificationType.cs" />
-    <Compile Include="Models\CalendarEventAttendee.cs" />
-    <Compile Include="Service\EveRefType.cs" />
-    <Compile Include="ExternalCalendar\CalendarEvent.cs" />
-    <Compile Include="ExternalCalendar\ExternalCalendar.cs" />
-    <Compile Include="ExternalCalendar\GoogleCalendarEvent.cs" />
-    <Compile Include="ExternalCalendar\OutlookCalendarEvent.cs" />
-    <Compile Include="Models\EveFactionalWarfareStats.cs" />
-    <Compile Include="Models\FactionalWarfareStats.cs" />
-    <Compile Include="Helpers\FormatHelper.cs" />
-    <Compile Include="Collections\Global\GlobalAPIKeyCollection.cs" />
-    <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Interfaces\IEveMessage.cs" />
-    <Compile Include="Models\EveNotification.cs" />
-    <Compile Include="Models\Collections\EveNotificationCollection.cs" />
-    <Compile Include="Models\Comparers\EveNotificationComparer.cs" />
-    <Compile Include="Models\EveNotificationText.cs" />
-    <Compile Include="Interfaces\IListView.cs" />
-    <Compile Include="Interfaces\IPlanOrderPluggable.cs" />
-    <Compile Include="Interfaces\IQueryMonitorEx.cs" />
-    <Compile Include="Interfaces\ISkillLevel.cs" />
-    <Compile Include="Models\KillLog.cs" />
-    <Compile Include="Models\Collections\KillLogCollection.cs" />
-    <Compile Include="Models\Comparers\KillLogComparer.cs" />
-    <Compile Include="Helpers\KillLogExporter.cs" />
-    <Compile Include="Models\KillLogItem.cs" />
-    <Compile Include="MarketPricer\ItemPricer.cs" />
-    <Compile Include="Models\Medal.cs" />
-    <Compile Include="Models\Collections\MedalCollection.cs" />
-    <Compile Include="Models\Comparers\MedalComparer.cs" />
-    <Compile Include="Net\INetworkChangeSubscriber.cs" />
-    <Compile Include="Notifications\APIErrorNotificationEventArgs.cs" />
-    <Compile Include="Notifications\ContractsNotificationEventArgs.cs" />
-    <Compile Include="Notifications\IndustryJobsNotificationEventArgs.cs" />
-    <Compile Include="Notifications\MarketOrdersNotificationEventArgs.cs" />
-    <Compile Include="Notifications\EveMailMessageNotificationEventArgs.cs" />
-    <Compile Include="Notifications\EveNotificationNotificationEventArgs.cs" />
-    <Compile Include="Notifications\NotificationBehaviour.cs" />
-    <Compile Include="Notifications\NotificationCategory.cs" />
-    <Compile Include="Notifications\NotificationEventArgs.cs" />
-    <Compile Include="Notifications\NotificationInvalidationEventArgs.cs" />
-    <Compile Include="Notifications\NotificationPriority.cs" />
-    <Compile Include="Notifications\PlanetaryPinsNotificationEventArgs.cs" />
-    <Compile Include="Notifications\SkillCompletionNotificationEventArgs.cs" />
-    <Compile Include="Models\Comparers\PlanEntryComparer.cs" />
-    <Compile Include="Models\PlanetaryColony.cs" />
-    <Compile Include="Models\Collections\PlanetaryColonyCollection.cs" />
-    <Compile Include="Models\Comparers\PlanetaryPinComparer.cs" />
-    <Compile Include="Models\PlanetaryLink.cs" />
-    <Compile Include="Models\PlanetaryPin.cs" />
-    <Compile Include="Models\PlanetaryRoute.cs" />
-    <Compile Include="Helpers\PlanPrinter.cs" />
-    <Compile Include="Models\RemappingResult.cs" />
-    <Compile Include="Resources\Skill_Select\IconSettings.Designer.cs">
+    <Compile Update="Controls\CustomComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controls\EveImage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controls\SplitButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Controls\TreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Controls\ApiErrorTroubleshooter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Controls\CharacterPortrait.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Resources\Skill_Select\Group0\Default.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Default.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Skill_Select\Group1\Dice_Spots.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dice_Spots.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Skill_Select\Group2\Slashes.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Slashes.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Skill_Select\Group3\Pie_Slices.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Pie_Slices.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Skill_Select\Group4\Pentagons.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Pentagons.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Skill_Select\Group5\Pentagrams.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Pentagrams.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Skill_Select\Group6\Black_Dice.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Black_Dice.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Skill_Select\Group7\Red_Dice.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Red_Dice.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Skill_Select\Group8\Bars.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Bars.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Skill_Select\IconSettings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
       <DependentUpon>IconSettings.settings</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Serialization\Eve\SerializableAPIEveFactionalWarfareStats.cs" />
-    <Compile Include="Serialization\Eve\SerializableAPIKillLog.cs" />
-    <Compile Include="Serialization\Eve\SerializableCharacterJumpClone.cs" />
-    <Compile Include="Serialization\Eve\SerializableCharacterJumpCloneImplant.cs" />
-    <Compile Include="Serialization\Eve\SerializableNewImplant.cs" />
-    <Compile Include="Serialization\Eve\SerializableAPIRefTypes.cs" />
-    <Compile Include="Serialization\Eve\SerializableAPIUpcomingCalendarEvents.cs" />
-    <Compile Include="Serialization\Eve\SerializableAPIWalletJournal.cs" />
-    <Compile Include="Serialization\Eve\SerializableCalendarEventAttendeeListItem.cs" />
-    <Compile Include="Serialization\Eve\SerializableEveFactionalWarfareStatsListItem.cs" />
-    <Compile Include="Serialization\Eve\SerializableEveFactionWarsListItem.cs" />
-    <Compile Include="Serialization\Eve\SerializableEveFacWarfareTotals.cs" />
-    <Compile Include="Serialization\Eve\SerializableKillLogAttackersListItem.cs" />
-    <Compile Include="Serialization\Eve\SerializableKillLogItemListItem.cs" />
-    <Compile Include="Serialization\Eve\SerializableKillLogListItem.cs" />
-    <Compile Include="Serialization\Eve\SerializableKillLogVictim.cs" />
-    <Compile Include="Serialization\Eve\SerializableRefTypesListItem.cs" />
-    <Compile Include="Serialization\Eve\SerializableUpcomingCalendarEventsListItem.cs" />
-    <Compile Include="Serialization\Eve\SerializableWalletJournalListItem.cs" />
-    <Compile Include="Serialization\Eve\SerializableAPIWalletTransactions.cs" />
-    <Compile Include="Serialization\Eve\SerializableWalletTransactionsListItem.cs" />
-    <Compile Include="Serialization\Eve\SerializableAPIContracts.cs" />
-    <Compile Include="Serialization\Eve\SerializableContractListItem.cs" />
-    <Compile Include="Serialization\Eve\SerializableEmploymentHistory.cs" />
-    <Compile Include="Serialization\Eve\SerializableEmploymentHistoryListItem.cs" />
-    <Compile Include="CloudStorageServices\CloudStorageServiceSettings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>CloudStorageServiceSettings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="Serialization\Datafiles\CertificatesDatafile.cs" />
-    <Compile Include="Serialization\Datafiles\SerializableAgent.cs" />
-    <Compile Include="Serialization\Datafiles\SerializableBlueprint.cs" />
-    <Compile Include="Serialization\Datafiles\SerializableBlueprintMarketGroup.cs" />
-    <Compile Include="Serialization\Datafiles\SerializableCertificate.cs" />
-    <Compile Include="Serialization\Datafiles\SerializableCertificateClass.cs" />
-    <Compile Include="Serialization\Datafiles\SerializableCertificateGroup.cs" />
-    <Compile Include="Serialization\Datafiles\SerializableCertificatePrerequisite.cs" />
-    <Compile Include="Serialization\Datafiles\SerializableCertificateRecommendation.cs" />
-    <Compile Include="Serialization\Datafiles\SerializableConstellation.cs" />
-    <Compile Include="Serialization\Datafiles\SerializableControlTowerFuel.cs" />
-    <Compile Include="Serialization\Datafiles\SerializableItem.cs" />
-    <Compile Include="Serialization\Datafiles\SerializableItemMaterials.cs" />
-    <Compile Include="Serialization\Datafiles\SerializableJump.cs" />
-    <Compile Include="Serialization\Datafiles\SerializableMarketGroup.cs" />
-    <Compile Include="Serialization\Datafiles\SerializableMaterialQuantity.cs" />
-    <Compile Include="Serialization\Datafiles\SerializablePrereqSkill.cs" />
-    <Compile Include="Serialization\Datafiles\SerializablePrerequisiteSkill.cs" />
-    <Compile Include="Serialization\Datafiles\SerializableProperty.cs" />
-    <Compile Include="Serialization\Datafiles\SerializablePropertyCategory.cs" />
-    <Compile Include="Serialization\Datafiles\SerializablePropertyValue.cs" />
-    <Compile Include="Serialization\Datafiles\SerializableReactionInfo.cs" />
-    <Compile Include="Serialization\Datafiles\SerializableRegion.cs" />
-    <Compile Include="Serialization\Datafiles\SerializableRequiredMaterial.cs" />
-    <Compile Include="Serialization\Datafiles\SerializableSkill.cs" />
-    <Compile Include="Serialization\Datafiles\SerializableSkillGroup.cs" />
-    <Compile Include="Serialization\Datafiles\SerializableSkillPrerequisite.cs" />
-    <Compile Include="Serialization\Datafiles\SerializableSolarSystem.cs" />
-    <Compile Include="Serialization\Datafiles\SerializableStation.cs" />
-    <Compile Include="Serialization\EveMarketData\MarketPricer\SerializableEMDItemPriceList.cs" />
-    <Compile Include="Serialization\EveMarketData\MarketPricer\SerializableEMDItemPriceListItem.cs" />
-    <Compile Include="Serialization\EveMarketData\MarketPricer\SerializableEMDItemPrices.cs" />
-    <Compile Include="Serialization\Exportation\OutputAttributeEnhancer.cs" />
-    <Compile Include="Serialization\Exportation\OutputPlans.cs" />
-    <Compile Include="Serialization\Exportation\OutputSkill.cs" />
-    <Compile Include="Serialization\FittingXml\SerializableXmlFitting.cs" />
-    <Compile Include="Serialization\FittingXml\SerializableXmlFittingDescription.cs" />
-    <Compile Include="Serialization\FittingXml\SerializableXmlFittingHardware.cs" />
-    <Compile Include="Serialization\FittingXml\SerializableXmlFittings.cs" />
-    <Compile Include="Serialization\FittingXml\SerializableXmlFittingShipType.cs" />
-    <Compile Include="Serialization\PatchXml\SerializableDatafile.cs" />
-    <Compile Include="Serialization\PatchXml\SerializablePatch.cs" />
-    <Compile Include="Serialization\PatchXml\SerializableRelease.cs" />
-    <Compile Include="Serialization\SerializableEveFlagsListItem.cs" />
-    <Compile Include="Serialization\SerializableEveIDToNameListItem.cs" />
-    <Compile Include="Serialization\SerializableEveFlags.cs" />
-    <Compile Include="Serialization\SerializableNotificationRefTypes.cs" />
-    <Compile Include="Serialization\SerializableNotificationRefTypesListItem.cs" />
-    <Compile Include="Serialization\Settings\SerializableAPIKey.cs" />
-    <Compile Include="Serialization\Settings\SerializableContract.cs" />
-    <Compile Include="Serialization\Settings\SerializableEndPoint.cs" />
-    <Compile Include="Service\IDToObjectProvider.cs" />
-    <Compile Include="Service\SSOAuthenticationService.cs" />
-    <Compile Include="SettingsObjects\CertificateBrowserSettings.cs" />
-    <Compile Include="SettingsObjects\CloudStorageServiceProviderSettings.cs" />
-    <Compile Include="SettingsObjects\CombatLogSettings.cs" />
-    <Compile Include="SettingsObjects\LoadoutsProviderSettings.cs" />
-    <Compile Include="SettingsObjects\MarketPricerSettings.cs" />
-    <Compile Include="SettingsObjects\PlanetarySettings.cs" />
-    <Compile Include="SettingsObjects\PlanetaryColumn.cs" />
-    <Compile Include="SettingsObjects\PlanetaryColumnSettings.cs" />
-    <Compile Include="SettingsObjects\PortableEveInstallationsSettings.cs" />
-    <Compile Include="Serialization\Settings\SerializablePortableEveInstallation.cs" />
-    <Compile Include="Serialization\Settings\SerializableStanding.cs" />
-    <Compile Include="SettingsObjects\AssetColumn.cs" />
-    <Compile Include="SettingsObjects\AssetColumnSettings.cs" />
-    <Compile Include="SettingsObjects\AssetSettings.cs" />
-    <Compile Include="SettingsObjects\ContractColumn.cs" />
-    <Compile Include="SettingsObjects\ContractColumnSettings.cs" />
-    <Compile Include="SettingsObjects\ContractSettings.cs" />
-    <Compile Include="SettingsObjects\ModifiedSerializableDictionary.cs" />
-    <Compile Include="SettingsObjects\EveNotificationColumn.cs" />
-    <Compile Include="SettingsObjects\EveNotificationColumnSettings.cs" />
-    <Compile Include="SettingsObjects\EveNotificationSettings.cs" />
-    <Compile Include="SettingsObjects\IColumnSettings.cs" />
-    <Compile Include="SettingsObjects\UpdatePeriodExtensions.cs" />
-    <Compile Include="SettingsObjects\WalletJournalColumn.cs" />
-    <Compile Include="SettingsObjects\WalletJournalColumnSettings.cs" />
-    <Compile Include="SettingsObjects\WalletJournalSettings.cs" />
-    <Compile Include="SettingsObjects\WalletTransactionColumn.cs" />
-    <Compile Include="SettingsObjects\WalletTransactionColumnSettings.cs" />
-    <Compile Include="SettingsObjects\WalletTransactionSettings.cs" />
-    <Compile Include="Models\Standing.cs" />
-    <Compile Include="Models\Collections\StandingCollection.cs" />
-    <Compile Include="Extensions\StaticSkillExtensions.cs" />
-    <Compile Include="Models\ESIKey.cs" />
-    <Compile Include="Extensions\StringExtensions.cs" />
-    <Compile Include="Helpers\UIHelper.cs" />
-    <Compile Include="Models\UpcomingCalendarEvent.cs" />
-    <Compile Include="Models\Collections\UpcomingCalendarEventCollection.cs" />
-    <Compile Include="Models\WalletJournal.cs" />
-    <Compile Include="Models\Collections\WalletJournalCollection.cs" />
-    <Compile Include="Models\Comparers\WalletJournalComparer.cs" />
-    <Compile Include="Models\WalletTransaction.cs" />
-    <Compile Include="Models\Comparers\WalletTransactionComparer.cs" />
-    <Compile Include="Models\Collections\WalletTransactionsCollection.cs" />
-    <Compile Include="Factories\WindowsFactory.cs" />
-    <Compile Include="Extensions\WinFormsExtensions.cs" />
-    <None Include="App.config" />
-    <Compile Include="Net\HttpWebClientService.ImageDownload.cs" />
-    <None Include="CloudStorageServices\Dropbox\DropboxCloudStorageServiceSettings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>DropboxCloudStorageServiceSettings.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="CloudStorageServices\GoogleDrive\GoogleDriveCloudStorageServiceSettings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>GoogleDriveCloudStorageServiceSettings.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="CloudStorageServices\OneDrive\OneDriveCloudStorageServiceSettings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>OneDriveCloudStorageServiceSettings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Models\BuyOrder.cs" />
-    <Compile Include="Data\Datafile.cs" />
-    <Compile Include="Models\APIProvider.cs" />
-    <Compile Include="Helpers\AttributesOptimizer.cs" />
-    <Compile Include="Controls\CheckedComboBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\CustomComboBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Enumerations\KillLogFittingContentGroup.cs" />
-    <Compile Include="EveMonClient.cs" />
-    <Compile Include="Service\EveIDToName.cs" />
-    <Compile Include="Models\EveMailBody.cs" />
-    <Compile Include="Models\EveMailMessage.cs" />
-    <Compile Include="Models\Comparers\EveMailMessageComparer.cs" />
-    <Compile Include="Factories\FontFactory.cs" />
-    <Compile Include="Service\ImageService.cs" />
-    <Compile Include="Models\Collections\EveMailMessageCollection.cs" />
-    <Compile Include="InstanceManager.cs" />
-    <Compile Include="Helpers\ListViewExporter.cs" />
-    <Compile Include="Helpers\FileHelper.cs" />
-    <Compile Include="Helpers\PlanEntrySorter.cs" />
-    <Compile Include="Models\ResearchPoint.cs" />
-    <Compile Include="Models\Collections\ResearchPointCollection.cs" />
-    <Compile Include="Models\Comparers\ResearchPointComparer.cs" />
-    <Compile Include="Models\SellOrder.cs" />
-    <Compile Include="Enumerations\CCPAPI\CCPContractStatus.cs" />
-    <Compile Include="Serialization\Eve\SerializableAPIMailBodies.cs" />
-    <Compile Include="Serialization\Eve\SerializableAPIMailMessages.cs" />
-    <Compile Include="Serialization\Eve\SerializableCharacterNameListItem.cs" />
-    <Compile Include="Serialization\Eve\SerializableCharacterListItem.cs" />
-    <Compile Include="Serialization\Eve\SerializableMailBodiesListItem.cs" />
-    <Compile Include="Serialization\Eve\SerializableMailMessagesListItem.cs" />
-    <Compile Include="Serialization\Eve\SerializableOutpost.cs" />
-    <Compile Include="Serialization\Eve\SerializableQueuedSkill.cs" />
-    <Compile Include="Serialization\Eve\ISerializableCharacterIdentity.cs" />
-    <Compile Include="Serialization\Settings\SerializableAPIMethod.cs" />
-    <Compile Include="Serialization\Settings\SerializableAPIProvider.cs" />
-    <Compile Include="Serialization\Settings\SerializableAPIUpdate.cs" />
-    <Compile Include="Serialization\Settings\SerializableCCPCharacter.cs" />
-    <Compile Include="Serialization\Settings\SerializableImplantSetCollection.cs" />
-    <Compile Include="Serialization\SerializableEveIDToName.cs" />
-    <Compile Include="Serialization\Settings\SerializableInvalidPlanEntry.cs" />
-    <Compile Include="Serialization\Settings\SerializablePlanEntry.cs" />
-    <Compile Include="Serialization\Settings\SerializableRemappingPoint.cs" />
-    <Compile Include="Serialization\Settings\SerializableSettings.cs" />
-    <Compile Include="Serialization\Settings\SerializableUriCharacter.cs" />
-    <Compile Include="Settings.cs" />
-    <Compile Include="Enumerations\UISettings\CompatibilityMode.cs" />
-    <Compile Include="SettingsObjects\EveMailMessageColumn.cs" />
-    <Compile Include="SettingsObjects\EveMailMessageColumnSettings.cs" />
-    <Compile Include="SettingsObjects\EveMailMessageSettings.cs" />
-    <Compile Include="SettingsObjects\ProxyAuthentication.cs" />
-    <Compile Include="SettingsObjects\ResearchColumn.cs" />
-    <Compile Include="SettingsObjects\ResearchColumnSettings.cs" />
-    <Compile Include="SettingsObjects\ResearchSettings.cs" />
-    <Compile Include="Helpers\TimeCheck.cs" />
-    <Compile Include="Net\HttpWebClientServiceException.cs" />
-    <Compile Include="Net\HttpWebClientServiceExceptionStatus.cs" />
-    <Compile Include="Net\HttpWebClientServiceState.cs" />
-    <Compile Include="Net\ExceptionMessages.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ExceptionMessages.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\APIMethod.cs" />
-    <Compile Include="Service\AutoShrink.cs" />
-    <Compile Include="Serialization\Eve\CCPAPIError.cs" />
-    <Compile Include="Controls\CopySaveOptionsWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Controls\CopySaveOptionsWindow.Designer.cs">
-      <DependentUpon>CopySaveOptionsWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\EveImage.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\EveImage.Designer.cs">
-      <DependentUpon>EveImage.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\EveImagePopUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Controls\EveImagePopUp.Designer.cs">
-      <DependentUpon>EveImagePopUp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\EVEMonForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Controls\EVEMonForm.Designer.cs">
-      <DependentUpon>EVEMonForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\EveServer.cs" />
-    <Compile Include="Helpers\ExceptionHandler.cs" />
-    <Compile Include="Models\ImplantSet.cs" />
-    <Compile Include="SettingsObjects\SerializableColor.cs" />
-    <Compile Include="Models\Skill.cs" />
-    <Compile Include="Models\SkillGroup.cs" />
-    <Compile Include="Service\LocalXmlCache.cs" />
-    <Compile Include="SettingsObjects\PlanExportSettings.cs" />
-    <Compile Include="Models\Character.cs" />
-    <Compile Include="Models\Plan.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Serialization\Eve\SerializableCharacterSheetBase.cs" />
-    <Compile Include="Controls\SplitButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\TreeView.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\TreeViewExtensions.cs" />
-    <Compile Include="Threading\Dispatcher.cs" />
-    <Compile Include="UpdateManager.cs" />
-    <Compile Include="Util.cs" />
-    <None Include="Serialization\Exportation\output-html.xslt" />
-    <None Include="CloudStorageServices\CloudStorageServiceSettings.settings">
-      <Generator>PublicSettingsSingleFileGenerator</Generator>
-      <LastGenOutput>CloudStorageServiceSettings.Designer.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CloudStorageServices\CloudStorageServiceResources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>CloudStorageServiceResources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\ColumnSelectWindow.resx">
-      <DependentUpon>ColumnSelectWindow.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\EVEMonForm.resx">
-      <DependentUpon>EVEMonForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Attributes\EnforceUIThreadAffinity.cs" />
-    <Compile Include="Attributes\ForcedOnStartupAttribute.cs" />
-    <Compile Include="Attributes\HeaderAttribute.cs" />
-    <Compile Include="Attributes\Internals\NotifyPropertyChanged.Subs.cs" />
-    <Compile Include="Models\BaseCharacter.cs" />
-    <Compile Include="Models\BasePlan.cs" />
-    <Compile Include="Models\CharacterAttribute.cs" />
-    <Compile Include="Helpers\CharacterAttributeScratchpad.cs" />
-    <Compile Include="Models\Comparers\CharacterComparer.cs" />
-    <Compile Include="Helpers\CharacterExporter.cs" />
-    <Compile Include="QueryMonitor\CharacterQueryMonitor.cs" />
-    <Compile Include="Collections\FastList.cs" />
-    <Compile Include="Controls\ApiErrorTroubleshooter.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\ApiErrorTroubleshooter.Designer.cs">
-      <DependentUpon>ApiErrorTroubleshooter.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\MessageBoxCustom.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Controls\MessageBoxCustom.Designer.cs">
-      <DependentUpon>MessageBoxCustom.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\ResolutionAction.cs" />
-    <Compile Include="Constants\CultureConstants.cs" />
-    <Compile Include="Data\Blueprint.cs" />
-    <Compile Include="Data\BlueprintCollection.cs" />
-    <Compile Include="Data\BlueprintMarketGroupCollection.cs" />
-    <Compile Include="Data\Constellation.cs" />
-    <Compile Include="Constants\DBConstants.cs" />
-    <Compile Include="Data\EveProperty.cs" />
-    <Compile Include="Data\EvePropertyCategory.cs" />
-    <Compile Include="Data\EvePropertyValue.cs" />
-    <Compile Include="Data\BlueprintMarketGroup.cs" />
-    <Compile Include="Data\ItemCollection.cs" />
-    <Compile Include="Data\MarketGroupCollection.cs" />
-    <Compile Include="Data\MarketGroupExtensions.cs" />
-    <Compile Include="Data\StaticBlueprints.cs" />
-    <Compile Include="Data\StaticGeography.cs" />
-    <Compile Include="Data\Implant.cs" />
-    <Compile Include="Data\Item.cs" />
-    <Compile Include="Data\MarketGroup.cs" />
-    <Compile Include="Data\Material.cs" />
-    <Compile Include="Helpers\PathFinder.cs" />
-    <Compile Include="Data\Region.cs" />
-    <Compile Include="Data\Ship.cs" />
-    <Compile Include="Data\SolarSystem.cs" />
-    <Compile Include="Data\SolarSystemRange.cs" />
-    <Compile Include="Data\StaticItems.cs" />
-    <Compile Include="Data\StaticProperties.cs" />
-    <Compile Include="Data\StaticRequiredMaterial.cs" />
-    <Compile Include="Data\StaticSkill.cs" />
-    <Compile Include="Extensions\StaticSkillEnumerableExtensions.cs" />
-    <Compile Include="Data\StaticSkillGroup.cs" />
-    <Compile Include="Data\StaticSkillLevel.cs" />
-    <Compile Include="Extensions\StaticSkillLevelEnumerableExtensions.cs" />
-    <Compile Include="Data\StaticSkills.cs" />
-    <Compile Include="Data\Station.cs" />
-    <Compile Include="Data\StationServices.cs" />
-    <Compile Include="Extensions\EnumExtensions.cs" />
-    <Compile Include="Collections\Global\GlobalNotificationCollection.cs" />
-    <Compile Include="Attributes\UpdateAttribute.cs" />
-    <Compile Include="Models\IndustryJob.cs" />
-    <Compile Include="Models\Collections\IndustryJobCollection.cs" />
-    <Compile Include="Models\Comparers\IndustryJobComparer.cs" />
-    <Compile Include="Models\InvalidPlanEntry.cs" />
-    <Compile Include="Interfaces\IQueryMonitor.cs" />
-    <Compile Include="Models\MarketOrder.cs" />
-    <Compile Include="Models\Collections\MarketOrderCollection.cs" />
-    <Compile Include="Models\Comparers\MarketOrderComparer.cs" />
-    <Compile Include="Net\NetworkMonitor.cs" />
-    <Compile Include="Helpers\CharacterScratchpad.cs" />
-    <Compile Include="Collections\IReadonlyCollection.cs" />
-    <Compile Include="Collections\ReadonlyKeyedCollection.cs" />
-    <Compile Include="Collections\ReadonlyVirtualCollection.cs" />
-    <Compile Include="Interfaces\IPlanOperation.cs" />
-    <Compile Include="Extensions\PlanEntryExtensions.cs" />
-    <Compile Include="Helpers\PlanScratchpad.cs" />
-    <Compile Include="Controls\CharacterPortrait.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\CharacterPortrait.Designer.cs">
-      <DependentUpon>CharacterPortrait.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\ControlExtensions.cs" />
-    <Compile Include="Controls\EveFolderWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Controls\EveFolderWindow.Designer.cs">
-      <DependentUpon>EveFolderWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Factories\DisposableWithCallback.cs" />
-    <Compile Include="Models\CCPCharacter.cs" />
-    <Compile Include="Service\Emailer.cs" />
-    <Compile Include="Collections\EnumerableExtensions.cs" />
-    <Compile Include="Collections\Global\GlobalCharacterCollection.cs" />
-    <Compile Include="Collections\Global\GlobalDatafileCollection.cs" />
-    <Compile Include="Interfaces\ICharacterAttribute.cs" />
-    <Compile Include="Models\Collections\ImplantSetCollection.cs" />
-    <Compile Include="Interfaces\IStaticSkill.cs" />
-    <Compile Include="Collections\BaseList.cs" />
-    <Compile Include="Models\Collections\PlanCollection.cs" />
-    <Compile Include="Models\Comparers\PlanComparer.cs" />
-    <Compile Include="QueryMonitor\QueryMonitor.cs" />
-    <Compile Include="QueryMonitor\QueryMonitorCollection.cs" />
-    <Compile Include="Serialization\Eve\IAPIResult.cs" />
-    <Compile Include="Serialization\Datafiles\BlueprintsDatafile.cs" />
-    <Compile Include="Serialization\Datafiles\DatafileConstants.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DatafileConstants.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Serialization\Datafiles\GeoDatafile.cs" />
-    <Compile Include="Serialization\Datafiles\ItemsDatafile.cs" />
-    <Compile Include="Serialization\Datafiles\PropertiesDatafile.cs" />
-    <Compile Include="Serialization\Datafiles\ReprocessingDatafile.cs" />
-    <Compile Include="Serialization\Exportation\OutputCharacter.cs" />
-    <Compile Include="Serialization\Exportation\OutputPlan.cs" />
-    <Compile Include="Serialization\Exportation\OutputSkillGroup.cs" />
-    <Compile Include="Serialization\Settings\SerializableBuyOrder.cs" />
-    <Compile Include="Serialization\Settings\SerializableJob.cs" />
-    <Compile Include="Serialization\Settings\SerializableOrderBase.cs" />
-    <Compile Include="Serialization\Settings\SerializableSellOrder.cs" />
-    <Compile Include="SettingsObjects\BlueprintBrowserSettings.cs" />
-    <Compile Include="SettingsObjects\CharacterUISettings.cs" />
-    <Compile Include="SettingsObjects\CustomMsgBoxSettings.cs" />
-    <Compile Include="SettingsObjects\ExportationSettings.cs" />
-    <Compile Include="SettingsObjects\IndustryJobColumn.cs" />
-    <Compile Include="SettingsObjects\IndustryJobColumnSettings.cs" />
-    <Compile Include="SettingsObjects\IndustryJobSettings.cs" />
-    <Compile Include="SettingsObjects\MarketOrderColumn.cs" />
-    <Compile Include="SettingsObjects\MarketOrderColumnSettings.cs" />
-    <Compile Include="SettingsObjects\MarketOrderSettings.cs" />
-    <Compile Include="SettingsObjects\NotificationCategorySettings.cs" />
-    <Compile Include="SettingsObjects\PlanColumn.cs" />
-    <Compile Include="Models\PlanEntry.cs" />
-    <Compile Include="Helpers\PlanIOHelper.cs" />
-    <Compile Include="Models\RemappingPoint.cs" />
-    <Compile Include="Scheduling\Enumerations.cs" />
-    <Compile Include="Scheduling\RecurringScheduleEntry.cs" />
-    <Compile Include="Scheduling\ScheduleDateTimeRange.cs" />
-    <Compile Include="Scheduling\ScheduleEntry.cs" />
-    <Compile Include="Scheduling\ScheduleEntryTitleComparer.cs" />
-    <Compile Include="Scheduling\Scheduler.cs" />
-    <Compile Include="Scheduling\SimpleScheduleEntry.cs" />
-    <Compile Include="Serialization\Eve\SerializableAPICharacterSheet.cs" />
-    <Compile Include="Serialization\Eve\SerializableCharacterAttributes.cs" />
-    <Compile Include="Serialization\Settings\SerializableRecurringScheduleEntry.cs" />
-    <Compile Include="Serialization\Settings\SerializableScheduleEntry.cs" />
-    <Compile Include="SettingsObjects\CalendarSettings.cs" />
-    <Compile Include="SettingsObjects\ItemBrowserSettings.cs" />
-    <Compile Include="SettingsObjects\MonitoredCharacterSettings.cs" />
-    <Compile Include="SettingsObjects\PlanColumnSettings.cs" />
-    <Compile Include="SettingsObjects\PlanSorting.cs" />
-    <Compile Include="SettingsObjects\ProxySettings.cs" />
-    <Compile Include="SettingsObjects\SchedulerUISettings.cs" />
-    <Compile Include="SettingsObjects\MainWindowSettings.cs" />
-    <Compile Include="SettingsObjects\NotificationSettings.cs" />
-    <Compile Include="SettingsObjects\SchedulerSettings.cs" />
-    <Compile Include="SettingsObjects\SerializableDictionary.cs" />
-    <Compile Include="Serialization\Settings\SerializableSettingsImplantSet.cs" />
-    <Compile Include="Serialization\Settings\SerializablePlan.cs" />
-    <Compile Include="Serialization\Datafiles\SkillsDatafile.cs" />
-    <Compile Include="Serialization\Settings\SerializableCharacterIdentity.cs" />
-    <Compile Include="Serialization\Settings\SerializableSettingsCharacter.cs" />
-    <Compile Include="SettingsObjects\WindowLocationSettings.cs" />
-    <Compile Include="SettingsObjects\PlanWindowSettings.cs" />
-    <Compile Include="SettingsObjects\ShipBrowserSettings.cs" />
-    <Compile Include="SettingsObjects\SkillBrowserSettings.cs" />
-    <Compile Include="SettingsObjects\SkillPieChartSettings.cs" />
-    <Compile Include="SettingsObjects\ToolTipNotificationBehaviour.cs" />
-    <Compile Include="SettingsObjects\TrayPopupSettings.cs" />
-    <Compile Include="SettingsObjects\TrayTooltipSettings.cs" />
-    <Compile Include="SettingsObjects\UISettings.cs" />
-    <Compile Include="SettingsObjects\UpdateSettings.cs" />
-    <Compile Include="Models\Collections\SkillCollection.cs" />
-    <Compile Include="Extensions\SkillEnumerableExtensions.cs" />
-    <Compile Include="Models\Collections\SkillGroupCollection.cs" />
-    <Compile Include="Extensions\SkillLevelEnumerableExtensions.cs" />
-    <Compile Include="Models\SkillLevelSet.cs" />
-    <Compile Include="Models\SkillQueue.cs" />
-    <Compile Include="Models\CharacterIdentity.cs" />
-    <Compile Include="Serialization\Eve\CCPAPIResult.cs" />
-    <Compile Include="Collections\ReadonlyCollection.cs" />
-    <Compile Include="Models\SkillLevel.cs" />
-    <Compile Include="Extensions\TimeExtensions.cs" />
-    <Compile Include="Models\UriCharacter.cs" />
-    <Compile Include="Collections\Global\GlobalCharacterIdentityCollection.cs" />
-    <Compile Include="Collections\Global\GlobalMonitoredCharacterCollection.cs" />
-    <Compile Include="Serialization\Eve\ISerializableWithLocalClock.cs" />
-    <Compile Include="Serialization\Eve\SerializableCharacterSkill.cs" />
-    <Compile Include="Models\QueuedSkill.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Controls\PrintOptionsDialog.resx">
-      <DependentUpon>PrintOptionsDialog.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\TipWindow.resx">
-      <DependentUpon>TipWindow.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\TrayIcon.resx">
-      <DependentUpon>TrayIcon.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Constants\NetworkConstants.resx">
-      <SubType>Designer</SubType>
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>NetworkConstants1.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\CopySaveOptionsWindow.resx">
-      <DependentUpon>CopySaveOptionsWindow.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\EveImage.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>EveImage.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\EveImagePopUp.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>EveImagePopUp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Net\ExceptionMessages.resx">
-      <SubType>Designer</SubType>
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ExceptionMessages.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <SubType>Designer</SubType>
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Controls\ApiErrorTroubleshooter.resx">
-      <DependentUpon>ApiErrorTroubleshooter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\CharacterPortrait.resx">
-      <DependentUpon>CharacterPortrait.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\EveFolderWindow.resx">
-      <DependentUpon>EveFolderWindow.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\MessageBoxCustom.resx">
-      <DependentUpon>MessageBoxCustom.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="Resources\Skill_Select\Group0\Default.resources">
+    <None Update="Resources\Skill_Select\Group0\Default.resources">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Skill_Select\Group1\Dice_Spots.resources">
+    <None Update="Resources\Skill_Select\Group1\Dice_Spots.resources">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Skill_Select\Group2\Slashes.resources">
+    <None Update="Resources\Skill_Select\Group2\Slashes.resources">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Skill_Select\Group3\Pie_Slices.resources">
+    <None Update="Resources\Skill_Select\Group3\Pie_Slices.resources">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Skill_Select\Group4\Pentagons.resources">
+    <None Update="Resources\Skill_Select\Group4\Pentagons.resources">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Skill_Select\Group5\Pentagrams.resources">
+    <None Update="Resources\Skill_Select\Group5\Pentagrams.resources">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Skill_Select\Group6\Black_Dice.resources">
+    <None Update="Resources\Skill_Select\Group6\Black_Dice.resources">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Skill_Select\Group7\Red_Dice.resources">
+    <None Update="Resources\Skill_Select\Group7\Red_Dice.resources">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Skill_Select\Group8\Bars.resources">
+    <None Update="Resources\Skill_Select\Group8\Bars.resources">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <EmbeddedResource Include="Serialization\Eve\rowsets-transform.xslt">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Serialization\Datafiles\datafile-transform.xslt" />
-    <EmbeddedResource Include="Serialization\Datafiles\DatafileConstants.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>DatafileConstants.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Serialization\Settings\settings-transform.xslt" />
     <EmbeddedResource Include="Serialization\NotificationRefTypes.xml" />
     <EmbeddedResource Include="Serialization\Flags.xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\eve-blueprints-en-US.xml.gzip">
+    <None Update="Resources\eve-blueprints-en-US.xml.gzip">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\eve-certificates-en-US.xml.gzip">
+    <None Update="Resources\eve-certificates-en-US.xml.gzip">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\eve-geography-en-US.xml.gzip">
+    <None Update="Resources\eve-geography-en-US.xml.gzip">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\eve-items-en-US.xml.gzip">
+    <None Update="Resources\eve-items-en-US.xml.gzip">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\eve-masteries-en-US.xml.gzip">
+    <None Update="Resources\eve-masteries-en-US.xml.gzip">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\eve-properties-en-US.xml.gzip">
+    <None Update="Resources\eve-properties-en-US.xml.gzip">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\eve-reprocessing-en-US.xml.gzip">
+    <None Update="Resources\eve-reprocessing-en-US.xml.gzip">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\eve-skills-en-US.xml.gzip">
+    <None Update="Resources\eve-skills-en-US.xml.gzip">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Skill_Select\IconSettings.settings">
+    <None Update="Resources\License\gpl.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Skill_Select\IconSettings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>IconSettings.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Resources\MD5Sums.txt" />
-    <None Include="Resources\License\gpl.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MarketPricer\EveMarketer\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\callback_ok.htm" />
-    <None Include="Resources\callback_fail.htm" />
     <Content Include="Resources\chrFactions.txt" />
     <Content Include="Serialization\RefTypes.xml" />
   </ItemGroup>
@@ -1236,32 +237,18 @@
     <PackageReference Include="Google.Apis.Drive.v3">
       <Version>1.68.0.3428</Version>
     </PackageReference>
-    <PackageReference Include="Microsoft.Bcl.Async">
-      <Version>1.0.168</Version>
-    </PackageReference>
     <PackageReference Include="Microsoft.Bcl.Build">
       <Version>1.0.21</Version>
     </PackageReference>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Microsoft.Graph.Core">
       <Version>1.4.0</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory">
-      <Version>2.22.302111727</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Net.Http">
-      <Version>2.2.29</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.OneDriveSDK">
-      <Version>2.0.7</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.OneDriveSDK.Authentication">
-      <Version>1.0.10</Version>
+      <Version>5.3.0</Version>
     </PackageReference>
     <PackageReference Include="Nancy">
       <Version>2.0.0</Version>
-    </PackageReference>
-    <PackageReference Include="NetOffice.Outlook.Net40">
-      <Version>1.7.4.11</Version>
     </PackageReference>
     <PackageReference Include="SharpZipLib">
       <Version>1.4.2</Version>
@@ -1269,20 +256,81 @@
     <PackageReference Include="System.IdentityModel.Tokens.Jwt">
       <Version>7.6.2</Version>
     </PackageReference>
-    <PackageReference Include="System.Text.Json">
-      <Version>8.0.3</Version>
-    </PackageReference>
+    <PackageReference Include="System.Management" Version="8.0.0" />
     <PackageReference Include="YamlDotNet">
       <Version>15.3.0</Version>
     </PackageReference>
-    <PackageReference Include="Zlib.Portable.Signed">
-      <Version>1.11.0</Version>
-    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.SystemWebAdapters" Version="1.3.0" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
+    <PackageReference Include="System.Text.Json" Version="8.0.3" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.0" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets. -->
-<PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Attributes\FullKeyAttribute.cs" />
+    <Compile Remove="IgbService\ClientConnectedEventArgs.cs" />
+    <Compile Remove="IgbService\IgbClientDataReadEventArgs.cs" />
+    <Compile Remove="IgbService\IgbServer.cs" />
+    <Compile Remove="IgbService\IgbTcpClient.cs" />
+    <Compile Remove="IgbService\IgbTcpListener.cs" />
+    <Compile Remove="Serialization\Settings\SerializableAccount.cs" />
+    <Compile Remove="Serialization\Settings\SerializableResearchPoint.cs" />
+    <Compile Remove="SettingsObjects\EVEMailMessagesColumn.cs" />
+    <Compile Remove="SettingsObjects\EVEMailMessagesColumnSettings.cs" />
+    <Compile Remove="SettingsObjects\EVEMailMessagesSettings.cs" />
+    <Compile Remove="SettingsObjects\EveNotificationsColumn.cs" />
+    <Compile Remove="SettingsObjects\EveNotificationsColumnSettings.cs" />
+    <Compile Remove="SettingsObjects\EveNotificationsSettings.cs" />
+    <Compile Remove="SettingsObjects\IgbSettings.cs" />
+    <Compile Remove="SettingsObjects\SerializableRectangle.cs" />
+  </ItemGroup>
+  <ItemGroup>
+      <EmbeddedResource Update="Resources\Skill_Select\Group0\Default.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Default.Designer.cs</LastGenOutput>
+      <LogicalName>Default.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Skill_Select\Group1\Dice_Spots.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LogicalName>Dice_Spots.resources</LogicalName>
+      <LastGenOutput>Dice_Spots.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Skill_Select\Group2\Slashes.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Slashes.Designer.cs</LastGenOutput>
+      <LogicalName>Slashes.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Skill_Select\Group3\Pie_Slices.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Pie_Slices.Designer.cs</LastGenOutput>
+      <LogicalName>Pie_Slices.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Skill_Select\Group4\Pentagons.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Pentagons.Designer.cs</LastGenOutput>
+      <LogicalName>Pentagons.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Skill_Select\Group5\Pentagrams.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Pentagrams.Designer.cs</LastGenOutput>
+      <LogicalName>Pentagrams.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Skill_Select\Group6\Black_Dice.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Black_Dice.Designer.cs</LastGenOutput>
+      <LogicalName>Black_Dice.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Skill_Select\Group7\Red_Dice.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Red_Dice.Designer.cs</LastGenOutput>
+      <LogicalName>Red_Dice.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Skill_Select\Group8\Bars.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Bars.Designer.cs</LastGenOutput>
+      <LogicalName>Bars.resources</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
     <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
-</PropertyGroup>
+  </PropertyGroup>
 </Project>

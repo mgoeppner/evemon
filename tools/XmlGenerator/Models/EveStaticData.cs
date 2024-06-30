@@ -1,11 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+
 namespace EVEMon.XmlGenerator.Models
 {
-    using System.Data.Entity;
-
     public partial class EveStaticData : DbContext
     {
         public EveStaticData()
-            : base("name=EveStaticData")
+            : base(new DbContextOptionsBuilder().UseSqlite("Data Source=..\\..\\..\\sqlite-latest.sqlite").Options)
         {
         }
 
@@ -92,7 +92,7 @@ namespace EVEMon.XmlGenerator.Models
         public virtual DbSet<warCombatZones> warCombatZones { get; set; }
         public virtual DbSet<warCombatZoneSystems> warCombatZoneSystems { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<agtAgentTypes>()
                 .Property(e => e.agentType)

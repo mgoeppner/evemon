@@ -1,5 +1,5 @@
-﻿using System.Xml.Serialization;
-using EVEMon.XmlGenerator.Interfaces;
+﻿using EVEMon.XmlGenerator.Interfaces;
+using System.Xml.Serialization;
 
 namespace EVEMon.XmlGenerator.StaticData
 {
@@ -8,13 +8,13 @@ namespace EVEMon.XmlGenerator.StaticData
         [XmlElement("traitID")]
         public int ID { get; set; }
 
-		[XmlElement("skillID")]
-		public int? skillID { get; set; }
+        [XmlElement("skillID")]
+        public int? skillID { get; set; }
 
-		[XmlElement("typeID")]
-		public int? typeID { get; set; }
+        [XmlElement("typeID")]
+        public int? typeID { get; set; }
 
-		public double? bonus { get; set; }
+        public double? bonus { get; set; }
 
         [XmlElement("bonusText")]
         public string BonusText { get; set; }

@@ -35,7 +35,7 @@ namespace EVEMon.Common.Helpers
                 ApplicationName = EveMonClient.FileVersionInfo.ProductName,
                 ApplicationVersion = EveMonClient.FileVersionInfo.FileVersion,
                 ScreenResolution = $"{Screen.PrimaryScreen.WorkingArea.Width}x{Screen.PrimaryScreen.WorkingArea.Height}",
-                UserAgent = HttpWebClientServiceState.UserAgent
+                UserAgent = HttpWebClientServiceState.UserAgent.ToString()
             };
         }
 

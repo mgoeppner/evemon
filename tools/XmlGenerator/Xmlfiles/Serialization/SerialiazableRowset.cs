@@ -11,7 +11,7 @@ namespace EVEMon.XmlGenerator.Xmlfiles.Serialization
         {
             m_rows = new Collection<T>();
         }
-        
+
         [XmlAttribute("name")]
         public string Name { get; set; }
 

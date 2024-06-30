@@ -26,19 +26,7 @@ namespace EVEMon.Common.Helpers
             {
                 if (!cancellationToken.IsCancellationRequested)
                 {
-                    return Task.Factory.FromAsync(action.BeginInvoke,
-                        result =>
-                        {
-                            try
-                            {
-                                action.EndInvoke(result);
-                                tcs.TrySetResult(default(object));
-                            }
-                            catch (Exception exc)
-                            {
-                                tcs.TrySetException(exc);
-                            }
-                        }, null);
+                    return Task.Run(action, cancellationToken);
                 }
 
                 tcs.TrySetCanceled(cancellationToken);

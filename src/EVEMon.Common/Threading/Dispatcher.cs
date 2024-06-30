@@ -1,14 +1,17 @@
-﻿using System;
+﻿using EVEMon.Common.Scheduling;
+using System;
 using System.Threading;
-using System.Windows.Threading;
-using ThreadDispatcher = System.Windows.Threading.Dispatcher;
+using System.Threading.Tasks;
 
 namespace EVEMon.Common.Threading
 {
     public static class Dispatcher
     {
-        private static ThreadDispatcher s_mainThreadDispather;
-        private static DispatcherTimer s_oneSecondTimer;
+        private static TaskScheduler s_mainThreadScheduler;
+        private static TaskFactory s_mainTaskFactory;
+        private static Timer s_oneSecondTimer;
+
+        private static readonly TimeSpan oneSecond = TimeSpan.FromSeconds(1);
 
         /// <summary>
         /// Starts the dispatcher on the main thread.
@@ -17,17 +20,13 @@ namespace EVEMon.Common.Threading
         /// <remarks>
         /// If the method has already been called previously, this new call will silently fail.
         /// </remarks>
-        internal static void Run(Thread thread)
+        internal static void Run(TaskScheduler scheduler)
         {
-            if (s_mainThreadDispather != null)
-                return;
+            s_mainThreadScheduler = scheduler;
+            s_mainTaskFactory = new TaskFactory(s_mainThreadScheduler);
 
-            s_mainThreadDispather = ThreadDispatcher.FromThread(thread) ?? ThreadDispatcher.CurrentDispatcher;
-
-            s_oneSecondTimer = new DispatcherTimer(TimeSpan.FromSeconds(1),
-                DispatcherPriority.Background,
-                OneSecondTickTimer_Tick,
-                s_mainThreadDispather);
+            var e = new AutoResetEvent(false);
+            s_oneSecondTimer = new Timer(OneSecondTickTimer_Tick, e, oneSecond, oneSecond);
         }
 
         /// <summary>
@@ -38,7 +37,7 @@ namespace EVEMon.Common.Threading
             if (s_oneSecondTimer == null)
                 return;
 
-            s_oneSecondTimer.Stop();
+            s_oneSecondTimer.Dispose();
             s_oneSecondTimer = null;
         }
 
@@ -48,10 +47,10 @@ namespace EVEMon.Common.Threading
         /// <param name="action">The action to invoke</param>
         public static void Invoke(Action action)
         {
-            if (s_mainThreadDispather == null || s_mainThreadDispather.CheckAccess())
+            if (s_mainTaskFactory == null)
                 action.Invoke();
             else
-                s_mainThreadDispather.Invoke(action);
+                s_mainTaskFactory.StartNew(action).Wait();            
         }
 
         /// <summary>
@@ -60,20 +59,22 @@ namespace EVEMon.Common.Threading
         /// <param name="time">The time at which the action will be executed.</param>
         /// <param name="action">The action to execute.</param>
         public static void Schedule(TimeSpan time, Action action)
-        {
-            DispatcherTimer timer = new DispatcherTimer { Interval = time };
-            timer.Tick += (sender, args) =>
-            {
-                timer.Stop();
-                Invoke(action);
-            };
-            timer.Start();
-        }
+        {;
+            //timer.Tick += (sender, args) =>
+            //{
+            //    timer.Stop();
+            //    Invoke(action);
+            //};
 
-        /// <summary>
-        /// Occurs on every second, when the timer ticks.
-        /// </summary>
-        private static void OneSecondTickTimer_Tick(object sender, EventArgs e)
+            Timer timer = null;
+
+            timer = new Timer(_ =>
+            {
+                Invoke(action);
+                timer.Dispose();
+            }, null, time, TimeSpan.FromMilliseconds(-1));
+        }
+        private static void OneSecondTickTimer_Tick(object sender)
         {
             EveMonClient.UpdateOnOneSecondTick();
         }

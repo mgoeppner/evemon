@@ -32,2147 +32,2234 @@ namespace EVEMon.SettingsUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Updates", 11, 11);
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Network", 7, 7);
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Portable EVE Clients", 15, 15);
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Market Price Providers", 16, 16);
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("General", 10, 10, new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3,
-            treeNode4});
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Main Window", 6, 6);
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Icons", 13, 13);
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Messages", 14, 14);
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Skill Planner", 8, 8, new System.Windows.Forms.TreeNode[] {
-            treeNode7,
-            treeNode8});
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("System Tray Icon", 2, 2);
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("External Calendar", 5, 5);
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Scheduler", 1, 1, new System.Windows.Forms.TreeNode[] {
-            treeNode11});
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Skill Completion Mails", 12, 12);
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Notifications", 9, 9, new System.Windows.Forms.TreeNode[] {
-            treeNode13});
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Cloud Storage Service", 17, 17);
-            this.systemTrayIconGroupBox = new System.Windows.Forms.GroupBox();
-            this.rbSystemTrayOptionsNever = new System.Windows.Forms.RadioButton();
-            this.rbSystemTrayOptionsAlways = new System.Windows.Forms.RadioButton();
-            this.rbSystemTrayOptionsMinimized = new System.Windows.Forms.RadioButton();
-            this.bottomPanel = new System.Windows.Forms.Panel();
-            this.applyButton = new System.Windows.Forms.Button();
-            this.okButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.lblMainWindowPage = new System.Windows.Forms.Label();
-            this.lblSize = new System.Windows.Forms.Label();
-            this.CharacterMonitorGroupBox = new System.Windows.Forms.GroupBox();
-            this.nudSkillQueueWarningThresholdDays = new System.Windows.Forms.NumericUpDown();
-            this.lblSkillQueueWarningThresholdDays = new System.Windows.Forms.Label();
-            this.lblSkillQueuWarningThreshold = new System.Windows.Forms.Label();
-            this.cbColorQueuedSkills = new System.Windows.Forms.CheckBox();
-            this.cbShowPrereqMetSkills = new System.Windows.Forms.CheckBox();
-            this.cbColorPartialSkills = new System.Windows.Forms.CheckBox();
-            this.cbAlwaysShowSkillQueueTime = new System.Windows.Forms.CheckBox();
-            this.cbShowNonPublicSkills = new System.Windows.Forms.CheckBox();
-            this.cbShowAllPublicSkills = new System.Windows.Forms.CheckBox();
-            this.WindowTitleGroupBox = new System.Windows.Forms.GroupBox();
-            this.cbWindowsTitleList = new System.Windows.Forms.ComboBox();
-            this.cbSkillInTitle = new System.Windows.Forms.CheckBox();
-            this.cbTitleToTime = new System.Windows.Forms.CheckBox();
-            this.lblGeneralPage = new System.Windows.Forms.Label();
-            this.lblEnvironment = new System.Windows.Forms.Label();
-            this.lblSkillPlannerPage = new System.Windows.Forms.Label();
-            this.lblNetworkPageProxy = new System.Windows.Forms.Label();
-            this.lblProxyHostIPAddress = new System.Windows.Forms.Label();
-            this.lblProxyPort = new System.Windows.Forms.Label();
-            this.lblHTTP = new System.Windows.Forms.Label();
-            this.lblEmailNotificationPage = new System.Windows.Forms.Label();
-            this.lblNotificationsPage = new System.Windows.Forms.Label();
-            this.lblTrayIconPage = new System.Windows.Forms.Label();
-            this.lblSchedulerUIPage = new System.Windows.Forms.Label();
-            this.lblText = new System.Windows.Forms.Label();
-            this.lblBlockingEvents = new System.Windows.Forms.Label();
-            this.lblRecurringEvents = new System.Windows.Forms.Label();
-            this.lblSimpleEvents = new System.Windows.Forms.Label();
-            this.lblExternalCalendarPage = new System.Windows.Forms.Label();
-            this.lblIconsPage = new System.Windows.Forms.Label();
-            this.gbSkillBrowserIconSet = new System.Windows.Forms.GroupBox();
-            this.iconsSetTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this.cbSkillIconSet = new System.Windows.Forms.ComboBox();
-            this.tvlist = new System.Windows.Forms.TreeView();
-            this.lblObsoletePlanEntries = new System.Windows.Forms.Label();
-            this.ttToolTipCodes = new System.Windows.Forms.ToolTip(this.components);
-            this.cbUseIncreasedContrastOnOverview = new System.Windows.Forms.CheckBox();
-            this.overviewGroupCharactersInTrainingCheckBox = new System.Windows.Forms.CheckBox();
-            this.overviewShowSkillQueueTrainingTimeCheckBox = new System.Windows.Forms.CheckBox();
-            this.overviewShowWalletCheckBox = new System.Windows.Forms.CheckBox();
-            this.overviewShowPortraitCheckBox = new System.Windows.Forms.CheckBox();
-            this.cbShowOverViewTab = new System.Windows.Forms.CheckBox();
-            this.colorDialog = new System.Windows.Forms.ColorDialog();
-            this.treeView = new System.Windows.Forms.TreeView();
-            this.imageList = new System.Windows.Forms.ImageList(this.components);
-            this.leftPanel = new System.Windows.Forms.Panel();
-            this.multiPanel = new EVEMon.Common.Controls.MultiPanel.MultiPanel();
-            this.generalPage = new EVEMon.Common.Controls.MultiPanel.MultiPanelPage();
-            this.btnEVEMonDataDir = new System.Windows.Forms.Button();
-            this.cbWorksafeMode = new System.Windows.Forms.CheckBox();
-            this.compatibilityCombo = new System.Windows.Forms.ComboBox();
-            this.runAtStartupComboBox = new System.Windows.Forms.CheckBox();
-            this.mainWindowPage = new EVEMon.Common.Controls.MultiPanel.MultiPanelPage();
-            this.OverviewGroupBox = new System.Windows.Forms.GroupBox();
-            this.overviewPanel = new System.Windows.Forms.Panel();
-            this.extraInfoComboBox = new System.Windows.Forms.ComboBox();
-            this.cbShowSkillpointsOnOverview = new System.Windows.Forms.CheckBox();
-            this.overviewPortraitSizeComboBox = new System.Windows.Forms.ComboBox();
-            this.skillPlannerPage = new EVEMon.Common.Controls.MultiPanel.MultiPanelPage();
-            this.cbAdvanceEntryAdd = new System.Windows.Forms.CheckBox();
-            this.cbSummaryOnMultiSelectOnly = new System.Windows.Forms.CheckBox();
-            this.cbHighlightQueuedSiklls = new System.Windows.Forms.CheckBox();
-            this.cbHighlightPartialSkills = new System.Windows.Forms.CheckBox();
-            this.cbHighlightConflicts = new System.Windows.Forms.CheckBox();
-            this.cbHighlightPrerequisites = new System.Windows.Forms.CheckBox();
-            this.cbHighlightPlannedSkills = new System.Windows.Forms.CheckBox();
-            this.networkPage = new EVEMon.Common.Controls.MultiPanel.MultiPanelPage();
-            this.esiSettingsGroupBox = new System.Windows.Forms.GroupBox();
-            this.lblClientSecret = new System.Windows.Forms.Label();
-            this.lblClientID = new System.Windows.Forms.Label();
-            this.esiSettingsLabel = new System.Windows.Forms.LinkLabel();
-            this.clientSecretTextBox = new System.Windows.Forms.TextBox();
-            this.clientIDTextBox = new System.Windows.Forms.TextBox();
-            this.ProxyServerGroupBox = new System.Windows.Forms.GroupBox();
-            this.customProxyCheckBox = new System.Windows.Forms.CheckBox();
-            this.customProxyPanel = new System.Windows.Forms.Panel();
-            this.proxyPortTextBox = new System.Windows.Forms.TextBox();
-            this.proxyAuthenticationButton = new System.Windows.Forms.Button();
-            this.proxyHttpHostTextBox = new System.Windows.Forms.TextBox();
-            this.emailNotificationsPage = new EVEMon.Common.Controls.MultiPanel.MultiPanelPage();
-            this.mailNotificationCheckBox = new System.Windows.Forms.CheckBox();
-            this.emailNotificationsControl = new EVEMon.SettingsUI.EmailNotificationsControl();
-            this.notificationsPage = new EVEMon.Common.Controls.MultiPanel.MultiPanelPage();
-            this.cbPlaySoundOnSkillComplete = new System.Windows.Forms.CheckBox();
-            this.notificationsControl = new EVEMon.SettingsUI.NotificationsControl();
-            this.trayIconPage = new EVEMon.Common.Controls.MultiPanel.MultiPanelPage();
-            this.mainWindowBehaviourGroupBox = new System.Windows.Forms.GroupBox();
-            this.rbMinToTaskBar = new System.Windows.Forms.RadioButton();
-            this.rbMinToTray = new System.Windows.Forms.RadioButton();
-            this.rbExitEVEMon = new System.Windows.Forms.RadioButton();
-            this.trayIconPopupGroupBox = new System.Windows.Forms.GroupBox();
-            this.trayPopupDisabledRadio = new System.Windows.Forms.RadioButton();
-            this.trayPopupButton = new System.Windows.Forms.Button();
-            this.trayPopupRadio = new System.Windows.Forms.RadioButton();
-            this.trayTooltipRadio = new System.Windows.Forms.RadioButton();
-            this.trayTooltipButton = new System.Windows.Forms.Button();
-            this.updatesPage = new EVEMon.Common.Controls.MultiPanel.MultiPanelPage();
-            this.updateSettingsControl = new EVEMon.SettingsUI.UpdateSettingsControl();
-            this.lblUpdatesPage = new System.Windows.Forms.Label();
-            this.cbCheckTime = new System.Windows.Forms.CheckBox();
-            this.cbCheckForUpdates = new System.Windows.Forms.CheckBox();
-            this.schedulerUIPage = new EVEMon.Common.Controls.MultiPanel.MultiPanelPage();
-            this.panelColorText = new System.Windows.Forms.Panel();
-            this.panelColorRecurring2 = new System.Windows.Forms.Panel();
-            this.panelColorRecurring1 = new System.Windows.Forms.Panel();
-            this.panelColorSingle2 = new System.Windows.Forms.Panel();
-            this.panelColorSingle1 = new System.Windows.Forms.Panel();
-            this.panelColorBlocking = new System.Windows.Forms.Panel();
-            this.externalCalendarPage = new EVEMon.Common.Controls.MultiPanel.MultiPanelPage();
-            this.externalCalendarControl = new EVEMon.SettingsUI.ExternalCalendarControl();
-            this.externalCalendarCheckbox = new System.Windows.Forms.CheckBox();
-            this.iconsPage = new EVEMon.Common.Controls.MultiPanel.MultiPanelPage();
-            this.messagesPage = new EVEMon.Common.Controls.MultiPanel.MultiPanelPage();
-            this.gbMessageBox = new System.Windows.Forms.GroupBox();
-            this.lblPrioritesConflict = new System.Windows.Forms.Label();
-            this.btnPrioritiesReset = new System.Windows.Forms.Button();
-            this.ObsoleteEntryRemovalGroupBox = new System.Windows.Forms.GroupBox();
-            this.RemoveAllLabel = new System.Windows.Forms.Label();
-            this.AlwaysAskLabel = new System.Windows.Forms.Label();
-            this.RemoveConfirmedLabel = new System.Windows.Forms.Label();
-            this.alwaysAskRadioButton = new System.Windows.Forms.RadioButton();
-            this.removeAllRadioButton = new System.Windows.Forms.RadioButton();
-            this.removeConfirmedRadioButton = new System.Windows.Forms.RadioButton();
-            this.portableEveClientsPage = new EVEMon.Common.Controls.MultiPanel.MultiPanelPage();
-            this.lblPECIDescription = new System.Windows.Forms.Label();
-            this.PECIGroupBox = new System.Windows.Forms.GroupBox();
-            this.portableEveClientsControl = new EVEMon.SettingsUI.PortableEveClientsControl();
-            this.marketPriceProvidersPage = new EVEMon.Common.Controls.MultiPanel.MultiPanelPage();
-            this.gbMarketPriceProviders = new System.Windows.Forms.GroupBox();
-            this.cbProvidersList = new System.Windows.Forms.ComboBox();
-            this.SelectedProviderLabel = new System.Windows.Forms.Label();
-            this.marketPriceProviderPageLabel = new System.Windows.Forms.Label();
-            this.cloudStorageServicePage = new EVEMon.Common.Controls.MultiPanel.MultiPanelPage();
-            this.providerAuthenticationGroupBox = new System.Windows.Forms.GroupBox();
-            this.cloudStorageServiceControl = new EVEMon.SettingsUI.CloudStorageServiceControl();
-            this.cloudStorageGroupBox = new System.Windows.Forms.GroupBox();
-            this.cloudStorageProviderLogoPictureBox = new System.Windows.Forms.PictureBox();
-            this.cloudStorageProvidersComboBox = new System.Windows.Forms.ComboBox();
-            this.lblSelectedProvider = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.settingsFileStorageGroupBox = new System.Windows.Forms.GroupBox();
-            this.settingsFileStorageControl = new EVEMon.SettingsUI.SettingsFileStorageControl();
-            this.systemTrayIconGroupBox.SuspendLayout();
-            this.bottomPanel.SuspendLayout();
-            this.CharacterMonitorGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSkillQueueWarningThresholdDays)).BeginInit();
-            this.WindowTitleGroupBox.SuspendLayout();
-            this.gbSkillBrowserIconSet.SuspendLayout();
-            this.iconsSetTableLayoutPanel.SuspendLayout();
-            this.leftPanel.SuspendLayout();
-            this.multiPanel.SuspendLayout();
-            this.generalPage.SuspendLayout();
-            this.mainWindowPage.SuspendLayout();
-            this.OverviewGroupBox.SuspendLayout();
-            this.overviewPanel.SuspendLayout();
-            this.skillPlannerPage.SuspendLayout();
-            this.networkPage.SuspendLayout();
-            this.esiSettingsGroupBox.SuspendLayout();
-            this.ProxyServerGroupBox.SuspendLayout();
-            this.customProxyPanel.SuspendLayout();
-            this.emailNotificationsPage.SuspendLayout();
-            this.notificationsPage.SuspendLayout();
-            this.trayIconPage.SuspendLayout();
-            this.mainWindowBehaviourGroupBox.SuspendLayout();
-            this.trayIconPopupGroupBox.SuspendLayout();
-            this.updatesPage.SuspendLayout();
-            this.schedulerUIPage.SuspendLayout();
-            this.externalCalendarPage.SuspendLayout();
-            this.iconsPage.SuspendLayout();
-            this.messagesPage.SuspendLayout();
-            this.gbMessageBox.SuspendLayout();
-            this.ObsoleteEntryRemovalGroupBox.SuspendLayout();
-            this.portableEveClientsPage.SuspendLayout();
-            this.PECIGroupBox.SuspendLayout();
-            this.marketPriceProvidersPage.SuspendLayout();
-            this.gbMarketPriceProviders.SuspendLayout();
-            this.cloudStorageServicePage.SuspendLayout();
-            this.providerAuthenticationGroupBox.SuspendLayout();
-            this.cloudStorageGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cloudStorageProviderLogoPictureBox)).BeginInit();
-            this.settingsFileStorageGroupBox.SuspendLayout();
-            this.SuspendLayout();
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Updates", 11, 11);
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Network", 7, 7);
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Portable EVE Clients", 15, 15);
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Market Price Providers", 16, 16);
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("General", 10, 10, new System.Windows.Forms.TreeNode[] { treeNode16, treeNode17, treeNode18, treeNode19 });
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Main Window", 6, 6);
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Icons", 13, 13);
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Messages", 14, 14);
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Skill Planner", 8, 8, new System.Windows.Forms.TreeNode[] { treeNode22, treeNode23 });
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("System Tray Icon", 2, 2);
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("External Calendar", 5, 5);
+            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Scheduler", 1, 1, new System.Windows.Forms.TreeNode[] { treeNode26 });
+            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Skill Completion Mails", 12, 12);
+            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Notifications", 9, 9, new System.Windows.Forms.TreeNode[] { treeNode28 });
+            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Cloud Storage Service", 17, 17);
+            systemTrayIconGroupBox = new System.Windows.Forms.GroupBox();
+            rbSystemTrayOptionsNever = new System.Windows.Forms.RadioButton();
+            rbSystemTrayOptionsAlways = new System.Windows.Forms.RadioButton();
+            rbSystemTrayOptionsMinimized = new System.Windows.Forms.RadioButton();
+            bottomPanel = new System.Windows.Forms.Panel();
+            applyButton = new System.Windows.Forms.Button();
+            okButton = new System.Windows.Forms.Button();
+            cancelButton = new System.Windows.Forms.Button();
+            lblMainWindowPage = new System.Windows.Forms.Label();
+            lblSize = new System.Windows.Forms.Label();
+            CharacterMonitorGroupBox = new System.Windows.Forms.GroupBox();
+            nudSkillQueueWarningThresholdDays = new System.Windows.Forms.NumericUpDown();
+            lblSkillQueueWarningThresholdDays = new System.Windows.Forms.Label();
+            lblSkillQueuWarningThreshold = new System.Windows.Forms.Label();
+            cbColorQueuedSkills = new System.Windows.Forms.CheckBox();
+            cbShowPrereqMetSkills = new System.Windows.Forms.CheckBox();
+            cbColorPartialSkills = new System.Windows.Forms.CheckBox();
+            cbAlwaysShowSkillQueueTime = new System.Windows.Forms.CheckBox();
+            cbShowNonPublicSkills = new System.Windows.Forms.CheckBox();
+            cbShowAllPublicSkills = new System.Windows.Forms.CheckBox();
+            WindowTitleGroupBox = new System.Windows.Forms.GroupBox();
+            cbWindowsTitleList = new System.Windows.Forms.ComboBox();
+            cbSkillInTitle = new System.Windows.Forms.CheckBox();
+            cbTitleToTime = new System.Windows.Forms.CheckBox();
+            lblGeneralPage = new System.Windows.Forms.Label();
+            lblEnvironment = new System.Windows.Forms.Label();
+            lblSkillPlannerPage = new System.Windows.Forms.Label();
+            lblNetworkPageProxy = new System.Windows.Forms.Label();
+            lblProxyHostIPAddress = new System.Windows.Forms.Label();
+            lblProxyPort = new System.Windows.Forms.Label();
+            lblHTTP = new System.Windows.Forms.Label();
+            lblEmailNotificationPage = new System.Windows.Forms.Label();
+            lblNotificationsPage = new System.Windows.Forms.Label();
+            lblTrayIconPage = new System.Windows.Forms.Label();
+            lblSchedulerUIPage = new System.Windows.Forms.Label();
+            lblText = new System.Windows.Forms.Label();
+            lblBlockingEvents = new System.Windows.Forms.Label();
+            lblRecurringEvents = new System.Windows.Forms.Label();
+            lblSimpleEvents = new System.Windows.Forms.Label();
+            lblExternalCalendarPage = new System.Windows.Forms.Label();
+            lblIconsPage = new System.Windows.Forms.Label();
+            gbSkillBrowserIconSet = new System.Windows.Forms.GroupBox();
+            iconsSetTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            cbSkillIconSet = new System.Windows.Forms.ComboBox();
+            tvlist = new System.Windows.Forms.TreeView();
+            lblObsoletePlanEntries = new System.Windows.Forms.Label();
+            ttToolTipCodes = new System.Windows.Forms.ToolTip(components);
+            cbUseIncreasedContrastOnOverview = new System.Windows.Forms.CheckBox();
+            overviewGroupCharactersInTrainingCheckBox = new System.Windows.Forms.CheckBox();
+            overviewShowSkillQueueTrainingTimeCheckBox = new System.Windows.Forms.CheckBox();
+            overviewShowWalletCheckBox = new System.Windows.Forms.CheckBox();
+            overviewShowPortraitCheckBox = new System.Windows.Forms.CheckBox();
+            cbShowOverViewTab = new System.Windows.Forms.CheckBox();
+            colorDialog = new System.Windows.Forms.ColorDialog();
+            treeView = new System.Windows.Forms.TreeView();
+            imageList = new System.Windows.Forms.ImageList(components);
+            leftPanel = new System.Windows.Forms.Panel();
+            multiPanel = new MultiPanel();
+            generalPage = new MultiPanelPage();
+            btnEVEMonDataDir = new System.Windows.Forms.Button();
+            cbWorksafeMode = new System.Windows.Forms.CheckBox();
+            compatibilityCombo = new System.Windows.Forms.ComboBox();
+            runAtStartupComboBox = new System.Windows.Forms.CheckBox();
+            mainWindowPage = new MultiPanelPage();
+            OverviewGroupBox = new System.Windows.Forms.GroupBox();
+            overviewPanel = new System.Windows.Forms.Panel();
+            extraInfoComboBox = new System.Windows.Forms.ComboBox();
+            cbShowSkillpointsOnOverview = new System.Windows.Forms.CheckBox();
+            overviewPortraitSizeComboBox = new System.Windows.Forms.ComboBox();
+            skillPlannerPage = new MultiPanelPage();
+            cbAdvanceEntryAdd = new System.Windows.Forms.CheckBox();
+            cbSummaryOnMultiSelectOnly = new System.Windows.Forms.CheckBox();
+            cbHighlightQueuedSiklls = new System.Windows.Forms.CheckBox();
+            cbHighlightPartialSkills = new System.Windows.Forms.CheckBox();
+            cbHighlightConflicts = new System.Windows.Forms.CheckBox();
+            cbHighlightPrerequisites = new System.Windows.Forms.CheckBox();
+            cbHighlightPlannedSkills = new System.Windows.Forms.CheckBox();
+            networkPage = new MultiPanelPage();
+            esiSettingsGroupBox = new System.Windows.Forms.GroupBox();
+            lblClientSecret = new System.Windows.Forms.Label();
+            lblClientID = new System.Windows.Forms.Label();
+            esiSettingsLabel = new System.Windows.Forms.LinkLabel();
+            clientSecretTextBox = new System.Windows.Forms.TextBox();
+            clientIDTextBox = new System.Windows.Forms.TextBox();
+            ProxyServerGroupBox = new System.Windows.Forms.GroupBox();
+            customProxyCheckBox = new System.Windows.Forms.CheckBox();
+            customProxyPanel = new System.Windows.Forms.Panel();
+            proxyPortTextBox = new System.Windows.Forms.TextBox();
+            proxyAuthenticationButton = new System.Windows.Forms.Button();
+            proxyHttpHostTextBox = new System.Windows.Forms.TextBox();
+            emailNotificationsPage = new MultiPanelPage();
+            mailNotificationCheckBox = new System.Windows.Forms.CheckBox();
+            emailNotificationsControl = new EmailNotificationsControl();
+            notificationsPage = new MultiPanelPage();
+            cbPlaySoundOnSkillComplete = new System.Windows.Forms.CheckBox();
+            notificationsControl = new NotificationsControl();
+            trayIconPage = new MultiPanelPage();
+            mainWindowBehaviourGroupBox = new System.Windows.Forms.GroupBox();
+            rbMinToTaskBar = new System.Windows.Forms.RadioButton();
+            rbMinToTray = new System.Windows.Forms.RadioButton();
+            rbExitEVEMon = new System.Windows.Forms.RadioButton();
+            trayIconPopupGroupBox = new System.Windows.Forms.GroupBox();
+            trayPopupDisabledRadio = new System.Windows.Forms.RadioButton();
+            trayPopupButton = new System.Windows.Forms.Button();
+            trayPopupRadio = new System.Windows.Forms.RadioButton();
+            trayTooltipRadio = new System.Windows.Forms.RadioButton();
+            trayTooltipButton = new System.Windows.Forms.Button();
+            updatesPage = new MultiPanelPage();
+            updateSettingsControl = new UpdateSettingsControl();
+            lblUpdatesPage = new System.Windows.Forms.Label();
+            cbCheckTime = new System.Windows.Forms.CheckBox();
+            cbCheckForUpdates = new System.Windows.Forms.CheckBox();
+            schedulerUIPage = new MultiPanelPage();
+            panelColorText = new System.Windows.Forms.Panel();
+            panelColorRecurring2 = new System.Windows.Forms.Panel();
+            panelColorRecurring1 = new System.Windows.Forms.Panel();
+            panelColorSingle2 = new System.Windows.Forms.Panel();
+            panelColorSingle1 = new System.Windows.Forms.Panel();
+            panelColorBlocking = new System.Windows.Forms.Panel();
+            externalCalendarPage = new MultiPanelPage();
+            externalCalendarControl = new ExternalCalendarControl();
+            externalCalendarCheckbox = new System.Windows.Forms.CheckBox();
+            iconsPage = new MultiPanelPage();
+            messagesPage = new MultiPanelPage();
+            gbMessageBox = new System.Windows.Forms.GroupBox();
+            lblPrioritesConflict = new System.Windows.Forms.Label();
+            btnPrioritiesReset = new System.Windows.Forms.Button();
+            ObsoleteEntryRemovalGroupBox = new System.Windows.Forms.GroupBox();
+            RemoveAllLabel = new System.Windows.Forms.Label();
+            AlwaysAskLabel = new System.Windows.Forms.Label();
+            RemoveConfirmedLabel = new System.Windows.Forms.Label();
+            alwaysAskRadioButton = new System.Windows.Forms.RadioButton();
+            removeAllRadioButton = new System.Windows.Forms.RadioButton();
+            removeConfirmedRadioButton = new System.Windows.Forms.RadioButton();
+            portableEveClientsPage = new MultiPanelPage();
+            lblPECIDescription = new System.Windows.Forms.Label();
+            PECIGroupBox = new System.Windows.Forms.GroupBox();
+            portableEveClientsControl = new PortableEveClientsControl();
+            marketPriceProvidersPage = new MultiPanelPage();
+            gbMarketPriceProviders = new System.Windows.Forms.GroupBox();
+            cbProvidersList = new System.Windows.Forms.ComboBox();
+            SelectedProviderLabel = new System.Windows.Forms.Label();
+            marketPriceProviderPageLabel = new System.Windows.Forms.Label();
+            cloudStorageServicePage = new MultiPanelPage();
+            providerAuthenticationGroupBox = new System.Windows.Forms.GroupBox();
+            cloudStorageServiceControl = new CloudStorageServiceControl();
+            cloudStorageGroupBox = new System.Windows.Forms.GroupBox();
+            cloudStorageProviderLogoPictureBox = new System.Windows.Forms.PictureBox();
+            cloudStorageProvidersComboBox = new System.Windows.Forms.ComboBox();
+            lblSelectedProvider = new System.Windows.Forms.Label();
+            linkLabel1 = new System.Windows.Forms.LinkLabel();
+            settingsFileStorageGroupBox = new System.Windows.Forms.GroupBox();
+            settingsFileStorageControl = new SettingsFileStorageControl();
+            systemTrayIconGroupBox.SuspendLayout();
+            bottomPanel.SuspendLayout();
+            CharacterMonitorGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nudSkillQueueWarningThresholdDays).BeginInit();
+            WindowTitleGroupBox.SuspendLayout();
+            gbSkillBrowserIconSet.SuspendLayout();
+            iconsSetTableLayoutPanel.SuspendLayout();
+            leftPanel.SuspendLayout();
+            multiPanel.SuspendLayout();
+            generalPage.SuspendLayout();
+            mainWindowPage.SuspendLayout();
+            OverviewGroupBox.SuspendLayout();
+            overviewPanel.SuspendLayout();
+            skillPlannerPage.SuspendLayout();
+            networkPage.SuspendLayout();
+            esiSettingsGroupBox.SuspendLayout();
+            ProxyServerGroupBox.SuspendLayout();
+            customProxyPanel.SuspendLayout();
+            emailNotificationsPage.SuspendLayout();
+            notificationsPage.SuspendLayout();
+            trayIconPage.SuspendLayout();
+            mainWindowBehaviourGroupBox.SuspendLayout();
+            trayIconPopupGroupBox.SuspendLayout();
+            updatesPage.SuspendLayout();
+            schedulerUIPage.SuspendLayout();
+            externalCalendarPage.SuspendLayout();
+            iconsPage.SuspendLayout();
+            messagesPage.SuspendLayout();
+            gbMessageBox.SuspendLayout();
+            ObsoleteEntryRemovalGroupBox.SuspendLayout();
+            portableEveClientsPage.SuspendLayout();
+            PECIGroupBox.SuspendLayout();
+            marketPriceProvidersPage.SuspendLayout();
+            gbMarketPriceProviders.SuspendLayout();
+            cloudStorageServicePage.SuspendLayout();
+            providerAuthenticationGroupBox.SuspendLayout();
+            cloudStorageGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)cloudStorageProviderLogoPictureBox).BeginInit();
+            settingsFileStorageGroupBox.SuspendLayout();
+            SuspendLayout();
             // 
             // systemTrayIconGroupBox
             // 
-            this.systemTrayIconGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.systemTrayIconGroupBox.Controls.Add(this.rbSystemTrayOptionsNever);
-            this.systemTrayIconGroupBox.Controls.Add(this.rbSystemTrayOptionsAlways);
-            this.systemTrayIconGroupBox.Controls.Add(this.rbSystemTrayOptionsMinimized);
-            this.systemTrayIconGroupBox.Location = new System.Drawing.Point(9, 68);
-            this.systemTrayIconGroupBox.Name = "systemTrayIconGroupBox";
-            this.systemTrayIconGroupBox.Size = new System.Drawing.Size(419, 100);
-            this.systemTrayIconGroupBox.TabIndex = 9;
-            this.systemTrayIconGroupBox.TabStop = false;
-            this.systemTrayIconGroupBox.Text = "Show System Tray Icon";
+            systemTrayIconGroupBox.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            systemTrayIconGroupBox.Controls.Add(rbSystemTrayOptionsNever);
+            systemTrayIconGroupBox.Controls.Add(rbSystemTrayOptionsAlways);
+            systemTrayIconGroupBox.Controls.Add(rbSystemTrayOptionsMinimized);
+            systemTrayIconGroupBox.Location = new System.Drawing.Point(10, 78);
+            systemTrayIconGroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            systemTrayIconGroupBox.Name = "systemTrayIconGroupBox";
+            systemTrayIconGroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            systemTrayIconGroupBox.Size = new System.Drawing.Size(489, 115);
+            systemTrayIconGroupBox.TabIndex = 9;
+            systemTrayIconGroupBox.TabStop = false;
+            systemTrayIconGroupBox.Text = "Show System Tray Icon";
             // 
             // rbSystemTrayOptionsNever
             // 
-            this.rbSystemTrayOptionsNever.AutoSize = true;
-            this.rbSystemTrayOptionsNever.Location = new System.Drawing.Point(6, 20);
-            this.rbSystemTrayOptionsNever.Name = "rbSystemTrayOptionsNever";
-            this.rbSystemTrayOptionsNever.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.rbSystemTrayOptionsNever.Size = new System.Drawing.Size(57, 17);
-            this.rbSystemTrayOptionsNever.TabIndex = 1;
-            this.rbSystemTrayOptionsNever.TabStop = true;
-            this.rbSystemTrayOptionsNever.Tag = "";
-            this.rbSystemTrayOptionsNever.Text = "Never";
-            this.rbSystemTrayOptionsNever.UseVisualStyleBackColor = true;
-            this.rbSystemTrayOptionsNever.CheckedChanged += new System.EventHandler(this.OnMustEnableOrDisable);
+            rbSystemTrayOptionsNever.AutoSize = true;
+            rbSystemTrayOptionsNever.Location = new System.Drawing.Point(7, 23);
+            rbSystemTrayOptionsNever.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            rbSystemTrayOptionsNever.Name = "rbSystemTrayOptionsNever";
+            rbSystemTrayOptionsNever.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            rbSystemTrayOptionsNever.Size = new System.Drawing.Size(60, 19);
+            rbSystemTrayOptionsNever.TabIndex = 1;
+            rbSystemTrayOptionsNever.TabStop = true;
+            rbSystemTrayOptionsNever.Tag = "";
+            rbSystemTrayOptionsNever.Text = "Never";
+            rbSystemTrayOptionsNever.UseVisualStyleBackColor = true;
+            rbSystemTrayOptionsNever.CheckedChanged += OnMustEnableOrDisable;
             // 
             // rbSystemTrayOptionsAlways
             // 
-            this.rbSystemTrayOptionsAlways.AutoSize = true;
-            this.rbSystemTrayOptionsAlways.Location = new System.Drawing.Point(6, 66);
-            this.rbSystemTrayOptionsAlways.Name = "rbSystemTrayOptionsAlways";
-            this.rbSystemTrayOptionsAlways.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.rbSystemTrayOptionsAlways.Size = new System.Drawing.Size(61, 17);
-            this.rbSystemTrayOptionsAlways.TabIndex = 3;
-            this.rbSystemTrayOptionsAlways.TabStop = true;
-            this.rbSystemTrayOptionsAlways.Tag = "";
-            this.rbSystemTrayOptionsAlways.Text = "Always";
-            this.rbSystemTrayOptionsAlways.UseVisualStyleBackColor = true;
+            rbSystemTrayOptionsAlways.AutoSize = true;
+            rbSystemTrayOptionsAlways.Location = new System.Drawing.Point(7, 76);
+            rbSystemTrayOptionsAlways.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            rbSystemTrayOptionsAlways.Name = "rbSystemTrayOptionsAlways";
+            rbSystemTrayOptionsAlways.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            rbSystemTrayOptionsAlways.Size = new System.Drawing.Size(66, 19);
+            rbSystemTrayOptionsAlways.TabIndex = 3;
+            rbSystemTrayOptionsAlways.TabStop = true;
+            rbSystemTrayOptionsAlways.Tag = "";
+            rbSystemTrayOptionsAlways.Text = "Always";
+            rbSystemTrayOptionsAlways.UseVisualStyleBackColor = true;
             // 
             // rbSystemTrayOptionsMinimized
             // 
-            this.rbSystemTrayOptionsMinimized.AutoSize = true;
-            this.rbSystemTrayOptionsMinimized.Location = new System.Drawing.Point(6, 43);
-            this.rbSystemTrayOptionsMinimized.Name = "rbSystemTrayOptionsMinimized";
-            this.rbSystemTrayOptionsMinimized.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.rbSystemTrayOptionsMinimized.Size = new System.Drawing.Size(106, 17);
-            this.rbSystemTrayOptionsMinimized.TabIndex = 2;
-            this.rbSystemTrayOptionsMinimized.TabStop = true;
-            this.rbSystemTrayOptionsMinimized.Tag = "";
-            this.rbSystemTrayOptionsMinimized.Text = "When Minimized";
-            this.rbSystemTrayOptionsMinimized.UseVisualStyleBackColor = true;
+            rbSystemTrayOptionsMinimized.AutoSize = true;
+            rbSystemTrayOptionsMinimized.Location = new System.Drawing.Point(7, 50);
+            rbSystemTrayOptionsMinimized.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            rbSystemTrayOptionsMinimized.Name = "rbSystemTrayOptionsMinimized";
+            rbSystemTrayOptionsMinimized.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            rbSystemTrayOptionsMinimized.Size = new System.Drawing.Size(119, 19);
+            rbSystemTrayOptionsMinimized.TabIndex = 2;
+            rbSystemTrayOptionsMinimized.TabStop = true;
+            rbSystemTrayOptionsMinimized.Tag = "";
+            rbSystemTrayOptionsMinimized.Text = "When Minimized";
+            rbSystemTrayOptionsMinimized.UseVisualStyleBackColor = true;
             // 
             // bottomPanel
             // 
-            this.bottomPanel.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.bottomPanel.Controls.Add(this.applyButton);
-            this.bottomPanel.Controls.Add(this.okButton);
-            this.bottomPanel.Controls.Add(this.cancelButton);
-            this.bottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bottomPanel.Location = new System.Drawing.Point(0, 436);
-            this.bottomPanel.Name = "bottomPanel";
-            this.bottomPanel.Size = new System.Drawing.Size(644, 46);
-            this.bottomPanel.TabIndex = 8;
+            bottomPanel.BackColor = System.Drawing.SystemColors.ControlLight;
+            bottomPanel.Controls.Add(applyButton);
+            bottomPanel.Controls.Add(okButton);
+            bottomPanel.Controls.Add(cancelButton);
+            bottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            bottomPanel.Location = new System.Drawing.Point(0, 503);
+            bottomPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            bottomPanel.Name = "bottomPanel";
+            bottomPanel.Size = new System.Drawing.Size(751, 53);
+            bottomPanel.TabIndex = 8;
             // 
             // applyButton
             // 
-            this.applyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.applyButton.Location = new System.Drawing.Point(557, 11);
-            this.applyButton.Name = "applyButton";
-            this.applyButton.Size = new System.Drawing.Size(75, 23);
-            this.applyButton.TabIndex = 4;
-            this.applyButton.Text = "&Apply";
-            this.applyButton.UseVisualStyleBackColor = true;
-            this.applyButton.Click += new System.EventHandler(this.applyButton_Click);
+            applyButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            applyButton.Location = new System.Drawing.Point(650, 13);
+            applyButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            applyButton.Name = "applyButton";
+            applyButton.Size = new System.Drawing.Size(88, 27);
+            applyButton.TabIndex = 4;
+            applyButton.Text = "&Apply";
+            applyButton.UseVisualStyleBackColor = true;
+            applyButton.Click += applyButton_Click;
             // 
             // okButton
             // 
-            this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.okButton.Location = new System.Drawing.Point(395, 11);
-            this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(75, 23);
-            this.okButton.TabIndex = 3;
-            this.okButton.Text = "&OK";
-            this.okButton.UseVisualStyleBackColor = true;
-            this.okButton.Click += new System.EventHandler(this.btnOk_Click);
+            okButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            okButton.Location = new System.Drawing.Point(461, 13);
+            okButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            okButton.Name = "okButton";
+            okButton.Size = new System.Drawing.Size(88, 27);
+            okButton.TabIndex = 3;
+            okButton.Text = "&OK";
+            okButton.UseVisualStyleBackColor = true;
+            okButton.Click += btnOk_Click;
             // 
             // cancelButton
             // 
-            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Location = new System.Drawing.Point(476, 11);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
-            this.cancelButton.TabIndex = 2;
-            this.cancelButton.Text = "&Cancel";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Click += new System.EventHandler(this.btnCancel_Click);
+            cancelButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            cancelButton.Location = new System.Drawing.Point(555, 13);
+            cancelButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cancelButton.Name = "cancelButton";
+            cancelButton.Size = new System.Drawing.Size(88, 27);
+            cancelButton.TabIndex = 2;
+            cancelButton.Text = "&Cancel";
+            cancelButton.UseVisualStyleBackColor = true;
+            cancelButton.Click += btnCancel_Click;
             // 
             // lblMainWindowPage
             // 
-            this.lblMainWindowPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblMainWindowPage.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblMainWindowPage.Location = new System.Drawing.Point(4, 12);
-            this.lblMainWindowPage.Name = "lblMainWindowPage";
-            this.lblMainWindowPage.Size = new System.Drawing.Size(424, 44);
-            this.lblMainWindowPage.TabIndex = 19;
-            this.lblMainWindowPage.Text = resources.GetString("lblMainWindowPage.Text");
+            lblMainWindowPage.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lblMainWindowPage.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            lblMainWindowPage.Location = new System.Drawing.Point(5, 14);
+            lblMainWindowPage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblMainWindowPage.Name = "lblMainWindowPage";
+            lblMainWindowPage.Size = new System.Drawing.Size(495, 51);
+            lblMainWindowPage.TabIndex = 19;
+            lblMainWindowPage.Text = resources.GetString("lblMainWindowPage.Text");
             // 
             // lblSize
             // 
-            this.lblSize.AutoSize = true;
-            this.lblSize.Location = new System.Drawing.Point(20, 52);
-            this.lblSize.Name = "lblSize";
-            this.lblSize.Size = new System.Drawing.Size(27, 13);
-            this.lblSize.TabIndex = 31;
-            this.lblSize.Text = "Size";
+            lblSize.AutoSize = true;
+            lblSize.Location = new System.Drawing.Point(23, 60);
+            lblSize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblSize.Name = "lblSize";
+            lblSize.Size = new System.Drawing.Size(27, 15);
+            lblSize.TabIndex = 31;
+            lblSize.Text = "Size";
             // 
             // CharacterMonitorGroupBox
             // 
-            this.CharacterMonitorGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CharacterMonitorGroupBox.Controls.Add(this.nudSkillQueueWarningThresholdDays);
-            this.CharacterMonitorGroupBox.Controls.Add(this.lblSkillQueueWarningThresholdDays);
-            this.CharacterMonitorGroupBox.Controls.Add(this.lblSkillQueuWarningThreshold);
-            this.CharacterMonitorGroupBox.Controls.Add(this.cbColorQueuedSkills);
-            this.CharacterMonitorGroupBox.Controls.Add(this.cbShowPrereqMetSkills);
-            this.CharacterMonitorGroupBox.Controls.Add(this.cbColorPartialSkills);
-            this.CharacterMonitorGroupBox.Controls.Add(this.cbAlwaysShowSkillQueueTime);
-            this.CharacterMonitorGroupBox.Controls.Add(this.cbShowNonPublicSkills);
-            this.CharacterMonitorGroupBox.Controls.Add(this.cbShowAllPublicSkills);
-            this.CharacterMonitorGroupBox.Location = new System.Drawing.Point(3, 161);
-            this.CharacterMonitorGroupBox.Name = "CharacterMonitorGroupBox";
-            this.CharacterMonitorGroupBox.Size = new System.Drawing.Size(426, 126);
-            this.CharacterMonitorGroupBox.TabIndex = 7;
-            this.CharacterMonitorGroupBox.TabStop = false;
-            this.CharacterMonitorGroupBox.Text = "Character Monitor";
+            CharacterMonitorGroupBox.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            CharacterMonitorGroupBox.Controls.Add(nudSkillQueueWarningThresholdDays);
+            CharacterMonitorGroupBox.Controls.Add(lblSkillQueueWarningThresholdDays);
+            CharacterMonitorGroupBox.Controls.Add(lblSkillQueuWarningThreshold);
+            CharacterMonitorGroupBox.Controls.Add(cbColorQueuedSkills);
+            CharacterMonitorGroupBox.Controls.Add(cbShowPrereqMetSkills);
+            CharacterMonitorGroupBox.Controls.Add(cbColorPartialSkills);
+            CharacterMonitorGroupBox.Controls.Add(cbAlwaysShowSkillQueueTime);
+            CharacterMonitorGroupBox.Controls.Add(cbShowNonPublicSkills);
+            CharacterMonitorGroupBox.Controls.Add(cbShowAllPublicSkills);
+            CharacterMonitorGroupBox.Location = new System.Drawing.Point(4, 186);
+            CharacterMonitorGroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            CharacterMonitorGroupBox.Name = "CharacterMonitorGroupBox";
+            CharacterMonitorGroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            CharacterMonitorGroupBox.Size = new System.Drawing.Size(497, 145);
+            CharacterMonitorGroupBox.TabIndex = 7;
+            CharacterMonitorGroupBox.TabStop = false;
+            CharacterMonitorGroupBox.Text = "Character Monitor";
             // 
             // nudSkillQueueWarningThresholdDays
             // 
-            this.nudSkillQueueWarningThresholdDays.Location = new System.Drawing.Point(65, 101);
-            this.nudSkillQueueWarningThresholdDays.Maximum = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
-            this.nudSkillQueueWarningThresholdDays.Name = "nudSkillQueueWarningThresholdDays";
-            this.nudSkillQueueWarningThresholdDays.Size = new System.Drawing.Size(33, 20);
-            this.nudSkillQueueWarningThresholdDays.TabIndex = 16;
-            this.nudSkillQueueWarningThresholdDays.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            nudSkillQueueWarningThresholdDays.Location = new System.Drawing.Point(76, 117);
+            nudSkillQueueWarningThresholdDays.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            nudSkillQueueWarningThresholdDays.Maximum = new decimal(new int[] { 30, 0, 0, 0 });
+            nudSkillQueueWarningThresholdDays.Name = "nudSkillQueueWarningThresholdDays";
+            nudSkillQueueWarningThresholdDays.Size = new System.Drawing.Size(38, 23);
+            nudSkillQueueWarningThresholdDays.TabIndex = 16;
+            nudSkillQueueWarningThresholdDays.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // lblSkillQueueWarningThresholdDays
             // 
-            this.lblSkillQueueWarningThresholdDays.AutoSize = true;
-            this.lblSkillQueueWarningThresholdDays.Location = new System.Drawing.Point(22, 103);
-            this.lblSkillQueueWarningThresholdDays.Name = "lblSkillQueueWarningThresholdDays";
-            this.lblSkillQueueWarningThresholdDays.Size = new System.Drawing.Size(37, 13);
-            this.lblSkillQueueWarningThresholdDays.TabIndex = 15;
-            this.lblSkillQueueWarningThresholdDays.Text = "Days :";
+            lblSkillQueueWarningThresholdDays.AutoSize = true;
+            lblSkillQueueWarningThresholdDays.Location = new System.Drawing.Point(26, 119);
+            lblSkillQueueWarningThresholdDays.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblSkillQueueWarningThresholdDays.Name = "lblSkillQueueWarningThresholdDays";
+            lblSkillQueueWarningThresholdDays.Size = new System.Drawing.Size(38, 15);
+            lblSkillQueueWarningThresholdDays.TabIndex = 15;
+            lblSkillQueueWarningThresholdDays.Text = "Days :";
             // 
             // lblSkillQueuWarningThreshold
             // 
-            this.lblSkillQueuWarningThreshold.AutoSize = true;
-            this.lblSkillQueuWarningThreshold.Location = new System.Drawing.Point(9, 84);
-            this.lblSkillQueuWarningThreshold.Name = "lblSkillQueuWarningThreshold";
-            this.lblSkillQueuWarningThreshold.Size = new System.Drawing.Size(154, 13);
-            this.lblSkillQueuWarningThreshold.TabIndex = 14;
-            this.lblSkillQueuWarningThreshold.Text = "Skill Queue Warning Threshold";
+            lblSkillQueuWarningThreshold.AutoSize = true;
+            lblSkillQueuWarningThreshold.Location = new System.Drawing.Point(10, 97);
+            lblSkillQueuWarningThreshold.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblSkillQueuWarningThreshold.Name = "lblSkillQueuWarningThreshold";
+            lblSkillQueuWarningThreshold.Size = new System.Drawing.Size(169, 15);
+            lblSkillQueuWarningThreshold.TabIndex = 14;
+            lblSkillQueuWarningThreshold.Text = "Skill Queue Warning Threshold";
             // 
             // cbColorQueuedSkills
             // 
-            this.cbColorQueuedSkills.AutoSize = true;
-            this.cbColorQueuedSkills.Location = new System.Drawing.Point(188, 38);
-            this.cbColorQueuedSkills.Name = "cbColorQueuedSkills";
-            this.cbColorQueuedSkills.Size = new System.Drawing.Size(135, 17);
-            this.cbColorQueuedSkills.TabIndex = 13;
-            this.cbColorQueuedSkills.Text = "Highlight Queued Skills";
-            this.ttToolTipCodes.SetToolTip(this.cbColorQueuedSkills, "When enabled, highlights all\r\nqueued skills in character\'s skill list");
-            this.cbColorQueuedSkills.UseVisualStyleBackColor = true;
+            cbColorQueuedSkills.AutoSize = true;
+            cbColorQueuedSkills.Location = new System.Drawing.Point(219, 44);
+            cbColorQueuedSkills.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbColorQueuedSkills.Name = "cbColorQueuedSkills";
+            cbColorQueuedSkills.Size = new System.Drawing.Size(150, 19);
+            cbColorQueuedSkills.TabIndex = 13;
+            cbColorQueuedSkills.Text = "Highlight Queued Skills";
+            ttToolTipCodes.SetToolTip(cbColorQueuedSkills, "When enabled, highlights all\r\nqueued skills in character's skill list");
+            cbColorQueuedSkills.UseVisualStyleBackColor = true;
             // 
             // cbShowPrereqMetSkills
             // 
-            this.cbShowPrereqMetSkills.AutoSize = true;
-            this.cbShowPrereqMetSkills.Location = new System.Drawing.Point(15, 57);
-            this.cbShowPrereqMetSkills.Name = "cbShowPrereqMetSkills";
-            this.cbShowPrereqMetSkills.Size = new System.Drawing.Size(158, 17);
-            this.cbShowPrereqMetSkills.TabIndex = 12;
-            this.cbShowPrereqMetSkills.Text = "Show Also Prereq-Met Skills";
-            this.ttToolTipCodes.SetToolTip(this.cbShowPrereqMetSkills, "When enabled, shows all prerequisites\r\nmet skills in character\'s skill list");
-            this.cbShowPrereqMetSkills.UseVisualStyleBackColor = true;
+            cbShowPrereqMetSkills.AutoSize = true;
+            cbShowPrereqMetSkills.Location = new System.Drawing.Point(18, 66);
+            cbShowPrereqMetSkills.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbShowPrereqMetSkills.Name = "cbShowPrereqMetSkills";
+            cbShowPrereqMetSkills.Size = new System.Drawing.Size(173, 19);
+            cbShowPrereqMetSkills.TabIndex = 12;
+            cbShowPrereqMetSkills.Text = "Show Also Prereq-Met Skills";
+            ttToolTipCodes.SetToolTip(cbShowPrereqMetSkills, "When enabled, shows all prerequisites\r\nmet skills in character's skill list");
+            cbShowPrereqMetSkills.UseVisualStyleBackColor = true;
             // 
             // cbColorPartialSkills
             // 
-            this.cbColorPartialSkills.AutoSize = true;
-            this.cbColorPartialSkills.Location = new System.Drawing.Point(188, 20);
-            this.cbColorPartialSkills.Name = "cbColorPartialSkills";
-            this.cbColorPartialSkills.Size = new System.Drawing.Size(172, 17);
-            this.cbColorPartialSkills.TabIndex = 11;
-            this.cbColorPartialSkills.Text = "Highlight Partially Trained Skills";
-            this.ttToolTipCodes.SetToolTip(this.cbColorPartialSkills, "When enabled, highlights all partially\r\ntrained skills in character\'s skill list");
-            this.cbColorPartialSkills.UseVisualStyleBackColor = true;
+            cbColorPartialSkills.AutoSize = true;
+            cbColorPartialSkills.Location = new System.Drawing.Point(219, 23);
+            cbColorPartialSkills.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbColorPartialSkills.Name = "cbColorPartialSkills";
+            cbColorPartialSkills.Size = new System.Drawing.Size(191, 19);
+            cbColorPartialSkills.TabIndex = 11;
+            cbColorPartialSkills.Text = "Highlight Partially Trained Skills";
+            ttToolTipCodes.SetToolTip(cbColorPartialSkills, "When enabled, highlights all partially\r\ntrained skills in character's skill list");
+            cbColorPartialSkills.UseVisualStyleBackColor = true;
             // 
             // cbAlwaysShowSkillQueueTime
             // 
-            this.cbAlwaysShowSkillQueueTime.AutoSize = true;
-            this.cbAlwaysShowSkillQueueTime.Location = new System.Drawing.Point(188, 57);
-            this.cbAlwaysShowSkillQueueTime.Name = "cbAlwaysShowSkillQueueTime";
-            this.cbAlwaysShowSkillQueueTime.Size = new System.Drawing.Size(213, 17);
-            this.cbAlwaysShowSkillQueueTime.TabIndex = 2;
-            this.cbAlwaysShowSkillQueueTime.Text = "Always show time above the skill queue";
-            this.ttToolTipCodes.SetToolTip(this.cbAlwaysShowSkillQueueTime, "When enabled, always displays the total\r\nqueue time above the skill queue bar");
-            this.cbAlwaysShowSkillQueueTime.UseVisualStyleBackColor = true;
+            cbAlwaysShowSkillQueueTime.AutoSize = true;
+            cbAlwaysShowSkillQueueTime.Location = new System.Drawing.Point(219, 66);
+            cbAlwaysShowSkillQueueTime.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbAlwaysShowSkillQueueTime.Name = "cbAlwaysShowSkillQueueTime";
+            cbAlwaysShowSkillQueueTime.Size = new System.Drawing.Size(235, 19);
+            cbAlwaysShowSkillQueueTime.TabIndex = 2;
+            cbAlwaysShowSkillQueueTime.Text = "Always show time above the skill queue";
+            ttToolTipCodes.SetToolTip(cbAlwaysShowSkillQueueTime, "When enabled, always displays the total\r\nqueue time above the skill queue bar");
+            cbAlwaysShowSkillQueueTime.UseVisualStyleBackColor = true;
             // 
             // cbShowNonPublicSkills
             // 
-            this.cbShowNonPublicSkills.AutoSize = true;
-            this.cbShowNonPublicSkills.Enabled = false;
-            this.cbShowNonPublicSkills.Location = new System.Drawing.Point(15, 38);
-            this.cbShowNonPublicSkills.Name = "cbShowNonPublicSkills";
-            this.cbShowNonPublicSkills.Size = new System.Drawing.Size(158, 17);
-            this.cbShowNonPublicSkills.TabIndex = 1;
-            this.cbShowNonPublicSkills.Text = "Show Also Non-Public Skills";
-            this.ttToolTipCodes.SetToolTip(this.cbShowNonPublicSkills, "When enabled, shows all non-public skills in character\'s skill list");
-            this.cbShowNonPublicSkills.UseVisualStyleBackColor = true;
+            cbShowNonPublicSkills.AutoSize = true;
+            cbShowNonPublicSkills.Enabled = false;
+            cbShowNonPublicSkills.Location = new System.Drawing.Point(18, 44);
+            cbShowNonPublicSkills.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbShowNonPublicSkills.Name = "cbShowNonPublicSkills";
+            cbShowNonPublicSkills.Size = new System.Drawing.Size(174, 19);
+            cbShowNonPublicSkills.TabIndex = 1;
+            cbShowNonPublicSkills.Text = "Show Also Non-Public Skills";
+            ttToolTipCodes.SetToolTip(cbShowNonPublicSkills, "When enabled, shows all non-public skills in character's skill list");
+            cbShowNonPublicSkills.UseVisualStyleBackColor = true;
             // 
             // cbShowAllPublicSkills
             // 
-            this.cbShowAllPublicSkills.AutoSize = true;
-            this.cbShowAllPublicSkills.Location = new System.Drawing.Point(15, 20);
-            this.cbShowAllPublicSkills.Name = "cbShowAllPublicSkills";
-            this.cbShowAllPublicSkills.Size = new System.Drawing.Size(149, 17);
-            this.cbShowAllPublicSkills.TabIndex = 0;
-            this.cbShowAllPublicSkills.Text = "Show Also All Public Skills";
-            this.ttToolTipCodes.SetToolTip(this.cbShowAllPublicSkills, "When enabled, shows all public skills in character\'s skill list");
-            this.cbShowAllPublicSkills.UseVisualStyleBackColor = true;
-            this.cbShowAllPublicSkills.CheckedChanged += new System.EventHandler(this.OnMustEnableOrDisable);
+            cbShowAllPublicSkills.AutoSize = true;
+            cbShowAllPublicSkills.Location = new System.Drawing.Point(18, 23);
+            cbShowAllPublicSkills.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbShowAllPublicSkills.Name = "cbShowAllPublicSkills";
+            cbShowAllPublicSkills.Size = new System.Drawing.Size(163, 19);
+            cbShowAllPublicSkills.TabIndex = 0;
+            cbShowAllPublicSkills.Text = "Show Also All Public Skills";
+            ttToolTipCodes.SetToolTip(cbShowAllPublicSkills, "When enabled, shows all public skills in character's skill list");
+            cbShowAllPublicSkills.UseVisualStyleBackColor = true;
+            cbShowAllPublicSkills.CheckedChanged += OnMustEnableOrDisable;
             // 
             // WindowTitleGroupBox
             // 
-            this.WindowTitleGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.WindowTitleGroupBox.Controls.Add(this.cbWindowsTitleList);
-            this.WindowTitleGroupBox.Controls.Add(this.cbSkillInTitle);
-            this.WindowTitleGroupBox.Controls.Add(this.cbTitleToTime);
-            this.WindowTitleGroupBox.Location = new System.Drawing.Point(3, 59);
-            this.WindowTitleGroupBox.Name = "WindowTitleGroupBox";
-            this.WindowTitleGroupBox.Size = new System.Drawing.Size(426, 96);
-            this.WindowTitleGroupBox.TabIndex = 14;
-            this.WindowTitleGroupBox.TabStop = false;
-            this.WindowTitleGroupBox.Text = "Window Title";
+            WindowTitleGroupBox.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            WindowTitleGroupBox.Controls.Add(cbWindowsTitleList);
+            WindowTitleGroupBox.Controls.Add(cbSkillInTitle);
+            WindowTitleGroupBox.Controls.Add(cbTitleToTime);
+            WindowTitleGroupBox.Location = new System.Drawing.Point(4, 68);
+            WindowTitleGroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            WindowTitleGroupBox.Name = "WindowTitleGroupBox";
+            WindowTitleGroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            WindowTitleGroupBox.Size = new System.Drawing.Size(497, 111);
+            WindowTitleGroupBox.TabIndex = 14;
+            WindowTitleGroupBox.TabStop = false;
+            WindowTitleGroupBox.Text = "Window Title";
             // 
             // cbWindowsTitleList
             // 
-            this.cbWindowsTitleList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbWindowsTitleList.FormattingEnabled = true;
-            this.cbWindowsTitleList.Items.AddRange(new object[] {
-            "Single character - finishing skill next",
-            "Single character - selected character",
-            "Multi character - finishing skill next first",
-            "Multi character - selected character first "});
-            this.cbWindowsTitleList.Location = new System.Drawing.Point(15, 66);
-            this.cbWindowsTitleList.Name = "cbWindowsTitleList";
-            this.cbWindowsTitleList.Size = new System.Drawing.Size(224, 21);
-            this.cbWindowsTitleList.TabIndex = 1;
+            cbWindowsTitleList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbWindowsTitleList.FormattingEnabled = true;
+            cbWindowsTitleList.Items.AddRange(new object[] { "Single character - finishing skill next", "Single character - selected character", "Multi character - finishing skill next first", "Multi character - selected character first " });
+            cbWindowsTitleList.Location = new System.Drawing.Point(18, 76);
+            cbWindowsTitleList.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbWindowsTitleList.Name = "cbWindowsTitleList";
+            cbWindowsTitleList.Size = new System.Drawing.Size(261, 23);
+            cbWindowsTitleList.TabIndex = 1;
             // 
             // cbSkillInTitle
             // 
-            this.cbSkillInTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.cbSkillInTitle.AutoSize = true;
-            this.cbSkillInTitle.Location = new System.Drawing.Point(15, 43);
-            this.cbSkillInTitle.Name = "cbSkillInTitle";
-            this.cbSkillInTitle.Size = new System.Drawing.Size(121, 17);
-            this.cbSkillInTitle.TabIndex = 7;
-            this.cbSkillInTitle.Text = "Show skill in training";
-            this.ttToolTipCodes.SetToolTip(this.cbSkillInTitle, "When enabled, shows the character\'s skill\r\nin training according to choice below");
-            this.cbSkillInTitle.UseVisualStyleBackColor = true;
+            cbSkillInTitle.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            cbSkillInTitle.AutoSize = true;
+            cbSkillInTitle.Location = new System.Drawing.Point(18, 50);
+            cbSkillInTitle.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbSkillInTitle.Name = "cbSkillInTitle";
+            cbSkillInTitle.Size = new System.Drawing.Size(135, 19);
+            cbSkillInTitle.TabIndex = 7;
+            cbSkillInTitle.Text = "Show skill in training";
+            ttToolTipCodes.SetToolTip(cbSkillInTitle, "When enabled, shows the character's skill\r\nin training according to choice below");
+            cbSkillInTitle.UseVisualStyleBackColor = true;
             // 
             // cbTitleToTime
             // 
-            this.cbTitleToTime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.cbTitleToTime.AutoSize = true;
-            this.cbTitleToTime.Location = new System.Drawing.Point(15, 20);
-            this.cbTitleToTime.Margin = new System.Windows.Forms.Padding(12, 3, 3, 3);
-            this.cbTitleToTime.Name = "cbTitleToTime";
-            this.cbTitleToTime.Size = new System.Drawing.Size(190, 17);
-            this.cbTitleToTime.TabIndex = 6;
-            this.cbTitleToTime.Text = "Show character info in window title";
-            this.ttToolTipCodes.SetToolTip(this.cbTitleToTime, "When enabled, shows the character\'s info in window title");
-            this.cbTitleToTime.UseVisualStyleBackColor = true;
-            this.cbTitleToTime.CheckedChanged += new System.EventHandler(this.OnMustEnableOrDisable);
+            cbTitleToTime.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            cbTitleToTime.AutoSize = true;
+            cbTitleToTime.Location = new System.Drawing.Point(18, 23);
+            cbTitleToTime.Margin = new System.Windows.Forms.Padding(14, 3, 4, 3);
+            cbTitleToTime.Name = "cbTitleToTime";
+            cbTitleToTime.Size = new System.Drawing.Size(212, 19);
+            cbTitleToTime.TabIndex = 6;
+            cbTitleToTime.Text = "Show character info in window title";
+            ttToolTipCodes.SetToolTip(cbTitleToTime, "When enabled, shows the character's info in window title");
+            cbTitleToTime.UseVisualStyleBackColor = true;
+            cbTitleToTime.CheckedChanged += OnMustEnableOrDisable;
             // 
             // lblGeneralPage
             // 
-            this.lblGeneralPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblGeneralPage.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblGeneralPage.Location = new System.Drawing.Point(4, 23);
-            this.lblGeneralPage.Name = "lblGeneralPage";
-            this.lblGeneralPage.Size = new System.Drawing.Size(424, 42);
-            this.lblGeneralPage.TabIndex = 20;
-            this.lblGeneralPage.Text = resources.GetString("lblGeneralPage.Text");
+            lblGeneralPage.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lblGeneralPage.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            lblGeneralPage.Location = new System.Drawing.Point(5, 27);
+            lblGeneralPage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblGeneralPage.Name = "lblGeneralPage";
+            lblGeneralPage.Size = new System.Drawing.Size(495, 48);
+            lblGeneralPage.TabIndex = 20;
+            lblGeneralPage.Text = resources.GetString("lblGeneralPage.Text");
             // 
             // lblEnvironment
             // 
-            this.lblEnvironment.AutoSize = true;
-            this.lblEnvironment.Location = new System.Drawing.Point(3, 181);
-            this.lblEnvironment.Name = "lblEnvironment";
-            this.lblEnvironment.Size = new System.Drawing.Size(210, 13);
-            this.lblEnvironment.TabIndex = 1;
-            this.lblEnvironment.Text = "Environment (requires restart to take effect)";
+            lblEnvironment.AutoSize = true;
+            lblEnvironment.Location = new System.Drawing.Point(4, 209);
+            lblEnvironment.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblEnvironment.Name = "lblEnvironment";
+            lblEnvironment.Size = new System.Drawing.Size(236, 15);
+            lblEnvironment.TabIndex = 1;
+            lblEnvironment.Text = "Environment (requires restart to take effect)";
             // 
             // lblSkillPlannerPage
             // 
-            this.lblSkillPlannerPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSkillPlannerPage.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblSkillPlannerPage.Location = new System.Drawing.Point(4, 20);
-            this.lblSkillPlannerPage.Name = "lblSkillPlannerPage";
-            this.lblSkillPlannerPage.Size = new System.Drawing.Size(424, 28);
-            this.lblSkillPlannerPage.TabIndex = 19;
-            this.lblSkillPlannerPage.Text = "You can select whether to highlight any entry in the Skill Planner according to i" +
-    "ts status and more.";
+            lblSkillPlannerPage.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lblSkillPlannerPage.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            lblSkillPlannerPage.Location = new System.Drawing.Point(5, 23);
+            lblSkillPlannerPage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblSkillPlannerPage.Name = "lblSkillPlannerPage";
+            lblSkillPlannerPage.Size = new System.Drawing.Size(495, 32);
+            lblSkillPlannerPage.TabIndex = 19;
+            lblSkillPlannerPage.Text = "You can select whether to highlight any entry in the Skill Planner according to its status and more.";
             // 
             // lblNetworkPageProxy
             // 
-            this.lblNetworkPageProxy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblNetworkPageProxy.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblNetworkPageProxy.Location = new System.Drawing.Point(9, 17);
-            this.lblNetworkPageProxy.Name = "lblNetworkPageProxy";
-            this.lblNetworkPageProxy.Size = new System.Drawing.Size(399, 32);
-            this.lblNetworkPageProxy.TabIndex = 8;
-            this.lblNetworkPageProxy.Text = "By default, EVEMon will use the same Proxy settings as Internet Explorer (can be " +
-    "configured through the Control Panel).";
+            lblNetworkPageProxy.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lblNetworkPageProxy.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            lblNetworkPageProxy.Location = new System.Drawing.Point(10, 20);
+            lblNetworkPageProxy.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblNetworkPageProxy.Name = "lblNetworkPageProxy";
+            lblNetworkPageProxy.Size = new System.Drawing.Size(465, 37);
+            lblNetworkPageProxy.TabIndex = 8;
+            lblNetworkPageProxy.Text = "By default, EVEMon will use the same Proxy settings as Internet Explorer (can be configured through the Control Panel).";
             // 
             // lblProxyHostIPAddress
             // 
-            this.lblProxyHostIPAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblProxyHostIPAddress.Location = new System.Drawing.Point(50, 8);
-            this.lblProxyHostIPAddress.Name = "lblProxyHostIPAddress";
-            this.lblProxyHostIPAddress.Size = new System.Drawing.Size(182, 13);
-            this.lblProxyHostIPAddress.TabIndex = 3;
-            this.lblProxyHostIPAddress.Text = "Host/IP Address";
-            this.lblProxyHostIPAddress.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            lblProxyHostIPAddress.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lblProxyHostIPAddress.Location = new System.Drawing.Point(58, 9);
+            lblProxyHostIPAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblProxyHostIPAddress.Name = "lblProxyHostIPAddress";
+            lblProxyHostIPAddress.Size = new System.Drawing.Size(212, 15);
+            lblProxyHostIPAddress.TabIndex = 3;
+            lblProxyHostIPAddress.Text = "Host/IP Address";
+            lblProxyHostIPAddress.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblProxyPort
             // 
-            this.lblProxyPort.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblProxyPort.Location = new System.Drawing.Point(221, 8);
-            this.lblProxyPort.Name = "lblProxyPort";
-            this.lblProxyPort.Size = new System.Drawing.Size(56, 13);
-            this.lblProxyPort.TabIndex = 4;
-            this.lblProxyPort.Text = "Port";
-            this.lblProxyPort.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            lblProxyPort.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lblProxyPort.Location = new System.Drawing.Point(258, 9);
+            lblProxyPort.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblProxyPort.Name = "lblProxyPort";
+            lblProxyPort.Size = new System.Drawing.Size(65, 15);
+            lblProxyPort.TabIndex = 4;
+            lblProxyPort.Text = "Port";
+            lblProxyPort.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblHTTP
             // 
-            this.lblHTTP.AutoSize = true;
-            this.lblHTTP.Location = new System.Drawing.Point(8, 27);
-            this.lblHTTP.Name = "lblHTTP";
-            this.lblHTTP.Size = new System.Drawing.Size(39, 13);
-            this.lblHTTP.TabIndex = 0;
-            this.lblHTTP.Text = "HTTP:";
-            this.lblHTTP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            lblHTTP.AutoSize = true;
+            lblHTTP.Location = new System.Drawing.Point(9, 31);
+            lblHTTP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblHTTP.Name = "lblHTTP";
+            lblHTTP.Size = new System.Drawing.Size(38, 15);
+            lblHTTP.TabIndex = 0;
+            lblHTTP.Text = "HTTP:";
+            lblHTTP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblEmailNotificationPage
             // 
-            this.lblEmailNotificationPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblEmailNotificationPage.AutoSize = true;
-            this.lblEmailNotificationPage.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblEmailNotificationPage.Location = new System.Drawing.Point(4, 20);
-            this.lblEmailNotificationPage.Name = "lblEmailNotificationPage";
-            this.lblEmailNotificationPage.Size = new System.Drawing.Size(366, 13);
-            this.lblEmailNotificationPage.TabIndex = 19;
-            this.lblEmailNotificationPage.Text = "EVEMon can send you an email whenever a skill level completes its training.";
+            lblEmailNotificationPage.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lblEmailNotificationPage.AutoSize = true;
+            lblEmailNotificationPage.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            lblEmailNotificationPage.Location = new System.Drawing.Point(5, 23);
+            lblEmailNotificationPage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblEmailNotificationPage.Name = "lblEmailNotificationPage";
+            lblEmailNotificationPage.Size = new System.Drawing.Size(405, 15);
+            lblEmailNotificationPage.TabIndex = 19;
+            lblEmailNotificationPage.Text = "EVEMon can send you an email whenever a skill level completes its training.";
             // 
             // lblNotificationsPage
             // 
-            this.lblNotificationsPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblNotificationsPage.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblNotificationsPage.Location = new System.Drawing.Point(4, 14);
-            this.lblNotificationsPage.Name = "lblNotificationsPage";
-            this.lblNotificationsPage.Size = new System.Drawing.Size(424, 43);
-            this.lblNotificationsPage.TabIndex = 19;
-            this.lblNotificationsPage.Text = "You can choose what notifications will be shown in your system\'s tray notificatio" +
-    "n area or in EVEMon\'s main window and when. You can also toggle the sound notifi" +
-    "cation upon skill completion on or off.";
+            lblNotificationsPage.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lblNotificationsPage.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            lblNotificationsPage.Location = new System.Drawing.Point(5, 16);
+            lblNotificationsPage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblNotificationsPage.Name = "lblNotificationsPage";
+            lblNotificationsPage.Size = new System.Drawing.Size(495, 50);
+            lblNotificationsPage.TabIndex = 19;
+            lblNotificationsPage.Text = "You can choose what notifications will be shown in your system's tray notification area or in EVEMon's main window and when. You can also toggle the sound notification upon skill completion on or off.";
             // 
             // lblTrayIconPage
             // 
-            this.lblTrayIconPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblTrayIconPage.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblTrayIconPage.Location = new System.Drawing.Point(4, 20);
-            this.lblTrayIconPage.Name = "lblTrayIconPage";
-            this.lblTrayIconPage.Size = new System.Drawing.Size(424, 31);
-            this.lblTrayIconPage.TabIndex = 18;
-            this.lblTrayIconPage.Text = "Here you can set the visible status of EVEMon\'s Tray Icon, configure the style of" +
-    " the Tray Icon\'s popup info and EVEMon\'s behaviour upon pressing the Close butto" +
-    "n.\r\n";
+            lblTrayIconPage.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lblTrayIconPage.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            lblTrayIconPage.Location = new System.Drawing.Point(5, 23);
+            lblTrayIconPage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblTrayIconPage.Name = "lblTrayIconPage";
+            lblTrayIconPage.Size = new System.Drawing.Size(495, 36);
+            lblTrayIconPage.TabIndex = 18;
+            lblTrayIconPage.Text = "Here you can set the visible status of EVEMon's Tray Icon, configure the style of the Tray Icon's popup info and EVEMon's behaviour upon pressing the Close button.\r\n";
             // 
             // lblSchedulerUIPage
             // 
-            this.lblSchedulerUIPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSchedulerUIPage.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblSchedulerUIPage.Location = new System.Drawing.Point(6, 34);
-            this.lblSchedulerUIPage.Name = "lblSchedulerUIPage";
-            this.lblSchedulerUIPage.Size = new System.Drawing.Size(422, 45);
-            this.lblSchedulerUIPage.TabIndex = 6;
-            this.lblSchedulerUIPage.Text = "Select the colors used in the scheduler. Using the scheduler, EVEMon can warn you" +
-    " about skill that will complete at times you will be away from your computer.";
+            lblSchedulerUIPage.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lblSchedulerUIPage.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            lblSchedulerUIPage.Location = new System.Drawing.Point(7, 39);
+            lblSchedulerUIPage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblSchedulerUIPage.Name = "lblSchedulerUIPage";
+            lblSchedulerUIPage.Size = new System.Drawing.Size(492, 52);
+            lblSchedulerUIPage.TabIndex = 6;
+            lblSchedulerUIPage.Text = "Select the colors used in the scheduler. Using the scheduler, EVEMon can warn you about skill that will complete at times you will be away from your computer.";
             // 
             // lblText
             // 
-            this.lblText.AutoSize = true;
-            this.lblText.Location = new System.Drawing.Point(6, 109);
-            this.lblText.Name = "lblText";
-            this.lblText.Size = new System.Drawing.Size(31, 13);
-            this.lblText.TabIndex = 5;
-            this.lblText.Text = "Text:";
+            lblText.AutoSize = true;
+            lblText.Location = new System.Drawing.Point(7, 126);
+            lblText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblText.Name = "lblText";
+            lblText.Size = new System.Drawing.Size(31, 15);
+            lblText.TabIndex = 5;
+            lblText.Text = "Text:";
             // 
             // lblBlockingEvents
             // 
-            this.lblBlockingEvents.AutoSize = true;
-            this.lblBlockingEvents.Location = new System.Drawing.Point(6, 132);
-            this.lblBlockingEvents.Name = "lblBlockingEvents";
-            this.lblBlockingEvents.Size = new System.Drawing.Size(87, 13);
-            this.lblBlockingEvents.TabIndex = 0;
-            this.lblBlockingEvents.Text = "Blocking Events:";
+            lblBlockingEvents.AutoSize = true;
+            lblBlockingEvents.Location = new System.Drawing.Point(7, 152);
+            lblBlockingEvents.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblBlockingEvents.Name = "lblBlockingEvents";
+            lblBlockingEvents.Size = new System.Drawing.Size(93, 15);
+            lblBlockingEvents.TabIndex = 0;
+            lblBlockingEvents.Text = "Blocking Events:";
             // 
             // lblRecurringEvents
             // 
-            this.lblRecurringEvents.AutoSize = true;
-            this.lblRecurringEvents.Location = new System.Drawing.Point(6, 180);
-            this.lblRecurringEvents.Name = "lblRecurringEvents";
-            this.lblRecurringEvents.Size = new System.Drawing.Size(92, 13);
-            this.lblRecurringEvents.TabIndex = 1;
-            this.lblRecurringEvents.Text = "Recurring Events:";
+            lblRecurringEvents.AutoSize = true;
+            lblRecurringEvents.Location = new System.Drawing.Point(7, 208);
+            lblRecurringEvents.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblRecurringEvents.Name = "lblRecurringEvents";
+            lblRecurringEvents.Size = new System.Drawing.Size(98, 15);
+            lblRecurringEvents.TabIndex = 1;
+            lblRecurringEvents.Text = "Recurring Events:";
             // 
             // lblSimpleEvents
             // 
-            this.lblSimpleEvents.AutoSize = true;
-            this.lblSimpleEvents.Location = new System.Drawing.Point(6, 157);
-            this.lblSimpleEvents.Name = "lblSimpleEvents";
-            this.lblSimpleEvents.Size = new System.Drawing.Size(77, 13);
-            this.lblSimpleEvents.TabIndex = 2;
-            this.lblSimpleEvents.Text = "Simple Events:";
+            lblSimpleEvents.AutoSize = true;
+            lblSimpleEvents.Location = new System.Drawing.Point(7, 181);
+            lblSimpleEvents.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblSimpleEvents.Name = "lblSimpleEvents";
+            lblSimpleEvents.Size = new System.Drawing.Size(83, 15);
+            lblSimpleEvents.TabIndex = 2;
+            lblSimpleEvents.Text = "Simple Events:";
             // 
             // lblExternalCalendarPage
             // 
-            this.lblExternalCalendarPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblExternalCalendarPage.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblExternalCalendarPage.Location = new System.Drawing.Point(2, 17);
-            this.lblExternalCalendarPage.Name = "lblExternalCalendarPage";
-            this.lblExternalCalendarPage.Size = new System.Drawing.Size(429, 72);
-            this.lblExternalCalendarPage.TabIndex = 11;
-            this.lblExternalCalendarPage.Text = resources.GetString("lblExternalCalendarPage.Text");
+            lblExternalCalendarPage.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lblExternalCalendarPage.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            lblExternalCalendarPage.Location = new System.Drawing.Point(2, 20);
+            lblExternalCalendarPage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblExternalCalendarPage.Name = "lblExternalCalendarPage";
+            lblExternalCalendarPage.Size = new System.Drawing.Size(500, 83);
+            lblExternalCalendarPage.TabIndex = 11;
+            lblExternalCalendarPage.Text = resources.GetString("lblExternalCalendarPage.Text");
             // 
             // lblIconsPage
             // 
-            this.lblIconsPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblIconsPage.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblIconsPage.Location = new System.Drawing.Point(4, 20);
-            this.lblIconsPage.Name = "lblIconsPage";
-            this.lblIconsPage.Size = new System.Drawing.Size(424, 32);
-            this.lblIconsPage.TabIndex = 15;
-            this.lblIconsPage.Text = "You can customize the icons used in the skill planner; if you have a good idea fo" +
-    "r a set of icons instructions to create your own can be found on wiki.";
+            lblIconsPage.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lblIconsPage.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            lblIconsPage.Location = new System.Drawing.Point(5, 23);
+            lblIconsPage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblIconsPage.Name = "lblIconsPage";
+            lblIconsPage.Size = new System.Drawing.Size(495, 37);
+            lblIconsPage.TabIndex = 15;
+            lblIconsPage.Text = "You can customize the icons used in the skill planner; if you have a good idea for a set of icons instructions to create your own can be found on wiki.";
             // 
             // gbSkillBrowserIconSet
             // 
-            this.gbSkillBrowserIconSet.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbSkillBrowserIconSet.Controls.Add(this.iconsSetTableLayoutPanel);
-            this.gbSkillBrowserIconSet.Location = new System.Drawing.Point(7, 55);
-            this.gbSkillBrowserIconSet.Name = "gbSkillBrowserIconSet";
-            this.gbSkillBrowserIconSet.Size = new System.Drawing.Size(225, 204);
-            this.gbSkillBrowserIconSet.TabIndex = 14;
-            this.gbSkillBrowserIconSet.TabStop = false;
-            this.gbSkillBrowserIconSet.Text = "Skill Browser Icon Set";
+            gbSkillBrowserIconSet.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            gbSkillBrowserIconSet.Controls.Add(iconsSetTableLayoutPanel);
+            gbSkillBrowserIconSet.Location = new System.Drawing.Point(8, 63);
+            gbSkillBrowserIconSet.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            gbSkillBrowserIconSet.Name = "gbSkillBrowserIconSet";
+            gbSkillBrowserIconSet.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            gbSkillBrowserIconSet.Size = new System.Drawing.Size(262, 235);
+            gbSkillBrowserIconSet.TabIndex = 14;
+            gbSkillBrowserIconSet.TabStop = false;
+            gbSkillBrowserIconSet.Text = "Skill Browser Icon Set";
             // 
             // iconsSetTableLayoutPanel
             // 
-            this.iconsSetTableLayoutPanel.AutoSize = true;
-            this.iconsSetTableLayoutPanel.ColumnCount = 1;
-            this.iconsSetTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.iconsSetTableLayoutPanel.Controls.Add(this.cbSkillIconSet, 0, 0);
-            this.iconsSetTableLayoutPanel.Controls.Add(this.tvlist, 0, 1);
-            this.iconsSetTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.iconsSetTableLayoutPanel.Location = new System.Drawing.Point(3, 16);
-            this.iconsSetTableLayoutPanel.Name = "iconsSetTableLayoutPanel";
-            this.iconsSetTableLayoutPanel.RowCount = 2;
-            this.iconsSetTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.iconsSetTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.iconsSetTableLayoutPanel.Size = new System.Drawing.Size(219, 185);
-            this.iconsSetTableLayoutPanel.TabIndex = 15;
+            iconsSetTableLayoutPanel.AutoSize = true;
+            iconsSetTableLayoutPanel.ColumnCount = 1;
+            iconsSetTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            iconsSetTableLayoutPanel.Controls.Add(cbSkillIconSet, 0, 0);
+            iconsSetTableLayoutPanel.Controls.Add(tvlist, 0, 1);
+            iconsSetTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            iconsSetTableLayoutPanel.Location = new System.Drawing.Point(4, 19);
+            iconsSetTableLayoutPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            iconsSetTableLayoutPanel.Name = "iconsSetTableLayoutPanel";
+            iconsSetTableLayoutPanel.RowCount = 2;
+            iconsSetTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            iconsSetTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            iconsSetTableLayoutPanel.Size = new System.Drawing.Size(254, 213);
+            iconsSetTableLayoutPanel.TabIndex = 15;
             // 
             // cbSkillIconSet
             // 
-            this.cbSkillIconSet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbSkillIconSet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSkillIconSet.FormattingEnabled = true;
-            this.cbSkillIconSet.Location = new System.Drawing.Point(3, 3);
-            this.cbSkillIconSet.Name = "cbSkillIconSet";
-            this.cbSkillIconSet.Size = new System.Drawing.Size(213, 21);
-            this.cbSkillIconSet.TabIndex = 3;
-            this.cbSkillIconSet.SelectedIndexChanged += new System.EventHandler(this.skillIconSetComboBox_SelectedIndexChanged);
+            cbSkillIconSet.Dock = System.Windows.Forms.DockStyle.Fill;
+            cbSkillIconSet.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbSkillIconSet.FormattingEnabled = true;
+            cbSkillIconSet.Location = new System.Drawing.Point(4, 3);
+            cbSkillIconSet.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbSkillIconSet.Name = "cbSkillIconSet";
+            cbSkillIconSet.Size = new System.Drawing.Size(246, 23);
+            cbSkillIconSet.TabIndex = 3;
+            cbSkillIconSet.SelectedIndexChanged += skillIconSetComboBox_SelectedIndexChanged;
             // 
             // tvlist
             // 
-            this.tvlist.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tvlist.Location = new System.Drawing.Point(3, 30);
-            this.tvlist.Name = "tvlist";
-            this.tvlist.Size = new System.Drawing.Size(213, 152);
-            this.tvlist.TabIndex = 9;
+            tvlist.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            tvlist.Location = new System.Drawing.Point(4, 32);
+            tvlist.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            tvlist.Name = "tvlist";
+            tvlist.Size = new System.Drawing.Size(246, 178);
+            tvlist.TabIndex = 9;
             // 
             // lblObsoletePlanEntries
             // 
-            this.lblObsoletePlanEntries.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblObsoletePlanEntries.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblObsoletePlanEntries.Location = new System.Drawing.Point(5, 30);
-            this.lblObsoletePlanEntries.Name = "lblObsoletePlanEntries";
-            this.lblObsoletePlanEntries.Size = new System.Drawing.Size(424, 28);
-            this.lblObsoletePlanEntries.TabIndex = 24;
-            this.lblObsoletePlanEntries.Text = "You can configure how EVEMon handles skills that appear to be completed and reset" +
-    " the appearing messages behavior.";
+            lblObsoletePlanEntries.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lblObsoletePlanEntries.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            lblObsoletePlanEntries.Location = new System.Drawing.Point(6, 35);
+            lblObsoletePlanEntries.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblObsoletePlanEntries.Name = "lblObsoletePlanEntries";
+            lblObsoletePlanEntries.Size = new System.Drawing.Size(495, 32);
+            lblObsoletePlanEntries.TabIndex = 24;
+            lblObsoletePlanEntries.Text = "You can configure how EVEMon handles skills that appear to be completed and reset the appearing messages behavior.";
             // 
             // cbUseIncreasedContrastOnOverview
             // 
-            this.cbUseIncreasedContrastOnOverview.AutoSize = true;
-            this.cbUseIncreasedContrastOnOverview.Location = new System.Drawing.Point(161, 37);
-            this.cbUseIncreasedContrastOnOverview.Name = "cbUseIncreasedContrastOnOverview";
-            this.cbUseIncreasedContrastOnOverview.Size = new System.Drawing.Size(137, 17);
-            this.cbUseIncreasedContrastOnOverview.TabIndex = 34;
-            this.cbUseIncreasedContrastOnOverview.Text = "Use Increased Contrast";
-            this.ttToolTipCodes.SetToolTip(this.cbUseIncreasedContrastOnOverview, "When enabled, increases the contrast of the shown info");
-            this.cbUseIncreasedContrastOnOverview.UseVisualStyleBackColor = true;
+            cbUseIncreasedContrastOnOverview.AutoSize = true;
+            cbUseIncreasedContrastOnOverview.Location = new System.Drawing.Point(188, 43);
+            cbUseIncreasedContrastOnOverview.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbUseIncreasedContrastOnOverview.Name = "cbUseIncreasedContrastOnOverview";
+            cbUseIncreasedContrastOnOverview.Size = new System.Drawing.Size(146, 19);
+            cbUseIncreasedContrastOnOverview.TabIndex = 34;
+            cbUseIncreasedContrastOnOverview.Text = "Use Increased Contrast";
+            ttToolTipCodes.SetToolTip(cbUseIncreasedContrastOnOverview, "When enabled, increases the contrast of the shown info");
+            cbUseIncreasedContrastOnOverview.UseVisualStyleBackColor = true;
             // 
             // overviewGroupCharactersInTrainingCheckBox
             // 
-            this.overviewGroupCharactersInTrainingCheckBox.AutoSize = true;
-            this.overviewGroupCharactersInTrainingCheckBox.Location = new System.Drawing.Point(161, 55);
-            this.overviewGroupCharactersInTrainingCheckBox.Name = "overviewGroupCharactersInTrainingCheckBox";
-            this.overviewGroupCharactersInTrainingCheckBox.Size = new System.Drawing.Size(162, 17);
-            this.overviewGroupCharactersInTrainingCheckBox.TabIndex = 33;
-            this.overviewGroupCharactersInTrainingCheckBox.Text = "Group Characters In Training";
-            this.ttToolTipCodes.SetToolTip(this.overviewGroupCharactersInTrainingCheckBox, "When enabled, groups the character\'s\r\nthat are currently in training");
-            this.overviewGroupCharactersInTrainingCheckBox.UseVisualStyleBackColor = true;
+            overviewGroupCharactersInTrainingCheckBox.AutoSize = true;
+            overviewGroupCharactersInTrainingCheckBox.Location = new System.Drawing.Point(188, 63);
+            overviewGroupCharactersInTrainingCheckBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            overviewGroupCharactersInTrainingCheckBox.Name = "overviewGroupCharactersInTrainingCheckBox";
+            overviewGroupCharactersInTrainingCheckBox.Size = new System.Drawing.Size(176, 19);
+            overviewGroupCharactersInTrainingCheckBox.TabIndex = 33;
+            overviewGroupCharactersInTrainingCheckBox.Text = "Group Characters In Training";
+            ttToolTipCodes.SetToolTip(overviewGroupCharactersInTrainingCheckBox, "When enabled, groups the character's\r\nthat are currently in training");
+            overviewGroupCharactersInTrainingCheckBox.UseVisualStyleBackColor = true;
             // 
             // overviewShowSkillQueueTrainingTimeCheckBox
             // 
-            this.overviewShowSkillQueueTrainingTimeCheckBox.AutoSize = true;
-            this.overviewShowSkillQueueTrainingTimeCheckBox.Location = new System.Drawing.Point(161, 3);
-            this.overviewShowSkillQueueTrainingTimeCheckBox.Name = "overviewShowSkillQueueTrainingTimeCheckBox";
-            this.overviewShowSkillQueueTrainingTimeCheckBox.Size = new System.Drawing.Size(177, 17);
-            this.overviewShowSkillQueueTrainingTimeCheckBox.TabIndex = 32;
-            this.overviewShowSkillQueueTrainingTimeCheckBox.Text = "Show Skill Queue Training Time";
-            this.ttToolTipCodes.SetToolTip(this.overviewShowSkillQueueTrainingTimeCheckBox, "When enabled, shows the character\'s\r\nskill queue training time");
-            this.overviewShowSkillQueueTrainingTimeCheckBox.UseVisualStyleBackColor = true;
+            overviewShowSkillQueueTrainingTimeCheckBox.AutoSize = true;
+            overviewShowSkillQueueTrainingTimeCheckBox.Location = new System.Drawing.Point(188, 3);
+            overviewShowSkillQueueTrainingTimeCheckBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            overviewShowSkillQueueTrainingTimeCheckBox.Name = "overviewShowSkillQueueTrainingTimeCheckBox";
+            overviewShowSkillQueueTrainingTimeCheckBox.Size = new System.Drawing.Size(191, 19);
+            overviewShowSkillQueueTrainingTimeCheckBox.TabIndex = 32;
+            overviewShowSkillQueueTrainingTimeCheckBox.Text = "Show Skill Queue Training Time";
+            ttToolTipCodes.SetToolTip(overviewShowSkillQueueTrainingTimeCheckBox, "When enabled, shows the character's\r\nskill queue training time");
+            overviewShowSkillQueueTrainingTimeCheckBox.UseVisualStyleBackColor = true;
             // 
             // overviewShowWalletCheckBox
             // 
-            this.overviewShowWalletCheckBox.AutoSize = true;
-            this.overviewShowWalletCheckBox.Location = new System.Drawing.Point(3, 3);
-            this.overviewShowWalletCheckBox.Name = "overviewShowWalletCheckBox";
-            this.overviewShowWalletCheckBox.Size = new System.Drawing.Size(128, 17);
-            this.overviewShowWalletCheckBox.TabIndex = 30;
-            this.overviewShowWalletCheckBox.Text = "Show Wallet Balance";
-            this.ttToolTipCodes.SetToolTip(this.overviewShowWalletCheckBox, "When enabled, shows the character\'s wallet balance");
-            this.overviewShowWalletCheckBox.UseVisualStyleBackColor = true;
+            overviewShowWalletCheckBox.AutoSize = true;
+            overviewShowWalletCheckBox.Location = new System.Drawing.Point(4, 3);
+            overviewShowWalletCheckBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            overviewShowWalletCheckBox.Name = "overviewShowWalletCheckBox";
+            overviewShowWalletCheckBox.Size = new System.Drawing.Size(135, 19);
+            overviewShowWalletCheckBox.TabIndex = 30;
+            overviewShowWalletCheckBox.Text = "Show Wallet Balance";
+            ttToolTipCodes.SetToolTip(overviewShowWalletCheckBox, "When enabled, shows the character's wallet balance");
+            overviewShowWalletCheckBox.UseVisualStyleBackColor = true;
             // 
             // overviewShowPortraitCheckBox
             // 
-            this.overviewShowPortraitCheckBox.AutoSize = true;
-            this.overviewShowPortraitCheckBox.Location = new System.Drawing.Point(3, 20);
-            this.overviewShowPortraitCheckBox.Name = "overviewShowPortraitCheckBox";
-            this.overviewShowPortraitCheckBox.Size = new System.Drawing.Size(138, 17);
-            this.overviewShowPortraitCheckBox.TabIndex = 26;
-            this.overviewShowPortraitCheckBox.Text = "Show Character Portrait";
-            this.ttToolTipCodes.SetToolTip(this.overviewShowPortraitCheckBox, "When enabled, shows the character\'s portrait\r\nas a thumbnail alongside the charac" +
-        "ter\'s name");
-            this.overviewShowPortraitCheckBox.UseVisualStyleBackColor = true;
+            overviewShowPortraitCheckBox.AutoSize = true;
+            overviewShowPortraitCheckBox.Location = new System.Drawing.Point(4, 23);
+            overviewShowPortraitCheckBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            overviewShowPortraitCheckBox.Name = "overviewShowPortraitCheckBox";
+            overviewShowPortraitCheckBox.Size = new System.Drawing.Size(151, 19);
+            overviewShowPortraitCheckBox.TabIndex = 26;
+            overviewShowPortraitCheckBox.Text = "Show Character Portrait";
+            ttToolTipCodes.SetToolTip(overviewShowPortraitCheckBox, "When enabled, shows the character's portrait\r\nas a thumbnail alongside the character's name");
+            overviewShowPortraitCheckBox.UseVisualStyleBackColor = true;
             // 
             // cbShowOverViewTab
             // 
-            this.cbShowOverViewTab.AutoSize = true;
-            this.cbShowOverViewTab.Location = new System.Drawing.Point(14, 17);
-            this.cbShowOverViewTab.Name = "cbShowOverViewTab";
-            this.cbShowOverViewTab.Size = new System.Drawing.Size(129, 17);
-            this.cbShowOverViewTab.TabIndex = 0;
-            this.cbShowOverViewTab.Text = "Show \"Overview\" tab";
-            this.ttToolTipCodes.SetToolTip(this.cbShowOverViewTab, "When enabled, shows the Overview tab");
-            this.cbShowOverViewTab.UseVisualStyleBackColor = true;
-            this.cbShowOverViewTab.CheckedChanged += new System.EventHandler(this.OnMustEnableOrDisable);
+            cbShowOverViewTab.AutoSize = true;
+            cbShowOverViewTab.Location = new System.Drawing.Point(16, 20);
+            cbShowOverViewTab.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbShowOverViewTab.Name = "cbShowOverViewTab";
+            cbShowOverViewTab.Size = new System.Drawing.Size(137, 19);
+            cbShowOverViewTab.TabIndex = 0;
+            cbShowOverViewTab.Text = "Show \"Overview\" tab";
+            ttToolTipCodes.SetToolTip(cbShowOverViewTab, "When enabled, shows the Overview tab");
+            cbShowOverViewTab.UseVisualStyleBackColor = true;
+            cbShowOverViewTab.CheckedChanged += OnMustEnableOrDisable;
             // 
             // treeView
             // 
-            this.treeView.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.treeView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.treeView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView.FullRowSelect = true;
-            this.treeView.HideSelection = false;
-            this.treeView.ImageIndex = 0;
-            this.treeView.ImageList = this.imageList;
-            this.treeView.ItemHeight = 20;
-            this.treeView.Location = new System.Drawing.Point(6, 6);
-            this.treeView.Name = "treeView";
-            treeNode1.ImageIndex = 11;
-            treeNode1.Name = "UpdatesNode";
-            treeNode1.SelectedImageIndex = 11;
-            treeNode1.Tag = "updatesPage";
-            treeNode1.Text = "Updates";
-            treeNode2.ImageIndex = 7;
-            treeNode2.Name = "networkNode";
-            treeNode2.SelectedImageIndex = 7;
-            treeNode2.Tag = "networkPage";
-            treeNode2.Text = "Network";
-            treeNode3.ImageIndex = 15;
-            treeNode3.Name = "PortableEveClientsNode";
-            treeNode3.SelectedImageIndex = 15;
-            treeNode3.Tag = "portableEveClientsPage";
-            treeNode3.Text = "Portable EVE Clients";
-            treeNode4.ImageIndex = 16;
-            treeNode4.Name = "MarketPriceProvidersNode";
-            treeNode4.SelectedImageIndex = 16;
-            treeNode4.Tag = "marketPriceProvidersPage";
-            treeNode4.Text = "Market Price Providers";
-            treeNode5.ImageIndex = 10;
-            treeNode5.Name = "generalNode";
-            treeNode5.SelectedImageIndex = 10;
-            treeNode5.Tag = "generalPage";
-            treeNode5.Text = "General";
-            treeNode6.ImageIndex = 6;
-            treeNode6.Name = "Node3";
-            treeNode6.SelectedImageIndex = 6;
-            treeNode6.Tag = "mainWindowPage";
-            treeNode6.Text = "Main Window";
-            treeNode7.ImageIndex = 13;
-            treeNode7.Name = "IconsNode";
-            treeNode7.SelectedImageIndex = 13;
-            treeNode7.Tag = "iconsPage";
-            treeNode7.Text = "Icons";
-            treeNode8.ImageIndex = 14;
-            treeNode8.Name = "MassagesNode";
-            treeNode8.SelectedImageIndex = 14;
-            treeNode8.Tag = "messagesPage";
-            treeNode8.Text = "Messages";
-            treeNode9.ImageIndex = 8;
-            treeNode9.Name = "Node4";
-            treeNode9.SelectedImageIndex = 8;
-            treeNode9.Tag = "skillPlannerPage";
-            treeNode9.Text = "Skill Planner";
-            treeNode10.ImageIndex = 2;
-            treeNode10.Name = "trayIconNode";
-            treeNode10.SelectedImageIndex = 2;
-            treeNode10.Tag = "trayIconPage";
-            treeNode10.Text = "System Tray Icon";
-            treeNode11.ImageIndex = 5;
-            treeNode11.Name = "Node11";
-            treeNode11.SelectedImageIndex = 5;
-            treeNode11.Tag = "externalCalendarPage";
-            treeNode11.Text = "External Calendar";
-            treeNode12.ImageIndex = 1;
-            treeNode12.Name = "Node10";
-            treeNode12.SelectedImageIndex = 1;
-            treeNode12.Tag = "schedulerUIPage";
-            treeNode12.Text = "Scheduler";
-            treeNode13.ImageIndex = 12;
-            treeNode13.Name = "Node7";
-            treeNode13.SelectedImageIndex = 12;
-            treeNode13.Tag = "emailNotificationsPage";
-            treeNode13.Text = "Skill Completion Mails";
-            treeNode14.ImageIndex = 9;
-            treeNode14.Name = "Node2";
-            treeNode14.SelectedImageIndex = 9;
-            treeNode14.Tag = "notificationsPage";
-            treeNode14.Text = "Notifications";
-            treeNode15.ImageIndex = 17;
-            treeNode15.Name = "CloudStorageServiceNode";
-            treeNode15.SelectedImageIndex = 17;
-            treeNode15.Tag = "cloudStorageServicePage";
-            treeNode15.Text = "Cloud Storage Service";
-            this.treeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode5,
-            treeNode6,
-            treeNode9,
-            treeNode10,
-            treeNode12,
-            treeNode14,
-            treeNode15});
-            this.treeView.SelectedImageIndex = 0;
-            this.treeView.ShowLines = false;
-            this.treeView.ShowPlusMinus = false;
-            this.treeView.ShowRootLines = false;
-            this.treeView.Size = new System.Drawing.Size(187, 424);
-            this.treeView.TabIndex = 6;
-            this.treeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView_AfterSelect);
+            treeView.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            treeView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            treeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            treeView.FullRowSelect = true;
+            treeView.HideSelection = false;
+            treeView.ImageIndex = 0;
+            treeView.ImageList = imageList;
+            treeView.ItemHeight = 20;
+            treeView.Location = new System.Drawing.Point(7, 7);
+            treeView.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            treeView.Name = "treeView";
+            treeNode16.ImageIndex = 11;
+            treeNode16.Name = "UpdatesNode";
+            treeNode16.SelectedImageIndex = 11;
+            treeNode16.Tag = "updatesPage";
+            treeNode16.Text = "Updates";
+            treeNode17.ImageIndex = 7;
+            treeNode17.Name = "networkNode";
+            treeNode17.SelectedImageIndex = 7;
+            treeNode17.Tag = "networkPage";
+            treeNode17.Text = "Network";
+            treeNode18.ImageIndex = 15;
+            treeNode18.Name = "PortableEveClientsNode";
+            treeNode18.SelectedImageIndex = 15;
+            treeNode18.Tag = "portableEveClientsPage";
+            treeNode18.Text = "Portable EVE Clients";
+            treeNode19.ImageIndex = 16;
+            treeNode19.Name = "MarketPriceProvidersNode";
+            treeNode19.SelectedImageIndex = 16;
+            treeNode19.Tag = "marketPriceProvidersPage";
+            treeNode19.Text = "Market Price Providers";
+            treeNode20.ImageIndex = 10;
+            treeNode20.Name = "generalNode";
+            treeNode20.SelectedImageIndex = 10;
+            treeNode20.Tag = "generalPage";
+            treeNode20.Text = "General";
+            treeNode21.ImageIndex = 6;
+            treeNode21.Name = "Node3";
+            treeNode21.SelectedImageIndex = 6;
+            treeNode21.Tag = "mainWindowPage";
+            treeNode21.Text = "Main Window";
+            treeNode22.ImageIndex = 13;
+            treeNode22.Name = "IconsNode";
+            treeNode22.SelectedImageIndex = 13;
+            treeNode22.Tag = "iconsPage";
+            treeNode22.Text = "Icons";
+            treeNode23.ImageIndex = 14;
+            treeNode23.Name = "MassagesNode";
+            treeNode23.SelectedImageIndex = 14;
+            treeNode23.Tag = "messagesPage";
+            treeNode23.Text = "Messages";
+            treeNode24.ImageIndex = 8;
+            treeNode24.Name = "Node4";
+            treeNode24.SelectedImageIndex = 8;
+            treeNode24.Tag = "skillPlannerPage";
+            treeNode24.Text = "Skill Planner";
+            treeNode25.ImageIndex = 2;
+            treeNode25.Name = "trayIconNode";
+            treeNode25.SelectedImageIndex = 2;
+            treeNode25.Tag = "trayIconPage";
+            treeNode25.Text = "System Tray Icon";
+            treeNode26.ImageIndex = 5;
+            treeNode26.Name = "Node11";
+            treeNode26.SelectedImageIndex = 5;
+            treeNode26.Tag = "externalCalendarPage";
+            treeNode26.Text = "External Calendar";
+            treeNode27.ImageIndex = 1;
+            treeNode27.Name = "Node10";
+            treeNode27.SelectedImageIndex = 1;
+            treeNode27.Tag = "schedulerUIPage";
+            treeNode27.Text = "Scheduler";
+            treeNode28.ImageIndex = 12;
+            treeNode28.Name = "Node7";
+            treeNode28.SelectedImageIndex = 12;
+            treeNode28.Tag = "emailNotificationsPage";
+            treeNode28.Text = "Skill Completion Mails";
+            treeNode29.ImageIndex = 9;
+            treeNode29.Name = "Node2";
+            treeNode29.SelectedImageIndex = 9;
+            treeNode29.Tag = "notificationsPage";
+            treeNode29.Text = "Notifications";
+            treeNode30.ImageIndex = 17;
+            treeNode30.Name = "CloudStorageServiceNode";
+            treeNode30.SelectedImageIndex = 17;
+            treeNode30.Tag = "cloudStorageServicePage";
+            treeNode30.Text = "Cloud Storage Service";
+            treeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] { treeNode20, treeNode21, treeNode24, treeNode25, treeNode27, treeNode29, treeNode30 });
+            treeView.SelectedImageIndex = 0;
+            treeView.ShowLines = false;
+            treeView.ShowPlusMinus = false;
+            treeView.ShowRootLines = false;
+            treeView.Size = new System.Drawing.Size(218, 489);
+            treeView.TabIndex = 6;
+            treeView.AfterSelect += treeView_AfterSelect;
             // 
             // imageList
             // 
-            this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
-            this.imageList.TransparentColor = System.Drawing.Color.Empty;
-            this.imageList.Images.SetKeyName(0, "Transparent");
-            this.imageList.Images.SetKeyName(1, "Calendar");
-            this.imageList.Images.SetKeyName(2, "EVEMon");
-            this.imageList.Images.SetKeyName(3, "IGB");
-            this.imageList.Images.SetKeyName(4, "LogitechKeyboard");
-            this.imageList.Images.SetKeyName(5, "gcalendar");
-            this.imageList.Images.SetKeyName(6, "MainWindow");
-            this.imageList.Images.SetKeyName(7, "Network");
-            this.imageList.Images.SetKeyName(8, "Plan");
-            this.imageList.Images.SetKeyName(9, "Problem");
-            this.imageList.Images.SetKeyName(10, "Settings");
-            this.imageList.Images.SetKeyName(11, "Update");
-            this.imageList.Images.SetKeyName(12, "Email");
-            this.imageList.Images.SetKeyName(13, "book");
-            this.imageList.Images.SetKeyName(14, "messagebox");
-            this.imageList.Images.SetKeyName(15, "EveClient");
-            this.imageList.Images.SetKeyName(16, "Wallet");
-            this.imageList.Images.SetKeyName(17, "CloudStorage");
+            imageList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            imageList.ImageStream = (System.Windows.Forms.ImageListStreamer)resources.GetObject("imageList.ImageStream");
+            imageList.TransparentColor = System.Drawing.Color.Empty;
+            imageList.Images.SetKeyName(0, "Transparent");
+            imageList.Images.SetKeyName(1, "Calendar");
+            imageList.Images.SetKeyName(2, "EVEMon");
+            imageList.Images.SetKeyName(3, "IGB");
+            imageList.Images.SetKeyName(4, "LogitechKeyboard");
+            imageList.Images.SetKeyName(5, "gcalendar");
+            imageList.Images.SetKeyName(6, "MainWindow");
+            imageList.Images.SetKeyName(7, "Network");
+            imageList.Images.SetKeyName(8, "Plan");
+            imageList.Images.SetKeyName(9, "Problem");
+            imageList.Images.SetKeyName(10, "Settings");
+            imageList.Images.SetKeyName(11, "Update");
+            imageList.Images.SetKeyName(12, "Email");
+            imageList.Images.SetKeyName(13, "book");
+            imageList.Images.SetKeyName(14, "messagebox");
+            imageList.Images.SetKeyName(15, "EveClient");
+            imageList.Images.SetKeyName(16, "Wallet");
+            imageList.Images.SetKeyName(17, "CloudStorage");
             // 
             // leftPanel
             // 
-            this.leftPanel.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.leftPanel.Controls.Add(this.treeView);
-            this.leftPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.leftPanel.Location = new System.Drawing.Point(0, 0);
-            this.leftPanel.Name = "leftPanel";
-            this.leftPanel.Padding = new System.Windows.Forms.Padding(6);
-            this.leftPanel.Size = new System.Drawing.Size(199, 436);
-            this.leftPanel.TabIndex = 9;
+            leftPanel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            leftPanel.Controls.Add(treeView);
+            leftPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            leftPanel.Location = new System.Drawing.Point(0, 0);
+            leftPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            leftPanel.Name = "leftPanel";
+            leftPanel.Padding = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            leftPanel.Size = new System.Drawing.Size(232, 503);
+            leftPanel.TabIndex = 9;
             // 
             // multiPanel
             // 
-            this.multiPanel.CausesValidation = false;
-            this.multiPanel.Controls.Add(this.generalPage);
-            this.multiPanel.Controls.Add(this.mainWindowPage);
-            this.multiPanel.Controls.Add(this.skillPlannerPage);
-            this.multiPanel.Controls.Add(this.networkPage);
-            this.multiPanel.Controls.Add(this.emailNotificationsPage);
-            this.multiPanel.Controls.Add(this.notificationsPage);
-            this.multiPanel.Controls.Add(this.trayIconPage);
-            this.multiPanel.Controls.Add(this.updatesPage);
-            this.multiPanel.Controls.Add(this.schedulerUIPage);
-            this.multiPanel.Controls.Add(this.externalCalendarPage);
-            this.multiPanel.Controls.Add(this.iconsPage);
-            this.multiPanel.Controls.Add(this.messagesPage);
-            this.multiPanel.Controls.Add(this.portableEveClientsPage);
-            this.multiPanel.Controls.Add(this.marketPriceProvidersPage);
-            this.multiPanel.Controls.Add(this.cloudStorageServicePage);
-            this.multiPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.multiPanel.Location = new System.Drawing.Point(199, 0);
-            this.multiPanel.Name = "multiPanel";
-            this.multiPanel.Padding = new System.Windows.Forms.Padding(5);
-            this.multiPanel.SelectedPage = this.generalPage;
-            this.multiPanel.Size = new System.Drawing.Size(445, 436);
-            this.multiPanel.TabIndex = 7;
+            multiPanel.CausesValidation = false;
+            multiPanel.Controls.Add(generalPage);
+            multiPanel.Controls.Add(mainWindowPage);
+            multiPanel.Controls.Add(skillPlannerPage);
+            multiPanel.Controls.Add(networkPage);
+            multiPanel.Controls.Add(emailNotificationsPage);
+            multiPanel.Controls.Add(notificationsPage);
+            multiPanel.Controls.Add(trayIconPage);
+            multiPanel.Controls.Add(updatesPage);
+            multiPanel.Controls.Add(schedulerUIPage);
+            multiPanel.Controls.Add(externalCalendarPage);
+            multiPanel.Controls.Add(iconsPage);
+            multiPanel.Controls.Add(messagesPage);
+            multiPanel.Controls.Add(portableEveClientsPage);
+            multiPanel.Controls.Add(marketPriceProvidersPage);
+            multiPanel.Controls.Add(cloudStorageServicePage);
+            multiPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            multiPanel.Location = new System.Drawing.Point(232, 0);
+            multiPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            multiPanel.Name = "multiPanel";
+            multiPanel.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            multiPanel.SelectedPage = externalCalendarPage;
+            multiPanel.Size = new System.Drawing.Size(519, 503);
+            multiPanel.TabIndex = 7;
             // 
             // generalPage
             // 
-            this.generalPage.Controls.Add(this.btnEVEMonDataDir);
-            this.generalPage.Controls.Add(this.lblGeneralPage);
-            this.generalPage.Controls.Add(this.cbWorksafeMode);
-            this.generalPage.Controls.Add(this.compatibilityCombo);
-            this.generalPage.Controls.Add(this.lblEnvironment);
-            this.generalPage.Controls.Add(this.runAtStartupComboBox);
-            this.generalPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.generalPage.Location = new System.Drawing.Point(5, 5);
-            this.generalPage.Name = "generalPage";
-            this.generalPage.Size = new System.Drawing.Size(435, 426);
-            this.generalPage.TabIndex = 0;
-            this.generalPage.Text = "generalPage";
+            generalPage.Controls.Add(btnEVEMonDataDir);
+            generalPage.Controls.Add(lblGeneralPage);
+            generalPage.Controls.Add(cbWorksafeMode);
+            generalPage.Controls.Add(compatibilityCombo);
+            generalPage.Controls.Add(lblEnvironment);
+            generalPage.Controls.Add(runAtStartupComboBox);
+            generalPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            generalPage.Location = new System.Drawing.Point(6, 6);
+            generalPage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            generalPage.Name = "generalPage";
+            generalPage.Size = new System.Drawing.Size(507, 491);
+            generalPage.TabIndex = 0;
+            generalPage.Text = "generalPage";
             // 
             // btnEVEMonDataDir
             // 
-            this.btnEVEMonDataDir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEVEMonDataDir.AutoSize = true;
-            this.btnEVEMonDataDir.Location = new System.Drawing.Point(296, 392);
-            this.btnEVEMonDataDir.Name = "btnEVEMonDataDir";
-            this.btnEVEMonDataDir.Size = new System.Drawing.Size(132, 23);
-            this.btnEVEMonDataDir.TabIndex = 21;
-            this.btnEVEMonDataDir.Text = "EVEMon Data Directory";
-            this.btnEVEMonDataDir.UseVisualStyleBackColor = true;
-            this.btnEVEMonDataDir.Click += new System.EventHandler(this.btnEVEMonDataDir_Click);
+            btnEVEMonDataDir.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            btnEVEMonDataDir.AutoSize = true;
+            btnEVEMonDataDir.Location = new System.Drawing.Point(337, 449);
+            btnEVEMonDataDir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnEVEMonDataDir.Name = "btnEVEMonDataDir";
+            btnEVEMonDataDir.Size = new System.Drawing.Size(162, 29);
+            btnEVEMonDataDir.TabIndex = 21;
+            btnEVEMonDataDir.Text = "EVEMon Data Directory";
+            btnEVEMonDataDir.UseVisualStyleBackColor = true;
+            btnEVEMonDataDir.Click += btnEVEMonDataDir_Click;
             // 
             // cbWorksafeMode
             // 
-            this.cbWorksafeMode.AutoSize = true;
-            this.cbWorksafeMode.Location = new System.Drawing.Point(3, 131);
-            this.cbWorksafeMode.Name = "cbWorksafeMode";
-            this.cbWorksafeMode.Size = new System.Drawing.Size(264, 17);
-            this.cbWorksafeMode.TabIndex = 6;
-            this.cbWorksafeMode.Text = "Run in \"safe for work\" mode (no portraits or colors)";
-            this.cbWorksafeMode.UseVisualStyleBackColor = true;
-            this.cbWorksafeMode.CheckedChanged += new System.EventHandler(this.OnMustEnableOrDisable);
+            cbWorksafeMode.AutoSize = true;
+            cbWorksafeMode.Location = new System.Drawing.Point(4, 151);
+            cbWorksafeMode.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbWorksafeMode.Name = "cbWorksafeMode";
+            cbWorksafeMode.Size = new System.Drawing.Size(296, 19);
+            cbWorksafeMode.TabIndex = 6;
+            cbWorksafeMode.Text = "Run in \"safe for work\" mode (no portraits or colors)";
+            cbWorksafeMode.UseVisualStyleBackColor = true;
+            cbWorksafeMode.CheckedChanged += OnMustEnableOrDisable;
             // 
             // compatibilityCombo
             // 
-            this.compatibilityCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.compatibilityCombo.FormattingEnabled = true;
-            this.compatibilityCombo.Items.AddRange(new object[] {
-            "Windows",
-            "Wine"});
-            this.compatibilityCombo.Location = new System.Drawing.Point(231, 178);
-            this.compatibilityCombo.Name = "compatibilityCombo";
-            this.compatibilityCombo.Size = new System.Drawing.Size(121, 21);
-            this.compatibilityCombo.TabIndex = 7;
+            compatibilityCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            compatibilityCombo.FormattingEnabled = true;
+            compatibilityCombo.Items.AddRange(new object[] { "Windows", "Wine" });
+            compatibilityCombo.Location = new System.Drawing.Point(270, 205);
+            compatibilityCombo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            compatibilityCombo.Name = "compatibilityCombo";
+            compatibilityCombo.Size = new System.Drawing.Size(140, 23);
+            compatibilityCombo.TabIndex = 7;
             // 
             // runAtStartupComboBox
             // 
-            this.runAtStartupComboBox.AutoSize = true;
-            this.runAtStartupComboBox.Location = new System.Drawing.Point(3, 88);
-            this.runAtStartupComboBox.Name = "runAtStartupComboBox";
-            this.runAtStartupComboBox.Size = new System.Drawing.Size(140, 17);
-            this.runAtStartupComboBox.TabIndex = 5;
-            this.runAtStartupComboBox.Text = "Run EVEMon at Startup";
-            this.runAtStartupComboBox.UseVisualStyleBackColor = true;
+            runAtStartupComboBox.AutoSize = true;
+            runAtStartupComboBox.Location = new System.Drawing.Point(4, 102);
+            runAtStartupComboBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            runAtStartupComboBox.Name = "runAtStartupComboBox";
+            runAtStartupComboBox.Size = new System.Drawing.Size(148, 19);
+            runAtStartupComboBox.TabIndex = 5;
+            runAtStartupComboBox.Text = "Run EVEMon at Startup";
+            runAtStartupComboBox.UseVisualStyleBackColor = true;
             // 
             // mainWindowPage
             // 
-            this.mainWindowPage.Controls.Add(this.lblMainWindowPage);
-            this.mainWindowPage.Controls.Add(this.OverviewGroupBox);
-            this.mainWindowPage.Controls.Add(this.CharacterMonitorGroupBox);
-            this.mainWindowPage.Controls.Add(this.WindowTitleGroupBox);
-            this.mainWindowPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainWindowPage.Location = new System.Drawing.Point(5, 5);
-            this.mainWindowPage.Name = "mainWindowPage";
-            this.mainWindowPage.Size = new System.Drawing.Size(435, 426);
-            this.mainWindowPage.TabIndex = 1;
-            this.mainWindowPage.Text = "mainWindowPage";
+            mainWindowPage.Controls.Add(lblMainWindowPage);
+            mainWindowPage.Controls.Add(OverviewGroupBox);
+            mainWindowPage.Controls.Add(CharacterMonitorGroupBox);
+            mainWindowPage.Controls.Add(WindowTitleGroupBox);
+            mainWindowPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            mainWindowPage.Location = new System.Drawing.Point(6, 6);
+            mainWindowPage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            mainWindowPage.Name = "mainWindowPage";
+            mainWindowPage.Size = new System.Drawing.Size(507, 492);
+            mainWindowPage.TabIndex = 1;
+            mainWindowPage.Text = "mainWindowPage";
             // 
             // OverviewGroupBox
             // 
-            this.OverviewGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.OverviewGroupBox.Controls.Add(this.overviewPanel);
-            this.OverviewGroupBox.Controls.Add(this.cbShowOverViewTab);
-            this.OverviewGroupBox.Location = new System.Drawing.Point(1, 293);
-            this.OverviewGroupBox.Name = "OverviewGroupBox";
-            this.OverviewGroupBox.Size = new System.Drawing.Size(428, 127);
-            this.OverviewGroupBox.TabIndex = 15;
-            this.OverviewGroupBox.TabStop = false;
-            this.OverviewGroupBox.Text = "Overview";
+            OverviewGroupBox.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            OverviewGroupBox.Controls.Add(overviewPanel);
+            OverviewGroupBox.Controls.Add(cbShowOverViewTab);
+            OverviewGroupBox.Location = new System.Drawing.Point(1, 338);
+            OverviewGroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            OverviewGroupBox.Name = "OverviewGroupBox";
+            OverviewGroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            OverviewGroupBox.Size = new System.Drawing.Size(499, 147);
+            OverviewGroupBox.TabIndex = 15;
+            OverviewGroupBox.TabStop = false;
+            OverviewGroupBox.Text = "Overview";
             // 
             // overviewPanel
             // 
-            this.overviewPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.overviewPanel.Controls.Add(this.extraInfoComboBox);
-            this.overviewPanel.Controls.Add(this.cbShowSkillpointsOnOverview);
-            this.overviewPanel.Controls.Add(this.cbUseIncreasedContrastOnOverview);
-            this.overviewPanel.Controls.Add(this.overviewGroupCharactersInTrainingCheckBox);
-            this.overviewPanel.Controls.Add(this.overviewShowSkillQueueTrainingTimeCheckBox);
-            this.overviewPanel.Controls.Add(this.overviewShowWalletCheckBox);
-            this.overviewPanel.Controls.Add(this.lblSize);
-            this.overviewPanel.Controls.Add(this.overviewShowPortraitCheckBox);
-            this.overviewPanel.Controls.Add(this.overviewPortraitSizeComboBox);
-            this.overviewPanel.Location = new System.Drawing.Point(29, 36);
-            this.overviewPanel.Name = "overviewPanel";
-            this.overviewPanel.Size = new System.Drawing.Size(393, 85);
-            this.overviewPanel.TabIndex = 32;
+            overviewPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            overviewPanel.Controls.Add(extraInfoComboBox);
+            overviewPanel.Controls.Add(cbShowSkillpointsOnOverview);
+            overviewPanel.Controls.Add(cbUseIncreasedContrastOnOverview);
+            overviewPanel.Controls.Add(overviewGroupCharactersInTrainingCheckBox);
+            overviewPanel.Controls.Add(overviewShowSkillQueueTrainingTimeCheckBox);
+            overviewPanel.Controls.Add(overviewShowWalletCheckBox);
+            overviewPanel.Controls.Add(lblSize);
+            overviewPanel.Controls.Add(overviewShowPortraitCheckBox);
+            overviewPanel.Controls.Add(overviewPortraitSizeComboBox);
+            overviewPanel.Location = new System.Drawing.Point(34, 42);
+            overviewPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            overviewPanel.Name = "overviewPanel";
+            overviewPanel.Size = new System.Drawing.Size(458, 98);
+            overviewPanel.TabIndex = 32;
             // 
             // extraInfoComboBox
             // 
-            this.extraInfoComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.extraInfoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.extraInfoComboBox.Items.AddRange(new object[] {
-            "No Extra Info",
-            "Show Location",
-            "Show Jobs"});
-            this.extraInfoComboBox.Location = new System.Drawing.Point(274, 18);
-            this.extraInfoComboBox.Name = "extraInfoComboBox";
-            this.extraInfoComboBox.Size = new System.Drawing.Size(116, 21);
-            this.extraInfoComboBox.TabIndex = 36;
+            extraInfoComboBox.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            extraInfoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            extraInfoComboBox.Items.AddRange(new object[] { "No Extra Info", "Show Location", "Show Jobs" });
+            extraInfoComboBox.Location = new System.Drawing.Point(320, 21);
+            extraInfoComboBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            extraInfoComboBox.Name = "extraInfoComboBox";
+            extraInfoComboBox.Size = new System.Drawing.Size(135, 23);
+            extraInfoComboBox.TabIndex = 36;
             // 
             // cbShowSkillpointsOnOverview
             // 
-            this.cbShowSkillpointsOnOverview.AutoSize = true;
-            this.cbShowSkillpointsOnOverview.Location = new System.Drawing.Point(161, 20);
-            this.cbShowSkillpointsOnOverview.Name = "cbShowSkillpointsOnOverview";
-            this.cbShowSkillpointsOnOverview.Size = new System.Drawing.Size(107, 17);
-            this.cbShowSkillpointsOnOverview.TabIndex = 35;
-            this.cbShowSkillpointsOnOverview.Text = "Show Skill Points";
-            this.cbShowSkillpointsOnOverview.UseVisualStyleBackColor = true;
+            cbShowSkillpointsOnOverview.AutoSize = true;
+            cbShowSkillpointsOnOverview.Location = new System.Drawing.Point(188, 23);
+            cbShowSkillpointsOnOverview.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbShowSkillpointsOnOverview.Name = "cbShowSkillpointsOnOverview";
+            cbShowSkillpointsOnOverview.Size = new System.Drawing.Size(115, 19);
+            cbShowSkillpointsOnOverview.TabIndex = 35;
+            cbShowSkillpointsOnOverview.Text = "Show Skill Points";
+            cbShowSkillpointsOnOverview.UseVisualStyleBackColor = true;
             // 
             // overviewPortraitSizeComboBox
             // 
-            this.overviewPortraitSizeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.overviewPortraitSizeComboBox.FormattingEnabled = true;
-            this.overviewPortraitSizeComboBox.Location = new System.Drawing.Point(52, 49);
-            this.overviewPortraitSizeComboBox.Name = "overviewPortraitSizeComboBox";
-            this.overviewPortraitSizeComboBox.Size = new System.Drawing.Size(79, 21);
-            this.overviewPortraitSizeComboBox.TabIndex = 28;
+            overviewPortraitSizeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            overviewPortraitSizeComboBox.FormattingEnabled = true;
+            overviewPortraitSizeComboBox.Location = new System.Drawing.Point(61, 57);
+            overviewPortraitSizeComboBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            overviewPortraitSizeComboBox.Name = "overviewPortraitSizeComboBox";
+            overviewPortraitSizeComboBox.Size = new System.Drawing.Size(92, 23);
+            overviewPortraitSizeComboBox.TabIndex = 28;
             // 
             // skillPlannerPage
             // 
-            this.skillPlannerPage.Controls.Add(this.cbAdvanceEntryAdd);
-            this.skillPlannerPage.Controls.Add(this.cbSummaryOnMultiSelectOnly);
-            this.skillPlannerPage.Controls.Add(this.lblSkillPlannerPage);
-            this.skillPlannerPage.Controls.Add(this.cbHighlightQueuedSiklls);
-            this.skillPlannerPage.Controls.Add(this.cbHighlightPartialSkills);
-            this.skillPlannerPage.Controls.Add(this.cbHighlightConflicts);
-            this.skillPlannerPage.Controls.Add(this.cbHighlightPrerequisites);
-            this.skillPlannerPage.Controls.Add(this.cbHighlightPlannedSkills);
-            this.skillPlannerPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.skillPlannerPage.Location = new System.Drawing.Point(5, 5);
-            this.skillPlannerPage.Name = "skillPlannerPage";
-            this.skillPlannerPage.Size = new System.Drawing.Size(435, 426);
-            this.skillPlannerPage.TabIndex = 3;
-            this.skillPlannerPage.Text = "skillPlannerPage";
-            this.skillPlannerPage.Visible = false;
+            skillPlannerPage.Controls.Add(cbAdvanceEntryAdd);
+            skillPlannerPage.Controls.Add(cbSummaryOnMultiSelectOnly);
+            skillPlannerPage.Controls.Add(lblSkillPlannerPage);
+            skillPlannerPage.Controls.Add(cbHighlightQueuedSiklls);
+            skillPlannerPage.Controls.Add(cbHighlightPartialSkills);
+            skillPlannerPage.Controls.Add(cbHighlightConflicts);
+            skillPlannerPage.Controls.Add(cbHighlightPrerequisites);
+            skillPlannerPage.Controls.Add(cbHighlightPlannedSkills);
+            skillPlannerPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            skillPlannerPage.Location = new System.Drawing.Point(6, 6);
+            skillPlannerPage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            skillPlannerPage.Name = "skillPlannerPage";
+            skillPlannerPage.Size = new System.Drawing.Size(507, 492);
+            skillPlannerPage.TabIndex = 3;
+            skillPlannerPage.Text = "skillPlannerPage";
+            skillPlannerPage.Visible = false;
             // 
             // cbAdvanceEntryAdd
             // 
-            this.cbAdvanceEntryAdd.AutoSize = true;
-            this.cbAdvanceEntryAdd.Location = new System.Drawing.Point(14, 198);
-            this.cbAdvanceEntryAdd.Name = "cbAdvanceEntryAdd";
-            this.cbAdvanceEntryAdd.Size = new System.Drawing.Size(211, 17);
-            this.cbAdvanceEntryAdd.TabIndex = 21;
-            this.cbAdvanceEntryAdd.Text = "Set Priority When Adding Skills To Plan";
-            this.cbAdvanceEntryAdd.UseVisualStyleBackColor = true;
+            cbAdvanceEntryAdd.AutoSize = true;
+            cbAdvanceEntryAdd.Location = new System.Drawing.Point(16, 228);
+            cbAdvanceEntryAdd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbAdvanceEntryAdd.Name = "cbAdvanceEntryAdd";
+            cbAdvanceEntryAdd.Size = new System.Drawing.Size(229, 19);
+            cbAdvanceEntryAdd.TabIndex = 21;
+            cbAdvanceEntryAdd.Text = "Set Priority When Adding Skills To Plan";
+            cbAdvanceEntryAdd.UseVisualStyleBackColor = true;
             // 
             // cbSummaryOnMultiSelectOnly
             // 
-            this.cbSummaryOnMultiSelectOnly.AutoSize = true;
-            this.cbSummaryOnMultiSelectOnly.Location = new System.Drawing.Point(14, 175);
-            this.cbSummaryOnMultiSelectOnly.Name = "cbSummaryOnMultiSelectOnly";
-            this.cbSummaryOnMultiSelectOnly.Size = new System.Drawing.Size(232, 17);
-            this.cbSummaryOnMultiSelectOnly.TabIndex = 20;
-            this.cbSummaryOnMultiSelectOnly.Text = "Show Plan Summary Only On \"Multi-Select\"";
-            this.cbSummaryOnMultiSelectOnly.UseVisualStyleBackColor = true;
+            cbSummaryOnMultiSelectOnly.AutoSize = true;
+            cbSummaryOnMultiSelectOnly.Location = new System.Drawing.Point(16, 202);
+            cbSummaryOnMultiSelectOnly.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbSummaryOnMultiSelectOnly.Name = "cbSummaryOnMultiSelectOnly";
+            cbSummaryOnMultiSelectOnly.Size = new System.Drawing.Size(259, 19);
+            cbSummaryOnMultiSelectOnly.TabIndex = 20;
+            cbSummaryOnMultiSelectOnly.Text = "Show Plan Summary Only On \"Multi-Select\"";
+            cbSummaryOnMultiSelectOnly.UseVisualStyleBackColor = true;
             // 
             // cbHighlightQueuedSiklls
             // 
-            this.cbHighlightQueuedSiklls.AutoSize = true;
-            this.cbHighlightQueuedSiklls.Location = new System.Drawing.Point(14, 152);
-            this.cbHighlightQueuedSiklls.Name = "cbHighlightQueuedSiklls";
-            this.cbHighlightQueuedSiklls.Size = new System.Drawing.Size(135, 17);
-            this.cbHighlightQueuedSiklls.TabIndex = 14;
-            this.cbHighlightQueuedSiklls.Text = "Highlight Queued Skills";
-            this.cbHighlightQueuedSiklls.UseVisualStyleBackColor = true;
+            cbHighlightQueuedSiklls.AutoSize = true;
+            cbHighlightQueuedSiklls.Location = new System.Drawing.Point(16, 175);
+            cbHighlightQueuedSiklls.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbHighlightQueuedSiklls.Name = "cbHighlightQueuedSiklls";
+            cbHighlightQueuedSiklls.Size = new System.Drawing.Size(150, 19);
+            cbHighlightQueuedSiklls.TabIndex = 14;
+            cbHighlightQueuedSiklls.Text = "Highlight Queued Skills";
+            cbHighlightQueuedSiklls.UseVisualStyleBackColor = true;
             // 
             // cbHighlightPartialSkills
             // 
-            this.cbHighlightPartialSkills.AutoSize = true;
-            this.cbHighlightPartialSkills.Location = new System.Drawing.Point(14, 129);
-            this.cbHighlightPartialSkills.Name = "cbHighlightPartialSkills";
-            this.cbHighlightPartialSkills.Size = new System.Drawing.Size(172, 17);
-            this.cbHighlightPartialSkills.TabIndex = 10;
-            this.cbHighlightPartialSkills.Text = "Highlight Partially Trained Skills";
-            this.cbHighlightPartialSkills.UseVisualStyleBackColor = true;
+            cbHighlightPartialSkills.AutoSize = true;
+            cbHighlightPartialSkills.Location = new System.Drawing.Point(16, 149);
+            cbHighlightPartialSkills.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbHighlightPartialSkills.Name = "cbHighlightPartialSkills";
+            cbHighlightPartialSkills.Size = new System.Drawing.Size(191, 19);
+            cbHighlightPartialSkills.TabIndex = 10;
+            cbHighlightPartialSkills.Text = "Highlight Partially Trained Skills";
+            cbHighlightPartialSkills.UseVisualStyleBackColor = true;
             // 
             // cbHighlightConflicts
             // 
-            this.cbHighlightConflicts.AutoSize = true;
-            this.cbHighlightConflicts.Location = new System.Drawing.Point(14, 83);
-            this.cbHighlightConflicts.Name = "cbHighlightConflicts";
-            this.cbHighlightConflicts.Size = new System.Drawing.Size(158, 17);
-            this.cbHighlightConflicts.TabIndex = 9;
-            this.cbHighlightConflicts.Text = "Highlight Schedule Conflicts";
-            this.cbHighlightConflicts.UseVisualStyleBackColor = true;
+            cbHighlightConflicts.AutoSize = true;
+            cbHighlightConflicts.Location = new System.Drawing.Point(16, 96);
+            cbHighlightConflicts.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbHighlightConflicts.Name = "cbHighlightConflicts";
+            cbHighlightConflicts.Size = new System.Drawing.Size(177, 19);
+            cbHighlightConflicts.TabIndex = 9;
+            cbHighlightConflicts.Text = "Highlight Schedule Conflicts";
+            cbHighlightConflicts.UseVisualStyleBackColor = true;
             // 
             // cbHighlightPrerequisites
             // 
-            this.cbHighlightPrerequisites.AutoSize = true;
-            this.cbHighlightPrerequisites.Location = new System.Drawing.Point(14, 106);
-            this.cbHighlightPrerequisites.Name = "cbHighlightPrerequisites";
-            this.cbHighlightPrerequisites.Size = new System.Drawing.Size(130, 17);
-            this.cbHighlightPrerequisites.TabIndex = 8;
-            this.cbHighlightPrerequisites.Text = "Highlight Prerequisites";
-            this.cbHighlightPrerequisites.UseVisualStyleBackColor = true;
+            cbHighlightPrerequisites.AutoSize = true;
+            cbHighlightPrerequisites.Location = new System.Drawing.Point(16, 122);
+            cbHighlightPrerequisites.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbHighlightPrerequisites.Name = "cbHighlightPrerequisites";
+            cbHighlightPrerequisites.Size = new System.Drawing.Size(146, 19);
+            cbHighlightPrerequisites.TabIndex = 8;
+            cbHighlightPrerequisites.Text = "Highlight Prerequisites";
+            cbHighlightPrerequisites.UseVisualStyleBackColor = true;
             // 
             // cbHighlightPlannedSkills
             // 
-            this.cbHighlightPlannedSkills.AutoSize = true;
-            this.cbHighlightPlannedSkills.Location = new System.Drawing.Point(14, 60);
-            this.cbHighlightPlannedSkills.Name = "cbHighlightPlannedSkills";
-            this.cbHighlightPlannedSkills.Size = new System.Drawing.Size(136, 17);
-            this.cbHighlightPlannedSkills.TabIndex = 0;
-            this.cbHighlightPlannedSkills.Text = "Highlight Planned Skills";
-            this.cbHighlightPlannedSkills.UseVisualStyleBackColor = true;
+            cbHighlightPlannedSkills.AutoSize = true;
+            cbHighlightPlannedSkills.Location = new System.Drawing.Point(16, 69);
+            cbHighlightPlannedSkills.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbHighlightPlannedSkills.Name = "cbHighlightPlannedSkills";
+            cbHighlightPlannedSkills.Size = new System.Drawing.Size(151, 19);
+            cbHighlightPlannedSkills.TabIndex = 0;
+            cbHighlightPlannedSkills.Text = "Highlight Planned Skills";
+            cbHighlightPlannedSkills.UseVisualStyleBackColor = true;
             // 
             // networkPage
             // 
-            this.networkPage.Controls.Add(this.esiSettingsGroupBox);
-            this.networkPage.Controls.Add(this.ProxyServerGroupBox);
-            this.networkPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.networkPage.Location = new System.Drawing.Point(5, 5);
-            this.networkPage.Name = "networkPage";
-            this.networkPage.Size = new System.Drawing.Size(435, 426);
-            this.networkPage.TabIndex = 4;
-            this.networkPage.Text = "networkPage";
-            this.networkPage.Visible = false;
+            networkPage.Controls.Add(esiSettingsGroupBox);
+            networkPage.Controls.Add(ProxyServerGroupBox);
+            networkPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            networkPage.Location = new System.Drawing.Point(6, 6);
+            networkPage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            networkPage.Name = "networkPage";
+            networkPage.Size = new System.Drawing.Size(507, 492);
+            networkPage.TabIndex = 4;
+            networkPage.Text = "networkPage";
+            networkPage.Visible = false;
             // 
             // esiSettingsGroupBox
             // 
-            this.esiSettingsGroupBox.Controls.Add(this.lblClientSecret);
-            this.esiSettingsGroupBox.Controls.Add(this.lblClientID);
-            this.esiSettingsGroupBox.Controls.Add(this.esiSettingsLabel);
-            this.esiSettingsGroupBox.Controls.Add(this.clientSecretTextBox);
-            this.esiSettingsGroupBox.Controls.Add(this.clientIDTextBox);
-            this.esiSettingsGroupBox.Location = new System.Drawing.Point(3, 194);
-            this.esiSettingsGroupBox.Name = "esiSettingsGroupBox";
-            this.esiSettingsGroupBox.Size = new System.Drawing.Size(409, 88);
-            this.esiSettingsGroupBox.TabIndex = 1;
-            this.esiSettingsGroupBox.TabStop = false;
-            this.esiSettingsGroupBox.Text = "ESI Client Settings";
+            esiSettingsGroupBox.Controls.Add(lblClientSecret);
+            esiSettingsGroupBox.Controls.Add(lblClientID);
+            esiSettingsGroupBox.Controls.Add(esiSettingsLabel);
+            esiSettingsGroupBox.Controls.Add(clientSecretTextBox);
+            esiSettingsGroupBox.Controls.Add(clientIDTextBox);
+            esiSettingsGroupBox.Location = new System.Drawing.Point(4, 224);
+            esiSettingsGroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            esiSettingsGroupBox.Name = "esiSettingsGroupBox";
+            esiSettingsGroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            esiSettingsGroupBox.Size = new System.Drawing.Size(477, 102);
+            esiSettingsGroupBox.TabIndex = 1;
+            esiSettingsGroupBox.TabStop = false;
+            esiSettingsGroupBox.Text = "ESI Client Settings";
             // 
             // lblClientSecret
             // 
-            this.lblClientSecret.AutoSize = true;
-            this.lblClientSecret.Location = new System.Drawing.Point(9, 62);
-            this.lblClientSecret.Name = "lblClientSecret";
-            this.lblClientSecret.Size = new System.Drawing.Size(67, 13);
-            this.lblClientSecret.TabIndex = 2;
-            this.lblClientSecret.Text = "Client Secret";
+            lblClientSecret.AutoSize = true;
+            lblClientSecret.Location = new System.Drawing.Point(10, 72);
+            lblClientSecret.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblClientSecret.Name = "lblClientSecret";
+            lblClientSecret.Size = new System.Drawing.Size(73, 15);
+            lblClientSecret.TabIndex = 2;
+            lblClientSecret.Text = "Client Secret";
             // 
             // lblClientID
             // 
-            this.lblClientID.AutoSize = true;
-            this.lblClientID.Location = new System.Drawing.Point(29, 39);
-            this.lblClientID.Name = "lblClientID";
-            this.lblClientID.Size = new System.Drawing.Size(47, 13);
-            this.lblClientID.TabIndex = 2;
-            this.lblClientID.Text = "Client ID";
+            lblClientID.AutoSize = true;
+            lblClientID.Location = new System.Drawing.Point(34, 45);
+            lblClientID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblClientID.Name = "lblClientID";
+            lblClientID.Size = new System.Drawing.Size(52, 15);
+            lblClientID.TabIndex = 2;
+            lblClientID.Text = "Client ID";
             // 
             // esiSettingsLabel
             // 
-            this.esiSettingsLabel.AutoSize = true;
-            this.esiSettingsLabel.LinkArea = new System.Windows.Forms.LinkArea(31, 40);
-            this.esiSettingsLabel.Location = new System.Drawing.Point(9, 16);
-            this.esiSettingsLabel.Name = "esiSettingsLabel";
-            this.esiSettingsLabel.Size = new System.Drawing.Size(364, 17);
-            this.esiSettingsLabel.TabIndex = 1;
-            this.esiSettingsLabel.TabStop = true;
-            this.esiSettingsLabel.Text = "Create ESI client application: https://peterhaneve.github.io/evemon-esi\r\n";
-            this.esiSettingsLabel.UseCompatibleTextRendering = true;
-            this.esiSettingsLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.esiSettingsLabel_LinkClicked);
+            esiSettingsLabel.AutoSize = true;
+            esiSettingsLabel.LinkArea = new System.Windows.Forms.LinkArea(31, 40);
+            esiSettingsLabel.Location = new System.Drawing.Point(10, 18);
+            esiSettingsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            esiSettingsLabel.Name = "esiSettingsLabel";
+            esiSettingsLabel.Size = new System.Drawing.Size(395, 21);
+            esiSettingsLabel.TabIndex = 1;
+            esiSettingsLabel.TabStop = true;
+            esiSettingsLabel.Text = "Create ESI client application: https://peterhaneve.github.io/evemon-esi\r\n";
+            esiSettingsLabel.UseCompatibleTextRendering = true;
+            esiSettingsLabel.LinkClicked += esiSettingsLabel_LinkClicked;
             // 
             // clientSecretTextBox
             // 
-            this.clientSecretTextBox.Location = new System.Drawing.Point(82, 59);
-            this.clientSecretTextBox.Name = "clientSecretTextBox";
-            this.clientSecretTextBox.Size = new System.Drawing.Size(315, 20);
-            this.clientSecretTextBox.TabIndex = 7;
-            this.clientSecretTextBox.UseSystemPasswordChar = true;
+            clientSecretTextBox.Location = new System.Drawing.Point(96, 68);
+            clientSecretTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            clientSecretTextBox.Name = "clientSecretTextBox";
+            clientSecretTextBox.Size = new System.Drawing.Size(367, 23);
+            clientSecretTextBox.TabIndex = 7;
+            clientSecretTextBox.UseSystemPasswordChar = true;
             // 
             // clientIDTextBox
             // 
-            this.clientIDTextBox.Location = new System.Drawing.Point(82, 36);
-            this.clientIDTextBox.Name = "clientIDTextBox";
-            this.clientIDTextBox.Size = new System.Drawing.Size(315, 20);
-            this.clientIDTextBox.TabIndex = 6;
+            clientIDTextBox.Location = new System.Drawing.Point(96, 42);
+            clientIDTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            clientIDTextBox.Name = "clientIDTextBox";
+            clientIDTextBox.Size = new System.Drawing.Size(367, 23);
+            clientIDTextBox.TabIndex = 6;
             // 
             // ProxyServerGroupBox
             // 
-            this.ProxyServerGroupBox.Controls.Add(this.customProxyCheckBox);
-            this.ProxyServerGroupBox.Controls.Add(this.lblNetworkPageProxy);
-            this.ProxyServerGroupBox.Controls.Add(this.customProxyPanel);
-            this.ProxyServerGroupBox.Location = new System.Drawing.Point(3, 31);
-            this.ProxyServerGroupBox.Name = "ProxyServerGroupBox";
-            this.ProxyServerGroupBox.Size = new System.Drawing.Size(409, 157);
-            this.ProxyServerGroupBox.TabIndex = 0;
-            this.ProxyServerGroupBox.TabStop = false;
-            this.ProxyServerGroupBox.Text = "Proxy Server Settings";
+            ProxyServerGroupBox.Controls.Add(customProxyCheckBox);
+            ProxyServerGroupBox.Controls.Add(lblNetworkPageProxy);
+            ProxyServerGroupBox.Controls.Add(customProxyPanel);
+            ProxyServerGroupBox.Location = new System.Drawing.Point(4, 36);
+            ProxyServerGroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            ProxyServerGroupBox.Name = "ProxyServerGroupBox";
+            ProxyServerGroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            ProxyServerGroupBox.Size = new System.Drawing.Size(477, 181);
+            ProxyServerGroupBox.TabIndex = 0;
+            ProxyServerGroupBox.TabStop = false;
+            ProxyServerGroupBox.Text = "Proxy Server Settings";
             // 
             // customProxyCheckBox
             // 
-            this.customProxyCheckBox.AutoSize = true;
-            this.customProxyCheckBox.Location = new System.Drawing.Point(9, 74);
-            this.customProxyCheckBox.Name = "customProxyCheckBox";
-            this.customProxyCheckBox.Size = new System.Drawing.Size(119, 17);
-            this.customProxyCheckBox.TabIndex = 9;
-            this.customProxyCheckBox.Text = "Use a custom proxy";
-            this.customProxyCheckBox.UseVisualStyleBackColor = true;
-            this.customProxyCheckBox.CheckedChanged += new System.EventHandler(this.OnMustEnableOrDisable);
+            customProxyCheckBox.AutoSize = true;
+            customProxyCheckBox.Location = new System.Drawing.Point(10, 85);
+            customProxyCheckBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            customProxyCheckBox.Name = "customProxyCheckBox";
+            customProxyCheckBox.Size = new System.Drawing.Size(130, 19);
+            customProxyCheckBox.TabIndex = 9;
+            customProxyCheckBox.Text = "Use a custom proxy";
+            customProxyCheckBox.UseVisualStyleBackColor = true;
+            customProxyCheckBox.CheckedChanged += OnMustEnableOrDisable;
             // 
             // customProxyPanel
             // 
-            this.customProxyPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.customProxyPanel.Controls.Add(this.proxyPortTextBox);
-            this.customProxyPanel.Controls.Add(this.lblProxyHostIPAddress);
-            this.customProxyPanel.Controls.Add(this.proxyAuthenticationButton);
-            this.customProxyPanel.Controls.Add(this.lblProxyPort);
-            this.customProxyPanel.Controls.Add(this.lblHTTP);
-            this.customProxyPanel.Controls.Add(this.proxyHttpHostTextBox);
-            this.customProxyPanel.Location = new System.Drawing.Point(17, 97);
-            this.customProxyPanel.Name = "customProxyPanel";
-            this.customProxyPanel.Size = new System.Drawing.Size(386, 54);
-            this.customProxyPanel.TabIndex = 6;
+            customProxyPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            customProxyPanel.Controls.Add(proxyPortTextBox);
+            customProxyPanel.Controls.Add(lblProxyHostIPAddress);
+            customProxyPanel.Controls.Add(proxyAuthenticationButton);
+            customProxyPanel.Controls.Add(lblProxyPort);
+            customProxyPanel.Controls.Add(lblHTTP);
+            customProxyPanel.Controls.Add(proxyHttpHostTextBox);
+            customProxyPanel.Location = new System.Drawing.Point(20, 112);
+            customProxyPanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            customProxyPanel.Name = "customProxyPanel";
+            customProxyPanel.Size = new System.Drawing.Size(450, 62);
+            customProxyPanel.TabIndex = 6;
             // 
             // proxyPortTextBox
             // 
-            this.proxyPortTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.proxyPortTextBox.Location = new System.Drawing.Point(239, 24);
-            this.proxyPortTextBox.MaxLength = 5;
-            this.proxyPortTextBox.Name = "proxyPortTextBox";
-            this.proxyPortTextBox.Size = new System.Drawing.Size(38, 20);
-            this.proxyPortTextBox.TabIndex = 2;
-            this.proxyPortTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.proxyPortTextBox_Validating);
+            proxyPortTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            proxyPortTextBox.Location = new System.Drawing.Point(279, 28);
+            proxyPortTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            proxyPortTextBox.MaxLength = 5;
+            proxyPortTextBox.Name = "proxyPortTextBox";
+            proxyPortTextBox.Size = new System.Drawing.Size(44, 23);
+            proxyPortTextBox.TabIndex = 2;
+            proxyPortTextBox.Validating += proxyPortTextBox_Validating;
             // 
             // proxyAuthenticationButton
             // 
-            this.proxyAuthenticationButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.proxyAuthenticationButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.proxyAuthenticationButton.Location = new System.Drawing.Point(283, 22);
-            this.proxyAuthenticationButton.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
-            this.proxyAuthenticationButton.Name = "proxyAuthenticationButton";
-            this.proxyAuthenticationButton.Size = new System.Drawing.Size(97, 23);
-            this.proxyAuthenticationButton.TabIndex = 5;
-            this.proxyAuthenticationButton.Text = "Authentication...";
-            this.proxyAuthenticationButton.UseVisualStyleBackColor = true;
-            this.proxyAuthenticationButton.Click += new System.EventHandler(this.proxyAuthenticationButton_Click);
+            proxyAuthenticationButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            proxyAuthenticationButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            proxyAuthenticationButton.Location = new System.Drawing.Point(330, 25);
+            proxyAuthenticationButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 0);
+            proxyAuthenticationButton.Name = "proxyAuthenticationButton";
+            proxyAuthenticationButton.Size = new System.Drawing.Size(113, 27);
+            proxyAuthenticationButton.TabIndex = 5;
+            proxyAuthenticationButton.Text = "Authentication...";
+            proxyAuthenticationButton.UseVisualStyleBackColor = true;
+            proxyAuthenticationButton.Click += proxyAuthenticationButton_Click;
             // 
             // proxyHttpHostTextBox
             // 
-            this.proxyHttpHostTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.proxyHttpHostTextBox.Location = new System.Drawing.Point(50, 24);
-            this.proxyHttpHostTextBox.Name = "proxyHttpHostTextBox";
-            this.proxyHttpHostTextBox.Size = new System.Drawing.Size(182, 20);
-            this.proxyHttpHostTextBox.TabIndex = 1;
+            proxyHttpHostTextBox.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            proxyHttpHostTextBox.Location = new System.Drawing.Point(58, 28);
+            proxyHttpHostTextBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            proxyHttpHostTextBox.Name = "proxyHttpHostTextBox";
+            proxyHttpHostTextBox.Size = new System.Drawing.Size(212, 23);
+            proxyHttpHostTextBox.TabIndex = 1;
             // 
             // emailNotificationsPage
             // 
-            this.emailNotificationsPage.Controls.Add(this.lblEmailNotificationPage);
-            this.emailNotificationsPage.Controls.Add(this.mailNotificationCheckBox);
-            this.emailNotificationsPage.Controls.Add(this.emailNotificationsControl);
-            this.emailNotificationsPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.emailNotificationsPage.Location = new System.Drawing.Point(5, 5);
-            this.emailNotificationsPage.Name = "emailNotificationsPage";
-            this.emailNotificationsPage.Size = new System.Drawing.Size(435, 426);
-            this.emailNotificationsPage.TabIndex = 6;
-            this.emailNotificationsPage.Text = "emailNotificationsPage";
-            this.emailNotificationsPage.Visible = false;
+            emailNotificationsPage.Controls.Add(lblEmailNotificationPage);
+            emailNotificationsPage.Controls.Add(mailNotificationCheckBox);
+            emailNotificationsPage.Controls.Add(emailNotificationsControl);
+            emailNotificationsPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            emailNotificationsPage.Location = new System.Drawing.Point(6, 6);
+            emailNotificationsPage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            emailNotificationsPage.Name = "emailNotificationsPage";
+            emailNotificationsPage.Size = new System.Drawing.Size(507, 492);
+            emailNotificationsPage.TabIndex = 6;
+            emailNotificationsPage.Text = "emailNotificationsPage";
+            emailNotificationsPage.Visible = false;
             // 
             // mailNotificationCheckBox
             // 
-            this.mailNotificationCheckBox.AutoSize = true;
-            this.mailNotificationCheckBox.Location = new System.Drawing.Point(7, 51);
-            this.mailNotificationCheckBox.Name = "mailNotificationCheckBox";
-            this.mailNotificationCheckBox.Size = new System.Drawing.Size(215, 17);
-            this.mailNotificationCheckBox.TabIndex = 0;
-            this.mailNotificationCheckBox.Text = "Send email when skill training completes";
-            this.mailNotificationCheckBox.UseVisualStyleBackColor = true;
-            this.mailNotificationCheckBox.CheckedChanged += new System.EventHandler(this.OnMustEnableOrDisable);
+            mailNotificationCheckBox.AutoSize = true;
+            mailNotificationCheckBox.Location = new System.Drawing.Point(8, 59);
+            mailNotificationCheckBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            mailNotificationCheckBox.Name = "mailNotificationCheckBox";
+            mailNotificationCheckBox.Size = new System.Drawing.Size(241, 19);
+            mailNotificationCheckBox.TabIndex = 0;
+            mailNotificationCheckBox.Text = "Send email when skill training completes";
+            mailNotificationCheckBox.UseVisualStyleBackColor = true;
+            mailNotificationCheckBox.CheckedChanged += OnMustEnableOrDisable;
             // 
             // emailNotificationsControl
             // 
-            this.emailNotificationsControl.Location = new System.Drawing.Point(7, 74);
-            this.emailNotificationsControl.Name = "emailNotificationsControl";
-            this.emailNotificationsControl.Settings = null;
-            this.emailNotificationsControl.Size = new System.Drawing.Size(355, 337);
-            this.emailNotificationsControl.TabIndex = 20;
+            emailNotificationsControl.Location = new System.Drawing.Point(8, 85);
+            emailNotificationsControl.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            emailNotificationsControl.Name = "emailNotificationsControl";
+            emailNotificationsControl.Settings = null;
+            emailNotificationsControl.Size = new System.Drawing.Size(414, 389);
+            emailNotificationsControl.TabIndex = 20;
             // 
             // notificationsPage
             // 
-            this.notificationsPage.Controls.Add(this.lblNotificationsPage);
-            this.notificationsPage.Controls.Add(this.cbPlaySoundOnSkillComplete);
-            this.notificationsPage.Controls.Add(this.notificationsControl);
-            this.notificationsPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.notificationsPage.Location = new System.Drawing.Point(5, 5);
-            this.notificationsPage.Name = "notificationsPage";
-            this.notificationsPage.Size = new System.Drawing.Size(435, 426);
-            this.notificationsPage.TabIndex = 7;
-            this.notificationsPage.Text = "notificationsPage";
-            this.notificationsPage.Visible = false;
+            notificationsPage.Controls.Add(lblNotificationsPage);
+            notificationsPage.Controls.Add(cbPlaySoundOnSkillComplete);
+            notificationsPage.Controls.Add(notificationsControl);
+            notificationsPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            notificationsPage.Location = new System.Drawing.Point(6, 6);
+            notificationsPage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            notificationsPage.Name = "notificationsPage";
+            notificationsPage.Size = new System.Drawing.Size(507, 492);
+            notificationsPage.TabIndex = 7;
+            notificationsPage.Text = "notificationsPage";
+            notificationsPage.Visible = false;
             // 
             // cbPlaySoundOnSkillComplete
             // 
-            this.cbPlaySoundOnSkillComplete.AutoSize = true;
-            this.cbPlaySoundOnSkillComplete.Location = new System.Drawing.Point(3, 401);
-            this.cbPlaySoundOnSkillComplete.Name = "cbPlaySoundOnSkillComplete";
-            this.cbPlaySoundOnSkillComplete.Size = new System.Drawing.Size(215, 17);
-            this.cbPlaySoundOnSkillComplete.TabIndex = 3;
-            this.cbPlaySoundOnSkillComplete.Text = "Play sound when skill training completes";
-            this.cbPlaySoundOnSkillComplete.UseVisualStyleBackColor = true;
+            cbPlaySoundOnSkillComplete.AutoSize = true;
+            cbPlaySoundOnSkillComplete.Location = new System.Drawing.Point(4, 463);
+            cbPlaySoundOnSkillComplete.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbPlaySoundOnSkillComplete.Name = "cbPlaySoundOnSkillComplete";
+            cbPlaySoundOnSkillComplete.Size = new System.Drawing.Size(241, 19);
+            cbPlaySoundOnSkillComplete.TabIndex = 3;
+            cbPlaySoundOnSkillComplete.Text = "Play sound when skill training completes";
+            cbPlaySoundOnSkillComplete.UseVisualStyleBackColor = true;
             // 
             // notificationsControl
             // 
-            this.notificationsControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.notificationsControl.AutoScroll = true;
-            this.notificationsControl.BackColor = System.Drawing.SystemColors.Window;
-            this.notificationsControl.Location = new System.Drawing.Point(3, 56);
-            this.notificationsControl.Name = "notificationsControl";
-            this.notificationsControl.Settings = null;
-            this.notificationsControl.Size = new System.Drawing.Size(429, 337);
-            this.notificationsControl.TabIndex = 4;
+            notificationsControl.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            notificationsControl.AutoScroll = true;
+            notificationsControl.BackColor = System.Drawing.SystemColors.Window;
+            notificationsControl.Location = new System.Drawing.Point(4, 65);
+            notificationsControl.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            notificationsControl.Name = "notificationsControl";
+            notificationsControl.Settings = null;
+            notificationsControl.Size = new System.Drawing.Size(500, 389);
+            notificationsControl.TabIndex = 4;
             // 
             // trayIconPage
             // 
-            this.trayIconPage.Controls.Add(this.lblTrayIconPage);
-            this.trayIconPage.Controls.Add(this.mainWindowBehaviourGroupBox);
-            this.trayIconPage.Controls.Add(this.trayIconPopupGroupBox);
-            this.trayIconPage.Controls.Add(this.systemTrayIconGroupBox);
-            this.trayIconPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trayIconPage.Location = new System.Drawing.Point(5, 5);
-            this.trayIconPage.Name = "trayIconPage";
-            this.trayIconPage.Size = new System.Drawing.Size(435, 426);
-            this.trayIconPage.TabIndex = 8;
-            this.trayIconPage.Text = "trayIconPage";
-            this.trayIconPage.Visible = false;
+            trayIconPage.Controls.Add(lblTrayIconPage);
+            trayIconPage.Controls.Add(mainWindowBehaviourGroupBox);
+            trayIconPage.Controls.Add(trayIconPopupGroupBox);
+            trayIconPage.Controls.Add(systemTrayIconGroupBox);
+            trayIconPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            trayIconPage.Location = new System.Drawing.Point(6, 6);
+            trayIconPage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            trayIconPage.Name = "trayIconPage";
+            trayIconPage.Size = new System.Drawing.Size(507, 492);
+            trayIconPage.TabIndex = 8;
+            trayIconPage.Text = "trayIconPage";
+            trayIconPage.Visible = false;
             // 
             // mainWindowBehaviourGroupBox
             // 
-            this.mainWindowBehaviourGroupBox.Controls.Add(this.rbMinToTaskBar);
-            this.mainWindowBehaviourGroupBox.Controls.Add(this.rbMinToTray);
-            this.mainWindowBehaviourGroupBox.Controls.Add(this.rbExitEVEMon);
-            this.mainWindowBehaviourGroupBox.Location = new System.Drawing.Point(9, 307);
-            this.mainWindowBehaviourGroupBox.Name = "mainWindowBehaviourGroupBox";
-            this.mainWindowBehaviourGroupBox.Size = new System.Drawing.Size(419, 91);
-            this.mainWindowBehaviourGroupBox.TabIndex = 17;
-            this.mainWindowBehaviourGroupBox.TabStop = false;
-            this.mainWindowBehaviourGroupBox.Text = "Main Window Close Behaviour";
+            mainWindowBehaviourGroupBox.Controls.Add(rbMinToTaskBar);
+            mainWindowBehaviourGroupBox.Controls.Add(rbMinToTray);
+            mainWindowBehaviourGroupBox.Controls.Add(rbExitEVEMon);
+            mainWindowBehaviourGroupBox.Location = new System.Drawing.Point(10, 354);
+            mainWindowBehaviourGroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            mainWindowBehaviourGroupBox.Name = "mainWindowBehaviourGroupBox";
+            mainWindowBehaviourGroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            mainWindowBehaviourGroupBox.Size = new System.Drawing.Size(489, 105);
+            mainWindowBehaviourGroupBox.TabIndex = 17;
+            mainWindowBehaviourGroupBox.TabStop = false;
+            mainWindowBehaviourGroupBox.Text = "Main Window Close Behaviour";
             // 
             // rbMinToTaskBar
             // 
-            this.rbMinToTaskBar.AutoSize = true;
-            this.rbMinToTaskBar.Location = new System.Drawing.Point(12, 66);
-            this.rbMinToTaskBar.Name = "rbMinToTaskBar";
-            this.rbMinToTaskBar.Size = new System.Drawing.Size(133, 17);
-            this.rbMinToTaskBar.TabIndex = 2;
-            this.rbMinToTaskBar.TabStop = true;
-            this.rbMinToTaskBar.Text = "Minimize to the taskbar";
-            this.rbMinToTaskBar.UseVisualStyleBackColor = true;
+            rbMinToTaskBar.AutoSize = true;
+            rbMinToTaskBar.Location = new System.Drawing.Point(14, 76);
+            rbMinToTaskBar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            rbMinToTaskBar.Name = "rbMinToTaskBar";
+            rbMinToTaskBar.Size = new System.Drawing.Size(149, 19);
+            rbMinToTaskBar.TabIndex = 2;
+            rbMinToTaskBar.TabStop = true;
+            rbMinToTaskBar.Text = "Minimize to the taskbar";
+            rbMinToTaskBar.UseVisualStyleBackColor = true;
             // 
             // rbMinToTray
             // 
-            this.rbMinToTray.AutoSize = true;
-            this.rbMinToTray.Location = new System.Drawing.Point(12, 43);
-            this.rbMinToTray.Name = "rbMinToTray";
-            this.rbMinToTray.Size = new System.Drawing.Size(150, 17);
-            this.rbMinToTray.TabIndex = 1;
-            this.rbMinToTray.TabStop = true;
-            this.rbMinToTray.Text = "Minimize to the system tray";
-            this.rbMinToTray.UseVisualStyleBackColor = true;
+            rbMinToTray.AutoSize = true;
+            rbMinToTray.Location = new System.Drawing.Point(14, 50);
+            rbMinToTray.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            rbMinToTray.Name = "rbMinToTray";
+            rbMinToTray.Size = new System.Drawing.Size(171, 19);
+            rbMinToTray.TabIndex = 1;
+            rbMinToTray.TabStop = true;
+            rbMinToTray.Text = "Minimize to the system tray";
+            rbMinToTray.UseVisualStyleBackColor = true;
             // 
             // rbExitEVEMon
             // 
-            this.rbExitEVEMon.AutoSize = true;
-            this.rbExitEVEMon.Location = new System.Drawing.Point(12, 20);
-            this.rbExitEVEMon.Name = "rbExitEVEMon";
-            this.rbExitEVEMon.Size = new System.Drawing.Size(87, 17);
-            this.rbExitEVEMon.TabIndex = 0;
-            this.rbExitEVEMon.TabStop = true;
-            this.rbExitEVEMon.Text = "Exit EVEMon";
-            this.rbExitEVEMon.UseVisualStyleBackColor = true;
+            rbExitEVEMon.AutoSize = true;
+            rbExitEVEMon.Location = new System.Drawing.Point(14, 23);
+            rbExitEVEMon.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            rbExitEVEMon.Name = "rbExitEVEMon";
+            rbExitEVEMon.Size = new System.Drawing.Size(91, 19);
+            rbExitEVEMon.TabIndex = 0;
+            rbExitEVEMon.TabStop = true;
+            rbExitEVEMon.Text = "Exit EVEMon";
+            rbExitEVEMon.UseVisualStyleBackColor = true;
             // 
             // trayIconPopupGroupBox
             // 
-            this.trayIconPopupGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.trayIconPopupGroupBox.Controls.Add(this.trayPopupDisabledRadio);
-            this.trayIconPopupGroupBox.Controls.Add(this.trayPopupButton);
-            this.trayIconPopupGroupBox.Controls.Add(this.trayPopupRadio);
-            this.trayIconPopupGroupBox.Controls.Add(this.trayTooltipRadio);
-            this.trayIconPopupGroupBox.Controls.Add(this.trayTooltipButton);
-            this.trayIconPopupGroupBox.Location = new System.Drawing.Point(9, 184);
-            this.trayIconPopupGroupBox.Name = "trayIconPopupGroupBox";
-            this.trayIconPopupGroupBox.Size = new System.Drawing.Size(419, 104);
-            this.trayIconPopupGroupBox.TabIndex = 10;
-            this.trayIconPopupGroupBox.TabStop = false;
-            this.trayIconPopupGroupBox.Text = "Icon Popup Style";
+            trayIconPopupGroupBox.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            trayIconPopupGroupBox.Controls.Add(trayPopupDisabledRadio);
+            trayIconPopupGroupBox.Controls.Add(trayPopupButton);
+            trayIconPopupGroupBox.Controls.Add(trayPopupRadio);
+            trayIconPopupGroupBox.Controls.Add(trayTooltipRadio);
+            trayIconPopupGroupBox.Controls.Add(trayTooltipButton);
+            trayIconPopupGroupBox.Location = new System.Drawing.Point(10, 212);
+            trayIconPopupGroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            trayIconPopupGroupBox.Name = "trayIconPopupGroupBox";
+            trayIconPopupGroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            trayIconPopupGroupBox.Size = new System.Drawing.Size(489, 120);
+            trayIconPopupGroupBox.TabIndex = 10;
+            trayIconPopupGroupBox.TabStop = false;
+            trayIconPopupGroupBox.Text = "Icon Popup Style";
             // 
             // trayPopupDisabledRadio
             // 
-            this.trayPopupDisabledRadio.AutoSize = true;
-            this.trayPopupDisabledRadio.Location = new System.Drawing.Point(6, 78);
-            this.trayPopupDisabledRadio.Name = "trayPopupDisabledRadio";
-            this.trayPopupDisabledRadio.Size = new System.Drawing.Size(66, 17);
-            this.trayPopupDisabledRadio.TabIndex = 5;
-            this.trayPopupDisabledRadio.TabStop = true;
-            this.trayPopupDisabledRadio.Text = "Disabled";
-            this.trayPopupDisabledRadio.UseVisualStyleBackColor = true;
+            trayPopupDisabledRadio.AutoSize = true;
+            trayPopupDisabledRadio.Location = new System.Drawing.Point(7, 90);
+            trayPopupDisabledRadio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            trayPopupDisabledRadio.Name = "trayPopupDisabledRadio";
+            trayPopupDisabledRadio.Size = new System.Drawing.Size(70, 19);
+            trayPopupDisabledRadio.TabIndex = 5;
+            trayPopupDisabledRadio.TabStop = true;
+            trayPopupDisabledRadio.Text = "Disabled";
+            trayPopupDisabledRadio.UseVisualStyleBackColor = true;
             // 
             // trayPopupButton
             // 
-            this.trayPopupButton.Location = new System.Drawing.Point(69, 46);
-            this.trayPopupButton.Name = "trayPopupButton";
-            this.trayPopupButton.Size = new System.Drawing.Size(75, 23);
-            this.trayPopupButton.TabIndex = 4;
-            this.trayPopupButton.Text = "Configure";
-            this.trayPopupButton.UseVisualStyleBackColor = true;
-            this.trayPopupButton.Click += new System.EventHandler(this.trayPopupButton_Click);
+            trayPopupButton.Location = new System.Drawing.Point(80, 53);
+            trayPopupButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            trayPopupButton.Name = "trayPopupButton";
+            trayPopupButton.Size = new System.Drawing.Size(88, 27);
+            trayPopupButton.TabIndex = 4;
+            trayPopupButton.Text = "Configure";
+            trayPopupButton.UseVisualStyleBackColor = true;
+            trayPopupButton.Click += trayPopupButton_Click;
             // 
             // trayPopupRadio
             // 
-            this.trayPopupRadio.AutoSize = true;
-            this.trayPopupRadio.Location = new System.Drawing.Point(6, 49);
-            this.trayPopupRadio.Name = "trayPopupRadio";
-            this.trayPopupRadio.Size = new System.Drawing.Size(56, 17);
-            this.trayPopupRadio.TabIndex = 3;
-            this.trayPopupRadio.TabStop = true;
-            this.trayPopupRadio.Text = "Popup";
-            this.trayPopupRadio.UseVisualStyleBackColor = true;
+            trayPopupRadio.AutoSize = true;
+            trayPopupRadio.Location = new System.Drawing.Point(7, 57);
+            trayPopupRadio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            trayPopupRadio.Name = "trayPopupRadio";
+            trayPopupRadio.Size = new System.Drawing.Size(60, 19);
+            trayPopupRadio.TabIndex = 3;
+            trayPopupRadio.TabStop = true;
+            trayPopupRadio.Text = "Popup";
+            trayPopupRadio.UseVisualStyleBackColor = true;
             // 
             // trayTooltipRadio
             // 
-            this.trayTooltipRadio.AutoSize = true;
-            this.trayTooltipRadio.Location = new System.Drawing.Point(6, 20);
-            this.trayTooltipRadio.Name = "trayTooltipRadio";
-            this.trayTooltipRadio.Size = new System.Drawing.Size(57, 17);
-            this.trayTooltipRadio.TabIndex = 0;
-            this.trayTooltipRadio.TabStop = true;
-            this.trayTooltipRadio.Text = "Tooltip";
-            this.trayTooltipRadio.UseVisualStyleBackColor = true;
+            trayTooltipRadio.AutoSize = true;
+            trayTooltipRadio.Location = new System.Drawing.Point(7, 23);
+            trayTooltipRadio.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            trayTooltipRadio.Name = "trayTooltipRadio";
+            trayTooltipRadio.Size = new System.Drawing.Size(61, 19);
+            trayTooltipRadio.TabIndex = 0;
+            trayTooltipRadio.TabStop = true;
+            trayTooltipRadio.Text = "Tooltip";
+            trayTooltipRadio.UseVisualStyleBackColor = true;
             // 
             // trayTooltipButton
             // 
-            this.trayTooltipButton.Location = new System.Drawing.Point(69, 17);
-            this.trayTooltipButton.Name = "trayTooltipButton";
-            this.trayTooltipButton.Size = new System.Drawing.Size(75, 23);
-            this.trayTooltipButton.TabIndex = 2;
-            this.trayTooltipButton.Text = "Configure";
-            this.trayTooltipButton.UseVisualStyleBackColor = true;
-            this.trayTooltipButton.Click += new System.EventHandler(this.trayTooltipButton_Click);
+            trayTooltipButton.Location = new System.Drawing.Point(80, 20);
+            trayTooltipButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            trayTooltipButton.Name = "trayTooltipButton";
+            trayTooltipButton.Size = new System.Drawing.Size(88, 27);
+            trayTooltipButton.TabIndex = 2;
+            trayTooltipButton.Text = "Configure";
+            trayTooltipButton.UseVisualStyleBackColor = true;
+            trayTooltipButton.Click += trayTooltipButton_Click;
             // 
             // updatesPage
             // 
-            this.updatesPage.Controls.Add(this.updateSettingsControl);
-            this.updatesPage.Controls.Add(this.lblUpdatesPage);
-            this.updatesPage.Controls.Add(this.cbCheckTime);
-            this.updatesPage.Controls.Add(this.cbCheckForUpdates);
-            this.updatesPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.updatesPage.Location = new System.Drawing.Point(5, 5);
-            this.updatesPage.Name = "updatesPage";
-            this.updatesPage.Size = new System.Drawing.Size(435, 426);
-            this.updatesPage.TabIndex = 9;
-            this.updatesPage.Text = "updatesPage";
-            this.updatesPage.Visible = false;
+            updatesPage.Controls.Add(updateSettingsControl);
+            updatesPage.Controls.Add(lblUpdatesPage);
+            updatesPage.Controls.Add(cbCheckTime);
+            updatesPage.Controls.Add(cbCheckForUpdates);
+            updatesPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            updatesPage.Location = new System.Drawing.Point(6, 6);
+            updatesPage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            updatesPage.Name = "updatesPage";
+            updatesPage.Size = new System.Drawing.Size(507, 492);
+            updatesPage.TabIndex = 9;
+            updatesPage.Text = "updatesPage";
+            updatesPage.Visible = false;
             // 
             // updateSettingsControl
             // 
-            this.updateSettingsControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.updateSettingsControl.AutoScroll = true;
-            this.updateSettingsControl.Location = new System.Drawing.Point(11, 85);
-            this.updateSettingsControl.Name = "updateSettingsControl";
-            this.updateSettingsControl.Settings = null;
-            this.updateSettingsControl.Size = new System.Drawing.Size(413, 340);
-            this.updateSettingsControl.TabIndex = 10;
+            updateSettingsControl.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            updateSettingsControl.AutoScroll = true;
+            updateSettingsControl.Location = new System.Drawing.Point(13, 98);
+            updateSettingsControl.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            updateSettingsControl.Name = "updateSettingsControl";
+            updateSettingsControl.Settings = null;
+            updateSettingsControl.Size = new System.Drawing.Size(482, 392);
+            updateSettingsControl.TabIndex = 10;
             // 
             // lblUpdatesPage
             // 
-            this.lblUpdatesPage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblUpdatesPage.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblUpdatesPage.Location = new System.Drawing.Point(3, 2);
-            this.lblUpdatesPage.Name = "lblUpdatesPage";
-            this.lblUpdatesPage.Size = new System.Drawing.Size(429, 34);
-            this.lblUpdatesPage.TabIndex = 9;
-            this.lblUpdatesPage.Text = "The following settings help reducing the network load, especially for high-latenc" +
-    "y connections and clients with many characters.";
+            lblUpdatesPage.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lblUpdatesPage.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            lblUpdatesPage.Location = new System.Drawing.Point(4, 2);
+            lblUpdatesPage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblUpdatesPage.Name = "lblUpdatesPage";
+            lblUpdatesPage.Size = new System.Drawing.Size(500, 39);
+            lblUpdatesPage.TabIndex = 9;
+            lblUpdatesPage.Text = "The following settings help reducing the network load, especially for high-latency connections and clients with many characters.";
             // 
             // cbCheckTime
             // 
-            this.cbCheckTime.AutoSize = true;
-            this.cbCheckTime.Location = new System.Drawing.Point(15, 39);
-            this.cbCheckTime.Name = "cbCheckTime";
-            this.cbCheckTime.Size = new System.Drawing.Size(146, 17);
-            this.cbCheckTime.TabIndex = 0;
-            this.cbCheckTime.Text = "Check system clock sync";
-            this.cbCheckTime.UseVisualStyleBackColor = true;
+            cbCheckTime.AutoSize = true;
+            cbCheckTime.Location = new System.Drawing.Point(18, 45);
+            cbCheckTime.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbCheckTime.Name = "cbCheckTime";
+            cbCheckTime.Size = new System.Drawing.Size(157, 19);
+            cbCheckTime.TabIndex = 0;
+            cbCheckTime.Text = "Check system clock sync";
+            cbCheckTime.UseVisualStyleBackColor = true;
             // 
             // cbCheckForUpdates
             // 
-            this.cbCheckForUpdates.AutoSize = true;
-            this.cbCheckForUpdates.Location = new System.Drawing.Point(15, 62);
-            this.cbCheckForUpdates.Name = "cbCheckForUpdates";
-            this.cbCheckForUpdates.Size = new System.Drawing.Size(158, 17);
-            this.cbCheckForUpdates.TabIndex = 0;
-            this.cbCheckForUpdates.Text = "Check for EVEMon updates";
-            this.cbCheckForUpdates.UseVisualStyleBackColor = true;
+            cbCheckForUpdates.AutoSize = true;
+            cbCheckForUpdates.Location = new System.Drawing.Point(18, 72);
+            cbCheckForUpdates.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbCheckForUpdates.Name = "cbCheckForUpdates";
+            cbCheckForUpdates.Size = new System.Drawing.Size(169, 19);
+            cbCheckForUpdates.TabIndex = 0;
+            cbCheckForUpdates.Text = "Check for EVEMon updates";
+            cbCheckForUpdates.UseVisualStyleBackColor = true;
             // 
             // schedulerUIPage
             // 
-            this.schedulerUIPage.Controls.Add(this.lblSchedulerUIPage);
-            this.schedulerUIPage.Controls.Add(this.panelColorText);
-            this.schedulerUIPage.Controls.Add(this.lblText);
-            this.schedulerUIPage.Controls.Add(this.panelColorRecurring2);
-            this.schedulerUIPage.Controls.Add(this.lblBlockingEvents);
-            this.schedulerUIPage.Controls.Add(this.panelColorRecurring1);
-            this.schedulerUIPage.Controls.Add(this.lblRecurringEvents);
-            this.schedulerUIPage.Controls.Add(this.panelColorSingle2);
-            this.schedulerUIPage.Controls.Add(this.lblSimpleEvents);
-            this.schedulerUIPage.Controls.Add(this.panelColorSingle1);
-            this.schedulerUIPage.Controls.Add(this.panelColorBlocking);
-            this.schedulerUIPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.schedulerUIPage.Location = new System.Drawing.Point(5, 5);
-            this.schedulerUIPage.Name = "schedulerUIPage";
-            this.schedulerUIPage.Size = new System.Drawing.Size(435, 426);
-            this.schedulerUIPage.TabIndex = 10;
-            this.schedulerUIPage.Text = "schedulerUIPage";
-            this.schedulerUIPage.Visible = false;
+            schedulerUIPage.Controls.Add(lblSchedulerUIPage);
+            schedulerUIPage.Controls.Add(panelColorText);
+            schedulerUIPage.Controls.Add(lblText);
+            schedulerUIPage.Controls.Add(panelColorRecurring2);
+            schedulerUIPage.Controls.Add(lblBlockingEvents);
+            schedulerUIPage.Controls.Add(panelColorRecurring1);
+            schedulerUIPage.Controls.Add(lblRecurringEvents);
+            schedulerUIPage.Controls.Add(panelColorSingle2);
+            schedulerUIPage.Controls.Add(lblSimpleEvents);
+            schedulerUIPage.Controls.Add(panelColorSingle1);
+            schedulerUIPage.Controls.Add(panelColorBlocking);
+            schedulerUIPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            schedulerUIPage.Location = new System.Drawing.Point(6, 6);
+            schedulerUIPage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            schedulerUIPage.Name = "schedulerUIPage";
+            schedulerUIPage.Size = new System.Drawing.Size(507, 492);
+            schedulerUIPage.TabIndex = 10;
+            schedulerUIPage.Text = "schedulerUIPage";
+            schedulerUIPage.Visible = false;
             // 
             // panelColorText
             // 
-            this.panelColorText.BackColor = System.Drawing.Color.White;
-            this.panelColorText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelColorText.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelColorText.Location = new System.Drawing.Point(107, 105);
-            this.panelColorText.Name = "panelColorText";
-            this.panelColorText.Size = new System.Drawing.Size(43, 17);
-            this.panelColorText.TabIndex = 4;
-            this.panelColorText.Click += new System.EventHandler(this.colorPanel_Click);
+            panelColorText.BackColor = System.Drawing.Color.White;
+            panelColorText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            panelColorText.Cursor = System.Windows.Forms.Cursors.Hand;
+            panelColorText.Location = new System.Drawing.Point(125, 121);
+            panelColorText.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panelColorText.Name = "panelColorText";
+            panelColorText.Size = new System.Drawing.Size(50, 19);
+            panelColorText.TabIndex = 4;
+            panelColorText.Click += colorPanel_Click;
             // 
             // panelColorRecurring2
             // 
-            this.panelColorRecurring2.BackColor = System.Drawing.Color.LightGreen;
-            this.panelColorRecurring2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelColorRecurring2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelColorRecurring2.Location = new System.Drawing.Point(156, 176);
-            this.panelColorRecurring2.Name = "panelColorRecurring2";
-            this.panelColorRecurring2.Size = new System.Drawing.Size(43, 17);
-            this.panelColorRecurring2.TabIndex = 4;
-            this.panelColorRecurring2.Click += new System.EventHandler(this.colorPanel_Click);
+            panelColorRecurring2.BackColor = System.Drawing.Color.LightGreen;
+            panelColorRecurring2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            panelColorRecurring2.Cursor = System.Windows.Forms.Cursors.Hand;
+            panelColorRecurring2.Location = new System.Drawing.Point(182, 203);
+            panelColorRecurring2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panelColorRecurring2.Name = "panelColorRecurring2";
+            panelColorRecurring2.Size = new System.Drawing.Size(50, 19);
+            panelColorRecurring2.TabIndex = 4;
+            panelColorRecurring2.Click += colorPanel_Click;
             // 
             // panelColorRecurring1
             // 
-            this.panelColorRecurring1.BackColor = System.Drawing.Color.Green;
-            this.panelColorRecurring1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelColorRecurring1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelColorRecurring1.Location = new System.Drawing.Point(107, 176);
-            this.panelColorRecurring1.Name = "panelColorRecurring1";
-            this.panelColorRecurring1.Size = new System.Drawing.Size(43, 17);
-            this.panelColorRecurring1.TabIndex = 4;
-            this.panelColorRecurring1.Click += new System.EventHandler(this.colorPanel_Click);
+            panelColorRecurring1.BackColor = System.Drawing.Color.Green;
+            panelColorRecurring1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            panelColorRecurring1.Cursor = System.Windows.Forms.Cursors.Hand;
+            panelColorRecurring1.Location = new System.Drawing.Point(125, 203);
+            panelColorRecurring1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panelColorRecurring1.Name = "panelColorRecurring1";
+            panelColorRecurring1.Size = new System.Drawing.Size(50, 19);
+            panelColorRecurring1.TabIndex = 4;
+            panelColorRecurring1.Click += colorPanel_Click;
             // 
             // panelColorSingle2
             // 
-            this.panelColorSingle2.BackColor = System.Drawing.Color.LightBlue;
-            this.panelColorSingle2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelColorSingle2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelColorSingle2.Location = new System.Drawing.Point(156, 153);
-            this.panelColorSingle2.Name = "panelColorSingle2";
-            this.panelColorSingle2.Size = new System.Drawing.Size(43, 17);
-            this.panelColorSingle2.TabIndex = 4;
-            this.panelColorSingle2.Click += new System.EventHandler(this.colorPanel_Click);
+            panelColorSingle2.BackColor = System.Drawing.Color.LightBlue;
+            panelColorSingle2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            panelColorSingle2.Cursor = System.Windows.Forms.Cursors.Hand;
+            panelColorSingle2.Location = new System.Drawing.Point(182, 177);
+            panelColorSingle2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panelColorSingle2.Name = "panelColorSingle2";
+            panelColorSingle2.Size = new System.Drawing.Size(50, 19);
+            panelColorSingle2.TabIndex = 4;
+            panelColorSingle2.Click += colorPanel_Click;
             // 
             // panelColorSingle1
             // 
-            this.panelColorSingle1.BackColor = System.Drawing.Color.Blue;
-            this.panelColorSingle1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelColorSingle1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelColorSingle1.Location = new System.Drawing.Point(107, 153);
-            this.panelColorSingle1.Name = "panelColorSingle1";
-            this.panelColorSingle1.Size = new System.Drawing.Size(43, 17);
-            this.panelColorSingle1.TabIndex = 4;
-            this.panelColorSingle1.Click += new System.EventHandler(this.colorPanel_Click);
+            panelColorSingle1.BackColor = System.Drawing.Color.Blue;
+            panelColorSingle1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            panelColorSingle1.Cursor = System.Windows.Forms.Cursors.Hand;
+            panelColorSingle1.Location = new System.Drawing.Point(125, 177);
+            panelColorSingle1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panelColorSingle1.Name = "panelColorSingle1";
+            panelColorSingle1.Size = new System.Drawing.Size(50, 19);
+            panelColorSingle1.TabIndex = 4;
+            panelColorSingle1.Click += colorPanel_Click;
             // 
             // panelColorBlocking
             // 
-            this.panelColorBlocking.BackColor = System.Drawing.Color.Red;
-            this.panelColorBlocking.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelColorBlocking.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelColorBlocking.Location = new System.Drawing.Point(107, 128);
-            this.panelColorBlocking.Name = "panelColorBlocking";
-            this.panelColorBlocking.Size = new System.Drawing.Size(43, 17);
-            this.panelColorBlocking.TabIndex = 3;
-            this.panelColorBlocking.Click += new System.EventHandler(this.colorPanel_Click);
+            panelColorBlocking.BackColor = System.Drawing.Color.Red;
+            panelColorBlocking.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            panelColorBlocking.Cursor = System.Windows.Forms.Cursors.Hand;
+            panelColorBlocking.Location = new System.Drawing.Point(125, 148);
+            panelColorBlocking.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panelColorBlocking.Name = "panelColorBlocking";
+            panelColorBlocking.Size = new System.Drawing.Size(50, 19);
+            panelColorBlocking.TabIndex = 3;
+            panelColorBlocking.Click += colorPanel_Click;
             // 
             // externalCalendarPage
             // 
-            this.externalCalendarPage.Controls.Add(this.externalCalendarControl);
-            this.externalCalendarPage.Controls.Add(this.lblExternalCalendarPage);
-            this.externalCalendarPage.Controls.Add(this.externalCalendarCheckbox);
-            this.externalCalendarPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.externalCalendarPage.Location = new System.Drawing.Point(5, 5);
-            this.externalCalendarPage.Name = "externalCalendarPage";
-            this.externalCalendarPage.Size = new System.Drawing.Size(435, 426);
-            this.externalCalendarPage.TabIndex = 11;
-            this.externalCalendarPage.Text = "externalCalendarPage";
-            this.externalCalendarPage.Visible = false;
+            externalCalendarPage.Controls.Add(externalCalendarControl);
+            externalCalendarPage.Controls.Add(lblExternalCalendarPage);
+            externalCalendarPage.Controls.Add(externalCalendarCheckbox);
+            externalCalendarPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            externalCalendarPage.Location = new System.Drawing.Point(6, 6);
+            externalCalendarPage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            externalCalendarPage.Name = "externalCalendarPage";
+            externalCalendarPage.Size = new System.Drawing.Size(507, 491);
+            externalCalendarPage.TabIndex = 11;
+            externalCalendarPage.Text = "externalCalendarPage";
+            externalCalendarPage.Visible = false;
             // 
             // externalCalendarControl
             // 
-            this.externalCalendarControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.externalCalendarControl.Enabled = false;
-            this.externalCalendarControl.Location = new System.Drawing.Point(0, 123);
-            this.externalCalendarControl.Name = "externalCalendarControl";
-            this.externalCalendarControl.Size = new System.Drawing.Size(435, 303);
-            this.externalCalendarControl.TabIndex = 12;
+            externalCalendarControl.Dock = System.Windows.Forms.DockStyle.Bottom;
+            externalCalendarControl.Enabled = false;
+            externalCalendarControl.Location = new System.Drawing.Point(0, 141);
+            externalCalendarControl.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            externalCalendarControl.Name = "externalCalendarControl";
+            externalCalendarControl.Size = new System.Drawing.Size(507, 350);
+            externalCalendarControl.TabIndex = 12;
             // 
             // externalCalendarCheckbox
             // 
-            this.externalCalendarCheckbox.AutoSize = true;
-            this.externalCalendarCheckbox.CausesValidation = false;
-            this.externalCalendarCheckbox.Location = new System.Drawing.Point(6, 98);
-            this.externalCalendarCheckbox.Name = "externalCalendarCheckbox";
-            this.externalCalendarCheckbox.Size = new System.Drawing.Size(131, 17);
-            this.externalCalendarCheckbox.TabIndex = 0;
-            this.externalCalendarCheckbox.Text = "Use External Calendar";
-            this.externalCalendarCheckbox.UseVisualStyleBackColor = true;
-            this.externalCalendarCheckbox.Click += new System.EventHandler(this.OnMustEnableOrDisable);
+            externalCalendarCheckbox.AutoSize = true;
+            externalCalendarCheckbox.CausesValidation = false;
+            externalCalendarCheckbox.Location = new System.Drawing.Point(7, 113);
+            externalCalendarCheckbox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            externalCalendarCheckbox.Name = "externalCalendarCheckbox";
+            externalCalendarCheckbox.Size = new System.Drawing.Size(140, 19);
+            externalCalendarCheckbox.TabIndex = 0;
+            externalCalendarCheckbox.Text = "Use External Calendar";
+            externalCalendarCheckbox.UseVisualStyleBackColor = true;
+            externalCalendarCheckbox.Click += OnMustEnableOrDisable;
             // 
             // iconsPage
             // 
-            this.iconsPage.Controls.Add(this.lblIconsPage);
-            this.iconsPage.Controls.Add(this.gbSkillBrowserIconSet);
-            this.iconsPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.iconsPage.Location = new System.Drawing.Point(5, 5);
-            this.iconsPage.Name = "iconsPage";
-            this.iconsPage.Size = new System.Drawing.Size(435, 426);
-            this.iconsPage.TabIndex = 16;
-            this.iconsPage.Text = "iconsPage";
+            iconsPage.Controls.Add(lblIconsPage);
+            iconsPage.Controls.Add(gbSkillBrowserIconSet);
+            iconsPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            iconsPage.Location = new System.Drawing.Point(6, 6);
+            iconsPage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            iconsPage.Name = "iconsPage";
+            iconsPage.Size = new System.Drawing.Size(507, 492);
+            iconsPage.TabIndex = 16;
+            iconsPage.Text = "iconsPage";
             // 
             // messagesPage
             // 
-            this.messagesPage.Controls.Add(this.gbMessageBox);
-            this.messagesPage.Controls.Add(this.lblObsoletePlanEntries);
-            this.messagesPage.Controls.Add(this.ObsoleteEntryRemovalGroupBox);
-            this.messagesPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.messagesPage.Location = new System.Drawing.Point(5, 5);
-            this.messagesPage.Name = "messagesPage";
-            this.messagesPage.Size = new System.Drawing.Size(435, 426);
-            this.messagesPage.TabIndex = 17;
-            this.messagesPage.Text = "messagesPage";
+            messagesPage.Controls.Add(gbMessageBox);
+            messagesPage.Controls.Add(lblObsoletePlanEntries);
+            messagesPage.Controls.Add(ObsoleteEntryRemovalGroupBox);
+            messagesPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            messagesPage.Location = new System.Drawing.Point(6, 6);
+            messagesPage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            messagesPage.Name = "messagesPage";
+            messagesPage.Size = new System.Drawing.Size(507, 492);
+            messagesPage.TabIndex = 17;
+            messagesPage.Text = "messagesPage";
             // 
             // gbMessageBox
             // 
-            this.gbMessageBox.Controls.Add(this.lblPrioritesConflict);
-            this.gbMessageBox.Controls.Add(this.btnPrioritiesReset);
-            this.gbMessageBox.Location = new System.Drawing.Point(5, 314);
-            this.gbMessageBox.Name = "gbMessageBox";
-            this.gbMessageBox.Size = new System.Drawing.Size(424, 58);
-            this.gbMessageBox.TabIndex = 25;
-            this.gbMessageBox.TabStop = false;
-            this.gbMessageBox.Text = "Pop-up Messages";
+            gbMessageBox.Controls.Add(lblPrioritesConflict);
+            gbMessageBox.Controls.Add(btnPrioritiesReset);
+            gbMessageBox.Location = new System.Drawing.Point(6, 362);
+            gbMessageBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            gbMessageBox.Name = "gbMessageBox";
+            gbMessageBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            gbMessageBox.Size = new System.Drawing.Size(495, 67);
+            gbMessageBox.TabIndex = 25;
+            gbMessageBox.TabStop = false;
+            gbMessageBox.Text = "Pop-up Messages";
             // 
             // lblPrioritesConflict
             // 
-            this.lblPrioritesConflict.AutoSize = true;
-            this.lblPrioritesConflict.Location = new System.Drawing.Point(20, 25);
-            this.lblPrioritesConflict.Name = "lblPrioritesConflict";
-            this.lblPrioritesConflict.Size = new System.Drawing.Size(84, 13);
-            this.lblPrioritesConflict.TabIndex = 1;
-            this.lblPrioritesConflict.Text = "Priorities Conflict";
+            lblPrioritesConflict.AutoSize = true;
+            lblPrioritesConflict.Location = new System.Drawing.Point(23, 29);
+            lblPrioritesConflict.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblPrioritesConflict.Name = "lblPrioritesConflict";
+            lblPrioritesConflict.Size = new System.Drawing.Size(98, 15);
+            lblPrioritesConflict.TabIndex = 1;
+            lblPrioritesConflict.Text = "Priorities Conflict";
             // 
             // btnPrioritiesReset
             // 
-            this.btnPrioritiesReset.Location = new System.Drawing.Point(332, 20);
-            this.btnPrioritiesReset.Name = "btnPrioritiesReset";
-            this.btnPrioritiesReset.Size = new System.Drawing.Size(75, 23);
-            this.btnPrioritiesReset.TabIndex = 0;
-            this.btnPrioritiesReset.Text = "Reset";
-            this.btnPrioritiesReset.UseVisualStyleBackColor = true;
-            this.btnPrioritiesReset.Click += new System.EventHandler(this.btnPrioritiesReset_Click);
+            btnPrioritiesReset.Location = new System.Drawing.Point(387, 23);
+            btnPrioritiesReset.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnPrioritiesReset.Name = "btnPrioritiesReset";
+            btnPrioritiesReset.Size = new System.Drawing.Size(88, 27);
+            btnPrioritiesReset.TabIndex = 0;
+            btnPrioritiesReset.Text = "Reset";
+            btnPrioritiesReset.UseVisualStyleBackColor = true;
+            btnPrioritiesReset.Click += btnPrioritiesReset_Click;
             // 
             // ObsoleteEntryRemovalGroupBox
             // 
-            this.ObsoleteEntryRemovalGroupBox.Controls.Add(this.RemoveAllLabel);
-            this.ObsoleteEntryRemovalGroupBox.Controls.Add(this.AlwaysAskLabel);
-            this.ObsoleteEntryRemovalGroupBox.Controls.Add(this.RemoveConfirmedLabel);
-            this.ObsoleteEntryRemovalGroupBox.Controls.Add(this.alwaysAskRadioButton);
-            this.ObsoleteEntryRemovalGroupBox.Controls.Add(this.removeAllRadioButton);
-            this.ObsoleteEntryRemovalGroupBox.Controls.Add(this.removeConfirmedRadioButton);
-            this.ObsoleteEntryRemovalGroupBox.Location = new System.Drawing.Point(5, 120);
-            this.ObsoleteEntryRemovalGroupBox.Name = "ObsoleteEntryRemovalGroupBox";
-            this.ObsoleteEntryRemovalGroupBox.Size = new System.Drawing.Size(425, 187);
-            this.ObsoleteEntryRemovalGroupBox.TabIndex = 23;
-            this.ObsoleteEntryRemovalGroupBox.TabStop = false;
-            this.ObsoleteEntryRemovalGroupBox.Text = "Obsolete Plan Entry Removal";
+            ObsoleteEntryRemovalGroupBox.Controls.Add(RemoveAllLabel);
+            ObsoleteEntryRemovalGroupBox.Controls.Add(AlwaysAskLabel);
+            ObsoleteEntryRemovalGroupBox.Controls.Add(RemoveConfirmedLabel);
+            ObsoleteEntryRemovalGroupBox.Controls.Add(alwaysAskRadioButton);
+            ObsoleteEntryRemovalGroupBox.Controls.Add(removeAllRadioButton);
+            ObsoleteEntryRemovalGroupBox.Controls.Add(removeConfirmedRadioButton);
+            ObsoleteEntryRemovalGroupBox.Location = new System.Drawing.Point(6, 138);
+            ObsoleteEntryRemovalGroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            ObsoleteEntryRemovalGroupBox.Name = "ObsoleteEntryRemovalGroupBox";
+            ObsoleteEntryRemovalGroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            ObsoleteEntryRemovalGroupBox.Size = new System.Drawing.Size(496, 216);
+            ObsoleteEntryRemovalGroupBox.TabIndex = 23;
+            ObsoleteEntryRemovalGroupBox.TabStop = false;
+            ObsoleteEntryRemovalGroupBox.Text = "Obsolete Plan Entry Removal";
             // 
             // RemoveAllLabel
             // 
-            this.RemoveAllLabel.Location = new System.Drawing.Point(24, 144);
-            this.RemoveAllLabel.Name = "RemoveAllLabel";
-            this.RemoveAllLabel.Size = new System.Drawing.Size(394, 27);
-            this.RemoveAllLabel.TabIndex = 5;
-            this.RemoveAllLabel.Text = "If EVEMon believes a skill level has been completed, whether it has been confirme" +
-    "d by the API or not it will be removed when the plan is opened.";
+            RemoveAllLabel.Location = new System.Drawing.Point(28, 166);
+            RemoveAllLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            RemoveAllLabel.Name = "RemoveAllLabel";
+            RemoveAllLabel.Size = new System.Drawing.Size(460, 31);
+            RemoveAllLabel.TabIndex = 5;
+            RemoveAllLabel.Text = "If EVEMon believes a skill level has been completed, whether it has been confirmed by the API or not it will be removed when the plan is opened.";
             // 
             // AlwaysAskLabel
             // 
-            this.AlwaysAskLabel.Location = new System.Drawing.Point(24, 91);
-            this.AlwaysAskLabel.Name = "AlwaysAskLabel";
-            this.AlwaysAskLabel.Size = new System.Drawing.Size(394, 27);
-            this.AlwaysAskLabel.TabIndex = 4;
-            this.AlwaysAskLabel.Text = "Always display the \"Obsolete Entries\" link at the bottom of the skill planner bef" +
-    "ore removing entries.";
+            AlwaysAskLabel.Location = new System.Drawing.Point(28, 105);
+            AlwaysAskLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            AlwaysAskLabel.Name = "AlwaysAskLabel";
+            AlwaysAskLabel.Size = new System.Drawing.Size(460, 31);
+            AlwaysAskLabel.TabIndex = 4;
+            AlwaysAskLabel.Text = "Always display the \"Obsolete Entries\" link at the bottom of the skill planner before removing entries.";
             // 
             // RemoveConfirmedLabel
             // 
-            this.RemoveConfirmedLabel.Location = new System.Drawing.Point(24, 39);
-            this.RemoveConfirmedLabel.Name = "RemoveConfirmedLabel";
-            this.RemoveConfirmedLabel.Size = new System.Drawing.Size(394, 27);
-            this.RemoveConfirmedLabel.TabIndex = 3;
-            this.RemoveConfirmedLabel.Text = "Once the API has confirmed a skill level has completed it is removed the next tim" +
-    "e a plan is opened. This is the default behaviour.";
+            RemoveConfirmedLabel.Location = new System.Drawing.Point(28, 45);
+            RemoveConfirmedLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            RemoveConfirmedLabel.Name = "RemoveConfirmedLabel";
+            RemoveConfirmedLabel.Size = new System.Drawing.Size(460, 31);
+            RemoveConfirmedLabel.TabIndex = 3;
+            RemoveConfirmedLabel.Text = "Once the API has confirmed a skill level has completed it is removed the next time a plan is opened. This is the default behaviour.";
             // 
             // alwaysAskRadioButton
             // 
-            this.alwaysAskRadioButton.AutoSize = true;
-            this.alwaysAskRadioButton.Location = new System.Drawing.Point(7, 73);
-            this.alwaysAskRadioButton.Name = "alwaysAskRadioButton";
-            this.alwaysAskRadioButton.Size = new System.Drawing.Size(78, 17);
-            this.alwaysAskRadioButton.TabIndex = 2;
-            this.alwaysAskRadioButton.TabStop = true;
-            this.alwaysAskRadioButton.Text = "Always ask";
-            this.alwaysAskRadioButton.UseVisualStyleBackColor = true;
+            alwaysAskRadioButton.AutoSize = true;
+            alwaysAskRadioButton.Location = new System.Drawing.Point(8, 84);
+            alwaysAskRadioButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            alwaysAskRadioButton.Name = "alwaysAskRadioButton";
+            alwaysAskRadioButton.Size = new System.Drawing.Size(82, 19);
+            alwaysAskRadioButton.TabIndex = 2;
+            alwaysAskRadioButton.TabStop = true;
+            alwaysAskRadioButton.Text = "Always ask";
+            alwaysAskRadioButton.UseVisualStyleBackColor = true;
             // 
             // removeAllRadioButton
             // 
-            this.removeAllRadioButton.AutoSize = true;
-            this.removeAllRadioButton.Location = new System.Drawing.Point(7, 126);
-            this.removeAllRadioButton.Name = "removeAllRadioButton";
-            this.removeAllRadioButton.Size = new System.Drawing.Size(206, 17);
-            this.removeAllRadioButton.TabIndex = 1;
-            this.removeAllRadioButton.TabStop = true;
-            this.removeAllRadioButton.Text = "Remove entry once training completes";
-            this.removeAllRadioButton.UseVisualStyleBackColor = true;
+            removeAllRadioButton.AutoSize = true;
+            removeAllRadioButton.Location = new System.Drawing.Point(8, 145);
+            removeAllRadioButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            removeAllRadioButton.Name = "removeAllRadioButton";
+            removeAllRadioButton.Size = new System.Drawing.Size(229, 19);
+            removeAllRadioButton.TabIndex = 1;
+            removeAllRadioButton.TabStop = true;
+            removeAllRadioButton.Text = "Remove entry once training completes";
+            removeAllRadioButton.UseVisualStyleBackColor = true;
             // 
             // removeConfirmedRadioButton
             // 
-            this.removeConfirmedRadioButton.AutoSize = true;
-            this.removeConfirmedRadioButton.Location = new System.Drawing.Point(7, 21);
-            this.removeConfirmedRadioButton.Name = "removeConfirmedRadioButton";
-            this.removeConfirmedRadioButton.Size = new System.Drawing.Size(221, 17);
-            this.removeConfirmedRadioButton.TabIndex = 0;
-            this.removeConfirmedRadioButton.TabStop = true;
-            this.removeConfirmedRadioButton.Text = "Remove confirmed entry (Recommended)";
-            this.removeConfirmedRadioButton.UseVisualStyleBackColor = true;
+            removeConfirmedRadioButton.AutoSize = true;
+            removeConfirmedRadioButton.Location = new System.Drawing.Point(8, 24);
+            removeConfirmedRadioButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            removeConfirmedRadioButton.Name = "removeConfirmedRadioButton";
+            removeConfirmedRadioButton.Size = new System.Drawing.Size(248, 19);
+            removeConfirmedRadioButton.TabIndex = 0;
+            removeConfirmedRadioButton.TabStop = true;
+            removeConfirmedRadioButton.Text = "Remove confirmed entry (Recommended)";
+            removeConfirmedRadioButton.UseVisualStyleBackColor = true;
             // 
             // portableEveClientsPage
             // 
-            this.portableEveClientsPage.Controls.Add(this.lblPECIDescription);
-            this.portableEveClientsPage.Controls.Add(this.PECIGroupBox);
-            this.portableEveClientsPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.portableEveClientsPage.Location = new System.Drawing.Point(5, 5);
-            this.portableEveClientsPage.Name = "portableEveClientsPage";
-            this.portableEveClientsPage.Size = new System.Drawing.Size(435, 426);
-            this.portableEveClientsPage.TabIndex = 20;
-            this.portableEveClientsPage.Text = "portableEveClientsPage";
+            portableEveClientsPage.Controls.Add(lblPECIDescription);
+            portableEveClientsPage.Controls.Add(PECIGroupBox);
+            portableEveClientsPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            portableEveClientsPage.Location = new System.Drawing.Point(6, 6);
+            portableEveClientsPage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            portableEveClientsPage.Name = "portableEveClientsPage";
+            portableEveClientsPage.Size = new System.Drawing.Size(507, 492);
+            portableEveClientsPage.TabIndex = 20;
+            portableEveClientsPage.Text = "portableEveClientsPage";
             // 
             // lblPECIDescription
             // 
-            this.lblPECIDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPECIDescription.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblPECIDescription.Location = new System.Drawing.Point(4, 15);
-            this.lblPECIDescription.Name = "lblPECIDescription";
-            this.lblPECIDescription.Size = new System.Drawing.Size(424, 95);
-            this.lblPECIDescription.TabIndex = 21;
-            this.lblPECIDescription.Text = resources.GetString("lblPECIDescription.Text");
+            lblPECIDescription.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lblPECIDescription.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            lblPECIDescription.Location = new System.Drawing.Point(5, 17);
+            lblPECIDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblPECIDescription.Name = "lblPECIDescription";
+            lblPECIDescription.Size = new System.Drawing.Size(495, 110);
+            lblPECIDescription.TabIndex = 21;
+            lblPECIDescription.Text = resources.GetString("lblPECIDescription.Text");
             // 
             // PECIGroupBox
             // 
-            this.PECIGroupBox.Controls.Add(this.portableEveClientsControl);
-            this.PECIGroupBox.Location = new System.Drawing.Point(7, 129);
-            this.PECIGroupBox.Name = "PECIGroupBox";
-            this.PECIGroupBox.Size = new System.Drawing.Size(421, 283);
-            this.PECIGroupBox.TabIndex = 0;
-            this.PECIGroupBox.TabStop = false;
-            this.PECIGroupBox.Text = "Portable EVE Client Installations";
+            PECIGroupBox.Controls.Add(portableEveClientsControl);
+            PECIGroupBox.Location = new System.Drawing.Point(8, 149);
+            PECIGroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            PECIGroupBox.Name = "PECIGroupBox";
+            PECIGroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            PECIGroupBox.Size = new System.Drawing.Size(491, 327);
+            PECIGroupBox.TabIndex = 0;
+            PECIGroupBox.TabStop = false;
+            PECIGroupBox.Text = "Portable EVE Client Installations";
             // 
             // portableEveClientsControl
             // 
-            this.portableEveClientsControl.AutoScroll = true;
-            this.portableEveClientsControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.portableEveClientsControl.Location = new System.Drawing.Point(3, 16);
-            this.portableEveClientsControl.Name = "portableEveClientsControl";
-            this.portableEveClientsControl.Size = new System.Drawing.Size(415, 264);
-            this.portableEveClientsControl.TabIndex = 0;
+            portableEveClientsControl.AutoScroll = true;
+            portableEveClientsControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            portableEveClientsControl.Location = new System.Drawing.Point(4, 19);
+            portableEveClientsControl.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            portableEveClientsControl.Name = "portableEveClientsControl";
+            portableEveClientsControl.Size = new System.Drawing.Size(483, 305);
+            portableEveClientsControl.TabIndex = 0;
             // 
             // marketPriceProvidersPage
             // 
-            this.marketPriceProvidersPage.Controls.Add(this.gbMarketPriceProviders);
-            this.marketPriceProvidersPage.Controls.Add(this.marketPriceProviderPageLabel);
-            this.marketPriceProvidersPage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.marketPriceProvidersPage.Location = new System.Drawing.Point(5, 5);
-            this.marketPriceProvidersPage.Name = "marketPriceProvidersPage";
-            this.marketPriceProvidersPage.Size = new System.Drawing.Size(435, 426);
-            this.marketPriceProvidersPage.TabIndex = 21;
-            this.marketPriceProvidersPage.Text = "marketPriceProvidersPage";
+            marketPriceProvidersPage.Controls.Add(gbMarketPriceProviders);
+            marketPriceProvidersPage.Controls.Add(marketPriceProviderPageLabel);
+            marketPriceProvidersPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            marketPriceProvidersPage.Location = new System.Drawing.Point(6, 6);
+            marketPriceProvidersPage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            marketPriceProvidersPage.Name = "marketPriceProvidersPage";
+            marketPriceProvidersPage.Size = new System.Drawing.Size(507, 492);
+            marketPriceProvidersPage.TabIndex = 21;
+            marketPriceProvidersPage.Text = "marketPriceProvidersPage";
             // 
             // gbMarketPriceProviders
             // 
-            this.gbMarketPriceProviders.Controls.Add(this.cbProvidersList);
-            this.gbMarketPriceProviders.Controls.Add(this.SelectedProviderLabel);
-            this.gbMarketPriceProviders.Location = new System.Drawing.Point(3, 68);
-            this.gbMarketPriceProviders.Name = "gbMarketPriceProviders";
-            this.gbMarketPriceProviders.Size = new System.Drawing.Size(214, 67);
-            this.gbMarketPriceProviders.TabIndex = 22;
-            this.gbMarketPriceProviders.TabStop = false;
-            this.gbMarketPriceProviders.Text = "Market Price Provider";
+            gbMarketPriceProviders.Controls.Add(cbProvidersList);
+            gbMarketPriceProviders.Controls.Add(SelectedProviderLabel);
+            gbMarketPriceProviders.Location = new System.Drawing.Point(4, 78);
+            gbMarketPriceProviders.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            gbMarketPriceProviders.Name = "gbMarketPriceProviders";
+            gbMarketPriceProviders.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            gbMarketPriceProviders.Size = new System.Drawing.Size(250, 77);
+            gbMarketPriceProviders.TabIndex = 22;
+            gbMarketPriceProviders.TabStop = false;
+            gbMarketPriceProviders.Text = "Market Price Provider";
             // 
             // cbProvidersList
             // 
-            this.cbProvidersList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbProvidersList.FormattingEnabled = true;
-            this.cbProvidersList.Location = new System.Drawing.Point(61, 28);
-            this.cbProvidersList.Name = "cbProvidersList";
-            this.cbProvidersList.Size = new System.Drawing.Size(147, 21);
-            this.cbProvidersList.TabIndex = 1;
+            cbProvidersList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbProvidersList.FormattingEnabled = true;
+            cbProvidersList.Location = new System.Drawing.Point(71, 32);
+            cbProvidersList.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cbProvidersList.Name = "cbProvidersList";
+            cbProvidersList.Size = new System.Drawing.Size(171, 23);
+            cbProvidersList.TabIndex = 1;
             // 
             // SelectedProviderLabel
             // 
-            this.SelectedProviderLabel.AutoSize = true;
-            this.SelectedProviderLabel.Location = new System.Drawing.Point(6, 31);
-            this.SelectedProviderLabel.Name = "SelectedProviderLabel";
-            this.SelectedProviderLabel.Size = new System.Drawing.Size(49, 13);
-            this.SelectedProviderLabel.TabIndex = 0;
-            this.SelectedProviderLabel.Text = "Provider:";
+            SelectedProviderLabel.AutoSize = true;
+            SelectedProviderLabel.Location = new System.Drawing.Point(7, 36);
+            SelectedProviderLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            SelectedProviderLabel.Name = "SelectedProviderLabel";
+            SelectedProviderLabel.Size = new System.Drawing.Size(54, 15);
+            SelectedProviderLabel.TabIndex = 0;
+            SelectedProviderLabel.Text = "Provider:";
             // 
             // marketPriceProviderPageLabel
             // 
-            this.marketPriceProviderPageLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.marketPriceProviderPageLabel.AutoSize = true;
-            this.marketPriceProviderPageLabel.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.marketPriceProviderPageLabel.Location = new System.Drawing.Point(3, 38);
-            this.marketPriceProviderPageLabel.Name = "marketPriceProviderPageLabel";
-            this.marketPriceProviderPageLabel.Size = new System.Drawing.Size(294, 13);
-            this.marketPriceProviderPageLabel.TabIndex = 21;
-            this.marketPriceProviderPageLabel.Text = "Request prices for all EVE items from a market price provider.";
+            marketPriceProviderPageLabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            marketPriceProviderPageLabel.AutoSize = true;
+            marketPriceProviderPageLabel.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            marketPriceProviderPageLabel.Location = new System.Drawing.Point(4, 44);
+            marketPriceProviderPageLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            marketPriceProviderPageLabel.Name = "marketPriceProviderPageLabel";
+            marketPriceProviderPageLabel.Size = new System.Drawing.Size(327, 15);
+            marketPriceProviderPageLabel.TabIndex = 21;
+            marketPriceProviderPageLabel.Text = "Request prices for all EVE items from a market price provider.";
             // 
             // cloudStorageServicePage
             // 
-            this.cloudStorageServicePage.Controls.Add(this.providerAuthenticationGroupBox);
-            this.cloudStorageServicePage.Controls.Add(this.cloudStorageGroupBox);
-            this.cloudStorageServicePage.Controls.Add(this.linkLabel1);
-            this.cloudStorageServicePage.Controls.Add(this.settingsFileStorageGroupBox);
-            this.cloudStorageServicePage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cloudStorageServicePage.Location = new System.Drawing.Point(5, 5);
-            this.cloudStorageServicePage.Name = "cloudStorageServicePage";
-            this.cloudStorageServicePage.Size = new System.Drawing.Size(435, 426);
-            this.cloudStorageServicePage.TabIndex = 22;
-            this.cloudStorageServicePage.Text = "cloudStorageServicePage";
+            cloudStorageServicePage.Controls.Add(providerAuthenticationGroupBox);
+            cloudStorageServicePage.Controls.Add(cloudStorageGroupBox);
+            cloudStorageServicePage.Controls.Add(linkLabel1);
+            cloudStorageServicePage.Controls.Add(settingsFileStorageGroupBox);
+            cloudStorageServicePage.Dock = System.Windows.Forms.DockStyle.Fill;
+            cloudStorageServicePage.Location = new System.Drawing.Point(6, 6);
+            cloudStorageServicePage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cloudStorageServicePage.Name = "cloudStorageServicePage";
+            cloudStorageServicePage.Size = new System.Drawing.Size(507, 492);
+            cloudStorageServicePage.TabIndex = 22;
+            cloudStorageServicePage.Text = "cloudStorageServicePage";
             // 
             // providerAuthenticationGroupBox
             // 
-            this.providerAuthenticationGroupBox.Controls.Add(this.cloudStorageServiceControl);
-            this.providerAuthenticationGroupBox.Location = new System.Drawing.Point(6, 288);
-            this.providerAuthenticationGroupBox.Name = "providerAuthenticationGroupBox";
-            this.providerAuthenticationGroupBox.Size = new System.Drawing.Size(421, 128);
-            this.providerAuthenticationGroupBox.TabIndex = 24;
-            this.providerAuthenticationGroupBox.TabStop = false;
-            this.providerAuthenticationGroupBox.Text = "Cloud Storage Provider Authentication";
+            providerAuthenticationGroupBox.Controls.Add(cloudStorageServiceControl);
+            providerAuthenticationGroupBox.Location = new System.Drawing.Point(7, 332);
+            providerAuthenticationGroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            providerAuthenticationGroupBox.Name = "providerAuthenticationGroupBox";
+            providerAuthenticationGroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            providerAuthenticationGroupBox.Size = new System.Drawing.Size(491, 148);
+            providerAuthenticationGroupBox.TabIndex = 24;
+            providerAuthenticationGroupBox.TabStop = false;
+            providerAuthenticationGroupBox.Text = "Cloud Storage Provider Authentication";
             // 
             // cloudStorageServiceControl
             // 
-            this.cloudStorageServiceControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cloudStorageServiceControl.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            this.cloudStorageServiceControl.Location = new System.Drawing.Point(3, 16);
-            this.cloudStorageServiceControl.Name = "cloudStorageServiceControl";
-            this.cloudStorageServiceControl.Size = new System.Drawing.Size(415, 109);
-            this.cloudStorageServiceControl.TabIndex = 0;
+            cloudStorageServiceControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            cloudStorageServiceControl.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            cloudStorageServiceControl.Location = new System.Drawing.Point(4, 19);
+            cloudStorageServiceControl.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            cloudStorageServiceControl.Name = "cloudStorageServiceControl";
+            cloudStorageServiceControl.Size = new System.Drawing.Size(483, 126);
+            cloudStorageServiceControl.TabIndex = 0;
             // 
             // cloudStorageGroupBox
             // 
-            this.cloudStorageGroupBox.Controls.Add(this.cloudStorageProviderLogoPictureBox);
-            this.cloudStorageGroupBox.Controls.Add(this.cloudStorageProvidersComboBox);
-            this.cloudStorageGroupBox.Controls.Add(this.lblSelectedProvider);
-            this.cloudStorageGroupBox.Location = new System.Drawing.Point(6, 81);
-            this.cloudStorageGroupBox.Name = "cloudStorageGroupBox";
-            this.cloudStorageGroupBox.Size = new System.Drawing.Size(232, 67);
-            this.cloudStorageGroupBox.TabIndex = 23;
-            this.cloudStorageGroupBox.TabStop = false;
-            this.cloudStorageGroupBox.Text = "Cloud Storage Provider";
+            cloudStorageGroupBox.Controls.Add(cloudStorageProviderLogoPictureBox);
+            cloudStorageGroupBox.Controls.Add(cloudStorageProvidersComboBox);
+            cloudStorageGroupBox.Controls.Add(lblSelectedProvider);
+            cloudStorageGroupBox.Location = new System.Drawing.Point(7, 93);
+            cloudStorageGroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cloudStorageGroupBox.Name = "cloudStorageGroupBox";
+            cloudStorageGroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cloudStorageGroupBox.Size = new System.Drawing.Size(271, 77);
+            cloudStorageGroupBox.TabIndex = 23;
+            cloudStorageGroupBox.TabStop = false;
+            cloudStorageGroupBox.Text = "Cloud Storage Provider";
             // 
             // cloudStorageProviderLogoPictureBox
             // 
-            this.cloudStorageProviderLogoPictureBox.Location = new System.Drawing.Point(176, 11);
-            this.cloudStorageProviderLogoPictureBox.Name = "cloudStorageProviderLogoPictureBox";
-            this.cloudStorageProviderLogoPictureBox.Size = new System.Drawing.Size(50, 50);
-            this.cloudStorageProviderLogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.cloudStorageProviderLogoPictureBox.TabIndex = 2;
-            this.cloudStorageProviderLogoPictureBox.TabStop = false;
+            cloudStorageProviderLogoPictureBox.Location = new System.Drawing.Point(205, 13);
+            cloudStorageProviderLogoPictureBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cloudStorageProviderLogoPictureBox.Name = "cloudStorageProviderLogoPictureBox";
+            cloudStorageProviderLogoPictureBox.Size = new System.Drawing.Size(50, 50);
+            cloudStorageProviderLogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            cloudStorageProviderLogoPictureBox.TabIndex = 2;
+            cloudStorageProviderLogoPictureBox.TabStop = false;
             // 
             // cloudStorageProvidersComboBox
             // 
-            this.cloudStorageProvidersComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cloudStorageProvidersComboBox.FormattingEnabled = true;
-            this.cloudStorageProvidersComboBox.Location = new System.Drawing.Point(61, 28);
-            this.cloudStorageProvidersComboBox.Name = "cloudStorageProvidersComboBox";
-            this.cloudStorageProvidersComboBox.Size = new System.Drawing.Size(107, 21);
-            this.cloudStorageProvidersComboBox.TabIndex = 1;
-            this.cloudStorageProvidersComboBox.SelectedIndexChanged += new System.EventHandler(this.cloudStorageProvidersComboBox_SelectedIndexChanged);
+            cloudStorageProvidersComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cloudStorageProvidersComboBox.FormattingEnabled = true;
+            cloudStorageProvidersComboBox.Location = new System.Drawing.Point(71, 32);
+            cloudStorageProvidersComboBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            cloudStorageProvidersComboBox.Name = "cloudStorageProvidersComboBox";
+            cloudStorageProvidersComboBox.Size = new System.Drawing.Size(124, 23);
+            cloudStorageProvidersComboBox.TabIndex = 1;
+            cloudStorageProvidersComboBox.SelectedIndexChanged += cloudStorageProvidersComboBox_SelectedIndexChanged;
             // 
             // lblSelectedProvider
             // 
-            this.lblSelectedProvider.AutoSize = true;
-            this.lblSelectedProvider.Location = new System.Drawing.Point(6, 31);
-            this.lblSelectedProvider.Name = "lblSelectedProvider";
-            this.lblSelectedProvider.Size = new System.Drawing.Size(49, 13);
-            this.lblSelectedProvider.TabIndex = 0;
-            this.lblSelectedProvider.Text = "Provider:";
+            lblSelectedProvider.AutoSize = true;
+            lblSelectedProvider.Location = new System.Drawing.Point(7, 36);
+            lblSelectedProvider.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblSelectedProvider.Name = "lblSelectedProvider";
+            lblSelectedProvider.Size = new System.Drawing.Size(54, 15);
+            lblSelectedProvider.TabIndex = 0;
+            lblSelectedProvider.Text = "Provider:";
             // 
             // linkLabel1
             // 
-            this.linkLabel1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.linkLabel1.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
-            this.linkLabel1.Location = new System.Drawing.Point(8, 25);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(419, 41);
-            this.linkLabel1.TabIndex = 5;
-            this.linkLabel1.Text = resources.GetString("linkLabel1.Text");
+            linkLabel1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            linkLabel1.LinkArea = new System.Windows.Forms.LinkArea(0, 0);
+            linkLabel1.Location = new System.Drawing.Point(9, 29);
+            linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new System.Drawing.Size(489, 47);
+            linkLabel1.TabIndex = 5;
+            linkLabel1.Text = resources.GetString("linkLabel1.Text");
             // 
             // settingsFileStorageGroupBox
             // 
-            this.settingsFileStorageGroupBox.Controls.Add(this.settingsFileStorageControl);
-            this.settingsFileStorageGroupBox.Location = new System.Drawing.Point(6, 154);
-            this.settingsFileStorageGroupBox.Name = "settingsFileStorageGroupBox";
-            this.settingsFileStorageGroupBox.Size = new System.Drawing.Size(422, 127);
-            this.settingsFileStorageGroupBox.TabIndex = 4;
-            this.settingsFileStorageGroupBox.TabStop = false;
-            this.settingsFileStorageGroupBox.Text = "Settings File Storage";
+            settingsFileStorageGroupBox.Controls.Add(settingsFileStorageControl);
+            settingsFileStorageGroupBox.Location = new System.Drawing.Point(7, 178);
+            settingsFileStorageGroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            settingsFileStorageGroupBox.Name = "settingsFileStorageGroupBox";
+            settingsFileStorageGroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            settingsFileStorageGroupBox.Size = new System.Drawing.Size(492, 147);
+            settingsFileStorageGroupBox.TabIndex = 4;
+            settingsFileStorageGroupBox.TabStop = false;
+            settingsFileStorageGroupBox.Text = "Settings File Storage";
             // 
             // settingsFileStorageControl
             // 
-            this.settingsFileStorageControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.settingsFileStorageControl.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            this.settingsFileStorageControl.Location = new System.Drawing.Point(3, 16);
-            this.settingsFileStorageControl.Name = "settingsFileStorageControl";
-            this.settingsFileStorageControl.Size = new System.Drawing.Size(416, 108);
-            this.settingsFileStorageControl.TabIndex = 0;
+            settingsFileStorageControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            settingsFileStorageControl.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            settingsFileStorageControl.Location = new System.Drawing.Point(4, 19);
+            settingsFileStorageControl.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            settingsFileStorageControl.Name = "settingsFileStorageControl";
+            settingsFileStorageControl.Size = new System.Drawing.Size(484, 125);
+            settingsFileStorageControl.TabIndex = 0;
             // 
             // SettingsForm
             // 
-            this.AcceptButton = this.okButton;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.SystemColors.Window;
-            this.CancelButton = this.cancelButton;
-            this.ClientSize = new System.Drawing.Size(644, 482);
-            this.Controls.Add(this.multiPanel);
-            this.Controls.Add(this.leftPanel);
-            this.Controls.Add(this.bottomPanel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(400, 400);
-            this.Name = "SettingsForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EVEMon Settings";
-            this.Load += new System.EventHandler(this.SettingsForm_Load);
-            this.systemTrayIconGroupBox.ResumeLayout(false);
-            this.systemTrayIconGroupBox.PerformLayout();
-            this.bottomPanel.ResumeLayout(false);
-            this.CharacterMonitorGroupBox.ResumeLayout(false);
-            this.CharacterMonitorGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudSkillQueueWarningThresholdDays)).EndInit();
-            this.WindowTitleGroupBox.ResumeLayout(false);
-            this.WindowTitleGroupBox.PerformLayout();
-            this.gbSkillBrowserIconSet.ResumeLayout(false);
-            this.gbSkillBrowserIconSet.PerformLayout();
-            this.iconsSetTableLayoutPanel.ResumeLayout(false);
-            this.leftPanel.ResumeLayout(false);
-            this.multiPanel.ResumeLayout(false);
-            this.generalPage.ResumeLayout(false);
-            this.generalPage.PerformLayout();
-            this.mainWindowPage.ResumeLayout(false);
-            this.OverviewGroupBox.ResumeLayout(false);
-            this.OverviewGroupBox.PerformLayout();
-            this.overviewPanel.ResumeLayout(false);
-            this.overviewPanel.PerformLayout();
-            this.skillPlannerPage.ResumeLayout(false);
-            this.skillPlannerPage.PerformLayout();
-            this.networkPage.ResumeLayout(false);
-            this.esiSettingsGroupBox.ResumeLayout(false);
-            this.esiSettingsGroupBox.PerformLayout();
-            this.ProxyServerGroupBox.ResumeLayout(false);
-            this.ProxyServerGroupBox.PerformLayout();
-            this.customProxyPanel.ResumeLayout(false);
-            this.customProxyPanel.PerformLayout();
-            this.emailNotificationsPage.ResumeLayout(false);
-            this.emailNotificationsPage.PerformLayout();
-            this.notificationsPage.ResumeLayout(false);
-            this.notificationsPage.PerformLayout();
-            this.trayIconPage.ResumeLayout(false);
-            this.mainWindowBehaviourGroupBox.ResumeLayout(false);
-            this.mainWindowBehaviourGroupBox.PerformLayout();
-            this.trayIconPopupGroupBox.ResumeLayout(false);
-            this.trayIconPopupGroupBox.PerformLayout();
-            this.updatesPage.ResumeLayout(false);
-            this.updatesPage.PerformLayout();
-            this.schedulerUIPage.ResumeLayout(false);
-            this.schedulerUIPage.PerformLayout();
-            this.externalCalendarPage.ResumeLayout(false);
-            this.externalCalendarPage.PerformLayout();
-            this.iconsPage.ResumeLayout(false);
-            this.messagesPage.ResumeLayout(false);
-            this.gbMessageBox.ResumeLayout(false);
-            this.gbMessageBox.PerformLayout();
-            this.ObsoleteEntryRemovalGroupBox.ResumeLayout(false);
-            this.ObsoleteEntryRemovalGroupBox.PerformLayout();
-            this.portableEveClientsPage.ResumeLayout(false);
-            this.PECIGroupBox.ResumeLayout(false);
-            this.marketPriceProvidersPage.ResumeLayout(false);
-            this.marketPriceProvidersPage.PerformLayout();
-            this.gbMarketPriceProviders.ResumeLayout(false);
-            this.gbMarketPriceProviders.PerformLayout();
-            this.cloudStorageServicePage.ResumeLayout(false);
-            this.providerAuthenticationGroupBox.ResumeLayout(false);
-            this.cloudStorageGroupBox.ResumeLayout(false);
-            this.cloudStorageGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cloudStorageProviderLogoPictureBox)).EndInit();
-            this.settingsFileStorageGroupBox.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AcceptButton = okButton;
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            BackColor = System.Drawing.SystemColors.Window;
+            CancelButton = cancelButton;
+            ClientSize = new System.Drawing.Size(751, 556);
+            Controls.Add(multiPanel);
+            Controls.Add(leftPanel);
+            Controls.Add(bottomPanel);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            MinimumSize = new System.Drawing.Size(464, 456);
+            Name = "SettingsForm";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "EVEMon Settings";
+            Load += SettingsForm_Load;
+            systemTrayIconGroupBox.ResumeLayout(false);
+            systemTrayIconGroupBox.PerformLayout();
+            bottomPanel.ResumeLayout(false);
+            CharacterMonitorGroupBox.ResumeLayout(false);
+            CharacterMonitorGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nudSkillQueueWarningThresholdDays).EndInit();
+            WindowTitleGroupBox.ResumeLayout(false);
+            WindowTitleGroupBox.PerformLayout();
+            gbSkillBrowserIconSet.ResumeLayout(false);
+            gbSkillBrowserIconSet.PerformLayout();
+            iconsSetTableLayoutPanel.ResumeLayout(false);
+            leftPanel.ResumeLayout(false);
+            multiPanel.ResumeLayout(false);
+            generalPage.ResumeLayout(false);
+            generalPage.PerformLayout();
+            mainWindowPage.ResumeLayout(false);
+            OverviewGroupBox.ResumeLayout(false);
+            OverviewGroupBox.PerformLayout();
+            overviewPanel.ResumeLayout(false);
+            overviewPanel.PerformLayout();
+            skillPlannerPage.ResumeLayout(false);
+            skillPlannerPage.PerformLayout();
+            networkPage.ResumeLayout(false);
+            esiSettingsGroupBox.ResumeLayout(false);
+            esiSettingsGroupBox.PerformLayout();
+            ProxyServerGroupBox.ResumeLayout(false);
+            ProxyServerGroupBox.PerformLayout();
+            customProxyPanel.ResumeLayout(false);
+            customProxyPanel.PerformLayout();
+            emailNotificationsPage.ResumeLayout(false);
+            emailNotificationsPage.PerformLayout();
+            notificationsPage.ResumeLayout(false);
+            notificationsPage.PerformLayout();
+            trayIconPage.ResumeLayout(false);
+            mainWindowBehaviourGroupBox.ResumeLayout(false);
+            mainWindowBehaviourGroupBox.PerformLayout();
+            trayIconPopupGroupBox.ResumeLayout(false);
+            trayIconPopupGroupBox.PerformLayout();
+            updatesPage.ResumeLayout(false);
+            updatesPage.PerformLayout();
+            schedulerUIPage.ResumeLayout(false);
+            schedulerUIPage.PerformLayout();
+            externalCalendarPage.ResumeLayout(false);
+            externalCalendarPage.PerformLayout();
+            iconsPage.ResumeLayout(false);
+            messagesPage.ResumeLayout(false);
+            gbMessageBox.ResumeLayout(false);
+            gbMessageBox.PerformLayout();
+            ObsoleteEntryRemovalGroupBox.ResumeLayout(false);
+            ObsoleteEntryRemovalGroupBox.PerformLayout();
+            portableEveClientsPage.ResumeLayout(false);
+            PECIGroupBox.ResumeLayout(false);
+            marketPriceProvidersPage.ResumeLayout(false);
+            marketPriceProvidersPage.PerformLayout();
+            gbMarketPriceProviders.ResumeLayout(false);
+            gbMarketPriceProviders.PerformLayout();
+            cloudStorageServicePage.ResumeLayout(false);
+            providerAuthenticationGroupBox.ResumeLayout(false);
+            cloudStorageGroupBox.ResumeLayout(false);
+            cloudStorageGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)cloudStorageProviderLogoPictureBox).EndInit();
+            settingsFileStorageGroupBox.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
