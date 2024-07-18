@@ -142,7 +142,7 @@ namespace EVEMon.Common.Net
         private static string GetProxyHost(Uri url)
             => HttpWebClientServiceState.Proxy.Enabled
                 ? HttpWebClientServiceState.Proxy.Host
-                : WebRequest.DefaultWebProxy.GetProxy(url).Host;
+                : url.Host;
 
         /// <summary>
         /// Parses a web exception to get an error message and a <see cref="HttpWebClientServiceExceptionStatus"/> status code.
@@ -414,6 +414,7 @@ namespace EVEMon.Common.Net
         ///   <IPermission class="System.Security.Permissions.FileIOPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Read="*AllFiles*" PathDiscovery="*AllFiles*" />
         ///   <IPermission class="System.Security.Permissions.SecurityPermission, mscorlib, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" version="1" Flags="SerializationFormatter" />
         /// </PermissionSet>
+        [Obsolete("Base method is obselete")]
         public override void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             info.ThrowIfNull(nameof(info));

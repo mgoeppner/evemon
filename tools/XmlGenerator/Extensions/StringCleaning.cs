@@ -1,8 +1,8 @@
-﻿using System;
+﻿using EVEMon.Common.Extensions;
+using EVEMon.XmlGenerator.StaticData;
+using System;
 using System.Globalization;
 using System.Text.RegularExpressions;
-using EVEMon.Common.Extensions;
-using EVEMon.XmlGenerator.StaticData;
 
 namespace EVEMon.XmlGenerator.Extensions
 {
@@ -36,7 +36,7 @@ namespace EVEMon.XmlGenerator.Extensions
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        private static string CollapseSpaces(this string input) 
+        private static string CollapseSpaces(this string input)
             => Regex.Replace(input, @"[ ]{2,}", m => @" ", RegexOptions.Compiled);
 
         /// <summary>

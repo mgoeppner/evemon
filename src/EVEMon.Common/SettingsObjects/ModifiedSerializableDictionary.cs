@@ -98,10 +98,10 @@ namespace EVEMon.Common.SettingsObjects
 
                         // Assign values to the properties
                         foreach (PropertyInfo property in valueType.GetProperties().Where(
-                            property => !Attribute.IsDefined(property, typeof(XmlIgnoreAttribute))))
+                            property => property.CustomAttributes.Any() && !Attribute.IsDefined(property, typeof(XmlIgnoreAttribute))))
                         {
                             string propertyName =
-                                property.GetCustomAttributesData().First().ConstructorArguments.First().Value.ToString();
+                                property.CustomAttributes.First().ConstructorArguments.First().Value.ToString();
 
                             TypeConverter converter = TypeDescriptor.GetConverter(property.PropertyType);
 

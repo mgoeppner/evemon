@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using EVEMon.Common.Collections;
+﻿using EVEMon.Common.Collections;
 using EVEMon.Common.Serialization.Datafiles;
 using EVEMon.XmlGenerator.Providers;
 using EVEMon.XmlGenerator.Utils;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 
 namespace EVEMon.XmlGenerator.Datafiles
 {

@@ -40,7 +40,6 @@ namespace EVEMon.Common
             SSOClientID = string.Empty;
             SSOClientSecret = string.Empty;
             UI = new UISettings();
-            G15 = new G15Settings();
             Proxy = new ProxySettings();
             Updates = new UpdateSettings();
             Calendar = new CalendarSettings();
@@ -96,11 +95,6 @@ namespace EVEMon.Common
         /// Gets the settings for UI (look'n feel)
         /// </summary>
         public static UISettings UI { get; private set; }
-
-        /// <summary>
-        /// Gets the settings for the G15 keyboard.
-        /// </summary>
-        public static G15Settings G15 { get; private set; }
 
         /// <summary>
         /// Gets the settings for the notifications (alerts).
@@ -196,7 +190,6 @@ namespace EVEMon.Common
 
                 // User settings
                 UI = s_settings.UI;
-                G15 = s_settings.G15;
                 Proxy = s_settings.Proxy;
                 Updates = s_settings.Updates;
                 Calendar = s_settings.Calendar;
@@ -367,7 +360,6 @@ namespace EVEMon.Common
                 Exportation = Exportation,
                 Updates = Updates,
                 Proxy = Proxy,
-                G15 = G15,
                 UI = UI
             };
 

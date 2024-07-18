@@ -47,10 +47,10 @@ namespace EVEMon.ResFileCreator
         {
             Directory.SetCurrentDirectory(GetSolutionDirectory());
 
-            string assemblyInfoFileContent = File.ReadAllText(Path.GetFullPath(@"src\EVEMon\Properties\AssemblyInfo.cs"));
-            s_dictionary["AssemblyTitle"] = GetValueOf(assemblyInfoFileContent, "AssemblyTitle");
+            string assemblyInfoFileContent = File.ReadAllText(Path.GetFullPath(@".\SharedAssemblyInfo.cs"));
+            s_dictionary["AssemblyTitle"] = "EVEMon";
 
-            assemblyInfoFileContent = File.ReadAllText(Path.GetFullPath(@"SharedAssemblyInfo.cs"));
+            assemblyInfoFileContent = File.ReadAllText(Path.GetFullPath(@".\SharedAssemblyInfo.cs"));
             s_dictionary["AssemblyDescription"] = GetValueOf(assemblyInfoFileContent, "AssemblyDescription");
             s_dictionary["AssemblyCompany"] = GetValueOf(assemblyInfoFileContent, "AssemblyCompany");
             s_dictionary["AssemblyProduct"] = GetValueOf(assemblyInfoFileContent, "AssemblyProduct");

@@ -229,9 +229,6 @@ namespace EVEMon
                     else
                         form.ShowDialog();
                 }
-
-                // Notify Gooogle Analytics about ending via the Unhandled Exception window
-                GAnalyticsTracker.TrackEnd(typeof(Program));
             }
             catch (Exception e)
             {

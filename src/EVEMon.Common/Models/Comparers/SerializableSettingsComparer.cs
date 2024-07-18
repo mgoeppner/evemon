@@ -37,7 +37,6 @@ namespace EVEMon.Common.Models.Comparers
                    Equals(x.LoadoutsProvider, y.LoadoutsProvider) &&
                    Equals(x.CloudStorageServiceProvider, y.CloudStorageServiceProvider) &&
                    Equals(x.PortableEveInstallations, y.PortableEveInstallations) &&
-                   Equals(x.G15, y.G15) &&
                    Equals(x.UI, y.UI) &&
                    Equals(x.Proxy, y.Proxy);
         }
@@ -64,7 +63,6 @@ namespace EVEMon.Common.Models.Comparers
                 hashCode = (hashCode * 397) ^ (obj.LoadoutsProvider?.GetHashCode() ?? 0);
                 hashCode = (hashCode * 397) ^ (obj.CloudStorageServiceProvider?.GetHashCode() ?? 0);
                 hashCode = (hashCode * 397) ^ (obj.PortableEveInstallations?.GetHashCode() ?? 0);
-                hashCode = (hashCode * 397) ^ (obj.G15?.GetHashCode() ?? 0);
                 hashCode = (hashCode * 397) ^ (obj.UI?.GetHashCode() ?? 0);
                 hashCode = (hashCode * 397) ^ (obj.Proxy?.GetHashCode() ?? 0);
                 return hashCode;

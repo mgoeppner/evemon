@@ -159,9 +159,6 @@ namespace EVEMon.SettingsUI
             // Tray icon settings
             SetTrayIconSettings();
 
-            // G15
-            SetG15Settings();
-
             // Skills display on the main window
             var mws = m_settings.UI.MainWindow;
             cbShowAllPublicSkills.Checked = mws.ShowAllPublicSkills;
@@ -312,21 +309,6 @@ namespace EVEMon.SettingsUI
                     rbExitEVEMon.Checked = true;
                     break;
             }
-        }
-
-        /// <summary>
-        /// Sets the G15 settings.
-        /// </summary>
-        private void SetG15Settings()
-        {
-            g15CheckBox.Checked = m_settings.G15.Enabled;
-            cbG15ACycle.Checked = m_settings.G15.UseCharactersCycle;
-            ACycleInterval.Value = m_settings.G15.CharactersCycleInterval;
-            cbG15CycleTimes.Checked = m_settings.G15.UseTimeFormatsCycle;
-            ACycleTimesInterval.Value = Math.Min(m_settings.G15.TimeFormatsCycleInterval,
-                ACycleTimesInterval.Maximum);
-            cbG15ShowTime.Checked = m_settings.G15.ShowSystemTime;
-            cbG15ShowEVETime.Checked = m_settings.G15.ShowEVETime;
         }
 
         /// <summary>
@@ -507,15 +489,6 @@ namespace EVEMon.SettingsUI
             mws.AlwaysShowSkillQueueTime = cbAlwaysShowSkillQueueTime.Checked;
             mws.SkillQueueWarningThresholdDays = (int)nudSkillQueueWarningThresholdDays.Value;
 
-            // G15
-            m_settings.G15.Enabled = g15CheckBox.Checked;
-            m_settings.G15.UseCharactersCycle = cbG15ACycle.Checked;
-            m_settings.G15.CharactersCycleInterval = (int)ACycleInterval.Value;
-            m_settings.G15.UseTimeFormatsCycle = cbG15CycleTimes.Checked;
-            m_settings.G15.TimeFormatsCycleInterval = (int)ACycleTimesInterval.Value;
-            m_settings.G15.ShowSystemTime = cbG15ShowTime.Checked;
-            m_settings.G15.ShowEVETime = cbG15ShowEVETime.Checked;
-
             // Notifications
             m_settings.Notifications.PlaySoundOnSkillCompletion = cbPlaySoundOnSkillComplete.Checked;
             m_settings.Notifications.SendMailAlert = mailNotificationCheckBox.Checked;
@@ -571,7 +544,7 @@ namespace EVEMon.SettingsUI
             // External calendar settings
             m_settings.Calendar.Enabled = externalCalendarCheckbox.Checked;
             externalCalendarControl.ApplyExternalCalendarSettings(m_settings);
-            
+
             // Run at startup
             if (!runAtStartupComboBox.Enabled)
                 return;
@@ -587,7 +560,7 @@ namespace EVEMon.SettingsUI
             else
                 rk.DeleteValue("EVEMon", false);
         }
-        
+
         /// <summary>
         /// Populates the combobox for the market price providers.
         /// </summary>
@@ -717,9 +690,6 @@ namespace EVEMon.SettingsUI
         private void UpdateDisables()
         {
             var mws = m_settings.UI.MainWindow;
-            g15Panel.Enabled = g15CheckBox.Checked;
-            ACycleInterval.Enabled = cbG15ACycle.Checked;
-            ACycleTimesInterval.Enabled = cbG15CycleTimes.Checked;
             trayIconPopupGroupBox.Enabled = !rbSystemTrayOptionsNever.Checked;
             emailNotificationsControl.Enabled = mailNotificationCheckBox.Checked;
             customProxyPanel.Enabled = customProxyCheckBox.Checked;
@@ -821,7 +791,7 @@ namespace EVEMon.SettingsUI
                 trayPopupRadio.Checked = true;
             }
         }
-        
+
         /// <summary>
         /// Reset the priorities conflict custom message box.
         /// </summary>
@@ -866,8 +836,8 @@ namespace EVEMon.SettingsUI
             }
 
             string groupDirectory = $"{AppDomain.CurrentDomain.BaseDirectory}Resources\\Skill_Select\\Group";
-            string defaultResourcesPath = $"{groupDirectory}0\\Default.resources";
-            string groupResourcesPath = $"{groupDirectory}{index}\\{groupname}.resources";
+            string defaultResourcesPath = $"{groupDirectory}0\\Default.resx";
+            string groupResourcesPath = $"{groupDirectory}{index}\\{groupname}.resx";
 
             if (!File.Exists(defaultResourcesPath) ||
                 (!string.IsNullOrEmpty(groupname) && !File.Exists(groupResourcesPath)))
@@ -996,24 +966,6 @@ namespace EVEMon.SettingsUI
         }
 
         /// <summary>
-        /// Sets the character info max cycle time.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ACycleInterval_ValueChanged(object sender, EventArgs e)
-        {
-            if (ACycleInterval.Value == 1)
-            {
-                cbG15CycleTimes.Checked = false;
-                panelCycleQueueInfo.Enabled = false;
-                return;
-            }
-
-            ACycleTimesInterval.Maximum = Math.Max(ACycleInterval.Value / 2, 1);
-            panelCycleQueueInfo.Enabled = true;
-        }
-
-        /// <summary>
         /// Cloud Storage Service > Provider selection.
         /// Checks the provider authorization.
         /// </summary>
@@ -1041,5 +993,10 @@ namespace EVEMon.SettingsUI
         }
 
         #endregion
+
+        private void generalPage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

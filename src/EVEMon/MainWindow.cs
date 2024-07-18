@@ -23,7 +23,6 @@ using EVEMon.Common.Service;
 using EVEMon.Common.SettingsObjects;
 using EVEMon.DetailsWindow;
 using EVEMon.ImplantControls;
-using EVEMon.LogitechG15;
 using EVEMon.NotificationWindow;
 using EVEMon.PieChart;
 using EVEMon.SettingsUI;
@@ -176,13 +175,10 @@ namespace EVEMon
             }
 
             // Start the one-second timer 
-            EveMonClient.Run(Thread.CurrentThread, TaskScheduler.FromCurrentSynchronizationContext());
+            EveMonClient.Run(TaskScheduler.FromCurrentSynchronizationContext());
 
             // Check with NIST that the local clock is synchronized
             TimeCheck.ScheduleCheck(TimeSpan.FromSeconds(1));
-
-            // Notify Gooogle Analytics about start up
-            GAnalyticsTracker.TrackStart(GetType());
 
             // Prepare control's visibility
             menubarToolStripMenuItem.Checked = mainMenuBar.Visible = Settings.UI.MainWindow.ShowMenuBar;
@@ -247,10 +243,6 @@ namespace EVEMon
             // Load characters related settings
             await Settings.ImportDataAsync();
 
-            // Initialize G15
-            if (OSFeatureCheck.IsWindowsNT)
-                G15Handler.Initialize();
-
             m_initialized = true;
 
             // Force cleanup
@@ -314,7 +306,6 @@ namespace EVEMon
             if (!Visible || m_isUpdating || m_isUpdatingData || e.CloseReason == CloseReason.ApplicationExitCall ||
                 e.CloseReason == CloseReason.TaskManagerClosing || e.CloseReason == CloseReason.WindowsShutDown)
             {
-                GAnalyticsTracker.TrackEnd(GetType());
                 return;
             }
 

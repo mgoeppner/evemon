@@ -102,8 +102,8 @@ namespace EVEMon.Common.ExternalCalendar
 
             // Set the title and content of the entry
             eventItem.Summary = Subject;
-            eventItem.Start = new EventDateTime { DateTime = StartDate };
-            eventItem.End = new EventDateTime { DateTime = EndDate };
+            eventItem.Start = new EventDateTime { DateTimeDateTimeOffset = StartDate };
+            eventItem.End = new EventDateTime { DateTimeDateTimeOffset = EndDate };
             eventItem.Reminders = new Event.RemindersData();
 
             if (AlternateReminder)
@@ -124,7 +124,7 @@ namespace EVEMon.Common.ExternalCalendar
 
                 // Subtract the reminder time from the event time
                 DateTime dateTimeAlternateReminder = WorkOutAlternateReminders();
-                TimeSpan timeSpan = eventItem.Start.DateTime.GetValueOrDefault().Subtract(dateTimeAlternateReminder);
+                TimeSpan timeSpan = eventItem.Start.DateTimeDateTimeOffset.GetValueOrDefault().Subtract(dateTimeAlternateReminder);
                 Minutes = Math.Abs(timeSpan.Hours * 60 + timeSpan.Minutes);
 
                 SetGoogleReminder(eventItem);
@@ -161,11 +161,11 @@ namespace EVEMon.Common.ExternalCalendar
                 return false;
 
             Event eventItem = (Event)Events[0];
-            if (!eventItem.Start.DateTime.HasValue || !eventItem.End.DateTime.HasValue)
+            if (!eventItem.Start.DateTimeDateTimeOffset.HasValue || !eventItem.End.DateTimeDateTimeOffset.HasValue)
                 return false;
 
-            StartDate = eventItem.Start.DateTime.Value;
-            EndDate = eventItem.End.DateTime.Value;
+            StartDate = eventItem.Start.DateTimeDateTimeOffset.Value.DateTime;
+            EndDate = eventItem.End.DateTimeDateTimeOffset.Value.DateTime;
             Subject = eventItem.Summary;
 
             if (eventItem.Reminders?.Overrides != null)
@@ -204,8 +204,8 @@ namespace EVEMon.Common.ExternalCalendar
                 request.OrderBy = EventsResource.ListRequest.OrderByEnum.StartTime;
                 request.SingleEvents = true;
                 request.ShowDeleted = false;
-                request.TimeMin = StartDate;
-                request.TimeMax = EndDate;
+                request.TimeMinDateTimeOffset = StartDate;
+                request.TimeMaxDateTimeOffset = EndDate;
                 request.Q = Subject;
 
                 Events events = await request.ExecuteAsync();

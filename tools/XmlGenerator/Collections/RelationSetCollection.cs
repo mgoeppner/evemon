@@ -1,8 +1,7 @@
-﻿using System;
+﻿using EVEMon.Common.Extensions;
+using EVEMon.XmlGenerator.Interfaces;
 using System.Collections;
 using System.Collections.Generic;
-using EVEMon.Common.Extensions;
-using EVEMon.XmlGenerator.Interfaces;
 
 namespace EVEMon.XmlGenerator.Collections
 {
@@ -81,7 +80,7 @@ namespace EVEMon.XmlGenerator.Collections
         /// <returns>
         ///   <c>true</c> if [contains] [the specified left]; otherwise, <c>false</c>.
         /// </returns>
-        public bool Contains(int left, int center, int right) 
+        public bool Contains(int left, int center, int right)
             => m_dictionary.ContainsKey(GetKey(left, center, right));
 
         /// <summary>

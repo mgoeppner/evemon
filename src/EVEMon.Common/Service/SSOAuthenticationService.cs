@@ -87,9 +87,7 @@ namespace EVEMon.Common.Service
             if (string.IsNullOrEmpty(scopes))
                 throw new ArgumentNullException("scopes");
             m_clientID = clientID;
-            var rnd = new RNGCryptoServiceProvider();
-            byte[] cc = new byte[32];
-            rnd.GetBytes(cc);
+            var cc = RandomNumberGenerator.GetBytes(32);
             m_codeChallenge = Util.URLSafeBase64(cc);
             m_scopes = scopes;
             m_secret = secret;

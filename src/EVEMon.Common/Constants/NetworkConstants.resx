@@ -418,18 +418,6 @@
   <data name="GoogleAnalyticsUrl" xml:space="preserve">
     <value>https://ssl.google-analytics.com/collect</value>
   </data>
-  <data name="EVEMarketDataAPIItemPrices" xml:space="preserve">
-    <value>/api/item_prices2.xml?char_name=evemon&amp;buysell=a</value>
-  </data>
-  <data name="EVEMarketDataBaseUrl" xml:space="preserve">
-    <value>http://api.eve-marketdata.com</value>
-  </data>
-  <data name="EVEMarketerAPIItemPrices" xml:space="preserve">
-    <value>/ec/marketstat</value>
-  </data>
-  <data name="EVEMarketerBaseUrl" xml:space="preserve">
-    <value>https://api.evemarketer.com</value>
-  </data>
   <data name="NISTTimeServer" xml:space="preserve">
     <value>tcp://time.nist.gov:13</value>
   </data>
@@ -556,9 +544,6 @@
   <data name="ESIPlanetInfo" xml:space="preserve">
     <value>/v1/universe/planets/{0:D}/</value>
     <comment>downtime</comment>
-  </data>
-  <data name="HammertimeCitadel" xml:space="preserve">
-    <value>https://stop.hammerti.me.uk/api/citadel/{0:D}</value>
   </data>
   <data name="ESIKillMail" xml:space="preserve">
     <value>/v1/killmails/{0}/{1}/</value>

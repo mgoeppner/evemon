@@ -952,42 +952,6 @@ namespace EVEMon.Common.Constants {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to /api/item_prices2.xml?char_name=evemon&amp;buysell=a.
-        /// </summary>
-        public static string EVEMarketDataAPIItemPrices {
-            get {
-                return ResourceManager.GetString("EVEMarketDataAPIItemPrices", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to http://api.eve-marketdata.com.
-        /// </summary>
-        public static string EVEMarketDataBaseUrl {
-            get {
-                return ResourceManager.GetString("EVEMarketDataBaseUrl", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to /ec/marketstat.
-        /// </summary>
-        public static string EVEMarketerAPIItemPrices {
-            get {
-                return ResourceManager.GetString("EVEMarketerAPIItemPrices", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to https://api.evemarketer.com.
-        /// </summary>
-        public static string EVEMarketerBaseUrl {
-            get {
-                return ResourceManager.GetString("EVEMarketerBaseUrl", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to https://forums.eveonline.com/t/evemon-4-0-beta-under-new-ownership-conversion-for-esi/75953.
         /// </summary>
         public static string EVEMonForums {
@@ -1110,15 +1074,6 @@ namespace EVEMon.Common.Constants {
         public static string GoogleCalendarSetup {
             get {
                 return ResourceManager.GetString("GoogleCalendarSetup", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to https://stop.hammerti.me.uk/api/citadel/{0:D}.
-        /// </summary>
-        public static string HammertimeCitadel {
-            get {
-                return ResourceManager.GetString("HammertimeCitadel", resourceCulture);
             }
         }
         

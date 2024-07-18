@@ -34,7 +34,6 @@ namespace EVEMon.Common.Serialization.Settings
             Calendar = new CalendarSettings();
             Updates = new UpdateSettings();
             Proxy = new ProxySettings();
-            G15 = new G15Settings();
             UI = new UISettings();
         }
 
@@ -92,9 +91,6 @@ namespace EVEMon.Common.Serialization.Settings
 
         [XmlElement("portableEveInstallations")]
         public PortableEveInstallationsSettings PortableEveInstallations { get; set; }
-
-        [XmlElement("G15")]
-        public G15Settings G15 { get; set; }
 
         [XmlElement("UI")]
         public UISettings UI { get; set; }

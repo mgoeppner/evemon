@@ -29,6 +29,7 @@ namespace EVEMon.Controls
         private void InitializeComponent()
         {
             this.pbCharacterPortrait = new EVEMon.Common.Controls.CharacterPortrait();
+            this.badge = new System.Windows.Forms.Label();
             this.lblTotalSkillPoints = new EVEMon.Controls.OverviewLabel();
             this.lblExtraInfo = new EVEMon.Controls.OverviewLabel();
             this.lblSkillQueueTrainingTime = new EVEMon.Controls.OverviewLabel();
@@ -49,6 +50,18 @@ namespace EVEMon.Controls
             this.pbCharacterPortrait.Size = new System.Drawing.Size(92, 92);
             this.pbCharacterPortrait.TabIndex = 0;
             this.pbCharacterPortrait.TabStop = false;
+            // 
+            // badge
+            // 
+            this.badge.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.badge.AutoSize = true;
+            this.badge.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.badge.Location = new System.Drawing.Point(86, 86);
+            this.badge.Margin = new System.Windows.Forms.Padding(0);
+            this.badge.Name = "badge";
+            this.badge.Size = new System.Drawing.Size(13, 13);
+            this.badge.TabIndex = 9;
+            this.badge.Text = "0";
             // 
             // lblTotalSkillPoints
             // 
@@ -164,6 +177,7 @@ namespace EVEMon.Controls
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lblBoosterDuration);
+            this.Controls.Add(this.badge);
             this.Controls.Add(this.lblTotalSkillPoints);
             this.Controls.Add(this.lblExtraInfo);
             this.Controls.Add(this.lblSkillQueueTrainingTime);
@@ -177,6 +191,7 @@ namespace EVEMon.Controls
             this.Name = "OverviewItem";
             this.Size = new System.Drawing.Size(330, 132);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -192,5 +207,6 @@ namespace EVEMon.Controls
         private OverviewLabel lblSkillQueueTrainingTime;
         private OverviewLabel lblExtraInfo;
         private OverviewLabel lblBoosterDuration;
+        private System.Windows.Forms.Label badge;
     }
 }

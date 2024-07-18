@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 
 namespace EVEMon.XmlGenerator.Models
@@ -8,7 +7,7 @@ namespace EVEMon.XmlGenerator.Models
     internal sealed class cloneStates
     {
         [JsonProperty]
-        public Dictionary<int, int> skills { get; set;  }
+        public Dictionary<int, int> skills { get; set; }
 
         [JsonProperty]
         public string internalDescription { get; set; }

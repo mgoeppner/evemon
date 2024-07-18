@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  windows: circleci/windows@2.2.0
+  windows: circleci/windows@5.0
 
 jobs:
   build:
@@ -20,7 +20,7 @@ jobs:
           command: msbuild -t:build -restore -p:BclBuildImported=Ignore  -p:Configuration=Release EVEMon.sln 
       - run:
           name: "Package EVEMon installer"
-          working_directory: ~\project\tools\InstallBuilder\bin\Release
+          working_directory: ~\project\tools\InstallBuilder\bin\Release\net8.0-windows
           command: .\EVEMonInstallBuilder.exe
       - store_artifacts:
           path: src\EVEMon\bin\Installbuilder\Installer\

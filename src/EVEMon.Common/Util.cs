@@ -17,6 +17,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Net.NetworkInformation;
+using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Json;
 using System.Security.Cryptography;
@@ -47,28 +48,22 @@ namespace EVEMon.Common
 
             try
             {
-                // Fix for process.start uri not found is here https://github.com/mono/mono/pull/20833
-                // Distros are slow though.
-
-                int platform = (int)Environment.OSVersion.Platform;
-                switch (platform)
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
                 {
-                    // OS X
-                    case 6:
-                        Process.Start("open", url.AbsoluteUri);
-                        break;
-
-                    // Linux
-                    case 4:
-                        Process.Start("xdg-open", url.AbsoluteUri);
-                        break;
-
-                    // Linux OR OS X, no idea which... YOLO and hope the bug is fixed for these poor souls
-                    case 128:
-                    default:
-                        Process.Start(url.AbsoluteUri);
-                        break;
-                }                
+                    Process.Start(new ProcessStartInfo(url.AbsoluteUri) { UseShellExecute = true });
+                }
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+                {
+                    Process.Start("open", url.AbsoluteUri);
+                }
+                else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+                {
+                    Process.Start("xdg-open", url.AbsoluteUri);
+                }
+                else
+                {
+                    Process.Start(url.AbsoluteUri);
+                }
             }
             catch (FileNotFoundException ex)
             {
@@ -998,9 +993,9 @@ namespace EVEMon.Common
             }
 
             byte[] encrypted;
-            using (var pdb = new Rfc2898DeriveBytes(password, Encoding.Unicode.GetBytes(password)))
+            using (var pdb = new Rfc2898DeriveBytes(password, Encoding.Unicode.GetBytes(password), 1000, HashAlgorithmName.SHA1))
             {
-                using (var aes = new AesCryptoServiceProvider())
+                using (var aes = Aes.Create())
                 {
                     var encryptor = aes.CreateEncryptor(pdb.GetBytes(32), pdb.GetBytes(16));
                     var msEncrypt = GetMemoryStream();
@@ -1047,9 +1042,9 @@ namespace EVEMon.Common
             }
 
             string decrypted;
-            using (var pdb = new Rfc2898DeriveBytes(password, Encoding.Unicode.GetBytes(password)))
+            using (var pdb = new Rfc2898DeriveBytes(password, Encoding.Unicode.GetBytes(password), 1000, HashAlgorithmName.SHA1))
             {
-                using (var aes = new AesCryptoServiceProvider())
+                using (var aes = Aes.Create())
                 {
                     try
                     {
@@ -1181,11 +1176,7 @@ namespace EVEMon.Common
         /// <returns>The URL safe encoded SHA-256 hash of that data.</returns>
         public static string SHA256Base64(byte[] data)
         {
-            string hash;
-            using (var sha = new SHA256Managed())
-            {
-                hash = URLSafeBase64(sha.ComputeHash(data));
-            }
+            var hash = URLSafeBase64(SHA256.HashData(data));
             return hash;
         }
     }

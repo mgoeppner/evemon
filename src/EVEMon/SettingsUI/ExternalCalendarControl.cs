@@ -57,9 +57,7 @@ namespace EVEMon.SettingsUI
             cbGoogleReminder.Items.Clear();
             cbGoogleReminder.Items.AddRange(GoogleCalendarEvent.ReminderMethods.ToArray());
 
-            rbMSOutlook.Checked = settings.Calendar.Provider == CalendarProvider.Outlook &&
-                                  ExternalCalendar.OutlookInstalled;
-            rbGoogle.Checked = !rbMSOutlook.Checked;
+            rbGoogle.Checked = true;
 
             rbDefaultCalendar.Checked = settings.Calendar.UseOutlookDefaultCalendar;
             rbCustomCalendar.Checked = !rbDefaultCalendar.Checked;
@@ -84,8 +82,7 @@ namespace EVEMon.SettingsUI
         /// <param name="settings">The settings.</param>
         internal void ApplyExternalCalendarSettings(SerializableSettings settings)
         {
-            settings.Calendar.Provider = rbMSOutlook.Checked ? CalendarProvider.Outlook :
-                CalendarProvider.Google;
+            settings.Calendar.Provider = CalendarProvider.Google;
 
             settings.Calendar.UseOutlookDefaultCalendar = rbDefaultCalendar.Checked;
             settings.Calendar.OutlookCustomCalendarPath = tbOutlookCalendarPath.Text.Trim();
@@ -113,8 +110,7 @@ namespace EVEMon.SettingsUI
         /// </summary>
         private void UpdateControlsVisibility()
         {
-            rbMSOutlook.Enabled = Enabled && ExternalCalendar.OutlookInstalled;
-            gbMSOutlook.Visible = rbMSOutlook.Checked;
+            gbMSOutlook.Visible = true;
             gbGoogle.Visible = rbGoogle.Checked;
             calendarPathLabel.Enabled = tbOutlookCalendarPath.Enabled = rbCustomCalendar.Checked;
             calendarPathExampleLabel.Visible = rbCustomCalendar.Checked;
@@ -195,11 +191,9 @@ namespace EVEMon.SettingsUI
         private void tbCalendarPath_Validating(object sender, CancelEventArgs e)
         {
             var badChars = Path.GetInvalidPathChars();
-            e.Cancel = Enabled && rbMSOutlook.Checked && rbCustomCalendar.Checked &&
+            e.Cancel = Enabled && rbCustomCalendar.Checked &&
                 (tbOutlookCalendarPath.Text.Any(x => badChars.Contains(x)) ||
-                string.IsNullOrWhiteSpace(tbOutlookCalendarPath.Text) ||
-                !ExternalCalendar.OutlookCalendarExist(rbDefaultCalendar.Checked,
-                tbOutlookCalendarPath.Text));
+                string.IsNullOrWhiteSpace(tbOutlookCalendarPath.Text));
             if (e.Cancel)
                 MessageBox.Show(Properties.Resources.ErrorNoCalendar, @"MS Outlook",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);

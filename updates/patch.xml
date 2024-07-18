@@ -1,5 +1,5 @@
-﻿<?xml version="1.0"?>
-<evemon xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<evemon xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <newest>
     <date>23 December 2022</date>
     <version>4.2.2.5040</version>
@@ -29,66 +29,66 @@
   <datafiles>
     <datafile>
       <name>eve-blueprints-en-US.xml.gzip</name>
-      <date>01 December 2023</date>
-      <md5>4285b6221590a724bfe6738dc9d8d28d</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Havoc/2438956</url>
-      <message><![CDATA[Havoc 21.06 (2438956) blueprints data file by the EVEMon Development Team
+      <date>17 July 2024</date>
+      <md5>940d0f16c7a4e0fd604e94e0493172eb</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Equinox/2024-07-12</url>
+      <message><![CDATA[Equinox 22.01 (2024-07-12) blueprints data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-certificates-en-US.xml.gzip</name>
       <date>18 January 2022</date>
       <md5>540000f7c111354769a54fa31e57d411</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Havoc/2438956</url>
-      <message><![CDATA[Havoc 21.06 (2438956) certificates data file by the EVEMon Development Team
+      <url>https://mgoeppner.github.io/evemon-datafiles/Equinox/2024-07-12</url>
+      <message><![CDATA[Equinox 22.01 (2024-07-12) certificates data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-geography-en-US.xml.gzip</name>
-      <date>01 December 2023</date>
-      <md5>c076080a9c3b23b64a47871b424032c6</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Havoc/2438956</url>
-      <message><![CDATA[Havoc 21.06 (2438956) geography data file by the EVEMon Development Team
+      <date>17 July 2024</date>
+      <md5>93b41f9f5e0ecd7ad70d281822fa4628</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Equinox/2024-07-12</url>
+      <message><![CDATA[Equinox 22.01 (2024-07-12) geography data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-items-en-US.xml.gzip</name>
-      <date>01 December 2023</date>
-      <md5>97a2204565d3d646d5c41f4f7ed2743c</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Havoc/2438956</url>
-      <message><![CDATA[Havoc 21.06 (2438956) items data file by the EVEMon Development Team
+      <date>17 July 2024</date>
+      <md5>7b48ab93fd54abd643e6dffe837bbdd3</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Equinox/2024-07-12</url>
+      <message><![CDATA[Equinox 22.01 (2024-07-12) items data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-masteries-en-US.xml.gzip</name>
       <date>18 January 2022</date>
       <md5>3668b50996fc40a0c0853fec427b5712</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Havoc/2438956</url>
-      <message><![CDATA[Havoc 21.06 (2438956) masteries data file by the EVEMon Development Team
+      <url>https://mgoeppner.github.io/evemon-datafiles/Equinox/2024-07-12</url>
+      <message><![CDATA[Equinox 22.01 (2024-07-12) masteries data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-properties-en-US.xml.gzip</name>
-      <date>01 December 2023</date>
-      <md5>063a8f19917c3a20bd535fa85280d442</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Havoc/2438956</url>
-      <message><![CDATA[Havoc 21.06 (2438956) properties data file by the EVEMon Development Team
+      <date>17 July 2024</date>
+      <md5>0d023d588b22ee134296bc94e679059d</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Equinox/2024-07-12</url>
+      <message><![CDATA[Equinox 22.01 (2024-07-12) properties data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-reprocessing-en-US.xml.gzip</name>
-      <date>01 December 2023</date>
-      <md5>acefb6908f1480ad4b879d0513cf0bfc</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Havoc/2438956</url>
-      <message><![CDATA[Havoc 21.06 (2438956) reprocessing data file by the EVEMon Development Team
+      <date>17 July 2024</date>
+      <md5>cf897a9a628c6a47901e9721521049e6</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Equinox/2024-07-12</url>
+      <message><![CDATA[Equinox 22.01 (2024-07-12) reprocessing data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-skills-en-US.xml.gzip</name>
-      <date>01 December 2023</date>
-      <md5>92ddb90546807d0fe3fb64ba14270e9e</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Havoc/2438956</url>
-      <message><![CDATA[Havoc 21.06 (2438956) skills data file by the EVEMon Development Team
+      <date>17 July 2024</date>
+      <md5>b37414076dddbe32d15de266660da0ba</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Equinox/2024-07-12</url>
+      <message><![CDATA[Equinox 22.01 (2024-07-12) skills data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
   </datafiles>

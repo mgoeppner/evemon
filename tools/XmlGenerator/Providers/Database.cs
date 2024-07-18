@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Globalization;
-using System.Linq;
-using EVEMon.Common.Constants;
+﻿using EVEMon.Common.Constants;
 using EVEMon.XmlGenerator.Collections;
 using EVEMon.XmlGenerator.Extensions;
 using EVEMon.XmlGenerator.Models;
 using EVEMon.XmlGenerator.StaticData;
 using EVEMon.XmlGenerator.Utils;
-using System.Data.SQLite;
+using Microsoft.Data.Sqlite;
+using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Globalization;
+using System.Linq;
 
 namespace EVEMon.XmlGenerator.Providers
 {
@@ -297,13 +297,13 @@ namespace EVEMon.XmlGenerator.Providers
         /// Creates the connection to the SQL Database.
         /// </summary>
         /// <returns></returns>
-        private static SQLiteConnection CreateConnection()
+        private static SqliteConnection CreateConnection()
         {
             s_text = "Connecting to SQL Server... ";
             Console.Write(s_text);
 
             // Initialize the SQL Connection
-            SQLiteConnection connection = GetConnection("EveStaticData");
+            var connection = GetConnection("EveStaticData");
 
             try
             {
@@ -331,11 +331,11 @@ namespace EVEMon.XmlGenerator.Providers
         /// </summary>
         /// <param name="connectionName">Name of the connection.</param>
         /// <returns></returns>
-        private static SQLiteConnection GetConnection(string connectionName)
+        private static SqliteConnection GetConnection(string connectionName)
         {
             ConnectionStringSettings connectionStringSetting = ConfigurationManager.ConnectionStrings[connectionName];
             if (connectionStringSetting != null)
-                return new SQLiteConnection(connectionStringSetting.ConnectionString);
+                return new SqliteConnection(connectionStringSetting.ConnectionString);
 
             Console.SetCursorPosition(Console.CursorLeft - s_text.Length, Console.CursorTop);
             Console.WriteLine(@"Can not find conection string with name: {0}", connectionName);
@@ -357,7 +357,7 @@ namespace EVEMon.XmlGenerator.Providers
         {
             s_totalTablesCount = Util.GetCountOfTypesInNamespace("EVEMon.XmlGenerator.StaticData");
 
-            SQLiteConnection connection = CreateConnection();
+            var connection = CreateConnection();
 
             // Data dumps are available from CCP
             Console.Write(@"Loading data from '{0}' database... ", connection.Database);
@@ -387,8 +387,8 @@ namespace EVEMon.XmlGenerator.Providers
             DgmTypeEffectsTable = TypeEffects();
             Util.UpdateProgress(s_totalTablesCount);
 
-			// Find out what this used to be and find a way around it... Is it even useful?
-			//DgmTypeTraitsTable = TypeTraits();
+            // Find out what this used to be and find a way around it... Is it even useful?
+            //DgmTypeTraitsTable = TypeTraits();
             //Util.UpdateProgress(s_totalTablesCount);
 
             EveIconsTable = Icons();
@@ -562,7 +562,7 @@ namespace EVEMon.XmlGenerator.Providers
                 if (faction.sizeFactor.HasValue)
                     item.SizeFactor = faction.sizeFactor.Value;
 
-				// TODO - Fix these...
+                // TODO - Fix these...
                 if (faction.stationCount.HasValue)
                     item.StationCount = (short)faction.stationCount.Value;
 
@@ -601,7 +601,8 @@ namespace EVEMon.XmlGenerator.Providers
             for (int i = 18; i <= 30; i++)
                 items.Add(new CrpNPCDivisions
                 {
-                    ID = i, DivisionName = "Unknown"
+                    ID = i,
+                    DivisionName = "Unknown"
                 });
 
             return collection.ToBag();
@@ -687,9 +688,9 @@ namespace EVEMon.XmlGenerator.Providers
                 trait => new InvTraits
                 {
                     ID = trait.traitID,
-					skillID = trait.skillID,
-					typeID = trait.typeID,
-					bonus = trait.bonus,
+                    skillID = trait.skillID,
+                    typeID = trait.typeID,
+                    bonus = trait.bonus,
                     BonusText = trait.BonusText,
                     UnitID = trait.unitID
                 }))
@@ -779,7 +780,7 @@ namespace EVEMon.XmlGenerator.Providers
 
                 collection.Items.Add(item);
             }
-            
+
             return collection.ToBag();
         }
 
@@ -1014,10 +1015,10 @@ namespace EVEMon.XmlGenerator.Providers
                 {
                     ID = group.groupID,
                     Name = group.groupName,
-					UseBasePrice = group.useBasePrice,
-					Anchored = group.anchored,
-					Anchorable = group.anchorable,
-					FittableNonSingleton = group.fittableNonSingleton
+                    UseBasePrice = group.useBasePrice,
+                    Anchored = group.anchored,
+                    Anchorable = group.anchorable,
+                    FittableNonSingleton = group.fittableNonSingleton
                 };
 
                 if (group.published.HasValue)
@@ -1030,13 +1031,23 @@ namespace EVEMon.XmlGenerator.Providers
             }
 
             // CCPLease missing groups
-            collection.Items.Add(new InvGroups() {
-                ID = 4052, Name = "Jump Filament Blueprint", Anchorable = false,
-                Anchored = false, FittableNonSingleton = false, Published = false
+            collection.Items.Add(new InvGroups()
+            {
+                ID = 4052,
+                Name = "Jump Filament Blueprint",
+                Anchorable = false,
+                Anchored = false,
+                FittableNonSingleton = false,
+                Published = false
             });
-            collection.Items.Add(new InvGroups() {
-                ID = 4053, Name = "Irregular Capsule", Anchorable = false,
-                Anchored = false, FittableNonSingleton = false, Published = false
+            collection.Items.Add(new InvGroups()
+            {
+                ID = 4053,
+                Name = "Irregular Capsule",
+                Anchorable = false,
+                Anchored = false,
+                FittableNonSingleton = false,
+                Published = false
             });
 
             return collection.ToBag();
@@ -1093,8 +1104,11 @@ namespace EVEMon.XmlGenerator.Providers
             // CCPLease missing market groups
             collection.Items.Add(new InvMarketGroups()
             {
-                ID = 2763, Name = "Mobile Cynosural Beacons", ParentID = 404,
-                Description = "", IconID = 0
+                ID = 2763,
+                Name = "Mobile Cynosural Beacons",
+                ParentID = 404,
+                Description = "",
+                IconID = 0
             });
 
             return collection.ToBag();

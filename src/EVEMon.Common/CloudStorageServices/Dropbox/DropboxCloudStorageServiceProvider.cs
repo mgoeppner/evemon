@@ -166,7 +166,6 @@ namespace EVEMon.Common.CloudStorageServices.Dropbox
                 return m_result;
             try
             {
-                InitializeCertPinning();
                 using (DropboxClient client = GetClient())
                 {
                     await client.Users.GetCurrentAccountAsync().ConfigureAwait(false);
@@ -190,10 +189,6 @@ namespace EVEMon.Common.CloudStorageServices.Dropbox
             catch (Exception exc)
             {
                 m_result.Error = new SerializableAPIError { ErrorMessage = exc.Message };
-            }
-            finally
-            {
-                ClearCertPinning();
             }
 
             return m_result;
@@ -220,11 +215,11 @@ namespace EVEMon.Common.CloudStorageServices.Dropbox
                 CommitInfo commitInfo = new CommitInfo($"/{SettingsFileNameWithoutExtension}",
                     WriteMode.Overwrite.Instance);
 
-                InitializeCertPinning();
                 using (DropboxClient client = GetClient())
                 using (Stream stream = Util.GetMemoryStream(content))
                 {
-                    await client.Files.UploadAsync(commitInfo, stream).ConfigureAwait(false);
+                    var uploadArgs = new UploadArg(commitInfo.Path, commitInfo.Mode);
+                    await client.Files.UploadAsync(uploadArgs, stream).ConfigureAwait(false);
                     return result;
                 }
             }
@@ -246,10 +241,6 @@ namespace EVEMon.Common.CloudStorageServices.Dropbox
             {
                 result.Error = new SerializableAPIError { ErrorMessage = exc.Message };
             }
-            finally
-            {
-                ClearCertPinning();
-            }
 
             return result;
         }
@@ -264,7 +255,6 @@ namespace EVEMon.Common.CloudStorageServices.Dropbox
 
             try
             {
-                InitializeCertPinning();
                 DownloadArg arg = new DownloadArg($"/{SettingsFileNameWithoutExtension}");
                 using (DropboxClient client = GetClient())
                 {
@@ -291,10 +281,6 @@ namespace EVEMon.Common.CloudStorageServices.Dropbox
             {
                 result.Error = new SerializableAPIError { ErrorMessage = exc.Message };
             }
-            finally
-            {
-                ClearCertPinning();
-            }
 
             return result;
         }
@@ -305,55 +291,13 @@ namespace EVEMon.Common.CloudStorageServices.Dropbox
         #region Helper Methods
 
         /// <summary>
-        /// Initializes the cert pinning.
-        /// </summary>
-        private static void InitializeCertPinning()
-        {
-            ServicePointManager.ServerCertificateValidationCallback = EveMonClient.IsDebugBuild
-                ? HttpWebClientService.DummyCertificateValidationCallback
-                : (RemoteCertificateValidationCallback)DropboxCertificateValidationCallback;
-        }
-
-        /// <summary>
-        /// De-initializes the cert pinning.
-        /// </summary>
-        private static void ClearCertPinning()
-        {
-            // Default value is null
-            ServicePointManager.ServerCertificateValidationCallback = null;
-        }
-
-        /// <summary>
-        /// The Dropbox certificate validation callback.
-        /// </summary>
-        /// <param name="sender">The sender.</param>
-        /// <param name="certificate">The certificate.</param>
-        /// <param name="chain">The chain.</param>
-        /// <param name="sslpolicyerrors">The sslpolicyerrors.</param>
-        /// <returns></returns>
-        private static bool DropboxCertificateValidationCallback(object sender, X509Certificate certificate, X509Chain chain,
-            SslPolicyErrors sslpolicyerrors)
-        {
-            // http://babbacom.com/?p=300 - fix security hole
-            if (sslpolicyerrors != SslPolicyErrors.None || chain == null)
-                return false;
-            int n = chain.ChainElements.Count;
-            if (n == 0)
-                return false;
-            X509ChainElement root = chain.ChainElements[n - 1];
-            string publicKey = root.Certificate.GetPublicKeyString();
-
-            return DropboxCertHelper.IsKnownRootCertPublicKey(publicKey);
-        }
-
-        /// <summary>
         /// Gets the client.
         /// </summary>
         /// <returns></returns>
         private static DropboxClient GetClient()
         {
             return new DropboxClient(DropboxCloudStorageServiceSettings.Default.AccessToken,
-                new DropboxClientConfig(HttpWebClientServiceState.UserAgent));
+                new DropboxClientConfig(HttpWebClientServiceState.UserAgent.ToString()));
         }
 
         #endregion

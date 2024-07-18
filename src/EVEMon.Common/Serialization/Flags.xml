@@ -1,5 +1,5 @@
-<?xml version="1.0"?>
-<invFlags xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<?xml version="1.0" encoding="utf-8"?>
+<invFlags xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <rowset name="flags" key="flagID" columns="flagID,flagName,flagText">
     <row flagID="0" flagName="None" flagText="None" />
     <row flagID="1" flagName="Wallet" flagText="Wallet" />
@@ -139,5 +139,7 @@
     <row flagID="182" flagName="SpecializedAsteroidHold" flagText="Specialized Asteroid Hold" />
     <row flagID="183" flagName="MobileDepot" flagText="Mobile Depot" />
     <row flagID="184" flagName="CorpProjectsHangar" flagText="Corporation Projects Hangar" />
+    <row flagID="185" flagName="ColonyResourcesHold" flagText="Infrastructure Hold" />
+    <row flagID="186" flagName="MoonMaterialBay" flagText="Moon Material Bay" />
   </rowset>
 </invFlags>

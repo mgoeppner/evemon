@@ -1,5 +1,3 @@
-#undef HAMMERTIME
-
 using EVEMon.Common.Constants;
 using EVEMon.Common.Data;
 using EVEMon.Common.Enumerations.CCPAPI;
@@ -13,8 +11,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-using HammertimeStructureList = System.Collections.Generic.Dictionary<string, EVEMon.Common.
-    Serialization.Hammertime.HammertimeStructure>;
 using CitadelIDInfo = EVEMon.Common.Service.IDInformation<EVEMon.Common.Serialization.Eve.
     SerializableOutpost, EVEMon.Common.Models.ESIKey>;
 using System.Net;
@@ -209,62 +205,8 @@ namespace EVEMon.Common.Service
                             }, info);
                         EveMonClient.Trace("ESI lookup for {0:D} using {1}", id, esiKey);
                     }
-#if HAMMERTIME
-                    else
-                        // Only run hammer if we did not try it already
-                        LoadCitadelInformationFromHammertimeAPI(info);
-#endif
                 }
             }
-            
-#if HAMMERTIME
-            /// <summary>
-            /// Downloads citadel data from the Hammertime Citadel Hunt project.
-            /// Avoids some access and API key problems on private citadels.
-            /// </summary>
-            /// <param name="info">The citadel ID information</param>
-            private void LoadCitadelInformationFromHammertimeAPI(CitadelIDInfo info)
-            {
-                var url = new Uri(string.Format(NetworkConstants.HammertimeCitadel, info.ID));
-                info.OnRequestStart(null);
-                Util.DownloadJsonAsync<HammertimeStructureList>(url).ContinueWith((task) =>
-                {
-                    OnQueryStationUpdated(task, info);
-                });
-            }
-
-            private void OnQueryStationUpdated(Task<JsonResult<HammertimeStructureList>>
-                result, CitadelIDInfo info)
-            {
-                JsonResult<HammertimeStructureList> jsonResult;
-                if (result.IsFaulted || (jsonResult = result.Result) == null)
-                    // Bail if there is an error
-                    EveMonClient.Notifications.NotifyCitadelQueryError(null);
-                else if (jsonResult.ResponseCode == (int)HttpStatusCode.NotFound)
-                    // "Not Found" = citadel destroyed
-                    info.OnRequestComplete(null);
-                else if (jsonResult.HasError)
-                {
-                    // Provide some more debugging info with the actual failed response
-                    var fakeResult = new EsiResult<EsiAPIStructure>(jsonResult.Response);
-                    EveMonClient.Notifications.NotifyCitadelQueryError(fakeResult);
-                }
-                else
-                {
-                    EveMonClient.Notifications.InvalidateAPIError();
-                    // Should only have one result, with an integer key
-                    var hammerData = jsonResult.Result;
-                    if (hammerData.Count == 1)
-                        info.OnRequestComplete(hammerData.Values.First().ToXMLItem(info.ID));
-                    else
-                    {
-                        EveMonClient.Trace("Citadel Hunt failed for {0:D}", info.ID);
-                        info.OnRequestComplete(null);
-                    }
-                }
-                OnLookupComplete();
-            }
-#endif
 
             private void OnQueryStationUpdatedEsi(EsiResult<EsiAPIStructure> result,
                 object reqInfo)
@@ -273,15 +215,12 @@ namespace EVEMon.Common.Service
                 if (info == null)
                     throw new ArgumentException("Invalid argument for citadel ID info");
                 // Try hammertime if there is an error
+                // FIXME: Hammertime has been nuked from orbit
                 if (result.HasError)
                 {
-#if HAMMERTIME
-                    LoadCitadelInformationFromHammertimeAPI(info);
-#else
                     if (result.ResponseCode != (int)HttpStatusCode.NotFound)
                         EveMonClient.Notifications.NotifyCitadelQueryError(result);
                     info.OnRequestComplete(null);
-#endif
                 }
                 else
                 {
@@ -315,7 +254,7 @@ namespace EVEMon.Common.Service
         }
 
         /// <summary>
-        /// A class storing the state of an ESI/Hammertime station request, and if it failed,
+        /// A class storing the state of an ESI station request, and if it failed,
         /// the methods which have been tried so far.
         /// </summary>
         private sealed class CitadelInfo : IDInformation<SerializableOutpost, ESIKey>
@@ -333,11 +272,6 @@ namespace EVEMon.Common.Service
             private readonly ISet<ESIKey> esiAttempts;
 
             /// <summary>
-            /// True if hammertime was tried.
-            /// </summary>
-            private bool hammerAttempt;
-
-            /// <summary>
             /// Constructor around an existing citadel result.
             /// </summary>
             /// <param name="id">The citadel ID.</param>
@@ -345,7 +279,6 @@ namespace EVEMon.Common.Service
             public CitadelInfo(long id, SerializableOutpost station)
             {
                 esiAttempts = new HashSet<ESIKey>();
-                hammerAttempt = false;
                 ID = id;
                 Value = station;
             }
@@ -359,16 +292,14 @@ namespace EVEMon.Common.Service
 
             public void OnRequestStart(ESIKey extra)
             {
-                if (extra == null)
-                    hammerAttempt = true;
-                else
+                if (extra != null)
                     esiAttempts.Add(extra);
             }
 
             public bool RequestAttempted(ESIKey extra)
             {
                 if (extra == null)
-                    return hammerAttempt;
+                    return false;
                 else
                     return esiAttempts.Contains(extra);
             }

@@ -36,7 +36,16 @@ namespace EVEMon.Common.Extensions
                     // This is preferable to using Invoke so that if an exception is thrown its presented
                     // in the context of the handler, not the current thread
                     IAsyncResult result = sync.BeginInvoke(handler, new[] { sender, e });
-                    sync.EndInvoke(result);
+
+                    try
+                    {
+                        sync.EndInvoke(result);
+                    }
+                    catch (ObjectDisposedException)
+                    {
+                        // Ignore, already cleaned up -- code was likely changed to use `using`.
+                    }
+
                     continue;
                 }
 
