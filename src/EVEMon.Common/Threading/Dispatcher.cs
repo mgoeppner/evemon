@@ -75,10 +75,6 @@ namespace EVEMon.Common.Threading
                 timer.Dispose();
             }, null, time, TimeSpan.FromMilliseconds(-1));
         }
-        private static void OneSecondTickTimer_Tick(object sender)
-        {
-            EveMonClient.UpdateOnOneSecondTick();
-        }
 
         private static void OneSecondTickTimer_Tick(object sender)
         {
