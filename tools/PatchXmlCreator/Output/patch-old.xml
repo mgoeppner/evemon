@@ -29,66 +29,66 @@
   <datafiles>
     <datafile>
       <name>eve-blueprints-en-US.xml.gzip</name>
-      <date>03 August 2024</date>
-      <md5>940d0f16c7a4e0fd604e94e0493172eb</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Equinox/2024-07-31</url>
-      <message><![CDATA[Equinox 22.01 (2024-07-31) blueprints data file by the EVEMon Development Team
+      <date>15 November 2024</date>
+      <md5>3a537b58675d82e02d6316915ea8a61e</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Revenant/2024-11-12</url>
+      <message><![CDATA[Revenant 22.02 (2024-11-12) blueprints data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-certificates-en-US.xml.gzip</name>
       <date>18 January 2022</date>
       <md5>540000f7c111354769a54fa31e57d411</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Equinox/2024-07-31</url>
-      <message><![CDATA[Equinox 22.01 (2024-07-31) certificates data file by the EVEMon Development Team
+      <url>https://mgoeppner.github.io/evemon-datafiles/Revenant/2024-11-12</url>
+      <message><![CDATA[Revenant 22.02 (2024-11-12) certificates data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-geography-en-US.xml.gzip</name>
-      <date>03 August 2024</date>
+      <date>15 November 2024</date>
       <md5>93b41f9f5e0ecd7ad70d281822fa4628</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Equinox/2024-07-31</url>
-      <message><![CDATA[Equinox 22.01 (2024-07-31) geography data file by the EVEMon Development Team
+      <url>https://mgoeppner.github.io/evemon-datafiles/Revenant/2024-11-12</url>
+      <message><![CDATA[Revenant 22.02 (2024-11-12) geography data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-items-en-US.xml.gzip</name>
-      <date>03 August 2024</date>
-      <md5>5a00cf2d203cdf843c6d79933ae0e20a</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Equinox/2024-07-31</url>
-      <message><![CDATA[Equinox 22.01 (2024-07-31) items data file by the EVEMon Development Team
+      <date>15 November 2024</date>
+      <md5>976159bdc61ea92e1ec0d8d8f09ceae5</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Revenant/2024-11-12</url>
+      <message><![CDATA[Revenant 22.02 (2024-11-12) items data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-masteries-en-US.xml.gzip</name>
       <date>18 January 2022</date>
       <md5>3668b50996fc40a0c0853fec427b5712</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Equinox/2024-07-31</url>
-      <message><![CDATA[Equinox 22.01 (2024-07-31) masteries data file by the EVEMon Development Team
+      <url>https://mgoeppner.github.io/evemon-datafiles/Revenant/2024-11-12</url>
+      <message><![CDATA[Revenant 22.02 (2024-11-12) masteries data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-properties-en-US.xml.gzip</name>
-      <date>03 August 2024</date>
-      <md5>0d023d588b22ee134296bc94e679059d</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Equinox/2024-07-31</url>
-      <message><![CDATA[Equinox 22.01 (2024-07-31) properties data file by the EVEMon Development Team
+      <date>15 November 2024</date>
+      <md5>4206f54a8f6e1aeeeb7e90dd9a5c2d93</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Revenant/2024-11-12</url>
+      <message><![CDATA[Revenant 22.02 (2024-11-12) properties data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-reprocessing-en-US.xml.gzip</name>
-      <date>03 August 2024</date>
-      <md5>cf897a9a628c6a47901e9721521049e6</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Equinox/2024-07-31</url>
-      <message><![CDATA[Equinox 22.01 (2024-07-31) reprocessing data file by the EVEMon Development Team
+      <date>15 November 2024</date>
+      <md5>95ac17ac6a28eaa10235c7acc7a0851c</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Revenant/2024-11-12</url>
+      <message><![CDATA[Revenant 22.02 (2024-11-12) reprocessing data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-skills-en-US.xml.gzip</name>
-      <date>03 August 2024</date>
-      <md5>121d17833e0d8d4c46d0484b769e0421</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Equinox/2024-07-31</url>
-      <message><![CDATA[Equinox 22.01 (2024-07-31) skills data file by the EVEMon Development Team
+      <date>15 November 2024</date>
+      <md5>8ee7ab0b2497b2f7844d5cf354f5c09b</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Revenant/2024-11-12</url>
+      <message><![CDATA[Revenant 22.02 (2024-11-12) skills data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
   </datafiles>

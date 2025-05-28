@@ -29,66 +29,66 @@
   <datafiles>
     <datafile>
       <name>eve-blueprints-en-US.xml.gzip</name>
-      <date>15 November 2024</date>
-      <md5>3a537b58675d82e02d6316915ea8a61e</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Revenant/2024-11-12</url>
-      <message><![CDATA[Revenant 22.02 (2024-11-12) blueprints data file by the EVEMon Development Team
+      <date>28 May 2025</date>
+      <md5>1a89279e2c2b4d660bc2cab9fb97d187</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Legion/2025-05-27</url>
+      <message><![CDATA[Legion 23.01 (2025-05-27) blueprints data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-certificates-en-US.xml.gzip</name>
       <date>18 January 2022</date>
       <md5>540000f7c111354769a54fa31e57d411</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Revenant/2024-11-12</url>
-      <message><![CDATA[Revenant 22.02 (2024-11-12) certificates data file by the EVEMon Development Team
+      <url>https://mgoeppner.github.io/evemon-datafiles/Legion/2025-05-27</url>
+      <message><![CDATA[Legion 23.01 (2025-05-27) certificates data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-geography-en-US.xml.gzip</name>
-      <date>15 November 2024</date>
+      <date>28 May 2025</date>
       <md5>93b41f9f5e0ecd7ad70d281822fa4628</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Revenant/2024-11-12</url>
-      <message><![CDATA[Revenant 22.02 (2024-11-12) geography data file by the EVEMon Development Team
+      <url>https://mgoeppner.github.io/evemon-datafiles/Legion/2025-05-27</url>
+      <message><![CDATA[Legion 23.01 (2025-05-27) geography data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-items-en-US.xml.gzip</name>
-      <date>15 November 2024</date>
-      <md5>976159bdc61ea92e1ec0d8d8f09ceae5</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Revenant/2024-11-12</url>
-      <message><![CDATA[Revenant 22.02 (2024-11-12) items data file by the EVEMon Development Team
+      <date>28 May 2025</date>
+      <md5>3ec893b2b38efb3e9e0e78b529a491be</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Legion/2025-05-27</url>
+      <message><![CDATA[Legion 23.01 (2025-05-27) items data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-masteries-en-US.xml.gzip</name>
       <date>18 January 2022</date>
       <md5>3668b50996fc40a0c0853fec427b5712</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Revenant/2024-11-12</url>
-      <message><![CDATA[Revenant 22.02 (2024-11-12) masteries data file by the EVEMon Development Team
+      <url>https://mgoeppner.github.io/evemon-datafiles/Legion/2025-05-27</url>
+      <message><![CDATA[Legion 23.01 (2025-05-27) masteries data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-properties-en-US.xml.gzip</name>
-      <date>15 November 2024</date>
-      <md5>4206f54a8f6e1aeeeb7e90dd9a5c2d93</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Revenant/2024-11-12</url>
-      <message><![CDATA[Revenant 22.02 (2024-11-12) properties data file by the EVEMon Development Team
+      <date>28 May 2025</date>
+      <md5>17e4a9369cc0c91eb73c2571a66bc909</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Legion/2025-05-27</url>
+      <message><![CDATA[Legion 23.01 (2025-05-27) properties data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-reprocessing-en-US.xml.gzip</name>
-      <date>15 November 2024</date>
-      <md5>95ac17ac6a28eaa10235c7acc7a0851c</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Revenant/2024-11-12</url>
-      <message><![CDATA[Revenant 22.02 (2024-11-12) reprocessing data file by the EVEMon Development Team
+      <date>28 May 2025</date>
+      <md5>a9ffe88f6a69c2096232f516139f9332</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Legion/2025-05-27</url>
+      <message><![CDATA[Legion 23.01 (2025-05-27) reprocessing data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-skills-en-US.xml.gzip</name>
-      <date>15 November 2024</date>
-      <md5>8ee7ab0b2497b2f7844d5cf354f5c09b</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Revenant/2024-11-12</url>
-      <message><![CDATA[Revenant 22.02 (2024-11-12) skills data file by the EVEMon Development Team
+      <date>28 May 2025</date>
+      <md5>33012056eb0870072f127792f3007013</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Legion/2025-05-27</url>
+      <message><![CDATA[Legion 23.01 (2025-05-27) skills data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
   </datafiles>
