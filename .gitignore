@@ -215,3 +215,6 @@ ModelManifest.xml
 /*.bat
 /tools/XmlGenerator/*.sqlite
 tools/XmlGenerator/sqlite-latest.sqlite-journal
+
+# Rider and Jetbrains
+.idea/
