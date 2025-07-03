@@ -186,7 +186,7 @@ namespace EVEMon.About
         {
             base.OnLoad(e);
 
-            HomePageLinkLabel.Text = NetworkConstants.EVEMonMainPage;
+            HomePageLinkLabel.Text = NetworkConstants.EVEMonCurrentGithub;
             CopyrightLabel.Text = string.Format(CultureConstants.DefaultCulture, CopyrightLabel.Text, DateTime.UtcNow.Year);
             VersionLabel.Text = GetVersionText();
 
@@ -287,7 +287,7 @@ namespace EVEMon.About
         /// <param name="e">The <see cref="System.Windows.Forms.LinkLabelLinkClickedEventArgs"/> instance containing the event data.</param>
         private void HomePageLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Util.OpenURL(new Uri(NetworkConstants.EVEMonMainPage));
+            Util.OpenURL(new Uri(NetworkConstants.EVEMonCurrentGithub));
         }
 
         /// <summary>
