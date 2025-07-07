@@ -459,10 +459,14 @@ namespace EVEMon.Common.Helpers
             // Check if there is already a plan with the same skills
             if (ccpCharacter.Plans.Any(plan => !newPlan.Except(plan, new PlanEntryComparer()).Any()))
             {
-                MessageBox.Show(@"There is already a plan with the same skills in the characters' Plans.",
-                    @"Plan Creation Failure",
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return false;
+                if (MessageBox.Show(@"There is already a plan with the same skills in the characters' Plans.
+
+Would you like to proceed?",
+                        @"Plan Creation Duplicate",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    return false;
+                }
             }
 
             // Add plan and save
