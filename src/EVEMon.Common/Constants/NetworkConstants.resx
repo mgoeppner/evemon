@@ -132,6 +132,10 @@
     <value>/characters/{0:D}/portrait?tenant=tranquility&amp;size={1:D}</value>
     <comment>New web address for portraits as part of Incursion 1.1.0</comment>
   </data>
+  <data name="EVEMonCurrentGithub" xml:space="preserve">
+    <value>https://github.com/mgoeppner/evemon</value>
+    <comment>Github for active fork</comment>
+  </data>
   <data name="EVEMonMainPage" xml:space="preserve">
     <value>https://evemondevteam.github.io/evemon/</value>
     <comment>Out of date but mirroring it will be challenging</comment>

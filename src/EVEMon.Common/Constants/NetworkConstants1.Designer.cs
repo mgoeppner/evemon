@@ -959,7 +959,16 @@ namespace EVEMon.Common.Constants {
                 return ResourceManager.GetString("EVEMonForums", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to https://github.com/currentmaintainer/evemon/.
+        /// </summary>
+        public static string EVEMonCurrentGithub {
+            get {
+                return ResourceManager.GetString("EVEMonCurrentGithub", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to https://evemondevteam.github.io/evemon/.
         /// </summary>
@@ -968,7 +977,7 @@ namespace EVEMon.Common.Constants {
                 return ResourceManager.GetString("EVEMonMainPage", resourceCulture);
             }
         }
-        
+
         /// <summary>
         ///   Looks up a localized string similar to https://evemon.readthedocs.org/.
         /// </summary>
