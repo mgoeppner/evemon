@@ -61,7 +61,7 @@ namespace EVEMon.SkillPlanner
             if (DesignMode || this.IsDesignModeHosted())
                 return;
 
-            if (Character != null)
+            if (Character != null && LoadoutsProvider.Providers.Any())
             {
                 ToolStripItem[] toolStripItems = LoadoutsProvider.Providers
                     .Select(provider => new ToolStripMenuItem(provider.Name))
@@ -77,7 +77,7 @@ namespace EVEMon.SkillPlanner
                 splitButtonLoadouts.Text = Settings.LoadoutsProvider.Provider?.Name;
             }
 
-            lblViewLoadouts.Visible = splitButtonLoadouts.Visible = Character != null;
+            lblViewLoadouts.Visible = splitButtonLoadouts.Visible = Character != null && LoadoutsProvider.Providers.Any();
 
             UpdateControlVisibility();
         }

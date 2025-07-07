@@ -11,6 +11,7 @@ using EVEMon.Common.Interfaces;
 using EVEMon.Common.Net;
 using EVEMon.Common.Serialization.Osmium.Loadout;
 
+
 namespace EVEMon.Common.Loadouts.Osmium
 {
     public sealed class OsmiumLoadoutsProvider : LoadoutsProvider
@@ -39,7 +40,7 @@ namespace EVEMon.Common.Loadouts.Osmium
         /// <value>
         ///   <c>true</c> if enabled; otherwise, <c>false</c>.
         /// </value>
-        protected override bool Enabled => true;
+        protected override bool Enabled => false;
 
         #endregion
 
@@ -182,3 +183,4 @@ namespace EVEMon.Common.Loadouts.Osmium
 
     }
 }
+

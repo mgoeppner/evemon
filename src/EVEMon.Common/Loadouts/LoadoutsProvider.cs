@@ -33,12 +33,12 @@ namespace EVEMon.Common.Loadouts
         /// <value>
         /// The providers.
         /// </value>
-        public static IEnumerable<LoadoutsProvider> Providers => Assembly.
-            GetExecutingAssembly().GetTypes().Where(type => typeof(LoadoutsProvider).
-            IsAssignableFrom(type) && type.GetConstructor(Type.EmptyTypes) != null).Select(
-            type => Activator.CreateInstance(type) as LoadoutsProvider).Where(provider =>
-            !string.IsNullOrWhiteSpace(provider.Name) && provider.Enabled).OrderBy(provider =>
-            provider.Name);
+        public static IEnumerable<LoadoutsProvider> Providers => 
+            Assembly.GetExecutingAssembly().GetTypes()
+                .Where(type => typeof(LoadoutsProvider).IsAssignableFrom(type) && type.GetConstructor(Type.EmptyTypes) != null)
+                .Select(type => Activator.CreateInstance(type) as LoadoutsProvider)
+                .Where(provider => !string.IsNullOrWhiteSpace(provider.Name) && provider.Enabled)
+                .OrderBy(provider => provider.Name);
 
         /// <summary>
         /// Gets the loadouts feed asynchronous.
