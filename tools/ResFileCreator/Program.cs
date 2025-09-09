@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -47,10 +48,10 @@ namespace EVEMon.ResFileCreator
         {
             Directory.SetCurrentDirectory(GetSolutionDirectory());
 
-            string assemblyInfoFileContent = File.ReadAllText(Path.GetFullPath(@".\SharedAssemblyInfo.cs"));
+            string assemblyInfoFileContent = File.ReadAllText(Path.GetFullPath(@"SharedAssemblyInfo.cs"));
             s_dictionary["AssemblyTitle"] = "EVEMon";
 
-            assemblyInfoFileContent = File.ReadAllText(Path.GetFullPath(@".\SharedAssemblyInfo.cs"));
+            assemblyInfoFileContent = File.ReadAllText(Path.GetFullPath(@"SharedAssemblyInfo.cs"));
             s_dictionary["AssemblyDescription"] = GetValueOf(assemblyInfoFileContent, "AssemblyDescription");
             s_dictionary["AssemblyCompany"] = GetValueOf(assemblyInfoFileContent, "AssemblyCompany");
             s_dictionary["AssemblyProduct"] = GetValueOf(assemblyInfoFileContent, "AssemblyProduct");
@@ -81,8 +82,7 @@ namespace EVEMon.ResFileCreator
         /// <returns></returns>
         private static bool GenerateRcFile()
         {
-            s_resScriptfile = Path.GetFullPath(string.Format(CultureInfo.InvariantCulture,
-                "src\\EVEMon\\{0}.rc", s_dictionary["AssemblyTitle"]));
+            s_resScriptfile = Path.GetFullPath(Path.Combine("src", "EVEMon", "EVEMon.rc"));
 
             StringBuilder sb = new StringBuilder();
 
@@ -155,14 +155,14 @@ namespace EVEMon.ResFileCreator
         /// <param name="sb">The sb.</param>
         private static void AddManifest(StringBuilder sb)
         {
-            const string ManifestFile = @"src\EVEMon\\app.manifest";
+            var manifestFile = Path.GetFullPath(Path.Combine("src", "EVEMon", "app.manifest"));
 
-            if (!File.Exists(ManifestFile))
+            if (!File.Exists(manifestFile))
                 return;
 
             sb
                 .AppendLine("// Manifest")
-                .AppendLine($"1 24 \"{ManifestFile}\"");
+                .AppendLine($"1 24 \"{string.Concat(OperatingSystem.IsLinux() ? "Z:" : "", manifestFile)}\"");
         }
 
         /// <summary>
@@ -171,11 +171,11 @@ namespace EVEMon.ResFileCreator
         /// <param name="sb">The sb.</param>
         private static void AddIcons(StringBuilder sb)
         {
-            const string IconsDir = @"src\EVEMon.Common\Resources\Icons";
+            var iconsDir = Path.GetFullPath(Path.Combine("src", "EVEMon.Common", "Resources", "Icons"));
             List<string> iconFilesPath = new List<string>();
 
-            if (Directory.Exists(IconsDir))
-                iconFilesPath = Directory.GetFiles(IconsDir, "EVEMon.ico", SearchOption.AllDirectories).ToList();
+            if (Directory.Exists(iconsDir))
+                iconFilesPath = Directory.GetFiles(iconsDir, "EVEMon.ico", SearchOption.AllDirectories).ToList();
 
             if (!iconFilesPath.Any())
                 return;
@@ -186,14 +186,14 @@ namespace EVEMon.ResFileCreator
             sb.AppendLine("// Icon");
             if (iconEVEMon != null)
             {
-                sb.AppendLine($"{count} ICON \"{iconEVEMon}\"");
+                sb.AppendLine($"{count} ICON \"{string.Concat(OperatingSystem.IsLinux() ? @"Z:" : "", iconEVEMon)}\"");
                 count++;
                 iconFilesPath.Remove(iconEVEMon);
             }
 
             foreach (string iconFilePath in iconFilesPath)
             {
-                sb.AppendLine($"{count} ICON \"{iconFilePath}\"");
+                sb.AppendLine($"{count} ICON \"{string.Concat(OperatingSystem.IsLinux() ? @"Z:" : "", iconFilePath)}\"");
                 count++;
             }
 
@@ -205,12 +205,19 @@ namespace EVEMon.ResFileCreator
         /// </summary>
         private static void CreateResFile()
         {
+            var file = OperatingSystem.IsLinux() ? "wine" : s_rcexe;
+            var arguments = OperatingSystem.IsLinux()
+                ? string.Format(CultureInfo.InvariantCulture, "{0} /v /nologo /r \"{1}\"", s_rcexe, string.Concat("Z:", s_resScriptfile))
+                : string.Format(CultureInfo.InvariantCulture, "/v /nologo /r \"{0}\"", s_resScriptfile);
+            
             ProcessStartInfo startInfo = new ProcessStartInfo
             {
-                FileName = s_rcexe,
-                Arguments = string.Format(CultureInfo.InvariantCulture, "/v /nologo /r \"{0}\"", s_resScriptfile),
+                FileName = file,
+                Arguments = arguments,
                 UseShellExecute = false,
-                RedirectStandardOutput = true
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                WorkingDirectory = GetSolutionDirectory()
             };
 
             int exitCode;
@@ -221,10 +228,11 @@ namespace EVEMon.ResFileCreator
                 makeResProcess.WaitForExit();
                 exitCode = makeResProcess.ExitCode;
 
-                if (Debugger.IsAttached)
+                if (true)
                 {
                     Console.WriteLine();
                     Console.WriteLine(makeResProcess.StandardOutput.ReadToEnd());
+                    Console.WriteLine(makeResProcess.StandardError.ReadToEnd());
                 }
             }
 
@@ -241,7 +249,7 @@ namespace EVEMon.ResFileCreator
         {
             // Lookup for 'RC.exe' for the particular process architecture
             string architecture = Environment.Is64BitProcess ? "x64" : "x86";
-            string filePath = Path.Combine(GetProjectDirectory(), @"Dependencies\ResCompiler\", architecture, "rc.exe");
+            string filePath = Path.Combine(GetProjectDirectory(), "Dependencies", "ResCompiler", architecture, "rc.exe");
 
             return File.Exists(filePath) ? filePath : null;
         }
@@ -254,7 +262,7 @@ namespace EVEMon.ResFileCreator
         {
             if (string.IsNullOrWhiteSpace(s_solutionDir))
             {
-                s_solutionDir = Regex.Match(Directory.GetCurrentDirectory(), @"[a-zA-Z]+:.*\\(?=tools)",
+                s_solutionDir = Regex.Match(Directory.GetCurrentDirectory(), @"([a-zA-Z]+:){0,1}.*[\\/](?=tools)",
                                             RegexOptions.Compiled | RegexOptions.IgnoreCase).ToString();
             }
             return s_solutionDir;
@@ -268,7 +276,7 @@ namespace EVEMon.ResFileCreator
         {
             if (string.IsNullOrWhiteSpace(s_projectDir))
             {
-                s_projectDir = Regex.Match(Directory.GetCurrentDirectory(), @"[a-zA-Z]+:.*\\(?=bin)",
+                s_projectDir = Regex.Match(Path.GetDirectoryName(Directory.GetCurrentDirectory()), @"([a-zA-Z]+:){0,1}.*[\\/](?=bin)",
                                             RegexOptions.Compiled | RegexOptions.IgnoreCase).ToString();
             }
             return s_projectDir;
