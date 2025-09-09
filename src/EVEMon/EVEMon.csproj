@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net8.0-windows</TargetFramework>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Winexe</OutputType>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -20,6 +20,8 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <ValidateExecutableReferencesMatchSelfContained>false</ValidateExecutableReferencesMatchSelfContained>
   </PropertyGroup>
   <PropertyGroup>
     <PublishSingleFile>true</PublishSingleFile>
@@ -283,13 +285,8 @@
   </ItemGroup>
   <PropertyGroup>
     <PreBuildEvent>
-        cd "$(SolutionDir)tools\ResFileCreator\bin\$(Configuration)\net8.0-windows\"
-        EVEMonResFileCreator.exe
+        cd "$(SolutionDir)tools/ResFileCreator/bin/$(Configuration)/$(TargetFramework)"
+        ./EVEMonResFileCreator
     </PreBuildEvent>
-  </PropertyGroup>
-  <PropertyGroup>
-    <PostBuildEvent>del "$(MSBuildProjectDirectory)"\EVEMon.res
-if exist "$(TargetDir)"EVEMon.exe.config del "$(TargetDir)"EVEMon.exe.config
-if exist "$(TargetDir)"stdole.dll del "$(TargetDir)"stdole.dll</PostBuildEvent>
   </PropertyGroup>
 </Project>
