@@ -72,11 +72,6 @@
     </When>
   </Choose>
   <PropertyGroup>
-    <PostBuildEvent>rd /s /q "$(TargetDir)"Resources
-del "$(TargetDir)"*office*
-del "$(TargetDir)"*outlook*
-del "$(TargetDir)"YamlDotNet*
-if exist "$(TargetDir)"stdole.dll del "$(TargetDir)"stdole.dll</PostBuildEvent>
     <AssemblyTitle>EVEMon.Common Unit Tests</AssemblyTitle>
     <Description>Unit Tests for EVEMon.Common</Description>
     <Company>EVEMon Developement Team</Company>

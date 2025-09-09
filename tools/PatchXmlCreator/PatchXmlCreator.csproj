@@ -7,6 +7,7 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
@@ -38,18 +39,4 @@
     <Compile Remove="Properties\Settings.Designer.cs" />
     <EmbeddedResource Remove="Properties\Resources.resx" />
   </ItemGroup>
-  <PropertyGroup>
-    <PostBuildEvent>rd /s /q "$(TargetDir)"Resources
-del "$(TargetDir)"Google*
-del "$(TargetDir)"*office*
-del "$(TargetDir)"*outlook*
-del "$(TargetDir)"*SharpZipLib*
-del "$(TargetDir)"YamlDotNet*
-del "$(TargetDir)"Dropbox*
-del "$(TargetDir)"OneDrive*
-del "$(TargetDir)"Microsoft*
-del "$(TargetDir)"Newtonsoft*
-del "$(TargetDir)"Zlib*
-if exist "$(TargetDir)"stdole.dll del "$(TargetDir)"stdole.dll</PostBuildEvent>
-  </PropertyGroup>
 </Project>

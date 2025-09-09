@@ -20,6 +20,8 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <UseWindowsForms>true</UseWindowsForms>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <ValidateExecutableReferencesMatchSelfContained>false</ValidateExecutableReferencesMatchSelfContained>
   </PropertyGroup>
   <PropertyGroup>
     <PublishSingleFile>true</PublishSingleFile>
@@ -282,11 +284,9 @@
     <PackageReference Include="WinForms.DataVisualization" Version="1.9.2" />
   </ItemGroup>
   <PropertyGroup>
-    <PreBuildEvent>pushd "$(SolutionDir)tools\ResFileCreator\bin\$(Configuration)\net8.0-windows" &amp;&amp; .\EVEMonResFileCreator.exe &amp;&amp; popd</PreBuildEvent>
-  </PropertyGroup>
-  <PropertyGroup>
-    <PostBuildEvent>del "$(MSBuildProjectDirectory)"\EVEMon.res
-if exist "$(TargetDir)"EVEMon.exe.config del "$(TargetDir)"EVEMon.exe.config
-if exist "$(TargetDir)"stdole.dll del "$(TargetDir)"stdole.dll</PostBuildEvent>
+    <PreBuildEvent>
+        cd "$(SolutionDir)tools/ResFileCreator/bin/$(Configuration)/$(TargetFramework)"
+        ./EVEMonResFileCreator
+    </PreBuildEvent>
   </PropertyGroup>
 </Project>
