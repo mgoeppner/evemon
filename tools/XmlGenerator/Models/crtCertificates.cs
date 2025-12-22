@@ -1,10 +1,7 @@
 namespace EVEMon.XmlGenerator.Models
 {
-    using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     public partial class crtCertificates
     {
@@ -12,17 +9,16 @@ namespace EVEMon.XmlGenerator.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int certificateID { get; set; }
 
-        public short? groupID { get; set; }
+        public int? groupID { get; set; }
 
         public int? classID { get; set; }
 
-        public byte? grade { get; set; }
+        public int? grade { get; set; }
 
-        public int? corpID { get; set; }
+        [StringLength(256)]
+        public string name { get; set; }
 
-        public int? iconID { get; set; }
-
-        [StringLength(500)]
+        [StringLength(3000)]
         public string description { get; set; }
     }
 }

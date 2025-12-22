@@ -110,6 +110,50 @@ namespace EVEMon.XmlGenerator.Providers
         internal static BagCollection<CrpNPCDivisions> CrpNPCDivisionsTable { get; private set; }
 
         /// <summary>
+        /// Gets or sets the crt certificates table.
+        /// </summary>
+        /// <value>The crt certificates table.</value>
+        internal static BagCollection<CrtCertificates> CrtCertificatesTable { get; private set; }
+
+        /// <summary>
+        /// Gets or sets the crt classes table.
+        /// </summary>
+        /// <value>The crt classes table.</value>
+        internal static BagCollection<CrtClasses> CrtClassesTable { get; private set; }
+
+        /// <summary>
+        /// Gets or sets the crt recommendations table.
+        /// </summary>
+        /// <value>The crt recommendations table.</value>
+        internal static List<CrtRecommendations> CrtRecommendationsTable { get; private set; }
+
+        /// <summary>
+        /// Gets or sets the crt relationships table.
+        /// </summary>
+        /// <value>The crt relationships table.</value>
+        internal static List<CrtRelationships> CrtRelationshipsTable { get; private set; }
+
+        /// <summary>
+        /// Gets or sets the masteries total count.
+        /// </summary>
+        /// <value>
+        /// The masteries total count.
+        /// </value>
+        internal static int MasteriesTotalCount { get; private set; }
+
+
+
+        /// <summary>
+        /// Gets the dgm masteries.
+        /// </summary>
+        internal static BagCollection<DgmMasteries> DgmMasteriesTable { get; private set; }
+
+        /// <summary>
+        /// Gets the dgm type masteries.
+        /// </summary>
+        internal static List<DgmTypeMasteries> DgmTypeMasteriesTable { get; private set; }
+
+        /// <summary>
         /// Gets or sets the dgm attribute categories table.
         /// </summary>
         /// <value>The dgm attribute categories table.</value>
@@ -385,6 +429,19 @@ namespace EVEMon.XmlGenerator.Providers
             DgmTypeAttributesTable = TypeAttributes();
             Util.UpdateProgress(s_totalTablesCount);
             DgmTypeEffectsTable = TypeEffects();
+            Util.UpdateProgress(s_totalTablesCount);
+
+            CrtCertificatesTable = Certificates();
+            Util.UpdateProgress(s_totalTablesCount);
+            CrtClassesTable = CertificateClasses();
+            Util.UpdateProgress(s_totalTablesCount);
+            CrtRecommendationsTable = CertificateRecommendations();
+            Util.UpdateProgress(s_totalTablesCount);
+            CrtRelationshipsTable = CertificateRelationships();
+            Util.UpdateProgress(s_totalTablesCount);
+            DgmMasteriesTable = Masteries();
+            Util.UpdateProgress(s_totalTablesCount);
+            DgmTypeMasteriesTable = TypeMasteries();
             Util.UpdateProgress(s_totalTablesCount);
 
             // Find out what this used to be and find a way around it... Is it even useful?
@@ -1387,10 +1444,199 @@ namespace EVEMon.XmlGenerator.Providers
                 if (station.corporationID.HasValue)
                     item.CorporationID = station.corporationID.Value;
 
+                if (station.officeRentalCost.HasValue)
+                    item.OfficeRentalCost = station.officeRentalCost.Value;
+
+                if (station.operationID.HasValue)
+                    item.OperationID = station.operationID.Value;
+
+                if (station.stationTypeID.HasValue)
+                    item.StationTypeID = station.stationTypeID.Value;
+
+
+
                 collection.Items.Add(item);
             }
 
             return collection.ToBag();
+        }
+
+        /// <summary>
+        /// Certificates.
+        /// </summary>
+        /// <returns><c>BagCollection</c> of Certificates.</returns>
+        private static BagCollection<CrtCertificates> Certificates()
+        {
+            IndexedCollection<CrtCertificates> collection = new IndexedCollection<CrtCertificates>();
+
+            foreach (crtCertificates certificate in s_context.crtCertificates)
+            {
+                CrtCertificates item = new CrtCertificates
+                {
+                    ID = certificate.certificateID,
+                    Description = certificate.description,
+                };
+
+                if (certificate.groupID.HasValue)
+                    item.GroupID = certificate.groupID.Value;
+
+                if (certificate.classID.HasValue)
+                    item.ClassID = certificate.classID.Value;
+                
+                if (certificate.grade.HasValue)
+                    item.Grade = certificate.grade.Value;
+
+                item.Name = certificate.name;
+                item.Description = item.Description.Clean();
+
+                collection.Items.Add(item);
+            }
+            
+            CertificatesTotalCount = collection.Items.Count;
+
+            return collection.ToBag();
+        }
+
+        /// <summary>
+        /// Certificate Classes.
+        /// </summary>
+        /// <returns><c>BagCollection</c> of Certificate Classes.</returns>
+        private static BagCollection<CrtClasses> CertificateClasses()
+        {
+            IndexedCollection<CrtClasses> collection = new IndexedCollection<CrtClasses>();
+
+            foreach (crtClasses certClass in s_context.crtClasses)
+            {
+                CrtClasses item = new CrtClasses
+                {
+                    ID = certClass.classID,
+                    Description = certClass.description,
+                    ClassName = certClass.className
+                };
+
+                item.Description = item.Description.Clean();
+
+                collection.Items.Add(item);
+            }
+
+            return collection.ToBag();
+        }
+
+        /// <summary>
+        /// Certificate Recommendations.
+        /// </summary>
+        /// <returns><c>List</c> of Certificate Recommendations.</returns>
+        private static List<CrtRecommendations> CertificateRecommendations()
+        {
+            List<CrtRecommendations> list = new List<CrtRecommendations>();
+
+            foreach (crtRecommendations recommendation in s_context.crtRecommendations)
+            {
+                CrtRecommendations item = new CrtRecommendations
+                {
+                    ID = recommendation.recommendationID,
+                };
+
+                if (recommendation.shipTypeID.HasValue)
+                    item.ShipTypeID = recommendation.shipTypeID.Value;
+
+                if (recommendation.certificateID.HasValue)
+                    item.CertificateID = recommendation.certificateID.Value;
+
+                if (recommendation.recommendationLevel.HasValue)
+                    item.Level = recommendation.recommendationLevel.Value;
+
+                list.Add(item);
+            }
+
+            return list;
+        }
+
+        /// <summary>
+        /// Certificate Relationships.
+        /// </summary>
+        /// <returns><c>List</c> of Certificate Relationships.</returns>
+        private static List<CrtRelationships> CertificateRelationships()
+        {
+            List<CrtRelationships> list = new List<CrtRelationships>();
+
+            foreach (crtRelationships relationship in s_context.crtRelationships)
+            {
+                CrtRelationships item = new CrtRelationships
+                {
+                    ID = relationship.relationshipID,
+                };
+
+                if (relationship.parentID.HasValue)
+                    item.ParentID = relationship.parentID.Value;
+
+                if (relationship.parentTypeID.HasValue)
+                    item.ParentTypeID = relationship.parentTypeID.Value;
+
+                if (relationship.parentLevel.HasValue)
+                    item.ParentLevel = relationship.parentLevel.Value;
+
+                if (relationship.childID.HasValue)
+                    item.ChildID = relationship.childID.Value;
+                
+                if (relationship.grade.HasValue)
+                    item.Grade = (short)relationship.grade.Value;
+
+                list.Add(item);
+            }
+
+            return list;
+        }
+
+        /// <summary>
+        /// Masteries.
+        /// </summary>
+        /// <returns><c>BagCollection</c> of Masteries.</returns>
+        private static BagCollection<DgmMasteries> Masteries()
+        {
+            IndexedCollection<DgmMasteries> collection = new IndexedCollection<DgmMasteries>();
+
+            foreach (dgmMasteries mastery in s_context.dgmMasteries)
+            {
+                DgmMasteries item = new DgmMasteries
+                {
+                    ID = mastery.masteryID,
+                };
+
+                if (mastery.certificateID.HasValue)
+                    item.CertificateID = mastery.certificateID.Value;
+
+                if (mastery.grade.HasValue)
+                    item.Grade = (short)mastery.grade.Value;
+
+                collection.Items.Add(item);
+            }
+
+            MasteriesTotalCount = collection.Items.Count;
+
+            return collection.ToBag();
+        }
+
+        /// <summary>
+        /// Type Masteries.
+        /// </summary>
+        /// <returns><c>List</c> of Type Masteries.</returns>
+        private static List<DgmTypeMasteries> TypeMasteries()
+        {
+            List<DgmTypeMasteries> list = new List<DgmTypeMasteries>();
+
+            foreach (dgmTypeMasteries typeMastery in s_context.dgmTypeMasteries)
+            {
+                DgmTypeMasteries item = new DgmTypeMasteries
+                {
+                    ItemID = typeMastery.typeID,
+                    MasteryID = typeMastery.masteryID
+                };
+
+                list.Add(item);
+            }
+
+            return list;
         }
 
         #endregion

@@ -1,11 +1,16 @@
+using System.Configuration;
 using Microsoft.EntityFrameworkCore;
 
 namespace EVEMon.XmlGenerator.Models
 {
     public partial class EveStaticData : DbContext
     {
+        private static string ConnectionString =>
+            ConfigurationManager.ConnectionStrings["EveStaticData"]?.ConnectionString
+            ?? "Data Source=sqlite-latest.sqlite";
+
         public EveStaticData()
-            : base(new DbContextOptionsBuilder().UseSqlite("Data Source=..\\..\\..\\sqlite-latest.sqlite").Options)
+            : base(new DbContextOptionsBuilder().UseSqlite(ConnectionString).Options)
         {
         }
 
@@ -29,6 +34,14 @@ namespace EVEMon.XmlGenerator.Models
         public virtual DbSet<dgmExpressions> dgmExpressions { get; set; }
         public virtual DbSet<dgmTypeAttributes> dgmTypeAttributes { get; set; }
         public virtual DbSet<dgmTypeEffects> dgmTypeEffects { get; set; }
+        
+        public virtual DbSet<crtCertificates> crtCertificates { get; set; }
+        public virtual DbSet<crtClasses> crtClasses { get; set; }
+        public virtual DbSet<crtRecommendations> crtRecommendations { get; set; }
+        public virtual DbSet<crtRelationships> crtRelationships { get; set; }
+        public virtual DbSet<dgmMasteries> dgmMasteries { get; set; }
+        public virtual DbSet<dgmTypeMasteries> dgmTypeMasteries { get; set; }
+
         public virtual DbSet<eveGraphics> eveGraphics { get; set; }
         public virtual DbSet<eveIcons> eveIcons { get; set; }
         public virtual DbSet<eveUnits> eveUnits { get; set; }
@@ -266,6 +279,15 @@ namespace EVEMon.XmlGenerator.Models
             modelBuilder.Entity<trnTranslations>()
                 .Property(e => e.languageID)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<dgmTypeMasteries>()
+                .HasKey(e => new { e.typeID, e.masteryID });
+
+            modelBuilder.Entity<dgmTypeAttributes>()
+                .HasKey(e => new { e.typeID, e.attributeID });
+
+            modelBuilder.Entity<dgmTypeEffects>()
+                .HasKey(e => new { e.typeID, e.effectID });
         }
     }
 }

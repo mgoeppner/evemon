@@ -39,12 +39,16 @@ namespace EVEMon.XmlGenerator.Datafiles
                     Description = group.Description
                 };
 
-                // Add classes to categories
-                crtGroup.Classes.AddRange(ExportCertificateClasses(group).OrderBy(x => x.Name));
-
-                //// Add category
-                listOfCertGroups.Add(crtGroup);
+                // Add classes to categories (each certificate gets its own class entry)
+                var classes = ExportCertificateClasses(group).OrderBy(x => x.Name).ToList();
+                if (classes.Any())
+                    crtGroup.Classes.AddRange(classes);
+                
+                // Add category if it has certificates
+                if (crtGroup.Classes.Count > 0)
+                    listOfCertGroups.Add(crtGroup);
             }
+
 
             // Serialize
             CertificatesDatafile datafile = new CertificatesDatafile();
@@ -57,6 +61,7 @@ namespace EVEMon.XmlGenerator.Datafiles
 
         /// <summary>
         /// Exports the certificates classes.
+        /// Each certificate gets its own class entry to ensure all certificate IDs are exported.
         /// </summary>
         /// <param name="group">The group.</param>
         /// <returns></returns>
@@ -64,31 +69,39 @@ namespace EVEMon.XmlGenerator.Datafiles
         {
             List<SerializableCertificateClass> listOfCertClasses = new List<SerializableCertificateClass>();
 
-            // Exclude unused classes
-            foreach (CrtClasses certClass in Database.CrtClassesTable)
+            // Get all certificates for this group
+            var certificates = Database.CrtCertificatesTable
+                .Where(x => x.GroupID == group.ID)
+                .OrderBy(x => x.ID);
+
+            foreach (var cert in certificates)
             {
                 Util.UpdatePercentDone(Database.CertificatesTotalCount);
 
+                // Get class info
+                CrtClasses certClass = Database.CrtClassesTable.FirstOrDefault(x => x.ID == cert.ClassID);
+
+                string className = cert.Name;
+                string classDescription = certClass?.Description ?? "";
+
+                // Create a class entry for this certificate
+                // Use the certificate ID as the class ID to ensure uniqueness
                 SerializableCertificateClass crtClass = new SerializableCertificateClass
                 {
-                    ID = certClass.ID,
-                    Name = certClass.ClassName,
-                    Description = certClass.Description
+                    ID = cert.ID,  // Use certificate ID for unique lookup
+                    Name = className,
+                    Description = classDescription
                 };
 
-                // Export certificate
-                SerializableCertificate certificate = Database.CrtCertificatesTable
-                    .Where(x => x.ClassID == certClass.ID && x.GroupID == group.ID).Select(ExportCertificate).FirstOrDefault();
-
+                // Export the certificate
+                SerializableCertificate certificate = ExportCertificate(cert);
                 if (certificate == null)
                     continue;
 
-                // Add certificate to class
                 crtClass.Certificate = certificate;
-
-                // Add certificate class to classes
                 listOfCertClasses.Add(crtClass);
             }
+
             return listOfCertClasses;
         }
 

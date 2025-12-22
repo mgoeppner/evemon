@@ -17,6 +17,9 @@ namespace EVEMon.XmlGenerator.StaticData
         [XmlElement("grade")]
         public int Grade { get; set; }
 
+        [XmlElement("name")]
+        public string Name { get; set; }
+
         [XmlElement("description")]
         public string Description { get; set; }
     }

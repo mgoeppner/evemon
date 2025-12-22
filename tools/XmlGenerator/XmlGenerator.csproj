@@ -40,21 +40,12 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Remove="Datafiles\Certificates.cs" />
-    <Compile Remove="Datafiles\Masteries.cs" />
-    <Compile Remove="Models\crtCertificates.cs" />
-    <Compile Remove="Models\crtClasses.cs" />
-    <Compile Remove="Models\crtRecommendations.cs" />
-    <Compile Remove="Models\crtRelationships.cs" />
-    <Compile Remove="Models\dgmMasteries.cs" />
     <Compile Remove="Models\dgmTraits.cs" />
-    <Compile Remove="Models\dgmTypeMasteries.cs" />
     <Compile Remove="Models\dgmTypeTraits.cs" />
-    <Compile Remove="StaticData\CrtClasses.cs" />
     <Compile Remove="StaticData\DgmTraits.cs" />
-    <Compile Remove="StaticData\DgmTypeMasteries.cs" />
     <Compile Remove="StaticData\DgmTypeTraits.cs" />
   </ItemGroup>
+
   <PropertyGroup>
     <AssemblyTitle>XmlGenerator</AssemblyTitle>
     <Company>EVEMon Development Team</Company>
