@@ -179,6 +179,36 @@
     <None Update="Resources\Skill_Select\Group8\Bars.resources">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <!-- Certificate level icons (untrained) -->
+    <EmbeddedResource Include="Resources\Images\level0_24.png" />
+    <EmbeddedResource Include="Resources\Images\level1_24.png" />
+    <EmbeddedResource Include="Resources\Images\level2_24.png" />
+    <EmbeddedResource Include="Resources\Images\level3_24.png" />
+    <EmbeddedResource Include="Resources\Images\level4_24.png" />
+    <EmbeddedResource Include="Resources\Images\level5_24.png" />
+    <!-- Certificate level icons (trained) -->
+    <EmbeddedResource Include="Resources\Images\level0_24_1.png" />
+    <EmbeddedResource Include="Resources\Images\level1_24_1.png" />
+    <EmbeddedResource Include="Resources\Images\level2_24_1.png" />
+    <EmbeddedResource Include="Resources\Images\level3_24_1.png" />
+    <EmbeddedResource Include="Resources\Images\level4_24_1.png" />
+    <EmbeddedResource Include="Resources\Images\level5_24_1.png" />
+    <!-- Mastery level icons (untrained) -->
+    <EmbeddedResource Include="Resources\Images\masteryLevel0_24.png" />
+    <EmbeddedResource Include="Resources\Images\masteryLevel1_24.png" />
+    <EmbeddedResource Include="Resources\Images\masteryLevel2_24.png" />
+    <EmbeddedResource Include="Resources\Images\masteryLevel3_24.png" />
+    <EmbeddedResource Include="Resources\Images\masteryLevel4_24.png" />
+    <EmbeddedResource Include="Resources\Images\masteryLevel5_24.png" />
+    <!-- Mastery level icons (trained) -->
+    <EmbeddedResource Include="Resources\Images\masteryLevel0_24_1.png" />
+    <EmbeddedResource Include="Resources\Images\masteryLevel1_24_1.png" />
+    <EmbeddedResource Include="Resources\Images\masteryLevel2_24_1.png" />
+    <EmbeddedResource Include="Resources\Images\masteryLevel3_24_1.png" />
+    <EmbeddedResource Include="Resources\Images\masteryLevel4_24_1.png" />
+    <EmbeddedResource Include="Resources\Images\masteryLevel5_24_1.png" />
+    <!-- Certificate category icon -->
+    <EmbeddedResource Include="Resources\Images\Certificate-24.png" />
     <EmbeddedResource Include="Serialization\Eve\rowsets-transform.xslt">
       <SubType>Designer</SubType>
     </EmbeddedResource>
