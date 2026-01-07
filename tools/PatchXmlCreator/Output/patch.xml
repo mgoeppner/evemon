@@ -29,66 +29,66 @@
   <datafiles>
     <datafile>
       <name>eve-blueprints-en-US.xml.gzip</name>
-      <date>28 May 2025</date>
-      <md5>1a89279e2c2b4d660bc2cab9fb97d187</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Legion/2025-05-27</url>
-      <message><![CDATA[Legion 23.01 (2025-05-27) blueprints data file by the EVEMon Development Team
+      <date>07 January 2026</date>
+      <md5>e66448258915e56c8eaa92874099a7bc</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Catalyst/2026-01-06</url>
+      <message><![CDATA[Catalyst 23.02 (2026-01-06) blueprints data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-certificates-en-US.xml.gzip</name>
-      <date>18 January 2022</date>
-      <md5>540000f7c111354769a54fa31e57d411</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Legion/2025-05-27</url>
-      <message><![CDATA[Legion 23.01 (2025-05-27) certificates data file by the EVEMon Development Team
+      <date>07 January 2026</date>
+      <md5>57249304aa577baf4e229561d8aca507</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Catalyst/2026-01-06</url>
+      <message><![CDATA[Catalyst 23.02 (2026-01-06) certificates data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-geography-en-US.xml.gzip</name>
-      <date>28 May 2025</date>
-      <md5>93b41f9f5e0ecd7ad70d281822fa4628</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Legion/2025-05-27</url>
-      <message><![CDATA[Legion 23.01 (2025-05-27) geography data file by the EVEMon Development Team
+      <date>07 January 2026</date>
+      <md5>993c6447ba0b4c4d8a65432f450b27fc</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Catalyst/2026-01-06</url>
+      <message><![CDATA[Catalyst 23.02 (2026-01-06) geography data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-items-en-US.xml.gzip</name>
-      <date>28 May 2025</date>
-      <md5>3ec893b2b38efb3e9e0e78b529a491be</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Legion/2025-05-27</url>
-      <message><![CDATA[Legion 23.01 (2025-05-27) items data file by the EVEMon Development Team
+      <date>07 January 2026</date>
+      <md5>1eed38652d3236ea13200e68e1b1d637</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Catalyst/2026-01-06</url>
+      <message><![CDATA[Catalyst 23.02 (2026-01-06) items data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-masteries-en-US.xml.gzip</name>
-      <date>18 January 2022</date>
-      <md5>3668b50996fc40a0c0853fec427b5712</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Legion/2025-05-27</url>
-      <message><![CDATA[Legion 23.01 (2025-05-27) masteries data file by the EVEMon Development Team
+      <date>07 January 2026</date>
+      <md5>3cd84f3ada904a32017956a1ddaae877</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Catalyst/2026-01-06</url>
+      <message><![CDATA[Catalyst 23.02 (2026-01-06) masteries data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-properties-en-US.xml.gzip</name>
-      <date>28 May 2025</date>
-      <md5>17e4a9369cc0c91eb73c2571a66bc909</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Legion/2025-05-27</url>
-      <message><![CDATA[Legion 23.01 (2025-05-27) properties data file by the EVEMon Development Team
+      <date>07 January 2026</date>
+      <md5>b3981d1cd9ba0f722509078d7afa72c4</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Catalyst/2026-01-06</url>
+      <message><![CDATA[Catalyst 23.02 (2026-01-06) properties data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-reprocessing-en-US.xml.gzip</name>
-      <date>28 May 2025</date>
-      <md5>a9ffe88f6a69c2096232f516139f9332</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Legion/2025-05-27</url>
-      <message><![CDATA[Legion 23.01 (2025-05-27) reprocessing data file by the EVEMon Development Team
+      <date>07 January 2026</date>
+      <md5>30a651882815915866808b4a49752057</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Catalyst/2026-01-06</url>
+      <message><![CDATA[Catalyst 23.02 (2026-01-06) reprocessing data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
     <datafile>
       <name>eve-skills-en-US.xml.gzip</name>
-      <date>28 May 2025</date>
-      <md5>33012056eb0870072f127792f3007013</md5>
-      <url>https://mgoeppner.github.io/evemon-datafiles/Legion/2025-05-27</url>
-      <message><![CDATA[Legion 23.01 (2025-05-27) skills data file by the EVEMon Development Team
+      <date>07 January 2026</date>
+      <md5>c72dda3246520a857ffcfd00247b0d77</md5>
+      <url>https://mgoeppner.github.io/evemon-datafiles/Catalyst/2026-01-06</url>
+      <message><![CDATA[Catalyst 23.02 (2026-01-06) skills data file by the EVEMon Development Team
 NOT COMPATIBLE with EVEMon prior to version 2.2.0]]></message>
     </datafile>
   </datafiles>
