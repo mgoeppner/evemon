@@ -13,6 +13,8 @@ using EVEMon.Common.Factories;
 using EVEMon.Common.Helpers;
 using EVEMon.Common.Interfaces;
 using EVEMon.Common.Models;
+using System.IO;
+using System.Reflection;
 
 namespace EVEMon.SkillPlanner
 {
@@ -60,6 +62,25 @@ namespace EVEMon.SkillPlanner
             treeView.MouseMove += treeView_MouseMove;
 
             cmListSkills.Opening += cmListSkills_Opening;
+
+
+            // Fix for grey background on transparent icons
+            // Reset ImageStream to remove any designer-imposed 8-bit limitations
+            imageListCertLevels.ImageStream = null;
+            imageListCertLevels.ColorDepth = ColorDepth.Depth32Bit;
+            imageListCertLevels.ImageSize = new Size(24, 24);
+            imageListCertLevels.TransparentColor = Color.Transparent;
+
+            imageListMasteryLevels.ImageStream = null;
+            imageListMasteryLevels.ColorDepth = ColorDepth.Depth32Bit;
+            imageListMasteryLevels.ImageSize = new Size(24, 24);
+            imageListMasteryLevels.TransparentColor = Color.Transparent;
+
+            imageList.ColorDepth = ColorDepth.Depth32Bit; // Also for standard icons if needed
+
+            // Manually reload images from embedded resources to ensure quality and correct file usage
+            ReloadImageListFromResources(imageListCertLevels, "level{0}_24.png");
+            ReloadImageListFromResources(imageListMasteryLevels, "masteryLevel{0}_24.png");
 
             m_boldFont = FontFactory.GetFont(Font, FontStyle.Bold);
             treeView.Font = FontFactory.GetFont("Microsoft Sans Serif", 8.25F);
@@ -503,7 +524,10 @@ namespace EVEMon.SkillPlanner
             if (masteryLevel != null)
             {
                 if (!Settings.UI.SafeForWork)
-                    supIcon = masteryLevel.Level;
+                {
+                    // Untrained icons at indices 0-5, trained icons at indices 6-11
+                    supIcon = masteryLevel.Level + (masteryLevel.IsTrained ? 6 : 0);
+                }
 
                 il = imageListMasteryLevels;
 
@@ -517,7 +541,10 @@ namespace EVEMon.SkillPlanner
             else if (certLevel != null)
             {
                 if (!Settings.UI.SafeForWork)
-                    supIcon = (int)certLevel.Level;
+                {
+                    // Untrained icons at indices 0-5, trained icons at indices 6-11
+                    supIcon = (int)certLevel.Level + (certLevel.IsTrained ? 6 : 0);
+                }
 
                 il = imageListCertLevels;
 
@@ -789,5 +816,47 @@ namespace EVEMon.SkillPlanner
         }
 
         #endregion
+        /// <summary>
+        /// Reloads images from embedded resources.
+        /// Loads untrained icons at indices 0-5, trained icons at indices 6-11.
+        /// </summary>
+        private void ReloadImageListFromResources(ImageList il, string pattern)
+        {
+            il.Images.Clear();
+            var asm = typeof(EVEMon.Common.Properties.Resources).Assembly;
+
+            // Load untrained icons (indices 0-5)
+            for (int i = 0; i <= 5; i++)
+            {
+                string resourceName = $"EVEMon.Common.Resources.Images.{string.Format(pattern, i)}";
+                using (var stream = asm.GetManifestResourceStream(resourceName))
+                {
+                    if (stream != null)
+                    {
+                        using (var img = Image.FromStream(stream))
+                        {
+                            il.Images.Add(new Bitmap(img));
+                        }
+                    }
+                }
+            }
+
+            // Load trained icons (indices 6-11) - pattern with _1 suffix
+            string trainedPattern = pattern.Replace(".png", "_1.png");
+            for (int i = 0; i <= 5; i++)
+            {
+                string resourceName = $"EVEMon.Common.Resources.Images.{string.Format(trainedPattern, i)}";
+                using (var stream = asm.GetManifestResourceStream(resourceName))
+                {
+                    if (stream != null)
+                    {
+                        using (var img = Image.FromStream(stream))
+                        {
+                            il.Images.Add(new Bitmap(img));
+                        }
+                    }
+                }
+            }
+        }
     }
 }

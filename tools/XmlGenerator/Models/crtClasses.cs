@@ -1,10 +1,7 @@
 namespace EVEMon.XmlGenerator.Models
 {
-    using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     public partial class crtClasses
     {
@@ -12,7 +9,7 @@ namespace EVEMon.XmlGenerator.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int classID { get; set; }
 
-        [StringLength(500)]
+        [StringLength(3000)]
         public string description { get; set; }
 
         [StringLength(256)]

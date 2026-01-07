@@ -25,5 +25,14 @@ namespace EVEMon.XmlGenerator.StaticData
 
         [XmlElement("reprocessingStationsTake")]
         public float ReprocessingStationsTake { get; set; }
+
+        [XmlElement("officeRentalCost")]
+        public int OfficeRentalCost { get; set; }
+
+        [XmlElement("operationID")]
+        public int OperationID { get; set; }
+
+        [XmlElement("stationTypeID")]
+        public int StationTypeID { get; set; }
     }
 }

@@ -5,7 +5,6 @@ namespace EVEMon.XmlGenerator.Models
 
     public partial class dgmTypeEffects
     {
-        [Key]
         [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int typeID { get; set; }

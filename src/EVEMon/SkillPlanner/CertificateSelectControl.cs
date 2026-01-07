@@ -46,6 +46,16 @@ namespace EVEMon.SkillPlanner
         {
             InitializeComponent();
 
+            // Fix for grey background on transparent icons
+            // Reset ImageStream to remove any designer-imposed 8-bit limitations
+            ilCertIcons.ImageStream = null;
+            ilCertIcons.ColorDepth = ColorDepth.Depth32Bit;
+            ilCertIcons.ImageSize = new Size(24, 24);
+            ilCertIcons.TransparentColor = Color.Transparent;
+
+            // Reload images from embedded resources to ensure quality
+            ReloadImageListFromResources();
+
             tbSearchText.KeyPress += tbSearchText_KeyPress;
             tbSearchText.Enter += tbSearchText_Enter;
             tbSearchText.Leave += tbSearchText_Leave;
@@ -941,9 +951,12 @@ namespace EVEMon.SkillPlanner
         {
             if (!Settings.UI.SafeForWork)
             {
+                // Untrained icons at indices 0-5, trained icons at indices 6-11
+                // If no level trained, show untrained level 0 icon
+                // If a level is trained, show trained icon for that level
                 return certificate.HighestTrainedLevel == null
                     ? 0
-                    : (int)certificate.HighestTrainedLevel.Level;
+                    : (int)certificate.HighestTrainedLevel.Level + 6;
             }
 
             // Prepares data
@@ -1190,6 +1203,72 @@ namespace EVEMon.SkillPlanner
         {
             tvItems.CollapseAll();
             m_allExpanded = false;
+        }
+
+        #endregion
+
+
+        #region Image Loading
+
+        /// <summary>
+        /// Reloads the certificate icons from embedded resources to ensure 32-bit color depth.
+        /// Loads untrained icons at indices 0-5, trained icons at indices 6-11, Certificate icon at index 12.
+        /// </summary>
+        private void ReloadImageListFromResources()
+        {
+            ilCertIcons.Images.Clear();
+            var asm = typeof(EVEMon.Common.Properties.Resources).Assembly;
+
+            // Load untrained icons (indices 0-5)
+            for (int i = 0; i <= 5; i++)
+            {
+                string resourceName = $"EVEMon.Common.Resources.Images.level{i}_24.png";
+                using (var stream = asm.GetManifestResourceStream(resourceName))
+                {
+                    if (stream != null)
+                    {
+                        using (var img = Image.FromStream(stream))
+                        {
+                            ilCertIcons.Images.Add($"level{i}", new Bitmap(img));
+                        }
+                    }
+                }
+            }
+
+            // Load trained icons (indices 6-11) - _1 suffix
+            for (int i = 0; i <= 5; i++)
+            {
+                string resourceName = $"EVEMon.Common.Resources.Images.level{i}_24_1.png";
+                using (var stream = asm.GetManifestResourceStream(resourceName))
+                {
+                    if (stream != null)
+                    {
+                        using (var img = Image.FromStream(stream))
+                        {
+                            ilCertIcons.Images.Add($"level{i}_trained", new Bitmap(img));
+                        }
+                    }
+                }
+            }
+
+            // Load the Certificate icon (used for category nodes)
+            // Try with hyphen first (original filename), then underscore as fallback
+            string certResourceName = "EVEMon.Common.Resources.Images.Certificate-24.png";
+            var certStream = asm.GetManifestResourceStream(certResourceName);
+            if (certStream == null)
+            {
+                certResourceName = "EVEMon.Common.Resources.Images.Certificate_24.png";
+                certStream = asm.GetManifestResourceStream(certResourceName);
+            }
+
+            if (certStream != null)
+            {
+                using (certStream)
+                using (var img = Image.FromStream(certStream))
+                {
+                    ilCertIcons.Images.Add("Certificate", new Bitmap(img));
+                }
+            }
         }
 
         #endregion

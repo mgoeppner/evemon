@@ -730,7 +730,7 @@ namespace EVEMon.Common
             if (!File.Exists(filename))
                 throw new FileNotFoundException($"{filename} not found!");
 
-            return CreateMD5(GetFileStream(filename, FileMode.Open, FileAccess.Read));
+            return CreateMD5(GetFileStream(filename, FileMode.Open, FileAccess.Read, FileShare.Read));
         }
 
         /// <summary>

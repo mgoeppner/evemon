@@ -218,3 +218,9 @@ tools/XmlGenerator/sqlite-latest.sqlite-journal
 
 # Rider and Jetbrains
 .idea/
+
+# Python quick check files
+*.py
+
+# Crash log
+crash_log.txt

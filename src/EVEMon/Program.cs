@@ -212,6 +212,12 @@ namespace EVEMon
 
             s_errorWindowIsShown = true;
 
+            try 
+            {
+                System.IO.File.WriteAllText("crash_log.txt", ex.ToString());
+            } 
+            catch { }
+
             try
             {
                 // Some exceptions may be thrown on a worker thread so we need to invoke them to the UI thread,
