@@ -50,8 +50,11 @@ namespace EVEMon.XmlGenerator
 
             Console.WriteLine(@"Generating files completed in {0:g}", stopwatch.Elapsed);
             Console.WriteLine();
-            Console.Write(@"Press any key to exit.");
-            Console.ReadKey(true);
+            if (Environment.UserInteractive && Console.IsInputRedirected == false)
+            {
+                Console.Write(@"Press any key to exit.");
+                Console.ReadKey(true);
+            }
         }
     }
 }

@@ -18,6 +18,36 @@ namespace EVEMon.XmlGenerator.Utils
         private static int s_counter;
         private static int s_tablesCount;
         private static int s_percentOld;
+        private static readonly bool s_isInteractive = IsConsoleInteractive();
+
+        private static bool IsConsoleInteractive()
+        {
+            try
+            {
+                _ = Console.CursorLeft;
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Overwrites the current line with new text if the console is interactive,
+        /// otherwise just writes a new line.
+        /// </summary>
+        internal static void OverwriteLine(string text)
+        {
+            if (s_isInteractive && !string.IsNullOrEmpty(s_text))
+            {
+                int left = Console.CursorLeft - s_text.Length;
+                if (left < 0)
+                    left = 0;
+                Console.SetCursorPosition(left, Console.CursorTop);
+            }
+            Console.Write(text);
+        }
 
 
         /// <summary>
@@ -208,16 +238,8 @@ namespace EVEMon.XmlGenerator.Utils
 
             s_percentOld = percentRounded;
 
-            if (!string.IsNullOrEmpty(s_text))
-            {
-                int left = Console.CursorLeft - s_text.Length;
-                if (left < 0)
-                    left = 0;
-                Console.SetCursorPosition(left, Console.CursorTop);
-            }
-
             s_text = $"{percent:P0}";
-            Console.Write(s_text);
+            OverwriteLine(s_text);
         }
 
         /// <summary>
@@ -226,12 +248,9 @@ namespace EVEMon.XmlGenerator.Utils
         /// <param name="totalCount">The total count.</param>
         internal static void UpdateProgress(int totalCount)
         {
-            if (!string.IsNullOrEmpty(s_text))
-                Console.SetCursorPosition(Console.CursorLeft - s_text.Length, Console.CursorTop);
-
             s_tablesCount++;
             s_text = $"{s_tablesCount / (double)totalCount:P0}";
-            Console.Write(s_text);
+            OverwriteLine(s_text);
         }
 
         /// <summary>

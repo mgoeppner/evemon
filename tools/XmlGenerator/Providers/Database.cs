@@ -353,17 +353,15 @@ namespace EVEMon.XmlGenerator.Providers
             {
                 connection.Open();
 
-                Console.SetCursorPosition(Console.CursorLeft - s_text.Length, Console.CursorTop);
-                Console.WriteLine(@"Connection to SQL Server: Successful");
+                Util.OverwriteLine(@"Connection to SQL Server: Successful");
+                Console.WriteLine();
                 Console.WriteLine();
             }
             catch (Exception ex)
             {
-                Console.SetCursorPosition(Console.CursorLeft - s_text.Length, Console.CursorTop);
-                Console.WriteLine(@"Connection to SQL Server: Failed");
+                Util.OverwriteLine(@"Connection to SQL Server: Failed");
+                Console.WriteLine();
                 Console.WriteLine(@"Reason: {0}", ex.Message);
-                Console.Write(@"Press any key to exit.");
-                Console.ReadLine();
                 Environment.Exit(-1);
             }
 
@@ -381,10 +379,8 @@ namespace EVEMon.XmlGenerator.Providers
             if (connectionStringSetting != null)
                 return new SqliteConnection(connectionStringSetting.ConnectionString);
 
-            Console.SetCursorPosition(Console.CursorLeft - s_text.Length, Console.CursorTop);
-            Console.WriteLine(@"Can not find conection string with name: {0}", connectionName);
-            Console.Write(@"Press any key to exit.");
-            Console.ReadLine();
+            Util.OverwriteLine(string.Format(@"Can not find conection string with name: {0}", connectionName));
+            Console.WriteLine();
             Environment.Exit(-1);
             return null;
         }
