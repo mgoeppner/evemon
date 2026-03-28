@@ -192,23 +192,60 @@ namespace EVEMon.Common.Service
                         info?.OnRequestStart(null);
                     }
                 }
-                string ids = "[ " + string.Join(",", toDo) + " ]";
+                // Filter out invalid IDs: ESI /universe/names/ returns 404 if
+                // any single ID in the batch is invalid (<=0 or deleted)
+                var validIds = new LinkedList<long>();
+                foreach (long id in toDo)
+                {
+                    if (id > 0)
+                        validIds.AddLast(id);
+                    else
+                    {
+                        // Mark invalid IDs as resolved so they won't be retried
+                        m_cache.TryGetValue(id, out StringIDInfo info);
+                        info?.OnRequestComplete(null);
+                    }
+                }
+                if (validIds.Count == 0)
+                {
+                    OnLookupComplete();
+                    return;
+                }
+                string ids = "[ " + string.Join(",", validIds) + " ]";
                 // Given the number of IDs we are requesting, it is very unlikely that the
                 // eTag or expiration will be useful
+                // Pass validIds as state so we can handle errors gracefully
                 EveMonClient.APIProviders.CurrentProvider.QueryEsi<EsiAPICharacterNames>(
                     ESIAPIGenericMethods.CharacterName, OnQueryAPICharacterNameUpdated,
                     new ESIParams()
                     {
                         PostData = ids
-                    });
+                    }, validIds);
             }
 
             private void OnQueryAPICharacterNameUpdated(EsiResult<EsiAPICharacterNames> result,
-                object ignore)
+                object state)
             {
-                // Bail if there is an error
+                var requestedIds = state as LinkedList<long>;
+
+                // Handle errors - ESI returns 404 if ANY ID in the batch is invalid
                 if (result.HasError)
+                {
+                    // Mark all requested IDs as "unknown" so they don't block future lookups
+                    if (requestedIds != null)
+                    {
+                        lock (m_cache)
+                        {
+                            foreach (long id in requestedIds)
+                            {
+                                m_cache.TryGetValue(id, out StringIDInfo info);
+                                // Mark as complete with null/unknown to prevent retry loops
+                                info?.OnRequestComplete(null);
+                            }
+                        }
+                    }
                     EveMonClient.Notifications.NotifyCharacterNameError(result);
+                }
                 else
                 {
                     EveMonClient.Notifications.InvalidateAPIError();
@@ -231,6 +268,10 @@ namespace EVEMon.Common.Service
             protected override string Prefetch(long id)
             {
                 string name = null;
+
+                // Check if we already have a cached value from a previous session
+                if (m_cache.TryGetValue(id, out StringIDInfo cached) && cached.Value != null)
+                    return cached.Value;
 
                 if (id == 0L)
                     // Empty IDs are always "unknown"
