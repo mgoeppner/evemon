@@ -1,0 +1,214 @@
+name: Update SDE Datafiles
+
+on:
+  schedule:
+    # Check daily at 14:00 UTC (after CCP's typical downtime)
+    - cron: '0 14 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-sde:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Get latest SDE release from eve-sde-converter
+        id: sde-release
+        shell: bash
+        run: |
+          RELEASE=$(gh release view --repo noirsoldats/eve-sde-converter --json tagName,publishedAt -q '.tagName')
+          echo "tag=$RELEASE" >> "$GITHUB_OUTPUT"
+
+          # Extract build number from tag (e.g., sde-3279491 -> 3279491)
+          BUILD=$(echo "$RELEASE" | sed 's/sde-//')
+          echo "build=$BUILD" >> "$GITHUB_OUTPUT"
+
+          # Check if a PR branch for this version already exists
+          if git ls-remote --heads origin "automated/sde-update-$BUILD" | grep -q .; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "SDE $BUILD already applied, skipping."
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+            echo "New SDE version: $BUILD"
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Download SDE database
+        if: steps.sde-release.outputs.skip == 'false'
+        shell: bash
+        run: |
+          gh release download ${{ steps.sde-release.outputs.tag }} \
+            --repo noirsoldats/eve-sde-converter \
+            --pattern "eve.db" \
+            --dir tools/XmlGenerator
+          # XmlGenerator expects sqlite-latest.sqlite
+          mv tools/XmlGenerator/eve.db tools/XmlGenerator/sqlite-latest.sqlite
+          echo "Downloaded SDE database (${{ steps.sde-release.outputs.tag }})"
+          ls -lh tools/XmlGenerator/sqlite-latest.sqlite
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Build XmlGenerator
+        if: steps.sde-release.outputs.skip == 'false'
+        run: dotnet build tools/XmlGenerator/XmlGenerator.csproj -c Release
+
+      - name: Run XmlGenerator
+        if: steps.sde-release.outputs.skip == 'false'
+        shell: cmd
+        run: |
+          REM App.config has Data Source=..\..\sqlite-latest.sqlite
+          REM From net8.0-windows, ../.. resolves to bin/ (not XmlGenerator/)
+          copy tools\XmlGenerator\sqlite-latest.sqlite tools\XmlGenerator\bin\sqlite-latest.sqlite
+          cd tools\XmlGenerator\bin\Release\net8.0-windows
+          EVEMonXmlGenerator.exe
+          if %ERRORLEVEL% NEQ 0 echo XmlGenerator exited with code %ERRORLEVEL%
+
+      - name: Check for changes
+        if: steps.sde-release.outputs.skip == 'false'
+        id: changes
+        shell: bash
+        run: |
+          if git diff --quiet src/EVEMon.Common/Resources/ src/EVEMon.Common/Serialization/Flags.xml; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No datafile changes detected."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "Datafile changes detected:"
+            git diff --stat src/EVEMon.Common/Resources/ src/EVEMon.Common/Serialization/Flags.xml
+          fi
+
+      - name: Diff size sanity check
+        if: steps.sde-release.outputs.skip == 'false' && steps.changes.outputs.changed == 'true'
+        id: diffcheck
+        shell: bash
+        run: |
+          # Calculate total size of changed datafiles in bytes
+          DIFF_BYTES=$(git diff --numstat src/EVEMon.Common/Resources/ | \
+            awk '{ total += $1 + $2 } END { print total+0 }')
+          echo "diff_bytes=$DIFF_BYTES" >> "$GITHUB_OUTPUT"
+
+          # Binary files report as - / - in numstat, so also check raw byte diff
+          CHANGED_SIZE=0
+          for f in src/EVEMon.Common/Resources/*.xml.gzip; do
+            if ! git diff --quiet -- "$f" 2>/dev/null; then
+              SIZE=$(stat -c%s "$f" 2>/dev/null || stat -f%z "$f" 2>/dev/null || echo 0)
+              CHANGED_SIZE=$((CHANGED_SIZE + SIZE))
+            fi
+          done
+          echo "changed_size=$CHANGED_SIZE" >> "$GITHUB_OUTPUT"
+
+          # Threshold: 2MB of changed file size is unusual for a routine SDE update
+          THRESHOLD=2097152
+          if [ "$CHANGED_SIZE" -gt "$THRESHOLD" ]; then
+            echo "large=true" >> "$GITHUB_OUTPUT"
+            echo "WARNING: Large diff detected (${CHANGED_SIZE} bytes changed). Flagging for review."
+          else
+            echo "large=false" >> "$GITHUB_OUTPUT"
+            echo "Diff size OK (${CHANGED_SIZE} bytes changed)."
+          fi
+
+      - name: Update patch.xml
+        if: steps.sde-release.outputs.skip == 'false' && steps.changes.outputs.changed == 'true'
+        shell: bash
+        run: |
+          chmod +x .github/scripts/update-patch-xml.sh
+          .github/scripts/update-patch-xml.sh \
+            "${{ steps.sde-release.outputs.build }}" \
+            "${{ github.repository }}" \
+            "updates/patch.xml" \
+            "src/EVEMon.Common/Resources"
+
+      - name: Create branch and commit
+        if: steps.sde-release.outputs.skip == 'false' && steps.changes.outputs.changed == 'true'
+        shell: bash
+        run: |
+          BUILD=${{ steps.sde-release.outputs.build }}
+          BRANCH="automated/sde-update-$BUILD"
+          DATE=$(date -u +%Y-%m-%d)
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add src/EVEMon.Common/Resources/ src/EVEMon.Common/Serialization/Flags.xml updates/patch.xml
+          git commit -m "Update datafiles for SDE $BUILD ($DATE)"
+          git push origin "$BRANCH"
+
+      - name: Create release with datafile assets
+        if: steps.sde-release.outputs.skip == 'false' && steps.changes.outputs.changed == 'true'
+        shell: bash
+        run: |
+          BUILD=${{ steps.sde-release.outputs.build }}
+
+          # Upload all datafiles as release assets
+          gh release create "sde-${BUILD}" \
+            --title "SDE ${BUILD} Datafiles" \
+            --notes "Automated datafile release from CCP SDE build ${BUILD}." \
+            --target "automated/sde-update-${BUILD}" \
+            src/EVEMon.Common/Resources/eve-*-en-US.xml.gzip
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Create Pull Request
+        if: steps.sde-release.outputs.skip == 'false' && steps.changes.outputs.changed == 'true'
+        shell: bash
+        run: |
+          BUILD=${{ steps.sde-release.outputs.build }}
+          DATE=$(date -u +%Y-%m-%d)
+          LARGE="${{ steps.diffcheck.outputs.large }}"
+          CHANGED_SIZE="${{ steps.diffcheck.outputs.changed_size }}"
+          DIFF_STAT=$(git diff --stat HEAD~1)
+
+          # Build PR body in a temp file to avoid YAML/heredoc issues
+          BODY_FILE=$(mktemp)
+          echo "## Summary" >> "$BODY_FILE"
+          echo "" >> "$BODY_FILE"
+          echo "Automated update of EVEMon datafiles from CCP's Static Data Export." >> "$BODY_FILE"
+          echo "" >> "$BODY_FILE"
+          echo "- **SDE Build:** $BUILD" >> "$BODY_FILE"
+          echo "- **Source:** [eve-sde-converter ${{ steps.sde-release.outputs.tag }}](https://github.com/noirsoldats/eve-sde-converter/releases/tag/${{ steps.sde-release.outputs.tag }})" >> "$BODY_FILE"
+          echo "- **Date:** $DATE" >> "$BODY_FILE"
+          echo "- **Release:** [sde-${BUILD}](https://github.com/${{ github.repository }}/releases/tag/sde-${BUILD})" >> "$BODY_FILE"
+
+          if [ "$LARGE" = "true" ]; then
+            echo "" >> "$BODY_FILE"
+            echo "> **Warning:** This update is unusually large (${CHANGED_SIZE} bytes of changed datafiles). This may indicate a major game patch or warrants closer inspection before merging." >> "$BODY_FILE"
+          fi
+
+          echo "" >> "$BODY_FILE"
+          echo "### Changes" >> "$BODY_FILE"
+          echo "" >> "$BODY_FILE"
+          echo "- Updated datafiles in \`src/EVEMon.Common/Resources/\`" >> "$BODY_FILE"
+          echo "- Updated \`updates/patch.xml\` with new MD5 checksums and release asset URLs" >> "$BODY_FILE"
+          echo "- Created release \`sde-${BUILD}\` with datafile assets for live patching" >> "$BODY_FILE"
+          echo "" >> "$BODY_FILE"
+          echo "### Changed files" >> "$BODY_FILE"
+          echo "" >> "$BODY_FILE"
+          echo "$DIFF_STAT" >> "$BODY_FILE"
+          echo "" >> "$BODY_FILE"
+          echo "## Test plan" >> "$BODY_FILE"
+          echo "" >> "$BODY_FILE"
+          echo "- [ ] Verify EVEMon loads without errors" >> "$BODY_FILE"
+          echo "- [ ] Spot-check new items/skills appear in the skill browser" >> "$BODY_FILE"
+          echo "- [ ] Verify live patching works (patch.xml points to correct release assets)" >> "$BODY_FILE"
+
+          gh pr create \
+            --title "Update datafiles for SDE $BUILD" \
+            --body-file "$BODY_FILE" \
+            --base main \
+            --head "automated/sde-update-$BUILD"
+
+          rm -f "$BODY_FILE"
+        env:
+          GH_TOKEN: ${{ github.token }}
