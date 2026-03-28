@@ -119,16 +119,22 @@ jobs:
             echo "Diff size OK (${CHANGED_SIZE} bytes changed)."
           fi
 
+      - name: Build PatchXmlCreator
+        if: steps.sde-release.outputs.skip == 'false' && steps.changes.outputs.changed == 'true'
+        run: dotnet build tools/PatchXmlCreator/PatchXmlCreator.csproj -c Release
+
       - name: Update patch.xml
         if: steps.sde-release.outputs.skip == 'false' && steps.changes.outputs.changed == 'true'
         shell: bash
         run: |
-          chmod +x .github/scripts/update-patch-xml.sh
-          .github/scripts/update-patch-xml.sh \
-            "${{ steps.sde-release.outputs.build }}" \
-            "${{ github.repository }}" \
-            "updates/patch.xml" \
-            "src/EVEMon.Common/Resources"
+          BUILD=${{ steps.sde-release.outputs.build }}
+          REPO="${{ github.repository }}"
+          dotnet run --project tools/PatchXmlCreator/PatchXmlCreator.csproj -c Release --no-build -- \
+            datafiles-only \
+            updates/patch.xml \
+            src/EVEMon.Common/Resources \
+            "https://github.com/${REPO}/releases/download/sde-${BUILD}" \
+            "$BUILD"
 
       - name: Create branch and commit
         if: steps.sde-release.outputs.skip == 'false' && steps.changes.outputs.changed == 'true'
