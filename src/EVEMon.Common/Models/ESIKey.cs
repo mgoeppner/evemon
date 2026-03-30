@@ -169,7 +169,27 @@ namespace EVEMon.Common.Models
 
 
         #region Internal Methods
-        
+
+        /// <summary>
+        /// Gets whether this key currently has a usable access token for authenticated ESI
+        /// queries. If the token expired, this also kicks off a refresh attempt.
+        /// </summary>
+        internal bool HasUsableAccessToken
+        {
+            get
+            {
+                CheckAccessToken();
+                return !m_queryPending && !HasError && !string.IsNullOrEmpty(AccessToken) &&
+                    m_keyExpires > DateTime.UtcNow;
+            }
+        }
+
+        /// <summary>
+        /// Gets the current access token if it is ready for use, or null while it is being
+        /// refreshed or is otherwise unavailable.
+        /// </summary>
+        internal string GetAccessTokenForQuery() => HasUsableAccessToken ? AccessToken : null;
+
         /// <summary>
         /// Starts obtaining an access token from the refresh token, because either the access
         /// token expired or was never obtained.

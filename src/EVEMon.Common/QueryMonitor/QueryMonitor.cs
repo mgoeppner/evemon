@@ -158,6 +158,13 @@ namespace EVEMon.Common.QueryMonitor
         /// <returns>False if an API key was required and not found.</returns>
         internal virtual bool HasESIKey => true;
 
+        /// <summary>
+        /// Gets true if the monitor currently has everything required to start a request. This
+        /// is separate from HasESIKey / HasAccess so a monitor can remain pending while an
+        /// access token refresh is still in flight.
+        /// </summary>
+        protected virtual bool CanQueryNow => true;
+
         #endregion
 
 
@@ -229,6 +236,10 @@ namespace EVEMon.Common.QueryMonitor
                 else if (!HasAccess)
                     // This ESI key does not have access
                     Status = QueryStatus.NoAccess;
+                else if (!CanQueryNow)
+                    // Auth details exist but are not usable yet, e.g. an access token refresh
+                    // is still running.
+                    Status = QueryStatus.Pending;
                 else if (EsiErrors.IsErrorCountExceeded || (!m_forceUpdate && NextUpdate >
                         DateTime.UtcNow))
                     // Is it an auto-update test?

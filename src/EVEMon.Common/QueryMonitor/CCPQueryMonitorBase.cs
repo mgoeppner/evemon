@@ -38,7 +38,12 @@ namespace EVEMon.Common.QueryMonitor
         /// </summary>
         /// <returns>False if an API key was required and not found.</returns>
         internal override bool HasESIKey => m_character.Identity.ESIKeys.Any();
-        
+
+        /// <summary>
+        /// Gets whether the bound ESI key currently has a usable access token.
+        /// </summary>
+        protected override bool CanQueryNow => m_apiKey?.HasUsableAccessToken ?? false;
+
         /// <summary>
         /// Performs the query to the provider, passing the required arguments.
         /// </summary>
