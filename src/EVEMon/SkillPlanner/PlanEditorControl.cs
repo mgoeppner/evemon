@@ -402,9 +402,10 @@ namespace EVEMon.SkillPlanner
             // Disable autorefresh timer, it will be enabled if a training entry is found
             tmrAutoRefresh.Stop();
 
-            // Stores selection and focus, to restore them after the update
+            // Stores selection, focus, and scroll position, to restore them after the update
             Dictionary<int, bool> selection = StoreSelection();
             int focusedHashCode = lvSkills.FocusedItem?.Tag.GetHashCode() ?? 0;
+            int topItemHash = lvSkills.TopItem?.Tag?.GetHashCode() ?? 0;
 
             lvSkills.BeginUpdate();
             try
@@ -459,6 +460,11 @@ namespace EVEMon.SkillPlanner
             {
                 lvSkills.EndUpdate();
             }
+
+            // Restore scroll position AFTER EndUpdate — TopItem uses LVM_SCROLL which is
+            // ignored while WM_SETREDRAW is FALSE (i.e. inside BeginUpdate/EndUpdate), so
+            // it must be set here once the control is fully ready to accept scroll commands.
+            RestoreScrollPosition(topItemHash);
         }
 
         /// <summary>
@@ -783,6 +789,12 @@ namespace EVEMon.SkillPlanner
         private void UpdateListColumns()
         {
             m_isUpdatingColumns = true;
+
+            // Capture scroll position before BeginUpdate/Items.Clear can affect it.
+            // Must be outside the BeginUpdate block because TopItem restoration (below)
+            // also needs to happen outside BeginUpdate for the same reason.
+            int topItemHash = lvSkills.TopItem?.Tag?.GetHashCode() ?? 0;
+
             lvSkills.BeginUpdate();
 
             try
@@ -819,6 +831,10 @@ namespace EVEMon.SkillPlanner
                 lvSkills.EndUpdate();
                 m_isUpdatingColumns = false;
             }
+
+            // Re-apply scroll position after this method's own EndUpdate for the same
+            // reason as in UpdateSkillList: LVM_SCROLL is suppressed inside BeginUpdate.
+            RestoreScrollPosition(topItemHash);
         }
 
         /// <summary>
@@ -836,6 +852,24 @@ namespace EVEMon.SkillPlanner
             }
 
             return c;
+        }
+
+        /// <summary>
+        /// Restores the scroll position to the item whose tag hash matches <paramref name="topItemHash"/>.
+        /// Must be called after <see cref="ListView.EndUpdate"/> — the underlying LVM_SCROLL message is
+        /// suppressed while WM_SETREDRAW is FALSE (i.e. inside a BeginUpdate/EndUpdate block).
+        /// </summary>
+        /// <param name="topItemHash">Hash code of the item to restore as the top visible row, or 0 to skip.</param>
+        private void RestoreScrollPosition(int topItemHash)
+        {
+            if (topItemHash == 0)
+                return;
+
+            ListViewItem topItem = lvSkills.Items.Cast<ListViewItem>()
+                .FirstOrDefault(x => x.Tag?.GetHashCode() == topItemHash);
+
+            if (topItem != null)
+                lvSkills.TopItem = topItem;
         }
 
         /// <summary>
