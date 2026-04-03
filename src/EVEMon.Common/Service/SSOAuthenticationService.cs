@@ -41,23 +41,44 @@ namespace EVEMon.Common.Service
         }
 
         /// <summary>
-        /// Starts obtaining information about the character used to authenticate the specified
-        /// token.
+        /// Obtains information about the character from the access token JWT claims.
+        /// Replaces the deprecated /oauth/verify endpoint with local JWT decoding.
         /// </summary>
-        /// <param name="token">The auth token used.</param>
+        /// <param name="token">The access token (JWT) used.</param>
         /// <param name="callback">A callback to receive the token info.</param>
         public static void GetTokenInfo(string token, Action<JsonResult<EsiAPITokenInfo>>
             callback)
         {
-            var url = new Uri(NetworkConstants.SSOBase + NetworkConstants.SSOCharID);
-            Util.DownloadJsonAsync<EsiAPITokenInfo>(url, new RequestParams()
+            JsonResult<EsiAPITokenInfo> result;
+            try
             {
-                Authentication = token
-            }).ContinueWith((result) => Dispatcher.Invoke(() =>
+                var jwt = new JwtSecurityToken(token);
+                // EVE SSO v2 JWT "sub" claim format: "CHARACTER:EVE:<character_id>"
+                string sub = jwt.Subject;
+                string name = jwt.Payload.TryGetValue("name", out var nameVal) ?
+                    nameVal?.ToString() : string.Empty;
+                long characterID = 0;
+                if (!string.IsNullOrEmpty(sub))
+                {
+                    var parts = sub.Split(':');
+                    if (parts.Length >= 3)
+                        long.TryParse(parts[2], out characterID);
+                }
+                if (characterID <= 0)
+                    throw new ArgumentException("Could not extract character ID from JWT");
+                var tokenInfo = new EsiAPITokenInfo()
+                {
+                    CharacterID = characterID,
+                    CharacterName = name ?? string.Empty
+                };
+                result = new JsonResult<EsiAPITokenInfo>(new ResponseParams(200), tokenInfo);
+            }
+            catch (Exception e)
             {
-                // Run the callback on the dispatcher thread
-                callback?.Invoke(result.Result);
-            }));
+                ExceptionHandler.LogException(e, true);
+                result = new JsonResult<EsiAPITokenInfo>(new ResponseParams(0));
+            }
+            Dispatcher.Invoke(() => callback?.Invoke(result));
         }
 
         /// <summary>

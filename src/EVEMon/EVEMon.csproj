@@ -282,10 +282,7 @@
     <PackageReference Include="WinForms.DataVisualization" Version="1.9.2" />
   </ItemGroup>
   <PropertyGroup>
-    <PreBuildEvent>
-        cd "$(SolutionDir)tools\ResFileCreator\bin\$(Configuration)\net8.0-windows\"
-        EVEMonResFileCreator.exe
-    </PreBuildEvent>
+    <PreBuildEvent>pushd "$(SolutionDir)tools\ResFileCreator\bin\$(Configuration)\net8.0-windows" &amp;&amp; .\EVEMonResFileCreator.exe &amp;&amp; popd</PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PostBuildEvent>del "$(MSBuildProjectDirectory)"\EVEMon.res
