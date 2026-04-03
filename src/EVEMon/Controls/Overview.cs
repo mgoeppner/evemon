@@ -24,6 +24,7 @@ namespace EVEMon.Controls
         private bool m_safeForWork;
         private PortraitSizes m_portraitSize;
         private bool m_showPortrait;
+        private bool m_pendingUpdate;
 
 
         #region Constructor
@@ -64,6 +65,7 @@ namespace EVEMon.Controls
             EveMonClient.MonitoredCharacterCollectionChanged += EveMonClient_MonitoredCharacterCollectionChanged;
             EveMonClient.CharacterUpdated += EveMonClient_CharacterUpdated;
             EveMonClient.SettingsChanged += EveMonClient_SettingsChanged;
+            EveMonClient.TimerTick += EveMonClient_TimerTick;
 
             Disposed += OnDisposed;
         }
@@ -90,6 +92,7 @@ namespace EVEMon.Controls
             EveMonClient.MonitoredCharacterCollectionChanged -= EveMonClient_MonitoredCharacterCollectionChanged;
             EveMonClient.CharacterUpdated -= EveMonClient_CharacterUpdated;
             EveMonClient.SettingsChanged -= EveMonClient_SettingsChanged;
+            EveMonClient.TimerTick -= EveMonClient_TimerTick;
             Disposed -= OnDisposed;
         }
 
@@ -394,12 +397,26 @@ namespace EVEMon.Controls
         }
 
         /// <summary>
-        /// When aby character updates, we update the layout.
+        /// When any character updates, mark the overview as needing a refresh.
+        /// The actual update is coalesced and performed on the next TimerTick
+        /// to avoid hundreds of redundant rebuilds during startup.
         /// </summary>
         /// <param name="sender">The sender.</param>
         /// <param name="e">The <see cref="EVEMon.Common.CustomEventArgs.CharacterChangedEventArgs"/> instance containing the event data.</param>
         private void EveMonClient_CharacterUpdated(object sender, CharacterChangedEventArgs e)
         {
+            m_pendingUpdate = true;
+        }
+
+        /// <summary>
+        /// On each timer tick, flush any pending overview update.
+        /// </summary>
+        private void EveMonClient_TimerTick(object sender, EventArgs e)
+        {
+            if (!m_pendingUpdate)
+                return;
+
+            m_pendingUpdate = false;
             UpdateContent();
         }
 

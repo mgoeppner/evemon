@@ -62,8 +62,10 @@ namespace EVEMon.Common.Collections.Global
 
             case NotificationBehaviour.Merge:
                 // Merge the notifications with the same key
+                // Snapshot Items to prevent IndexOutOfRangeException if the notification
+                // chain (via ThreadSafeInvoke) re-enters and modifies Items concurrently
                 long key = notification.InvalidationKey;
-                foreach (NotificationEventArgs other in Items.Where(x => x.InvalidationKey == key))
+                foreach (NotificationEventArgs other in Items.ToArray().Where(x => x.InvalidationKey == key))
                 {
                     notification.Append(other);
                 }

@@ -448,51 +448,52 @@ namespace EVEMon
             {
                 TabPage selectedTab = tcCharacterTabs.SelectedTab;
 
-                // Collect the existing pages
-                Dictionary<Character, TabPage> pages = tcCharacterTabs.TabPages.Cast<TabPage>().Where(
+                // Collect the existing pages keyed by character
+                Dictionary<Character, TabPage> existingPages = tcCharacterTabs.TabPages.Cast<TabPage>().Where(
                     page => page.Tag is Character).ToDictionary(page => (Character)page.Tag);
 
-                // Rebuild the pages
-                int index = 0;
+                // Build the desired tab order in memory first, reusing existing pages
+                // and creating new ones as needed — avoids per-tab Insert/Remove layout churn
+                var desiredPages = new List<TabPage>();
                 foreach (Character character in EveMonClient.MonitoredCharacters)
                 {
-                    // Retrieve the current page, or null if we're past the limits
-                    TabPage currentPage = index < tcCharacterTabs.TabCount ? tcCharacterTabs.TabPages[index] : null;
-
-                    // Is it the overview ? We'll deal with it later
-                    if (currentPage == tpOverview)
-                        currentPage = ++index < tcCharacterTabs.TabCount ? tcCharacterTabs.TabPages[index] : null;
-
-                    // Does the page match with the character ?
-                    if ((Character)currentPage?.Tag == character)
-                        // Update the text in case label changed
-                        currentPage.Text = character.LabelPrefix + character.Name;
+                    TabPage page;
+                    if (existingPages.TryGetValue(character, out page))
+                    {
+                        // Reuse existing page, update text in case label changed
+                        page.Text = character.LabelPrefix + character.Name;
+                        existingPages.Remove(character);
+                    }
                     else
                     {
-                        // Retrieve the page when it was previously created
-                        // Is the page later in the collection ?
-                        TabPage page;
-                        if (pages.TryGetValue(character, out page))
-                            tcCharacterTabs.TabPages.Remove(page); // Remove the page from old location
-                        else
-                            page = CreateTabPage(character); // Create a new page
-
-                        // Inserts the page in the proper location
-                        tcCharacterTabs.TabPages.Insert(index, page);
+                        // Create a new lightweight page
+                        page = CreateTabPage(character);
                     }
-
-                    // Remove processed character from the dictionary and move forward
-                    if (character != null)
-                        pages.Remove(character);
-
-                    index++;
+                    desiredPages.Add(page);
                 }
 
-                // Ensures the overview has been added when necessary
-                AddOverviewTab();
+                // Insert the overview tab at the correct position
+                if (tpOverview != null && Settings.UI.MainWindow.ShowOverview)
+                {
+                    int overviewIndex = Math.Max(0, Math.Min(desiredPages.Count,
+                        Settings.UI.MainWindow.OverviewIndex));
+                    desiredPages.Insert(overviewIndex, tpOverview);
+                }
 
-                // Dispose the removed tabs
-                foreach (TabPage page in pages.Values)
+                // Replace all tabs in one batch — much faster than individual Insert/Remove
+                tcCharacterTabs.SuspendLayout();
+                try
+                {
+                    tcCharacterTabs.TabPages.Clear();
+                    tcCharacterTabs.TabPages.AddRange(desiredPages.ToArray());
+                }
+                finally
+                {
+                    tcCharacterTabs.ResumeLayout(false);
+                }
+
+                // Dispose the removed tabs (pages no longer in the desired set)
+                foreach (TabPage page in existingPages.Values)
                 {
                     page.Dispose();
                 }
@@ -511,50 +512,15 @@ namespace EVEMon
         }
 
         /// <summary>
-        /// Adds the overview tab.
-        /// </summary>
-        private void AddOverviewTab()
-        {
-            if (tpOverview == null)
-                return;
-
-            if (Settings.UI.MainWindow.ShowOverview)
-            {
-                // Trim the overview page index
-                int overviewIndex = Math.Max(0, Math.Min(tcCharacterTabs.TabCount - 1,
-                    Settings.UI.MainWindow.OverviewIndex));
-
-                // Inserts it if it doesn't exist
-                if (!tcCharacterTabs.TabPages.Contains(tpOverview))
-                    tcCharacterTabs.TabPages.Insert(overviewIndex, tpOverview);
-
-                // If it exist insert it at the correct position
-                if (tcCharacterTabs.TabPages.IndexOf(tpOverview) != overviewIndex)
-                {
-                    tcCharacterTabs.TabPages.Remove(tpOverview);
-                    tcCharacterTabs.TabPages.Insert(overviewIndex, tpOverview);
-                }
-
-                // Select the Overview tab if it's the only tab
-                if (tcCharacterTabs.TabCount == 1)
-                    tcCharacterTabs.SelectedTab = tpOverview;
-
-                return;
-            }
-
-            // Or remove it when it should not be here anymore
-            if (tcCharacterTabs.TabPages.Contains(tpOverview))
-                tcCharacterTabs.TabPages.Remove(tpOverview);
-        }
-
-        /// <summary>
         /// Creates the tab page for the given character.
         /// </summary>
         /// <param name="character">The character</param>
         /// <returns>A tab page.</returns>
         private static TabPage CreateTabPage(Character character)
         {
-            // Create the tab
+            // Create the tab without the heavy CharacterMonitor control.
+            // The monitor is created lazily when the tab is first selected,
+            // which dramatically speeds up startup with many characters.
             TabPage page;
             TabPage tempPage = null;
             try
@@ -563,9 +529,6 @@ namespace EVEMon
                 tempPage.UseVisualStyleBackColor = true;
                 tempPage.Padding = new Padding(5);
                 tempPage.Tag = character;
-
-                // Create the character monitor
-                CreateCharacterMonitor(character, tempPage);
 
                 page = tempPage;
                 tempPage = null;
@@ -626,6 +589,8 @@ namespace EVEMon
         /// <param name="e"></param>
         private void tcCharacterTabs_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Ensure the CharacterMonitor is created for the newly selected tab
+            GetCurrentMonitor();
             UpdateControlsOnTabSelectionChange();
         }
 
@@ -669,10 +634,30 @@ namespace EVEMon
         /// <returns></returns>
         private CharacterMonitor GetCurrentMonitor()
         {
-            if (tcCharacterTabs.SelectedTab == null || tcCharacterTabs.SelectedTab.Controls.Count == 0)
+            if (tcCharacterTabs.SelectedTab == null || tcCharacterTabs.SelectedTab == tpOverview)
                 return null;
 
-            return tcCharacterTabs.SelectedTab.Controls[0] as CharacterMonitor;
+            // Lazily create the CharacterMonitor on first access to avoid
+            // creating ~100 controls per character during startup
+            TabPage tab = tcCharacterTabs.SelectedTab;
+            Character character = tab.Tag as Character;
+            if (character == null)
+                return null;
+
+            if (tab.Controls.Count == 0)
+            {
+                CreateCharacterMonitor(character, tab);
+
+                // Force OnVisibleChanged to fire on the newly created monitor so that
+                // all sub-controls (header, body, footer) populate their data.
+                // Without this, the controls miss the initial update because OnLoad
+                // fires before the control is fully visible in the layout.
+                var monitor = tab.Controls[0];
+                monitor.Visible = false;
+                monitor.Visible = true;
+            }
+
+            return tab.Controls[0] as CharacterMonitor;
         }
 
         /// <summary>
@@ -2064,6 +2049,7 @@ namespace EVEMon
 
             // Clear all character monitor notifications
             foreach (CharacterMonitor monitor in tcCharacterTabs.TabPages.Cast<TabPage>()
+                .Where(tabPage => tabPage.Controls.Count > 0)
                 .Select(tabPage => tabPage.Controls[0] as CharacterMonitor))
             {
                 monitor?.ClearNotifications();

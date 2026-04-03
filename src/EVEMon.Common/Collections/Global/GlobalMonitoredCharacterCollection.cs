@@ -96,9 +96,11 @@ namespace EVEMon.Common.Collections.Global
                 Items.Add(character);
                 character.Monitored = true;
                 character.UISettings = characterSettings.Settings;
-
-                EveMonClient.OnMonitoredCharactersChanged();
             }
+
+            // Notify once after all characters have been imported, instead of
+            // per-character which caused N redundant LayoutTabPages + Settings.Save calls
+            EveMonClient.OnMonitoredCharactersChanged();
         }
 
         /// <summary>

@@ -166,9 +166,23 @@ namespace EVEMon.Common.Helpers
         /// <returns></returns>
         private static void CopyFile(string srcFileName, string destFileName)
         {
-            using (Stream sourceStream = Util.GetFileStream(srcFileName, FileMode.Open, FileAccess.Read, FileShare.Read))
-            using (Stream destStream = Util.GetFileStream(destFileName, FileMode.Create, FileAccess.Write))
-                sourceStream.CopyTo(destStream);
+            // Use a retry loop to handle transient IOException from concurrent file access
+            const int maxRetries = 3;
+            for (int attempt = 0; attempt < maxRetries; attempt++)
+            {
+                try
+                {
+                    using (Stream sourceStream = Util.GetFileStream(srcFileName, FileMode.Open, FileAccess.Read, FileShare.Read))
+                    using (Stream destStream = Util.GetFileStream(destFileName, FileMode.Create, FileAccess.Write))
+                        sourceStream.CopyTo(destStream);
+                    return;
+                }
+                catch (IOException) when (attempt < maxRetries - 1)
+                {
+                    // Brief delay before retry to let the other handle close
+                    System.Threading.Thread.Sleep(100 * (attempt + 1));
+                }
+            }
         }
 
         /// <summary>

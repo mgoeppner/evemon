@@ -61,6 +61,10 @@ namespace EVEMon.CharacterMonitoring
             EveMonClient.SchedulerChanged += EveMonClient_SchedulerChanged;
             EveMonClient.CharacterSkillQueueUpdated += EveMonClient_CharacterSkillQueueUpdated;
             Disposed += OnDisposed;
+
+            // Populate controls immediately for lazy monitor creation
+            UpdateFrequentControls();
+            UpdateInfrequentControls();
         }
 
         /// <summary>

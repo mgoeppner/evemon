@@ -128,10 +128,14 @@ namespace EVEMon.Common.Models.Collections
             bool isCorporateMonitor = true;
             if (Items.Count > 0)
             {
+                // Snapshot the items list to avoid IndexOutOfRangeException if the
+                // notification chain causes Items to be modified during iteration
+                var snapshot = Items.ToList();
+
                 // Add the not notified "Ready" jobs to the completed list
                 var jobsCompleted = new LinkedList<IndustryJob>();
                 var characterJobs = new LinkedList<IndustryJob>();
-                foreach (IndustryJob job in Items)
+                foreach (IndustryJob job in snapshot)
                 {
                     if (job.IsActive && job.TTC.Length == 0 && !job.NotificationSend)
                     {

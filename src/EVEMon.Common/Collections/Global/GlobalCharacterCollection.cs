@@ -142,7 +142,7 @@ namespace EVEMon.Common.Collections.Global
                 character.Dispose();
             }
 
-            // Import the characters, their identies, etc
+            // Import the characters, their identities, etc
             Items.Clear();
             foreach (SerializableSettingsCharacter serialCharacter in serial)
             {

@@ -98,7 +98,8 @@ namespace EVEMon.Common.Models
             EveMonClient.CharacterPlaneteryPinsCompleted += EveMonClient_CharacterPlaneteryPinsCompleted;
             EveMonClient.ESIKeyInfoUpdated += EveMonClient_ESIKeyInfoUpdated;
             EveMonClient.EveIDToNameUpdated += EveMonClient_EveIDToNameUpdated;
-            EveMonClient.TimerTick += EveMonClient_TimerTick;
+            // Note: TimerTick subscription is deferred until data querying starts
+            // to reduce UI thread overhead during startup
         }
 
         /// <summary>
@@ -473,8 +474,8 @@ namespace EVEMon.Common.Models
             // EVE notifications IDs
             EVENotifications.Import(serial.EveNotificationsIDs);
 
-            // Kill Logs
-            KillLog.ImportFromCacheFile();
+            // Kill Logs are loaded lazily on first access to avoid
+            // synchronous file I/O during startup
 
             // Fire the global event
             EveMonClient.OnCharacterUpdated(this);
@@ -758,11 +759,14 @@ namespace EVEMon.Common.Models
             if (!Identity.ESIKeys.Any())
                 return;
 
+            bool needsTimerTick = false;
+
             if (m_characterDataQuerying == null && Identity.ESIKeys.Any())
             {
                 m_characterDataQuerying = new CharacterDataQuerying(this);
                 ResetLastAPIUpdates(m_lastAPIUpdates.Where(lastUpdate => Enum.IsDefined(
                     typeof(ESIAPICharacterMethods), lastUpdate.Method)));
+                needsTimerTick = true;
             }
 
             if (m_corporationDataQuerying == null && Identity.ESIKeys.Any())
@@ -770,7 +774,12 @@ namespace EVEMon.Common.Models
                 m_corporationDataQuerying = new CorporationDataQuerying(this);
                 ResetLastAPIUpdates(m_lastAPIUpdates.Where(lastUpdate => Enum.IsDefined(
                     typeof(ESIAPICorporationMethods), lastUpdate.Method)));
+                needsTimerTick = true;
             }
+
+            // Subscribe to TimerTick only once data querying is active
+            if (needsTimerTick)
+                EveMonClient.TimerTick += EveMonClient_TimerTick;
         }
 
         /// <summary>
@@ -895,11 +904,17 @@ namespace EVEMon.Common.Models
                 if (!CorporationIndustryJobs.Any(job => job.ActiveJobState ==
                         ActiveJobState.Ready && !job.NotificationSend))
                 {
-                    EveMonClient.Notifications.NotifyCharacterIndustryJobCompletion(this,
-                        m_jobsCompletedForCharacter);
+                    // Snapshot the list before notifying — the notification constructor
+                    // iterates the enumerable, and Clear() below (or another timer tick
+                    // calling AddRange) would modify the list mid-iteration, causing
+                    // IndexOutOfRangeException.
+                    var completedSnapshot = m_jobsCompletedForCharacter.ToList();
 
-                    // Now that we have send the notification clear the list
+                    // Now that we have a snapshot, clear the list before notifying
                     m_jobsCompletedForCharacter.Clear();
+
+                    EveMonClient.Notifications.NotifyCharacterIndustryJobCompletion(this,
+                        completedSnapshot);
                 }
             }
         }

@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using EVEMon.Common.Collections;
 using EVEMon.Common.Enumerations.CCPAPI;
@@ -9,11 +10,12 @@ using System;
 
 namespace EVEMon.Common.Models.Collections
 {
-    public sealed class KillLogCollection : ReadonlyCollection<KillLog>
+    public sealed class KillLogCollection : ReadonlyCollection<KillLog>, IEnumerable<KillLog>, IEnumerable
     {
         private readonly CCPCharacter m_ccpCharacter;
         private int m_killMailCounter;
         private readonly List<KillLog> m_pendingItems;
+        private bool m_cacheLoaded;
 
         #region Constructor
 
@@ -26,6 +28,43 @@ namespace EVEMon.Common.Models.Collections
             m_ccpCharacter = ccpCharacter;
             m_killMailCounter = 0;
             m_pendingItems = new List<KillLog>(32);
+            m_cacheLoaded = false;
+        }
+
+        #endregion
+
+
+        #region Lazy Cache Loading
+
+        /// <summary>
+        /// Ensures the kill log cache file has been loaded. Called lazily on first
+        /// enumeration to avoid synchronous file I/O during character construction.
+        /// </summary>
+        private void EnsureCacheLoaded()
+        {
+            if (m_cacheLoaded)
+                return;
+
+            m_cacheLoaded = true;
+            ImportFromCacheFile();
+        }
+
+        /// <summary>
+        /// Gets the enumerator, ensuring the cache is loaded first.
+        /// </summary>
+        IEnumerator<KillLog> IEnumerable<KillLog>.GetEnumerator()
+        {
+            EnsureCacheLoaded();
+            return Items.GetEnumerator();
+        }
+
+        /// <summary>
+        /// Gets the enumerator, ensuring the cache is loaded first.
+        /// </summary>
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            EnsureCacheLoaded();
+            return Items.GetEnumerator();
         }
 
         #endregion

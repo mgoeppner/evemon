@@ -79,6 +79,12 @@ namespace EVEMon.CharacterMonitoring
             EveMonClient.SettingsChanged += EveMonClient_SettingsChanged;
             EveMonClient.TimerTick += EveMonClient_TimerTick;
             Disposed += OnDisposed;
+
+            // Populate controls immediately — when the monitor is created lazily,
+            // the initial CharacterUpdated/CharacterInfoUpdated events have already
+            // fired and won't repeat until the next API refresh
+            UpdateFrequentControls();
+            UpdateInfrequentControls();
         }
 
         /// <summary>

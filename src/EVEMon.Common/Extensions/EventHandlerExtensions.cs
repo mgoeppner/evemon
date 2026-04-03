@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace EVEMon.Common.Extensions
 {
@@ -32,6 +33,11 @@ namespace EVEMon.Common.Extensions
                 // Check if our target requires an Invoke
                 if (sync != null && sync.InvokeRequired)
                 {
+                    // Skip if the target control is disposed or has no handle;
+                    // invoking on such a control causes unpredictable exceptions.
+                    if (sync is Control ctrl && (ctrl.IsDisposed || !ctrl.IsHandleCreated))
+                        continue;
+
                     // Yes it does, so invoke the handler using the target's BeginInvoke method, but wait for it to finish
                     // This is preferable to using Invoke so that if an exception is thrown its presented
                     // in the context of the handler, not the current thread
@@ -43,7 +49,13 @@ namespace EVEMon.Common.Extensions
                     }
                     catch (ObjectDisposedException)
                     {
-                        // Ignore, already cleaned up -- code was likely changed to use `using`.
+                        // Control was disposed between BeginInvoke and EndInvoke
+                    }
+                    catch (IndexOutOfRangeException) when (sync is Control c && (c.IsDisposed || !c.IsHandleCreated))
+                    {
+                        // Control.EndInvoke throws IndexOutOfRangeException when the
+                        // control's internal async result list is cleared during disposal
+                        // or handle recreation (e.g. resize triggering layout changes).
                     }
 
                     continue;
@@ -81,11 +93,31 @@ namespace EVEMon.Common.Extensions
                 // Check if our target requires an Invoke
                 if (sync != null && sync.InvokeRequired)
                 {
+                    // Skip if the target control is disposed or has no handle;
+                    // invoking on such a control causes unpredictable exceptions.
+                    if (sync is Control ctrl && (ctrl.IsDisposed || !ctrl.IsHandleCreated))
+                        continue;
+
                     // Yes it does, so invoke the handler using the target's BeginInvoke method, but wait for it to finish
                     // This is preferable to using Invoke so that if an exception is thrown its presented
                     // in the context of the handler, not the current thread
-                    IAsyncResult result = sync.BeginInvoke(handler, new[] { sender, e });
-                    sync.EndInvoke(result);
+                    IAsyncResult result = sync.BeginInvoke(handler, new[] { sender, (object)e });
+
+                    try
+                    {
+                        sync.EndInvoke(result);
+                    }
+                    catch (ObjectDisposedException)
+                    {
+                        // Control was disposed between BeginInvoke and EndInvoke
+                    }
+                    catch (IndexOutOfRangeException) when (sync is Control c && (c.IsDisposed || !c.IsHandleCreated))
+                    {
+                        // Control.EndInvoke throws IndexOutOfRangeException when the
+                        // control's internal async result list is cleared during disposal
+                        // or handle recreation (e.g. resize triggering layout changes).
+                    }
+
                     continue;
                 }
 
