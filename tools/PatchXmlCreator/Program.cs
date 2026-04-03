@@ -9,8 +9,15 @@ namespace EVEMon.PatchXmlCreator
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        private static void Main()
+        private static void Main(string[] args)
         {
+            // CLI mode: skip WinForms entirely
+            if (args.Length > 0)
+            {
+                Environment.Exit(PatchXmlCliHandler.Run(args));
+                return;
+            }
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
