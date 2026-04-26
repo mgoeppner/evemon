@@ -201,13 +201,17 @@ namespace EVEMon.Common.Service
                     {
                         // Token refresh in flight. Leave the id in the queue and clear
                         // the pending flag so RetryPendingLookups can re-enter once the
-                        // refresh settles. We deliberately do not call OnLookupComplete:
-                        // no async query was dispatched, so there is no callback site
-                        // and re-entry would loop on the same null token.
+                        // refresh settles. We deliberately do not call OnLookupComplete
+                        // here: no async query was dispatched, so there is no callback
+                        // site and OnLookupComplete with non-empty queue would loop on
+                        // the same null token. Fire TriggerEvent directly so any
+                        // citadels already resolved earlier in this batch surface to
+                        // listeners while the deferred ones wait for the refresh.
                         lock (m_pendingIDs)
                         {
                             m_queryPending = false;
                         }
+                        TriggerEvent();
                         return;
                     }
 

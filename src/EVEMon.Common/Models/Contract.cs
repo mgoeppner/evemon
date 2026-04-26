@@ -480,10 +480,14 @@ namespace EVEMon.Common.Models
                 method = methodPersonal;
                 owner = Character.CharacterID;
             }
-            // Only query if the error count has not been exceeded
-            if (key != null && !EsiErrors.IsErrorCountExceeded)
+            // Only query if the error count has not been exceeded and a usable access
+            // token is available (skip while a token refresh is in flight, e.g. just
+            // after resume from sleep).
+            string accessToken = key?.GetAccessTokenForQuery();
+            if (key != null && !string.IsNullOrEmpty(accessToken) &&
+                !EsiErrors.IsErrorCountExceeded)
                 EveMonClient.APIProviders.CurrentProvider.QueryPagedEsi<T, U>(method, callback,
-                    new ESIParams(response, key.AccessToken)
+                    new ESIParams(response, accessToken)
                     {
                         ParamOne = owner,
                         ParamTwo = ID

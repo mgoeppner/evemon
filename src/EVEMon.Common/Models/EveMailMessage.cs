@@ -202,15 +202,19 @@ namespace EVEMon.Common.Models
             {
                 var apiKey = m_ccpCharacter.Identity.FindAPIKeyWithAccess(
                     ESIAPICharacterMethods.MailBodies);
+                string accessToken = apiKey?.GetAccessTokenForQuery();
+                // Skip if no key or the token is not usable yet (e.g. refresh after resume);
+                // a later GetMailBody() invocation will retry once the token is fresh.
+                if (apiKey == null || string.IsNullOrEmpty(accessToken))
+                    return;
                 m_queryPending = true;
-                if (apiKey != null)
-                    EveMonClient.APIProviders.CurrentProvider.QueryEsi<EsiAPIMailBody>(
-                        ESIAPICharacterMethods.MailBodies, OnEVEMailBodyDownloaded,
-                        new ESIParams(m_bodyResponse, apiKey.AccessToken)
-                        {
-                            ParamOne = m_ccpCharacter.CharacterID,
-                            ParamTwo = MessageID
-                        }, MessageID);
+                EveMonClient.APIProviders.CurrentProvider.QueryEsi<EsiAPIMailBody>(
+                    ESIAPICharacterMethods.MailBodies, OnEVEMailBodyDownloaded,
+                    new ESIParams(m_bodyResponse, accessToken)
+                    {
+                        ParamOne = m_ccpCharacter.CharacterID,
+                        ParamTwo = MessageID
+                    }, MessageID);
             }
         }
 
