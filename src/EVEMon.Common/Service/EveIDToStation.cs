@@ -9,6 +9,7 @@ using EVEMon.Common.Serialization.Eve;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 using CitadelIDInfo = EVEMon.Common.Service.IDInformation<EVEMon.Common.Serialization.Eve.
@@ -157,13 +158,14 @@ namespace EVEMon.Common.Service
         /// </summary>
         private class CitadelStationProvider : IDToObjectProvider<SerializableOutpost, ESIKey>
         {
-            // True if at least one citadel lookup has resolved since the last TriggerEvent
-            // fired. Used to gate TriggerEvent calls in the token-not-ready early-exit so
-            // we do not spam OnConquerableStationListUpdated and s_savePending every
-            // RetryPendingLookups tick (1 Hz) when there is nothing new to publish.
-            // Volatile because it is written from ESI callback threads and read from the
-            // timer-driven FetchIDs path.
-            private volatile bool m_resolvedSinceTrigger;
+            // 1 if at least one citadel lookup has resolved since the last TriggerEvent
+            // fired, 0 otherwise. Used to gate TriggerEvent in the token-not-ready
+            // early-exit so we do not spam OnConquerableStationListUpdated and
+            // s_savePending every RetryPendingLookups tick (1 Hz) when there is nothing
+            // new to publish. Manipulated via Interlocked.Exchange so the early-exit can
+            // atomically check-and-clear the flag against concurrent ESI callbacks (set
+            // to 1) and base-class TriggerEvent calls (clear to 0).
+            private int m_resolvedSinceTrigger;
 
             public CitadelStationProvider(IDictionary<long, CitadelIDInfo> cacheList) :
                 base(cacheList)
@@ -209,17 +211,17 @@ namespace EVEMon.Common.Service
                     {
                         // Token refresh in flight. Leave the id in the queue and clear
                         // the pending flag so RetryPendingLookups can re-enter once the
-                        // refresh settles. We deliberately do not call OnLookupComplete
-                        // here: no async query was dispatched, so there is no callback
-                        // site and OnLookupComplete with non-empty queue would loop on
-                        // the same null token. Fire TriggerEvent only if a citadel was
-                        // resolved since the last trigger so prior resolutions surface
-                        // once, without spamming listeners every retry tick.
+                        // refresh settles. We deliberately call TriggerEvent here
+                        // outside the OnLookupComplete path documented on the base
+                        // class: OnLookupComplete with a non-empty queue would loop on
+                        // the same null token, and no async callback site exists for
+                        // this exit. Atomically check-and-clear m_resolvedSinceTrigger
+                        // so a concurrent retry tick cannot fire the same event twice.
                         lock (m_pendingIDs)
                         {
                             m_queryPending = false;
                         }
-                        if (m_resolvedSinceTrigger)
+                        if (Interlocked.Exchange(ref m_resolvedSinceTrigger, 0) == 1)
                             TriggerEvent();
                         return;
                     }
@@ -275,7 +277,7 @@ namespace EVEMon.Common.Service
                     EveMonClient.Notifications.InvalidateAPIError();
                     info.OnRequestComplete(result.Result.ToXMLItem(info.ID));
                 }
-                m_resolvedSinceTrigger = true;
+                Interlocked.Exchange(ref m_resolvedSinceTrigger, 1);
                 OnLookupComplete();
             }
 
@@ -326,7 +328,7 @@ namespace EVEMon.Common.Service
 
             protected override void TriggerEvent()
             {
-                m_resolvedSinceTrigger = false;
+                Interlocked.Exchange(ref m_resolvedSinceTrigger, 0);
                 EveMonClient.OnConquerableStationListUpdated();
                 s_savePending = true;
             }
