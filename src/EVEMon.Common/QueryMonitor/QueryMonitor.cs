@@ -163,7 +163,7 @@ namespace EVEMon.Common.QueryMonitor
         /// is separate from HasESIKey / HasAccess so a monitor can remain pending while an
         /// access token refresh is still in flight.
         /// </summary>
-        protected virtual bool CanQueryNow => true;
+        internal virtual bool CanQueryNow => true;
 
         #endregion
 

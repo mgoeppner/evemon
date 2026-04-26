@@ -199,6 +199,11 @@ namespace EVEMon.Common.Service
                     string accessToken = esiKey.GetAccessTokenForQuery();
                     if (string.IsNullOrEmpty(accessToken))
                     {
+                        // Token refresh in flight. Leave the id in the queue and clear
+                        // the pending flag so RetryPendingLookups can re-enter once the
+                        // refresh settles. We deliberately do not call OnLookupComplete:
+                        // no async query was dispatched, so there is no callback site
+                        // and re-entry would loop on the same null token.
                         lock (m_pendingIDs)
                         {
                             m_queryPending = false;

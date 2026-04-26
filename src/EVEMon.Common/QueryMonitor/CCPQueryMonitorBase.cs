@@ -42,7 +42,7 @@ namespace EVEMon.Common.QueryMonitor
         /// <summary>
         /// Gets whether the bound ESI key currently has a usable access token.
         /// </summary>
-        protected override bool CanQueryNow => m_apiKey?.HasUsableAccessToken ?? false;
+        internal override bool CanQueryNow => m_apiKey?.HasUsableAccessToken ?? false;
 
         /// <summary>
         /// Performs the query to the provider, passing the required arguments.

@@ -32,7 +32,7 @@ namespace EVEMon.Common.Models
 
         private bool m_monitored;
         private bool m_queried;
-        private bool m_queryPending;
+        private volatile bool m_queryPending;
         private DateTime m_keyExpires;
 
         #endregion
