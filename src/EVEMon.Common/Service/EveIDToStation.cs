@@ -157,6 +157,14 @@ namespace EVEMon.Common.Service
         /// </summary>
         private class CitadelStationProvider : IDToObjectProvider<SerializableOutpost, ESIKey>
         {
+            // True if at least one citadel lookup has resolved since the last TriggerEvent
+            // fired. Used to gate TriggerEvent calls in the token-not-ready early-exit so
+            // we do not spam OnConquerableStationListUpdated and s_savePending every
+            // RetryPendingLookups tick (1 Hz) when there is nothing new to publish.
+            // Volatile because it is written from ESI callback threads and read from the
+            // timer-driven FetchIDs path.
+            private volatile bool m_resolvedSinceTrigger;
+
             public CitadelStationProvider(IDictionary<long, CitadelIDInfo> cacheList) :
                 base(cacheList)
             {
@@ -204,14 +212,15 @@ namespace EVEMon.Common.Service
                         // refresh settles. We deliberately do not call OnLookupComplete
                         // here: no async query was dispatched, so there is no callback
                         // site and OnLookupComplete with non-empty queue would loop on
-                        // the same null token. Fire TriggerEvent directly so any
-                        // citadels already resolved earlier in this batch surface to
-                        // listeners while the deferred ones wait for the refresh.
+                        // the same null token. Fire TriggerEvent only if a citadel was
+                        // resolved since the last trigger so prior resolutions surface
+                        // once, without spamming listeners every retry tick.
                         lock (m_pendingIDs)
                         {
                             m_queryPending = false;
                         }
-                        TriggerEvent();
+                        if (m_resolvedSinceTrigger)
+                            TriggerEvent();
                         return;
                     }
 
@@ -266,6 +275,7 @@ namespace EVEMon.Common.Service
                     EveMonClient.Notifications.InvalidateAPIError();
                     info.OnRequestComplete(result.Result.ToXMLItem(info.ID));
                 }
+                m_resolvedSinceTrigger = true;
                 OnLookupComplete();
             }
 
@@ -316,6 +326,7 @@ namespace EVEMon.Common.Service
 
             protected override void TriggerEvent()
             {
+                m_resolvedSinceTrigger = false;
                 EveMonClient.OnConquerableStationListUpdated();
                 s_savePending = true;
             }

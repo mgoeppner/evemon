@@ -164,8 +164,13 @@ namespace EVEMon.Common.Models
                 ESIKey apiKey = Character.Identity.FindAPIKeyWithAccess(ESIAPICharacterMethods.
                     PlanetaryLayout);
                 string accessToken = apiKey?.GetAccessTokenForQuery();
-                // Skip if no key or the token is not usable yet (e.g. refresh after resume);
-                // the next GetColonyLayout() trigger will retry once the token is fresh.
+                // Skip if no key or the token is not usable yet (e.g. refresh after resume).
+                // GetColonyLayout is private and only invoked from the constructor, so the
+                // retry path here is the parent PlanetaryColonies monitor recreating colony
+                // objects on its next refresh once the token is fresh. If the parent reuses
+                // an existing colony instance instead of recreating it, the layout will
+                // remain stale until the next full reimport — acceptable since the parent
+                // monitor itself is gated on a usable token by CCPQueryMonitorBase.
                 if (apiKey == null || string.IsNullOrEmpty(accessToken))
                     return;
                 m_queryPinsPending = true;

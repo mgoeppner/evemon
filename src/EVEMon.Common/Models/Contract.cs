@@ -458,7 +458,11 @@ namespace EVEMon.Common.Models
         /// <summary>
         /// Gets the contract items or bids.
         /// </summary>
-        private void GetContractData<T, U>(APIProvider.ESIRequestCallback<T> callback,
+        /// <returns>True if a request was dispatched, false if it was skipped (no key,
+        /// no usable access token, or ESI error budget exceeded). Callers should only
+        /// set their pending flag when this returns true so the request can be retried
+        /// on the next tick after a token refresh settles.</returns>
+        private bool GetContractData<T, U>(APIProvider.ESIRequestCallback<T> callback,
             ESIAPICorporationMethods methodCorp, ESIAPICharacterMethods methodPersonal,
             ResponseParams response) where T : List<U> where U : class
         {
@@ -484,14 +488,16 @@ namespace EVEMon.Common.Models
             // token is available (skip while a token refresh is in flight, e.g. just
             // after resume from sleep).
             string accessToken = key?.GetAccessTokenForQuery();
-            if (key != null && !string.IsNullOrEmpty(accessToken) &&
-                !EsiErrors.IsErrorCountExceeded)
-                EveMonClient.APIProviders.CurrentProvider.QueryPagedEsi<T, U>(method, callback,
-                    new ESIParams(response, accessToken)
-                    {
-                        ParamOne = owner,
-                        ParamTwo = ID
-                    }, method);
+            if (key == null || string.IsNullOrEmpty(accessToken) ||
+                EsiErrors.IsErrorCountExceeded)
+                return false;
+            EveMonClient.APIProviders.CurrentProvider.QueryPagedEsi<T, U>(method, callback,
+                new ESIParams(response, accessToken)
+                {
+                    ParamOne = owner,
+                    ParamTwo = ID
+                }, method);
+            return true;
         }
 
         /// <summary>
@@ -564,22 +570,24 @@ namespace EVEMon.Common.Models
         /// </summary>
         public void UpdateContractItems()
         {
-            // Retrieve items
+            // Retrieve items. Only mark as pending if the request was actually
+            // dispatched, otherwise a skipped request (e.g. token refresh in flight)
+            // would leave the flag stuck true and block all future retries.
             if (ContractType != ContractType.Courier && m_contractItems.Count < 1 &&
                 !m_itemsPending)
             {
-                m_itemsPending = true;
-                GetContractData<EsiAPIContractItems, EsiContractItemsListItem>(
+                if (GetContractData<EsiAPIContractItems, EsiContractItemsListItem>(
                     OnContractItemsDownloaded, ESIAPICorporationMethods.
                     CorporationContractItems, ESIAPICharacterMethods.ContractItems,
-                    m_itemsResponse);
+                    m_itemsResponse))
+                    m_itemsPending = true;
             }
             if (ContractType == ContractType.Auction && !m_bidsPending)
             {
-                m_bidsPending = true;
-                GetContractData<EsiAPIContractBids, EsiContractBidsListItem>(
+                if (GetContractData<EsiAPIContractBids, EsiContractBidsListItem>(
                     OnContractBidsUpdated, ESIAPICorporationMethods.CorporationContractBids,
-                    ESIAPICharacterMethods.ContractBids, m_bidsResponse);
+                    ESIAPICharacterMethods.ContractBids, m_bidsResponse))
+                    m_bidsPending = true;
             }
         }
 
