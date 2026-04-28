@@ -40,6 +40,13 @@ namespace EVEMon.Common.QueryMonitor
         public override bool HasAccess => wrapped.HasAccess;
 
         /// <summary>
+        /// Forwards the wrapped monitor's gate so paged queries also wait while an access
+        /// token refresh is in flight. Without this, paged endpoints (assets, contracts,
+        /// wallet, etc.) would bypass the refresh gate and fire requests with a null token.
+        /// </summary>
+        internal override bool CanQueryNow => wrapped.CanQueryNow;
+
+        /// <summary>
         /// Performs the query to the provider, passing the required arguments.
         /// </summary>
         /// <param name="provider">The API provider to use.</param>
