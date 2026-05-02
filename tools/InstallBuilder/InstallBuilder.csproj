@@ -27,9 +27,6 @@
     <None Update="EVEMonInstallerScript.nsi">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="NETFrameworkCheck.nsh">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="UAC.nsh">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

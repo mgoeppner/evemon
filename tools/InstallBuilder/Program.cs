@@ -23,6 +23,8 @@ namespace EVEMon.InstallBuilder
         private static bool s_isSnapshot;
 
         private static FileVersionInfo s_fileVersionInfo;
+        private const string SourceDirectoryArgumentPrefix = "-source=";
+        private const string SourceDirectoryLongArgumentPrefix = "--source=";
 
         /// <summary>
         /// The main entry point for the application.
@@ -33,23 +35,21 @@ namespace EVEMon.InstallBuilder
         private static int Main(string[] args)
         {
             CheckIsSnapshot();
+            ApplyArguments(args);
 
             if (!HasVersion())
                 return 1;
 
-            if (args.Any())
+            if (args.Any(arg => arg == "-version" || arg == "-v"))
             {
-                if (args[0] == "-version" || args[0] == "-v")
-                {
-                    Console.WriteLine(s_fileVersionInfo.ProductVersion);
-                    return 0;
-                }
+                Console.WriteLine(s_fileVersionInfo.ProductVersion);
+                return 0;
+            }
 
-                if (args[0] == "-version=tc" || args[0] == "-v=tc")
-                {
-                    Console.WriteLine("##teamcity[buildNumber '{0}']", s_fileVersionInfo.ProductVersion);
-                    return 0;
-                }
+            if (args.Any(arg => arg == "-version=tc" || arg == "-v=tc"))
+            {
+                Console.WriteLine("##teamcity[buildNumber '{0}']", s_fileVersionInfo.ProductVersion);
+                return 0;
             }
 
             try
@@ -217,10 +217,58 @@ namespace EVEMon.InstallBuilder
         /// <param name="directory">The directory.</param>
         /// <returns></returns>
         private static string GetInstallbuilderDirectory(string directory)
-            => Path.GetFullPath(
-                Regex.Replace(SourceFilesDirectory, "Debug|Release",
-                    Path.Combine("Installbuilder", directory),
-                    RegexOptions.Compiled | RegexOptions.IgnoreCase));
+            => Path.GetFullPath(Path.Combine(SolutionDirectory, @"src\EVEMon\bin\Installbuilder", directory));
+
+        /// <summary>
+        /// Applies command line arguments.
+        /// </summary>
+        /// <param name="args">The command line arguments.</param>
+        private static void ApplyArguments(string[] args)
+        {
+            foreach (string arg in args)
+            {
+                if (TryGetSourceDirectory(arg, out string sourceDirectory))
+                    s_sourceFilesDir = sourceDirectory;
+            }
+        }
+
+        /// <summary>
+        /// Gets the source directory argument value.
+        /// </summary>
+        /// <param name="arg">The command line argument.</param>
+        /// <param name="sourceDirectory">The source directory.</param>
+        /// <returns>True if the argument specifies a source directory.</returns>
+        private static bool TryGetSourceDirectory(string arg, out string sourceDirectory)
+        {
+            sourceDirectory = null;
+
+            if (TryGetSourceDirectory(arg, SourceDirectoryArgumentPrefix, out sourceDirectory))
+                return true;
+
+            return TryGetSourceDirectory(arg, SourceDirectoryLongArgumentPrefix, out sourceDirectory);
+        }
+
+        /// <summary>
+        /// Gets the source directory argument value.
+        /// </summary>
+        /// <param name="arg">The command line argument.</param>
+        /// <param name="prefix">The argument prefix.</param>
+        /// <param name="sourceDirectory">The source directory.</param>
+        /// <returns>True if the argument specifies a source directory.</returns>
+        private static bool TryGetSourceDirectory(string arg, string prefix, out string sourceDirectory)
+        {
+            sourceDirectory = null;
+
+            if (!arg.StartsWith(prefix, StringComparison.OrdinalIgnoreCase))
+                return false;
+
+            string value = arg.Substring(prefix.Length).Trim('"');
+            if (string.IsNullOrWhiteSpace(value))
+                throw new ArgumentException("The source directory argument requires a path.");
+
+            sourceDirectory = Path.GetFullPath(Environment.ExpandEnvironmentVariables(value));
+            return true;
+        }
 
         /// <summary>
         /// Checks the configuration is Snapshot.
@@ -278,9 +326,11 @@ namespace EVEMon.InstallBuilder
             }
             catch (Exception)
             {
-                Console.WriteLine("A \"Release\" has to be compiled first.");
+                Console.WriteLine("EVEMon.exe was not found in the package source directory.");
+                Console.WriteLine("Source directory: {0}", SourceFilesDirectory);
                 Console.WriteLine("Install Builder will now close.");
-                Console.ReadLine();
+                if (Debugger.IsAttached)
+                    Console.ReadLine();
                 return false;
             }
             return true;
@@ -366,10 +416,10 @@ namespace EVEMon.InstallBuilder
             {
                 string nsisScript = Path.Combine(ProjectDirectory, OutputPath, "EVEMonInstallerScript.nsi");
                 string resourcesDir = Path.Combine(SolutionDirectory, @"src\\EVEMon.Common\Resources");
-                string productName = string.Format(CultureInfo.InvariantCulture, "/DPRODUCTNAME=\"{0}\"", "EVEMon");
-                string companyName = string.Format(CultureInfo.InvariantCulture, "/DCOMPANYNAME=\"{0}\"", "EVEMon Development Team");
-                string copyright = string.Format(CultureInfo.InvariantCulture, "/DCOPYRIGHT=\"{0}\"", "Copyright © 2006-2022, EVEMon Development Team");
-                string description = string.Format(CultureInfo.InvariantCulture, "/DDESCRIPTION=\"{0}\"", "EVEMon");
+                string productName = string.Format(CultureInfo.InvariantCulture, "/DPRODUCTNAME={0}", "EVEMon");
+                string companyName = string.Format(CultureInfo.InvariantCulture, "/DCOMPANYNAME={0}", "EVEMon Development Team");
+                string copyright = string.Format(CultureInfo.InvariantCulture, "/DCOPYRIGHT={0}", "Copyright (c) 2006-2022, EVEMon Development Team");
+                string description = string.Format(CultureInfo.InvariantCulture, "/DDESCRIPTION={0}", "EVEMon");
                 string version = string.Format(CultureInfo.InvariantCulture, "/DVERSION={0}", s_fileVersionInfo.ProductVersion);
                 string fullVersion = string.Format(CultureInfo.InvariantCulture, "/DFULLVERSION={0}",
                     s_fileVersionInfo.FileVersion);
@@ -377,19 +427,21 @@ namespace EVEMon.InstallBuilder
                 string sourceDir = string.Format(CultureInfo.InvariantCulture, "/DSOURCEDIR={0}", SourceFilesDirectory);
                 string resourceDir = string.Format(CultureInfo.InvariantCulture, "/DRESOURCESDIR={0}", resourcesDir);
 
-                string param = string.Format(CultureInfo.InvariantCulture, "{0} {1} {2} {3} {4} {5} {6} {7} {8} {9}",
-                    productName, companyName, copyright, description, version, fullVersion, installerDir, sourceDir, resourceDir,
-                    nsisScript);
+                string[] arguments = { productName, companyName, copyright, description, version, fullVersion, installerDir, sourceDir, resourceDir, nsisScript };
 
                 Console.WriteLine("NSIS script : {0}", nsisScript);
                 Console.WriteLine("Output directory : {0}", InstallerDirectory);
 
-                ProcessStartInfo psi = new ProcessStartInfo(s_nsisExe, param)
+                ProcessStartInfo psi = new ProcessStartInfo(s_nsisExe)
                 {
                     WorkingDirectory = ProjectDirectory,
                     UseShellExecute = false,
                     RedirectStandardOutput = true
                 };
+                foreach (string argument in arguments)
+                {
+                    psi.ArgumentList.Add(argument);
+                }
 
                 using (Process makensisProcess = new Process())
                 {

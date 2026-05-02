@@ -5,23 +5,34 @@ orbs:
 
 jobs:
   build:
-    description: Build application with Release configuration
+    description: Build self-contained Windows release artifacts
     executor:
       name: windows/default
     environment:
       BUILD_CONFIGURATION: Release
+      RUNTIME_IDENTIFIER: win-x64
+      PUBLISH_DIR: src\EVEMon\bin\Publish\win-x64
     steps:
       - checkout
       - run:
-          name: "NuGet"
-          command: nuget.exe restore EVEMon.sln
+          name: "Restore"
+          command: dotnet restore EVEMon.sln --runtime $env:RUNTIME_IDENTIFIER
       - run:
           name: "Build EVEMon Application"
-          command: msbuild -t:build -restore -p:BclBuildImported=Ignore  -p:Configuration=Release EVEMon.sln 
+          command: dotnet build EVEMon.sln --configuration $env:BUILD_CONFIGURATION --no-restore -p:BclBuildImported=Ignore
+      - run:
+          name: "Publish self-contained EVEMon"
+          command: dotnet publish src\EVEMon\EVEMon.csproj --configuration $env:BUILD_CONFIGURATION --runtime $env:RUNTIME_IDENTIFIER --self-contained true --output $env:PUBLISH_DIR -p:BclBuildImported=Ignore
       - run:
           name: "Package EVEMon installer"
           working_directory: ~\project\tools\InstallBuilder\bin\Release\net8.0-windows
-          command: .\EVEMonInstallBuilder.exe
+          command: |
+            $projectDir = Resolve-Path ..\..\..\..\..
+            $publishDir = Join-Path $projectDir $env:PUBLISH_DIR
+            .\EVEMonInstallBuilder.exe "-source=$publishDir"
+      - store_artifacts:
+          path: src\EVEMon\bin\Publish\win-x64\
+          destination: Publish
       - store_artifacts:
           path: src\EVEMon\bin\Installbuilder\Installer\
           destination: Installer
