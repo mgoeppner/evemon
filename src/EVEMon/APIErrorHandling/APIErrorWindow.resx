@@ -159,4 +159,16 @@
         RK5CYII=
 </value>
   </data>
+  <data name="this.ErrorLabel.Text" xml:space="preserve">
+    <value>Error details.</value>
+  </data>
+  <data name="this.CopyToClipboardLinkLabel.Text" xml:space="preserve">
+    <value>Copy to Clipboard</value>
+  </data>
+  <data name="this.DetailsTextBox.Text" xml:space="preserve">
+    <value>No error details are available.</value>
+  </data>
+  <data name="this.Text" xml:space="preserve">
+    <value>API Error Details</value>
+  </data>
 </root>

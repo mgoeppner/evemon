@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Name1" xml:space="preserve">
+    <value>这是我的长绳子</value>
+  </data>
+  <data name="lblMainWindowPage.Text" xml:space="preserve">
+    <value>您可以配置窗口标题中是否显示任何信息以及显示顺序。选择将在角色监视器技能列表中显示的技能及其突出显示的状态。显示或不显示概览选项卡并选择要显示的信息。
+</value>
+  </data>
+  <data name="lblGeneralPage.Text" xml:space="preserve">
+    <value>选择 EVEMon 是否在每次启动系统时启动。您可以选择禁用 EVEMon 的图形并选择它将运行的环境。您也可以通过单击相关按钮打开 EVEMon 的 Data 文件夹。</value>
+  </data>
+  <data name="lblExternalCalendarPage.Text" xml:space="preserve">
+    <value>EVEMon 可以将您当前的训练队列导出到 Microsoft Outlook 或 Google。这使您可以将日历与智能手机、黑莓手机等同步，以便您随身携带提醒。提前和延迟提醒允许您设置您在 EVE 附近无法更新队列的时间，并且提醒将设置为在这些时间触发，而不是标准提醒间隔。
+</value>
+  </data>
+  <data name="lblPECIDescription.Text" xml:space="preserve">
+    <value>如果 EVE 客户端在便携模式下运行 (/LUA:OFF)，您可以设置它们的路径。通过提供路径，EVEMon可以访问缓存文件夹并扫描人物肖像和市场数据。
+
+提示：如果您在便携模式下运行 EVE 客户端，但下面的控件被禁用，则意味着 EVEMon 已在默认位置 (%LOCALAPPDATA%\CCP\EVE) 检测到一个或多个“宁静”文件夹。手动删除这些并重新启动 EVEMon。</value>
+  </data>
+  <data name="linkLabel1.Text" xml:space="preserve">
+    <value>EVEMon 提供将您的设置文件在线存储在云存储提供商处并在不同计算机之间使用的功能。为了能够使用这些服务，您需要拥有所选提供商的帐户。</value>
+  </data>
+  <data name="systemTrayIconGroupBox.Text" xml:space="preserve">
+    <value>显示系统托盘图标</value>
+  </data>
+  <data name="rbSystemTrayOptionsNever.Text" xml:space="preserve">
+    <value>从来没有</value>
+  </data>
+  <data name="rbSystemTrayOptionsAlways.Text" xml:space="preserve">
+    <value>总是</value>
+  </data>
+  <data name="rbSystemTrayOptionsMinimized.Text" xml:space="preserve">
+    <value>最小化时</value>
+  </data>
+  <data name="applyButton.Text" xml:space="preserve">
+    <value>应用(&amp;A)</value>
+  </data>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="cancelButton.Text" xml:space="preserve">
+    <value>取消(&amp;C)</value>
+  </data>
+  <data name="lblSize.Text" xml:space="preserve">
+    <value>尺寸</value>
+  </data>
+  <data name="CharacterMonitorGroupBox.Text" xml:space="preserve">
+    <value>角色监视器</value>
+  </data>
+  <data name="lblSkillQueueWarningThresholdDays.Text" xml:space="preserve">
+    <value>天数：</value>
+  </data>
+  <data name="lblSkillQueuWarningThreshold.Text" xml:space="preserve">
+    <value>技能队列警告阈值</value>
+  </data>
+  <data name="cbColorQueuedSkills.Text" xml:space="preserve">
+    <value>突出显示排队技能</value>
+  </data>
+  <data name="cbShowPrereqMetSkills.Text" xml:space="preserve">
+    <value>另请显示先决条件满足的技能</value>
+  </data>
+  <data name="cbColorPartialSkills.Text" xml:space="preserve">
+    <value>突出显示部分训练过的技能</value>
+  </data>
+  <data name="cbAlwaysShowSkillQueueTime.Text" xml:space="preserve">
+    <value>始终在技能队列上方显示时间</value>
+  </data>
+  <data name="cbShowNonPublicSkills.Text" xml:space="preserve">
+    <value>还展示非公共技能</value>
+  </data>
+  <data name="cbShowAllPublicSkills.Text" xml:space="preserve">
+    <value>还显示所有公共技能</value>
+  </data>
+  <data name="WindowTitleGroupBox.Text" xml:space="preserve">
+    <value>窗口标题</value>
+  </data>
+  <data name="cbSkillInTitle.Text" xml:space="preserve">
+    <value>在训练中展现技巧</value>
+  </data>
+  <data name="cbTitleToTime.Text" xml:space="preserve">
+    <value>在窗口标题中显示字符信息</value>
+  </data>
+  <data name="lblEnvironment.Text" xml:space="preserve">
+    <value>环境（需要重启生效）</value>
+  </data>
+  <data name="lblLanguage.Text" xml:space="preserve">
+    <value>语言（需要重新启动）</value>
+  </data>
+  <data name="lblSkillPlannerPage.Text" xml:space="preserve">
+    <value>您可以根据状态等选择是否突出显示技能规划器中的任何条目。</value>
+  </data>
+  <data name="lblNetworkPageProxy.Text" xml:space="preserve">
+    <value>默认情况下，EVEMon 将使用与 Internet Explorer 相同的代理设置（可以通过控制面板进行配置）。</value>
+  </data>
+  <data name="lblProxyHostIPAddress.Text" xml:space="preserve">
+    <value>主机/IP 地址</value>
+  </data>
+  <data name="lblProxyPort.Text" xml:space="preserve">
+    <value>港口</value>
+  </data>
+  <data name="lblHTTP.Text" xml:space="preserve">
+    <value>HTTP:</value>
+  </data>
+  <data name="lblEmailNotificationPage.Text" xml:space="preserve">
+    <value>每当技能级别完成培训时，EVEMon 都会向您发送电子邮件。</value>
+  </data>
+  <data name="lblNotificationsPage.Text" xml:space="preserve">
+    <value>您可以选择在系统托盘通知区域或 EVEMon 主窗口中显示哪些通知以及何时显示。您还可以打开或关闭技能完成时的声音通知。</value>
+  </data>
+  <data name="lblTrayIconPage.Text" xml:space="preserve">
+    <value>在这里您可以设置 EVEMon 托盘图标的可见状态、配置托盘图标弹出信息的样式以及按关闭按钮时 EVEMon 的行为。
+</value>
+  </data>
+  <data name="lblSchedulerUIPage.Text" xml:space="preserve">
+    <value>选择调度程序中使用的颜色。使用调度程序，EVEMon 可以警告您在您离开计算机时需要完成的技能。</value>
+  </data>
+  <data name="lblText.Text" xml:space="preserve">
+    <value>文字：</value>
+  </data>
+  <data name="lblBlockingEvents.Text" xml:space="preserve">
+    <value>阻止事件：</value>
+  </data>
+  <data name="lblRecurringEvents.Text" xml:space="preserve">
+    <value>重复事件：</value>
+  </data>
+  <data name="lblSimpleEvents.Text" xml:space="preserve">
+    <value>简单事件：</value>
+  </data>
+  <data name="lblIconsPage.Text" xml:space="preserve">
+    <value>您可以自定义技能规划器中使用的图标；如果您对一组图标有好主意，可以在 wiki 上找到创建自己的图标的说明。</value>
+  </data>
+  <data name="gbSkillBrowserIconSet.Text" xml:space="preserve">
+    <value>技能浏览器图标集</value>
+  </data>
+  <data name="lblObsoletePlanEntries.Text" xml:space="preserve">
+    <value>您可以配置 EVEMon 如何处理似乎已完成的技能并重置显示的消息行为。</value>
+  </data>
+  <data name="cbUseIncreasedContrastOnOverview.Text" xml:space="preserve">
+    <value>使用增强对比度</value>
+  </data>
+  <data name="overviewGroupCharactersInTrainingCheckBox.Text" xml:space="preserve">
+    <value>训练中的群体角色</value>
+  </data>
+  <data name="overviewShowSkillQueueTrainingTimeCheckBox.Text" xml:space="preserve">
+    <value>显示技能队列训练时间</value>
+  </data>
+  <data name="overviewShowWalletCheckBox.Text" xml:space="preserve">
+    <value>显示钱包余额</value>
+  </data>
+  <data name="overviewShowPortraitCheckBox.Text" xml:space="preserve">
+    <value>显示人物肖像</value>
+  </data>
+  <data name="cbShowOverViewTab.Text" xml:space="preserve">
+    <value>显示“概览”选项卡</value>
+  </data>
+  <data name="treeNode16.Text" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="treeNode17.Text" xml:space="preserve">
+    <value>网络</value>
+  </data>
+  <data name="treeNode18.Text" xml:space="preserve">
+    <value>便携式 EVE 客户端</value>
+  </data>
+  <data name="treeNode19.Text" xml:space="preserve">
+    <value>市场价格提供者</value>
+  </data>
+  <data name="treeNode20.Text" xml:space="preserve">
+    <value>一般</value>
+  </data>
+  <data name="treeNode21.Text" xml:space="preserve">
+    <value>主窗口</value>
+  </data>
+  <data name="treeNode22.Text" xml:space="preserve">
+    <value>图标</value>
+  </data>
+  <data name="treeNode23.Text" xml:space="preserve">
+    <value>留言</value>
+  </data>
+  <data name="treeNode24.Text" xml:space="preserve">
+    <value>技能规划师</value>
+  </data>
+  <data name="treeNode25.Text" xml:space="preserve">
+    <value>系统托盘图标</value>
+  </data>
+  <data name="treeNode26.Text" xml:space="preserve">
+    <value>外部日历</value>
+  </data>
+  <data name="treeNode27.Text" xml:space="preserve">
+    <value>调度程序</value>
+  </data>
+  <data name="treeNode28.Text" xml:space="preserve">
+    <value>技能完成邮件</value>
+  </data>
+  <data name="treeNode29.Text" xml:space="preserve">
+    <value>通知</value>
+  </data>
+  <data name="treeNode30.Text" xml:space="preserve">
+    <value>云存储服务</value>
+  </data>
+  <data name="generalPage.Text" xml:space="preserve">
+    <value>通用页面</value>
+  </data>
+  <data name="btnEVEMonDataDir.Text" xml:space="preserve">
+    <value>EVEMon数据目录</value>
+  </data>
+  <data name="cbWorksafeMode.Text" xml:space="preserve">
+    <value>在“安全工作”模式下运行（无肖像或颜色）</value>
+  </data>
+  <data name="runAtStartupComboBox.Text" xml:space="preserve">
+    <value>在启动时运行 EVEMon</value>
+  </data>
+  <data name="mainWindowPage.Text" xml:space="preserve">
+    <value>主窗口页面</value>
+  </data>
+  <data name="OverviewGroupBox.Text" xml:space="preserve">
+    <value>概述</value>
+  </data>
+  <data name="cbShowSkillpointsOnOverview.Text" xml:space="preserve">
+    <value>显示技能点</value>
+  </data>
+  <data name="skillPlannerPage.Text" xml:space="preserve">
+    <value>技能规划页面</value>
+  </data>
+  <data name="cbAdvanceEntryAdd.Text" xml:space="preserve">
+    <value>在计划中添加技能时设置优先级</value>
+  </data>
+  <data name="cbSummaryOnMultiSelectOnly.Text" xml:space="preserve">
+    <value>仅在“多选”上显示计划摘要</value>
+  </data>
+  <data name="cbHighlightQueuedSiklls.Text" xml:space="preserve">
+    <value>突出显示排队技能</value>
+  </data>
+  <data name="cbHighlightPartialSkills.Text" xml:space="preserve">
+    <value>突出显示部分训练过的技能</value>
+  </data>
+  <data name="cbHighlightConflicts.Text" xml:space="preserve">
+    <value>突出显示日程冲突</value>
+  </data>
+  <data name="cbHighlightPrerequisites.Text" xml:space="preserve">
+    <value>突出显示先决条件</value>
+  </data>
+  <data name="cbHighlightPlannedSkills.Text" xml:space="preserve">
+    <value>突出计划技能</value>
+  </data>
+  <data name="networkPage.Text" xml:space="preserve">
+    <value>网络页面</value>
+  </data>
+  <data name="esiSettingsGroupBox.Text" xml:space="preserve">
+    <value>ESI 客户端设置</value>
+  </data>
+  <data name="lblClientSecret.Text" xml:space="preserve">
+    <value>客户秘密</value>
+  </data>
+  <data name="lblClientID.Text" xml:space="preserve">
+    <value>客户ID</value>
+  </data>
+  <data name="esiSettingsLabel.Text" xml:space="preserve">
+    <value>创建 ESI 客户端应用程序：https://peterhaneve.github.io/EVEMon-ESI
+</value>
+  </data>
+  <data name="ProxyServerGroupBox.Text" xml:space="preserve">
+    <value>代理服务器设置</value>
+  </data>
+  <data name="customProxyCheckBox.Text" xml:space="preserve">
+    <value>使用自定义代理</value>
+  </data>
+  <data name="proxyAuthenticationButton.Text" xml:space="preserve">
+    <value>认证...</value>
+  </data>
+  <data name="emailNotificationsPage.Text" xml:space="preserve">
+    <value>电子邮件通知页面</value>
+  </data>
+  <data name="mailNotificationCheckBox.Text" xml:space="preserve">
+    <value>技能培训完成后发送电子邮件</value>
+  </data>
+  <data name="notificationsPage.Text" xml:space="preserve">
+    <value>通知页面</value>
+  </data>
+  <data name="cbPlaySoundOnSkillComplete.Text" xml:space="preserve">
+    <value>技能训练完成时播放声音</value>
+  </data>
+  <data name="trayIconPage.Text" xml:space="preserve">
+    <value>托盘图标页</value>
+  </data>
+  <data name="mainWindowBehaviourGroupBox.Text" xml:space="preserve">
+    <value>主窗口关闭行为</value>
+  </data>
+  <data name="rbMinToTaskBar.Text" xml:space="preserve">
+    <value>最小化到任务栏</value>
+  </data>
+  <data name="rbMinToTray.Text" xml:space="preserve">
+    <value>最小化到系统托盘</value>
+  </data>
+  <data name="rbExitEVEMon.Text" xml:space="preserve">
+    <value>退出 EVEMon</value>
+  </data>
+  <data name="trayIconPopupGroupBox.Text" xml:space="preserve">
+    <value>图标弹出样式</value>
+  </data>
+  <data name="trayPopupDisabledRadio.Text" xml:space="preserve">
+    <value>残疾人</value>
+  </data>
+  <data name="trayPopupButton.Text" xml:space="preserve">
+    <value>配置</value>
+  </data>
+  <data name="trayPopupRadio.Text" xml:space="preserve">
+    <value>弹出窗口</value>
+  </data>
+  <data name="trayTooltipRadio.Text" xml:space="preserve">
+    <value>工具提示</value>
+  </data>
+  <data name="trayTooltipButton.Text" xml:space="preserve">
+    <value>配置</value>
+  </data>
+  <data name="updatesPage.Text" xml:space="preserve">
+    <value>更新页面</value>
+  </data>
+  <data name="lblUpdatesPage.Text" xml:space="preserve">
+    <value>以下设置有助于减少网络负载，特别是对于高延迟连接和具有多个字符的客户端。</value>
+  </data>
+  <data name="cbCheckTime.Text" xml:space="preserve">
+    <value>检查系统时钟同步</value>
+  </data>
+  <data name="cbCheckForUpdates.Text" xml:space="preserve">
+    <value>检查 EVEMon 更新</value>
+  </data>
+  <data name="schedulerUIPage.Text" xml:space="preserve">
+    <value>调度程序UI页面</value>
+  </data>
+  <data name="externalCalendarPage.Text" xml:space="preserve">
+    <value>外部日历页</value>
+  </data>
+  <data name="externalCalendarCheckbox.Text" xml:space="preserve">
+    <value>使用外部日历</value>
+  </data>
+  <data name="iconsPage.Text" xml:space="preserve">
+    <value>图标页面</value>
+  </data>
+  <data name="messagesPage.Text" xml:space="preserve">
+    <value>消息页面</value>
+  </data>
+  <data name="gbMessageBox.Text" xml:space="preserve">
+    <value>弹出消息</value>
+  </data>
+  <data name="lblPrioritesConflict.Text" xml:space="preserve">
+    <value>优先顺序冲突</value>
+  </data>
+  <data name="btnPrioritiesReset.Text" xml:space="preserve">
+    <value>重置</value>
+  </data>
+  <data name="ObsoleteEntryRemovalGroupBox.Text" xml:space="preserve">
+    <value>删除过时的计划条目</value>
+  </data>
+  <data name="RemoveAllLabel.Text" xml:space="preserve">
+    <value>如果EVEMon认为某个技能等级已经完成，无论是否已被API确认，都会在计划开放时将其删除。</value>
+  </data>
+  <data name="AlwaysAskLabel.Text" xml:space="preserve">
+    <value>在删除条目之前，请始终在技能规划器底部显示“过时条目”链接。</value>
+  </data>
+  <data name="RemoveConfirmedLabel.Text" xml:space="preserve">
+    <value>一旦 API 确认技能级别已完成，它将在下次打开计划时删除。这是默认行为。</value>
+  </data>
+  <data name="alwaysAskRadioButton.Text" xml:space="preserve">
+    <value>总是问</value>
+  </data>
+  <data name="removeAllRadioButton.Text" xml:space="preserve">
+    <value>训练完成后删除条目</value>
+  </data>
+  <data name="removeConfirmedRadioButton.Text" xml:space="preserve">
+    <value>删除已确认的条目（推荐）</value>
+  </data>
+  <data name="portableEveClientsPage.Text" xml:space="preserve">
+    <value>便携式EVE客户页面</value>
+  </data>
+  <data name="PECIGroupBox.Text" xml:space="preserve">
+    <value>便携式 EVE 客户端安装</value>
+  </data>
+  <data name="marketPriceProvidersPage.Text" xml:space="preserve">
+    <value>市场价格提供商页面</value>
+  </data>
+  <data name="gbMarketPriceProviders.Text" xml:space="preserve">
+    <value>市场价格提供者</value>
+  </data>
+  <data name="SelectedProviderLabel.Text" xml:space="preserve">
+    <value>提供商：</value>
+  </data>
+  <data name="marketPriceProviderPageLabel.Text" xml:space="preserve">
+    <value>向市场价格提供商索取所有 EVE 物品的价格。</value>
+  </data>
+  <data name="cloudStorageServicePage.Text" xml:space="preserve">
+    <value>云存储服务页面</value>
+  </data>
+  <data name="providerAuthenticationGroupBox.Text" xml:space="preserve">
+    <value>云存储提供商身份验证</value>
+  </data>
+  <data name="cloudStorageGroupBox.Text" xml:space="preserve">
+    <value>云存储提供商</value>
+  </data>
+  <data name="lblSelectedProvider.Text" xml:space="preserve">
+    <value>提供商：</value>
+  </data>
+  <data name="settingsFileStorageGroupBox.Text" xml:space="preserve">
+    <value>设置文件存储</value>
+  </data>
+  <data name="cbColorQueuedSkills.ToolTip" xml:space="preserve">
+    <value>启用后，突出显示所有
+角色技能列表中的排队技能</value>
+  </data>
+  <data name="cbShowPrereqMetSkills.ToolTip" xml:space="preserve">
+    <value>启用后，显示所有先决条件
+遇到角色技能列表中的技能</value>
+  </data>
+  <data name="cbColorPartialSkills.ToolTip" xml:space="preserve">
+    <value>启用后，部分突出显示所有内容
+角色技能列表中训练过的技能</value>
+  </data>
+  <data name="cbAlwaysShowSkillQueueTime.ToolTip" xml:space="preserve">
+    <value>启用后，始终显示总计
+技能队列栏上方的队列时间</value>
+  </data>
+  <data name="cbShowNonPublicSkills.ToolTip" xml:space="preserve">
+    <value>启用后，显示角色技能列表中的所有非公开技能</value>
+  </data>
+  <data name="cbShowAllPublicSkills.ToolTip" xml:space="preserve">
+    <value>启用后，显示角色技能列表中的所有公共技能</value>
+  </data>
+  <data name="cbSkillInTitle.ToolTip" xml:space="preserve">
+    <value>启用后，显示角色的技能
+根据以下选择进行训练</value>
+  </data>
+  <data name="cbTitleToTime.ToolTip" xml:space="preserve">
+    <value>启用后，在窗口标题中显示角色信息</value>
+  </data>
+  <data name="cbUseIncreasedContrastOnOverview.ToolTip" xml:space="preserve">
+    <value>启用后，增加显示信息的对比度</value>
+  </data>
+  <data name="overviewGroupCharactersInTrainingCheckBox.ToolTip" xml:space="preserve">
+    <value>启用后，将对角色进行分组
+目前正在接受训练的</value>
+  </data>
+  <data name="overviewShowSkillQueueTrainingTimeCheckBox.ToolTip" xml:space="preserve">
+    <value>启用后，显示角色的
+技能队列训练时间</value>
+  </data>
+  <data name="overviewShowWalletCheckBox.ToolTip" xml:space="preserve">
+    <value>启用后，显示角色的钱包余额</value>
+  </data>
+  <data name="overviewShowPortraitCheckBox.ToolTip" xml:space="preserve">
+    <value>启用后，显示角色的肖像
+作为角色名字旁边的缩略图</value>
+  </data>
+  <data name="cbShowOverViewTab.ToolTip" xml:space="preserve">
+    <value>启用后，显示概述选项卡</value>
+  </data>
+</root>

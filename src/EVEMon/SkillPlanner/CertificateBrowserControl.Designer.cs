@@ -167,7 +167,7 @@ namespace EVEMon.SkillPlanner
             this.lblLevel5Time.Name = "lblLevel5Time";
             this.lblLevel5Time.Size = new System.Drawing.Size(131, 13);
             this.lblLevel5Time.TabIndex = 29;
-            this.lblLevel5Time.Text = "Level V : 11d, 6h, 33m, 3s";
+            this.lblLevel5Time.Text = resources.GetString("this.lblLevel5Time.Text");
             // 
             // tspControl
             // 
@@ -187,13 +187,13 @@ namespace EVEMon.SkillPlanner
             // 
             this.tslbTextForEligibility.Name = "tslbTextForEligibility";
             this.tslbTextForEligibility.Size = new System.Drawing.Size(202, 22);
-            this.tslbTextForEligibility.Text = "After this plan you will be eligible to :";
+            this.tslbTextForEligibility.Text = resources.GetString("this.tslbTextForEligibility.Text");
             // 
             // tslbEligible
             // 
             this.tslbEligible.Name = "tslbEligible";
             this.tslbEligible.Size = new System.Drawing.Size(34, 22);
-            this.tslbEligible.Text = "none";
+            this.tslbEligible.Text = resources.GetString("this.tslbEligible.Text");
             // 
             // toolStripSeparator1
             // 
@@ -212,42 +212,42 @@ namespace EVEMon.SkillPlanner
             this.planToLevel.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.planToLevel.Name = "planToLevel";
             this.planToLevel.Size = new System.Drawing.Size(84, 22);
-            this.planToLevel.Text = "Plan To...";
-            this.planToLevel.ToolTipText = "Plan To...";
+            this.planToLevel.Text = resources.GetString("this.planToLevel.Text");
+            this.planToLevel.ToolTipText = resources.GetString("this.planToLevel.ToolTipText");
             // 
             // tsPlanToLevelOne
             // 
             this.tsPlanToLevelOne.Name = "tsPlanToLevelOne";
             this.tsPlanToLevelOne.Size = new System.Drawing.Size(152, 22);
-            this.tsPlanToLevelOne.Text = "&Level I";
+            this.tsPlanToLevelOne.Text = resources.GetString("this.tsPlanToLevelOne.Text");
             this.tsPlanToLevelOne.Click += new System.EventHandler(this.tsPlanToLevel_Click);
             // 
             // tsPlanToLevelTwo
             // 
             this.tsPlanToLevelTwo.Name = "tsPlanToLevelTwo";
             this.tsPlanToLevelTwo.Size = new System.Drawing.Size(152, 22);
-            this.tsPlanToLevelTwo.Text = "&Level II";
+            this.tsPlanToLevelTwo.Text = resources.GetString("this.tsPlanToLevelTwo.Text");
             this.tsPlanToLevelTwo.Click += new System.EventHandler(this.tsPlanToLevel_Click);
             // 
             // tsPlanToLevelThree
             // 
             this.tsPlanToLevelThree.Name = "tsPlanToLevelThree";
             this.tsPlanToLevelThree.Size = new System.Drawing.Size(152, 22);
-            this.tsPlanToLevelThree.Text = "&Level III";
+            this.tsPlanToLevelThree.Text = resources.GetString("this.tsPlanToLevelThree.Text");
             this.tsPlanToLevelThree.Click += new System.EventHandler(this.tsPlanToLevel_Click);
             // 
             // tsPlanToLevelFour
             // 
             this.tsPlanToLevelFour.Name = "tsPlanToLevelFour";
             this.tsPlanToLevelFour.Size = new System.Drawing.Size(152, 22);
-            this.tsPlanToLevelFour.Text = "&Level IV";
+            this.tsPlanToLevelFour.Text = resources.GetString("this.tsPlanToLevelFour.Text");
             this.tsPlanToLevelFour.Click += new System.EventHandler(this.tsPlanToLevel_Click);
             // 
             // tsPlanToLevelFive
             // 
             this.tsPlanToLevelFive.Name = "tsPlanToLevelFive";
             this.tsPlanToLevelFive.Size = new System.Drawing.Size(152, 22);
-            this.tsPlanToLevelFive.Text = "&Level V";
+            this.tsPlanToLevelFive.Text = resources.GetString("this.tsPlanToLevelFive.Text");
             this.tsPlanToLevelFive.Click += new System.EventHandler(this.tsPlanToLevel_Click);
             // 
             // pictureBox1
@@ -266,7 +266,7 @@ namespace EVEMon.SkillPlanner
             this.lblCategory.Name = "lblCategory";
             this.lblCategory.Size = new System.Drawing.Size(71, 13);
             this.lblCategory.TabIndex = 26;
-            this.lblCategory.Text = "Skill Category";
+            this.lblCategory.Text = resources.GetString("this.lblCategory.Text");
             // 
             // textboxDescription
             // 
@@ -290,7 +290,7 @@ namespace EVEMon.SkillPlanner
             this.lblLevel4Time.Name = "lblLevel4Time";
             this.lblLevel4Time.Size = new System.Drawing.Size(140, 13);
             this.lblLevel4Time.TabIndex = 23;
-            this.lblLevel4Time.Text = "Level IV : 5d, 12h, 15m, 24s";
+            this.lblLevel4Time.Text = resources.GetString("this.lblLevel4Time.Text");
             // 
             // lblLevel3Time
             // 
@@ -299,7 +299,7 @@ namespace EVEMon.SkillPlanner
             this.lblLevel3Time.Name = "lblLevel3Time";
             this.lblLevel3Time.Size = new System.Drawing.Size(139, 13);
             this.lblLevel3Time.TabIndex = 22;
-            this.lblLevel3Time.Text = "Level III : 1d, 23h, 49m, 36s";
+            this.lblLevel3Time.Text = resources.GetString("this.lblLevel3Time.Text");
             // 
             // lblLevel2Time
             // 
@@ -308,7 +308,7 @@ namespace EVEMon.SkillPlanner
             this.lblLevel2Time.Name = "lblLevel2Time";
             this.lblLevel2Time.Size = new System.Drawing.Size(112, 13);
             this.lblLevel2Time.TabIndex = 21;
-            this.lblLevel2Time.Text = "Level II : 8h, 27m, 17s";
+            this.lblLevel2Time.Text = resources.GetString("this.lblLevel2Time.Text");
             // 
             // lblLevel1Time
             // 
@@ -317,7 +317,7 @@ namespace EVEMon.SkillPlanner
             this.lblLevel1Time.Name = "lblLevel1Time";
             this.lblLevel1Time.Size = new System.Drawing.Size(109, 13);
             this.lblLevel1Time.TabIndex = 20;
-            this.lblLevel1Time.Text = "Level I : 1h, 48m, 55s";
+            this.lblLevel1Time.Text = resources.GetString("this.lblLevel1Time.Text");
             // 
             // lblName
             // 
@@ -326,7 +326,7 @@ namespace EVEMon.SkillPlanner
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(57, 13);
             this.lblName.TabIndex = 19;
-            this.lblName.Text = "Skill Name";
+            this.lblName.Text = resources.GetString("this.lblName.Text");
             // 
             // lblHelp
             // 
@@ -335,7 +335,7 @@ namespace EVEMon.SkillPlanner
             this.lblHelp.Name = "lblHelp";
             this.lblHelp.Size = new System.Drawing.Size(247, 13);
             this.lblHelp.TabIndex = 29;
-            this.lblHelp.Text = "Use the tree on the left to select certificate to view.";
+            this.lblHelp.Text = resources.GetString("this.lblHelp.Text");
             // 
             // CertificateBrowserControl
             // 

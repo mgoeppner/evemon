@@ -28,6 +28,7 @@ namespace EVEMon.Common.Models.Comparers
                 return false;
             return x.Revision == y.Revision &&
                    x.Compatibility == y.Compatibility &&
+                   x.Language == y.Language &&
                    Equals(x.Updates, y.Updates) &&
                    Equals(x.Notifications, y.Notifications) &&
                    Equals(x.Scheduler, y.Scheduler) &&
@@ -54,6 +55,7 @@ namespace EVEMon.Common.Models.Comparers
             {
                 var hashCode = obj.Revision;
                 hashCode = (hashCode * 397) ^ (int)obj.Compatibility;
+                hashCode = (hashCode * 397) ^ (obj.Language?.GetHashCode() ?? 0);
                 hashCode = (hashCode * 397) ^ (obj.Updates?.GetHashCode() ?? 0);
                 hashCode = (hashCode * 397) ^ (obj.Notifications?.GetHashCode() ?? 0);
                 hashCode = (hashCode * 397) ^ (obj.Scheduler?.GetHashCode() ?? 0);

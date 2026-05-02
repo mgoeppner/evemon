@@ -128,7 +128,7 @@ namespace EVEMon.SkillPlanner
             this.gbDescription.Size = new System.Drawing.Size(240, 230);
             this.gbDescription.TabIndex = 14;
             this.gbDescription.TabStop = false;
-            this.gbDescription.Text = "Description";
+            this.gbDescription.Text = resources.GetString("this.gbDescription.Text");
             // 
             // tbDescription
             // 
@@ -170,7 +170,7 @@ namespace EVEMon.SkillPlanner
             this.lblEveObjCategory.Name = "lblEveObjCategory";
             this.lblEveObjCategory.Size = new System.Drawing.Size(102, 13);
             this.lblEveObjCategory.TabIndex = 6;
-            this.lblEveObjCategory.Text = "EveObject Category";
+            this.lblEveObjCategory.Text = resources.GetString("this.lblEveObjCategory.Text");
             this.lblEveObjCategory.UseMnemonic = false;
             // 
             // lblEveObjName
@@ -181,7 +181,7 @@ namespace EVEMon.SkillPlanner
             this.lblEveObjName.Name = "lblEveObjName";
             this.lblEveObjName.Size = new System.Drawing.Size(131, 18);
             this.lblEveObjName.TabIndex = 7;
-            this.lblEveObjName.Text = "EveObject Name";
+            this.lblEveObjName.Text = resources.GetString("this.lblEveObjName.Text");
             // 
             // lblHelp
             // 

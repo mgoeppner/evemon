@@ -146,7 +146,7 @@ namespace EVEMon.ExceptionHandling
             this.ReportLinkLabel.Size = new System.Drawing.Size(515, 30);
             this.ReportLinkLabel.TabIndex = 8;
             this.ReportLinkLabel.TabStop = true;
-            this.ReportLinkLabel.Text = "If none of that worked, please report the problem\r\n";
+            this.ReportLinkLabel.Text = resources.GetString("this.ReportLinkLabel.Text");
             this.ReportLinkLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ReportLinkLabel.UseCompatibleTextRendering = true;
             this.ReportLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblReport_LinkClicked);
@@ -199,7 +199,7 @@ namespace EVEMon.ExceptionHandling
             this.WhatCanYouDoLabel.Name = "WhatCanYouDoLabel";
             this.WhatCanYouDoLabel.Size = new System.Drawing.Size(98, 13);
             this.WhatCanYouDoLabel.TabIndex = 9;
-            this.WhatCanYouDoLabel.Text = "What can you do ?";
+            this.WhatCanYouDoLabel.Text = resources.GetString("this.WhatCanYouDoLabel.Text");
             // 
             // CopyDetailsLinkLabel
             // 
@@ -210,7 +210,7 @@ namespace EVEMon.ExceptionHandling
             this.CopyDetailsLinkLabel.Size = new System.Drawing.Size(64, 13);
             this.CopyDetailsLinkLabel.TabIndex = 6;
             this.CopyDetailsLinkLabel.TabStop = true;
-            this.CopyDetailsLinkLabel.Text = "Copy details";
+            this.CopyDetailsLinkLabel.Text = resources.GetString("this.CopyDetailsLinkLabel.Text");
             this.CopyDetailsLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.CopyDetailsLinkLabel_LinkClicked);
             // 
             // TitleLabel
@@ -220,7 +220,7 @@ namespace EVEMon.ExceptionHandling
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(233, 13);
             this.TitleLabel.TabIndex = 0;
-            this.TitleLabel.Text = "EVEMon has encountered an unexpected error.";
+            this.TitleLabel.Text = resources.GetString("this.TitleLabel.Text");
             // 
             // TechnicalDetailsLabel
             // 
@@ -229,7 +229,7 @@ namespace EVEMon.ExceptionHandling
             this.TechnicalDetailsLabel.Name = "TechnicalDetailsLabel";
             this.TechnicalDetailsLabel.Size = new System.Drawing.Size(145, 13);
             this.TechnicalDetailsLabel.TabIndex = 2;
-            this.TechnicalDetailsLabel.Text = "Technical details of this error:";
+            this.TechnicalDetailsLabel.Text = resources.GetString("this.TechnicalDetailsLabel.Text");
             // 
             // DataDirectoryButton
             // 
@@ -239,7 +239,7 @@ namespace EVEMon.ExceptionHandling
             this.DataDirectoryButton.Name = "DataDirectoryButton";
             this.DataDirectoryButton.Size = new System.Drawing.Size(106, 23);
             this.DataDirectoryButton.TabIndex = 4;
-            this.DataDirectoryButton.Text = "Data Directory";
+            this.DataDirectoryButton.Text = resources.GetString("this.DataDirectoryButton.Text");
             this.DataDirectoryButton.UseVisualStyleBackColor = true;
             this.DataDirectoryButton.Click += new System.EventHandler(this.DataDirectoryButton_Click);
             // 
@@ -251,7 +251,7 @@ namespace EVEMon.ExceptionHandling
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(106, 23);
             this.CloseButton.TabIndex = 5;
-            this.CloseButton.Text = "Close EVEMon";
+            this.CloseButton.Text = resources.GetString("this.CloseButton.Text");
             this.CloseButton.UseVisualStyleBackColor = true;
             this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
@@ -270,7 +270,7 @@ namespace EVEMon.ExceptionHandling
             this.MinimizeBox = false;
             this.Name = "UnhandledExceptionWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EVEMon Error";
+            this.Text = resources.GetString("this.Text");
             this.Load += new System.EventHandler(this.UnhandledExceptionWindow_Load);
             this.MainPanel.ResumeLayout(false);
             this.MainPanel.PerformLayout();

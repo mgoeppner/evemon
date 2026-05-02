@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Name1" xml:space="preserve">
+    <value>这是我的长绳子</value>
+  </data>
+  <data name="calendarPathExampleLabel.Text" xml:space="preserve">
+    <value>提示：要查找日历的路径，请打开 Outlook，切换到“日历”视图 (Ctrl+2)， 
+在“我的日历”中右键单击相关日历并选择“属性”。 
+将“位置：”路径与日历名称组合起来，并用左反斜杠分隔。
+例如{\\位置}\{日历名称}</value>
+  </data>
+  <data name="gbReminder.Text" xml:space="preserve">
+    <value>提醒设置</value>
+  </data>
+  <data name="lblMinutes.Text" xml:space="preserve">
+    <value>分钟</value>
+  </data>
+  <data name="cbSetReminder.Text" xml:space="preserve">
+    <value>使用提醒</value>
+  </data>
+  <data name="lblLateReminder.Text" xml:space="preserve">
+    <value>迟到提醒：</value>
+  </data>
+  <data name="lblEarlyReminder.Text" xml:space="preserve">
+    <value>早期提醒：</value>
+  </data>
+  <data name="cbUseAlterateReminder.Text" xml:space="preserve">
+    <value>使用备用提醒</value>
+  </data>
+  <data name="cbLastQueuedSkillOnly.Text" xml:space="preserve">
+    <value>仅最后排队的技能</value>
+  </data>
+  <data name="rbGoogle.Text" xml:space="preserve">
+    <value>谷歌</value>
+  </data>
+  <data name="gbGoogle.Text" xml:space="preserve">
+    <value>谷歌信息</value>
+  </data>
+  <data name="calendarIDLinkLabel.Text" xml:space="preserve">
+    <value>提示：将日历 ID 留空以使用默认日历。如何查找日历 ID。</value>
+  </data>
+  <data name="apiResponseLabel.Text" xml:space="preserve">
+    <value>API响应</value>
+  </data>
+  <data name="btnRevokeAuth.Text" xml:space="preserve">
+    <value>重置</value>
+  </data>
+  <data name="btnRequestAuth.Text" xml:space="preserve">
+    <value>请求认证</value>
+  </data>
+  <data name="lblReminder.Text" xml:space="preserve">
+    <value>提醒：</value>
+  </data>
+  <data name="lblCalendarId.Text" xml:space="preserve">
+    <value>日历 ID：</value>
+  </data>
+  <data name="tbGoogleCalendarName.Text" xml:space="preserve">
+    <value>小学</value>
+  </data>
+  <data name="gbMSOutlook.Text" xml:space="preserve">
+    <value>微软展望信息</value>
+  </data>
+  <data name="rbCustomCalendar.Text" xml:space="preserve">
+    <value>使用自定义日历</value>
+  </data>
+  <data name="rbDefaultCalendar.Text" xml:space="preserve">
+    <value>使用默认日历</value>
+  </data>
+  <data name="calendarPathLabel.Text" xml:space="preserve">
+    <value>日历路径：</value>
+  </data>
+</root>

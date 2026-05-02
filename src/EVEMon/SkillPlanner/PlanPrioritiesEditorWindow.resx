@@ -126,4 +126,16 @@ Dependant skills must have same or lower priority.
 
 </value>
   </data>
+  <data name="this.label1.Text" xml:space="preserve">
+    <value>Priority</value>
+  </data>
+  <data name="this.btnCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="this.btnOk.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="this.Text" xml:space="preserve">
+    <value>Change Plan Entry Priorty</value>
+  </data>
 </root>

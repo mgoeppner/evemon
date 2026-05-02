@@ -97,16 +97,16 @@ namespace EVEMon.CharacterMonitoring
             // 
             // chSenderName
             // 
-            this.chSenderName.Text = "From";
+            this.chSenderName.Text = resources.GetString("this.chSenderName.Text");
             // 
             // chType
             // 
-            this.chType.Text = "Subject";
+            this.chType.Text = resources.GetString("this.chType.Text");
             this.chType.Width = 121;
             // 
             // chSentDate
             // 
-            this.chSentDate.Text = "Received";
+            this.chSentDate.Text = resources.GetString("this.chSentDate.Text");
             this.chSentDate.Width = 90;
             // 
             // contextMenu
@@ -120,7 +120,7 @@ namespace EVEMon.CharacterMonitoring
             // 
             this.exportToCSVToolStripMenuItem.Name = "exportToCSVToolStripMenuItem";
             this.exportToCSVToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.exportToCSVToolStripMenuItem.Text = "Export To CSV...";
+            this.exportToCSVToolStripMenuItem.Text = resources.GetString("this.exportToCSVToolStripMenuItem.Text");
             this.exportToCSVToolStripMenuItem.Click += new System.EventHandler(this.exportToCSVToolStripMenuItem_Click);
             // 
             // ilIcons
@@ -147,7 +147,7 @@ namespace EVEMon.CharacterMonitoring
             this.noEVENotificationsLabel.Name = "noEVENotificationsLabel";
             this.noEVENotificationsLabel.Size = new System.Drawing.Size(454, 434);
             this.noEVENotificationsLabel.TabIndex = 4;
-            this.noEVENotificationsLabel.Text = "No EVE notifications are available.";
+            this.noEVENotificationsLabel.Text = resources.GetString("this.noEVENotificationsLabel.Text");
             this.noEVENotificationsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timer

@@ -145,4 +145,64 @@
         vJnCVUkPit+NorRLhWsDOtxSmHGPzk6QFRQV/QFZaUl1TyHaOQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="this.gbAttributes.Text" xml:space="preserve">
+    <value>Attributes</value>
+  </data>
+  <data name="this.chAttribute.Text" xml:space="preserve">
+    <value>Attribute</value>
+  </data>
+  <data name="this.chValue.Text" xml:space="preserve">
+    <value>Value</value>
+  </data>
+  <data name="this.exportToCSVToolStripMenuItem.Text" xml:space="preserve">
+    <value>Export To CSV...</value>
+  </data>
+  <data name="this.gbRequiredSkills.Text" xml:space="preserve">
+    <value>Required Skills</value>
+  </data>
+  <data name="this.tbPgShipDetails.Text" xml:space="preserve">
+    <value>Overview</value>
+  </data>
+  <data name="this.tbPgShipMastery.Text" xml:space="preserve">
+    <value>Mastery</value>
+  </data>
+  <data name="this.tlStrpPlanTo.Text" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
+  <data name="this.tslbTextForEligibility.Text" xml:space="preserve">
+    <value>After this plan you will be eligible to :</value>
+  </data>
+  <data name="this.tslbEligible.Text" xml:space="preserve">
+    <value>none</value>
+  </data>
+  <data name="this.tsPlanToMenu.Text" xml:space="preserve">
+    <value>Plan To...</value>
+  </data>
+  <data name="this.tsPlanToLevelOne.Text" xml:space="preserve">
+    <value>&amp;Level I</value>
+  </data>
+  <data name="this.tsPlanToLevelTwo.Text" xml:space="preserve">
+    <value>&amp;Level II</value>
+  </data>
+  <data name="this.tsPlanToLevelThree.Text" xml:space="preserve">
+    <value>&amp;Level III</value>
+  </data>
+  <data name="this.tsPlanToLevelFour.Text" xml:space="preserve">
+    <value>&amp;Level IV</value>
+  </data>
+  <data name="this.tsPlanToLevelFive.Text" xml:space="preserve">
+    <value>&amp;Level V</value>
+  </data>
+  <data name="this.splitButtonLoadouts.Text" xml:space="preserve">
+    <value>Select provider</value>
+  </data>
+  <data name="this.lblViewLoadouts.Text" xml:space="preserve">
+    <value>View loadouts from:</value>
+  </data>
+  <data name="this.showInSkillBrowser.Text" xml:space="preserve">
+    <value>Show In Skill Browser</value>
+  </data>
+  <data name="this.showInItemBrowser.Text" xml:space="preserve">
+    <value>Show In Item Browser</value>
+  </data>
 </root>

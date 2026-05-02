@@ -157,4 +157,51 @@
         zm9OViqdD02pN+jzQaq/T9YBOqd8WZ/9lR17eRvbQhMQ/m+Xc4Q7dCv0TAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="this.label1.Text" xml:space="preserve">
+    <value>The following entries will be added.</value>
+  </data>
+  <data name="this.label5.Text" xml:space="preserve">
+    <value>Add with priority:</value>
+  </data>
+  <data name="this.label3.Text" xml:space="preserve">
+    <value>You have exisiting pre-requisites in your plan, so you must
+
+</value>
+  </data>
+  <data name="this.previousButton.Text" xml:space="preserve">
+    <value>&lt; &amp;Previous</value>
+  </data>
+  <data name="this.cancelButton.Text" xml:space="preserve">
+    <value>&amp;Cancel</value>
+  </data>
+  <data name="this.nextButton.Text" xml:space="preserve">
+    <value>Next &gt;</value>
+  </data>
+  <data name="this.additionPage.Text" xml:space="preserve">
+    <value>additionPage</value>
+  </data>
+  <data name="this.priorityGroup.Text" xml:space="preserve">
+    <value>Existing Priorities</value>
+  </data>
+  <data name="this.priorityLabel.Text" xml:space="preserve">
+    <value>The highest priority you can set is 3</value>
+  </data>
+  <data name="this.lbExisting.Text" xml:space="preserve">
+    <value>select a lower priority than that of existing entries.</value>
+  </data>
+  <data name="this.dependenciesSuppressionPage.Text" xml:space="preserve">
+    <value>dependenciesSuppressionPage</value>
+  </data>
+  <data name="this.label2.Text" xml:space="preserve">
+    <value>The following entries will be removed :</value>
+  </data>
+  <data name="this.uselessPrereqsSuppressionPage.Text" xml:space="preserve">
+    <value>uselessPrereqsSuppressionPage</value>
+  </data>
+  <data name="this.uselessPrereqsCheckbox.Text" xml:space="preserve">
+    <value>Remove the now useless prerequisites listed below.</value>
+  </data>
+  <data name="this.Text" xml:space="preserve">
+    <value>PlanToOperationForm</value>
+  </data>
 </root>

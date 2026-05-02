@@ -55,7 +55,7 @@ namespace EVEMon.CharacterMonitoring
             this.noSkillsQueueLabel.Name = "noSkillsQueueLabel";
             this.noSkillsQueueLabel.Size = new System.Drawing.Size(287, 320);
             this.noSkillsQueueLabel.TabIndex = 0;
-            this.noSkillsQueueLabel.Text = "Skills Queue information not available.";
+            this.noSkillsQueueLabel.Text = resources.GetString("this.noSkillsQueueLabel.Text");
             this.noSkillsQueueLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ttToolTip
@@ -83,7 +83,7 @@ namespace EVEMon.CharacterMonitoring
             this.showInSkillExplorerMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("showInSkillExplorerMenuItem.Image")));
             this.showInSkillExplorerMenuItem.Name = "showInSkillExplorerMenuItem";
             this.showInSkillExplorerMenuItem.Size = new System.Drawing.Size(234, 22);
-            this.showInSkillExplorerMenuItem.Text = "Show In Skill &Explorer...";
+            this.showInSkillExplorerMenuItem.Text = resources.GetString("this.showInSkillExplorerMenuItem.Text");
             this.showInSkillExplorerMenuItem.Click += new System.EventHandler(this.showInSkillExplorerMenuItem_Click);
             // 
             // showInMenuSeparator
@@ -95,7 +95,7 @@ namespace EVEMon.CharacterMonitoring
             // 
             this.tsmiAddSkill.Name = "tsmiAddSkill";
             this.tsmiAddSkill.Size = new System.Drawing.Size(234, 22);
-            this.tsmiAddSkill.Text = "Add skill";
+            this.tsmiAddSkill.Text = resources.GetString("this.tsmiAddSkill.Text");
             // 
             // addSkillSeparator
             // 
@@ -107,7 +107,7 @@ namespace EVEMon.CharacterMonitoring
             this.tsmiCreatePlanFromSkillQueue.Image = ((System.Drawing.Image)(resources.GetObject("tsmiCreatePlanFromSkillQueue.Image")));
             this.tsmiCreatePlanFromSkillQueue.Name = "tsmiCreatePlanFromSkillQueue";
             this.tsmiCreatePlanFromSkillQueue.Size = new System.Drawing.Size(234, 22);
-            this.tsmiCreatePlanFromSkillQueue.Text = "Create Plan from Skill Queue...";
+            this.tsmiCreatePlanFromSkillQueue.Text = resources.GetString("this.tsmiCreatePlanFromSkillQueue.Text");
             this.tsmiCreatePlanFromSkillQueue.Click += new System.EventHandler(this.tsmiCreatePlanFromSkillQueue_Click);
             // 
             // lbSkillsQueue
@@ -133,7 +133,7 @@ namespace EVEMon.CharacterMonitoring
             // 
             this.showInSkillBrowserMenuItem.Name = "showInSkillBrowserMenuItem";
             this.showInSkillBrowserMenuItem.Size = new System.Drawing.Size(234, 22);
-            this.showInSkillBrowserMenuItem.Text = "Show In Skill Browser...";
+            this.showInSkillBrowserMenuItem.Text = resources.GetString("this.showInSkillBrowserMenuItem.Text");
             this.showInSkillBrowserMenuItem.Click += new System.EventHandler(this.showInSkillBrowserMenuItem_Click);
             // 
             // CharacterSkillsQueueList

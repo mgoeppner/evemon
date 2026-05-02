@@ -85,7 +85,7 @@ namespace EVEMon.SkillPlanner
             this.lbSearchTextHint.Name = "lbSearchTextHint";
             this.lbSearchTextHint.Size = new System.Drawing.Size(65, 13);
             this.lbSearchTextHint.TabIndex = 23;
-            this.lbSearchTextHint.Text = "Search Text";
+            this.lbSearchTextHint.Text = resources.GetString("this.lbSearchTextHint.Text");
             this.lbSearchTextHint.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbSearchTextHint.Click += new System.EventHandler(this.lbSearchTextHint_Click);
             // 
@@ -100,7 +100,7 @@ namespace EVEMon.SkillPlanner
             this.lbNoMatches.Padding = new System.Windows.Forms.Padding(4, 30, 4, 4);
             this.lbNoMatches.Size = new System.Drawing.Size(185, 344);
             this.lbNoMatches.TabIndex = 24;
-            this.lbNoMatches.Text = "No ships match your search.";
+            this.lbNoMatches.Text = resources.GetString("this.lbNoMatches.Text");
             this.lbNoMatches.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lbSearchList
@@ -172,7 +172,7 @@ namespace EVEMon.SkillPlanner
             this.lblFilter.Name = "lblFilter";
             this.lblFilter.Size = new System.Drawing.Size(32, 13);
             this.lblFilter.TabIndex = 24;
-            this.lblFilter.Text = "Filter:";
+            this.lblFilter.Text = resources.GetString("this.lblFilter.Text");
             // 
             // pbSearchImage
             // 
@@ -239,41 +239,41 @@ namespace EVEMon.SkillPlanner
             this.cmiLvPlanTo.Image = ((System.Drawing.Image)(resources.GetObject("cmiLvPlanTo.Image")));
             this.cmiLvPlanTo.Name = "cmiLvPlanTo";
             this.cmiLvPlanTo.Size = new System.Drawing.Size(166, 22);
-            this.cmiLvPlanTo.Text = "&Plan Mastery to...";
+            this.cmiLvPlanTo.Text = resources.GetString("this.cmiLvPlanTo.Text");
             // 
             // tsmLevel1
             // 
             this.tsmLevel1.Name = "tsmLevel1";
             this.tsmLevel1.Size = new System.Drawing.Size(114, 22);
-            this.tsmLevel1.Text = "Level I";
+            this.tsmLevel1.Text = resources.GetString("this.tsmLevel1.Text");
             this.tsmLevel1.Click += new System.EventHandler(this.planToLevelMenuItem_Click);
             // 
             // tsmLevel2
             // 
             this.tsmLevel2.Name = "tsmLevel2";
             this.tsmLevel2.Size = new System.Drawing.Size(114, 22);
-            this.tsmLevel2.Text = "Level II";
+            this.tsmLevel2.Text = resources.GetString("this.tsmLevel2.Text");
             this.tsmLevel2.Click += new System.EventHandler(this.planToLevelMenuItem_Click);
             // 
             // tsmLevel3
             // 
             this.tsmLevel3.Name = "tsmLevel3";
             this.tsmLevel3.Size = new System.Drawing.Size(114, 22);
-            this.tsmLevel3.Text = "Level III";
+            this.tsmLevel3.Text = resources.GetString("this.tsmLevel3.Text");
             this.tsmLevel3.Click += new System.EventHandler(this.planToLevelMenuItem_Click);
             // 
             // tsmLevel4
             // 
             this.tsmLevel4.Name = "tsmLevel4";
             this.tsmLevel4.Size = new System.Drawing.Size(114, 22);
-            this.tsmLevel4.Text = "Level IV";
+            this.tsmLevel4.Text = resources.GetString("this.tsmLevel4.Text");
             this.tsmLevel4.Click += new System.EventHandler(this.planToLevelMenuItem_Click);
             // 
             // tsmLevel5
             // 
             this.tsmLevel5.Name = "tsmLevel5";
             this.tsmLevel5.Size = new System.Drawing.Size(114, 22);
-            this.tsmLevel5.Text = "Level V";
+            this.tsmLevel5.Text = resources.GetString("this.tsmLevel5.Text");
             this.tsmLevel5.Click += new System.EventHandler(this.planToLevelMenuItem_Click);
             // 
             // tsSeparatorPlanTo
@@ -285,14 +285,14 @@ namespace EVEMon.SkillPlanner
             // 
             this.cmiExpandSelected.Name = "cmiExpandSelected";
             this.cmiExpandSelected.Size = new System.Drawing.Size(166, 22);
-            this.cmiExpandSelected.Text = "Expand Selected";
+            this.cmiExpandSelected.Text = resources.GetString("this.cmiExpandSelected.Text");
             this.cmiExpandSelected.Click += new System.EventHandler(this.cmiExpandSelected_Click);
             // 
             // cmiCollapseSelected
             // 
             this.cmiCollapseSelected.Name = "cmiCollapseSelected";
             this.cmiCollapseSelected.Size = new System.Drawing.Size(166, 22);
-            this.cmiCollapseSelected.Text = "Collapse Selected";
+            this.cmiCollapseSelected.Text = resources.GetString("this.cmiCollapseSelected.Text");
             this.cmiCollapseSelected.Click += new System.EventHandler(this.cmiCollapseSelected_Click);
             // 
             // tsSeparatorExpandCollapse
@@ -304,14 +304,14 @@ namespace EVEMon.SkillPlanner
             // 
             this.cmiExpandAll.Name = "cmiExpandAll";
             this.cmiExpandAll.Size = new System.Drawing.Size(166, 22);
-            this.cmiExpandAll.Text = "&Expand All";
+            this.cmiExpandAll.Text = resources.GetString("this.cmiExpandAll.Text");
             this.cmiExpandAll.Click += new System.EventHandler(this.cmiExpandAll_Click);
             // 
             // cmiCollapseAll
             // 
             this.cmiCollapseAll.Name = "cmiCollapseAll";
             this.cmiCollapseAll.Size = new System.Drawing.Size(166, 22);
-            this.cmiCollapseAll.Text = "&Collapse All";
+            this.cmiCollapseAll.Text = resources.GetString("this.cmiCollapseAll.Text");
             this.cmiCollapseAll.Click += new System.EventHandler(this.cmiCollapseAll_Click);
             // 
             // EveObjectSelectControl

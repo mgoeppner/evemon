@@ -49,7 +49,7 @@
             this.deletionLabel.Name = "deletionLabel";
             this.deletionLabel.Size = new System.Drawing.Size(238, 13);
             this.deletionLabel.TabIndex = 4;
-            this.deletionLabel.Text = "You are about to delete the ESI key with ID : {0}.";
+            this.deletionLabel.Text = resources.GetString("this.deletionLabel.Text");
             this.deletionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // cancelButton
@@ -60,7 +60,7 @@
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 0;
-            this.cancelButton.Text = "&Cancel";
+            this.cancelButton.Text = resources.GetString("this.cancelButton.Text");
             this.cancelButton.UseVisualStyleBackColor = true;
             // 
             // deleteButton
@@ -71,7 +71,7 @@
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(75, 23);
             this.deleteButton.TabIndex = 1;
-            this.deleteButton.Text = "&Delete";
+            this.deleteButton.Text = resources.GetString("this.deleteButton.Text");
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
@@ -115,7 +115,7 @@
             this.deleteWarningLabel.Name = "deleteWarningLabel";
             this.deleteWarningLabel.Size = new System.Drawing.Size(304, 15);
             this.deleteWarningLabel.TabIndex = 7;
-            this.deleteWarningLabel.Text = "Removing characters means losing all their data and plans!";
+            this.deleteWarningLabel.Text = resources.GetString("this.deleteWarningLabel.Text");
             // 
             // charactersListGroupBox
             // 
@@ -127,7 +127,7 @@
             this.charactersListGroupBox.Size = new System.Drawing.Size(495, 114);
             this.charactersListGroupBox.TabIndex = 8;
             this.charactersListGroupBox.TabStop = false;
-            this.charactersListGroupBox.Text = "Select the characters you want to remove";
+            this.charactersListGroupBox.Text = resources.GetString("this.charactersListGroupBox.Text");
             // 
             // EsiKeyDeletionWindow
             // 
@@ -144,7 +144,7 @@
             this.Controls.Add(this.cancelButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "EsiKeyDeletionWindow";
-            this.Text = "Delete an ESI key";
+            this.Text = resources.GetString("this.Text");
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.charactersListGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);

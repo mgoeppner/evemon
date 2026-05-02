@@ -45,7 +45,7 @@ namespace EVEMon.SkillPlanner
             this.buttonWholePlan.Name = "buttonWholePlan";
             this.buttonWholePlan.Size = new System.Drawing.Size(472, 48);
             this.buttonWholePlan.TabIndex = 1;
-            this.buttonWholePlan.Text = "Attributes that would be best for the first year of this plan.";
+            this.buttonWholePlan.Text = resources.GetString("this.buttonWholePlan.Text");
             this.buttonWholePlan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonWholePlan.UseVisualStyleBackColor = true;
             this.buttonWholePlan.Click += new System.EventHandler(this.buttonWholePlan_Click);
@@ -61,7 +61,7 @@ namespace EVEMon.SkillPlanner
             this.buttonRemappingPoints.Name = "buttonRemappingPoints";
             this.buttonRemappingPoints.Size = new System.Drawing.Size(472, 48);
             this.buttonRemappingPoints.TabIndex = 0;
-            this.buttonRemappingPoints.Text = "Use the remapping points I set up.";
+            this.buttonRemappingPoints.Text = resources.GetString("this.buttonRemappingPoints.Text");
             this.buttonRemappingPoints.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonRemappingPoints.UseVisualStyleBackColor = true;
             this.buttonRemappingPoints.Click += new System.EventHandler(this.buttonRemappingPoints_Click);
@@ -77,7 +77,7 @@ namespace EVEMon.SkillPlanner
             this.buttonCharacter.Name = "buttonCharacter";
             this.buttonCharacter.Size = new System.Drawing.Size(472, 48);
             this.buttonCharacter.TabIndex = 2;
-            this.buttonCharacter.Text = "Attributes that would have been best for what I have trained so far.";
+            this.buttonCharacter.Text = resources.GetString("this.buttonCharacter.Text");
             this.buttonCharacter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonCharacter.UseVisualStyleBackColor = true;
             this.buttonCharacter.Click += new System.EventHandler(this.buttonCharacter_Click);
@@ -96,7 +96,7 @@ namespace EVEMon.SkillPlanner
             this.Name = "AttributesOptimizerOptionsWindow";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Attributes Optimizer Options";
+            this.Text = resources.GetString("this.Text");
             this.ResumeLayout(false);
 
         }

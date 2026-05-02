@@ -84,7 +84,7 @@ namespace EVEMon.SkillPlanner
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(236, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Select a plan to open, or multiple plans to merge:";
+            this.label1.Text = resources.GetString("this.label1.Text");
             // 
             // btnClose
             // 
@@ -94,14 +94,14 @@ namespace EVEMon.SkillPlanner
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 3;
-            this.btnClose.Text = "Close";
+            this.btnClose.Text = resources.GetString("this.btnClose.Text");
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // ofdOpenDialog
             // 
-            this.ofdOpenDialog.Filter = "Plan Files (*.emp)|*.emp|Plan Files (*.xml)|*.xml|All Files (*.*)|*.*";
-            this.ofdOpenDialog.Title = "Open Plan File";
+            this.ofdOpenDialog.Filter = resources.GetString("this.ofdOpenDialog.Filter");
+            this.ofdOpenDialog.Title = resources.GetString("this.ofdOpenDialog.Title");
             // 
             // panel1
             // 
@@ -144,21 +144,21 @@ namespace EVEMon.SkillPlanner
             // 
             // PlanName
             // 
-            this.PlanName.Text = "Plan Name";
+            this.PlanName.Text = resources.GetString("this.PlanName.Text");
             this.PlanName.Width = 176;
             // 
             // PlanDate
             // 
-            this.PlanDate.Text = "Completion Time";
+            this.PlanDate.Text = resources.GetString("this.PlanDate.Text");
             this.PlanDate.Width = 197;
             // 
             // PlanSkills
             // 
-            this.PlanSkills.Text = "Skills";
+            this.PlanSkills.Text = resources.GetString("this.PlanSkills.Text");
             // 
             // PlanDescription
             // 
-            this.PlanDescription.Text = "Description";
+            this.PlanDescription.Text = resources.GetString("this.PlanDescription.Text");
             this.PlanDescription.Width = 170;
             // 
             // contextMenu
@@ -178,7 +178,7 @@ namespace EVEMon.SkillPlanner
             this.cmiOpen.Image = ((System.Drawing.Image)(resources.GetObject("cmiOpen.Image")));
             this.cmiOpen.Name = "cmiOpen";
             this.cmiOpen.Size = new System.Drawing.Size(126, 22);
-            this.cmiOpen.Text = "Open...";
+            this.cmiOpen.Text = resources.GetString("this.cmiOpen.Text");
             this.cmiOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
             // cmiExport
@@ -186,7 +186,7 @@ namespace EVEMon.SkillPlanner
             this.cmiExport.Image = ((System.Drawing.Image)(resources.GetObject("cmiExport.Image")));
             this.cmiExport.Name = "cmiExport";
             this.cmiExport.Size = new System.Drawing.Size(126, 22);
-            this.cmiExport.Text = "Export...";
+            this.cmiExport.Text = resources.GetString("this.cmiExport.Text");
             this.cmiExport.Click += new System.EventHandler(this.miExportPlan_Click);
             // 
             // toolStripSeparator
@@ -199,7 +199,7 @@ namespace EVEMon.SkillPlanner
             this.cmiRenameEdit.Image = ((System.Drawing.Image)(resources.GetObject("cmiRenameEdit.Image")));
             this.cmiRenameEdit.Name = "cmiRenameEdit";
             this.cmiRenameEdit.Size = new System.Drawing.Size(126, 22);
-            this.cmiRenameEdit.Text = "Rename...";
+            this.cmiRenameEdit.Text = resources.GetString("this.cmiRenameEdit.Text");
             this.cmiRenameEdit.Click += new System.EventHandler(this.miRenameEdit_Click);
             // 
             // cmiDelete
@@ -207,7 +207,7 @@ namespace EVEMon.SkillPlanner
             this.cmiDelete.Image = ((System.Drawing.Image)(resources.GetObject("cmiDelete.Image")));
             this.cmiDelete.Name = "cmiDelete";
             this.cmiDelete.Size = new System.Drawing.Size(126, 22);
-            this.cmiDelete.Text = "Delete";
+            this.cmiDelete.Text = resources.GetString("this.cmiDelete.Text");
             this.cmiDelete.Click += new System.EventHandler(this.miDelete_Click);
             // 
             // toolStrip
@@ -222,13 +222,13 @@ namespace EVEMon.SkillPlanner
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(41, 327);
             this.toolStrip.TabIndex = 0;
-            this.toolStrip.Text = "toolStrip";
+            this.toolStrip.Text = resources.GetString("this.toolStrip.Text");
             // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Size = new System.Drawing.Size(38, 15);
-            this.toolStripLabel1.Text = "Move:";
+            this.toolStripLabel1.Text = resources.GetString("this.toolStripLabel1.Text");
             // 
             // tsbMoveUp
             // 
@@ -238,7 +238,7 @@ namespace EVEMon.SkillPlanner
             this.tsbMoveUp.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbMoveUp.Name = "tsbMoveUp";
             this.tsbMoveUp.Size = new System.Drawing.Size(38, 20);
-            this.tsbMoveUp.Text = "Move Up";
+            this.tsbMoveUp.Text = resources.GetString("this.tsbMoveUp.Text");
             this.tsbMoveUp.Click += new System.EventHandler(this.tsbMoveUp_Click);
             // 
             // tsbMoveDown
@@ -249,7 +249,7 @@ namespace EVEMon.SkillPlanner
             this.tsbMoveDown.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbMoveDown.Name = "tsbMoveDown";
             this.tsbMoveDown.Size = new System.Drawing.Size(38, 20);
-            this.tsbMoveDown.Text = "Move Down";
+            this.tsbMoveDown.Text = resources.GetString("this.tsbMoveDown.Text");
             this.tsbMoveDown.Click += new System.EventHandler(this.tsbMoveDown_Click);
             // 
             // tableLayoutPanel
@@ -297,7 +297,7 @@ namespace EVEMon.SkillPlanner
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(75, 23);
             this.btnOpen.TabIndex = 4;
-            this.btnOpen.Text = "Open";
+            this.btnOpen.Text = resources.GetString("this.btnOpen.Text");
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
@@ -311,7 +311,7 @@ namespace EVEMon.SkillPlanner
             this.menuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
             this.menuStrip.Size = new System.Drawing.Size(659, 24);
             this.menuStrip.TabIndex = 9;
-            this.menuStrip.Text = "menuBar";
+            this.menuStrip.Text = resources.GetString("this.menuStrip.Text");
             // 
             // mFile
             // 
@@ -328,7 +328,7 @@ namespace EVEMon.SkillPlanner
             this.miSavePlans});
             this.mFile.Name = "mFile";
             this.mFile.Size = new System.Drawing.Size(37, 20);
-            this.mFile.Text = "&File";
+            this.mFile.Text = resources.GetString("this.mFile.Text");
             this.mFile.DropDownOpening += new System.EventHandler(this.mFile_DropDownOpening);
             // 
             // miNewPlan
@@ -336,7 +336,7 @@ namespace EVEMon.SkillPlanner
             this.miNewPlan.Image = ((System.Drawing.Image)(resources.GetObject("miNewPlan.Image")));
             this.miNewPlan.Name = "miNewPlan";
             this.miNewPlan.Size = new System.Drawing.Size(239, 22);
-            this.miNewPlan.Text = "&New Plan…";
+            this.miNewPlan.Text = resources.GetString("this.miNewPlan.Text");
             this.miNewPlan.Click += new System.EventHandler(this.miNewPlan_Click);
             // 
             // NewPlanToolStripSeparator
@@ -349,7 +349,7 @@ namespace EVEMon.SkillPlanner
             this.miImportPlanFromFile.Image = ((System.Drawing.Image)(resources.GetObject("miImportPlanFromFile.Image")));
             this.miImportPlanFromFile.Name = "miImportPlanFromFile";
             this.miImportPlanFromFile.Size = new System.Drawing.Size(239, 22);
-            this.miImportPlanFromFile.Text = "&Import Plan from File…";
+            this.miImportPlanFromFile.Text = resources.GetString("this.miImportPlanFromFile.Text");
             this.miImportPlanFromFile.Click += new System.EventHandler(this.miImportPlanFromFile_Click);
             // 
             // miImportPlanFromCharacter
@@ -357,7 +357,7 @@ namespace EVEMon.SkillPlanner
             this.miImportPlanFromCharacter.Image = ((System.Drawing.Image)(resources.GetObject("miImportPlanFromCharacter.Image")));
             this.miImportPlanFromCharacter.Name = "miImportPlanFromCharacter";
             this.miImportPlanFromCharacter.Size = new System.Drawing.Size(239, 22);
-            this.miImportPlanFromCharacter.Text = "Import Plan from &Character…";
+            this.miImportPlanFromCharacter.Text = resources.GetString("this.miImportPlanFromCharacter.Text");
             this.miImportPlanFromCharacter.Click += new System.EventHandler(this.miImportPlanFromCharacter_Click);
             // 
             // ImportExportPlanToolStripSeparator
@@ -370,7 +370,7 @@ namespace EVEMon.SkillPlanner
             this.miExportPlan.Image = ((System.Drawing.Image)(resources.GetObject("miExportPlan.Image")));
             this.miExportPlan.Name = "miExportPlan";
             this.miExportPlan.Size = new System.Drawing.Size(239, 22);
-            this.miExportPlan.Text = "&Export Plan...";
+            this.miExportPlan.Text = resources.GetString("this.miExportPlan.Text");
             this.miExportPlan.Click += new System.EventHandler(this.miExportPlan_Click);
             // 
             // miExportCharacterSkillsAsPlan
@@ -378,7 +378,7 @@ namespace EVEMon.SkillPlanner
             this.miExportCharacterSkillsAsPlan.Image = ((System.Drawing.Image)(resources.GetObject("miExportCharacterSkillsAsPlan.Image")));
             this.miExportCharacterSkillsAsPlan.Name = "miExportCharacterSkillsAsPlan";
             this.miExportCharacterSkillsAsPlan.Size = new System.Drawing.Size(239, 22);
-            this.miExportCharacterSkillsAsPlan.Text = "Export Character &Skills as Plan...";
+            this.miExportCharacterSkillsAsPlan.Text = resources.GetString("this.miExportCharacterSkillsAsPlan.Text");
             this.miExportCharacterSkillsAsPlan.Click += new System.EventHandler(this.miExportCharacterSkillsAsPlan_Click);
             // 
             // ExportCharAsPlanToolStripSeparator
@@ -391,7 +391,7 @@ namespace EVEMon.SkillPlanner
             this.miRestorePlans.Image = ((System.Drawing.Image)(resources.GetObject("miRestorePlans.Image")));
             this.miRestorePlans.Name = "miRestorePlans";
             this.miRestorePlans.Size = new System.Drawing.Size(239, 22);
-            this.miRestorePlans.Text = "&Restore Plans...";
+            this.miRestorePlans.Text = resources.GetString("this.miRestorePlans.Text");
             this.miRestorePlans.Click += new System.EventHandler(this.miRestorePlans_Click);
             // 
             // miSavePlans
@@ -399,7 +399,7 @@ namespace EVEMon.SkillPlanner
             this.miSavePlans.Image = ((System.Drawing.Image)(resources.GetObject("miSavePlans.Image")));
             this.miSavePlans.Name = "miSavePlans";
             this.miSavePlans.Size = new System.Drawing.Size(239, 22);
-            this.miSavePlans.Text = "&Save Plans...";
+            this.miSavePlans.Text = resources.GetString("this.miSavePlans.Text");
             this.miSavePlans.Click += new System.EventHandler(this.miSavePlans_Click);
             // 
             // mEdit
@@ -409,7 +409,7 @@ namespace EVEMon.SkillPlanner
             this.miDelete});
             this.mEdit.Name = "mEdit";
             this.mEdit.Size = new System.Drawing.Size(39, 20);
-            this.mEdit.Text = "&Edit";
+            this.mEdit.Text = resources.GetString("this.mEdit.Text");
             this.mEdit.DropDownOpening += new System.EventHandler(this.mEdit_DropDownOpening);
             // 
             // miRenameEdit
@@ -418,7 +418,7 @@ namespace EVEMon.SkillPlanner
             this.miRenameEdit.Name = "miRenameEdit";
             this.miRenameEdit.ShortcutKeys = System.Windows.Forms.Keys.F2;
             this.miRenameEdit.Size = new System.Drawing.Size(145, 22);
-            this.miRenameEdit.Text = "&Rename...";
+            this.miRenameEdit.Text = resources.GetString("this.miRenameEdit.Text");
             this.miRenameEdit.Click += new System.EventHandler(this.miRenameEdit_Click);
             // 
             // miDelete
@@ -427,7 +427,7 @@ namespace EVEMon.SkillPlanner
             this.miDelete.Name = "miDelete";
             this.miDelete.ShortcutKeys = System.Windows.Forms.Keys.Delete;
             this.miDelete.Size = new System.Drawing.Size(145, 22);
-            this.miDelete.Text = "&Delete";
+            this.miDelete.Text = resources.GetString("this.miDelete.Text");
             this.miDelete.Click += new System.EventHandler(this.miDelete_Click);
             // 
             // PlanManagementWindow
@@ -443,7 +443,7 @@ namespace EVEMon.SkillPlanner
             this.MinimizeBox = false;
             this.Name = "PlanManagementWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Manage Plans";
+            this.Text = resources.GetString("this.Text");
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.contextMenu.ResumeLayout(false);

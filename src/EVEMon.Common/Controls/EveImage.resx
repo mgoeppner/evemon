@@ -195,4 +195,7 @@
         AQcBAAEDAQABAwEAAQMBAAEDAQABAQEAAQEBAAEBAQABARAACw==
 </value>
   </data>
+  <data name="this.pbImage.ToolTip" xml:space="preserve">
+    <value>Double-click to view a larger image</value>
+  </data>
 </root>

@@ -34,21 +34,21 @@ namespace EVEMon.SettingsUI
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Updates", 11, 11);
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Network", 7, 7);
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Portable EVE Clients", 15, 15);
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Market Price Providers", 16, 16);
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("General", 10, 10, new System.Windows.Forms.TreeNode[] { treeNode16, treeNode17, treeNode18, treeNode19 });
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Main Window", 6, 6);
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Icons", 13, 13);
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Messages", 14, 14);
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Skill Planner", 8, 8, new System.Windows.Forms.TreeNode[] { treeNode22, treeNode23 });
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("System Tray Icon", 2, 2);
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("External Calendar", 5, 5);
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Scheduler", 1, 1, new System.Windows.Forms.TreeNode[] { treeNode26 });
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Skill Completion Mails", 12, 12);
-            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Notifications", 9, 9, new System.Windows.Forms.TreeNode[] { treeNode28 });
-            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Cloud Storage Service", 17, 17);
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode(resources.GetString("treeNode16.Text"), 11, 11);
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode(resources.GetString("treeNode17.Text"), 7, 7);
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode(resources.GetString("treeNode18.Text"), 15, 15);
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode(resources.GetString("treeNode19.Text"), 16, 16);
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode(resources.GetString("treeNode20.Text"), 10, 10, new System.Windows.Forms.TreeNode[] { treeNode16, treeNode17, treeNode18, treeNode19 });
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode(resources.GetString("treeNode21.Text"), 6, 6);
+            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode(resources.GetString("treeNode22.Text"), 13, 13);
+            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode(resources.GetString("treeNode23.Text"), 14, 14);
+            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode(resources.GetString("treeNode24.Text"), 8, 8, new System.Windows.Forms.TreeNode[] { treeNode22, treeNode23 });
+            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode(resources.GetString("treeNode25.Text"), 2, 2);
+            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode(resources.GetString("treeNode26.Text"), 5, 5);
+            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode(resources.GetString("treeNode27.Text"), 1, 1, new System.Windows.Forms.TreeNode[] { treeNode26 });
+            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode(resources.GetString("treeNode28.Text"), 12, 12);
+            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode(resources.GetString("treeNode29.Text"), 9, 9, new System.Windows.Forms.TreeNode[] { treeNode28 });
+            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode(resources.GetString("treeNode30.Text"), 17, 17);
             systemTrayIconGroupBox = new System.Windows.Forms.GroupBox();
             rbSystemTrayOptionsNever = new System.Windows.Forms.RadioButton();
             rbSystemTrayOptionsAlways = new System.Windows.Forms.RadioButton();
@@ -75,6 +75,7 @@ namespace EVEMon.SettingsUI
             cbTitleToTime = new System.Windows.Forms.CheckBox();
             lblGeneralPage = new System.Windows.Forms.Label();
             lblEnvironment = new System.Windows.Forms.Label();
+            lblLanguage = new System.Windows.Forms.Label();
             lblSkillPlannerPage = new System.Windows.Forms.Label();
             lblNetworkPageProxy = new System.Windows.Forms.Label();
             lblProxyHostIPAddress = new System.Windows.Forms.Label();
@@ -110,6 +111,7 @@ namespace EVEMon.SettingsUI
             generalPage = new MultiPanelPage();
             btnEVEMonDataDir = new System.Windows.Forms.Button();
             cbWorksafeMode = new System.Windows.Forms.CheckBox();
+            languageComboBox = new System.Windows.Forms.ComboBox();
             compatibilityCombo = new System.Windows.Forms.ComboBox();
             runAtStartupComboBox = new System.Windows.Forms.CheckBox();
             mainWindowPage = new MultiPanelPage();
@@ -256,7 +258,7 @@ namespace EVEMon.SettingsUI
             systemTrayIconGroupBox.Size = new System.Drawing.Size(489, 115);
             systemTrayIconGroupBox.TabIndex = 9;
             systemTrayIconGroupBox.TabStop = false;
-            systemTrayIconGroupBox.Text = "Show System Tray Icon";
+            systemTrayIconGroupBox.Text = resources.GetString("systemTrayIconGroupBox.Text");
             // 
             // rbSystemTrayOptionsNever
             // 
@@ -269,7 +271,7 @@ namespace EVEMon.SettingsUI
             rbSystemTrayOptionsNever.TabIndex = 1;
             rbSystemTrayOptionsNever.TabStop = true;
             rbSystemTrayOptionsNever.Tag = "";
-            rbSystemTrayOptionsNever.Text = "Never";
+            rbSystemTrayOptionsNever.Text = resources.GetString("rbSystemTrayOptionsNever.Text");
             rbSystemTrayOptionsNever.UseVisualStyleBackColor = true;
             rbSystemTrayOptionsNever.CheckedChanged += OnMustEnableOrDisable;
             // 
@@ -284,7 +286,7 @@ namespace EVEMon.SettingsUI
             rbSystemTrayOptionsAlways.TabIndex = 3;
             rbSystemTrayOptionsAlways.TabStop = true;
             rbSystemTrayOptionsAlways.Tag = "";
-            rbSystemTrayOptionsAlways.Text = "Always";
+            rbSystemTrayOptionsAlways.Text = resources.GetString("rbSystemTrayOptionsAlways.Text");
             rbSystemTrayOptionsAlways.UseVisualStyleBackColor = true;
             // 
             // rbSystemTrayOptionsMinimized
@@ -298,7 +300,7 @@ namespace EVEMon.SettingsUI
             rbSystemTrayOptionsMinimized.TabIndex = 2;
             rbSystemTrayOptionsMinimized.TabStop = true;
             rbSystemTrayOptionsMinimized.Tag = "";
-            rbSystemTrayOptionsMinimized.Text = "When Minimized";
+            rbSystemTrayOptionsMinimized.Text = resources.GetString("rbSystemTrayOptionsMinimized.Text");
             rbSystemTrayOptionsMinimized.UseVisualStyleBackColor = true;
             // 
             // bottomPanel
@@ -322,7 +324,7 @@ namespace EVEMon.SettingsUI
             applyButton.Name = "applyButton";
             applyButton.Size = new System.Drawing.Size(88, 27);
             applyButton.TabIndex = 4;
-            applyButton.Text = "&Apply";
+            applyButton.Text = resources.GetString("applyButton.Text");
             applyButton.UseVisualStyleBackColor = true;
             applyButton.Click += applyButton_Click;
             // 
@@ -334,7 +336,7 @@ namespace EVEMon.SettingsUI
             okButton.Name = "okButton";
             okButton.Size = new System.Drawing.Size(88, 27);
             okButton.TabIndex = 3;
-            okButton.Text = "&OK";
+            okButton.Text = resources.GetString("okButton.Text");
             okButton.UseVisualStyleBackColor = true;
             okButton.Click += btnOk_Click;
             // 
@@ -347,7 +349,7 @@ namespace EVEMon.SettingsUI
             cancelButton.Name = "cancelButton";
             cancelButton.Size = new System.Drawing.Size(88, 27);
             cancelButton.TabIndex = 2;
-            cancelButton.Text = "&Cancel";
+            cancelButton.Text = resources.GetString("cancelButton.Text");
             cancelButton.UseVisualStyleBackColor = true;
             cancelButton.Click += btnCancel_Click;
             // 
@@ -370,7 +372,7 @@ namespace EVEMon.SettingsUI
             lblSize.Name = "lblSize";
             lblSize.Size = new System.Drawing.Size(27, 15);
             lblSize.TabIndex = 31;
-            lblSize.Text = "Size";
+            lblSize.Text = resources.GetString("lblSize.Text");
             // 
             // CharacterMonitorGroupBox
             // 
@@ -391,7 +393,7 @@ namespace EVEMon.SettingsUI
             CharacterMonitorGroupBox.Size = new System.Drawing.Size(497, 145);
             CharacterMonitorGroupBox.TabIndex = 7;
             CharacterMonitorGroupBox.TabStop = false;
-            CharacterMonitorGroupBox.Text = "Character Monitor";
+            CharacterMonitorGroupBox.Text = resources.GetString("CharacterMonitorGroupBox.Text");
             // 
             // nudSkillQueueWarningThresholdDays
             // 
@@ -411,7 +413,7 @@ namespace EVEMon.SettingsUI
             lblSkillQueueWarningThresholdDays.Name = "lblSkillQueueWarningThresholdDays";
             lblSkillQueueWarningThresholdDays.Size = new System.Drawing.Size(38, 15);
             lblSkillQueueWarningThresholdDays.TabIndex = 15;
-            lblSkillQueueWarningThresholdDays.Text = "Days :";
+            lblSkillQueueWarningThresholdDays.Text = resources.GetString("lblSkillQueueWarningThresholdDays.Text");
             // 
             // lblSkillQueuWarningThreshold
             // 
@@ -421,7 +423,7 @@ namespace EVEMon.SettingsUI
             lblSkillQueuWarningThreshold.Name = "lblSkillQueuWarningThreshold";
             lblSkillQueuWarningThreshold.Size = new System.Drawing.Size(169, 15);
             lblSkillQueuWarningThreshold.TabIndex = 14;
-            lblSkillQueuWarningThreshold.Text = "Skill Queue Warning Threshold";
+            lblSkillQueuWarningThreshold.Text = resources.GetString("lblSkillQueuWarningThreshold.Text");
             // 
             // cbColorQueuedSkills
             // 
@@ -431,8 +433,8 @@ namespace EVEMon.SettingsUI
             cbColorQueuedSkills.Name = "cbColorQueuedSkills";
             cbColorQueuedSkills.Size = new System.Drawing.Size(150, 19);
             cbColorQueuedSkills.TabIndex = 13;
-            cbColorQueuedSkills.Text = "Highlight Queued Skills";
-            ttToolTipCodes.SetToolTip(cbColorQueuedSkills, "When enabled, highlights all\r\nqueued skills in character's skill list");
+            cbColorQueuedSkills.Text = resources.GetString("cbColorQueuedSkills.Text");
+            ttToolTipCodes.SetToolTip(cbColorQueuedSkills, resources.GetString("cbColorQueuedSkills.ToolTip"));
             cbColorQueuedSkills.UseVisualStyleBackColor = true;
             // 
             // cbShowPrereqMetSkills
@@ -443,8 +445,8 @@ namespace EVEMon.SettingsUI
             cbShowPrereqMetSkills.Name = "cbShowPrereqMetSkills";
             cbShowPrereqMetSkills.Size = new System.Drawing.Size(173, 19);
             cbShowPrereqMetSkills.TabIndex = 12;
-            cbShowPrereqMetSkills.Text = "Show Also Prereq-Met Skills";
-            ttToolTipCodes.SetToolTip(cbShowPrereqMetSkills, "When enabled, shows all prerequisites\r\nmet skills in character's skill list");
+            cbShowPrereqMetSkills.Text = resources.GetString("cbShowPrereqMetSkills.Text");
+            ttToolTipCodes.SetToolTip(cbShowPrereqMetSkills, resources.GetString("cbShowPrereqMetSkills.ToolTip"));
             cbShowPrereqMetSkills.UseVisualStyleBackColor = true;
             // 
             // cbColorPartialSkills
@@ -455,8 +457,8 @@ namespace EVEMon.SettingsUI
             cbColorPartialSkills.Name = "cbColorPartialSkills";
             cbColorPartialSkills.Size = new System.Drawing.Size(191, 19);
             cbColorPartialSkills.TabIndex = 11;
-            cbColorPartialSkills.Text = "Highlight Partially Trained Skills";
-            ttToolTipCodes.SetToolTip(cbColorPartialSkills, "When enabled, highlights all partially\r\ntrained skills in character's skill list");
+            cbColorPartialSkills.Text = resources.GetString("cbColorPartialSkills.Text");
+            ttToolTipCodes.SetToolTip(cbColorPartialSkills, resources.GetString("cbColorPartialSkills.ToolTip"));
             cbColorPartialSkills.UseVisualStyleBackColor = true;
             // 
             // cbAlwaysShowSkillQueueTime
@@ -467,8 +469,8 @@ namespace EVEMon.SettingsUI
             cbAlwaysShowSkillQueueTime.Name = "cbAlwaysShowSkillQueueTime";
             cbAlwaysShowSkillQueueTime.Size = new System.Drawing.Size(235, 19);
             cbAlwaysShowSkillQueueTime.TabIndex = 2;
-            cbAlwaysShowSkillQueueTime.Text = "Always show time above the skill queue";
-            ttToolTipCodes.SetToolTip(cbAlwaysShowSkillQueueTime, "When enabled, always displays the total\r\nqueue time above the skill queue bar");
+            cbAlwaysShowSkillQueueTime.Text = resources.GetString("cbAlwaysShowSkillQueueTime.Text");
+            ttToolTipCodes.SetToolTip(cbAlwaysShowSkillQueueTime, resources.GetString("cbAlwaysShowSkillQueueTime.ToolTip"));
             cbAlwaysShowSkillQueueTime.UseVisualStyleBackColor = true;
             // 
             // cbShowNonPublicSkills
@@ -480,8 +482,8 @@ namespace EVEMon.SettingsUI
             cbShowNonPublicSkills.Name = "cbShowNonPublicSkills";
             cbShowNonPublicSkills.Size = new System.Drawing.Size(174, 19);
             cbShowNonPublicSkills.TabIndex = 1;
-            cbShowNonPublicSkills.Text = "Show Also Non-Public Skills";
-            ttToolTipCodes.SetToolTip(cbShowNonPublicSkills, "When enabled, shows all non-public skills in character's skill list");
+            cbShowNonPublicSkills.Text = resources.GetString("cbShowNonPublicSkills.Text");
+            ttToolTipCodes.SetToolTip(cbShowNonPublicSkills, resources.GetString("cbShowNonPublicSkills.ToolTip"));
             cbShowNonPublicSkills.UseVisualStyleBackColor = true;
             // 
             // cbShowAllPublicSkills
@@ -492,8 +494,8 @@ namespace EVEMon.SettingsUI
             cbShowAllPublicSkills.Name = "cbShowAllPublicSkills";
             cbShowAllPublicSkills.Size = new System.Drawing.Size(163, 19);
             cbShowAllPublicSkills.TabIndex = 0;
-            cbShowAllPublicSkills.Text = "Show Also All Public Skills";
-            ttToolTipCodes.SetToolTip(cbShowAllPublicSkills, "When enabled, shows all public skills in character's skill list");
+            cbShowAllPublicSkills.Text = resources.GetString("cbShowAllPublicSkills.Text");
+            ttToolTipCodes.SetToolTip(cbShowAllPublicSkills, resources.GetString("cbShowAllPublicSkills.ToolTip"));
             cbShowAllPublicSkills.UseVisualStyleBackColor = true;
             cbShowAllPublicSkills.CheckedChanged += OnMustEnableOrDisable;
             // 
@@ -510,7 +512,7 @@ namespace EVEMon.SettingsUI
             WindowTitleGroupBox.Size = new System.Drawing.Size(497, 111);
             WindowTitleGroupBox.TabIndex = 14;
             WindowTitleGroupBox.TabStop = false;
-            WindowTitleGroupBox.Text = "Window Title";
+            WindowTitleGroupBox.Text = resources.GetString("WindowTitleGroupBox.Text");
             // 
             // cbWindowsTitleList
             // 
@@ -532,8 +534,8 @@ namespace EVEMon.SettingsUI
             cbSkillInTitle.Name = "cbSkillInTitle";
             cbSkillInTitle.Size = new System.Drawing.Size(135, 19);
             cbSkillInTitle.TabIndex = 7;
-            cbSkillInTitle.Text = "Show skill in training";
-            ttToolTipCodes.SetToolTip(cbSkillInTitle, "When enabled, shows the character's skill\r\nin training according to choice below");
+            cbSkillInTitle.Text = resources.GetString("cbSkillInTitle.Text");
+            ttToolTipCodes.SetToolTip(cbSkillInTitle, resources.GetString("cbSkillInTitle.ToolTip"));
             cbSkillInTitle.UseVisualStyleBackColor = true;
             // 
             // cbTitleToTime
@@ -545,8 +547,8 @@ namespace EVEMon.SettingsUI
             cbTitleToTime.Name = "cbTitleToTime";
             cbTitleToTime.Size = new System.Drawing.Size(212, 19);
             cbTitleToTime.TabIndex = 6;
-            cbTitleToTime.Text = "Show character info in window title";
-            ttToolTipCodes.SetToolTip(cbTitleToTime, "When enabled, shows the character's info in window title");
+            cbTitleToTime.Text = resources.GetString("cbTitleToTime.Text");
+            ttToolTipCodes.SetToolTip(cbTitleToTime, resources.GetString("cbTitleToTime.ToolTip"));
             cbTitleToTime.UseVisualStyleBackColor = true;
             cbTitleToTime.CheckedChanged += OnMustEnableOrDisable;
             // 
@@ -569,7 +571,17 @@ namespace EVEMon.SettingsUI
             lblEnvironment.Name = "lblEnvironment";
             lblEnvironment.Size = new System.Drawing.Size(236, 15);
             lblEnvironment.TabIndex = 1;
-            lblEnvironment.Text = "Environment (requires restart to take effect)";
+            lblEnvironment.Text = resources.GetString("lblEnvironment.Text");
+            //
+            // lblLanguage
+            //
+            lblLanguage.AutoSize = true;
+            lblLanguage.Location = new System.Drawing.Point(4, 181);
+            lblLanguage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblLanguage.Name = "lblLanguage";
+            lblLanguage.Size = new System.Drawing.Size(146, 15);
+            lblLanguage.TabIndex = 22;
+            lblLanguage.Text = resources.GetString("lblLanguage.Text");
             // 
             // lblSkillPlannerPage
             // 
@@ -580,7 +592,7 @@ namespace EVEMon.SettingsUI
             lblSkillPlannerPage.Name = "lblSkillPlannerPage";
             lblSkillPlannerPage.Size = new System.Drawing.Size(495, 32);
             lblSkillPlannerPage.TabIndex = 19;
-            lblSkillPlannerPage.Text = "You can select whether to highlight any entry in the Skill Planner according to its status and more.";
+            lblSkillPlannerPage.Text = resources.GetString("lblSkillPlannerPage.Text");
             // 
             // lblNetworkPageProxy
             // 
@@ -591,7 +603,7 @@ namespace EVEMon.SettingsUI
             lblNetworkPageProxy.Name = "lblNetworkPageProxy";
             lblNetworkPageProxy.Size = new System.Drawing.Size(465, 37);
             lblNetworkPageProxy.TabIndex = 8;
-            lblNetworkPageProxy.Text = "By default, EVEMon will use the same Proxy settings as Internet Explorer (can be configured through the Control Panel).";
+            lblNetworkPageProxy.Text = resources.GetString("lblNetworkPageProxy.Text");
             // 
             // lblProxyHostIPAddress
             // 
@@ -601,7 +613,7 @@ namespace EVEMon.SettingsUI
             lblProxyHostIPAddress.Name = "lblProxyHostIPAddress";
             lblProxyHostIPAddress.Size = new System.Drawing.Size(212, 15);
             lblProxyHostIPAddress.TabIndex = 3;
-            lblProxyHostIPAddress.Text = "Host/IP Address";
+            lblProxyHostIPAddress.Text = resources.GetString("lblProxyHostIPAddress.Text");
             lblProxyHostIPAddress.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblProxyPort
@@ -612,7 +624,7 @@ namespace EVEMon.SettingsUI
             lblProxyPort.Name = "lblProxyPort";
             lblProxyPort.Size = new System.Drawing.Size(65, 15);
             lblProxyPort.TabIndex = 4;
-            lblProxyPort.Text = "Port";
+            lblProxyPort.Text = resources.GetString("lblProxyPort.Text");
             lblProxyPort.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblHTTP
@@ -623,7 +635,7 @@ namespace EVEMon.SettingsUI
             lblHTTP.Name = "lblHTTP";
             lblHTTP.Size = new System.Drawing.Size(38, 15);
             lblHTTP.TabIndex = 0;
-            lblHTTP.Text = "HTTP:";
+            lblHTTP.Text = resources.GetString("lblHTTP.Text");
             lblHTTP.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblEmailNotificationPage
@@ -636,7 +648,7 @@ namespace EVEMon.SettingsUI
             lblEmailNotificationPage.Name = "lblEmailNotificationPage";
             lblEmailNotificationPage.Size = new System.Drawing.Size(405, 15);
             lblEmailNotificationPage.TabIndex = 19;
-            lblEmailNotificationPage.Text = "EVEMon can send you an email whenever a skill level completes its training.";
+            lblEmailNotificationPage.Text = resources.GetString("lblEmailNotificationPage.Text");
             // 
             // lblNotificationsPage
             // 
@@ -647,7 +659,7 @@ namespace EVEMon.SettingsUI
             lblNotificationsPage.Name = "lblNotificationsPage";
             lblNotificationsPage.Size = new System.Drawing.Size(495, 50);
             lblNotificationsPage.TabIndex = 19;
-            lblNotificationsPage.Text = "You can choose what notifications will be shown in your system's tray notification area or in EVEMon's main window and when. You can also toggle the sound notification upon skill completion on or off.";
+            lblNotificationsPage.Text = resources.GetString("lblNotificationsPage.Text");
             // 
             // lblTrayIconPage
             // 
@@ -658,7 +670,7 @@ namespace EVEMon.SettingsUI
             lblTrayIconPage.Name = "lblTrayIconPage";
             lblTrayIconPage.Size = new System.Drawing.Size(495, 36);
             lblTrayIconPage.TabIndex = 18;
-            lblTrayIconPage.Text = "Here you can set the visible status of EVEMon's Tray Icon, configure the style of the Tray Icon's popup info and EVEMon's behaviour upon pressing the Close button.\r\n";
+            lblTrayIconPage.Text = resources.GetString("lblTrayIconPage.Text");
             // 
             // lblSchedulerUIPage
             // 
@@ -669,7 +681,7 @@ namespace EVEMon.SettingsUI
             lblSchedulerUIPage.Name = "lblSchedulerUIPage";
             lblSchedulerUIPage.Size = new System.Drawing.Size(492, 52);
             lblSchedulerUIPage.TabIndex = 6;
-            lblSchedulerUIPage.Text = "Select the colors used in the scheduler. Using the scheduler, EVEMon can warn you about skill that will complete at times you will be away from your computer.";
+            lblSchedulerUIPage.Text = resources.GetString("lblSchedulerUIPage.Text");
             // 
             // lblText
             // 
@@ -679,7 +691,7 @@ namespace EVEMon.SettingsUI
             lblText.Name = "lblText";
             lblText.Size = new System.Drawing.Size(31, 15);
             lblText.TabIndex = 5;
-            lblText.Text = "Text:";
+            lblText.Text = resources.GetString("lblText.Text");
             // 
             // lblBlockingEvents
             // 
@@ -689,7 +701,7 @@ namespace EVEMon.SettingsUI
             lblBlockingEvents.Name = "lblBlockingEvents";
             lblBlockingEvents.Size = new System.Drawing.Size(93, 15);
             lblBlockingEvents.TabIndex = 0;
-            lblBlockingEvents.Text = "Blocking Events:";
+            lblBlockingEvents.Text = resources.GetString("lblBlockingEvents.Text");
             // 
             // lblRecurringEvents
             // 
@@ -699,7 +711,7 @@ namespace EVEMon.SettingsUI
             lblRecurringEvents.Name = "lblRecurringEvents";
             lblRecurringEvents.Size = new System.Drawing.Size(98, 15);
             lblRecurringEvents.TabIndex = 1;
-            lblRecurringEvents.Text = "Recurring Events:";
+            lblRecurringEvents.Text = resources.GetString("lblRecurringEvents.Text");
             // 
             // lblSimpleEvents
             // 
@@ -709,7 +721,7 @@ namespace EVEMon.SettingsUI
             lblSimpleEvents.Name = "lblSimpleEvents";
             lblSimpleEvents.Size = new System.Drawing.Size(83, 15);
             lblSimpleEvents.TabIndex = 2;
-            lblSimpleEvents.Text = "Simple Events:";
+            lblSimpleEvents.Text = resources.GetString("lblSimpleEvents.Text");
             // 
             // lblExternalCalendarPage
             // 
@@ -731,7 +743,7 @@ namespace EVEMon.SettingsUI
             lblIconsPage.Name = "lblIconsPage";
             lblIconsPage.Size = new System.Drawing.Size(495, 37);
             lblIconsPage.TabIndex = 15;
-            lblIconsPage.Text = "You can customize the icons used in the skill planner; if you have a good idea for a set of icons instructions to create your own can be found on wiki.";
+            lblIconsPage.Text = resources.GetString("lblIconsPage.Text");
             // 
             // gbSkillBrowserIconSet
             // 
@@ -744,7 +756,7 @@ namespace EVEMon.SettingsUI
             gbSkillBrowserIconSet.Size = new System.Drawing.Size(262, 235);
             gbSkillBrowserIconSet.TabIndex = 14;
             gbSkillBrowserIconSet.TabStop = false;
-            gbSkillBrowserIconSet.Text = "Skill Browser Icon Set";
+            gbSkillBrowserIconSet.Text = resources.GetString("gbSkillBrowserIconSet.Text");
             // 
             // iconsSetTableLayoutPanel
             // 
@@ -793,7 +805,7 @@ namespace EVEMon.SettingsUI
             lblObsoletePlanEntries.Name = "lblObsoletePlanEntries";
             lblObsoletePlanEntries.Size = new System.Drawing.Size(495, 32);
             lblObsoletePlanEntries.TabIndex = 24;
-            lblObsoletePlanEntries.Text = "You can configure how EVEMon handles skills that appear to be completed and reset the appearing messages behavior.";
+            lblObsoletePlanEntries.Text = resources.GetString("lblObsoletePlanEntries.Text");
             // 
             // cbUseIncreasedContrastOnOverview
             // 
@@ -803,8 +815,8 @@ namespace EVEMon.SettingsUI
             cbUseIncreasedContrastOnOverview.Name = "cbUseIncreasedContrastOnOverview";
             cbUseIncreasedContrastOnOverview.Size = new System.Drawing.Size(146, 19);
             cbUseIncreasedContrastOnOverview.TabIndex = 34;
-            cbUseIncreasedContrastOnOverview.Text = "Use Increased Contrast";
-            ttToolTipCodes.SetToolTip(cbUseIncreasedContrastOnOverview, "When enabled, increases the contrast of the shown info");
+            cbUseIncreasedContrastOnOverview.Text = resources.GetString("cbUseIncreasedContrastOnOverview.Text");
+            ttToolTipCodes.SetToolTip(cbUseIncreasedContrastOnOverview, resources.GetString("cbUseIncreasedContrastOnOverview.ToolTip"));
             cbUseIncreasedContrastOnOverview.UseVisualStyleBackColor = true;
             // 
             // overviewGroupCharactersInTrainingCheckBox
@@ -815,8 +827,8 @@ namespace EVEMon.SettingsUI
             overviewGroupCharactersInTrainingCheckBox.Name = "overviewGroupCharactersInTrainingCheckBox";
             overviewGroupCharactersInTrainingCheckBox.Size = new System.Drawing.Size(176, 19);
             overviewGroupCharactersInTrainingCheckBox.TabIndex = 33;
-            overviewGroupCharactersInTrainingCheckBox.Text = "Group Characters In Training";
-            ttToolTipCodes.SetToolTip(overviewGroupCharactersInTrainingCheckBox, "When enabled, groups the character's\r\nthat are currently in training");
+            overviewGroupCharactersInTrainingCheckBox.Text = resources.GetString("overviewGroupCharactersInTrainingCheckBox.Text");
+            ttToolTipCodes.SetToolTip(overviewGroupCharactersInTrainingCheckBox, resources.GetString("overviewGroupCharactersInTrainingCheckBox.ToolTip"));
             overviewGroupCharactersInTrainingCheckBox.UseVisualStyleBackColor = true;
             // 
             // overviewShowSkillQueueTrainingTimeCheckBox
@@ -827,8 +839,8 @@ namespace EVEMon.SettingsUI
             overviewShowSkillQueueTrainingTimeCheckBox.Name = "overviewShowSkillQueueTrainingTimeCheckBox";
             overviewShowSkillQueueTrainingTimeCheckBox.Size = new System.Drawing.Size(191, 19);
             overviewShowSkillQueueTrainingTimeCheckBox.TabIndex = 32;
-            overviewShowSkillQueueTrainingTimeCheckBox.Text = "Show Skill Queue Training Time";
-            ttToolTipCodes.SetToolTip(overviewShowSkillQueueTrainingTimeCheckBox, "When enabled, shows the character's\r\nskill queue training time");
+            overviewShowSkillQueueTrainingTimeCheckBox.Text = resources.GetString("overviewShowSkillQueueTrainingTimeCheckBox.Text");
+            ttToolTipCodes.SetToolTip(overviewShowSkillQueueTrainingTimeCheckBox, resources.GetString("overviewShowSkillQueueTrainingTimeCheckBox.ToolTip"));
             overviewShowSkillQueueTrainingTimeCheckBox.UseVisualStyleBackColor = true;
             // 
             // overviewShowWalletCheckBox
@@ -839,8 +851,8 @@ namespace EVEMon.SettingsUI
             overviewShowWalletCheckBox.Name = "overviewShowWalletCheckBox";
             overviewShowWalletCheckBox.Size = new System.Drawing.Size(135, 19);
             overviewShowWalletCheckBox.TabIndex = 30;
-            overviewShowWalletCheckBox.Text = "Show Wallet Balance";
-            ttToolTipCodes.SetToolTip(overviewShowWalletCheckBox, "When enabled, shows the character's wallet balance");
+            overviewShowWalletCheckBox.Text = resources.GetString("overviewShowWalletCheckBox.Text");
+            ttToolTipCodes.SetToolTip(overviewShowWalletCheckBox, resources.GetString("overviewShowWalletCheckBox.ToolTip"));
             overviewShowWalletCheckBox.UseVisualStyleBackColor = true;
             // 
             // overviewShowPortraitCheckBox
@@ -851,8 +863,8 @@ namespace EVEMon.SettingsUI
             overviewShowPortraitCheckBox.Name = "overviewShowPortraitCheckBox";
             overviewShowPortraitCheckBox.Size = new System.Drawing.Size(151, 19);
             overviewShowPortraitCheckBox.TabIndex = 26;
-            overviewShowPortraitCheckBox.Text = "Show Character Portrait";
-            ttToolTipCodes.SetToolTip(overviewShowPortraitCheckBox, "When enabled, shows the character's portrait\r\nas a thumbnail alongside the character's name");
+            overviewShowPortraitCheckBox.Text = resources.GetString("overviewShowPortraitCheckBox.Text");
+            ttToolTipCodes.SetToolTip(overviewShowPortraitCheckBox, resources.GetString("overviewShowPortraitCheckBox.ToolTip"));
             overviewShowPortraitCheckBox.UseVisualStyleBackColor = true;
             // 
             // cbShowOverViewTab
@@ -863,8 +875,8 @@ namespace EVEMon.SettingsUI
             cbShowOverViewTab.Name = "cbShowOverViewTab";
             cbShowOverViewTab.Size = new System.Drawing.Size(137, 19);
             cbShowOverViewTab.TabIndex = 0;
-            cbShowOverViewTab.Text = "Show \"Overview\" tab";
-            ttToolTipCodes.SetToolTip(cbShowOverViewTab, "When enabled, shows the Overview tab");
+            cbShowOverViewTab.Text = resources.GetString("cbShowOverViewTab.Text");
+            ttToolTipCodes.SetToolTip(cbShowOverViewTab, resources.GetString("cbShowOverViewTab.ToolTip"));
             cbShowOverViewTab.UseVisualStyleBackColor = true;
             cbShowOverViewTab.CheckedChanged += OnMustEnableOrDisable;
             // 
@@ -885,77 +897,77 @@ namespace EVEMon.SettingsUI
             treeNode16.Name = "UpdatesNode";
             treeNode16.SelectedImageIndex = 11;
             treeNode16.Tag = "updatesPage";
-            treeNode16.Text = "Updates";
+            treeNode16.Text = resources.GetString("treeNode16.Text");
             treeNode17.ImageIndex = 7;
             treeNode17.Name = "networkNode";
             treeNode17.SelectedImageIndex = 7;
             treeNode17.Tag = "networkPage";
-            treeNode17.Text = "Network";
+            treeNode17.Text = resources.GetString("treeNode17.Text");
             treeNode18.ImageIndex = 15;
             treeNode18.Name = "PortableEveClientsNode";
             treeNode18.SelectedImageIndex = 15;
             treeNode18.Tag = "portableEveClientsPage";
-            treeNode18.Text = "Portable EVE Clients";
+            treeNode18.Text = resources.GetString("treeNode18.Text");
             treeNode19.ImageIndex = 16;
             treeNode19.Name = "MarketPriceProvidersNode";
             treeNode19.SelectedImageIndex = 16;
             treeNode19.Tag = "marketPriceProvidersPage";
-            treeNode19.Text = "Market Price Providers";
+            treeNode19.Text = resources.GetString("treeNode19.Text");
             treeNode20.ImageIndex = 10;
             treeNode20.Name = "generalNode";
             treeNode20.SelectedImageIndex = 10;
             treeNode20.Tag = "generalPage";
-            treeNode20.Text = "General";
+            treeNode20.Text = resources.GetString("treeNode20.Text");
             treeNode21.ImageIndex = 6;
             treeNode21.Name = "Node3";
             treeNode21.SelectedImageIndex = 6;
             treeNode21.Tag = "mainWindowPage";
-            treeNode21.Text = "Main Window";
+            treeNode21.Text = resources.GetString("treeNode21.Text");
             treeNode22.ImageIndex = 13;
             treeNode22.Name = "IconsNode";
             treeNode22.SelectedImageIndex = 13;
             treeNode22.Tag = "iconsPage";
-            treeNode22.Text = "Icons";
+            treeNode22.Text = resources.GetString("treeNode22.Text");
             treeNode23.ImageIndex = 14;
             treeNode23.Name = "MassagesNode";
             treeNode23.SelectedImageIndex = 14;
             treeNode23.Tag = "messagesPage";
-            treeNode23.Text = "Messages";
+            treeNode23.Text = resources.GetString("treeNode23.Text");
             treeNode24.ImageIndex = 8;
             treeNode24.Name = "Node4";
             treeNode24.SelectedImageIndex = 8;
             treeNode24.Tag = "skillPlannerPage";
-            treeNode24.Text = "Skill Planner";
+            treeNode24.Text = resources.GetString("treeNode24.Text");
             treeNode25.ImageIndex = 2;
             treeNode25.Name = "trayIconNode";
             treeNode25.SelectedImageIndex = 2;
             treeNode25.Tag = "trayIconPage";
-            treeNode25.Text = "System Tray Icon";
+            treeNode25.Text = resources.GetString("treeNode25.Text");
             treeNode26.ImageIndex = 5;
             treeNode26.Name = "Node11";
             treeNode26.SelectedImageIndex = 5;
             treeNode26.Tag = "externalCalendarPage";
-            treeNode26.Text = "External Calendar";
+            treeNode26.Text = resources.GetString("treeNode26.Text");
             treeNode27.ImageIndex = 1;
             treeNode27.Name = "Node10";
             treeNode27.SelectedImageIndex = 1;
             treeNode27.Tag = "schedulerUIPage";
-            treeNode27.Text = "Scheduler";
+            treeNode27.Text = resources.GetString("treeNode27.Text");
             treeNode28.ImageIndex = 12;
             treeNode28.Name = "Node7";
             treeNode28.SelectedImageIndex = 12;
             treeNode28.Tag = "emailNotificationsPage";
-            treeNode28.Text = "Skill Completion Mails";
+            treeNode28.Text = resources.GetString("treeNode28.Text");
             treeNode29.ImageIndex = 9;
             treeNode29.Name = "Node2";
             treeNode29.SelectedImageIndex = 9;
             treeNode29.Tag = "notificationsPage";
-            treeNode29.Text = "Notifications";
+            treeNode29.Text = resources.GetString("treeNode29.Text");
             treeNode30.ImageIndex = 17;
             treeNode30.Name = "CloudStorageServiceNode";
             treeNode30.SelectedImageIndex = 17;
             treeNode30.Tag = "cloudStorageServicePage";
-            treeNode30.Text = "Cloud Storage Service";
+            treeNode30.Text = resources.GetString("treeNode30.Text");
             treeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] { treeNode20, treeNode21, treeNode24, treeNode25, treeNode27, treeNode29, treeNode30 });
             treeView.SelectedImageIndex = 0;
             treeView.ShowLines = false;
@@ -1033,6 +1045,8 @@ namespace EVEMon.SettingsUI
             generalPage.Controls.Add(btnEVEMonDataDir);
             generalPage.Controls.Add(lblGeneralPage);
             generalPage.Controls.Add(cbWorksafeMode);
+            generalPage.Controls.Add(languageComboBox);
+            generalPage.Controls.Add(lblLanguage);
             generalPage.Controls.Add(compatibilityCombo);
             generalPage.Controls.Add(lblEnvironment);
             generalPage.Controls.Add(runAtStartupComboBox);
@@ -1042,7 +1056,7 @@ namespace EVEMon.SettingsUI
             generalPage.Name = "generalPage";
             generalPage.Size = new System.Drawing.Size(507, 491);
             generalPage.TabIndex = 0;
-            generalPage.Text = "generalPage";
+            generalPage.Text = resources.GetString("generalPage.Text");
             // 
             // btnEVEMonDataDir
             // 
@@ -1053,28 +1067,38 @@ namespace EVEMon.SettingsUI
             btnEVEMonDataDir.Name = "btnEVEMonDataDir";
             btnEVEMonDataDir.Size = new System.Drawing.Size(162, 29);
             btnEVEMonDataDir.TabIndex = 21;
-            btnEVEMonDataDir.Text = "EVEMon Data Directory";
+            btnEVEMonDataDir.Text = resources.GetString("btnEVEMonDataDir.Text");
             btnEVEMonDataDir.UseVisualStyleBackColor = true;
             btnEVEMonDataDir.Click += btnEVEMonDataDir_Click;
             // 
             // cbWorksafeMode
             // 
             cbWorksafeMode.AutoSize = true;
-            cbWorksafeMode.Location = new System.Drawing.Point(4, 151);
+            cbWorksafeMode.Location = new System.Drawing.Point(4, 132);
             cbWorksafeMode.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             cbWorksafeMode.Name = "cbWorksafeMode";
             cbWorksafeMode.Size = new System.Drawing.Size(296, 19);
             cbWorksafeMode.TabIndex = 6;
-            cbWorksafeMode.Text = "Run in \"safe for work\" mode (no portraits or colors)";
+            cbWorksafeMode.Text = resources.GetString("cbWorksafeMode.Text");
             cbWorksafeMode.UseVisualStyleBackColor = true;
             cbWorksafeMode.CheckedChanged += OnMustEnableOrDisable;
+            //
+            // languageComboBox
+            //
+            languageComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            languageComboBox.FormattingEnabled = true;
+            languageComboBox.Location = new System.Drawing.Point(270, 177);
+            languageComboBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            languageComboBox.Name = "languageComboBox";
+            languageComboBox.Size = new System.Drawing.Size(140, 23);
+            languageComboBox.TabIndex = 23;
             // 
             // compatibilityCombo
             // 
             compatibilityCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             compatibilityCombo.FormattingEnabled = true;
             compatibilityCombo.Items.AddRange(new object[] { "Windows", "Wine" });
-            compatibilityCombo.Location = new System.Drawing.Point(270, 205);
+            compatibilityCombo.Location = new System.Drawing.Point(270, 216);
             compatibilityCombo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             compatibilityCombo.Name = "compatibilityCombo";
             compatibilityCombo.Size = new System.Drawing.Size(140, 23);
@@ -1088,7 +1112,7 @@ namespace EVEMon.SettingsUI
             runAtStartupComboBox.Name = "runAtStartupComboBox";
             runAtStartupComboBox.Size = new System.Drawing.Size(148, 19);
             runAtStartupComboBox.TabIndex = 5;
-            runAtStartupComboBox.Text = "Run EVEMon at Startup";
+            runAtStartupComboBox.Text = resources.GetString("runAtStartupComboBox.Text");
             runAtStartupComboBox.UseVisualStyleBackColor = true;
             // 
             // mainWindowPage
@@ -1103,7 +1127,7 @@ namespace EVEMon.SettingsUI
             mainWindowPage.Name = "mainWindowPage";
             mainWindowPage.Size = new System.Drawing.Size(507, 492);
             mainWindowPage.TabIndex = 1;
-            mainWindowPage.Text = "mainWindowPage";
+            mainWindowPage.Text = resources.GetString("mainWindowPage.Text");
             // 
             // OverviewGroupBox
             // 
@@ -1117,7 +1141,7 @@ namespace EVEMon.SettingsUI
             OverviewGroupBox.Size = new System.Drawing.Size(499, 147);
             OverviewGroupBox.TabIndex = 15;
             OverviewGroupBox.TabStop = false;
-            OverviewGroupBox.Text = "Overview";
+            OverviewGroupBox.Text = resources.GetString("OverviewGroupBox.Text");
             // 
             // overviewPanel
             // 
@@ -1156,7 +1180,7 @@ namespace EVEMon.SettingsUI
             cbShowSkillpointsOnOverview.Name = "cbShowSkillpointsOnOverview";
             cbShowSkillpointsOnOverview.Size = new System.Drawing.Size(115, 19);
             cbShowSkillpointsOnOverview.TabIndex = 35;
-            cbShowSkillpointsOnOverview.Text = "Show Skill Points";
+            cbShowSkillpointsOnOverview.Text = resources.GetString("cbShowSkillpointsOnOverview.Text");
             cbShowSkillpointsOnOverview.UseVisualStyleBackColor = true;
             // 
             // overviewPortraitSizeComboBox
@@ -1185,7 +1209,7 @@ namespace EVEMon.SettingsUI
             skillPlannerPage.Name = "skillPlannerPage";
             skillPlannerPage.Size = new System.Drawing.Size(507, 492);
             skillPlannerPage.TabIndex = 3;
-            skillPlannerPage.Text = "skillPlannerPage";
+            skillPlannerPage.Text = resources.GetString("skillPlannerPage.Text");
             skillPlannerPage.Visible = false;
             // 
             // cbAdvanceEntryAdd
@@ -1196,7 +1220,7 @@ namespace EVEMon.SettingsUI
             cbAdvanceEntryAdd.Name = "cbAdvanceEntryAdd";
             cbAdvanceEntryAdd.Size = new System.Drawing.Size(229, 19);
             cbAdvanceEntryAdd.TabIndex = 21;
-            cbAdvanceEntryAdd.Text = "Set Priority When Adding Skills To Plan";
+            cbAdvanceEntryAdd.Text = resources.GetString("cbAdvanceEntryAdd.Text");
             cbAdvanceEntryAdd.UseVisualStyleBackColor = true;
             // 
             // cbSummaryOnMultiSelectOnly
@@ -1207,7 +1231,7 @@ namespace EVEMon.SettingsUI
             cbSummaryOnMultiSelectOnly.Name = "cbSummaryOnMultiSelectOnly";
             cbSummaryOnMultiSelectOnly.Size = new System.Drawing.Size(259, 19);
             cbSummaryOnMultiSelectOnly.TabIndex = 20;
-            cbSummaryOnMultiSelectOnly.Text = "Show Plan Summary Only On \"Multi-Select\"";
+            cbSummaryOnMultiSelectOnly.Text = resources.GetString("cbSummaryOnMultiSelectOnly.Text");
             cbSummaryOnMultiSelectOnly.UseVisualStyleBackColor = true;
             // 
             // cbHighlightQueuedSiklls
@@ -1218,7 +1242,7 @@ namespace EVEMon.SettingsUI
             cbHighlightQueuedSiklls.Name = "cbHighlightQueuedSiklls";
             cbHighlightQueuedSiklls.Size = new System.Drawing.Size(150, 19);
             cbHighlightQueuedSiklls.TabIndex = 14;
-            cbHighlightQueuedSiklls.Text = "Highlight Queued Skills";
+            cbHighlightQueuedSiklls.Text = resources.GetString("cbHighlightQueuedSiklls.Text");
             cbHighlightQueuedSiklls.UseVisualStyleBackColor = true;
             // 
             // cbHighlightPartialSkills
@@ -1229,7 +1253,7 @@ namespace EVEMon.SettingsUI
             cbHighlightPartialSkills.Name = "cbHighlightPartialSkills";
             cbHighlightPartialSkills.Size = new System.Drawing.Size(191, 19);
             cbHighlightPartialSkills.TabIndex = 10;
-            cbHighlightPartialSkills.Text = "Highlight Partially Trained Skills";
+            cbHighlightPartialSkills.Text = resources.GetString("cbHighlightPartialSkills.Text");
             cbHighlightPartialSkills.UseVisualStyleBackColor = true;
             // 
             // cbHighlightConflicts
@@ -1240,7 +1264,7 @@ namespace EVEMon.SettingsUI
             cbHighlightConflicts.Name = "cbHighlightConflicts";
             cbHighlightConflicts.Size = new System.Drawing.Size(177, 19);
             cbHighlightConflicts.TabIndex = 9;
-            cbHighlightConflicts.Text = "Highlight Schedule Conflicts";
+            cbHighlightConflicts.Text = resources.GetString("cbHighlightConflicts.Text");
             cbHighlightConflicts.UseVisualStyleBackColor = true;
             // 
             // cbHighlightPrerequisites
@@ -1251,7 +1275,7 @@ namespace EVEMon.SettingsUI
             cbHighlightPrerequisites.Name = "cbHighlightPrerequisites";
             cbHighlightPrerequisites.Size = new System.Drawing.Size(146, 19);
             cbHighlightPrerequisites.TabIndex = 8;
-            cbHighlightPrerequisites.Text = "Highlight Prerequisites";
+            cbHighlightPrerequisites.Text = resources.GetString("cbHighlightPrerequisites.Text");
             cbHighlightPrerequisites.UseVisualStyleBackColor = true;
             // 
             // cbHighlightPlannedSkills
@@ -1262,7 +1286,7 @@ namespace EVEMon.SettingsUI
             cbHighlightPlannedSkills.Name = "cbHighlightPlannedSkills";
             cbHighlightPlannedSkills.Size = new System.Drawing.Size(151, 19);
             cbHighlightPlannedSkills.TabIndex = 0;
-            cbHighlightPlannedSkills.Text = "Highlight Planned Skills";
+            cbHighlightPlannedSkills.Text = resources.GetString("cbHighlightPlannedSkills.Text");
             cbHighlightPlannedSkills.UseVisualStyleBackColor = true;
             // 
             // networkPage
@@ -1275,7 +1299,7 @@ namespace EVEMon.SettingsUI
             networkPage.Name = "networkPage";
             networkPage.Size = new System.Drawing.Size(507, 492);
             networkPage.TabIndex = 4;
-            networkPage.Text = "networkPage";
+            networkPage.Text = resources.GetString("networkPage.Text");
             networkPage.Visible = false;
             // 
             // esiSettingsGroupBox
@@ -1292,7 +1316,7 @@ namespace EVEMon.SettingsUI
             esiSettingsGroupBox.Size = new System.Drawing.Size(477, 102);
             esiSettingsGroupBox.TabIndex = 1;
             esiSettingsGroupBox.TabStop = false;
-            esiSettingsGroupBox.Text = "ESI Client Settings";
+            esiSettingsGroupBox.Text = resources.GetString("esiSettingsGroupBox.Text");
             // 
             // lblClientSecret
             // 
@@ -1302,7 +1326,7 @@ namespace EVEMon.SettingsUI
             lblClientSecret.Name = "lblClientSecret";
             lblClientSecret.Size = new System.Drawing.Size(73, 15);
             lblClientSecret.TabIndex = 2;
-            lblClientSecret.Text = "Client Secret";
+            lblClientSecret.Text = resources.GetString("lblClientSecret.Text");
             // 
             // lblClientID
             // 
@@ -1312,7 +1336,7 @@ namespace EVEMon.SettingsUI
             lblClientID.Name = "lblClientID";
             lblClientID.Size = new System.Drawing.Size(52, 15);
             lblClientID.TabIndex = 2;
-            lblClientID.Text = "Client ID";
+            lblClientID.Text = resources.GetString("lblClientID.Text");
             // 
             // esiSettingsLabel
             // 
@@ -1324,7 +1348,7 @@ namespace EVEMon.SettingsUI
             esiSettingsLabel.Size = new System.Drawing.Size(395, 21);
             esiSettingsLabel.TabIndex = 1;
             esiSettingsLabel.TabStop = true;
-            esiSettingsLabel.Text = "Create ESI client application: https://peterhaneve.github.io/evemon-esi\r\n";
+            esiSettingsLabel.Text = resources.GetString("esiSettingsLabel.Text");
             esiSettingsLabel.UseCompatibleTextRendering = true;
             esiSettingsLabel.LinkClicked += esiSettingsLabel_LinkClicked;
             // 
@@ -1357,7 +1381,7 @@ namespace EVEMon.SettingsUI
             ProxyServerGroupBox.Size = new System.Drawing.Size(477, 181);
             ProxyServerGroupBox.TabIndex = 0;
             ProxyServerGroupBox.TabStop = false;
-            ProxyServerGroupBox.Text = "Proxy Server Settings";
+            ProxyServerGroupBox.Text = resources.GetString("ProxyServerGroupBox.Text");
             // 
             // customProxyCheckBox
             // 
@@ -1367,7 +1391,7 @@ namespace EVEMon.SettingsUI
             customProxyCheckBox.Name = "customProxyCheckBox";
             customProxyCheckBox.Size = new System.Drawing.Size(130, 19);
             customProxyCheckBox.TabIndex = 9;
-            customProxyCheckBox.Text = "Use a custom proxy";
+            customProxyCheckBox.Text = resources.GetString("customProxyCheckBox.Text");
             customProxyCheckBox.UseVisualStyleBackColor = true;
             customProxyCheckBox.CheckedChanged += OnMustEnableOrDisable;
             // 
@@ -1406,7 +1430,7 @@ namespace EVEMon.SettingsUI
             proxyAuthenticationButton.Name = "proxyAuthenticationButton";
             proxyAuthenticationButton.Size = new System.Drawing.Size(113, 27);
             proxyAuthenticationButton.TabIndex = 5;
-            proxyAuthenticationButton.Text = "Authentication...";
+            proxyAuthenticationButton.Text = resources.GetString("proxyAuthenticationButton.Text");
             proxyAuthenticationButton.UseVisualStyleBackColor = true;
             proxyAuthenticationButton.Click += proxyAuthenticationButton_Click;
             // 
@@ -1430,7 +1454,7 @@ namespace EVEMon.SettingsUI
             emailNotificationsPage.Name = "emailNotificationsPage";
             emailNotificationsPage.Size = new System.Drawing.Size(507, 492);
             emailNotificationsPage.TabIndex = 6;
-            emailNotificationsPage.Text = "emailNotificationsPage";
+            emailNotificationsPage.Text = resources.GetString("emailNotificationsPage.Text");
             emailNotificationsPage.Visible = false;
             // 
             // mailNotificationCheckBox
@@ -1441,7 +1465,7 @@ namespace EVEMon.SettingsUI
             mailNotificationCheckBox.Name = "mailNotificationCheckBox";
             mailNotificationCheckBox.Size = new System.Drawing.Size(241, 19);
             mailNotificationCheckBox.TabIndex = 0;
-            mailNotificationCheckBox.Text = "Send email when skill training completes";
+            mailNotificationCheckBox.Text = resources.GetString("mailNotificationCheckBox.Text");
             mailNotificationCheckBox.UseVisualStyleBackColor = true;
             mailNotificationCheckBox.CheckedChanged += OnMustEnableOrDisable;
             // 
@@ -1465,7 +1489,7 @@ namespace EVEMon.SettingsUI
             notificationsPage.Name = "notificationsPage";
             notificationsPage.Size = new System.Drawing.Size(507, 492);
             notificationsPage.TabIndex = 7;
-            notificationsPage.Text = "notificationsPage";
+            notificationsPage.Text = resources.GetString("notificationsPage.Text");
             notificationsPage.Visible = false;
             // 
             // cbPlaySoundOnSkillComplete
@@ -1476,7 +1500,7 @@ namespace EVEMon.SettingsUI
             cbPlaySoundOnSkillComplete.Name = "cbPlaySoundOnSkillComplete";
             cbPlaySoundOnSkillComplete.Size = new System.Drawing.Size(241, 19);
             cbPlaySoundOnSkillComplete.TabIndex = 3;
-            cbPlaySoundOnSkillComplete.Text = "Play sound when skill training completes";
+            cbPlaySoundOnSkillComplete.Text = resources.GetString("cbPlaySoundOnSkillComplete.Text");
             cbPlaySoundOnSkillComplete.UseVisualStyleBackColor = true;
             // 
             // notificationsControl
@@ -1503,7 +1527,7 @@ namespace EVEMon.SettingsUI
             trayIconPage.Name = "trayIconPage";
             trayIconPage.Size = new System.Drawing.Size(507, 492);
             trayIconPage.TabIndex = 8;
-            trayIconPage.Text = "trayIconPage";
+            trayIconPage.Text = resources.GetString("trayIconPage.Text");
             trayIconPage.Visible = false;
             // 
             // mainWindowBehaviourGroupBox
@@ -1518,7 +1542,7 @@ namespace EVEMon.SettingsUI
             mainWindowBehaviourGroupBox.Size = new System.Drawing.Size(489, 105);
             mainWindowBehaviourGroupBox.TabIndex = 17;
             mainWindowBehaviourGroupBox.TabStop = false;
-            mainWindowBehaviourGroupBox.Text = "Main Window Close Behaviour";
+            mainWindowBehaviourGroupBox.Text = resources.GetString("mainWindowBehaviourGroupBox.Text");
             // 
             // rbMinToTaskBar
             // 
@@ -1529,7 +1553,7 @@ namespace EVEMon.SettingsUI
             rbMinToTaskBar.Size = new System.Drawing.Size(149, 19);
             rbMinToTaskBar.TabIndex = 2;
             rbMinToTaskBar.TabStop = true;
-            rbMinToTaskBar.Text = "Minimize to the taskbar";
+            rbMinToTaskBar.Text = resources.GetString("rbMinToTaskBar.Text");
             rbMinToTaskBar.UseVisualStyleBackColor = true;
             // 
             // rbMinToTray
@@ -1541,7 +1565,7 @@ namespace EVEMon.SettingsUI
             rbMinToTray.Size = new System.Drawing.Size(171, 19);
             rbMinToTray.TabIndex = 1;
             rbMinToTray.TabStop = true;
-            rbMinToTray.Text = "Minimize to the system tray";
+            rbMinToTray.Text = resources.GetString("rbMinToTray.Text");
             rbMinToTray.UseVisualStyleBackColor = true;
             // 
             // rbExitEVEMon
@@ -1553,7 +1577,7 @@ namespace EVEMon.SettingsUI
             rbExitEVEMon.Size = new System.Drawing.Size(91, 19);
             rbExitEVEMon.TabIndex = 0;
             rbExitEVEMon.TabStop = true;
-            rbExitEVEMon.Text = "Exit EVEMon";
+            rbExitEVEMon.Text = resources.GetString("rbExitEVEMon.Text");
             rbExitEVEMon.UseVisualStyleBackColor = true;
             // 
             // trayIconPopupGroupBox
@@ -1571,7 +1595,7 @@ namespace EVEMon.SettingsUI
             trayIconPopupGroupBox.Size = new System.Drawing.Size(489, 120);
             trayIconPopupGroupBox.TabIndex = 10;
             trayIconPopupGroupBox.TabStop = false;
-            trayIconPopupGroupBox.Text = "Icon Popup Style";
+            trayIconPopupGroupBox.Text = resources.GetString("trayIconPopupGroupBox.Text");
             // 
             // trayPopupDisabledRadio
             // 
@@ -1582,7 +1606,7 @@ namespace EVEMon.SettingsUI
             trayPopupDisabledRadio.Size = new System.Drawing.Size(70, 19);
             trayPopupDisabledRadio.TabIndex = 5;
             trayPopupDisabledRadio.TabStop = true;
-            trayPopupDisabledRadio.Text = "Disabled";
+            trayPopupDisabledRadio.Text = resources.GetString("trayPopupDisabledRadio.Text");
             trayPopupDisabledRadio.UseVisualStyleBackColor = true;
             // 
             // trayPopupButton
@@ -1592,7 +1616,7 @@ namespace EVEMon.SettingsUI
             trayPopupButton.Name = "trayPopupButton";
             trayPopupButton.Size = new System.Drawing.Size(88, 27);
             trayPopupButton.TabIndex = 4;
-            trayPopupButton.Text = "Configure";
+            trayPopupButton.Text = resources.GetString("trayPopupButton.Text");
             trayPopupButton.UseVisualStyleBackColor = true;
             trayPopupButton.Click += trayPopupButton_Click;
             // 
@@ -1605,7 +1629,7 @@ namespace EVEMon.SettingsUI
             trayPopupRadio.Size = new System.Drawing.Size(60, 19);
             trayPopupRadio.TabIndex = 3;
             trayPopupRadio.TabStop = true;
-            trayPopupRadio.Text = "Popup";
+            trayPopupRadio.Text = resources.GetString("trayPopupRadio.Text");
             trayPopupRadio.UseVisualStyleBackColor = true;
             // 
             // trayTooltipRadio
@@ -1617,7 +1641,7 @@ namespace EVEMon.SettingsUI
             trayTooltipRadio.Size = new System.Drawing.Size(61, 19);
             trayTooltipRadio.TabIndex = 0;
             trayTooltipRadio.TabStop = true;
-            trayTooltipRadio.Text = "Tooltip";
+            trayTooltipRadio.Text = resources.GetString("trayTooltipRadio.Text");
             trayTooltipRadio.UseVisualStyleBackColor = true;
             // 
             // trayTooltipButton
@@ -1627,7 +1651,7 @@ namespace EVEMon.SettingsUI
             trayTooltipButton.Name = "trayTooltipButton";
             trayTooltipButton.Size = new System.Drawing.Size(88, 27);
             trayTooltipButton.TabIndex = 2;
-            trayTooltipButton.Text = "Configure";
+            trayTooltipButton.Text = resources.GetString("trayTooltipButton.Text");
             trayTooltipButton.UseVisualStyleBackColor = true;
             trayTooltipButton.Click += trayTooltipButton_Click;
             // 
@@ -1643,7 +1667,7 @@ namespace EVEMon.SettingsUI
             updatesPage.Name = "updatesPage";
             updatesPage.Size = new System.Drawing.Size(507, 492);
             updatesPage.TabIndex = 9;
-            updatesPage.Text = "updatesPage";
+            updatesPage.Text = resources.GetString("updatesPage.Text");
             updatesPage.Visible = false;
             // 
             // updateSettingsControl
@@ -1666,7 +1690,7 @@ namespace EVEMon.SettingsUI
             lblUpdatesPage.Name = "lblUpdatesPage";
             lblUpdatesPage.Size = new System.Drawing.Size(500, 39);
             lblUpdatesPage.TabIndex = 9;
-            lblUpdatesPage.Text = "The following settings help reducing the network load, especially for high-latency connections and clients with many characters.";
+            lblUpdatesPage.Text = resources.GetString("lblUpdatesPage.Text");
             // 
             // cbCheckTime
             // 
@@ -1676,7 +1700,7 @@ namespace EVEMon.SettingsUI
             cbCheckTime.Name = "cbCheckTime";
             cbCheckTime.Size = new System.Drawing.Size(157, 19);
             cbCheckTime.TabIndex = 0;
-            cbCheckTime.Text = "Check system clock sync";
+            cbCheckTime.Text = resources.GetString("cbCheckTime.Text");
             cbCheckTime.UseVisualStyleBackColor = true;
             // 
             // cbCheckForUpdates
@@ -1687,7 +1711,7 @@ namespace EVEMon.SettingsUI
             cbCheckForUpdates.Name = "cbCheckForUpdates";
             cbCheckForUpdates.Size = new System.Drawing.Size(169, 19);
             cbCheckForUpdates.TabIndex = 0;
-            cbCheckForUpdates.Text = "Check for EVEMon updates";
+            cbCheckForUpdates.Text = resources.GetString("cbCheckForUpdates.Text");
             cbCheckForUpdates.UseVisualStyleBackColor = true;
             // 
             // schedulerUIPage
@@ -1709,7 +1733,7 @@ namespace EVEMon.SettingsUI
             schedulerUIPage.Name = "schedulerUIPage";
             schedulerUIPage.Size = new System.Drawing.Size(507, 492);
             schedulerUIPage.TabIndex = 10;
-            schedulerUIPage.Text = "schedulerUIPage";
+            schedulerUIPage.Text = resources.GetString("schedulerUIPage.Text");
             schedulerUIPage.Visible = false;
             // 
             // panelColorText
@@ -1795,7 +1819,7 @@ namespace EVEMon.SettingsUI
             externalCalendarPage.Name = "externalCalendarPage";
             externalCalendarPage.Size = new System.Drawing.Size(507, 491);
             externalCalendarPage.TabIndex = 11;
-            externalCalendarPage.Text = "externalCalendarPage";
+            externalCalendarPage.Text = resources.GetString("externalCalendarPage.Text");
             externalCalendarPage.Visible = false;
             // 
             // externalCalendarControl
@@ -1817,7 +1841,7 @@ namespace EVEMon.SettingsUI
             externalCalendarCheckbox.Name = "externalCalendarCheckbox";
             externalCalendarCheckbox.Size = new System.Drawing.Size(140, 19);
             externalCalendarCheckbox.TabIndex = 0;
-            externalCalendarCheckbox.Text = "Use External Calendar";
+            externalCalendarCheckbox.Text = resources.GetString("externalCalendarCheckbox.Text");
             externalCalendarCheckbox.UseVisualStyleBackColor = true;
             externalCalendarCheckbox.Click += OnMustEnableOrDisable;
             // 
@@ -1831,7 +1855,7 @@ namespace EVEMon.SettingsUI
             iconsPage.Name = "iconsPage";
             iconsPage.Size = new System.Drawing.Size(507, 492);
             iconsPage.TabIndex = 16;
-            iconsPage.Text = "iconsPage";
+            iconsPage.Text = resources.GetString("iconsPage.Text");
             // 
             // messagesPage
             // 
@@ -1844,7 +1868,7 @@ namespace EVEMon.SettingsUI
             messagesPage.Name = "messagesPage";
             messagesPage.Size = new System.Drawing.Size(507, 492);
             messagesPage.TabIndex = 17;
-            messagesPage.Text = "messagesPage";
+            messagesPage.Text = resources.GetString("messagesPage.Text");
             // 
             // gbMessageBox
             // 
@@ -1857,7 +1881,7 @@ namespace EVEMon.SettingsUI
             gbMessageBox.Size = new System.Drawing.Size(495, 67);
             gbMessageBox.TabIndex = 25;
             gbMessageBox.TabStop = false;
-            gbMessageBox.Text = "Pop-up Messages";
+            gbMessageBox.Text = resources.GetString("gbMessageBox.Text");
             // 
             // lblPrioritesConflict
             // 
@@ -1867,7 +1891,7 @@ namespace EVEMon.SettingsUI
             lblPrioritesConflict.Name = "lblPrioritesConflict";
             lblPrioritesConflict.Size = new System.Drawing.Size(98, 15);
             lblPrioritesConflict.TabIndex = 1;
-            lblPrioritesConflict.Text = "Priorities Conflict";
+            lblPrioritesConflict.Text = resources.GetString("lblPrioritesConflict.Text");
             // 
             // btnPrioritiesReset
             // 
@@ -1876,7 +1900,7 @@ namespace EVEMon.SettingsUI
             btnPrioritiesReset.Name = "btnPrioritiesReset";
             btnPrioritiesReset.Size = new System.Drawing.Size(88, 27);
             btnPrioritiesReset.TabIndex = 0;
-            btnPrioritiesReset.Text = "Reset";
+            btnPrioritiesReset.Text = resources.GetString("btnPrioritiesReset.Text");
             btnPrioritiesReset.UseVisualStyleBackColor = true;
             btnPrioritiesReset.Click += btnPrioritiesReset_Click;
             // 
@@ -1895,7 +1919,7 @@ namespace EVEMon.SettingsUI
             ObsoleteEntryRemovalGroupBox.Size = new System.Drawing.Size(496, 216);
             ObsoleteEntryRemovalGroupBox.TabIndex = 23;
             ObsoleteEntryRemovalGroupBox.TabStop = false;
-            ObsoleteEntryRemovalGroupBox.Text = "Obsolete Plan Entry Removal";
+            ObsoleteEntryRemovalGroupBox.Text = resources.GetString("ObsoleteEntryRemovalGroupBox.Text");
             // 
             // RemoveAllLabel
             // 
@@ -1904,7 +1928,7 @@ namespace EVEMon.SettingsUI
             RemoveAllLabel.Name = "RemoveAllLabel";
             RemoveAllLabel.Size = new System.Drawing.Size(460, 31);
             RemoveAllLabel.TabIndex = 5;
-            RemoveAllLabel.Text = "If EVEMon believes a skill level has been completed, whether it has been confirmed by the API or not it will be removed when the plan is opened.";
+            RemoveAllLabel.Text = resources.GetString("RemoveAllLabel.Text");
             // 
             // AlwaysAskLabel
             // 
@@ -1913,7 +1937,7 @@ namespace EVEMon.SettingsUI
             AlwaysAskLabel.Name = "AlwaysAskLabel";
             AlwaysAskLabel.Size = new System.Drawing.Size(460, 31);
             AlwaysAskLabel.TabIndex = 4;
-            AlwaysAskLabel.Text = "Always display the \"Obsolete Entries\" link at the bottom of the skill planner before removing entries.";
+            AlwaysAskLabel.Text = resources.GetString("AlwaysAskLabel.Text");
             // 
             // RemoveConfirmedLabel
             // 
@@ -1922,7 +1946,7 @@ namespace EVEMon.SettingsUI
             RemoveConfirmedLabel.Name = "RemoveConfirmedLabel";
             RemoveConfirmedLabel.Size = new System.Drawing.Size(460, 31);
             RemoveConfirmedLabel.TabIndex = 3;
-            RemoveConfirmedLabel.Text = "Once the API has confirmed a skill level has completed it is removed the next time a plan is opened. This is the default behaviour.";
+            RemoveConfirmedLabel.Text = resources.GetString("RemoveConfirmedLabel.Text");
             // 
             // alwaysAskRadioButton
             // 
@@ -1933,7 +1957,7 @@ namespace EVEMon.SettingsUI
             alwaysAskRadioButton.Size = new System.Drawing.Size(82, 19);
             alwaysAskRadioButton.TabIndex = 2;
             alwaysAskRadioButton.TabStop = true;
-            alwaysAskRadioButton.Text = "Always ask";
+            alwaysAskRadioButton.Text = resources.GetString("alwaysAskRadioButton.Text");
             alwaysAskRadioButton.UseVisualStyleBackColor = true;
             // 
             // removeAllRadioButton
@@ -1945,7 +1969,7 @@ namespace EVEMon.SettingsUI
             removeAllRadioButton.Size = new System.Drawing.Size(229, 19);
             removeAllRadioButton.TabIndex = 1;
             removeAllRadioButton.TabStop = true;
-            removeAllRadioButton.Text = "Remove entry once training completes";
+            removeAllRadioButton.Text = resources.GetString("removeAllRadioButton.Text");
             removeAllRadioButton.UseVisualStyleBackColor = true;
             // 
             // removeConfirmedRadioButton
@@ -1957,7 +1981,7 @@ namespace EVEMon.SettingsUI
             removeConfirmedRadioButton.Size = new System.Drawing.Size(248, 19);
             removeConfirmedRadioButton.TabIndex = 0;
             removeConfirmedRadioButton.TabStop = true;
-            removeConfirmedRadioButton.Text = "Remove confirmed entry (Recommended)";
+            removeConfirmedRadioButton.Text = resources.GetString("removeConfirmedRadioButton.Text");
             removeConfirmedRadioButton.UseVisualStyleBackColor = true;
             // 
             // portableEveClientsPage
@@ -1970,7 +1994,7 @@ namespace EVEMon.SettingsUI
             portableEveClientsPage.Name = "portableEveClientsPage";
             portableEveClientsPage.Size = new System.Drawing.Size(507, 492);
             portableEveClientsPage.TabIndex = 20;
-            portableEveClientsPage.Text = "portableEveClientsPage";
+            portableEveClientsPage.Text = resources.GetString("portableEveClientsPage.Text");
             // 
             // lblPECIDescription
             // 
@@ -1993,7 +2017,7 @@ namespace EVEMon.SettingsUI
             PECIGroupBox.Size = new System.Drawing.Size(491, 327);
             PECIGroupBox.TabIndex = 0;
             PECIGroupBox.TabStop = false;
-            PECIGroupBox.Text = "Portable EVE Client Installations";
+            PECIGroupBox.Text = resources.GetString("PECIGroupBox.Text");
             // 
             // portableEveClientsControl
             // 
@@ -2015,7 +2039,7 @@ namespace EVEMon.SettingsUI
             marketPriceProvidersPage.Name = "marketPriceProvidersPage";
             marketPriceProvidersPage.Size = new System.Drawing.Size(507, 492);
             marketPriceProvidersPage.TabIndex = 21;
-            marketPriceProvidersPage.Text = "marketPriceProvidersPage";
+            marketPriceProvidersPage.Text = resources.GetString("marketPriceProvidersPage.Text");
             // 
             // gbMarketPriceProviders
             // 
@@ -2028,7 +2052,7 @@ namespace EVEMon.SettingsUI
             gbMarketPriceProviders.Size = new System.Drawing.Size(250, 77);
             gbMarketPriceProviders.TabIndex = 22;
             gbMarketPriceProviders.TabStop = false;
-            gbMarketPriceProviders.Text = "Market Price Provider";
+            gbMarketPriceProviders.Text = resources.GetString("gbMarketPriceProviders.Text");
             // 
             // cbProvidersList
             // 
@@ -2048,7 +2072,7 @@ namespace EVEMon.SettingsUI
             SelectedProviderLabel.Name = "SelectedProviderLabel";
             SelectedProviderLabel.Size = new System.Drawing.Size(54, 15);
             SelectedProviderLabel.TabIndex = 0;
-            SelectedProviderLabel.Text = "Provider:";
+            SelectedProviderLabel.Text = resources.GetString("SelectedProviderLabel.Text");
             // 
             // marketPriceProviderPageLabel
             // 
@@ -2060,7 +2084,7 @@ namespace EVEMon.SettingsUI
             marketPriceProviderPageLabel.Name = "marketPriceProviderPageLabel";
             marketPriceProviderPageLabel.Size = new System.Drawing.Size(327, 15);
             marketPriceProviderPageLabel.TabIndex = 21;
-            marketPriceProviderPageLabel.Text = "Request prices for all EVE items from a market price provider.";
+            marketPriceProviderPageLabel.Text = resources.GetString("marketPriceProviderPageLabel.Text");
             // 
             // cloudStorageServicePage
             // 
@@ -2074,7 +2098,7 @@ namespace EVEMon.SettingsUI
             cloudStorageServicePage.Name = "cloudStorageServicePage";
             cloudStorageServicePage.Size = new System.Drawing.Size(507, 492);
             cloudStorageServicePage.TabIndex = 22;
-            cloudStorageServicePage.Text = "cloudStorageServicePage";
+            cloudStorageServicePage.Text = resources.GetString("cloudStorageServicePage.Text");
             // 
             // providerAuthenticationGroupBox
             // 
@@ -2086,7 +2110,7 @@ namespace EVEMon.SettingsUI
             providerAuthenticationGroupBox.Size = new System.Drawing.Size(491, 148);
             providerAuthenticationGroupBox.TabIndex = 24;
             providerAuthenticationGroupBox.TabStop = false;
-            providerAuthenticationGroupBox.Text = "Cloud Storage Provider Authentication";
+            providerAuthenticationGroupBox.Text = resources.GetString("providerAuthenticationGroupBox.Text");
             // 
             // cloudStorageServiceControl
             // 
@@ -2110,7 +2134,7 @@ namespace EVEMon.SettingsUI
             cloudStorageGroupBox.Size = new System.Drawing.Size(271, 77);
             cloudStorageGroupBox.TabIndex = 23;
             cloudStorageGroupBox.TabStop = false;
-            cloudStorageGroupBox.Text = "Cloud Storage Provider";
+            cloudStorageGroupBox.Text = resources.GetString("cloudStorageGroupBox.Text");
             // 
             // cloudStorageProviderLogoPictureBox
             // 
@@ -2141,7 +2165,7 @@ namespace EVEMon.SettingsUI
             lblSelectedProvider.Name = "lblSelectedProvider";
             lblSelectedProvider.Size = new System.Drawing.Size(54, 15);
             lblSelectedProvider.TabIndex = 0;
-            lblSelectedProvider.Text = "Provider:";
+            lblSelectedProvider.Text = resources.GetString("lblSelectedProvider.Text");
             // 
             // linkLabel1
             // 
@@ -2164,7 +2188,7 @@ namespace EVEMon.SettingsUI
             settingsFileStorageGroupBox.Size = new System.Drawing.Size(492, 147);
             settingsFileStorageGroupBox.TabIndex = 4;
             settingsFileStorageGroupBox.TabStop = false;
-            settingsFileStorageGroupBox.Text = "Settings File Storage";
+            settingsFileStorageGroupBox.Text = resources.GetString("settingsFileStorageGroupBox.Text");
             // 
             // settingsFileStorageControl
             // 
@@ -2300,6 +2324,7 @@ namespace EVEMon.SettingsUI
         private System.Windows.Forms.CheckBox cbCheckTime;
         private System.Windows.Forms.CheckBox cbShowOverViewTab;
         private System.Windows.Forms.ComboBox compatibilityCombo;
+        private System.Windows.Forms.ComboBox languageComboBox;
         private EVEMon.SettingsUI.NotificationsControl notificationsControl;
         private System.Windows.Forms.TreeView treeView;
         private MultiPanel multiPanel;
@@ -2366,6 +2391,7 @@ namespace EVEMon.SettingsUI
         private System.Windows.Forms.GroupBox WindowTitleGroupBox;
         private System.Windows.Forms.Label lblGeneralPage;
         private System.Windows.Forms.Label lblEnvironment;
+        private System.Windows.Forms.Label lblLanguage;
         private System.Windows.Forms.Label lblSkillPlannerPage;
         private System.Windows.Forms.Label lblNetworkPageProxy;
         private System.Windows.Forms.Label lblProxyHostIPAddress;

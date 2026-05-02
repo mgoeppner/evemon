@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Name1" xml:space="preserve">
+    <value>这是我的长绳子</value>
+  </data>
+  <data name="ErrorBadReminder" xml:space="preserve">
+    <value>提醒间隔必须是严格的正整数。</value>
+  </data>
+  <data name="ErrorBuildingError" xml:space="preserve">
+    <value>检索错误数据时出错。哇，事情真的很混乱！</value>
+  </data>
+  <data name="ErrorClipboardFailure" xml:space="preserve">
+    <value>无法完成操作，因为剪贴板正被另一个进程使用。稍等片刻，然后重试。</value>
+  </data>
+  <data name="ErrorDownloadFailure" xml:space="preserve">
+    <value>文件无法正确下载，您想重试吗？</value>
+  </data>
+  <data name="ErrorFewScopes" xml:space="preserve">
+    <value>警告：此 ESI 密钥提供的数据不足以满足基本的 EVEMon 功能。</value>
+  </data>
+  <data name="ErrorInstallerNotFound" xml:space="preserve">
+    <value>找不到安装程序文件。 EVEMon 将继续而不更新。</value>
+  </data>
+  <data name="ErrorNoCalendar" xml:space="preserve">
+    <value>找不到该路径上的日历。</value>
+  </data>
+  <data name="ErrorNoDataFile" xml:space="preserve">
+    <value>无法创建数据文件报告</value>
+  </data>
+  <data name="ErrorNoScopes" xml:space="preserve">
+    <value>警告：此 ESI 密钥未授权任何范围，因此不会提供任何数据。</value>
+  </data>
+  <data name="ErrorNoToken" xml:space="preserve">
+    <value>无法获取ESI令牌。</value>
+  </data>
+  <data name="ErrorNoTraceFile" xml:space="preserve">
+    <value>无法加载跟踪文件以包含在报告中</value>
+  </data>
+  <data name="ErrorSetClientID" xml:space="preserve">
+    <value>添加 ESI 密钥之前，请在“设置”&gt;“网络”中设置 ESI 客户端 ID 和客户端密钥。</value>
+  </data>
+  <data name="ErrorSSOStartup" xml:space="preserve">
+    <value>无法启动 SSO 服务器。检查您的防火墙设置（使用端口 {0:D}）并确保在添加 ESI 密钥时只有一个 EVEMon 实例处于活动状态。</value>
+  </data>
+  <data name="ErrorTrustFailure" xml:space="preserve">
+    <value>无法与 CCP API 服务器建立可信连接。
+
+这可能是由于活跃的中间人攻击或过时的本地 SSL 证书造成的。
+
+确保系统已安装最新的所有安全补丁，然后重试。</value>
+  </data>
+  <data name="ErrorUnhandled" xml:space="preserve">
+    <value>发生错误，EVEMon 无法正常处理错误消息。
+
+遇到的异常是“{0}”。</value>
+  </data>
+  <data name="ErrorUnhandledBase" xml:space="preserve">
+    <value>
+最初遇到的异常是“{0}”。</value>
+  </data>
+  <data name="ErrorUnhandledEnd" xml:space="preserve">
+    <value>
+请在 EVEMon 论坛上报告此情况。</value>
+  </data>
+  <data name="MessageBlueprintSelect" xml:space="preserve">
+    <value>使用左侧的树选择要查看的蓝图。</value>
+  </data>
+  <data name="MessageCopiedDetails" xml:space="preserve">
+    <value>错误详细信息已复制到剪贴板。</value>
+  </data>
+  <data name="MessageCopiedPlan" xml:space="preserve">
+    <value>所选条目已复制到剪贴板。</value>
+  </data>
+  <data name="MessageJumpCloneSkills" xml:space="preserve">
+    <value>{0} 拥有 {1:D} 跳跃克隆技能（加上 1 用于植入活动身体）</value>
+  </data>
+  <data name="MessagePriorityConflict" xml:space="preserve">
+    <value>这将导致优先级冲突，要么是优先级较低的先决条件，要么是优先级较高的依赖技能。
+
+如果您希望执行此操作并调整其他技能，请选择“是”
+或“否”（如果您不想更改优先级）。</value>
+  </data>
+  <data name="PromptClearCache" xml:space="preserve">
+    <value>您确定要清除缓存吗？</value>
+  </data>
+  <data name="PromptDeletePlan" xml:space="preserve">
+    <value>您确定要删除该计划吗？</value>
+  </data>
+  <data name="PromptIgnoreUpdate" xml:space="preserve">
+    <value>您确定要忽略此更新吗？在发布新版本之前，不会再次提示您。</value>
+  </data>
+  <data name="PromptResetSettings" xml:space="preserve">
+    <value>您确定要重置设置吗？
+一切都将失去，包括计划。</value>
+  </data>
+  <data name="MessageGettingStarted" xml:space="preserve">
+    <value>要开始使用 EVEMon，请选择“文件”&gt;“添加字符...”菜单选项，输入您的 ESI API 信息并选择要监控的字符。</value>
+  </data>
+  <data name="ErrorClipboardImport" xml:space="preserve">
+    <value>剪贴板的内容不是有效的技能列表或包含无效的技能级别。</value>
+  </data>
+  <data name="MessageClipboardPlanned" xml:space="preserve">
+    <value>粘贴的技能和所有依赖项都已经经过培训或计划。</value>
+  </data>
+  <data name="MessageClipboardTrained" xml:space="preserve">
+    <value>粘贴的技能和所有依赖项都已训练完毕。</value>
+  </data>
+</root>

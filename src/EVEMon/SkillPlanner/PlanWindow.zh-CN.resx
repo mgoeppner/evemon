@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Name1" xml:space="preserve">
+    <value>这是我的长绳子</value>
+  </data>
+  <data name="this.ObsoleteEntriesStatusLabel.Text" xml:space="preserve">
+    <value>过时的条目...</value>
+  </data>
+  <data name="this.SkillsStatusLabel.Text" xml:space="preserve">
+    <value>0 计划技能</value>
+  </data>
+  <data name="this.TimeStatusLabel.Text" xml:space="preserve">
+    <value>356d 23h 25m 10s</value>
+  </data>
+  <data name="this.CostStatusLabel.Text" xml:space="preserve">
+    <value>需要 0 ISK</value>
+  </data>
+  <data name="this.SkillPointsStatusLabel.Text" xml:space="preserve">
+    <value>需要 0 SP</value>
+  </data>
+  <data name="this.upperToolStrip.Text" xml:space="preserve">
+    <value>工具条1</value>
+  </data>
+  <data name="this.tsddbPlans.Text" xml:space="preserve">
+    <value>选择计划</value>
+  </data>
+  <data name="this.newPlanToolStripMenuItem.Text" xml:space="preserve">
+    <value>新计划...</value>
+  </data>
+  <data name="this.createPlanFromSkillQueueToolStripMenuItem.Text" xml:space="preserve">
+    <value>从技能队列创建计划...</value>
+  </data>
+  <data name="this.tsddbSave.Text" xml:space="preserve">
+    <value>出口</value>
+  </data>
+  <data name="this.tsmiExportPlan.Text" xml:space="preserve">
+    <value>计划(&amp;P)...</value>
+  </data>
+  <data name="this.tsmiAfterPlanCharacter.Text" xml:space="preserve">
+    <value>计划和角色之后...</value>
+  </data>
+  <data name="this.tsbDeletePlan.Text" xml:space="preserve">
+    <value>删除...</value>
+  </data>
+  <data name="this.tsbPrintPlan.Text" xml:space="preserve">
+    <value>打印...</value>
+  </data>
+  <data name="this.tsbPrintPlan.ToolTipText" xml:space="preserve">
+    <value>打印此计划</value>
+  </data>
+  <data name="this.tsbCopyToClipboard.Text" xml:space="preserve">
+    <value>复制到剪贴板...</value>
+  </data>
+  <data name="this.tsbImplantCalculator.Text" xml:space="preserve">
+    <value>种植体计算...</value>
+  </data>
+  <data name="this.attributesOptimizerStripButton.Text" xml:space="preserve">
+    <value>属性优化器...</value>
+  </data>
+  <data name="this.tsbLoadoutImport.Text" xml:space="preserve">
+    <value>装载导入...</value>
+  </data>
+  <data name="this.tsbClipboardImport.Text" xml:space="preserve">
+    <value>剪贴板导入</value>
+  </data>
+  <data name="this.tsbClipboardImport.ToolTipText" xml:space="preserve">
+    <value>剪贴板导入...</value>
+  </data>
+  <data name="this.sfdSave.Title" xml:space="preserve">
+    <value>保存到文件</value>
+  </data>
+  <data name="this.tpPlanEditor.Text" xml:space="preserve">
+    <value>计划编辑</value>
+  </data>
+  <data name="this.tpSkillBrowser.Text" xml:space="preserve">
+    <value>技能浏览器</value>
+  </data>
+  <data name="this.tpCertificateBrowser.Text" xml:space="preserve">
+    <value>证书浏览器</value>
+  </data>
+  <data name="this.tpShipBrowser.Text" xml:space="preserve">
+    <value>船舶浏览器</value>
+  </data>
+  <data name="this.tpItemBrowser.Text" xml:space="preserve">
+    <value>项目浏览器</value>
+  </data>
+  <data name="this.tpBlueprintBrowser.Text" xml:space="preserve">
+    <value>蓝图浏览器</value>
+  </data>
+  <data name="this.Text" xml:space="preserve">
+    <value>EVEMon技能规划师</value>
+  </data>
+</root>

@@ -67,7 +67,7 @@ namespace EVEMon.SkillPlanner
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(175, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "The following entries will be added.";
+            this.label1.Text = resources.GetString("this.label1.Text");
             // 
             // warningPicture
             // 
@@ -87,7 +87,7 @@ namespace EVEMon.SkillPlanner
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(90, 13);
             this.label5.TabIndex = 14;
-            this.label5.Text = "Add with priority:";
+            this.label5.Text = resources.GetString("this.label5.Text");
             // 
             // label3
             // 
@@ -96,7 +96,7 @@ namespace EVEMon.SkillPlanner
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(287, 26);
             this.label3.TabIndex = 6;
-            this.label3.Text = "You have exisiting pre-requisites in your plan, so you must\r\n\r\n";
+            this.label3.Text = resources.GetString("this.label3.Text");
             // 
             // previousButton
             // 
@@ -105,7 +105,7 @@ namespace EVEMon.SkillPlanner
             this.previousButton.Name = "previousButton";
             this.previousButton.Size = new System.Drawing.Size(75, 23);
             this.previousButton.TabIndex = 2;
-            this.previousButton.Text = "< &Previous";
+            this.previousButton.Text = resources.GetString("this.previousButton.Text");
             this.previousButton.UseVisualStyleBackColor = true;
             this.previousButton.Click += new System.EventHandler(this.previousButton_Click);
             // 
@@ -117,7 +117,7 @@ namespace EVEMon.SkillPlanner
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 3;
-            this.cancelButton.Text = "&Cancel";
+            this.cancelButton.Text = resources.GetString("this.cancelButton.Text");
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
@@ -128,7 +128,7 @@ namespace EVEMon.SkillPlanner
             this.nextButton.Name = "nextButton";
             this.nextButton.Size = new System.Drawing.Size(75, 23);
             this.nextButton.TabIndex = 1;
-            this.nextButton.Text = "Next >";
+            this.nextButton.Text = resources.GetString("this.nextButton.Text");
             this.nextButton.UseVisualStyleBackColor = true;
             this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
             // 
@@ -158,7 +158,7 @@ namespace EVEMon.SkillPlanner
             this.additionPage.Name = "additionPage";
             this.additionPage.Size = new System.Drawing.Size(304, 350);
             this.additionPage.TabIndex = 0;
-            this.additionPage.Text = "additionPage";
+            this.additionPage.Text = resources.GetString("this.additionPage.Text");
             // 
             // priorityGroup
             // 
@@ -170,7 +170,7 @@ namespace EVEMon.SkillPlanner
             this.priorityGroup.Size = new System.Drawing.Size(294, 84);
             this.priorityGroup.TabIndex = 13;
             this.priorityGroup.TabStop = false;
-            this.priorityGroup.Text = "Existing Priorities";
+            this.priorityGroup.Text = resources.GetString("this.priorityGroup.Text");
             // 
             // priorityLabel
             // 
@@ -179,7 +179,7 @@ namespace EVEMon.SkillPlanner
             this.priorityLabel.Name = "priorityLabel";
             this.priorityLabel.Size = new System.Drawing.Size(178, 13);
             this.priorityLabel.TabIndex = 10;
-            this.priorityLabel.Text = "The highest priority you can set is 3";
+            this.priorityLabel.Text = resources.GetString("this.priorityLabel.Text");
             // 
             // lbExisting
             // 
@@ -188,7 +188,7 @@ namespace EVEMon.SkillPlanner
             this.lbExisting.Name = "lbExisting";
             this.lbExisting.Size = new System.Drawing.Size(251, 13);
             this.lbExisting.TabIndex = 9;
-            this.lbExisting.Text = "select a lower priority than that of existing entries.";
+            this.lbExisting.Text = resources.GetString("this.lbExisting.Text");
             // 
             // priorityNumericBox
             // 
@@ -236,7 +236,7 @@ namespace EVEMon.SkillPlanner
             this.dependenciesSuppressionPage.Name = "dependenciesSuppressionPage";
             this.dependenciesSuppressionPage.Size = new System.Drawing.Size(304, 350);
             this.dependenciesSuppressionPage.TabIndex = 0;
-            this.dependenciesSuppressionPage.Text = "dependenciesSuppressionPage";
+            this.dependenciesSuppressionPage.Text = resources.GetString("this.dependenciesSuppressionPage.Text");
             // 
             // suppressionListBox
             // 
@@ -257,7 +257,7 @@ namespace EVEMon.SkillPlanner
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(190, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "The following entries will be removed :";
+            this.label2.Text = resources.GetString("this.label2.Text");
             // 
             // uselessPrereqsSuppressionPage
             // 
@@ -268,7 +268,7 @@ namespace EVEMon.SkillPlanner
             this.uselessPrereqsSuppressionPage.Name = "uselessPrereqsSuppressionPage";
             this.uselessPrereqsSuppressionPage.Size = new System.Drawing.Size(304, 273);
             this.uselessPrereqsSuppressionPage.TabIndex = 1;
-            this.uselessPrereqsSuppressionPage.Text = "uselessPrereqsSuppressionPage";
+            this.uselessPrereqsSuppressionPage.Text = resources.GetString("this.uselessPrereqsSuppressionPage.Text");
             // 
             // uselessPrereqsListBox
             // 
@@ -289,7 +289,7 @@ namespace EVEMon.SkillPlanner
             this.uselessPrereqsCheckbox.Name = "uselessPrereqsCheckbox";
             this.uselessPrereqsCheckbox.Size = new System.Drawing.Size(273, 17);
             this.uselessPrereqsCheckbox.TabIndex = 0;
-            this.uselessPrereqsCheckbox.Text = "Remove the now useless prerequisites listed below.";
+            this.uselessPrereqsCheckbox.Text = resources.GetString("this.uselessPrereqsCheckbox.Text");
             this.uselessPrereqsCheckbox.UseVisualStyleBackColor = true;
             // 
             // PlanToOperationForm
@@ -307,7 +307,7 @@ namespace EVEMon.SkillPlanner
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PlanToOperationForm";
-            this.Text = "PlanToOperationForm";
+            this.Text = resources.GetString("this.Text");
             ((System.ComponentModel.ISupportInitialize)(this.warningPicture)).EndInit();
             this.rootMultiPanel.ResumeLayout(false);
             this.additionPage.ResumeLayout(false);

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Name1" xml:space="preserve">
+    <value>这是我的长绳子</value>
+  </data>
+  <data name="ConnectFailure" xml:space="preserve">
+    <value>由于 EVEMon 无法连接到服务器，对 {0} 的请求失败。请检查您的网络和/或防火墙设置。</value>
+  </data>
+  <data name="FileException" xml:space="preserve">
+    <value>由于无法写入文件，对 {0} 的文件请求失败。</value>
+  </data>
+  <data name="Forbidden" xml:space="preserve">
+    <value>不允许向 {0} 发出请求。</value>
+  </data>
+  <data name="ImageException" xml:space="preserve">
+    <value>对 {0} 的图像请求失败，因为服务器未返回有效图像。</value>
+  </data>
+  <data name="NameResolutionFailure" xml:space="preserve">
+    <value>对 {0} 的请求失败，因为名称解析程序服务无法解析主机名。请检查您的网络设置。</value>
+  </data>
+  <data name="ProxyAuthenticationFailure" xml:space="preserve">
+    <value>{0} 处的代理服务器拒绝了对 {1} 的请求。请确认您指定了正确的用户名和密码。</value>
+  </data>
+  <data name="ProxyAuthenticationFailureDisabledRequests" xml:space="preserve">
+    <value>{0} 处的代理服务器拒绝了对 {1} 的请求。请确认您指定了正确的用户名和密码。在您的代理设置更新之前，请求已暂时被禁用。</value>
+  </data>
+  <data name="ProxyNameResolutionFailure" xml:space="preserve">
+    <value>名称解析程序服务无法解析代理主机名“{0}”。请验证您是否指定了正确的代理服务器，或检查您的网络设置。</value>
+  </data>
+  <data name="RedirectsExceeded" xml:space="preserve">
+    <value>尝试从 {0} 检索数据时超出了最大重定向数。</value>
+  </data>
+  <data name="RequestProhibitedByProxy" xml:space="preserve">
+    <value>{1} 上的代理不允许向 {0} 发出请求。</value>
+  </data>
+  <data name="RequestsDisabled" xml:space="preserve">
+    <value>对 {0} 的请求失败，因为请求已被暂时禁用。</value>
+  </data>
+  <data name="ServerError" xml:space="preserve">
+    <value>{0} 处的服务器返回错误。服务器返回的完整响应是： </value>
+  </data>
+  <data name="Timeout" xml:space="preserve">
+    <value>对 {0} 的请求失败，因为在超时期间未收到响应。</value>
+  </data>
+  <data name="UnknownException" xml:space="preserve">
+    <value>对 {0} 的请求失败，状态为：{1}。</value>
+  </data>
+  <data name="XmlException" xml:space="preserve">
+    <value>对 {0} 的 Xml 请求失败，因为服务器未返回有效的 Xml 文档</value>
+  </data>
+</root>

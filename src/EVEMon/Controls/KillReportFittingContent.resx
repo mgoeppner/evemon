@@ -562,4 +562,34 @@
   <metadata name="contextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>210, 17</value>
   </metadata>
+  <data name="this.SaveFittingButton.Text" xml:space="preserve">
+    <value>Save Fitting</value>
+  </data>
+  <data name="this.FittingContentLabel.Text" xml:space="preserve">
+    <value>Fitting and Content</value>
+  </data>
+  <data name="this.ItemsCostLabel.Text" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="this.EstimatedTotalLossLabel.Text" xml:space="preserve">
+    <value>Est. Total Loss:</value>
+  </data>
+  <data name="this.noItemsLabel.Text" xml:space="preserve">
+    <value>No Items Found.</value>
+  </data>
+  <data name="this.ColorKeyGroupBox.Text" xml:space="preserve">
+    <value>Color Keys</value>
+  </data>
+  <data name="this.DroppedItemLabel.Text" xml:space="preserve">
+    <value>Dropped Item</value>
+  </data>
+  <data name="this.DestroyedItemLabel.Text" xml:space="preserve">
+    <value>Destroyed Item</value>
+  </data>
+  <data name="this.showInBrowserMenuItem.Text" xml:space="preserve">
+    <value>Show In Browser...</value>
+  </data>
+  <data name="this.ToggleColorKeyPictureBox.ToolTip" xml:space="preserve">
+    <value>Toggle Color Key</value>
+  </data>
 </root>

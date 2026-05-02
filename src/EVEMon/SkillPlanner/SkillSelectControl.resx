@@ -324,4 +324,94 @@
         A6uGCYBoZDbcVGRFGJIggFcBsiSIRmaDFRF0JH5vOkYBALc2UwG7hivNAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="this.cmiPlanToLevel.Text" xml:space="preserve">
+    <value>&amp;Plan to...</value>
+  </data>
+  <data name="this.level0ToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Remove</value>
+  </data>
+  <data name="this.level1ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Level &amp;1</value>
+  </data>
+  <data name="this.level2ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Level &amp;2</value>
+  </data>
+  <data name="this.level3ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Level &amp;3</value>
+  </data>
+  <data name="this.level4ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Level &amp;4</value>
+  </data>
+  <data name="this.level5ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Level &amp;5</value>
+  </data>
+  <data name="this.showInSkillBrowserMenu.Text" xml:space="preserve">
+    <value>Show in Skill &amp;Browser</value>
+  </data>
+  <data name="this.showInSkillExplorerMenu.Text" xml:space="preserve">
+    <value>Show in Skill &amp;Explorer...</value>
+  </data>
+  <data name="this.cmiExpandSelected.Text" xml:space="preserve">
+    <value>Expand Selected</value>
+  </data>
+  <data name="this.cmiCollapseSelected.Text" xml:space="preserve">
+    <value>Collapse Selected</value>
+  </data>
+  <data name="this.cmiExpandAll.Text" xml:space="preserve">
+    <value>Expand All</value>
+  </data>
+  <data name="this.cmiCollapseAll.Text" xml:space="preserve">
+    <value>Collapse All</value>
+  </data>
+  <data name="this.cmiLvPlanTo.Text" xml:space="preserve">
+    <value>&amp;Plan To...</value>
+  </data>
+  <data name="this.tsmLevel0.Text" xml:space="preserve">
+    <value>&amp;Remove</value>
+  </data>
+  <data name="this.tsmLevel1.Text" xml:space="preserve">
+    <value>Level &amp;1</value>
+  </data>
+  <data name="this.tsmLevel2.Text" xml:space="preserve">
+    <value>Level &amp;2</value>
+  </data>
+  <data name="this.tsmLevel3.Text" xml:space="preserve">
+    <value>Level &amp;3</value>
+  </data>
+  <data name="this.tsmLevel4.Text" xml:space="preserve">
+    <value>Level &amp;4</value>
+  </data>
+  <data name="this.tsmLevel5.Text" xml:space="preserve">
+    <value>Level &amp;5</value>
+  </data>
+  <data name="this.showInSkillBrowserListMenu.Text" xml:space="preserve">
+    <value>Show in Skill &amp;Browser</value>
+  </data>
+  <data name="this.showInSkillExplorerListMenu.Text" xml:space="preserve">
+    <value>Show in Skill &amp;Explorer...</value>
+  </data>
+  <data name="this.lbSearchTextHint.Text" xml:space="preserve">
+    <value>Search Text</value>
+  </data>
+  <data name="this.lbNoMatches.Text" xml:space="preserve">
+    <value>No skills match your search.</value>
+  </data>
+  <data name="this.cbShowNonPublic.Text" xml:space="preserve">
+    <value>Show Non-Public Skills</value>
+  </data>
+  <data name="this.lblFilter.Text" xml:space="preserve">
+    <value>Filter:</value>
+  </data>
+  <data name="this.lblSort.Text" xml:space="preserve">
+    <value>Sort:</value>
+  </data>
+  <data name="this.chName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="this.chSortKey.Text" xml:space="preserve">
+    <value>Sort</value>
+  </data>
+  <data name="this.lblFilterBy.Text" xml:space="preserve">
+    <value>By:</value>
+  </data>
 </root>

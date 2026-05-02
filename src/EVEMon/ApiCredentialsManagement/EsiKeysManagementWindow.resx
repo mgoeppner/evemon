@@ -223,4 +223,70 @@
         AUbTxDqT/06uZmVAIZy24gIw1/AAMchWTD8zMDAAABupFmmInoHqAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="this.esiKeysLabel.Text" xml:space="preserve">
+    <value>ESI Keys</value>
+  </data>
+  <data name="this.charactersLabel.Text" xml:space="preserve">
+    <value>Characters</value>
+  </data>
+  <data name="this.esiKeyListLabel.Text" xml:space="preserve">
+    <value>First add your ESI key using the above buttons.</value>
+  </data>
+  <data name="this.closeButton.Text" xml:space="preserve">
+    <value>&amp;Close</value>
+  </data>
+  <data name="this.charactersTabPage.Text" xml:space="preserve">
+    <value>Characters</value>
+  </data>
+  <data name="this.charactersListPage.Text" xml:space="preserve">
+    <value>charactersListPage</value>
+  </data>
+  <data name="this.columnType.Text" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="this.columnID.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="this.columnName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="this.columnESIKeyID.Text" xml:space="preserve">
+    <value>Key ID</value>
+  </data>
+  <data name="this.columnStatus.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="this.columnUri.Text" xml:space="preserve">
+    <value>Uri</value>
+  </data>
+  <data name="this.noCharactersPage.Text" xml:space="preserve">
+    <value>noCharactersPage</value>
+  </data>
+  <data name="this.importCharacterMenu.Text" xml:space="preserve">
+    <value>&amp;Import...</value>
+  </data>
+  <data name="this.deleteCharacterMenu.Text" xml:space="preserve">
+    <value>&amp;Delete...</value>
+  </data>
+  <data name="this.editUriMenu.Text" xml:space="preserve">
+    <value>&amp;Edit Uri...</value>
+  </data>
+  <data name="this.groupingMenu.Text" xml:space="preserve">
+    <value>&amp;Group characters</value>
+  </data>
+  <data name="this.esiKeysTabPage.Text" xml:space="preserve">
+    <value>ESI Keys</value>
+  </data>
+  <data name="this.addESIKeyMenu.Text" xml:space="preserve">
+    <value>&amp;Add...</value>
+  </data>
+  <data name="this.deleteESIKeyMenu.Text" xml:space="preserve">
+    <value>&amp;Delete...</value>
+  </data>
+  <data name="this.editESIKeyMenu.Text" xml:space="preserve">
+    <value>&amp;Edit...</value>
+  </data>
+  <data name="this.Text" xml:space="preserve">
+    <value>ESI Keys Management</value>
+  </data>
 </root>

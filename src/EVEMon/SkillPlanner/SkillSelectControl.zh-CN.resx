@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Name1" xml:space="preserve">
+    <value>这是我的长绳子</value>
+  </data>
+  <data name="this.cmiPlanToLevel.Text" xml:space="preserve">
+    <value>计划...</value>
+  </data>
+  <data name="this.level0ToolStripMenuItem.Text" xml:space="preserve">
+    <value>删除(&amp;R)</value>
+  </data>
+  <data name="this.level1ToolStripMenuItem.Text" xml:space="preserve">
+    <value>等级&amp;1</value>
+  </data>
+  <data name="this.level2ToolStripMenuItem.Text" xml:space="preserve">
+    <value>等级&amp;2</value>
+  </data>
+  <data name="this.level3ToolStripMenuItem.Text" xml:space="preserve">
+    <value>等级&amp;3</value>
+  </data>
+  <data name="this.level4ToolStripMenuItem.Text" xml:space="preserve">
+    <value>4级</value>
+  </data>
+  <data name="this.level5ToolStripMenuItem.Text" xml:space="preserve">
+    <value>5级</value>
+  </data>
+  <data name="this.showInSkillBrowserMenu.Text" xml:space="preserve">
+    <value>在技能和浏览器中显示</value>
+  </data>
+  <data name="this.showInSkillExplorerMenu.Text" xml:space="preserve">
+    <value>在技能和资源管理器中显示...</value>
+  </data>
+  <data name="this.cmiExpandSelected.Text" xml:space="preserve">
+    <value>展开所选内容</value>
+  </data>
+  <data name="this.cmiCollapseSelected.Text" xml:space="preserve">
+    <value>折叠所选内容</value>
+  </data>
+  <data name="this.cmiExpandAll.Text" xml:space="preserve">
+    <value>全部展开</value>
+  </data>
+  <data name="this.cmiCollapseAll.Text" xml:space="preserve">
+    <value>全部折叠</value>
+  </data>
+  <data name="this.cmiLvPlanTo.Text" xml:space="preserve">
+    <value>计划...(&amp;P)</value>
+  </data>
+  <data name="this.tsmLevel0.Text" xml:space="preserve">
+    <value>删除(&amp;R)</value>
+  </data>
+  <data name="this.tsmLevel1.Text" xml:space="preserve">
+    <value>等级&amp;1</value>
+  </data>
+  <data name="this.tsmLevel2.Text" xml:space="preserve">
+    <value>等级&amp;2</value>
+  </data>
+  <data name="this.tsmLevel3.Text" xml:space="preserve">
+    <value>等级&amp;3</value>
+  </data>
+  <data name="this.tsmLevel4.Text" xml:space="preserve">
+    <value>4级</value>
+  </data>
+  <data name="this.tsmLevel5.Text" xml:space="preserve">
+    <value>5级</value>
+  </data>
+  <data name="this.showInSkillBrowserListMenu.Text" xml:space="preserve">
+    <value>在技能和浏览器中显示</value>
+  </data>
+  <data name="this.showInSkillExplorerListMenu.Text" xml:space="preserve">
+    <value>在技能和资源管理器中显示...</value>
+  </data>
+  <data name="this.lbSearchTextHint.Text" xml:space="preserve">
+    <value>搜索文本</value>
+  </data>
+  <data name="this.lbNoMatches.Text" xml:space="preserve">
+    <value>没有符合您搜索条件的技能。</value>
+  </data>
+  <data name="this.cbShowNonPublic.Text" xml:space="preserve">
+    <value>展示非公共技能</value>
+  </data>
+  <data name="this.lblFilter.Text" xml:space="preserve">
+    <value>过滤器：</value>
+  </data>
+  <data name="this.lblSort.Text" xml:space="preserve">
+    <value>排序：</value>
+  </data>
+  <data name="this.chName.Text" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="this.chSortKey.Text" xml:space="preserve">
+    <value>排序</value>
+  </data>
+  <data name="this.lblFilterBy.Text" xml:space="preserve">
+    <value>作者：</value>
+  </data>
+</root>

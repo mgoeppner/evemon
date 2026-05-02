@@ -61,7 +61,7 @@
             this.noAssetsLabel.Name = "noAssetsLabel";
             this.noAssetsLabel.Size = new System.Drawing.Size(472, 401);
             this.noAssetsLabel.TabIndex = 3;
-            this.noAssetsLabel.Text = "No assets are available.";
+            this.noAssetsLabel.Text = resources.GetString("this.noAssetsLabel.Text");
             this.noAssetsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lvAssets
@@ -87,27 +87,27 @@
             // 
             // chItem
             // 
-            this.chItem.Text = "Item";
+            this.chItem.Text = resources.GetString("this.chItem.Text");
             this.chItem.Width = 166;
             // 
             // chQuantity
             // 
-            this.chQuantity.Text = "Quantity";
+            this.chQuantity.Text = resources.GetString("this.chQuantity.Text");
             this.chQuantity.Width = 72;
             // 
             // chVolume
             // 
-            this.chVolume.Text = "Volume";
+            this.chVolume.Text = resources.GetString("this.chVolume.Text");
             this.chVolume.Width = 74;
             // 
             // chGroup
             // 
-            this.chGroup.Text = "Group";
+            this.chGroup.Text = resources.GetString("this.chGroup.Text");
             this.chGroup.Width = 80;
             // 
             // chCategory
             // 
-            this.chCategory.Text = "Category";
+            this.chCategory.Text = resources.GetString("this.chCategory.Text");
             // 
             // contextMenu
             // 
@@ -123,7 +123,7 @@
             // 
             this.exportToCSVToolStripMenuItem.Name = "exportToCSVToolStripMenuItem";
             this.exportToCSVToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.exportToCSVToolStripMenuItem.Text = "Export to CSV...";
+            this.exportToCSVToolStripMenuItem.Text = resources.GetString("this.exportToCSVToolStripMenuItem.Text");
             this.exportToCSVToolStripMenuItem.Click += new System.EventHandler(this.exportToCSVToolStripMenuItem_Click);
             // 
             // ilIcons
@@ -144,7 +144,7 @@
             this.noPricesFoundLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.noPricesFoundLabel.Size = new System.Drawing.Size(208, 13);
             this.noPricesFoundLabel.TabIndex = 1;
-            this.noPricesFoundLabel.Text = "* Prices for some items could not be found.";
+            this.noPricesFoundLabel.Text = resources.GetString("this.noPricesFoundLabel.Text");
             this.noPricesFoundLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblTotalCost
@@ -154,7 +154,7 @@
             this.lblTotalCost.Name = "lblTotalCost";
             this.lblTotalCost.Size = new System.Drawing.Size(207, 13);
             this.lblTotalCost.TabIndex = 0;
-            this.lblTotalCost.Text = "Estimated Cost of shown items: {0:N2} ISK";
+            this.lblTotalCost.Text = resources.GetString("this.lblTotalCost.Text");
             this.lblTotalCost.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // totalCostThrobber
@@ -204,7 +204,7 @@
             // 
             this.showInBrowserMenuItem.Name = "showInBrowserMenuItem";
             this.showInBrowserMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.showInBrowserMenuItem.Text = "Show In Browser...";
+            this.showInBrowserMenuItem.Text = resources.GetString("this.showInBrowserMenuItem.Text");
             this.showInBrowserMenuItem.Click += new System.EventHandler(this.showInBrowserMenuItem_Click);
             // 
             // CharacterAssetsList

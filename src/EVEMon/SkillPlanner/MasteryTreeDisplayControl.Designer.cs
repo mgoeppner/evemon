@@ -80,7 +80,7 @@
             this.planToLevel.Image = ((System.Drawing.Image)(resources.GetObject("planToLevel.Image")));
             this.planToLevel.Name = "planToLevel";
             this.planToLevel.Size = new System.Drawing.Size(194, 22);
-            this.planToLevel.Text = "&Plan...";
+            this.planToLevel.Text = resources.GetString("this.planToLevel.Text");
             this.planToLevel.Click += new System.EventHandler(this.tsmAddToPlan_Click);
             // 
             // planToLevelSeparator
@@ -92,7 +92,7 @@
             // 
             this.showInBrowserMenu.Name = "showInBrowserMenu";
             this.showInBrowserMenu.Size = new System.Drawing.Size(194, 22);
-            this.showInBrowserMenu.Text = "Show in Skill &Browser";
+            this.showInBrowserMenu.Text = resources.GetString("this.showInBrowserMenu.Text");
             this.showInBrowserMenu.Click += new System.EventHandler(this.showInBrowserMenu_Click);
             // 
             // showInExplorerMenu
@@ -100,7 +100,7 @@
             this.showInExplorerMenu.Image = ((System.Drawing.Image)(resources.GetObject("showInExplorerMenu.Image")));
             this.showInExplorerMenu.Name = "showInExplorerMenu";
             this.showInExplorerMenu.Size = new System.Drawing.Size(194, 22);
-            this.showInExplorerMenu.Text = "Show in Skill &Explorer...";
+            this.showInExplorerMenu.Text = resources.GetString("this.showInExplorerMenu.Text");
             this.showInExplorerMenu.Click += new System.EventHandler(this.showInExplorerMenu_Click);
             // 
             // showInMenuSeparator
@@ -112,14 +112,14 @@
             // 
             this.tsmExpandSelected.Name = "tsmExpandSelected";
             this.tsmExpandSelected.Size = new System.Drawing.Size(194, 22);
-            this.tsmExpandSelected.Text = "Expand Selected";
+            this.tsmExpandSelected.Text = resources.GetString("this.tsmExpandSelected.Text");
             this.tsmExpandSelected.Click += new System.EventHandler(this.tsmExpandSelected_Click);
             // 
             // tsmCollapseSelected
             // 
             this.tsmCollapseSelected.Name = "tsmCollapseSelected";
             this.tsmCollapseSelected.Size = new System.Drawing.Size(194, 22);
-            this.tsmCollapseSelected.Text = "Collapse Selected";
+            this.tsmCollapseSelected.Text = resources.GetString("this.tsmCollapseSelected.Text");
             this.tsmCollapseSelected.Click += new System.EventHandler(this.tsmCollapseSelected_Click);
             // 
             // toggleSeparator
@@ -131,14 +131,14 @@
             // 
             this.tsmExpandAll.Name = "tsmExpandAll";
             this.tsmExpandAll.Size = new System.Drawing.Size(194, 22);
-            this.tsmExpandAll.Text = "&Expand All";
+            this.tsmExpandAll.Text = resources.GetString("this.tsmExpandAll.Text");
             this.tsmExpandAll.Click += new System.EventHandler(this.tsmExpandAll_Click);
             // 
             // tsmCollapseAll
             // 
             this.tsmCollapseAll.Name = "tsmCollapseAll";
             this.tsmCollapseAll.Size = new System.Drawing.Size(194, 22);
-            this.tsmCollapseAll.Text = "&Collapse All";
+            this.tsmCollapseAll.Text = resources.GetString("this.tsmCollapseAll.Text");
             this.tsmCollapseAll.Click += new System.EventHandler(this.tsmCollapseAll_Click);
             // 
             // imageList

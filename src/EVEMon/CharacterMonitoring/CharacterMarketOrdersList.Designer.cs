@@ -79,22 +79,22 @@ namespace EVEMon.CharacterMonitoring
             // 
             // itemColumn
             // 
-            this.itemColumn.Text = "Item";
+            this.itemColumn.Text = resources.GetString("this.itemColumn.Text");
             this.itemColumn.Width = 192;
             // 
             // locationColumn
             // 
-            this.locationColumn.Text = "System";
+            this.locationColumn.Text = resources.GetString("this.locationColumn.Text");
             this.locationColumn.Width = 80;
             // 
             // unitaryPriceColumn
             // 
-            this.unitaryPriceColumn.Text = "Unit Price";
+            this.unitaryPriceColumn.Text = resources.GetString("this.unitaryPriceColumn.Text");
             this.unitaryPriceColumn.Width = 92;
             // 
             // quantityColumn
             // 
-            this.quantityColumn.Text = "Quantity";
+            this.quantityColumn.Text = resources.GetString("this.quantityColumn.Text");
             this.quantityColumn.Width = 88;
             // 
             // contextMenu
@@ -111,7 +111,7 @@ namespace EVEMon.CharacterMonitoring
             // 
             this.showInBrowserMenuItem.Name = "showInBrowserMenuItem";
             this.showInBrowserMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.showInBrowserMenuItem.Text = "Show In Browser...";
+            this.showInBrowserMenuItem.Text = resources.GetString("this.showInBrowserMenuItem.Text");
             this.showInBrowserMenuItem.Click += new System.EventHandler(this.showInBrowserMenuItem_Click);
             // 
             // showInBrowserMenuSeparator
@@ -123,7 +123,7 @@ namespace EVEMon.CharacterMonitoring
             // 
             this.exportToCSVToolStripMenuItem.Name = "exportToCSVToolStripMenuItem";
             this.exportToCSVToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.exportToCSVToolStripMenuItem.Text = "Export To CSV ...";
+            this.exportToCSVToolStripMenuItem.Text = resources.GetString("this.exportToCSVToolStripMenuItem.Text");
             this.exportToCSVToolStripMenuItem.Click += new System.EventHandler(this.exportToCSVToolStripMenuItem_Click);
             // 
             // ilIcons
@@ -142,7 +142,7 @@ namespace EVEMon.CharacterMonitoring
             this.noOrdersLabel.Name = "noOrdersLabel";
             this.noOrdersLabel.Size = new System.Drawing.Size(454, 434);
             this.noOrdersLabel.TabIndex = 1;
-            this.noOrdersLabel.Text = "No market orders are available.";
+            this.noOrdersLabel.Text = resources.GetString("this.noOrdersLabel.Text");
             this.noOrdersLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // marketExpPanelControl
@@ -154,7 +154,7 @@ namespace EVEMon.CharacterMonitoring
             this.marketExpPanelControl.ExpandedHeight = 100;
             this.marketExpPanelControl.ExpandedOnStartup = false;
             this.marketExpPanelControl.HeaderHeight = 30;
-            this.marketExpPanelControl.HeaderText = "Header Text";
+            this.marketExpPanelControl.HeaderText = resources.GetString("this.marketExpPanelControl.HeaderText");
             this.marketExpPanelControl.ImageCollapse = ((System.Drawing.Bitmap)(resources.GetObject("marketExpPanelControl.ImageCollapse")));
             this.marketExpPanelControl.ImageExpand = ((System.Drawing.Bitmap)(resources.GetObject("marketExpPanelControl.ImageExpand")));
             this.marketExpPanelControl.Location = new System.Drawing.Point(0, 334);

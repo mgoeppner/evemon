@@ -189,4 +189,31 @@
         Uxe2tXRje6sGL8l68JxEjc0NWhSoB+LHg939FEQGF8RGtoOJcPE/gxI4ZT68SM4AAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="this.chCharacters.Text" xml:space="preserve">
+    <value>Characters</value>
+  </data>
+  <data name="this.filterLabel.Text" xml:space="preserve">
+    <value>Filter:</value>
+  </data>
+  <data name="this.gbSkills.Text" xml:space="preserve">
+    <value>Skills</value>
+  </data>
+  <data name="this.chSkill.Text" xml:space="preserve">
+    <value>Skill</value>
+  </data>
+  <data name="this.chCharacter.Text" xml:space="preserve">
+    <value>Character Name</value>
+  </data>
+  <data name="this.exportSelectedSkillsAsPlanFromToolStripMenuItem.Text" xml:space="preserve">
+    <value>Export Selected Skills as Plan from...</value>
+  </data>
+  <data name="this.exportToCSVToolStripMenuItem.Text" xml:space="preserve">
+    <value>Export To CSV...</value>
+  </data>
+  <data name="this.exportCharacterSkillsAsPlanToolStripMenuItem.Text" xml:space="preserve">
+    <value>Export Character Skills as Plan...</value>
+  </data>
+  <data name="this.Text" xml:space="preserve">
+    <value>Characters Comparison</value>
+  </data>
 </root>

@@ -523,4 +523,46 @@
         VmgAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="this.noFactionalWarfareLabel.Text" xml:space="preserve">
+    <value>Factional Warfare information not available.</value>
+  </data>
+  <data name="this.notEnlistedLabel.Text" xml:space="preserve">
+    <value>Character not enlisted in Factional Warfare.</value>
+  </data>
+  <data name="this.chDescription.Text" xml:space="preserve">
+    <value>Personal</value>
+  </data>
+  <data name="this.chYou.Text" xml:space="preserve">
+    <value>You</value>
+  </data>
+  <data name="this.chAll.Text" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="this.chMilitia.Text" xml:space="preserve">
+    <value>Militia</value>
+  </data>
+  <data name="this.chAmarr.Text" xml:space="preserve">
+    <value>Amarr</value>
+  </data>
+  <data name="this.chCaldari.Text" xml:space="preserve">
+    <value>Caldari</value>
+  </data>
+  <data name="this.chGallente.Text" xml:space="preserve">
+    <value>Gallente</value>
+  </data>
+  <data name="this.chMinmatar.Text" xml:space="preserve">
+    <value>Minmatar</value>
+  </data>
+  <data name="this.RankLabel.Text" xml:space="preserve">
+    <value>Rank:</value>
+  </data>
+  <data name="this.TimeServedLabel.Text" xml:space="preserve">
+    <value>Time served:</value>
+  </data>
+  <data name="this.FactionLabel.Text" xml:space="preserve">
+    <value>Faction:</value>
+  </data>
+  <data name="this.CorporationLabel.Text" xml:space="preserve">
+    <value>Corporation:</value>
+  </data>
 </root>

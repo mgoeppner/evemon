@@ -221,22 +221,22 @@ namespace EVEMon.CharacterMonitoring
             this.preferencesMenu.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
             this.preferencesMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.preferencesMenu.Size = new System.Drawing.Size(29, 22);
-            this.preferencesMenu.Text = "Preferences";
-            this.preferencesMenu.ToolTipText = "Preferences";
+            this.preferencesMenu.Text = resources.GetString("this.preferencesMenu.Text");
+            this.preferencesMenu.ToolTipText = resources.GetString("this.preferencesMenu.ToolTipText");
             this.preferencesMenu.DropDownOpening += new System.EventHandler(this.preferencesMenu_DropDownOpening);
             // 
             // columnSettingsMenuItem
             // 
             this.columnSettingsMenuItem.Name = "columnSettingsMenuItem";
             this.columnSettingsMenuItem.Size = new System.Drawing.Size(252, 22);
-            this.columnSettingsMenuItem.Text = "Column Settings";
+            this.columnSettingsMenuItem.Text = resources.GetString("this.columnSettingsMenuItem.Text");
             this.columnSettingsMenuItem.Click += new System.EventHandler(this.columnSettingsMenuItem_Click);
             // 
             // autoSizeColumnMenuItem
             // 
             this.autoSizeColumnMenuItem.Name = "autoSizeColumnMenuItem";
             this.autoSizeColumnMenuItem.Size = new System.Drawing.Size(252, 22);
-            this.autoSizeColumnMenuItem.Text = "Auto-Size Columns";
+            this.autoSizeColumnMenuItem.Text = resources.GetString("this.autoSizeColumnMenuItem.Text");
             this.autoSizeColumnMenuItem.Click += new System.EventHandler(this.autoSizeColumnMenuItem_Click);
             // 
             // tsColumnSettingsSeparator
@@ -248,14 +248,14 @@ namespace EVEMon.CharacterMonitoring
             // 
             this.hideInactiveMenuItem.Name = "hideInactiveMenuItem";
             this.hideInactiveMenuItem.Size = new System.Drawing.Size(252, 22);
-            this.hideInactiveMenuItem.Text = "Hide Inactive Orders";
+            this.hideInactiveMenuItem.Text = resources.GetString("this.hideInactiveMenuItem.Text");
             this.hideInactiveMenuItem.Click += new System.EventHandler(this.hideInactiveMenuItem_Click);
             // 
             // numberAbsFormatMenuItem
             // 
             this.numberAbsFormatMenuItem.Name = "numberAbsFormatMenuItem";
             this.numberAbsFormatMenuItem.Size = new System.Drawing.Size(252, 22);
-            this.numberAbsFormatMenuItem.Text = "Number Abbreviating Format";
+            this.numberAbsFormatMenuItem.Text = resources.GetString("this.numberAbsFormatMenuItem.Text");
             this.numberAbsFormatMenuItem.Click += new System.EventHandler(this.numberAbsFormatMenuItem_Click);
             // 
             // tsOptionsSeparator
@@ -268,7 +268,7 @@ namespace EVEMon.CharacterMonitoring
             this.showOnlyCharMenuItem.CheckOnClick = true;
             this.showOnlyCharMenuItem.Name = "showOnlyCharMenuItem";
             this.showOnlyCharMenuItem.Size = new System.Drawing.Size(252, 22);
-            this.showOnlyCharMenuItem.Text = "Show Only Issued for Character";
+            this.showOnlyCharMenuItem.Text = resources.GetString("this.showOnlyCharMenuItem.Text");
             this.showOnlyCharMenuItem.Click += new System.EventHandler(this.showOnlyCharMenuItem_Click);
             // 
             // showOnlyCorpMenuItem
@@ -276,7 +276,7 @@ namespace EVEMon.CharacterMonitoring
             this.showOnlyCorpMenuItem.CheckOnClick = true;
             this.showOnlyCorpMenuItem.Name = "showOnlyCorpMenuItem";
             this.showOnlyCorpMenuItem.Size = new System.Drawing.Size(252, 22);
-            this.showOnlyCorpMenuItem.Text = "Show Only Issued for Corporation";
+            this.showOnlyCorpMenuItem.Text = resources.GetString("this.showOnlyCorpMenuItem.Text");
             this.showOnlyCorpMenuItem.Click += new System.EventHandler(this.showOnlyCorpMenuItem_Click);
             // 
             // tsReadingPaneSeparator
@@ -292,7 +292,7 @@ namespace EVEMon.CharacterMonitoring
             this.paneOffMenuItem});
             this.readingPaneMenuItem.Name = "readingPaneMenuItem";
             this.readingPaneMenuItem.Size = new System.Drawing.Size(252, 22);
-            this.readingPaneMenuItem.Text = "Reading Pane";
+            this.readingPaneMenuItem.Text = resources.GetString("this.readingPaneMenuItem.Text");
             this.readingPaneMenuItem.DropDownOpening += new System.EventHandler(this.readingPaneMenuItem_DropDownOpening);
             // 
             // paneRightMenuItem
@@ -301,7 +301,7 @@ namespace EVEMon.CharacterMonitoring
             this.paneRightMenuItem.Name = "paneRightMenuItem";
             this.paneRightMenuItem.Size = new System.Drawing.Size(114, 22);
             this.paneRightMenuItem.Tag = "Right";
-            this.paneRightMenuItem.Text = "Right";
+            this.paneRightMenuItem.Text = resources.GetString("this.paneRightMenuItem.Text");
             this.paneRightMenuItem.Click += new System.EventHandler(this.paneRightMenuItem_Click);
             // 
             // paneBottomMenuItem
@@ -310,7 +310,7 @@ namespace EVEMon.CharacterMonitoring
             this.paneBottomMenuItem.Name = "paneBottomMenuItem";
             this.paneBottomMenuItem.Size = new System.Drawing.Size(114, 22);
             this.paneBottomMenuItem.Tag = "Bottom";
-            this.paneBottomMenuItem.Text = "Bottom";
+            this.paneBottomMenuItem.Text = resources.GetString("this.paneBottomMenuItem.Text");
             this.paneBottomMenuItem.Click += new System.EventHandler(this.paneBottomMenuItem_Click);
             // 
             // paneOffMenuItem
@@ -319,7 +319,7 @@ namespace EVEMon.CharacterMonitoring
             this.paneOffMenuItem.Name = "paneOffMenuItem";
             this.paneOffMenuItem.Size = new System.Drawing.Size(114, 22);
             this.paneOffMenuItem.Tag = "Off";
-            this.paneOffMenuItem.Text = "Off";
+            this.paneOffMenuItem.Text = resources.GetString("this.paneOffMenuItem.Text");
             this.paneOffMenuItem.Click += new System.EventHandler(this.paneOffMenuItem_Click);
             // 
             // combatLogSeparator
@@ -332,7 +332,7 @@ namespace EVEMon.CharacterMonitoring
             this.combatLogMenuItem.CheckOnClick = true;
             this.combatLogMenuItem.Name = "combatLogMenuItem";
             this.combatLogMenuItem.Size = new System.Drawing.Size(252, 22);
-            this.combatLogMenuItem.Text = "Show Condensed Combat Logs";
+            this.combatLogMenuItem.Text = resources.GetString("this.combatLogMenuItem.Text");
             this.combatLogMenuItem.Click += new System.EventHandler(this.combatLogMenuItem_Click);
             // 
             // tsPlanetarySeparator
@@ -345,7 +345,7 @@ namespace EVEMon.CharacterMonitoring
             this.showOnlyExtractorMenuItem.CheckOnClick = true;
             this.showOnlyExtractorMenuItem.Name = "showOnlyExtractorMenuItem";
             this.showOnlyExtractorMenuItem.Size = new System.Drawing.Size(252, 22);
-            this.showOnlyExtractorMenuItem.Text = "Show Only Extractor Control Unit";
+            this.showOnlyExtractorMenuItem.Text = resources.GetString("this.showOnlyExtractorMenuItem.Text");
             this.showOnlyExtractorMenuItem.Click += new System.EventHandler(this.showOnlyExtractorMenuItem_Click);
             // 
             // searchTextDel
@@ -357,8 +357,8 @@ namespace EVEMon.CharacterMonitoring
             this.searchTextDel.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.searchTextDel.Name = "searchTextDel";
             this.searchTextDel.Size = new System.Drawing.Size(23, 22);
-            this.searchTextDel.Text = "searchTextDel";
-            this.searchTextDel.ToolTipText = "Delete search text";
+            this.searchTextDel.Text = resources.GetString("this.searchTextDel.Text");
+            this.searchTextDel.ToolTipText = resources.GetString("this.searchTextDel.ToolTipText");
             this.searchTextDel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.searchTextDel_MouseUp);
             // 
             // searchTextBox
@@ -371,7 +371,7 @@ namespace EVEMon.CharacterMonitoring
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
             this.searchTextBox.Size = new System.Drawing.Size(120, 21);
-            this.searchTextBox.ToolTipText = "Search";
+            this.searchTextBox.ToolTipText = resources.GetString("this.searchTextBox.ToolTipText");
             this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
             // 
             // groupMenu
@@ -382,7 +382,7 @@ namespace EVEMon.CharacterMonitoring
             this.groupMenu.Name = "groupMenu";
             this.groupMenu.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
             this.groupMenu.Size = new System.Drawing.Size(94, 22);
-            this.groupMenu.Text = "Group By...";
+            this.groupMenu.Text = resources.GetString("this.groupMenu.Text");
             this.groupMenu.DropDownOpening += new System.EventHandler(this.groupMenu_DropDownOpening);
             this.groupMenu.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.groupMenu_DropDownItemClicked);
             // 
@@ -393,8 +393,8 @@ namespace EVEMon.CharacterMonitoring
             this.walletJournalCharts.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.walletJournalCharts.Name = "walletJournalCharts";
             this.walletJournalCharts.Size = new System.Drawing.Size(23, 22);
-            this.walletJournalCharts.Text = "Wallet Journal Charts";
-            this.walletJournalCharts.ToolTipText = "Charts";
+            this.walletJournalCharts.Text = resources.GetString("this.walletJournalCharts.Text");
+            this.walletJournalCharts.ToolTipText = resources.GetString("this.walletJournalCharts.ToolTipText");
             this.walletJournalCharts.Click += new System.EventHandler(this.walletJournalCharts_Click);
             // 
             // allContacts
@@ -406,7 +406,7 @@ namespace EVEMon.CharacterMonitoring
             this.allContacts.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.allContacts.Name = "allContacts";
             this.allContacts.Size = new System.Drawing.Size(23, 22);
-            this.allContacts.Text = "All contacts";
+            this.allContacts.Text = resources.GetString("this.allContacts.Text");
             this.allContacts.Click += new System.EventHandler(this.contactsToolbarIcon_Click);
             // 
             // contactsExcellent
@@ -416,7 +416,7 @@ namespace EVEMon.CharacterMonitoring
             this.contactsExcellent.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.contactsExcellent.Name = "contactsExcellent";
             this.contactsExcellent.Size = new System.Drawing.Size(23, 22);
-            this.contactsExcellent.Text = "Excellent standing";
+            this.contactsExcellent.Text = resources.GetString("this.contactsExcellent.Text");
             this.contactsExcellent.Click += new System.EventHandler(this.contactsToolbarIcon_Click);
             // 
             // contactsGood
@@ -427,7 +427,7 @@ namespace EVEMon.CharacterMonitoring
             this.contactsGood.Name = "contactsGood";
             this.contactsGood.Size = new System.Drawing.Size(23, 22);
             this.contactsGood.Tag = "Good";
-            this.contactsGood.Text = "Good standing";
+            this.contactsGood.Text = resources.GetString("this.contactsGood.Text");
             this.contactsGood.Click += new System.EventHandler(this.contactsToolbarIcon_Click);
             // 
             // contactsNeutral
@@ -437,7 +437,7 @@ namespace EVEMon.CharacterMonitoring
             this.contactsNeutral.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.contactsNeutral.Name = "contactsNeutral";
             this.contactsNeutral.Size = new System.Drawing.Size(23, 22);
-            this.contactsNeutral.Text = "Neutral standing";
+            this.contactsNeutral.Text = resources.GetString("this.contactsNeutral.Text");
             this.contactsNeutral.Click += new System.EventHandler(this.contactsToolbarIcon_Click);
             // 
             // contactsBad
@@ -447,7 +447,7 @@ namespace EVEMon.CharacterMonitoring
             this.contactsBad.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.contactsBad.Name = "contactsBad";
             this.contactsBad.Size = new System.Drawing.Size(23, 22);
-            this.contactsBad.Text = "Bad standing";
+            this.contactsBad.Text = resources.GetString("this.contactsBad.Text");
             this.contactsBad.Click += new System.EventHandler(this.contactsToolbarIcon_Click);
             // 
             // contactsTerrible
@@ -457,7 +457,7 @@ namespace EVEMon.CharacterMonitoring
             this.contactsTerrible.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.contactsTerrible.Name = "contactsTerrible";
             this.contactsTerrible.Size = new System.Drawing.Size(23, 22);
-            this.contactsTerrible.Text = "Terrible standing";
+            this.contactsTerrible.Text = resources.GetString("this.contactsTerrible.Text");
             this.contactsTerrible.Click += new System.EventHandler(this.contactsToolbarIcon_Click);
             // 
             // inWatchList
@@ -467,7 +467,7 @@ namespace EVEMon.CharacterMonitoring
             this.inWatchList.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.inWatchList.Name = "inWatchList";
             this.inWatchList.Size = new System.Drawing.Size(23, 22);
-            this.inWatchList.Text = "Watch List";
+            this.inWatchList.Text = resources.GetString("this.inWatchList.Text");
             this.inWatchList.Click += new System.EventHandler(this.contactsToolbarIcon_Click);
             // 
             // toolStripFeatures
@@ -515,8 +515,8 @@ namespace EVEMon.CharacterMonitoring
             this.skillsIcon.Name = "skillsIcon";
             this.skillsIcon.Size = new System.Drawing.Size(28, 28);
             this.skillsIcon.Tag = "skillsPage";
-            this.skillsIcon.Text = "Skills";
-            this.skillsIcon.ToolTipText = "Display skills list";
+            this.skillsIcon.Text = resources.GetString("this.skillsIcon.Text");
+            this.skillsIcon.ToolTipText = resources.GetString("this.skillsIcon.ToolTipText");
             this.skillsIcon.Click += new System.EventHandler(this.toolbarIcon_Click);
             // 
             // skillQueueIcon
@@ -527,8 +527,8 @@ namespace EVEMon.CharacterMonitoring
             this.skillQueueIcon.Name = "skillQueueIcon";
             this.skillQueueIcon.Size = new System.Drawing.Size(28, 28);
             this.skillQueueIcon.Tag = "skillQueuePage";
-            this.skillQueueIcon.Text = "Queue";
-            this.skillQueueIcon.ToolTipText = "Display skills in queue";
+            this.skillQueueIcon.Text = resources.GetString("this.skillQueueIcon.Text");
+            this.skillQueueIcon.ToolTipText = resources.GetString("this.skillQueueIcon.ToolTipText");
             this.skillQueueIcon.Click += new System.EventHandler(this.toolbarIcon_Click);
             // 
             // employmentIcon
@@ -539,8 +539,8 @@ namespace EVEMon.CharacterMonitoring
             this.employmentIcon.Name = "employmentIcon";
             this.employmentIcon.Size = new System.Drawing.Size(28, 28);
             this.employmentIcon.Tag = "employmentPage";
-            this.employmentIcon.Text = "Employment History";
-            this.employmentIcon.ToolTipText = "Display employment history";
+            this.employmentIcon.Text = resources.GetString("this.employmentIcon.Text");
+            this.employmentIcon.ToolTipText = resources.GetString("this.employmentIcon.ToolTipText");
             this.employmentIcon.Click += new System.EventHandler(this.toolbarIcon_Click);
             // 
             // standingsIcon
@@ -551,8 +551,8 @@ namespace EVEMon.CharacterMonitoring
             this.standingsIcon.Name = "standingsIcon";
             this.standingsIcon.Size = new System.Drawing.Size(28, 28);
             this.standingsIcon.Tag = "standingsPage";
-            this.standingsIcon.Text = "Standings";
-            this.standingsIcon.ToolTipText = "Display standings";
+            this.standingsIcon.Text = resources.GetString("this.standingsIcon.Text");
+            this.standingsIcon.ToolTipText = resources.GetString("this.standingsIcon.ToolTipText");
             this.standingsIcon.Click += new System.EventHandler(this.toolbarIcon_Click);
             // 
             // contactsIcon
@@ -563,8 +563,8 @@ namespace EVEMon.CharacterMonitoring
             this.contactsIcon.Name = "contactsIcon";
             this.contactsIcon.Size = new System.Drawing.Size(28, 28);
             this.contactsIcon.Tag = "contactsPage";
-            this.contactsIcon.Text = "Contacts";
-            this.contactsIcon.ToolTipText = "Display contacts";
+            this.contactsIcon.Text = resources.GetString("this.contactsIcon.Text");
+            this.contactsIcon.ToolTipText = resources.GetString("this.contactsIcon.ToolTipText");
             this.contactsIcon.Click += new System.EventHandler(this.toolbarIcon_Click);
             // 
             // factionalWarfareStatsIcon
@@ -575,8 +575,8 @@ namespace EVEMon.CharacterMonitoring
             this.factionalWarfareStatsIcon.Name = "factionalWarfareStatsIcon";
             this.factionalWarfareStatsIcon.Size = new System.Drawing.Size(28, 28);
             this.factionalWarfareStatsIcon.Tag = "factionalWarfareStatsPage";
-            this.factionalWarfareStatsIcon.Text = "Factional Warfare";
-            this.factionalWarfareStatsIcon.ToolTipText = "Display factional warfare stats";
+            this.factionalWarfareStatsIcon.Text = resources.GetString("this.factionalWarfareStatsIcon.Text");
+            this.factionalWarfareStatsIcon.ToolTipText = resources.GetString("this.factionalWarfareStatsIcon.ToolTipText");
             this.factionalWarfareStatsIcon.Click += new System.EventHandler(this.toolbarIcon_Click);
             // 
             // medalsIcon
@@ -587,8 +587,8 @@ namespace EVEMon.CharacterMonitoring
             this.medalsIcon.Name = "medalsIcon";
             this.medalsIcon.Size = new System.Drawing.Size(28, 28);
             this.medalsIcon.Tag = "medalsPage";
-            this.medalsIcon.Text = "Medals";
-            this.medalsIcon.ToolTipText = "Display medals";
+            this.medalsIcon.Text = resources.GetString("this.medalsIcon.Text");
+            this.medalsIcon.ToolTipText = resources.GetString("this.medalsIcon.ToolTipText");
             this.medalsIcon.Click += new System.EventHandler(this.toolbarIcon_Click);
             // 
             // killLogIcon
@@ -599,8 +599,8 @@ namespace EVEMon.CharacterMonitoring
             this.killLogIcon.Name = "killLogIcon";
             this.killLogIcon.Size = new System.Drawing.Size(28, 28);
             this.killLogIcon.Tag = "killLogPage";
-            this.killLogIcon.Text = "Combat Log";
-            this.killLogIcon.ToolTipText = "Display combat log";
+            this.killLogIcon.Text = resources.GetString("this.killLogIcon.Text");
+            this.killLogIcon.ToolTipText = resources.GetString("this.killLogIcon.ToolTipText");
             this.killLogIcon.Click += new System.EventHandler(this.toolbarIcon_Click);
             // 
             // assetsIcon
@@ -611,8 +611,8 @@ namespace EVEMon.CharacterMonitoring
             this.assetsIcon.Name = "assetsIcon";
             this.assetsIcon.Size = new System.Drawing.Size(28, 28);
             this.assetsIcon.Tag = "assetsPage";
-            this.assetsIcon.Text = "Assets";
-            this.assetsIcon.ToolTipText = "Display assets";
+            this.assetsIcon.Text = resources.GetString("this.assetsIcon.Text");
+            this.assetsIcon.ToolTipText = resources.GetString("this.assetsIcon.ToolTipText");
             this.assetsIcon.Click += new System.EventHandler(this.toolbarIcon_Click);
             // 
             // ordersIcon
@@ -623,8 +623,8 @@ namespace EVEMon.CharacterMonitoring
             this.ordersIcon.Name = "ordersIcon";
             this.ordersIcon.Size = new System.Drawing.Size(28, 28);
             this.ordersIcon.Tag = "ordersPage";
-            this.ordersIcon.Text = "Market";
-            this.ordersIcon.ToolTipText = "Display market orders";
+            this.ordersIcon.Text = resources.GetString("this.ordersIcon.Text");
+            this.ordersIcon.ToolTipText = resources.GetString("this.ordersIcon.ToolTipText");
             this.ordersIcon.Click += new System.EventHandler(this.toolbarIcon_Click);
             // 
             // contractsIcon
@@ -635,8 +635,8 @@ namespace EVEMon.CharacterMonitoring
             this.contractsIcon.Name = "contractsIcon";
             this.contractsIcon.Size = new System.Drawing.Size(28, 28);
             this.contractsIcon.Tag = "contractsPage";
-            this.contractsIcon.Text = "Contracts";
-            this.contractsIcon.ToolTipText = "Display contracts";
+            this.contractsIcon.Text = resources.GetString("this.contractsIcon.Text");
+            this.contractsIcon.ToolTipText = resources.GetString("this.contractsIcon.ToolTipText");
             this.contractsIcon.Click += new System.EventHandler(this.toolbarIcon_Click);
             // 
             // walletJournalIcon
@@ -647,8 +647,8 @@ namespace EVEMon.CharacterMonitoring
             this.walletJournalIcon.Name = "walletJournalIcon";
             this.walletJournalIcon.Size = new System.Drawing.Size(28, 28);
             this.walletJournalIcon.Tag = "walletJournalPage";
-            this.walletJournalIcon.Text = "Wallet Journal";
-            this.walletJournalIcon.ToolTipText = "Display wallet journal";
+            this.walletJournalIcon.Text = resources.GetString("this.walletJournalIcon.Text");
+            this.walletJournalIcon.ToolTipText = resources.GetString("this.walletJournalIcon.ToolTipText");
             this.walletJournalIcon.Click += new System.EventHandler(this.toolbarIcon_Click);
             // 
             // walletTransactionsIcon
@@ -659,8 +659,8 @@ namespace EVEMon.CharacterMonitoring
             this.walletTransactionsIcon.Name = "walletTransactionsIcon";
             this.walletTransactionsIcon.Size = new System.Drawing.Size(28, 28);
             this.walletTransactionsIcon.Tag = "walletTransactionsPage";
-            this.walletTransactionsIcon.Text = "Wallet Transactions";
-            this.walletTransactionsIcon.ToolTipText = "Display wallet transactions";
+            this.walletTransactionsIcon.Text = resources.GetString("this.walletTransactionsIcon.Text");
+            this.walletTransactionsIcon.ToolTipText = resources.GetString("this.walletTransactionsIcon.ToolTipText");
             this.walletTransactionsIcon.Click += new System.EventHandler(this.toolbarIcon_Click);
             // 
             // jobsIcon
@@ -671,8 +671,8 @@ namespace EVEMon.CharacterMonitoring
             this.jobsIcon.Name = "jobsIcon";
             this.jobsIcon.Size = new System.Drawing.Size(28, 28);
             this.jobsIcon.Tag = "jobsPage";
-            this.jobsIcon.Text = "Industry";
-            this.jobsIcon.ToolTipText = "Display industry jobs";
+            this.jobsIcon.Text = resources.GetString("this.jobsIcon.Text");
+            this.jobsIcon.ToolTipText = resources.GetString("this.jobsIcon.ToolTipText");
             this.jobsIcon.Click += new System.EventHandler(this.toolbarIcon_Click);
             // 
             // loyaltyIcon
@@ -683,8 +683,8 @@ namespace EVEMon.CharacterMonitoring
             this.loyaltyIcon.Name = "loyaltyIcon";
             this.loyaltyIcon.Size = new System.Drawing.Size(28, 28);
             this.loyaltyIcon.Tag = "loyaltyPage";
-            this.loyaltyIcon.Text = "Loyalty Points";
-            this.loyaltyIcon.ToolTipText = "Display loyalty point balances";
+            this.loyaltyIcon.Text = resources.GetString("this.loyaltyIcon.Text");
+            this.loyaltyIcon.ToolTipText = resources.GetString("this.loyaltyIcon.ToolTipText");
             this.loyaltyIcon.Click += new System.EventHandler(this.toolbarIcon_Click);
             // 
             // planetaryIcon
@@ -695,8 +695,8 @@ namespace EVEMon.CharacterMonitoring
             this.planetaryIcon.Name = "planetaryIcon";
             this.planetaryIcon.Size = new System.Drawing.Size(28, 28);
             this.planetaryIcon.Tag = "planetaryPage";
-            this.planetaryIcon.Text = "Planetary Colonies";
-            this.planetaryIcon.ToolTipText = "Display planetary colonies";
+            this.planetaryIcon.Text = resources.GetString("this.planetaryIcon.Text");
+            this.planetaryIcon.ToolTipText = resources.GetString("this.planetaryIcon.ToolTipText");
             this.planetaryIcon.Click += new System.EventHandler(this.toolbarIcon_Click);
             // 
             // researchIcon
@@ -707,8 +707,8 @@ namespace EVEMon.CharacterMonitoring
             this.researchIcon.Name = "researchIcon";
             this.researchIcon.Size = new System.Drawing.Size(28, 28);
             this.researchIcon.Tag = "researchPage";
-            this.researchIcon.Text = "Research";
-            this.researchIcon.ToolTipText = "Display research points";
+            this.researchIcon.Text = resources.GetString("this.researchIcon.Text");
+            this.researchIcon.ToolTipText = resources.GetString("this.researchIcon.ToolTipText");
             this.researchIcon.Click += new System.EventHandler(this.toolbarIcon_Click);
             // 
             // mailMessagesIcon
@@ -719,8 +719,8 @@ namespace EVEMon.CharacterMonitoring
             this.mailMessagesIcon.Name = "mailMessagesIcon";
             this.mailMessagesIcon.Size = new System.Drawing.Size(28, 28);
             this.mailMessagesIcon.Tag = "mailMessagesPage";
-            this.mailMessagesIcon.Text = "Mail";
-            this.mailMessagesIcon.ToolTipText = "Display EVE mails";
+            this.mailMessagesIcon.Text = resources.GetString("this.mailMessagesIcon.Text");
+            this.mailMessagesIcon.ToolTipText = resources.GetString("this.mailMessagesIcon.ToolTipText");
             this.mailMessagesIcon.Click += new System.EventHandler(this.toolbarIcon_Click);
             // 
             // eveNotificationsIcon
@@ -731,8 +731,8 @@ namespace EVEMon.CharacterMonitoring
             this.eveNotificationsIcon.Name = "eveNotificationsIcon";
             this.eveNotificationsIcon.Size = new System.Drawing.Size(28, 28);
             this.eveNotificationsIcon.Tag = "eveNotificationsPage";
-            this.eveNotificationsIcon.Text = "Notification";
-            this.eveNotificationsIcon.ToolTipText = "Display EVE notifications";
+            this.eveNotificationsIcon.Text = resources.GetString("this.eveNotificationsIcon.Text");
+            this.eveNotificationsIcon.ToolTipText = resources.GetString("this.eveNotificationsIcon.ToolTipText");
             this.eveNotificationsIcon.Click += new System.EventHandler(this.toolbarIcon_Click);
             // 
             // calendarEventsIcon
@@ -743,8 +743,8 @@ namespace EVEMon.CharacterMonitoring
             this.calendarEventsIcon.Name = "calendarEventsIcon";
             this.calendarEventsIcon.Size = new System.Drawing.Size(28, 28);
             this.calendarEventsIcon.Tag = "calendarEventsPage";
-            this.calendarEventsIcon.Text = "Calendar";
-            this.calendarEventsIcon.ToolTipText = "Display calendar events";
+            this.calendarEventsIcon.Text = resources.GetString("this.calendarEventsIcon.Text");
+            this.calendarEventsIcon.ToolTipText = resources.GetString("this.calendarEventsIcon.ToolTipText");
             this.calendarEventsIcon.Click += new System.EventHandler(this.toolbarIcon_Click);
             // 
             // featuresMenu
@@ -760,8 +760,8 @@ namespace EVEMon.CharacterMonitoring
             this.featuresMenu.Name = "featuresMenu";
             this.featuresMenu.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
             this.featuresMenu.Size = new System.Drawing.Size(37, 28);
-            this.featuresMenu.Text = "More features";
-            this.featuresMenu.ToolTipText = "Advanced features";
+            this.featuresMenu.Text = resources.GetString("this.featuresMenu.Text");
+            this.featuresMenu.ToolTipText = resources.GetString("this.featuresMenu.ToolTipText");
             this.featuresMenu.DropDownOpening += new System.EventHandler(this.featureMenu_DropDownOpening);
             this.featuresMenu.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.featuresMenu_DropDownItemClicked);
             // 
@@ -769,14 +769,14 @@ namespace EVEMon.CharacterMonitoring
             // 
             this.EnableAllToolStripMenuItem.Name = "EnableAllToolStripMenuItem";
             this.EnableAllToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
-            this.EnableAllToolStripMenuItem.Text = "Enable All";
+            this.EnableAllToolStripMenuItem.Text = resources.GetString("this.EnableAllToolStripMenuItem.Text");
             this.EnableAllToolStripMenuItem.Click += new System.EventHandler(this.EnableAllToolStripMenuItem_Click);
             // 
             // DisableAllToolStripMenuItem
             // 
             this.DisableAllToolStripMenuItem.Name = "DisableAllToolStripMenuItem";
             this.DisableAllToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
-            this.DisableAllToolStripMenuItem.Text = "Disable All";
+            this.DisableAllToolStripMenuItem.Text = resources.GetString("this.DisableAllToolStripMenuItem.Text");
             this.DisableAllToolStripMenuItem.Click += new System.EventHandler(this.DisableAllToolStripMenuItem_Click);
             // 
             // SelectionToolStripSeparator
@@ -800,8 +800,8 @@ namespace EVEMon.CharacterMonitoring
             this.toggleSkillsIcon.Name = "toggleSkillsIcon";
             this.toggleSkillsIcon.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
             this.toggleSkillsIcon.Size = new System.Drawing.Size(28, 28);
-            this.toggleSkillsIcon.Text = "Toggle All Skills";
-            this.toggleSkillsIcon.ToolTipText = "Toggle all skills";
+            this.toggleSkillsIcon.Text = resources.GetString("this.toggleSkillsIcon.Text");
+            this.toggleSkillsIcon.ToolTipText = resources.GetString("this.toggleSkillsIcon.ToolTipText");
             this.toggleSkillsIcon.Click += new System.EventHandler(this.toggleSkillsIcon_Click);
             // 
             // tsToggleSeparator
@@ -880,7 +880,7 @@ namespace EVEMon.CharacterMonitoring
             this.loyaltyPage.Size = new System.Drawing.Size(608, 181);
             this.loyaltyPage.TabIndex = 18;
             this.loyaltyPage.Tag = "LoyaltyPoints";
-            this.loyaltyPage.Text = "loyaltyPage";
+            this.loyaltyPage.Text = resources.GetString("this.loyaltyPage.Text");
             // 
             // loyaltyList
             // 
@@ -899,7 +899,7 @@ namespace EVEMon.CharacterMonitoring
             this.standingsPage.Size = new System.Drawing.Size(608, 181);
             this.standingsPage.TabIndex = 7;
             this.standingsPage.Tag = "Standings";
-            this.standingsPage.Text = "standingsPage";
+            this.standingsPage.Text = resources.GetString("this.standingsPage.Text");
             // 
             // standingsList
             // 
@@ -918,7 +918,7 @@ namespace EVEMon.CharacterMonitoring
             this.skillsPage.Size = new System.Drawing.Size(608, 181);
             this.skillsPage.TabIndex = 0;
             this.skillsPage.Tag = "CharacterSheet";
-            this.skillsPage.Text = "skillsPage";
+            this.skillsPage.Text = resources.GetString("this.skillsPage.Text");
             // 
             // skillsList
             // 
@@ -938,7 +938,7 @@ namespace EVEMon.CharacterMonitoring
             this.ordersPage.Size = new System.Drawing.Size(564, 181);
             this.ordersPage.TabIndex = 2;
             this.ordersPage.Tag = "MarketOrders";
-            this.ordersPage.Text = "ordersPage";
+            this.ordersPage.Text = resources.GetString("this.ordersPage.Text");
             // 
             // ordersList
             // 
@@ -959,7 +959,7 @@ namespace EVEMon.CharacterMonitoring
             this.skillQueuePage.Size = new System.Drawing.Size(568, 86);
             this.skillQueuePage.TabIndex = 1;
             this.skillQueuePage.Tag = "SkillQueue";
-            this.skillQueuePage.Text = "skillQueuePage";
+            this.skillQueuePage.Text = resources.GetString("this.skillQueuePage.Text");
             // 
             // skillQueueList
             // 
@@ -978,7 +978,7 @@ namespace EVEMon.CharacterMonitoring
             this.jobsPage.Size = new System.Drawing.Size(608, 181);
             this.jobsPage.TabIndex = 3;
             this.jobsPage.Tag = "IndustryJobs";
-            this.jobsPage.Text = "jobsPage";
+            this.jobsPage.Text = resources.GetString("this.jobsPage.Text");
             // 
             // jobsList
             // 
@@ -999,7 +999,7 @@ namespace EVEMon.CharacterMonitoring
             this.researchPage.Size = new System.Drawing.Size(568, 86);
             this.researchPage.TabIndex = 4;
             this.researchPage.Tag = "ResearchPoints";
-            this.researchPage.Text = "researchPage";
+            this.researchPage.Text = resources.GetString("this.researchPage.Text");
             // 
             // researchList
             // 
@@ -1020,7 +1020,7 @@ namespace EVEMon.CharacterMonitoring
             this.mailMessagesPage.Size = new System.Drawing.Size(608, 181);
             this.mailMessagesPage.TabIndex = 5;
             this.mailMessagesPage.Tag = "MailMessages";
-            this.mailMessagesPage.Text = "mailMessagesPage";
+            this.mailMessagesPage.Text = resources.GetString("this.mailMessagesPage.Text");
             // 
             // mailMessagesList
             // 
@@ -1041,7 +1041,7 @@ namespace EVEMon.CharacterMonitoring
             this.eveNotificationsPage.Size = new System.Drawing.Size(568, 86);
             this.eveNotificationsPage.TabIndex = 6;
             this.eveNotificationsPage.Tag = "Notifications";
-            this.eveNotificationsPage.Text = "eveNotificationsPage";
+            this.eveNotificationsPage.Text = resources.GetString("this.eveNotificationsPage.Text");
             // 
             // eveNotificationsList
             // 
@@ -1062,7 +1062,7 @@ namespace EVEMon.CharacterMonitoring
             this.employmentPage.Size = new System.Drawing.Size(568, 156);
             this.employmentPage.TabIndex = 8;
             this.employmentPage.Tag = "EmploymentHistory";
-            this.employmentPage.Text = "employmentPage";
+            this.employmentPage.Text = resources.GetString("this.employmentPage.Text");
             // 
             // employmentList
             // 
@@ -1081,7 +1081,7 @@ namespace EVEMon.CharacterMonitoring
             this.contractsPage.Size = new System.Drawing.Size(564, 181);
             this.contractsPage.TabIndex = 9;
             this.contractsPage.Tag = "Contracts";
-            this.contractsPage.Text = "contractsPage";
+            this.contractsPage.Text = resources.GetString("this.contractsPage.Text");
             // 
             // contractsList
             // 
@@ -1102,7 +1102,7 @@ namespace EVEMon.CharacterMonitoring
             this.assetsPage.Size = new System.Drawing.Size(568, 308);
             this.assetsPage.TabIndex = 10;
             this.assetsPage.Tag = "AssetList";
-            this.assetsPage.Text = "assetsPage";
+            this.assetsPage.Text = resources.GetString("this.assetsPage.Text");
             // 
             // assetsList
             // 
@@ -1123,7 +1123,7 @@ namespace EVEMon.CharacterMonitoring
             this.walletJournalPage.Size = new System.Drawing.Size(568, 86);
             this.walletJournalPage.TabIndex = 11;
             this.walletJournalPage.Tag = "WalletJournal";
-            this.walletJournalPage.Text = "walletJournalPage";
+            this.walletJournalPage.Text = resources.GetString("this.walletJournalPage.Text");
             // 
             // walletJournalList
             // 
@@ -1144,7 +1144,7 @@ namespace EVEMon.CharacterMonitoring
             this.walletTransactionsPage.Size = new System.Drawing.Size(568, 86);
             this.walletTransactionsPage.TabIndex = 12;
             this.walletTransactionsPage.Tag = "WalletTransactions";
-            this.walletTransactionsPage.Text = "walletTransactionsPage";
+            this.walletTransactionsPage.Text = resources.GetString("this.walletTransactionsPage.Text");
             // 
             // walletTransactionsList
             // 
@@ -1165,7 +1165,7 @@ namespace EVEMon.CharacterMonitoring
             this.factionalWarfareStatsPage.Size = new System.Drawing.Size(568, 156);
             this.factionalWarfareStatsPage.TabIndex = 13;
             this.factionalWarfareStatsPage.Tag = "FactionalWarfareStats";
-            this.factionalWarfareStatsPage.Text = "factionalWarfareStatsPage";
+            this.factionalWarfareStatsPage.Text = resources.GetString("this.factionalWarfareStatsPage.Text");
             // 
             // factionalWarfareStatsList
             // 
@@ -1184,7 +1184,7 @@ namespace EVEMon.CharacterMonitoring
             this.contactsPage.Size = new System.Drawing.Size(564, 181);
             this.contactsPage.TabIndex = 14;
             this.contactsPage.Tag = "ContactList";
-            this.contactsPage.Text = "contactsPage";
+            this.contactsPage.Text = resources.GetString("this.contactsPage.Text");
             // 
             // contactsList
             // 
@@ -1203,7 +1203,7 @@ namespace EVEMon.CharacterMonitoring
             this.medalsPage.Size = new System.Drawing.Size(608, 181);
             this.medalsPage.TabIndex = 15;
             this.medalsPage.Tag = "Medals";
-            this.medalsPage.Text = "medalsPage";
+            this.medalsPage.Text = resources.GetString("this.medalsPage.Text");
             // 
             // medalsList
             // 
@@ -1222,7 +1222,7 @@ namespace EVEMon.CharacterMonitoring
             this.killLogPage.Size = new System.Drawing.Size(608, 181);
             this.killLogPage.TabIndex = 16;
             this.killLogPage.Tag = "KillLog";
-            this.killLogPage.Text = "killLogPage";
+            this.killLogPage.Text = resources.GetString("this.killLogPage.Text");
             // 
             // killLogList
             // 
@@ -1242,7 +1242,7 @@ namespace EVEMon.CharacterMonitoring
             this.planetaryPage.Size = new System.Drawing.Size(608, 181);
             this.planetaryPage.TabIndex = 17;
             this.planetaryPage.Tag = "PlanetaryColonies";
-            this.planetaryPage.Text = "planetaryPage";
+            this.planetaryPage.Text = resources.GetString("this.planetaryPage.Text");
             // 
             // planetaryList
             // 
@@ -1266,7 +1266,7 @@ namespace EVEMon.CharacterMonitoring
             this.warningLabel.Name = "warningLabel";
             this.warningLabel.Size = new System.Drawing.Size(608, 17);
             this.warningLabel.TabIndex = 1;
-            this.warningLabel.Text = "This character has no associated API key, data won\'t be updated.";
+            this.warningLabel.Text = resources.GetString("this.warningLabel.Text");
             this.warningLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // notificationList

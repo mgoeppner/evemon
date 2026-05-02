@@ -3447,4 +3447,273 @@
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>92</value>
   </metadata>
+  <data name="this.planToolStripMenuItem.Text" xml:space="preserve">
+    <value>Plans</value>
+  </data>
+  <data name="this.testTrayToolStripMenuItem.Text" xml:space="preserve">
+    <value>Test</value>
+  </data>
+  <data name="this.trayTestNotificationTSMI.Text" xml:space="preserve">
+    <value>Notification</value>
+  </data>
+  <data name="this.trayTestCharacterNotificationTSMI.Text" xml:space="preserve">
+    <value>Character Notification</value>
+  </data>
+  <data name="this.restoreToolStripMenuItem.Text" xml:space="preserve">
+    <value>Restore</value>
+  </data>
+  <data name="this.closeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="this.lblTraining.Text" xml:space="preserve">
+    <value>toolStripStatusLabel1</value>
+  </data>
+  <data name="this.lblStatus.Text" xml:space="preserve">
+    <value>EVE Time:</value>
+  </data>
+  <data name="this.lblServerStatus.Text" xml:space="preserve">
+    <value>|  Server Status Unknown</value>
+  </data>
+  <data name="this.lblCSSProviderStatus.Text" xml:space="preserve">
+    <value>Uploading to CSSProvider</value>
+  </data>
+  <data name="this.tsDatafilesLoadingProgressBar.ToolTipText" xml:space="preserve">
+    <value>Loading data files</value>
+  </data>
+  <data name="this.saveFileDialog.Filter" xml:space="preserve">
+    <value>EVEMon Settings Backup Files (*.bak)|*.bak</value>
+  </data>
+  <data name="this.saveFileDialog.Title" xml:space="preserve">
+    <value>Backup EVEMon settings file</value>
+  </data>
+  <data name="this.openFileDialog.Filter" xml:space="preserve">
+    <value>EVEMon Settings Backup Files (*.bak)|*.bak</value>
+  </data>
+  <data name="this.openFileDialog.Title" xml:space="preserve">
+    <value>Restore EVEMon settings file</value>
+  </data>
+  <data name="this.mainMenuBar.Text" xml:space="preserve">
+    <value>menuStrip1</value>
+  </data>
+  <data name="this.menubarToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Menubar</value>
+  </data>
+  <data name="this.toolbarToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Toolbar</value>
+  </data>
+  <data name="this.fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;File</value>
+  </data>
+  <data name="this.addAPIKeyMenu.Text" xml:space="preserve">
+    <value>&amp;Add Character...</value>
+  </data>
+  <data name="this.manageAPIKeysMenuItem.Text" xml:space="preserve">
+    <value>&amp;Manage Characters...</value>
+  </data>
+  <data name="this.deleteCharacterMenu.Text" xml:space="preserve">
+    <value>&amp;Delete Character...</value>
+  </data>
+  <data name="this.exportCharacterMenu.Text" xml:space="preserve">
+    <value>&amp;Export Character...</value>
+  </data>
+  <data name="this.hideCharacterMenu.Text" xml:space="preserve">
+    <value>&amp;Hide Character</value>
+  </data>
+  <data name="this.loadSettingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>R&amp;estore Settings...</value>
+  </data>
+  <data name="this.saveSettingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Sa&amp;ve Settings...</value>
+  </data>
+  <data name="this.resetSettingsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Reset Settings</value>
+  </data>
+  <data name="this.clearCacheToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Clear Cache</value>
+  </data>
+  <data name="this.exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>E&amp;xit</value>
+  </data>
+  <data name="this.editToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Edit</value>
+  </data>
+  <data name="this.copySkillsToClipboardBBFormatToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Copy Skills to Clipboard (BB Format)</value>
+  </data>
+  <data name="this.plansToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Plans</value>
+  </data>
+  <data name="this.tsmiNewPlan.Text" xml:space="preserve">
+    <value>&amp;New Plan…</value>
+  </data>
+  <data name="this.tsmiCreatePlanFromSkillQueue.Text" xml:space="preserve">
+    <value>Create Plan from Skill Queue...</value>
+  </data>
+  <data name="this.tsmiImportPlanFromFile.Text" xml:space="preserve">
+    <value>&amp;Import Plan from File...</value>
+  </data>
+  <data name="this.tsmiManagePlans.Text" xml:space="preserve">
+    <value>&amp;Manage Plans...</value>
+  </data>
+  <data name="this.toolsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Tools</value>
+  </data>
+  <data name="this.charactersComparisonMenuItem.Text" xml:space="preserve">
+    <value>&amp;Characters Comparison...</value>
+  </data>
+  <data name="this.blankCreatorToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Blank Character Creator...</value>
+  </data>
+  <data name="this.dataBrowserMenuItem.Text" xml:space="preserve">
+    <value>&amp;Data Browser</value>
+  </data>
+  <data name="this.skillBrowserMenuItem.Text" xml:space="preserve">
+    <value>&amp;Skill Browser...</value>
+  </data>
+  <data name="this.certificateBrowserMenuItem.Text" xml:space="preserve">
+    <value>&amp;Certificate Browser...</value>
+  </data>
+  <data name="this.shipBrowserMenuItem.Text" xml:space="preserve">
+    <value>S&amp;hip Browser...</value>
+  </data>
+  <data name="this.itemBrowserMenuItem.Text" xml:space="preserve">
+    <value>&amp;Item Browser...</value>
+  </data>
+  <data name="this.blueprintBrowserMenuItem.Text" xml:space="preserve">
+    <value>&amp;Blueprint Browser...</value>
+  </data>
+  <data name="this.skillsPieChartMenuItem.Text" xml:space="preserve">
+    <value>Skills &amp;Pie Chart...</value>
+  </data>
+  <data name="this.implantsMenuItem.Text" xml:space="preserve">
+    <value>&amp;Implant Groups...</value>
+  </data>
+  <data name="this.showOwnedSkillbooksMenuItem.Text" xml:space="preserve">
+    <value>O&amp;wned Skillbooks...</value>
+  </data>
+  <data name="this.optionsToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Options...</value>
+  </data>
+  <data name="this.helpToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Help</value>
+  </data>
+  <data name="this.forumsMenuItem.Text" xml:space="preserve">
+    <value>&amp;Forums</value>
+  </data>
+  <data name="this.issuesFeaturesMenuItem.Text" xml:space="preserve">
+    <value>I&amp;ssues and Features (GitHub)</value>
+  </data>
+  <data name="this.readTheDocsManualToolStripMenuItem.Text" xml:space="preserve">
+    <value>Read The Docs (Manual)</value>
+  </data>
+  <data name="this.aboutMenuItem.Text" xml:space="preserve">
+    <value>&amp;About...</value>
+  </data>
+  <data name="this.testsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Te&amp;st</value>
+  </data>
+  <data name="this.exceptionWindowToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exception Window</value>
+  </data>
+  <data name="this.exceptionWindowRecursiveExceptionToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exception Window (Recursive Exception)</value>
+  </data>
+  <data name="this.testNotificationToolStripMenuItem.Text" xml:space="preserve">
+    <value>Notification</value>
+  </data>
+  <data name="this.testCharacterNotificationToolStripMenuItem.Text" xml:space="preserve">
+    <value>Character Notification</value>
+  </data>
+  <data name="this.testTimeoutOneSecToolStripMenuItem.Text" xml:space="preserve">
+    <value>Set Timeout to 1 Second</value>
+  </data>
+  <data name="this.restartToolStripMenuItem.Text" xml:space="preserve">
+    <value>Restart</value>
+  </data>
+  <data name="this.mainToolBar.Text" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
+  <data name="this.addAPIKeyTbMenu.ToolTipText" xml:space="preserve">
+    <value>Add API key</value>
+  </data>
+  <data name="this.apiKeysManagementTbMenu.ToolTipText" xml:space="preserve">
+    <value>Manage accounts</value>
+  </data>
+  <data name="this.manageCharacterTbMenu.Text" xml:space="preserve">
+    <value>Manage Character</value>
+  </data>
+  <data name="this.manageCharacterTbMenu.ToolTipText" xml:space="preserve">
+    <value>Manage Character</value>
+  </data>
+  <data name="this.toolStripMenuItem1.Text" xml:space="preserve">
+    <value>&amp;Delete Character...</value>
+  </data>
+  <data name="this.toolStripMenuItem2.Text" xml:space="preserve">
+    <value>&amp;Export Character...</value>
+  </data>
+  <data name="this.toolStripMenuItem3.Text" xml:space="preserve">
+    <value>&amp;Hide Character</value>
+  </data>
+  <data name="this.tsdbSettings.Text" xml:space="preserve">
+    <value>tsddbSettings</value>
+  </data>
+  <data name="this.tsdbSettings.ToolTipText" xml:space="preserve">
+    <value>Save/Restore Settings</value>
+  </data>
+  <data name="this.tsLoadSettings.Text" xml:space="preserve">
+    <value>Restore Settings...</value>
+  </data>
+  <data name="this.tsSaveSettings.Text" xml:space="preserve">
+    <value>Save Settings...</value>
+  </data>
+  <data name="this.clearCacheToolStripButton.Text" xml:space="preserve">
+    <value>Clear Cache</value>
+  </data>
+  <data name="this.resetSettingsToolStripButton.Text" xml:space="preserve">
+    <value>Reset Settings</value>
+  </data>
+  <data name="this.exitToolStripButton.Text" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="this.tsbManagePlans.Text" xml:space="preserve">
+    <value>Manage Plans</value>
+  </data>
+  <data name="this.plansTbMenu.Text" xml:space="preserve">
+    <value>Plans...</value>
+  </data>
+  <data name="this.characterComparisonToolStripButton.Text" xml:space="preserve">
+    <value>Character Comparison...</value>
+  </data>
+  <data name="this.skillsPieChartTbMenu.Text" xml:space="preserve">
+    <value>Skill Group Pie Chart...</value>
+  </data>
+  <data name="this.tsbImplantGroups.Text" xml:space="preserve">
+    <value>Implant AllGroups...</value>
+  </data>
+  <data name="this.tsbShowOwned.Text" xml:space="preserve">
+    <value>Show Owned Skillbooks...</value>
+  </data>
+  <data name="this.tsbOptions.Text" xml:space="preserve">
+    <value>Options...</value>
+  </data>
+  <data name="this.tsbAbout.Text" xml:space="preserve">
+    <value>About...</value>
+  </data>
+  <data name="this.niAlertIcon.Text" xml:space="preserve">
+    <value>EVEMon notifications</value>
+  </data>
+  <data name="this.ofdOpenDialog.Filter" xml:space="preserve">
+    <value>Plan Files (*.emp)|*.emp|Plan Files (*.xml)|*.xml|All Files (*.*)|*.*</value>
+  </data>
+  <data name="this.ofdOpenDialog.Title" xml:space="preserve">
+    <value>Open Plan File</value>
+  </data>
+  <data name="this.tpOverview.Text" xml:space="preserve">
+    <value>Overview</value>
+  </data>
+  <data name="this.tabLoadingLabel.Text" xml:space="preserve">
+    <value>Loading...
+
+Please Wait.</value>
+  </data>
 </root>

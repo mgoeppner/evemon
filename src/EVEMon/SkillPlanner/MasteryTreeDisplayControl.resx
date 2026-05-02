@@ -1379,4 +1379,25 @@
         Ab8BQgFNAT4HAAE+AwABKAMAAWADAAEwAwABAQEAAQEFAAFAAQIWAAP//wD/AEMACw==
 </value>
   </data>
+  <data name="this.planToLevel.Text" xml:space="preserve">
+    <value>&amp;Plan...</value>
+  </data>
+  <data name="this.showInBrowserMenu.Text" xml:space="preserve">
+    <value>Show in Skill &amp;Browser</value>
+  </data>
+  <data name="this.showInExplorerMenu.Text" xml:space="preserve">
+    <value>Show in Skill &amp;Explorer...</value>
+  </data>
+  <data name="this.tsmExpandSelected.Text" xml:space="preserve">
+    <value>Expand Selected</value>
+  </data>
+  <data name="this.tsmCollapseSelected.Text" xml:space="preserve">
+    <value>Collapse Selected</value>
+  </data>
+  <data name="this.tsmExpandAll.Text" xml:space="preserve">
+    <value>&amp;Expand All</value>
+  </data>
+  <data name="this.tsmCollapseAll.Text" xml:space="preserve">
+    <value>&amp;Collapse All</value>
+  </data>
 </root>

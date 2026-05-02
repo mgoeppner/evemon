@@ -88,7 +88,7 @@ namespace EVEMon.SkillPlanner
             this.lblLoadouts.Name = "lblLoadouts";
             this.lblLoadouts.Size = new System.Drawing.Size(101, 13);
             this.lblLoadouts.TabIndex = 1;
-            this.lblLoadouts.Text = "Found {0} Loadouts";
+            this.lblLoadouts.Text = resources.GetString("this.lblLoadouts.Text");
             // 
             // btnCancel
             // 
@@ -98,7 +98,7 @@ namespace EVEMon.SkillPlanner
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 3;
-            this.btnCancel.Text = "Close";
+            this.btnCancel.Text = resources.GetString("this.btnCancel.Text");
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -160,22 +160,22 @@ namespace EVEMon.SkillPlanner
             // 
             // colName
             // 
-            this.colName.Text = "Name";
+            this.colName.Text = resources.GetString("this.colName.Text");
             this.colName.Width = 153;
             // 
             // colAuthor
             // 
-            this.colAuthor.Text = "Author";
+            this.colAuthor.Text = resources.GetString("this.colAuthor.Text");
             this.colAuthor.Width = 68;
             // 
             // colRating
             // 
-            this.colRating.Text = "Rating";
+            this.colRating.Text = resources.GetString("this.colRating.Text");
             this.colRating.Width = 56;
             // 
             // colDate
             // 
-            this.colDate.Text = "Date";
+            this.colDate.Text = resources.GetString("this.colDate.Text");
             this.colDate.Width = 90;
             // 
             // ilIcons
@@ -231,7 +231,7 @@ namespace EVEMon.SkillPlanner
             this.lblSubmitDate.Name = "lblSubmitDate";
             this.lblSubmitDate.Size = new System.Drawing.Size(62, 13);
             this.lblSubmitDate.TabIndex = 25;
-            this.lblSubmitDate.Text = "SubmitDate";
+            this.lblSubmitDate.Text = resources.GetString("this.lblSubmitDate.Text");
             // 
             // SubDateLabel
             // 
@@ -240,7 +240,7 @@ namespace EVEMon.SkillPlanner
             this.SubDateLabel.Name = "SubDateLabel";
             this.SubDateLabel.Size = new System.Drawing.Size(89, 13);
             this.SubDateLabel.TabIndex = 24;
-            this.SubDateLabel.Text = "Submission Date:";
+            this.SubDateLabel.Text = resources.GetString("this.SubDateLabel.Text");
             // 
             // AuthorLabel
             // 
@@ -249,7 +249,7 @@ namespace EVEMon.SkillPlanner
             this.AuthorLabel.Name = "AuthorLabel";
             this.AuthorLabel.Size = new System.Drawing.Size(41, 13);
             this.AuthorLabel.TabIndex = 22;
-            this.AuthorLabel.Text = "Author:";
+            this.AuthorLabel.Text = resources.GetString("this.AuthorLabel.Text");
             // 
             // LoadoutNameLabel
             // 
@@ -258,7 +258,7 @@ namespace EVEMon.SkillPlanner
             this.LoadoutNameLabel.Name = "LoadoutNameLabel";
             this.LoadoutNameLabel.Size = new System.Drawing.Size(80, 13);
             this.LoadoutNameLabel.TabIndex = 21;
-            this.LoadoutNameLabel.Text = "Loadout Name:";
+            this.LoadoutNameLabel.Text = resources.GetString("this.LoadoutNameLabel.Text");
             // 
             // ShipLabel
             // 
@@ -267,7 +267,7 @@ namespace EVEMon.SkillPlanner
             this.ShipLabel.Name = "ShipLabel";
             this.ShipLabel.Size = new System.Drawing.Size(31, 13);
             this.ShipLabel.TabIndex = 20;
-            this.ShipLabel.Text = "Ship:";
+            this.ShipLabel.Text = resources.GetString("this.ShipLabel.Text");
             // 
             // lblAuthor
             // 
@@ -276,7 +276,7 @@ namespace EVEMon.SkillPlanner
             this.lblAuthor.Name = "lblAuthor";
             this.lblAuthor.Size = new System.Drawing.Size(66, 13);
             this.lblAuthor.TabIndex = 19;
-            this.lblAuthor.Text = "AuthorName";
+            this.lblAuthor.Text = resources.GetString("this.lblAuthor.Text");
             // 
             // lblLoadoutName
             // 
@@ -285,7 +285,7 @@ namespace EVEMon.SkillPlanner
             this.lblLoadoutName.Name = "lblLoadoutName";
             this.lblLoadoutName.Size = new System.Drawing.Size(74, 13);
             this.lblLoadoutName.TabIndex = 18;
-            this.lblLoadoutName.Text = "LoadoutName";
+            this.lblLoadoutName.Text = resources.GetString("this.lblLoadoutName.Text");
             // 
             // lblShipName
             // 
@@ -294,7 +294,7 @@ namespace EVEMon.SkillPlanner
             this.lblShipName.Name = "lblShipName";
             this.lblShipName.Size = new System.Drawing.Size(56, 13);
             this.lblShipName.TabIndex = 17;
-            this.lblShipName.Text = "ShipName";
+            this.lblShipName.Text = resources.GetString("this.lblShipName.Text");
             // 
             // lblPlanned
             // 
@@ -313,7 +313,7 @@ namespace EVEMon.SkillPlanner
             this.TrainingTimeLabel.Name = "TrainingTimeLabel";
             this.TrainingTimeLabel.Size = new System.Drawing.Size(173, 13);
             this.TrainingTimeLabel.TabIndex = 26;
-            this.TrainingTimeLabel.Text = "Training Time for selected loadout: ";
+            this.TrainingTimeLabel.Text = resources.GetString("this.TrainingTimeLabel.Text");
             // 
             // lblTrainTime
             // 
@@ -323,7 +323,7 @@ namespace EVEMon.SkillPlanner
             this.lblTrainTime.Name = "lblTrainTime";
             this.lblTrainTime.Size = new System.Drawing.Size(27, 13);
             this.lblTrainTime.TabIndex = 27;
-            this.lblTrainTime.Text = "N/A";
+            this.lblTrainTime.Text = resources.GetString("this.lblTrainTime.Text");
             // 
             // btnPlan
             // 
@@ -333,7 +333,7 @@ namespace EVEMon.SkillPlanner
             this.btnPlan.Name = "btnPlan";
             this.btnPlan.Size = new System.Drawing.Size(75, 23);
             this.btnPlan.TabIndex = 29;
-            this.btnPlan.Text = "Add To Plan";
+            this.btnPlan.Text = resources.GetString("this.btnPlan.Text");
             this.btnPlan.UseVisualStyleBackColor = true;
             this.btnPlan.Click += new System.EventHandler(this.btnPlan_Click);
             // 
@@ -357,7 +357,7 @@ namespace EVEMon.SkillPlanner
             // 
             this.miShowInBrowser.Name = "miShowInBrowser";
             this.miShowInBrowser.Size = new System.Drawing.Size(225, 22);
-            this.miShowInBrowser.Text = "Show in Item Browser...";
+            this.miShowInBrowser.Text = resources.GetString("this.miShowInBrowser.Text");
             this.miShowInBrowser.Click += new System.EventHandler(this.tvLoadout_DoubleClick);
             // 
             // showInMenuSeparator
@@ -369,7 +369,7 @@ namespace EVEMon.SkillPlanner
             // 
             this.miExportToClipboard.Name = "miExportToClipboard";
             this.miExportToClipboard.Size = new System.Drawing.Size(225, 22);
-            this.miExportToClipboard.Text = "Copy Loadout To Clipboard";
+            this.miExportToClipboard.Text = resources.GetString("this.miExportToClipboard.Text");
             this.miExportToClipboard.Click += new System.EventHandler(this.miExportToClipboard_Click);
             // 
             // exportLoadoutSeparator
@@ -381,14 +381,14 @@ namespace EVEMon.SkillPlanner
             // 
             this.cmiExpandSelected.Name = "cmiExpandSelected";
             this.cmiExpandSelected.Size = new System.Drawing.Size(225, 22);
-            this.cmiExpandSelected.Text = "Expand Selected";
+            this.cmiExpandSelected.Text = resources.GetString("this.cmiExpandSelected.Text");
             this.cmiExpandSelected.Click += new System.EventHandler(this.cmiExpandSelected_Click);
             // 
             // cmiCollapseSelected
             // 
             this.cmiCollapseSelected.Name = "cmiCollapseSelected";
             this.cmiCollapseSelected.Size = new System.Drawing.Size(225, 22);
-            this.cmiCollapseSelected.Text = "Collapse Selected";
+            this.cmiCollapseSelected.Text = resources.GetString("this.cmiCollapseSelected.Text");
             this.cmiCollapseSelected.Click += new System.EventHandler(this.cmiCollapseSelected_Click);
             // 
             // selectedSeparator
@@ -400,14 +400,14 @@ namespace EVEMon.SkillPlanner
             // 
             this.cmiExpandAll.Name = "cmiExpandAll";
             this.cmiExpandAll.Size = new System.Drawing.Size(225, 22);
-            this.cmiExpandAll.Text = "&Expand All";
+            this.cmiExpandAll.Text = resources.GetString("this.cmiExpandAll.Text");
             this.cmiExpandAll.Click += new System.EventHandler(this.cmiExpandAll_Click);
             // 
             // cmiCollapseAll
             // 
             this.cmiCollapseAll.Name = "cmiCollapseAll";
             this.cmiCollapseAll.Size = new System.Drawing.Size(225, 22);
-            this.cmiCollapseAll.Text = "&Collapse All";
+            this.cmiCollapseAll.Text = resources.GetString("this.cmiCollapseAll.Text");
             this.cmiCollapseAll.Click += new System.EventHandler(this.cmiCollapseAll_Click);
             // 
             // eveImage
@@ -426,7 +426,7 @@ namespace EVEMon.SkillPlanner
             this.buttonForumTopic.Name = "buttonForumTopic";
             this.buttonForumTopic.Size = new System.Drawing.Size(109, 23);
             this.buttonForumTopic.TabIndex = 31;
-            this.buttonForumTopic.Text = "Discuss this loadout";
+            this.buttonForumTopic.Text = resources.GetString("this.buttonForumTopic.Text");
             this.buttonForumTopic.UseVisualStyleBackColor = true;
             this.buttonForumTopic.Click += new System.EventHandler(this.buttonForumTopic_Click);
             // 
@@ -454,7 +454,7 @@ namespace EVEMon.SkillPlanner
             this.MinimumSize = new System.Drawing.Size(744, 544);
             this.Name = "ShipLoadoutSelectWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Loadout Selection";
+            this.Text = resources.GetString("this.Text");
             this.lowerPanel.ResumeLayout(false);
             this.persistentSplitContainer.Panel1.ResumeLayout(false);
             this.persistentSplitContainer.Panel2.ResumeLayout(false);

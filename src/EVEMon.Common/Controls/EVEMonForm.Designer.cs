@@ -38,7 +38,7 @@ namespace EVEMon.Common.Controls
             this.ClientSize = new System.Drawing.Size(292, 266);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EVEMonForm";
-            this.Text = "EVEMon";
+            this.Text = resources.GetString("this.Text");
             this.ResumeLayout(false);
         }
 

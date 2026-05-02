@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Name1" xml:space="preserve">
+    <value>这是我的长绳子</value>
+  </data>
+  <data name="ESIServerStatus" xml:space="preserve">
+    <value>/v1/状态/</value>
+  </data>
+  <data name="ESISkillQueue" xml:space="preserve">
+    <value>/v2/characters/{0:D}/skillqueue/</value>
+  </data>
+  <data name="EVEMonUpdates" xml:space="preserve">
+    <value>/更新/补丁.xml</value>
+  </data>
+  <data name="CCPPortraits" xml:space="preserve">
+    <value>/characters/{0:D}/portrait?tenant=tranquility&amp;size={1:D}</value>
+  </data>
+  <data name="EVEMonCurrentGithub" xml:space="preserve">
+    <value>https://github.com/mgoeppner/evemon</value>
+  </data>
+  <data name="EVEMonMainPage" xml:space="preserve">
+    <value>https://evemondevteam.github.io/evemon/</value>
+  </data>
+  <data name="EVEMonForums" xml:space="preserve">
+    <value>https://forums.eveonline.com/t/evemon-4-0-beta-under-new-ownership-conversion-for-esi/75953</value>
+  </data>
+  <data name="ESIAccountBalance" xml:space="preserve">
+    <value>/v1/字符/{0:D}/钱包/</value>
+  </data>
+  <data name="MyEVELevelImage" xml:space="preserve">
+    <value>/位图/字符/级别</value>
+  </data>
+  <data name="ESIMarketOrders" xml:space="preserve">
+    <value>/v2/字符/{0:D}/订单/</value>
+  </data>
+  <data name="EVEMonUserVoice" xml:space="preserve">
+    <value>https://github.com/mgoeppner/evemon/issues/</value>
+  </data>
+  <data name="ESIIndustryJobs" xml:space="preserve">
+    <value>/v1/characters/{0:D}/industry/jobs/</value>
+  </data>
+  <data name="ESIResearchPoints" xml:space="preserve">
+    <value>/v1/characters/{0:D}/agents_research/</value>
+  </data>
+  <data name="ESIAccountStatus" xml:space="preserve">
+    <value>/v1/characters/{0:D}/accountStatus/</value>
+  </data>
+  <data name="ESIMailBodies" xml:space="preserve">
+    <value>/v1/字符/{0:D}/邮件/{1:D}/</value>
+  </data>
+  <data name="ESIMailingLists" xml:space="preserve">
+    <value>/v1/characters/{0:D}/mail/lists/</value>
+  </data>
+  <data name="ESIMailMessages" xml:space="preserve">
+    <value>/v1/字符/{0:D}/mail/</value>
+  </data>
+  <data name="ESINotifications" xml:space="preserve">
+    <value>/v5/字符/{0:D}/通知/</value>
+  </data>
+  <data name="ESICharacterSheet" xml:space="preserve">
+    <value>/v5/字符/{0:D}/</value>
+  </data>
+  <data name="ESIStandings" xml:space="preserve">
+    <value>/v1/字符/{0:D}/排名/</value>
+  </data>
+  <data name="CCPCorporationLogo" xml:space="preserve">
+    <value>/corporations/{0:D}/logo?tenant=tranquility&amp;size={1:D}</value>
+  </data>
+  <data name="EVEGateMailOpen" xml:space="preserve">
+    <value>/邮件/已读消息/{0}</value>
+  </data>
+  <data name="EVEGateMailForward" xml:space="preserve">
+    <value>/邮件/ComposeForward/{0}</value>
+  </data>
+  <data name="EVEGateMailReply" xml:space="preserve">
+    <value>/邮件/ComposeReply/{0}</value>
+  </data>
+  <data name="EVEGateMailReplyAll" xml:space="preserve">
+    <value>/Mail/ComposeReplyAll/{0}</value>
+  </data>
+  <data name="EVEGateCharacterProfile" xml:space="preserve">
+    <value>/个人资料/{0}</value>
+  </data>
+  <data name="EVEGateAllianceProfile" xml:space="preserve">
+    <value>/联盟/{0}</value>
+  </data>
+  <data name="EVEGateCorporationProfile" xml:space="preserve">
+    <value>/公司/{0}</value>
+  </data>
+  <data name="CCPAccountManage" xml:space="preserve">
+    <value>https://secure.eveonline.com/AccountManMenu.aspx</value>
+  </data>
+  <data name="ESICorporationIndustryJobs" xml:space="preserve">
+    <value>/v1/corporations/{0:D}/industry/jobs/</value>
+  </data>
+  <data name="ESICorporationMarketOrders" xml:space="preserve">
+    <value>/v3/corporations/{0:D}/orders/</value>
+  </data>
+  <data name="ESIContractBids" xml:space="preserve">
+    <value>/v1/characters/{0:D}/contracts/{1:D}/bids/</value>
+  </data>
+  <data name="ESIContractItems" xml:space="preserve">
+    <value>/v1/characters/{0:D}/contracts/{1:D}/items/</value>
+  </data>
+  <data name="ESIContracts" xml:space="preserve">
+    <value>/v1/characters/{0:D}/contracts/</value>
+  </data>
+  <data name="ESICorporationContractBids" xml:space="preserve">
+    <value>/v1/corporations/{0:D}/contracts/{1:D}/bids/</value>
+  </data>
+  <data name="ESICorporationContractItems" xml:space="preserve">
+    <value>/v1/corporations/{0:D}/contracts/{1:D}/items/</value>
+  </data>
+  <data name="ESICorporationContracts" xml:space="preserve">
+    <value>/v1/corporations/{0:D}/contracts/</value>
+  </data>
+  <data name="ESIAllianceList" xml:space="preserve">
+    <value>/v2/联盟/</value>
+  </data>
+  <data name="ESIAssetList" xml:space="preserve">
+    <value>/v5/字符/{0:D}/资产/</value>
+  </data>
+  <data name="ESICalendarEventAttendees" xml:space="preserve">
+    <value>/v2/字符/{0:D}/日历/{1:D}/与会者/</value>
+  </data>
+  <data name="ESIContactList" xml:space="preserve">
+    <value>/v2/字符/{0:D}/联系人/</value>
+  </data>
+  <data name="ESICorporationAccountBalance" xml:space="preserve">
+    <value>/v1/corporations/{0:D}/钱包/</value>
+  </data>
+  <data name="ESICorporationAssetList" xml:space="preserve">
+    <value>/v5/corporations/{0:D}/资产/</value>
+  </data>
+  <data name="ESICorporationContactList" xml:space="preserve">
+    <value>/v2/corporations/{0:D}/contacts/</value>
+  </data>
+  <data name="ESICorporationContainerLog" xml:space="preserve">
+    <value>/v2/corporations/{0:D}/containers/logs/</value>
+  </data>
+  <data name="ESICorporationFactionalWarfareStats" xml:space="preserve">
+    <value>/v2/corporations/{0:D}/fw/stats/</value>
+  </data>
+  <data name="ESICorporationKillLog" xml:space="preserve">
+    <value>/v1/corporations/{0:D}/killmails/recent/</value>
+  </data>
+  <data name="ESICorporationMedals" xml:space="preserve">
+    <value>/v1/corporations/{0:D}/奖牌/</value>
+  </data>
+  <data name="ESICorporationMemberMedals" xml:space="preserve">
+    <value>/v1/corporations/{0:D}/奖章/颁发/</value>
+  </data>
+  <data name="ESICorporationMemberTracking" xml:space="preserve">
+    <value>/v1/corporations/{0:D}/membertracking/</value>
+  </data>
+  <data name="ESICorporationShareholders" xml:space="preserve">
+    <value>/v1/corporations/{0:D}/股东/</value>
+  </data>
+  <data name="ESICorporationSheet" xml:space="preserve">
+    <value>/v4/corporations/{0:D}/</value>
+  </data>
+  <data name="ESICorporationStandings" xml:space="preserve">
+    <value>/v1/corporations/{0:D}/stands/</value>
+  </data>
+  <data name="ESICorporationTitles" xml:space="preserve">
+    <value>/v1/corporations/{0:D}/titles/</value>
+  </data>
+  <data name="ESICorporationWalletJournal" xml:space="preserve">
+    <value>/v4/corporations/{0:D}/钱包/{1:D}/journal/</value>
+  </data>
+  <data name="ESICorporationWalletTransactions" xml:space="preserve">
+    <value>/v1/corporations/{0:D}/钱包/{1:D}/交易/</value>
+  </data>
+  <data name="ESIEVEFactionalWarfareStats" xml:space="preserve">
+    <value>/v2/fw/统计/</value>
+  </data>
+  <data name="ESIEVEFactionalWarfareTopStats" xml:space="preserve">
+    <value>/v2/fw/排行榜/</value>
+  </data>
+  <data name="ESIFactionalWarfareStats" xml:space="preserve">
+    <value>/v2/字符/{0:D}/fw/stats/</value>
+  </data>
+  <data name="ESIKillLog" xml:space="preserve">
+    <value>/v1/characters/{0:D}/killmails/recent/</value>
+  </data>
+  <data name="ESILocation" xml:space="preserve">
+    <value>/v2/字符/{0:D}/位置/</value>
+  </data>
+  <data name="ESIMedals" xml:space="preserve">
+    <value>/v1/人物/{0:D}/奖牌/</value>
+  </data>
+  <data name="ESIUpcomingCalendarEvents" xml:space="preserve">
+    <value>/v2/字符/{0:D}/日历/</value>
+  </data>
+  <data name="ESIWalletJournal" xml:space="preserve">
+    <value>/v6/字符/{0:D}/钱包/日记/</value>
+  </data>
+  <data name="ESIWalletTransactions" xml:space="preserve">
+    <value>/v1/字符/{0:D}/钱包/交易/</value>
+  </data>
+  <data name="ESIFactionalWarfareSystems" xml:space="preserve">
+    <value>/v3/fw/系统/</value>
+  </data>
+  <data name="ESIJumps" xml:space="preserve">
+    <value>/v1/universe/system_jumps/</value>
+  </data>
+  <data name="ESIKills" xml:space="preserve">
+    <value>/v2/universe/system_kills/</value>
+  </data>
+  <data name="ESISovereignty" xml:space="preserve">
+    <value>/v1/主权/结构/</value>
+  </data>
+  <data name="BitBucketWikiBase" xml:space="preserve">
+    <value>https://bitbucket.org/EVEMonDevTeam/evemon/wiki</value>
+  </data>
+  <data name="EVECommunityBase" xml:space="preserve">
+    <value>https://community.eveonline.com</value>
+  </data>
+  <data name="EVEImageServerBase" xml:space="preserve">
+    <value>https://images.evetech.net</value>
+  </data>
+  <data name="ESICharacterFatigue" xml:space="preserve">
+    <value>/v1/字符/{0:D}/疲劳/</value>
+  </data>
+  <data name="ESIPlanetaryColonies" xml:space="preserve">
+    <value>/v1/字符/{0:D}/行星/</value>
+  </data>
+  <data name="ESIPlanetaryLayout" xml:space="preserve">
+    <value>/v3/字符/{0:D}/行星/{1:D}/</value>
+  </data>
+  <data name="ESIBlueprints" xml:space="preserve">
+    <value>/v2/字符/{0:D}/蓝图/</value>
+  </data>
+  <data name="ESICorporationBlueprints" xml:space="preserve">
+    <value>/v2/corporations/{0:D}/blueprints/</value>
+  </data>
+  <data name="ExternalEveNotificationTextParser" xml:space="preserve">
+    <value>/EVE/ExternalEveNotificationTextParser.cs</value>
+  </data>
+  <data name="NotificationRefTypes" xml:space="preserve">
+    <value>/EVE/NotificationRefTypes.xml</value>
+  </data>
+  <data name="EVEMonTwitter" xml:space="preserve">
+    <value>https://twitter.com/evemon</value>
+  </data>
+  <data name="GoogleAnalyticsUrl" xml:space="preserve">
+    <value>https://ssl.google-analytics.com/collect</value>
+  </data>
+  <data name="NISTTimeServer" xml:space="preserve">
+    <value>tcp://time.nist.gov:13</value>
+  </data>
+  <data name="OsmiumBaseUrl" xml:space="preserve">
+    <value>https://o.smium.org</value>
+  </data>
+  <data name="OsmiumLoadoutFeed" xml:space="preserve">
+    <value>/api/json/loadout/query/{0}?limit=50&amp;sortby=creationdate</value>
+  </data>
+  <data name="OsmiumLoadoutDetails" xml:space="preserve">
+    <value>/api/convert/{0}/eft</value>
+  </data>
+  <data name="OsmiumLoadoutTopic" xml:space="preserve">
+    <value>/装载/{0}</value>
+  </data>
+  <data name="GitHubDownloadsBase" xml:space="preserve">
+    <value>https://github.com/mgoeppner/evemon/releases</value>
+  </data>
+  <data name="BitBucketDatafilesBase" xml:space="preserve">
+    <value>https://mgoeppner.github.io/evemon-datafiles/</value>
+  </data>
+  <data name="BitBucketIssuesBase" xml:space="preserve">
+    <value>https://bitbucket.org/EVEMonDevTeam/evemon/issues</value>
+  </data>
+  <data name="EveFlags" xml:space="preserve">
+    <value>/EVE/Flags.xml</value>
+  </data>
+  <data name="GitHubBase" xml:space="preserve">
+    <value>https://raw.githubusercontent.com/mgoeppner/evemon/main</value>
+  </data>
+  <data name="EVEMonManual" xml:space="preserve">
+    <value>https://evemon.readthedocs.org/</value>
+  </data>
+  <data name="ESIBookmarks" xml:space="preserve">
+    <value>/v2/字符/{0:D}/书签/</value>
+  </data>
+  <data name="ESIClones" xml:space="preserve">
+    <value>/v4/字符/{0:D}/克隆/</value>
+  </data>
+  <data name="ESISkills" xml:space="preserve">
+    <value>/v4/字符/{0:D}/技能/</value>
+  </data>
+  <data name="ESICorporationBookmarks" xml:space="preserve">
+    <value>/v1/corporations/{0:D}/书签/</value>
+  </data>
+  <data name="GlobalNTPPool" xml:space="preserve">
+    <value>pool.ntp.org</value>
+  </data>
+  <data name="ESIBase" xml:space="preserve">
+    <value>https://esi.evetech.net</value>
+  </data>
+  <data name="ESICharacterName" xml:space="preserve">
+    <value>/v3/宇宙/名称/</value>
+  </data>
+  <data name="ESICitadelInfo" xml:space="preserve">
+    <value>/v2/宇宙/结构/{0}/</value>
+  </data>
+  <data name="ESIStationInfo" xml:space="preserve">
+    <value>/v2/universe/stations/{0}/</value>
+  </data>
+  <data name="SSOBase" xml:space="preserve">
+    <value>https://login.eveonline.com/oauth/</value>
+  </data>
+  <data name="SSOCharID" xml:space="preserve">
+    <value>验证</value>
+  </data>
+  <data name="SSOLogin" xml:space="preserve">
+    <value>授权/?response_type=code&amp;redirect_uri={0}&amp;client_id={3}&amp;scope={2}&amp;state={1}</value>
+  </data>
+  <data name="SSORedirect" xml:space="preserve">
+    <value>http://localhost:{0:D}/callback</value>
+  </data>
+  <data name="SSOToken" xml:space="preserve">
+    <value>代币</value>
+  </data>
+  <data name="PostDataAuthToken" xml:space="preserve">
+    <value>grant_type=authorization_code&amp;code={0}</value>
+  </data>
+  <data name="CCPApplicationRegistration" xml:space="preserve">
+    <value>https://peterhaneve.github.io/evemon-esi</value>
+  </data>
+  <data name="SSOScopes" xml:space="preserve">
+    <value>ESI-wallet.read_character_wallet.v1 ESI-calendar.read_calendar_events.v1 ESI-location.read_location.v1 ESI-location.read_ship_type.v1 ESI-mail.read_mail.v1 ESI-skills.read_skills.v1 ESI-skills.read_skillqueue.v1 ESI-clones.read_clones.v1 ESI-characters.read_contacts.v1 ESI-universe.read_structs.v1 ESI-killmails.read_killmails.v1 ESI-assets.read_assets.v1 ESI-planets.manage_planets.v1 ESI-markets.structural_markets.v1 ESI-corporations.read_structs.v1 ESI-characters.read_loyalty.v1 ESI-characters.read_medals.v1 ESI-characters.read_stands.v1 ESI-characters.read_agents_research.v1 ESI-industry.read_character_jobs.v1 ESI-markets.read_character_orders.v1 ESI-characters.read_blueprints.v1 ESI-characters.read_corporation_roles.v1 ESI-contracts.read_character_contracts.v1 ESI-clones.read_implants.v1 ESI-characters.read_fatigue.v1 ESI-killmails.read_corporation_killmails.v1 ESI-wallet.read_corporation_wallets.v1 ESI-characters.read_notifications.v1 ESI-corporations.read_divisions.v1 ESI-corporations.read_contacts.v1 ESI-assets.read_corporation_assets.v1 ESI-corporations.read_blueprints.v1 ESI-contracts.read_corporation_contracts.v1 ESI-corporations.read_stands.v1 ESI-industry.read_corporation_jobs.v1 ESI-markets.read_corporation_orders.v1 ESI-corporations.read_medals.v1 ESI-alliances.read_contacts.v1 ESI-characters.read_fw_stats.v1 ESI-corporations.read_fw_stats.v1</value>
+  </data>
+  <data name="PostDataRefreshToken" xml:space="preserve">
+    <value>grant_type=refresh_token&amp;refresh_token={0}</value>
+  </data>
+  <data name="ESIUpcomingCalendarEventDetails" xml:space="preserve">
+    <value>/v4/字符/{0:D}/日历/{1:D}/</value>
+  </data>
+  <data name="ESIFactionWars" xml:space="preserve">
+    <value>/v2/fw/战争/</value>
+  </data>
+  <data name="ESICharacterAffiliation" xml:space="preserve">
+    <value>/v1/人物/隶属关系/</value>
+  </data>
+  <data name="ESIAttributes" xml:space="preserve">
+    <value>/v1/字符/{0:D}/属性/</value>
+  </data>
+  <data name="ESIImplants" xml:space="preserve">
+    <value>/v2/字符/{0:D}/植入物/</value>
+  </data>
+  <data name="ESIShip" xml:space="preserve">
+    <value>/v2/字符/{0:D}/ship/</value>
+  </data>
+  <data name="ESIEmploymentHistory" xml:space="preserve">
+    <value>/v2/characters/{0:D}/corporationhistory/</value>
+  </data>
+  <data name="BitBucketBase" xml:space="preserve">
+    <value>https://bitbucket.org/EVEMonDevTeam/evemon</value>
+  </data>
+  <data name="ESIPlanetInfo" xml:space="preserve">
+    <value>/v1/宇宙/行星/{0:D}/</value>
+  </data>
+  <data name="ESIKillMail" xml:space="preserve">
+    <value>/v1/killmails/{0}/{1}/</value>
+  </data>
+  <data name="ForumThreadBase" xml:space="preserve">
+    <value>https://forums.eveonline.com/t/evemon-4-0-beta-under-new-ownership-conversion-for-esi/75953</value>
+  </data>
+  <data name="GoogleCalendarSetup" xml:space="preserve">
+    <value>https://www.google.com/search?q=google%20calendar%20get%20calendar%20id</value>
+  </data>
+  <data name="SSOLoginPKCE" xml:space="preserve">
+    <value>授权/?response_type=code&amp;redirect_uri={0}&amp;client_id={3}&amp;scope={2}&amp;state={1}&amp;code_challenge_method=S256&amp;code_challenge={4}</value>
+  </data>
+  <data name="SSODefaultAppID" xml:space="preserve">
+    <value>05153596dde44fd8b0d60c0ad3b90c24</value>
+  </data>
+  <data name="PostDataAuthPKCE" xml:space="preserve">
+    <value>grant_type=authorization_code&amp;code={0}&amp;client_id={1}&amp;code_verifier={2}</value>
+  </data>
+  <data name="SSOBaseV2" xml:space="preserve">
+    <value>https://login.eveonline.com/v2/oauth/</value>
+  </data>
+  <data name="PostDataRefreshPKCE" xml:space="preserve">
+    <value>grant_type=refresh_token&amp;client_id={1}&amp;refresh_token={0}</value>
+  </data>
+  <data name="ESILoyaltyPoints" xml:space="preserve">
+    <value>/v1/字符/{0:D}/忠诚/积分/</value>
+  </data>
+  <data name="ESICorporationMarketOrdersHistory" xml:space="preserve">
+    <value>/v2/corporations/{0:D}/orders/history</value>
+  </data>
+  <data name="ESIMarketOrdersHistory" xml:space="preserve">
+    <value>/v1/characters/{0:D}/orders/history</value>
+  </data>
+  <data name="CCPAllianceLogo" xml:space="preserve">
+    <value>/alliances/{0:D}/logo?tenant=tranquility&amp;size={1:D}</value>
+  </data>
+  <data name="CCPTypeImage" xml:space="preserve">
+    <value>/types/{0:D}/icon?tenant=tranquility&amp;size={1:D}</value>
+  </data>
+  <data name="CCPTypeRender" xml:space="preserve">
+    <value>/types/{0:D}/render?tenant=tranquility&amp;size={1:D}</value>
+  </data>
+  <data name="FuzzworksMarketUrl" xml:space="preserve">
+    <value>https://market.fuzzwork.co.uk/aggregates/?region=10000002&amp;types=</value>
+  </data>
+</root>

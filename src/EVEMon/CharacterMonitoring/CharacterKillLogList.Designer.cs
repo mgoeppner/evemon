@@ -60,7 +60,7 @@
             this.noKillLogLabel.Name = "noKillLogLabel";
             this.noKillLogLabel.Size = new System.Drawing.Size(324, 382);
             this.noKillLogLabel.TabIndex = 5;
-            this.noKillLogLabel.Text = "Combat log information not available.";
+            this.noKillLogLabel.Text = resources.GetString("this.noKillLogLabel.Text");
             this.noKillLogLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lvKillLog
@@ -91,30 +91,30 @@
             // 
             // chDate
             // 
-            this.chDate.Text = "Date";
+            this.chDate.Text = resources.GetString("this.chDate.Text");
             this.chDate.Width = 106;
             // 
             // chType
             // 
-            this.chType.Text = "Type";
+            this.chType.Text = resources.GetString("this.chType.Text");
             this.chType.Width = 100;
             // 
             // chName
             // 
-            this.chName.Text = "Name";
+            this.chName.Text = resources.GetString("this.chName.Text");
             this.chName.Width = 99;
             // 
             // chCorporation
             // 
-            this.chCorporation.Text = "Corporation";
+            this.chCorporation.Text = resources.GetString("this.chCorporation.Text");
             // 
             // chAlliance
             // 
-            this.chAlliance.Text = "Alliance";
+            this.chAlliance.Text = resources.GetString("this.chAlliance.Text");
             // 
             // chFaction
             // 
-            this.chFaction.Text = "Faction";
+            this.chFaction.Text = resources.GetString("this.chFaction.Text");
             // 
             // contextMenuStrip
             // 
@@ -133,7 +133,7 @@
             this.showDetailsMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.showDetailsMenuItem.Name = "showDetailsMenuItem";
             this.showDetailsMenuItem.Size = new System.Drawing.Size(214, 22);
-            this.showDetailsMenuItem.Text = "Show Details...";
+            this.showDetailsMenuItem.Text = resources.GetString("this.showDetailsMenuItem.Text");
             this.showDetailsMenuItem.Click += new System.EventHandler(this.showDetailsMenuItem_Click);
             // 
             // showDetailsMenuSeparator
@@ -145,7 +145,7 @@
             // 
             this.showInShipBrowserMenuItem.Name = "showInShipBrowserMenuItem";
             this.showInShipBrowserMenuItem.Size = new System.Drawing.Size(214, 22);
-            this.showInShipBrowserMenuItem.Text = "Show In Ship Browser...";
+            this.showInShipBrowserMenuItem.Text = resources.GetString("this.showInShipBrowserMenuItem.Text");
             this.showInShipBrowserMenuItem.Click += new System.EventHandler(this.showInShipBrowserMenuItem_Click);
             // 
             // showInBrowserMenuSeparator
@@ -157,7 +157,7 @@
             // 
             this.copyKillInfoMenuItem.Name = "copyKillInfoMenuItem";
             this.copyKillInfoMenuItem.Size = new System.Drawing.Size(214, 22);
-            this.copyKillInfoMenuItem.Text = "Copy Kill Info to Clipboard";
+            this.copyKillInfoMenuItem.Text = resources.GetString("this.copyKillInfoMenuItem.Text");
             this.copyKillInfoMenuItem.Click += new System.EventHandler(this.copyKillInfoMenuItem_Click);
             // 
             // ilIcons

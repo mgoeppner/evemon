@@ -91,7 +91,7 @@ namespace EVEMon.SettingsUI
             this.btnUseDefaults.Name = "btnUseDefaults";
             this.btnUseDefaults.Size = new System.Drawing.Size(81, 23);
             this.btnUseDefaults.TabIndex = 2;
-            this.btnUseDefaults.Text = "Use Defaults";
+            this.btnUseDefaults.Text = resources.GetString("this.btnUseDefaults.Text");
             this.btnUseDefaults.UseVisualStyleBackColor = true;
             this.btnUseDefaults.Click += new System.EventHandler(this.btnUseDefaults_Click);
             // 
@@ -102,7 +102,7 @@ namespace EVEMon.SettingsUI
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 1;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = resources.GetString("this.btnCancel.Text");
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -113,7 +113,7 @@ namespace EVEMon.SettingsUI
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 0;
-            this.btnOK.Text = "OK";
+            this.btnOK.Text = resources.GetString("this.btnOK.Text");
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
@@ -136,7 +136,7 @@ namespace EVEMon.SettingsUI
             this.tpGeneral.Padding = new System.Windows.Forms.Padding(3);
             this.tpGeneral.Size = new System.Drawing.Size(374, 394);
             this.tpGeneral.TabIndex = 0;
-            this.tpGeneral.Text = "General";
+            this.tpGeneral.Text = resources.GetString("this.tpGeneral.Text");
             this.tpGeneral.UseVisualStyleBackColor = true;
             // 
             // flowLayoutPanel3
@@ -162,7 +162,7 @@ namespace EVEMon.SettingsUI
             this.groupBox1.Size = new System.Drawing.Size(362, 96);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Layout";
+            this.groupBox1.Text = resources.GetString("this.groupBox1.Text");
             // 
             // cbIndentGroupedAccounts
             // 
@@ -171,7 +171,7 @@ namespace EVEMon.SettingsUI
             this.cbIndentGroupedAccounts.Name = "cbIndentGroupedAccounts";
             this.cbIndentGroupedAccounts.Size = new System.Drawing.Size(148, 17);
             this.cbIndentGroupedAccounts.TabIndex = 19;
-            this.cbIndentGroupedAccounts.Text = "Indent Grouped Accounts";
+            this.cbIndentGroupedAccounts.Text = resources.GetString("this.cbIndentGroupedAccounts.Text");
             this.ttHelp.SetToolTip(this.cbIndentGroupedAccounts, "When enabled, characters will be indented\r\nunder the first character in each acco" +
                     "unt group");
             this.cbIndentGroupedAccounts.UseVisualStyleBackColor = true;
@@ -194,7 +194,7 @@ namespace EVEMon.SettingsUI
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 13);
             this.label1.TabIndex = 17;
-            this.label1.Text = "Group Characters by:";
+            this.label1.Text = resources.GetString("this.label1.Text");
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cbHideNotTraining
@@ -204,8 +204,8 @@ namespace EVEMon.SettingsUI
             this.cbHideNotTraining.Name = "cbHideNotTraining";
             this.cbHideNotTraining.Size = new System.Drawing.Size(157, 17);
             this.cbHideNotTraining.TabIndex = 12;
-            this.cbHideNotTraining.Text = "Hide Characters not training";
-            this.ttHelp.SetToolTip(this.cbHideNotTraining, "When enabled, only characters currently\r\ntraining a skill will be displayed");
+            this.cbHideNotTraining.Text = resources.GetString("this.cbHideNotTraining.Text");
+            this.ttHelp.SetToolTip(this.cbHideNotTraining, resources.GetString("this.cbHideNotTraining.ToolTip"));
             this.cbHideNotTraining.UseVisualStyleBackColor = true;
             this.cbHideNotTraining.CheckedChanged += new System.EventHandler(this.cbHideNotTraining_CheckedChanged);
             // 
@@ -220,7 +220,7 @@ namespace EVEMon.SettingsUI
             this.groupBox4.Size = new System.Drawing.Size(362, 79);
             this.groupBox4.TabIndex = 17;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Display Order";
+            this.groupBox4.Text = resources.GetString("this.groupBox4.Text");
             // 
             // cbDisplayOrder2
             // 
@@ -230,7 +230,7 @@ namespace EVEMon.SettingsUI
             this.cbDisplayOrder2.Name = "cbDisplayOrder2";
             this.cbDisplayOrder2.Size = new System.Drawing.Size(221, 21);
             this.cbDisplayOrder2.TabIndex = 22;
-            this.ttHelp.SetToolTip(this.cbDisplayOrder2, "Controls the display order of characters, dependent on grouping.");
+            this.ttHelp.SetToolTip(this.cbDisplayOrder2, resources.GetString("this.cbDisplayOrder2.ToolTip"));
             // 
             // lblDisplayOrder1
             // 
@@ -239,7 +239,7 @@ namespace EVEMon.SettingsUI
             this.lblDisplayOrder1.Name = "lblDisplayOrder1";
             this.lblDisplayOrder1.Size = new System.Drawing.Size(114, 13);
             this.lblDisplayOrder1.TabIndex = 19;
-            this.lblDisplayOrder1.Text = "Characters in training:";
+            this.lblDisplayOrder1.Text = resources.GetString("this.lblDisplayOrder1.Text");
             this.lblDisplayOrder1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblDisplayOrder2
@@ -249,7 +249,7 @@ namespace EVEMon.SettingsUI
             this.lblDisplayOrder2.Name = "lblDisplayOrder2";
             this.lblDisplayOrder2.Size = new System.Drawing.Size(122, 13);
             this.lblDisplayOrder2.TabIndex = 21;
-            this.lblDisplayOrder2.Text = "Characters not training:";
+            this.lblDisplayOrder2.Text = resources.GetString("this.lblDisplayOrder2.Text");
             this.lblDisplayOrder2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cbDisplayOrder1
@@ -265,7 +265,7 @@ namespace EVEMon.SettingsUI
             this.cbDisplayOrder1.Name = "cbDisplayOrder1";
             this.cbDisplayOrder1.Size = new System.Drawing.Size(221, 21);
             this.cbDisplayOrder1.TabIndex = 20;
-            this.ttHelp.SetToolTip(this.cbDisplayOrder1, "Controls the display order of characters, dependent on grouping.");
+            this.ttHelp.SetToolTip(this.cbDisplayOrder1, resources.GetString("this.cbDisplayOrder1.ToolTip"));
             // 
             // groupBox2
             // 
@@ -283,7 +283,7 @@ namespace EVEMon.SettingsUI
             this.groupBox2.Size = new System.Drawing.Size(362, 121);
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Character Details";
+            this.groupBox2.Text = resources.GetString("this.groupBox2.Text");
             // 
             // cbShowSkillQueueTrainingTime
             // 
@@ -292,8 +292,8 @@ namespace EVEMon.SettingsUI
             this.cbShowSkillQueueTrainingTime.Name = "cbShowSkillQueueTrainingTime";
             this.cbShowSkillQueueTrainingTime.Size = new System.Drawing.Size(173, 17);
             this.cbShowSkillQueueTrainingTime.TabIndex = 35;
-            this.cbShowSkillQueueTrainingTime.Text = "Show Skill Queue Training Time";
-            this.ttHelp.SetToolTip(this.cbShowSkillQueueTrainingTime, "When enabled, shows the character\'s\r\nskill queue training time");
+            this.cbShowSkillQueueTrainingTime.Text = resources.GetString("this.cbShowSkillQueueTrainingTime.Text");
+            this.ttHelp.SetToolTip(this.cbShowSkillQueueTrainingTime, resources.GetString("this.cbShowSkillQueueTrainingTime.ToolTip"));
             this.cbShowSkillQueueTrainingTime.UseVisualStyleBackColor = true;
             // 
             // cbHighLightConflicts
@@ -303,7 +303,7 @@ namespace EVEMon.SettingsUI
             this.cbHighLightConflicts.Name = "cbHighLightConflicts";
             this.cbHighLightConflicts.Size = new System.Drawing.Size(157, 17);
             this.cbHighLightConflicts.TabIndex = 34;
-            this.cbHighLightConflicts.Text = "Highlight Schedule Conflicts";
+            this.cbHighLightConflicts.Text = resources.GetString("this.cbHighLightConflicts.Text");
             this.ttHelp.SetToolTip(this.cbHighLightConflicts, "When enabled, skills with a completion time\r\nconflicting with a blocked scheduler" +
                     " entry\r\nwill be highlighted in red.");
             this.cbHighLightConflicts.UseVisualStyleBackColor = true;
@@ -315,8 +315,8 @@ namespace EVEMon.SettingsUI
             this.cbShowSkill.Name = "cbShowSkill";
             this.cbShowSkill.Size = new System.Drawing.Size(124, 17);
             this.cbShowSkill.TabIndex = 31;
-            this.cbShowSkill.Text = "Show Skill in Training";
-            this.ttHelp.SetToolTip(this.cbShowSkill, "When enabled, shows the currently\r\ntraining skill name and level");
+            this.cbShowSkill.Text = resources.GetString("this.cbShowSkill.Text");
+            this.ttHelp.SetToolTip(this.cbShowSkill, resources.GetString("this.cbShowSkill.ToolTip"));
             this.cbShowSkill.UseVisualStyleBackColor = true;
             // 
             // cbShowCompletionTime
@@ -326,7 +326,7 @@ namespace EVEMon.SettingsUI
             this.cbShowCompletionTime.Name = "cbShowCompletionTime";
             this.cbShowCompletionTime.Size = new System.Drawing.Size(133, 17);
             this.cbShowCompletionTime.TabIndex = 33;
-            this.cbShowCompletionTime.Text = "Show Completion Time";
+            this.cbShowCompletionTime.Text = resources.GetString("this.cbShowCompletionTime.Text");
             this.ttHelp.SetToolTip(this.cbShowCompletionTime, "When enabled, shows the estimated completion\r\ndate and time of the  currently tra" +
                     "ining skill");
             this.cbShowCompletionTime.UseVisualStyleBackColor = true;
@@ -338,8 +338,8 @@ namespace EVEMon.SettingsUI
             this.cbShowTimeToCompletion.Name = "cbShowTimeToCompletion";
             this.cbShowTimeToCompletion.Size = new System.Drawing.Size(146, 17);
             this.cbShowTimeToCompletion.TabIndex = 32;
-            this.cbShowTimeToCompletion.Text = "Show Time to Completion";
-            this.ttHelp.SetToolTip(this.cbShowTimeToCompletion, "When enabled, shows the time remaining\r\n until training is completed");
+            this.cbShowTimeToCompletion.Text = resources.GetString("this.cbShowTimeToCompletion.Text");
+            this.ttHelp.SetToolTip(this.cbShowTimeToCompletion, resources.GetString("this.cbShowTimeToCompletion.ToolTip"));
             this.cbShowTimeToCompletion.UseVisualStyleBackColor = true;
             // 
             // cbPortraitSize
@@ -350,7 +350,7 @@ namespace EVEMon.SettingsUI
             this.cbPortraitSize.Name = "cbPortraitSize";
             this.cbPortraitSize.Size = new System.Drawing.Size(69, 21);
             this.cbPortraitSize.TabIndex = 28;
-            this.ttHelp.SetToolTip(this.cbPortraitSize, "Selects the image size, in pixels, to be used\r\nfor the character portrait");
+            this.ttHelp.SetToolTip(this.cbPortraitSize, resources.GetString("this.cbPortraitSize.ToolTip"));
             // 
             // cbShowWallet
             // 
@@ -359,8 +359,8 @@ namespace EVEMon.SettingsUI
             this.cbShowWallet.Name = "cbShowWallet";
             this.cbShowWallet.Size = new System.Drawing.Size(125, 17);
             this.cbShowWallet.TabIndex = 30;
-            this.cbShowWallet.Text = "Show Wallet Balance";
-            this.ttHelp.SetToolTip(this.cbShowWallet, "When enabled, shows the character\'s wallet balance");
+            this.cbShowWallet.Text = resources.GetString("this.cbShowWallet.Text");
+            this.ttHelp.SetToolTip(this.cbShowWallet, resources.GetString("this.cbShowWallet.ToolTip"));
             this.cbShowWallet.UseVisualStyleBackColor = true;
             // 
             // label3
@@ -370,7 +370,7 @@ namespace EVEMon.SettingsUI
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(30, 13);
             this.label3.TabIndex = 27;
-            this.label3.Text = "Size:";
+            this.label3.Text = resources.GetString("this.label3.Text");
             // 
             // cbShowPortrait
             // 
@@ -379,7 +379,7 @@ namespace EVEMon.SettingsUI
             this.cbShowPortrait.Name = "cbShowPortrait";
             this.cbShowPortrait.Size = new System.Drawing.Size(142, 17);
             this.cbShowPortrait.TabIndex = 26;
-            this.cbShowPortrait.Text = "Show Character Portrait";
+            this.cbShowPortrait.Text = resources.GetString("this.cbShowPortrait.Text");
             this.ttHelp.SetToolTip(this.cbShowPortrait, "When enabled, shows the character\'s portrait\r\nas a thumbnail alongside the charac" +
                     "ter\'s name");
             this.cbShowPortrait.UseVisualStyleBackColor = true;
@@ -396,7 +396,7 @@ namespace EVEMon.SettingsUI
             this.groupBox3.Size = new System.Drawing.Size(362, 64);
             this.groupBox3.TabIndex = 16;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Miscellaneous";
+            this.groupBox3.Text = resources.GetString("this.groupBox3.Text");
             // 
             // cbUseIncreasedContrast
             // 
@@ -405,8 +405,8 @@ namespace EVEMon.SettingsUI
             this.cbUseIncreasedContrast.Name = "cbUseIncreasedContrast";
             this.cbUseIncreasedContrast.Size = new System.Drawing.Size(137, 17);
             this.cbUseIncreasedContrast.TabIndex = 21;
-            this.cbUseIncreasedContrast.Text = "Use Increased Contrast";
-            this.ttHelp.SetToolTip(this.cbUseIncreasedContrast, "When enabled, increases the contrast of the shown info");
+            this.cbUseIncreasedContrast.Text = resources.GetString("this.cbUseIncreasedContrast.Text");
+            this.ttHelp.SetToolTip(this.cbUseIncreasedContrast, resources.GetString("this.cbUseIncreasedContrast.ToolTip"));
             this.cbUseIncreasedContrast.UseVisualStyleBackColor = true;
             // 
             // cbShowEveTime
@@ -416,8 +416,8 @@ namespace EVEMon.SettingsUI
             this.cbShowEveTime.Name = "cbShowEveTime";
             this.cbShowEveTime.Size = new System.Drawing.Size(103, 17);
             this.cbShowEveTime.TabIndex = 20;
-            this.cbShowEveTime.Text = "Show EVE Time";
-            this.ttHelp.SetToolTip(this.cbShowEveTime, "When enabled, displays the current EVE time");
+            this.cbShowEveTime.Text = resources.GetString("this.cbShowEveTime.Text");
+            this.ttHelp.SetToolTip(this.cbShowEveTime, resources.GetString("this.cbShowEveTime.ToolTip"));
             this.cbShowEveTime.UseVisualStyleBackColor = true;
             // 
             // cbShowWarning
@@ -427,7 +427,7 @@ namespace EVEMon.SettingsUI
             this.cbShowWarning.Name = "cbShowWarning";
             this.cbShowWarning.Size = new System.Drawing.Size(193, 17);
             this.cbShowWarning.TabIndex = 19;
-            this.cbShowWarning.Text = "Show non-training account warning";
+            this.cbShowWarning.Text = resources.GetString("this.cbShowWarning.Text");
             this.ttHelp.SetToolTip(this.cbShowWarning, "When enabled, shows a warning message when\r\nno characters on an account are train" +
                     "ing a skill,\r\nif the provided API key is of 'Account' type.");
             this.cbShowWarning.UseVisualStyleBackColor = true;
@@ -439,8 +439,8 @@ namespace EVEMon.SettingsUI
             this.cbShowServerStatus.Name = "cbShowServerStatus";
             this.cbShowServerStatus.Size = new System.Drawing.Size(120, 17);
             this.cbShowServerStatus.TabIndex = 14;
-            this.cbShowServerStatus.Text = "Show Server Status";
-            this.ttHelp.SetToolTip(this.cbShowServerStatus, "When enabled, displays the current\r\nTranquility server status");
+            this.cbShowServerStatus.Text = resources.GetString("this.cbShowServerStatus.Text");
+            this.ttHelp.SetToolTip(this.cbShowServerStatus, resources.GetString("this.cbShowServerStatus.ToolTip"));
             this.cbShowServerStatus.UseVisualStyleBackColor = true;
             // 
             // flowLayoutPanel1
@@ -464,7 +464,7 @@ namespace EVEMon.SettingsUI
             this.MinimizeBox = false;
             this.Name = "TrayPopupConfigForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Tray Icon Popup Configuration";
+            this.Text = resources.GetString("this.Text");
             this.panel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tpGeneral.ResumeLayout(false);

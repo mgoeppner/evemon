@@ -102,7 +102,7 @@
             this.ToggleColorKeyPictureBox.Size = new System.Drawing.Size(16, 16);
             this.ToggleColorKeyPictureBox.TabIndex = 2;
             this.ToggleColorKeyPictureBox.TabStop = false;
-            this.toolTip.SetToolTip(this.ToggleColorKeyPictureBox, "Toggle Color Key");
+            this.toolTip.SetToolTip(this.ToggleColorKeyPictureBox, resources.GetString("this.ToggleColorKeyPictureBox.ToolTip"));
             this.ToggleColorKeyPictureBox.Click += new System.EventHandler(this.ToggleColorKeyPictureBox_Click);
             // 
             // SaveFittingButton
@@ -113,7 +113,7 @@
             this.SaveFittingButton.Name = "SaveFittingButton";
             this.SaveFittingButton.Size = new System.Drawing.Size(75, 23);
             this.SaveFittingButton.TabIndex = 1;
-            this.SaveFittingButton.Text = "Save Fitting";
+            this.SaveFittingButton.Text = resources.GetString("this.SaveFittingButton.Text");
             this.SaveFittingButton.UseVisualStyleBackColor = true;
             // 
             // FittingContentLabel
@@ -124,7 +124,7 @@
             this.FittingContentLabel.Name = "FittingContentLabel";
             this.FittingContentLabel.Size = new System.Drawing.Size(117, 16);
             this.FittingContentLabel.TabIndex = 0;
-            this.FittingContentLabel.Text = "Fitting and Content";
+            this.FittingContentLabel.Text = resources.GetString("this.FittingContentLabel.Text");
             // 
             // FooterPanel
             // 
@@ -148,7 +148,7 @@
             this.ItemsCostLabel.Name = "ItemsCostLabel";
             this.ItemsCostLabel.Size = new System.Drawing.Size(63, 16);
             this.ItemsCostLabel.TabIndex = 0;
-            this.ItemsCostLabel.Text = "Unknown";
+            this.ItemsCostLabel.Text = resources.GetString("this.ItemsCostLabel.Text");
             // 
             // EstimatedTotalLossLabel
             // 
@@ -158,7 +158,7 @@
             this.EstimatedTotalLossLabel.Name = "EstimatedTotalLossLabel";
             this.EstimatedTotalLossLabel.Size = new System.Drawing.Size(99, 16);
             this.EstimatedTotalLossLabel.TabIndex = 2;
-            this.EstimatedTotalLossLabel.Text = "Est. Total Loss:";
+            this.EstimatedTotalLossLabel.Text = resources.GetString("this.EstimatedTotalLossLabel.Text");
             // 
             // BorderPanel
             // 
@@ -184,7 +184,7 @@
             this.noItemsLabel.Name = "noItemsLabel";
             this.noItemsLabel.Size = new System.Drawing.Size(335, 447);
             this.noItemsLabel.TabIndex = 5;
-            this.noItemsLabel.Text = "No Items Found.";
+            this.noItemsLabel.Text = resources.GetString("this.noItemsLabel.Text");
             this.noItemsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FittingContentListBox
@@ -225,7 +225,7 @@
             this.ColorKeyGroupBox.Size = new System.Drawing.Size(338, 38);
             this.ColorKeyGroupBox.TabIndex = 2;
             this.ColorKeyGroupBox.TabStop = false;
-            this.ColorKeyGroupBox.Text = "Color Keys";
+            this.ColorKeyGroupBox.Text = resources.GetString("this.ColorKeyGroupBox.Text");
             // 
             // ColorKeyGroupBoxPanel
             // 
@@ -246,7 +246,7 @@
             this.DroppedItemLabel.Name = "DroppedItemLabel";
             this.DroppedItemLabel.Size = new System.Drawing.Size(71, 19);
             this.DroppedItemLabel.TabIndex = 0;
-            this.DroppedItemLabel.Text = "Dropped Item";
+            this.DroppedItemLabel.Text = resources.GetString("this.DroppedItemLabel.Text");
             this.DroppedItemLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // DestroyedItemLabel
@@ -257,7 +257,7 @@
             this.DestroyedItemLabel.Name = "DestroyedItemLabel";
             this.DestroyedItemLabel.Size = new System.Drawing.Size(80, 19);
             this.DestroyedItemLabel.TabIndex = 1;
-            this.DestroyedItemLabel.Text = "Destroyed Item";
+            this.DestroyedItemLabel.Text = resources.GetString("this.DestroyedItemLabel.Text");
             this.DestroyedItemLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // imageList
@@ -287,7 +287,7 @@
             // 
             this.showInBrowserMenuItem.Name = "showInBrowserMenuItem";
             this.showInBrowserMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.showInBrowserMenuItem.Text = "Show In Browser...";
+            this.showInBrowserMenuItem.Text = resources.GetString("this.showInBrowserMenuItem.Text");
             this.showInBrowserMenuItem.Click += new System.EventHandler(this.showInBrowserMenuItem_Click);
             // 
             // KillReportFittingContent

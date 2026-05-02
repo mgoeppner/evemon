@@ -237,4 +237,37 @@
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>45</value>
   </metadata>
+  <data name="this.btnLockPrices.Text" xml:space="preserve">
+    <value>Lock Prices</value>
+  </data>
+  <data name="this.tsddFetch.Text" xml:space="preserve">
+    <value>Fetch Online Prices</value>
+  </data>
+  <data name="this.btnReset.Text" xml:space="preserve">
+    <value>Reset Quantities</value>
+  </data>
+  <data name="this.copyTotalDropDownButton.Text" xml:space="preserve">
+    <value>Copy Total</value>
+  </data>
+  <data name="this.copyFormattedTotalToolStripMenuItem.Text" xml:space="preserve">
+    <value>Formatted</value>
+  </data>
+  <data name="this.copyUnformattedTotalToolStripMenuItem.Text" xml:space="preserve">
+    <value>Unformatted</value>
+  </data>
+  <data name="this.MineralWorksheetStatusStrip.Text" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="this.TotalValueToolStripStatusLabel.Text" xml:space="preserve">
+    <value>Total Value:</value>
+  </data>
+  <data name="this.tslTotal.Text" xml:space="preserve">
+    <value>0.00 ISK</value>
+  </data>
+  <data name="this.tslCourtesy.Text" xml:space="preserve">
+    <value>Mineral Prices Courtesy of ---</value>
+  </data>
+  <data name="this.Text" xml:space="preserve">
+    <value>Mineral Worksheet</value>
+  </data>
 </root>

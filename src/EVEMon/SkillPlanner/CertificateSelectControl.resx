@@ -685,4 +685,52 @@
         A6uGCYBoZDbcVGRFGJIggFcBsiSIRmaDFRF0JH5vOkYBALc2UwG7hivNAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="this.lblSort.Text" xml:space="preserve">
+    <value>Sort:</value>
+  </data>
+  <data name="this.lbSearchTextHint.Text" xml:space="preserve">
+    <value>Search Text</value>
+  </data>
+  <data name="this.lblFilter.Text" xml:space="preserve">
+    <value>Filter:</value>
+  </data>
+  <data name="this.lbNoMatches.Text" xml:space="preserve">
+    <value>No certificates match your search.</value>
+  </data>
+  <data name="this.cmiLvPlanToLevel.Text" xml:space="preserve">
+    <value>&amp;Plan to...</value>
+  </data>
+  <data name="this.tsmLevel1.Text" xml:space="preserve">
+    <value>Level I</value>
+  </data>
+  <data name="this.tsmLevel2.Text" xml:space="preserve">
+    <value>Level II</value>
+  </data>
+  <data name="this.tsmLevel3.Text" xml:space="preserve">
+    <value>Level III</value>
+  </data>
+  <data name="this.tsmLevel4.Text" xml:space="preserve">
+    <value>Level IV</value>
+  </data>
+  <data name="this.tsmLevel5.Text" xml:space="preserve">
+    <value>Level V</value>
+  </data>
+  <data name="this.cmiExpandSelected.Text" xml:space="preserve">
+    <value>Expand Selected</value>
+  </data>
+  <data name="this.cmiCollapseSelected.Text" xml:space="preserve">
+    <value>Collapse Selected</value>
+  </data>
+  <data name="this.cmiExpandAll.Text" xml:space="preserve">
+    <value>&amp;Expand All</value>
+  </data>
+  <data name="this.cmiCollapseAll.Text" xml:space="preserve">
+    <value>&amp;Collapse All</value>
+  </data>
+  <data name="this.chName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="this.chSortKey.Text" xml:space="preserve">
+    <value>Sort</value>
+  </data>
 </root>

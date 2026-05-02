@@ -150,7 +150,7 @@ namespace EVEMon.SkillPlanner
             this.gbAttributes.Size = new System.Drawing.Size(339, 410);
             this.gbAttributes.TabIndex = 4;
             this.gbAttributes.TabStop = false;
-            this.gbAttributes.Text = "Attributes";
+            this.gbAttributes.Text = resources.GetString("this.gbAttributes.Text");
             // 
             // lvShipProperties
             // 
@@ -171,12 +171,12 @@ namespace EVEMon.SkillPlanner
             // 
             // chAttribute
             // 
-            this.chAttribute.Text = "Attribute";
+            this.chAttribute.Text = resources.GetString("this.chAttribute.Text");
             this.chAttribute.Width = 120;
             // 
             // chValue
             // 
-            this.chValue.Text = "Value";
+            this.chValue.Text = resources.GetString("this.chValue.Text");
             this.chValue.Width = 120;
             // 
             // ShipAttributeContextMenu
@@ -194,7 +194,7 @@ namespace EVEMon.SkillPlanner
             // 
             this.exportToCSVToolStripMenuItem.Name = "exportToCSVToolStripMenuItem";
             this.exportToCSVToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.exportToCSVToolStripMenuItem.Text = "Export To CSV...";
+            this.exportToCSVToolStripMenuItem.Text = resources.GetString("this.exportToCSVToolStripMenuItem.Text");
             this.exportToCSVToolStripMenuItem.Click += new System.EventHandler(this.exportToCSVToolStripMenuItem_Click);
             // 
             // shipSelectControl
@@ -217,7 +217,7 @@ namespace EVEMon.SkillPlanner
             this.gbRequiredSkills.Size = new System.Drawing.Size(240, 108);
             this.gbRequiredSkills.TabIndex = 0;
             this.gbRequiredSkills.TabStop = false;
-            this.gbRequiredSkills.Text = "Required Skills";
+            this.gbRequiredSkills.Text = resources.GetString("this.gbRequiredSkills.Text");
             // 
             // requiredSkillsControl
             // 
@@ -247,7 +247,7 @@ namespace EVEMon.SkillPlanner
             this.tbPgShipDetails.Padding = new System.Windows.Forms.Padding(3);
             this.tbPgShipDetails.Size = new System.Drawing.Size(345, 416);
             this.tbPgShipDetails.TabIndex = 0;
-            this.tbPgShipDetails.Text = "Overview";
+            this.tbPgShipDetails.Text = resources.GetString("this.tbPgShipDetails.Text");
             this.tbPgShipDetails.UseVisualStyleBackColor = true;
             // 
             // tbPgShipMastery
@@ -258,7 +258,7 @@ namespace EVEMon.SkillPlanner
             this.tbPgShipMastery.Padding = new System.Windows.Forms.Padding(3);
             this.tbPgShipMastery.Size = new System.Drawing.Size(230, 317);
             this.tbPgShipMastery.TabIndex = 1;
-            this.tbPgShipMastery.Text = "Mastery";
+            this.tbPgShipMastery.Text = resources.GetString("this.tbPgShipMastery.Text");
             this.tbPgShipMastery.UseVisualStyleBackColor = true;
             // 
             // pnlMastery
@@ -291,19 +291,19 @@ namespace EVEMon.SkillPlanner
             this.tlStrpPlanTo.Name = "tlStrpPlanTo";
             this.tlStrpPlanTo.Size = new System.Drawing.Size(224, 25);
             this.tlStrpPlanTo.TabIndex = 1;
-            this.tlStrpPlanTo.Text = "toolStrip1";
+            this.tlStrpPlanTo.Text = resources.GetString("this.tlStrpPlanTo.Text");
             // 
             // tslbTextForEligibility
             // 
             this.tslbTextForEligibility.Name = "tslbTextForEligibility";
             this.tslbTextForEligibility.Size = new System.Drawing.Size(202, 22);
-            this.tslbTextForEligibility.Text = "After this plan you will be eligible to :";
+            this.tslbTextForEligibility.Text = resources.GetString("this.tslbTextForEligibility.Text");
             // 
             // tslbEligible
             // 
             this.tslbEligible.Name = "tslbEligible";
             this.tslbEligible.Size = new System.Drawing.Size(34, 22);
-            this.tslbEligible.Text = "none";
+            this.tslbEligible.Text = resources.GetString("this.tslbEligible.Text");
             // 
             // tsPlanToMenu
             // 
@@ -317,41 +317,41 @@ namespace EVEMon.SkillPlanner
             this.tsPlanToMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsPlanToMenu.Name = "tsPlanToMenu";
             this.tsPlanToMenu.Size = new System.Drawing.Size(84, 22);
-            this.tsPlanToMenu.Text = "Plan To...";
+            this.tsPlanToMenu.Text = resources.GetString("this.tsPlanToMenu.Text");
             // 
             // tsPlanToLevelOne
             // 
             this.tsPlanToLevelOne.Name = "tsPlanToLevelOne";
             this.tsPlanToLevelOne.Size = new System.Drawing.Size(114, 22);
-            this.tsPlanToLevelOne.Text = "&Level I";
+            this.tsPlanToLevelOne.Text = resources.GetString("this.tsPlanToLevelOne.Text");
             this.tsPlanToLevelOne.Click += new System.EventHandler(this.tsPlanToLevel_Click);
             // 
             // tsPlanToLevelTwo
             // 
             this.tsPlanToLevelTwo.Name = "tsPlanToLevelTwo";
             this.tsPlanToLevelTwo.Size = new System.Drawing.Size(114, 22);
-            this.tsPlanToLevelTwo.Text = "&Level II";
+            this.tsPlanToLevelTwo.Text = resources.GetString("this.tsPlanToLevelTwo.Text");
             this.tsPlanToLevelTwo.Click += new System.EventHandler(this.tsPlanToLevel_Click);
             // 
             // tsPlanToLevelThree
             // 
             this.tsPlanToLevelThree.Name = "tsPlanToLevelThree";
             this.tsPlanToLevelThree.Size = new System.Drawing.Size(114, 22);
-            this.tsPlanToLevelThree.Text = "&Level III";
+            this.tsPlanToLevelThree.Text = resources.GetString("this.tsPlanToLevelThree.Text");
             this.tsPlanToLevelThree.Click += new System.EventHandler(this.tsPlanToLevel_Click);
             // 
             // tsPlanToLevelFour
             // 
             this.tsPlanToLevelFour.Name = "tsPlanToLevelFour";
             this.tsPlanToLevelFour.Size = new System.Drawing.Size(114, 22);
-            this.tsPlanToLevelFour.Text = "&Level IV";
+            this.tsPlanToLevelFour.Text = resources.GetString("this.tsPlanToLevelFour.Text");
             this.tsPlanToLevelFour.Click += new System.EventHandler(this.tsPlanToLevel_Click);
             // 
             // tsPlanToLevelFive
             // 
             this.tsPlanToLevelFive.Name = "tsPlanToLevelFive";
             this.tsPlanToLevelFive.Size = new System.Drawing.Size(114, 22);
-            this.tsPlanToLevelFive.Text = "&Level V";
+            this.tsPlanToLevelFive.Text = resources.GetString("this.tsPlanToLevelFive.Text");
             this.tsPlanToLevelFive.Click += new System.EventHandler(this.tsPlanToLevel_Click);
             // 
             // splitButtonLoadouts
@@ -362,7 +362,7 @@ namespace EVEMon.SkillPlanner
             this.splitButtonLoadouts.Name = "splitButtonLoadouts";
             this.splitButtonLoadouts.Size = new System.Drawing.Size(97, 23);
             this.splitButtonLoadouts.TabIndex = 12;
-            this.splitButtonLoadouts.Text = "Select provider";
+            this.splitButtonLoadouts.Text = resources.GetString("this.splitButtonLoadouts.Text");
             this.splitButtonLoadouts.UseVisualStyleBackColor = true;
             this.splitButtonLoadouts.Click += new System.EventHandler(this.splitButtonLoadouts_Click);
             // 
@@ -378,7 +378,7 @@ namespace EVEMon.SkillPlanner
             this.lblViewLoadouts.Name = "lblViewLoadouts";
             this.lblViewLoadouts.Size = new System.Drawing.Size(99, 13);
             this.lblViewLoadouts.TabIndex = 13;
-            this.lblViewLoadouts.Text = "View loadouts from:";
+            this.lblViewLoadouts.Text = resources.GetString("this.lblViewLoadouts.Text");
             // 
             // showInMenuSeparator
             // 
@@ -389,14 +389,14 @@ namespace EVEMon.SkillPlanner
             // 
             this.showInSkillBrowser.Name = "showInSkillBrowser";
             this.showInSkillBrowser.Size = new System.Drawing.Size(188, 22);
-            this.showInSkillBrowser.Text = "Show In Skill Browser";
+            this.showInSkillBrowser.Text = resources.GetString("this.showInSkillBrowser.Text");
             this.showInSkillBrowser.Click += new System.EventHandler(this.propertiesList_DoubleClick);
             // 
             // showInItemBrowser
             // 
             this.showInItemBrowser.Name = "showInItemBrowser";
             this.showInItemBrowser.Size = new System.Drawing.Size(188, 22);
-            this.showInItemBrowser.Text = "Show In Item Browser";
+            this.showInItemBrowser.Text = resources.GetString("this.showInItemBrowser.Text");
             this.showInItemBrowser.Click += new System.EventHandler(this.propertiesList_DoubleClick);
             // 
             // ShipBrowserControl

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Name1" xml:space="preserve">
+    <value>这是我的长绳子</value>
+  </data>
+  <data name="ErrorAccountBalance" xml:space="preserve">
+    <value>查询 {0} 的钱包余额时出错。</value>
+  </data>
+  <data name="ErrorAccountStatus" xml:space="preserve">
+    <value>查询 API 密钥 {0} 的帐户状态时出错。</value>
+  </data>
+  <data name="ErrorAssets" xml:space="preserve">
+    <value>查询 {0} 的资产时出错。</value>
+  </data>
+  <data name="ErrorAttributes" xml:space="preserve">
+    <value>查询 {0} 的学习属性时出错。</value>
+  </data>
+  <data name="ErrorCalendarAttendees" xml:space="preserve">
+    <value>获取 {0} 的日历活动参与者时出错。</value>
+  </data>
+  <data name="ErrorCalendarDetails" xml:space="preserve">
+    <value>获取 {0} 的日历活动详细信息时出错。</value>
+  </data>
+  <data name="ErrorCalendarEvents" xml:space="preserve">
+    <value>查询 {0} 的日历事件时出错。</value>
+  </data>
+  <data name="ErrorCharacterList" xml:space="preserve">
+    <value>检索 {0:D} 的字符列表时出错。
+如果您更改了密码，则必须使用“文件”&gt;“添加字符”重新登录。</value>
+  </data>
+  <data name="ErrorCharacterSheet" xml:space="preserve">
+    <value>查询 {0} 的字符表时出错。</value>
+  </data>
+  <data name="ErrorContacts" xml:space="preserve">
+    <value>查询 {0} 的联系人时出错。</value>
+  </data>
+  <data name="ErrorContractBids" xml:space="preserve">
+    <value>获取 {0} 的合同出价时出错。</value>
+  </data>
+  <data name="ErrorContractItems" xml:space="preserve">
+    <value>获取 {0} 的合同项目时出错。</value>
+  </data>
+  <data name="ErrorContracts" xml:space="preserve">
+    <value>查询 {0} 的合同时出错。</value>
+  </data>
+  <data name="ErrorEmploymentHistory" xml:space="preserve">
+    <value>查询 {0} 的工作经历时出错。</value>
+  </data>
+  <data name="ErrorEVEFacWarList" xml:space="preserve">
+    <value>查询EVE派系战争列表时出错。</value>
+  </data>
+  <data name="ErrorEVEFacWarStat" xml:space="preserve">
+    <value>查询EVE派系战争统计信息时出错。</value>
+  </data>
+  <data name="ErrorEVEMail" xml:space="preserve">
+    <value>查询 {0} 的邮件消息时出错。</value>
+  </data>
+  <data name="ErrorEVEMailBody" xml:space="preserve">
+    <value>获取 {0} 的邮件内容时出错。</value>
+  </data>
+  <data name="ErrorEVEMailLists" xml:space="preserve">
+    <value>查询 {0} 的邮件列表时出错。</value>
+  </data>
+  <data name="ErrorFacWarStat" xml:space="preserve">
+    <value>查询{0}派系战争统计信息时出错。</value>
+  </data>
+  <data name="ErrorIDToName" xml:space="preserve">
+    <value>查找角色身份时出错。</value>
+  </data>
+  <data name="ErrorImplants" xml:space="preserve">
+    <value>查询 {0} 的植入时出错。</value>
+  </data>
+  <data name="ErrorIndustryJobs" xml:space="preserve">
+    <value>查询 {0} 的行业职位时出错。</value>
+  </data>
+  <data name="ErrorJumpClones" xml:space="preserve">
+    <value>查询 {0} 的跳转克隆时出错。</value>
+  </data>
+  <data name="ErrorJumpFatigue" xml:space="preserve">
+    <value>查询 {0} 的跳跃疲劳度时出错。</value>
+  </data>
+  <data name="ErrorKillLog" xml:space="preserve">
+    <value>查询 {0} 的终止日志时出错。</value>
+  </data>
+  <data name="ErrorKillMail" xml:space="preserve">
+    <value>从服务器获取终止邮件 {0} 时出错。</value>
+  </data>
+  <data name="ErrorLocation" xml:space="preserve">
+    <value>查询 {0} 的位置时出错。</value>
+  </data>
+  <data name="ErrorMarketOrders" xml:space="preserve">
+    <value>查询{0}的市价单时出错。</value>
+  </data>
+  <data name="ErrorMedals" xml:space="preserve">
+    <value>查询 {0} 的奖牌时出错。</value>
+  </data>
+  <data name="ErrorNotifications" xml:space="preserve">
+    <value>查询 {0} 的 EVE 通知时出错。</value>
+  </data>
+  <data name="ErrorPlanetLayout" xml:space="preserve">
+    <value>获取 {0} 的行星生产布局时出错。</value>
+  </data>
+  <data name="ErrorPlanets" xml:space="preserve">
+    <value>查询行星生产信息时出错。</value>
+  </data>
+  <data name="ErrorResearchPoints" xml:space="preserve">
+    <value>查询 {0} 的研究点时出错。</value>
+  </data>
+  <data name="ErrorShip" xml:space="preserve">
+    <value>查询 {0} 的当前船舶时出错。</value>
+  </data>
+  <data name="ErrorSkillQueue" xml:space="preserve">
+    <value>查询 {0} 的技能队列时出错。</value>
+  </data>
+  <data name="ErrorSkills" xml:space="preserve">
+    <value>查询 {0} 的已知技能时出错。</value>
+  </data>
+  <data name="ErrorSSO" xml:space="preserve">
+    <value>登录 EVE SSO 时出错。
+如果您更改了密码，则必须使用“文件”&gt;“添加字符”重新登录。</value>
+  </data>
+  <data name="ErrorStandings" xml:space="preserve">
+    <value>查询 {0} 的排名时出错。</value>
+  </data>
+  <data name="ErrorStation" xml:space="preserve">
+    <value>查找电台信息时出错。</value>
+  </data>
+  <data name="ErrorStatus" xml:space="preserve">
+    <value>查询 EVE 服务器状态时出错。在 http://EVE-offline.net/ 上检查 EVE 服务器的正常运行时间</value>
+  </data>
+  <data name="ErrorStructure" xml:space="preserve">
+    <value>查找城堡信息时出错。</value>
+  </data>
+  <data name="ErrorWalletJournal" xml:space="preserve">
+    <value>查询 {0} 的钱包日志时出错。</value>
+  </data>
+  <data name="ErrorWalletTransactions" xml:space="preserve">
+    <value>查询 {0} 的钱包交易时出错。</value>
+  </data>
+  <data name="MessageExpiration" xml:space="preserve">
+    <value>此帐户将于 {0} 到期：{1}。</value>
+  </data>
+  <data name="MessageLessThanDay" xml:space="preserve">
+    <value>角色 {0} 的排队技能不足 {1} 天{2}。</value>
+  </data>
+  <data name="MessageMarginTrading" xml:space="preserve">
+    <value>角色{0}没有足够的资金来履行其所有购买订单。</value>
+  </data>
+  <data name="MessageNewContracts" xml:space="preserve">
+    <value>{0}分配的合同{1}。</value>
+  </data>
+  <data name="ErrorLoyalty" xml:space="preserve">
+    <value>查询 {0} 的忠诚度积分余额时出错。</value>
+  </data>
+</root>

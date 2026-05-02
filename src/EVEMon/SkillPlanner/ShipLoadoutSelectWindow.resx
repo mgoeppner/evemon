@@ -134,4 +134,79 @@
   <metadata name="contextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="this.lblLoadouts.Text" xml:space="preserve">
+    <value>Found {0} Loadouts</value>
+  </data>
+  <data name="this.btnCancel.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="this.colName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="this.colAuthor.Text" xml:space="preserve">
+    <value>Author</value>
+  </data>
+  <data name="this.colRating.Text" xml:space="preserve">
+    <value>Rating</value>
+  </data>
+  <data name="this.colDate.Text" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="this.lblSubmitDate.Text" xml:space="preserve">
+    <value>SubmitDate</value>
+  </data>
+  <data name="this.SubDateLabel.Text" xml:space="preserve">
+    <value>Submission Date:</value>
+  </data>
+  <data name="this.AuthorLabel.Text" xml:space="preserve">
+    <value>Author:</value>
+  </data>
+  <data name="this.LoadoutNameLabel.Text" xml:space="preserve">
+    <value>Loadout Name:</value>
+  </data>
+  <data name="this.ShipLabel.Text" xml:space="preserve">
+    <value>Ship:</value>
+  </data>
+  <data name="this.lblAuthor.Text" xml:space="preserve">
+    <value>AuthorName</value>
+  </data>
+  <data name="this.lblLoadoutName.Text" xml:space="preserve">
+    <value>LoadoutName</value>
+  </data>
+  <data name="this.lblShipName.Text" xml:space="preserve">
+    <value>ShipName</value>
+  </data>
+  <data name="this.TrainingTimeLabel.Text" xml:space="preserve">
+    <value>Training Time for selected loadout: </value>
+  </data>
+  <data name="this.lblTrainTime.Text" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="this.btnPlan.Text" xml:space="preserve">
+    <value>Add To Plan</value>
+  </data>
+  <data name="this.miShowInBrowser.Text" xml:space="preserve">
+    <value>Show in Item Browser...</value>
+  </data>
+  <data name="this.miExportToClipboard.Text" xml:space="preserve">
+    <value>Copy Loadout To Clipboard</value>
+  </data>
+  <data name="this.cmiExpandSelected.Text" xml:space="preserve">
+    <value>Expand Selected</value>
+  </data>
+  <data name="this.cmiCollapseSelected.Text" xml:space="preserve">
+    <value>Collapse Selected</value>
+  </data>
+  <data name="this.cmiExpandAll.Text" xml:space="preserve">
+    <value>&amp;Expand All</value>
+  </data>
+  <data name="this.cmiCollapseAll.Text" xml:space="preserve">
+    <value>&amp;Collapse All</value>
+  </data>
+  <data name="this.buttonForumTopic.Text" xml:space="preserve">
+    <value>Discuss this loadout</value>
+  </data>
+  <data name="this.Text" xml:space="preserve">
+    <value>Loadout Selection</value>
+  </data>
 </root>

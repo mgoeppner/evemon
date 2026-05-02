@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Name1" xml:space="preserve">
+    <value>这是我的长绳子</value>
+  </data>
+  <data name="this.miChangeNote.Text" xml:space="preserve">
+    <value>查看/更改注释...</value>
+  </data>
+  <data name="this.miChangePriority.Text" xml:space="preserve">
+    <value>更改优先级...</value>
+  </data>
+  <data name="this.miChangeLevel.Text" xml:space="preserve">
+    <value>更改计划级别...</value>
+  </data>
+  <data name="this.miChangeTo0.Text" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="this.miChangeTo1.Text" xml:space="preserve">
+    <value>1级</value>
+  </data>
+  <data name="this.miChangeTo2.Text" xml:space="preserve">
+    <value>2级</value>
+  </data>
+  <data name="this.miChangeTo3.Text" xml:space="preserve">
+    <value>3级</value>
+  </data>
+  <data name="this.miChangeTo4.Text" xml:space="preserve">
+    <value>4级</value>
+  </data>
+  <data name="this.miChangeTo5.Text" xml:space="preserve">
+    <value>5级</value>
+  </data>
+  <data name="this.miRemoveFromPlan.Text" xml:space="preserve">
+    <value>从计划中删除</value>
+  </data>
+  <data name="this.MoveToTopMenuItem.Text" xml:space="preserve">
+    <value>移至计划顶部</value>
+  </data>
+  <data name="this.miShowInSkillBrowser.Text" xml:space="preserve">
+    <value>在技能和浏览器中显示</value>
+  </data>
+  <data name="this.miShowInSkillExplorer.Text" xml:space="preserve">
+    <value>在技能和资源管理器中显示...</value>
+  </data>
+  <data name="this.miMarkOwned.Text" xml:space="preserve">
+    <value>标记为已拥有</value>
+  </data>
+  <data name="this.miCopyTo.Text" xml:space="preserve">
+    <value>将选定的条目复制到</value>
+  </data>
+  <data name="this.miCopyToNewPlan.Text" xml:space="preserve">
+    <value>新计划...</value>
+  </data>
+  <data name="this.miCopySelectedToClipboard.Text" xml:space="preserve">
+    <value>剪贴板...</value>
+  </data>
+  <data name="this.miPlanGroups.Text" xml:space="preserve">
+    <value>从组中选择条目...</value>
+  </data>
+  <data name="this.sfdSave.Title" xml:space="preserve">
+    <value>将计划另存为...</value>
+  </data>
+  <data name="this.tsPlan.Text" xml:space="preserve">
+    <value>计划工具条</value>
+  </data>
+  <data name="this.tslMove.Text" xml:space="preserve">
+    <value>移动：</value>
+  </data>
+  <data name="this.tsbMoveUp.Text" xml:space="preserve">
+    <value>向上移动</value>
+  </data>
+  <data name="this.tsbMoveDown.Text" xml:space="preserve">
+    <value>下移</value>
+  </data>
+  <data name="this.tslSort.Text" xml:space="preserve">
+    <value>排序：</value>
+  </data>
+  <data name="this.tsSortPriorities.Text" xml:space="preserve">
+    <value>按优先级分组（仅升序）</value>
+  </data>
+  <data name="this.tsbToggleSkills.Text" xml:space="preserve">
+    <value>切换技能</value>
+  </data>
+  <data name="this.tsbToggleSkills.ToolTipText" xml:space="preserve">
+    <value>切换技能面板</value>
+  </data>
+  <data name="this.tsbToggleRemapping.Text" xml:space="preserve">
+    <value>切换重新映射</value>
+  </data>
+  <data name="this.tsbToggleRemapping.ToolTipText" xml:space="preserve">
+    <value>切换重新映射点 (F9)</value>
+  </data>
+  <data name="this.tsbColorKey.Text" xml:space="preserve">
+    <value>切换颜色键面板</value>
+  </data>
+  <data name="this.tsbColorKey.ToolTipText" xml:space="preserve">
+    <value>切换颜色键面板</value>
+  </data>
+  <data name="this.gbColorKey.Text" xml:space="preserve">
+    <value>颜色键</value>
+  </data>
+  <data name="this.lblTrainable.Text" xml:space="preserve">
+    <value>可训练</value>
+  </data>
+  <data name="this.lblNonPublic.Text" xml:space="preserve">
+    <value>非公开</value>
+  </data>
+  <data name="this.lblPrereqNotMet.Text" xml:space="preserve">
+    <value>未满足先决条件</value>
+  </data>
+  <data name="this.lblDepended.Text" xml:space="preserve">
+    <value>依赖</value>
+  </data>
+  <data name="this.lblQueued.Text" xml:space="preserve">
+    <value>排队</value>
+  </data>
+  <data name="this.lblPrereqMetNotKnown.Text" xml:space="preserve">
+    <value>满足先决条件 - 未知</value>
+  </data>
+  <data name="this.lblDowntime.Text" xml:space="preserve">
+    <value>停机时间</value>
+  </data>
+  <data name="this.lblCurrentlyTraining.Text" xml:space="preserve">
+    <value>目前正在训练</value>
+  </data>
+  <data name="this.lblPartiallyTrained.Text" xml:space="preserve">
+    <value>部分训练</value>
+  </data>
+  <data name="this.lblOmegaOnly.Text" xml:space="preserve">
+    <value>需要欧米茄</value>
+  </data>
+  <data name="this.lblChooseImplantSet.Text" xml:space="preserve">
+    <value>选择种植体套件：</value>
+  </data>
+  <data name="this.tsPreferences.Text" xml:space="preserve">
+    <value>ts首选项</value>
+  </data>
+  <data name="this.preferencesMenu.Text" xml:space="preserve">
+    <value>偏好设置</value>
+  </data>
+  <data name="this.preferencesMenu.ToolTipText" xml:space="preserve">
+    <value>偏好设置</value>
+  </data>
+  <data name="this.columnSettingsMenuItem.Text" xml:space="preserve">
+    <value>列设置</value>
+  </data>
+  <data name="this.autoSizeColumnsMenuItem.Text" xml:space="preserve">
+    <value>自动调整列大小</value>
+  </data>
+</root>

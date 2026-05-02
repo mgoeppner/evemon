@@ -68,27 +68,27 @@
             this.showPlanetInBrowserMenuItem});
 			this.showInBrowserMenuItem.Name = "showInBrowserMenuItem";
 			this.showInBrowserMenuItem.Size = new System.Drawing.Size(188, 22);
-			this.showInBrowserMenuItem.Text = "Show In Item Browser";
+			this.showInBrowserMenuItem.Text = resources.GetString("this.showInBrowserMenuItem.Text");
 			// 
 			// showCommodityInBrowserMenuItem
 			// 
 			this.showCommodityInBrowserMenuItem.Name = "showCommodityInBrowserMenuItem";
 			this.showCommodityInBrowserMenuItem.Size = new System.Drawing.Size(147, 22);
-			this.showCommodityInBrowserMenuItem.Text = "Commodity...";
+			this.showCommodityInBrowserMenuItem.Text = resources.GetString("this.showCommodityInBrowserMenuItem.Text");
 			this.showCommodityInBrowserMenuItem.Click += new System.EventHandler(this.showInBrowserMenuItem_Click);
 			// 
 			// showInstallationInBrowserMenuItem
 			// 
 			this.showInstallationInBrowserMenuItem.Name = "showInstallationInBrowserMenuItem";
 			this.showInstallationInBrowserMenuItem.Size = new System.Drawing.Size(147, 22);
-			this.showInstallationInBrowserMenuItem.Text = "Installation...";
+			this.showInstallationInBrowserMenuItem.Text = resources.GetString("this.showInstallationInBrowserMenuItem.Text");
 			this.showInstallationInBrowserMenuItem.Click += new System.EventHandler(this.showInBrowserMenuItem_Click);
 			// 
 			// showPlanetInBrowserMenuItem
 			// 
 			this.showPlanetInBrowserMenuItem.Name = "showPlanetInBrowserMenuItem";
 			this.showPlanetInBrowserMenuItem.Size = new System.Drawing.Size(147, 22);
-			this.showPlanetInBrowserMenuItem.Text = "Planet...";
+			this.showPlanetInBrowserMenuItem.Text = resources.GetString("this.showPlanetInBrowserMenuItem.Text");
 			this.showPlanetInBrowserMenuItem.Click += new System.EventHandler(this.showInBrowserMenuItem_Click);
 			// 
 			// showInBrowserMenuSeparator
@@ -100,7 +100,7 @@
 			// 
 			this.exportToCSVToolStripMenuItem.Name = "exportToCSVToolStripMenuItem";
 			this.exportToCSVToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-			this.exportToCSVToolStripMenuItem.Text = "Export To CSV...";
+			this.exportToCSVToolStripMenuItem.Text = resources.GetString("this.exportToCSVToolStripMenuItem.Text");
 			this.exportToCSVToolStripMenuItem.Click += new System.EventHandler(this.exportToCSVToolStripMenuItem_Click);
 			// 
 			// ilIcons
@@ -119,7 +119,7 @@
 			this.noPlanetaryColoniesLabel.Name = "noPlanetaryColoniesLabel";
 			this.noPlanetaryColoniesLabel.Size = new System.Drawing.Size(454, 434);
 			this.noPlanetaryColoniesLabel.TabIndex = 2;
-			this.noPlanetaryColoniesLabel.Text = "No planetary info is available.";
+			this.noPlanetaryColoniesLabel.Text = resources.GetString("this.noPlanetaryColoniesLabel.Text");
 			this.noPlanetaryColoniesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// lvPlanetary
@@ -148,35 +148,35 @@
 			// 
 			// chState
 			// 
-			this.chState.Text = "State";
+			this.chState.Text = resources.GetString("this.chState.Text");
 			// 
 			// chTTC
 			// 
-			this.chTTC.Text = "TTC";
+			this.chTTC.Text = resources.GetString("this.chTTC.Text");
 			this.chTTC.Width = 54;
 			// 
 			// chInstallation
 			// 
-			this.chInstallation.Text = "Installation";
+			this.chInstallation.Text = resources.GetString("this.chInstallation.Text");
 			this.chInstallation.Width = 62;
 			// 
 			// chCommodity
 			// 
-			this.chCommodity.Text = "Commodity";
+			this.chCommodity.Text = resources.GetString("this.chCommodity.Text");
 			this.chCommodity.Width = 65;
 			// 
 			// chQuantityPerCycle
 			// 
-			this.chQuantityPerCycle.Text = "Quantity / Cycle";
+			this.chQuantityPerCycle.Text = resources.GetString("this.chQuantityPerCycle.Text");
 			this.chQuantityPerCycle.Width = 92;
 			// 
 			// chQuantity
 			// 
-			this.chQuantity.Text = "Quantity";
+			this.chQuantity.Text = resources.GetString("this.chQuantity.Text");
 			// 
 			// chVolume
 			// 
-			this.chVolume.Text = "Volume";
+			this.chVolume.Text = resources.GetString("this.chVolume.Text");
 			// 
 			// CharacterPlanetaryList
 			// 

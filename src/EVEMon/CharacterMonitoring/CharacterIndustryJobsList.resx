@@ -151,4 +151,31 @@
         AAAASUVORK5CYII=
 </value>
   </data>
+  <data name="this.chState.Text" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="this.chTTC.Text" xml:space="preserve">
+    <value>TTC</value>
+  </data>
+  <data name="this.chInstalledItem.Text" xml:space="preserve">
+    <value>Installed Item</value>
+  </data>
+  <data name="this.chOutputItem.Text" xml:space="preserve">
+    <value>Output Item</value>
+  </data>
+  <data name="this.showInstalledInBrowserMenuItem.Text" xml:space="preserve">
+    <value>Show Input In Blueprint Browser...</value>
+  </data>
+  <data name="this.showProducedInBrowserMenuItem.Text" xml:space="preserve">
+    <value>Show Output In Browser...</value>
+  </data>
+  <data name="this.exportToCSVToolStripMenuItem.Text" xml:space="preserve">
+    <value>Export To CSV...</value>
+  </data>
+  <data name="this.noJobsLabel.Text" xml:space="preserve">
+    <value>No industry jobs are available.</value>
+  </data>
+  <data name="this.industryExpPanelControl.HeaderText" xml:space="preserve">
+    <value>Header Text</value>
+  </data>
 </root>

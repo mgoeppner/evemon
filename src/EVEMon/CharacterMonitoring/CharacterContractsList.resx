@@ -134,4 +134,37 @@
         AgAB/AE/AfgBHwL/AgAB/gF/AfABDwL/AgAG/wIABv8CAAb/AgAG/wIABv8CAAb/AgAL
 </value>
   </data>
+  <data name="this.noContractsLabel.Text" xml:space="preserve">
+    <value>No contracts are available.</value>
+  </data>
+  <data name="this.chContract.Text" xml:space="preserve">
+    <value>Contract</value>
+  </data>
+  <data name="this.chType.Text" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="this.chStatus.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="this.chIssuer.Text" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="this.chAssignee.Text" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="this.chIssued.Text" xml:space="preserve">
+    <value>Date Issued</value>
+  </data>
+  <data name="this.chRemainingTime.Text" xml:space="preserve">
+    <value>Time Left</value>
+  </data>
+  <data name="this.showDetailsToolStripMenuItem.Text" xml:space="preserve">
+    <value>Show Details...</value>
+  </data>
+  <data name="this.showInBrowserMenuItem.Text" xml:space="preserve">
+    <value>Show In Browser...</value>
+  </data>
+  <data name="this.exportToCSVToolStripMenuItem.Text" xml:space="preserve">
+    <value>Export To CSV...</value>
+  </data>
 </root>

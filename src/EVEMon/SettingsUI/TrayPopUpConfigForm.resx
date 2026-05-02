@@ -127,4 +127,121 @@ Training / Not Training - characters in training are shown above characters not 
 Not Training / Training - characters in training are shown below characters not training
 Account - characters on the same API key are shown together</value>
   </data>
+  <data name="this.btnUseDefaults.Text" xml:space="preserve">
+    <value>Use Defaults</value>
+  </data>
+  <data name="this.btnCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="this.btnOK.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="this.tpGeneral.Text" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <data name="this.groupBox1.Text" xml:space="preserve">
+    <value>Layout</value>
+  </data>
+  <data name="this.cbIndentGroupedAccounts.Text" xml:space="preserve">
+    <value>Indent Grouped Accounts</value>
+  </data>
+  <data name="this.label1.Text" xml:space="preserve">
+    <value>Group Characters by:</value>
+  </data>
+  <data name="this.cbHideNotTraining.Text" xml:space="preserve">
+    <value>Hide Characters not training</value>
+  </data>
+  <data name="this.groupBox4.Text" xml:space="preserve">
+    <value>Display Order</value>
+  </data>
+  <data name="this.lblDisplayOrder1.Text" xml:space="preserve">
+    <value>Characters in training:</value>
+  </data>
+  <data name="this.lblDisplayOrder2.Text" xml:space="preserve">
+    <value>Characters not training:</value>
+  </data>
+  <data name="this.groupBox2.Text" xml:space="preserve">
+    <value>Character Details</value>
+  </data>
+  <data name="this.cbShowSkillQueueTrainingTime.Text" xml:space="preserve">
+    <value>Show Skill Queue Training Time</value>
+  </data>
+  <data name="this.cbHighLightConflicts.Text" xml:space="preserve">
+    <value>Highlight Schedule Conflicts</value>
+  </data>
+  <data name="this.cbShowSkill.Text" xml:space="preserve">
+    <value>Show Skill in Training</value>
+  </data>
+  <data name="this.cbShowCompletionTime.Text" xml:space="preserve">
+    <value>Show Completion Time</value>
+  </data>
+  <data name="this.cbShowTimeToCompletion.Text" xml:space="preserve">
+    <value>Show Time to Completion</value>
+  </data>
+  <data name="this.cbShowWallet.Text" xml:space="preserve">
+    <value>Show Wallet Balance</value>
+  </data>
+  <data name="this.label3.Text" xml:space="preserve">
+    <value>Size:</value>
+  </data>
+  <data name="this.cbShowPortrait.Text" xml:space="preserve">
+    <value>Show Character Portrait</value>
+  </data>
+  <data name="this.groupBox3.Text" xml:space="preserve">
+    <value>Miscellaneous</value>
+  </data>
+  <data name="this.cbUseIncreasedContrast.Text" xml:space="preserve">
+    <value>Use Increased Contrast</value>
+  </data>
+  <data name="this.cbShowEveTime.Text" xml:space="preserve">
+    <value>Show EVE Time</value>
+  </data>
+  <data name="this.cbShowWarning.Text" xml:space="preserve">
+    <value>Show non-training account warning</value>
+  </data>
+  <data name="this.cbShowServerStatus.Text" xml:space="preserve">
+    <value>Show Server Status</value>
+  </data>
+  <data name="this.Text" xml:space="preserve">
+    <value>Tray Icon Popup Configuration</value>
+  </data>
+  <data name="this.cbHideNotTraining.ToolTip" xml:space="preserve">
+    <value>When enabled, only characters currently
+training a skill will be displayed</value>
+  </data>
+  <data name="this.cbDisplayOrder2.ToolTip" xml:space="preserve">
+    <value>Controls the display order of characters, dependent on grouping.</value>
+  </data>
+  <data name="this.cbDisplayOrder1.ToolTip" xml:space="preserve">
+    <value>Controls the display order of characters, dependent on grouping.</value>
+  </data>
+  <data name="this.cbShowSkillQueueTrainingTime.ToolTip" xml:space="preserve">
+    <value>When enabled, shows the character\'s
+skill queue training time</value>
+  </data>
+  <data name="this.cbShowSkill.ToolTip" xml:space="preserve">
+    <value>When enabled, shows the currently
+training skill name and level</value>
+  </data>
+  <data name="this.cbShowTimeToCompletion.ToolTip" xml:space="preserve">
+    <value>When enabled, shows the time remaining
+ until training is completed</value>
+  </data>
+  <data name="this.cbPortraitSize.ToolTip" xml:space="preserve">
+    <value>Selects the image size, in pixels, to be used
+for the character portrait</value>
+  </data>
+  <data name="this.cbShowWallet.ToolTip" xml:space="preserve">
+    <value>When enabled, shows the character\'s wallet balance</value>
+  </data>
+  <data name="this.cbUseIncreasedContrast.ToolTip" xml:space="preserve">
+    <value>When enabled, increases the contrast of the shown info</value>
+  </data>
+  <data name="this.cbShowEveTime.ToolTip" xml:space="preserve">
+    <value>When enabled, displays the current EVE time</value>
+  </data>
+  <data name="this.cbShowServerStatus.ToolTip" xml:space="preserve">
+    <value>When enabled, displays the current
+Tranquility server status</value>
+  </data>
 </root>

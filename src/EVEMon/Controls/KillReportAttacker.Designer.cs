@@ -79,7 +79,7 @@
             this.DamageDoneLabel.Name = "DamageDoneLabel";
             this.DamageDoneLabel.Size = new System.Drawing.Size(72, 13);
             this.DamageDoneLabel.TabIndex = 0;
-            this.DamageDoneLabel.Text = "{0:N0} ({1:P1})";
+            this.DamageDoneLabel.Text = resources.GetString("this.DamageDoneLabel.Text");
             // 
             // CharacterPictureBox
             // 
@@ -142,7 +142,7 @@
             this.CharacterNameLabel.Name = "CharacterNameLabel";
             this.CharacterNameLabel.Size = new System.Drawing.Size(112, 11);
             this.CharacterNameLabel.TabIndex = 0;
-            this.CharacterNameLabel.Text = "Character Name";
+            this.CharacterNameLabel.Text = resources.GetString("this.CharacterNameLabel.Text");
             // 
             // AllianceNameLabel
             // 
@@ -154,7 +154,7 @@
             this.AllianceNameLabel.Name = "AllianceNameLabel";
             this.AllianceNameLabel.Size = new System.Drawing.Size(112, 11);
             this.AllianceNameLabel.TabIndex = 2;
-            this.AllianceNameLabel.Text = "Alliance Name";
+            this.AllianceNameLabel.Text = resources.GetString("this.AllianceNameLabel.Text");
             // 
             // CorpNameLabel
             // 
@@ -166,7 +166,7 @@
             this.CorpNameLabel.Name = "CorpNameLabel";
             this.CorpNameLabel.Size = new System.Drawing.Size(112, 11);
             this.CorpNameLabel.TabIndex = 1;
-            this.CorpNameLabel.Text = "Corporation Name";
+            this.CorpNameLabel.Text = resources.GetString("this.CorpNameLabel.Text");
             // 
             // contextMenuStrip
             // 
@@ -180,7 +180,7 @@
             // 
             this.showInBrowserMenuItem.Name = "showInBrowserMenuItem";
             this.showInBrowserMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.showInBrowserMenuItem.Text = "Show In Browser...";
+            this.showInBrowserMenuItem.Text = resources.GetString("this.showInBrowserMenuItem.Text");
             this.showInBrowserMenuItem.Click += new System.EventHandler(this.showInBrowserMenuItem_Click);
             // 
             // KillReportAttacker

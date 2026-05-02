@@ -123,4 +123,64 @@ in 'My Calendars' right click on the calendar in question and select 'Properties
 Combine the 'Location:' path with the calendar name, separated by a left backslash.
 e.g. {\\Location}\{Calendar name}</value>
   </data>
+  <data name="gbReminder.Text" xml:space="preserve">
+    <value>Reminder Setting</value>
+  </data>
+  <data name="lblMinutes.Text" xml:space="preserve">
+    <value>minutes</value>
+  </data>
+  <data name="cbSetReminder.Text" xml:space="preserve">
+    <value>Use reminder</value>
+  </data>
+  <data name="lblLateReminder.Text" xml:space="preserve">
+    <value>Late Reminder:</value>
+  </data>
+  <data name="lblEarlyReminder.Text" xml:space="preserve">
+    <value>Early Reminder:</value>
+  </data>
+  <data name="cbUseAlterateReminder.Text" xml:space="preserve">
+    <value>Use alternate reminder</value>
+  </data>
+  <data name="cbLastQueuedSkillOnly.Text" xml:space="preserve">
+    <value>Last Queued Skill Only</value>
+  </data>
+  <data name="rbGoogle.Text" xml:space="preserve">
+    <value>Google</value>
+  </data>
+  <data name="gbGoogle.Text" xml:space="preserve">
+    <value>Google Information</value>
+  </data>
+  <data name="calendarIDLinkLabel.Text" xml:space="preserve">
+    <value>Tip: Leave Calendar ID blank to use default calendar. How to find a Calendar ID.</value>
+  </data>
+  <data name="apiResponseLabel.Text" xml:space="preserve">
+    <value>APIResponse</value>
+  </data>
+  <data name="btnRevokeAuth.Text" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="btnRequestAuth.Text" xml:space="preserve">
+    <value>Request Authentication</value>
+  </data>
+  <data name="lblReminder.Text" xml:space="preserve">
+    <value>Reminder:</value>
+  </data>
+  <data name="lblCalendarId.Text" xml:space="preserve">
+    <value>Calendar ID:</value>
+  </data>
+  <data name="tbGoogleCalendarName.Text" xml:space="preserve">
+    <value>primary</value>
+  </data>
+  <data name="gbMSOutlook.Text" xml:space="preserve">
+    <value>MS Outlook Information</value>
+  </data>
+  <data name="rbCustomCalendar.Text" xml:space="preserve">
+    <value>Use Custom Calendar</value>
+  </data>
+  <data name="rbDefaultCalendar.Text" xml:space="preserve">
+    <value>Use Default Calendar</value>
+  </data>
+  <data name="calendarPathLabel.Text" xml:space="preserve">
+    <value>Calendar Path:</value>
+  </data>
 </root>

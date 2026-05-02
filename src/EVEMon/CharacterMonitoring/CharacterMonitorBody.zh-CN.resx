@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Name1" xml:space="preserve">
+    <value>这是我的长绳子</value>
+  </data>
+  <data name="this.preferencesMenu.Text" xml:space="preserve">
+    <value>偏好设置</value>
+  </data>
+  <data name="this.preferencesMenu.ToolTipText" xml:space="preserve">
+    <value>偏好设置</value>
+  </data>
+  <data name="this.columnSettingsMenuItem.Text" xml:space="preserve">
+    <value>列设置</value>
+  </data>
+  <data name="this.autoSizeColumnMenuItem.Text" xml:space="preserve">
+    <value>自动调整列大小</value>
+  </data>
+  <data name="this.hideInactiveMenuItem.Text" xml:space="preserve">
+    <value>隐藏不活跃订单</value>
+  </data>
+  <data name="this.numberAbsFormatMenuItem.Text" xml:space="preserve">
+    <value>数字缩写格式</value>
+  </data>
+  <data name="this.showOnlyCharMenuItem.Text" xml:space="preserve">
+    <value>仅显示针对角色发布的内容</value>
+  </data>
+  <data name="this.showOnlyCorpMenuItem.Text" xml:space="preserve">
+    <value>仅显示为公司发行</value>
+  </data>
+  <data name="this.readingPaneMenuItem.Text" xml:space="preserve">
+    <value>阅读窗格</value>
+  </data>
+  <data name="this.paneRightMenuItem.Text" xml:space="preserve">
+    <value>右</value>
+  </data>
+  <data name="this.paneBottomMenuItem.Text" xml:space="preserve">
+    <value>底部</value>
+  </data>
+  <data name="this.paneOffMenuItem.Text" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="this.combatLogMenuItem.Text" xml:space="preserve">
+    <value>显示浓缩的战斗日志</value>
+  </data>
+  <data name="this.showOnlyExtractorMenuItem.Text" xml:space="preserve">
+    <value>仅显示抽油烟机控制单元</value>
+  </data>
+  <data name="this.searchTextDel.Text" xml:space="preserve">
+    <value>搜索文本删除</value>
+  </data>
+  <data name="this.searchTextDel.ToolTipText" xml:space="preserve">
+    <value>删除搜索文本</value>
+  </data>
+  <data name="this.searchTextBox.ToolTipText" xml:space="preserve">
+    <value>搜索</value>
+  </data>
+  <data name="this.groupMenu.Text" xml:space="preserve">
+    <value>分组依据...</value>
+  </data>
+  <data name="this.walletJournalCharts.Text" xml:space="preserve">
+    <value>钱包日记图表</value>
+  </data>
+  <data name="this.walletJournalCharts.ToolTipText" xml:space="preserve">
+    <value>图表</value>
+  </data>
+  <data name="this.allContacts.Text" xml:space="preserve">
+    <value>所有联系人</value>
+  </data>
+  <data name="this.contactsExcellent.Text" xml:space="preserve">
+    <value>良好的信誉</value>
+  </data>
+  <data name="this.contactsGood.Text" xml:space="preserve">
+    <value>良好的信誉</value>
+  </data>
+  <data name="this.contactsNeutral.Text" xml:space="preserve">
+    <value>中立立场</value>
+  </data>
+  <data name="this.contactsBad.Text" xml:space="preserve">
+    <value>信誉不佳</value>
+  </data>
+  <data name="this.contactsTerrible.Text" xml:space="preserve">
+    <value>糟糕的站立状态</value>
+  </data>
+  <data name="this.inWatchList.Text" xml:space="preserve">
+    <value>观察名单</value>
+  </data>
+  <data name="this.skillsIcon.Text" xml:space="preserve">
+    <value>技能</value>
+  </data>
+  <data name="this.skillsIcon.ToolTipText" xml:space="preserve">
+    <value>显示技能列表</value>
+  </data>
+  <data name="this.skillQueueIcon.Text" xml:space="preserve">
+    <value>队列</value>
+  </data>
+  <data name="this.skillQueueIcon.ToolTipText" xml:space="preserve">
+    <value>在队列中显示技能</value>
+  </data>
+  <data name="this.employmentIcon.Text" xml:space="preserve">
+    <value>工作经历</value>
+  </data>
+  <data name="this.employmentIcon.ToolTipText" xml:space="preserve">
+    <value>显示工作经历</value>
+  </data>
+  <data name="this.standingsIcon.Text" xml:space="preserve">
+    <value>积分榜</value>
+  </data>
+  <data name="this.standingsIcon.ToolTipText" xml:space="preserve">
+    <value>显示积分榜</value>
+  </data>
+  <data name="this.contactsIcon.Text" xml:space="preserve">
+    <value>联系方式</value>
+  </data>
+  <data name="this.contactsIcon.ToolTipText" xml:space="preserve">
+    <value>显示联系人</value>
+  </data>
+  <data name="this.factionalWarfareStatsIcon.Text" xml:space="preserve">
+    <value>派系战争</value>
+  </data>
+  <data name="this.factionalWarfareStatsIcon.ToolTipText" xml:space="preserve">
+    <value>显示派系战争统计数据</value>
+  </data>
+  <data name="this.medalsIcon.Text" xml:space="preserve">
+    <value>奖牌</value>
+  </data>
+  <data name="this.medalsIcon.ToolTipText" xml:space="preserve">
+    <value>展示奖牌</value>
+  </data>
+  <data name="this.killLogIcon.Text" xml:space="preserve">
+    <value>战斗日志</value>
+  </data>
+  <data name="this.killLogIcon.ToolTipText" xml:space="preserve">
+    <value>显示战斗日志</value>
+  </data>
+  <data name="this.assetsIcon.Text" xml:space="preserve">
+    <value>资产</value>
+  </data>
+  <data name="this.assetsIcon.ToolTipText" xml:space="preserve">
+    <value>显示资产</value>
+  </data>
+  <data name="this.ordersIcon.Text" xml:space="preserve">
+    <value>市场</value>
+  </data>
+  <data name="this.ordersIcon.ToolTipText" xml:space="preserve">
+    <value>显示市价订单</value>
+  </data>
+  <data name="this.contractsIcon.Text" xml:space="preserve">
+    <value>合约</value>
+  </data>
+  <data name="this.contractsIcon.ToolTipText" xml:space="preserve">
+    <value>展示合同</value>
+  </data>
+  <data name="this.walletJournalIcon.Text" xml:space="preserve">
+    <value>钱包日记本</value>
+  </data>
+  <data name="this.walletJournalIcon.ToolTipText" xml:space="preserve">
+    <value>显示钱包日志</value>
+  </data>
+  <data name="this.walletTransactionsIcon.Text" xml:space="preserve">
+    <value>钱包交易</value>
+  </data>
+  <data name="this.walletTransactionsIcon.ToolTipText" xml:space="preserve">
+    <value>显示钱包交易</value>
+  </data>
+  <data name="this.jobsIcon.Text" xml:space="preserve">
+    <value>工业</value>
+  </data>
+  <data name="this.jobsIcon.ToolTipText" xml:space="preserve">
+    <value>显示行业职位</value>
+  </data>
+  <data name="this.loyaltyIcon.Text" xml:space="preserve">
+    <value>忠诚度积分</value>
+  </data>
+  <data name="this.loyaltyIcon.ToolTipText" xml:space="preserve">
+    <value>显示忠诚度积分余额</value>
+  </data>
+  <data name="this.planetaryIcon.Text" xml:space="preserve">
+    <value>行星殖民地</value>
+  </data>
+  <data name="this.planetaryIcon.ToolTipText" xml:space="preserve">
+    <value>显示行星殖民地</value>
+  </data>
+  <data name="this.researchIcon.Text" xml:space="preserve">
+    <value>研究</value>
+  </data>
+  <data name="this.researchIcon.ToolTipText" xml:space="preserve">
+    <value>显示研究点</value>
+  </data>
+  <data name="this.mailMessagesIcon.Text" xml:space="preserve">
+    <value>邮件</value>
+  </data>
+  <data name="this.mailMessagesIcon.ToolTipText" xml:space="preserve">
+    <value>显示 EVE 邮件</value>
+  </data>
+  <data name="this.eveNotificationsIcon.Text" xml:space="preserve">
+    <value>通知</value>
+  </data>
+  <data name="this.eveNotificationsIcon.ToolTipText" xml:space="preserve">
+    <value>显示 EVE 通知</value>
+  </data>
+  <data name="this.calendarEventsIcon.Text" xml:space="preserve">
+    <value>日历</value>
+  </data>
+  <data name="this.calendarEventsIcon.ToolTipText" xml:space="preserve">
+    <value>显示日历事件</value>
+  </data>
+  <data name="this.featuresMenu.Text" xml:space="preserve">
+    <value>更多功能</value>
+  </data>
+  <data name="this.featuresMenu.ToolTipText" xml:space="preserve">
+    <value>高级功能</value>
+  </data>
+  <data name="this.EnableAllToolStripMenuItem.Text" xml:space="preserve">
+    <value>全部启用</value>
+  </data>
+  <data name="this.DisableAllToolStripMenuItem.Text" xml:space="preserve">
+    <value>全部禁用</value>
+  </data>
+  <data name="this.toggleSkillsIcon.Text" xml:space="preserve">
+    <value>切换所有技能</value>
+  </data>
+  <data name="this.toggleSkillsIcon.ToolTipText" xml:space="preserve">
+    <value>切换所有技能</value>
+  </data>
+  <data name="this.loyaltyPage.Text" xml:space="preserve">
+    <value>忠诚度页面</value>
+  </data>
+  <data name="this.standingsPage.Text" xml:space="preserve">
+    <value>积分榜页面</value>
+  </data>
+  <data name="this.skillsPage.Text" xml:space="preserve">
+    <value>技能页面</value>
+  </data>
+  <data name="this.ordersPage.Text" xml:space="preserve">
+    <value>订单页面</value>
+  </data>
+  <data name="this.skillQueuePage.Text" xml:space="preserve">
+    <value>技能队列页面</value>
+  </data>
+  <data name="this.jobsPage.Text" xml:space="preserve">
+    <value>职位页面</value>
+  </data>
+  <data name="this.researchPage.Text" xml:space="preserve">
+    <value>研究页面</value>
+  </data>
+  <data name="this.mailMessagesPage.Text" xml:space="preserve">
+    <value>邮件消息页面</value>
+  </data>
+  <data name="this.eveNotificationsPage.Text" xml:space="preserve">
+    <value>前夕通知页面</value>
+  </data>
+  <data name="this.employmentPage.Text" xml:space="preserve">
+    <value>就业页面</value>
+  </data>
+  <data name="this.contractsPage.Text" xml:space="preserve">
+    <value>合同页</value>
+  </data>
+  <data name="this.assetsPage.Text" xml:space="preserve">
+    <value>资产页面</value>
+  </data>
+  <data name="this.walletJournalPage.Text" xml:space="preserve">
+    <value>钱包日记页</value>
+  </data>
+  <data name="this.walletTransactionsPage.Text" xml:space="preserve">
+    <value>钱包交易页面</value>
+  </data>
+  <data name="this.factionalWarfareStatsPage.Text" xml:space="preserve">
+    <value>派系战争统计页面</value>
+  </data>
+  <data name="this.contactsPage.Text" xml:space="preserve">
+    <value>联系人页面</value>
+  </data>
+  <data name="this.medalsPage.Text" xml:space="preserve">
+    <value>奖牌页</value>
+  </data>
+  <data name="this.killLogPage.Text" xml:space="preserve">
+    <value>杀死日志页</value>
+  </data>
+  <data name="this.planetaryPage.Text" xml:space="preserve">
+    <value>行星页面</value>
+  </data>
+  <data name="this.warningLabel.Text" xml:space="preserve">
+    <value>该角色没有关联的 API 密钥，数据不会更新。</value>
+  </data>
+</root>

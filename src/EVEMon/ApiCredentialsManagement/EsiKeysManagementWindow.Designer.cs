@@ -97,7 +97,7 @@ namespace EVEMon.ApiCredentialsManagement
 			this.esiKeysLabel.Name = "esiKeysLabel";
 			this.esiKeysLabel.Size = new System.Drawing.Size(50, 13);
 			this.esiKeysLabel.TabIndex = 1;
-			this.esiKeysLabel.Text = "ESI Keys";
+			this.esiKeysLabel.Text = resources.GetString("this.esiKeysLabel.Text");
 			// 
 			// charactersLabel
 			// 
@@ -108,7 +108,7 @@ namespace EVEMon.ApiCredentialsManagement
 			this.charactersLabel.Name = "charactersLabel";
 			this.charactersLabel.Size = new System.Drawing.Size(58, 13);
 			this.charactersLabel.TabIndex = 5;
-			this.charactersLabel.Text = "Characters";
+			this.charactersLabel.Text = resources.GetString("this.charactersLabel.Text");
 			// 
 			// esiKeyListLabel
 			// 
@@ -118,7 +118,7 @@ namespace EVEMon.ApiCredentialsManagement
 			this.esiKeyListLabel.Name = "esiKeyListLabel";
 			this.esiKeyListLabel.Size = new System.Drawing.Size(796, 318);
 			this.esiKeyListLabel.TabIndex = 0;
-			this.esiKeyListLabel.Text = "First add your ESI key using the above buttons.";
+			this.esiKeyListLabel.Text = resources.GetString("this.esiKeyListLabel.Text");
 			this.esiKeyListLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// charactersListLabel
@@ -141,7 +141,7 @@ namespace EVEMon.ApiCredentialsManagement
 			this.closeButton.Name = "closeButton";
 			this.closeButton.Size = new System.Drawing.Size(90, 23);
 			this.closeButton.TabIndex = 9;
-			this.closeButton.Text = "&Close";
+			this.closeButton.Text = resources.GetString("this.closeButton.Text");
 			this.closeButton.UseVisualStyleBackColor = true;
 			this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
 			// 
@@ -167,7 +167,7 @@ namespace EVEMon.ApiCredentialsManagement
 			this.charactersTabPage.Padding = new System.Windows.Forms.Padding(3);
 			this.charactersTabPage.Size = new System.Drawing.Size(802, 362);
 			this.charactersTabPage.TabIndex = 1;
-			this.charactersTabPage.Text = "Characters";
+			this.charactersTabPage.Text = resources.GetString("this.charactersTabPage.Text");
 			this.charactersTabPage.UseVisualStyleBackColor = true;
 			// 
 			// charactersPagePanel
@@ -200,7 +200,7 @@ namespace EVEMon.ApiCredentialsManagement
 			this.charactersListPage.Name = "charactersListPage";
 			this.charactersListPage.Size = new System.Drawing.Size(796, 318);
 			this.charactersListPage.TabIndex = 0;
-			this.charactersListPage.Text = "charactersListPage";
+			this.charactersListPage.Text = resources.GetString("this.charactersListPage.Text");
 			// 
 			// charactersListView
 			// 
@@ -239,31 +239,31 @@ namespace EVEMon.ApiCredentialsManagement
 			// 
 			// columnType
 			// 
-			this.columnType.Text = "Type";
+			this.columnType.Text = resources.GetString("this.columnType.Text");
 			this.columnType.Width = 49;
 			// 
 			// columnID
 			// 
-			this.columnID.Text = "ID";
+			this.columnID.Text = resources.GetString("this.columnID.Text");
 			this.columnID.Width = 84;
 			// 
 			// columnName
 			// 
-			this.columnName.Text = "Name";
+			this.columnName.Text = resources.GetString("this.columnName.Text");
 			this.columnName.Width = 117;
 			// 
 			// columnESIKeyID
 			// 
-			this.columnESIKeyID.Text = "Key ID";
+			this.columnESIKeyID.Text = resources.GetString("this.columnESIKeyID.Text");
 			this.columnESIKeyID.Width = 75;
 			// 
 			// columnStatus
 			// 
-			this.columnStatus.Text = "Status";
+			this.columnStatus.Text = resources.GetString("this.columnStatus.Text");
 			// 
 			// columnUri
 			// 
-			this.columnUri.Text = "Uri";
+			this.columnUri.Text = resources.GetString("this.columnUri.Text");
 			this.columnUri.Width = 358;
 			// 
 			// noCharactersPage
@@ -274,7 +274,7 @@ namespace EVEMon.ApiCredentialsManagement
 			this.noCharactersPage.Name = "noCharactersPage";
 			this.noCharactersPage.Size = new System.Drawing.Size(796, 318);
 			this.noCharactersPage.TabIndex = 1;
-			this.noCharactersPage.Text = "noCharactersPage";
+			this.noCharactersPage.Text = resources.GetString("this.noCharactersPage.Text");
 			// 
 			// charactersToolStrip
 			// 
@@ -295,7 +295,7 @@ namespace EVEMon.ApiCredentialsManagement
 			this.importCharacterMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.importCharacterMenu.Name = "importCharacterMenu";
 			this.importCharacterMenu.Size = new System.Drawing.Size(72, 22);
-			this.importCharacterMenu.Text = "&Import...";
+			this.importCharacterMenu.Text = resources.GetString("this.importCharacterMenu.Text");
 			this.importCharacterMenu.Click += new System.EventHandler(this.importCharacterMenu_Click);
 			// 
 			// deleteCharacterMenu
@@ -305,7 +305,7 @@ namespace EVEMon.ApiCredentialsManagement
 			this.deleteCharacterMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.deleteCharacterMenu.Name = "deleteCharacterMenu";
 			this.deleteCharacterMenu.Size = new System.Drawing.Size(69, 22);
-			this.deleteCharacterMenu.Text = "&Delete...";
+			this.deleteCharacterMenu.Text = resources.GetString("this.deleteCharacterMenu.Text");
 			this.deleteCharacterMenu.Click += new System.EventHandler(this.deleteCharacterMenu_Click);
 			// 
 			// editUriMenu
@@ -315,7 +315,7 @@ namespace EVEMon.ApiCredentialsManagement
 			this.editUriMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.editUriMenu.Name = "editUriMenu";
 			this.editUriMenu.Size = new System.Drawing.Size(74, 22);
-			this.editUriMenu.Text = "&Edit Uri...";
+			this.editUriMenu.Text = resources.GetString("this.editUriMenu.Text");
 			this.editUriMenu.Click += new System.EventHandler(this.editUriButton_Click);
 			// 
 			// groupingMenu
@@ -328,7 +328,7 @@ namespace EVEMon.ApiCredentialsManagement
 			this.groupingMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.groupingMenu.Name = "groupingMenu";
 			this.groupingMenu.Size = new System.Drawing.Size(101, 22);
-			this.groupingMenu.Text = "&Group characters";
+			this.groupingMenu.Text = resources.GetString("this.groupingMenu.Text");
 			this.groupingMenu.Click += new System.EventHandler(this.groupingMenu_Click);
 			// 
 			// esiKeysTabPage
@@ -340,7 +340,7 @@ namespace EVEMon.ApiCredentialsManagement
 			this.esiKeysTabPage.Padding = new System.Windows.Forms.Padding(3);
 			this.esiKeysTabPage.Size = new System.Drawing.Size(802, 362);
 			this.esiKeysTabPage.TabIndex = 0;
-			this.esiKeysTabPage.Text = "ESI Keys";
+			this.esiKeysTabPage.Text = resources.GetString("this.esiKeysTabPage.Text");
 			this.esiKeysTabPage.UseVisualStyleBackColor = true;
 			// 
 			// esiKeysPagePanel
@@ -419,7 +419,7 @@ namespace EVEMon.ApiCredentialsManagement
 			this.addESIKeyMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.addESIKeyMenu.Name = "addESIKeyMenu";
 			this.addESIKeyMenu.Size = new System.Drawing.Size(58, 22);
-			this.addESIKeyMenu.Text = "&Add...";
+			this.addESIKeyMenu.Text = resources.GetString("this.addESIKeyMenu.Text");
 			this.addESIKeyMenu.Click += new System.EventHandler(this.addESIKeyMenu_Click);
 			// 
 			// deleteESIKeyMenu
@@ -429,7 +429,7 @@ namespace EVEMon.ApiCredentialsManagement
 			this.deleteESIKeyMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.deleteESIKeyMenu.Name = "deleteESIKeyMenu";
 			this.deleteESIKeyMenu.Size = new System.Drawing.Size(69, 22);
-			this.deleteESIKeyMenu.Text = "&Delete...";
+			this.deleteESIKeyMenu.Text = resources.GetString("this.deleteESIKeyMenu.Text");
 			this.deleteESIKeyMenu.Click += new System.EventHandler(this.deleteESIKeyMenu_Click);
 			// 
 			// editESIKeyMenu
@@ -439,7 +439,7 @@ namespace EVEMon.ApiCredentialsManagement
 			this.editESIKeyMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.editESIKeyMenu.Name = "editESIKeyMenu";
 			this.editESIKeyMenu.Size = new System.Drawing.Size(56, 22);
-			this.editESIKeyMenu.Text = "&Edit...";
+			this.editESIKeyMenu.Text = resources.GetString("this.editESIKeyMenu.Text");
 			this.editESIKeyMenu.Click += new System.EventHandler(this.editAPIKeyMenu_Click);
 			// 
 			// EsiKeysManagementWindow
@@ -455,7 +455,7 @@ namespace EVEMon.ApiCredentialsManagement
 			this.MaximizeBox = false;
 			this.MinimumSize = new System.Drawing.Size(600, 400);
 			this.Name = "EsiKeysManagementWindow";
-			this.Text = "ESI Keys Management";
+			this.Text = resources.GetString("this.Text");
 			this.tabControl.ResumeLayout(false);
 			this.charactersTabPage.ResumeLayout(false);
 			this.charactersTabPage.PerformLayout();

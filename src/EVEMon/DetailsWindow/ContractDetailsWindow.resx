@@ -979,4 +979,19 @@
   <metadata name="contextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>252, 17</value>
   </metadata>
+  <data name="this.BidsButton.Text" xml:space="preserve">
+    <value>Show Bids</value>
+  </data>
+  <data name="this.CurrentToStartLinkLabel.Text" xml:space="preserve">
+    <value>show route</value>
+  </data>
+  <data name="this.CurrentToEndLinkLabel.Text" xml:space="preserve">
+    <value>show route</value>
+  </data>
+  <data name="this.StartToEndLinkLabel.Text" xml:space="preserve">
+    <value>show route</value>
+  </data>
+  <data name="this.Text" xml:space="preserve">
+    <value>Contract Details</value>
+  </data>
 </root>

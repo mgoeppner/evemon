@@ -68,7 +68,7 @@
             this.characterToRemoveLabel.Name = "characterToRemoveLabel";
             this.characterToRemoveLabel.Size = new System.Drawing.Size(214, 13);
             this.characterToRemoveLabel.TabIndex = 1;
-            this.characterToRemoveLabel.Text = "You are about to delete the character \"{0}\".";
+            this.characterToRemoveLabel.Text = resources.GetString("this.characterToRemoveLabel.Text");
             this.characterToRemoveLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
@@ -79,7 +79,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(168, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "All your data and plans will be lost!";
+            this.label2.Text = resources.GetString("this.label2.Text");
             // 
             // cancelButton
             // 
@@ -89,7 +89,7 @@
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 3;
-            this.cancelButton.Text = "&Cancel";
+            this.cancelButton.Text = resources.GetString("this.cancelButton.Text");
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
@@ -101,7 +101,7 @@
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(75, 23);
             this.deleteButton.TabIndex = 4;
-            this.deleteButton.Text = "&Delete";
+            this.deleteButton.Text = resources.GetString("this.deleteButton.Text");
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
@@ -112,7 +112,7 @@
             this.noCharactersLabel.Name = "noCharactersLabel";
             this.noCharactersLabel.Size = new System.Drawing.Size(181, 13);
             this.noCharactersLabel.TabIndex = 6;
-            this.noCharactersLabel.Text = "The ESI key{0} will also be removed:";
+            this.noCharactersLabel.Text = resources.GetString("this.noCharactersLabel.Text");
             // 
             // esiKeysListView
             // 
@@ -153,7 +153,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CharacterDeletionWindow";
-            this.Text = "Delete Character";
+            this.Text = resources.GetString("this.Text");
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
