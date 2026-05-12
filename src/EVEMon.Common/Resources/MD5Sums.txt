@@ -1,7 +1,7 @@
 7982e23c2a02cb7b1461df50e827590c *eve-blueprints-en-US.xml.gzip
 57249304aa577baf4e229561d8aca507 *eve-certificates-en-US.xml.gzip
-542a9869ca5e4f9f571957a450b55410 *eve-geography-en-US.xml.gzip
-1536892cdb3fb15d164c70870337c4f9 *eve-items-en-US.xml.gzip
+99feb110a600bffa5f1a12c445024eba *eve-geography-en-US.xml.gzip
+8943d9dfb002b948ebd48d991d5e39d0 *eve-items-en-US.xml.gzip
 3cd84f3ada904a32017956a1ddaae877 *eve-masteries-en-US.xml.gzip
 dc7a8c4dc7f21e180e40ad78055e3574 *eve-properties-en-US.xml.gzip
 132b8de87a1949059fa8022e66814ea7 *eve-reprocessing-en-US.xml.gzip
