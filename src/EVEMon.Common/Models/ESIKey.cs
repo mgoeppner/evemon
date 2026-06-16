@@ -15,6 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Xml.Serialization;
 
 namespace EVEMon.Common.Models
@@ -32,7 +33,7 @@ namespace EVEMon.Common.Models
 
         private bool m_monitored;
         private bool m_queried;
-        private bool m_queryPending;
+        private int m_queryPending;
         private DateTime m_keyExpires;
 
         #endregion
@@ -48,7 +49,7 @@ namespace EVEMon.Common.Models
             EveMonClient.TimerTick += EveMonClient_TimerTick;
             m_keyExpires = DateTime.MinValue;
             m_queried = false;
-            m_queryPending = false;
+            m_queryPending = 0;
         }
 
         /// <summary>
@@ -169,7 +170,27 @@ namespace EVEMon.Common.Models
 
 
         #region Internal Methods
-        
+
+        /// <summary>
+        /// Gets whether this key currently has a usable access token for authenticated ESI
+        /// queries. If the token expired, this also kicks off a refresh attempt.
+        /// </summary>
+        internal bool HasUsableAccessToken
+        {
+            get
+            {
+                CheckAccessToken();
+                return Volatile.Read(ref m_queryPending) == 0 && !HasError &&
+                    !string.IsNullOrEmpty(AccessToken) && m_keyExpires > DateTime.UtcNow;
+            }
+        }
+
+        /// <summary>
+        /// Gets the current access token if it is ready for use, or null while it is being
+        /// refreshed or is otherwise unavailable.
+        /// </summary>
+        internal string GetAccessTokenForQuery() => HasUsableAccessToken ? AccessToken : null;
+
         /// <summary>
         /// Starts obtaining an access token from the refresh token, because either the access
         /// token expired or was never obtained.
@@ -177,17 +198,27 @@ namespace EVEMon.Common.Models
         internal void CheckAccessToken()
         {
             var rt = RefreshToken;
-            if (m_keyExpires < DateTime.UtcNow && !string.IsNullOrEmpty(rt) && !m_queryPending)
+            if (m_keyExpires >= DateTime.UtcNow || string.IsNullOrEmpty(rt) ||
+                Interlocked.CompareExchange(ref m_queryPending, 1, 0) != 0)
+                return;
+
+            var auth = SSOAuthenticationService.GetInstance();
+            if (auth == null)
             {
-                var auth = SSOAuthenticationService.GetInstance();
-                if (auth == null)
-                    // User removed the client ID / secret
-                    HasError = true;
-                else
-                {
-                    auth.GetNewToken(rt, OnAccessToken);
-                    m_queryPending = true;
-                }
+                // User removed the client ID / secret
+                HasError = true;
+                Interlocked.Exchange(ref m_queryPending, 0);
+                return;
+            }
+
+            try
+            {
+                auth.GetNewToken(rt, OnAccessToken);
+            }
+            catch
+            {
+                Interlocked.Exchange(ref m_queryPending, 0);
+                throw;
             }
         }
 
@@ -206,7 +237,7 @@ namespace EVEMon.Common.Models
                 m_keyExpires = DateTime.UtcNow.AddMinutes(5.0);
                 EveMonClient.Notifications.NotifySSOError();
                 HasError = true;
-                m_queryPending = false;
+                Interlocked.Exchange(ref m_queryPending, 0);
                 EveMonClient.OnESIKeyInfoUpdated(this);
             }
             else
@@ -238,7 +269,7 @@ namespace EVEMon.Common.Models
                 ImportIdentities(tokenInfo);
                 EveMonClient.Notifications.InvalidateAPIError();
             }
-            m_queryPending = false;
+            Interlocked.Exchange(ref m_queryPending, 0);
             EveMonClient.OnESIKeyInfoUpdated(this);
         }
 

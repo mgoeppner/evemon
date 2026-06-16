@@ -63,7 +63,7 @@ namespace EVEMon.Common.QueryMonitor
         /// <returns>The ESI request parameters.</returns>
         internal override ESIParams GetESIParams()
         {
-            return new ESIParams(LastResult?.Response, m_apiKey.AccessToken)
+            return new ESIParams(LastResult?.Response, m_apiKey.GetAccessTokenForQuery())
             {
                 ParamOne = m_character.CharacterID
             };

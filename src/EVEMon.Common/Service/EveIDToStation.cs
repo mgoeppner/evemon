@@ -9,6 +9,7 @@ using EVEMon.Common.Serialization.Eve;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 using CitadelIDInfo = EVEMon.Common.Service.IDInformation<EVEMon.Common.Serialization.Eve.
@@ -108,6 +109,8 @@ namespace EVEMon.Common.Service
         /// </summary>
         private static Task UpdateOnOneSecondTickAsync()
         {
+            s_cita.RetryPendingLookups();
+
             // Is a save requested and is the last save older than 10s ?
             if (s_savePending && DateTime.UtcNow > s_lastSaveTime.AddSeconds(10))
                 return SaveImmediateAsync();
@@ -155,6 +158,15 @@ namespace EVEMon.Common.Service
         /// </summary>
         private class CitadelStationProvider : IDToObjectProvider<SerializableOutpost, ESIKey>
         {
+            // 1 if at least one citadel lookup has resolved since the last TriggerEvent
+            // fired, 0 otherwise. Used to gate TriggerEvent in the token-not-ready
+            // early-exit so we do not spam OnConquerableStationListUpdated and
+            // s_savePending every RetryPendingLookups tick (1 Hz) when there is nothing
+            // new to publish. Manipulated via Interlocked.Exchange so the early-exit can
+            // atomically check-and-clear the flag against concurrent ESI callbacks (set
+            // to 1) and base-class TriggerEvent calls (clear to 0).
+            private int m_resolvedSinceTrigger;
+
             public CitadelStationProvider(IDictionary<long, CitadelIDInfo> cacheList) :
                 base(cacheList)
             {
@@ -179,31 +191,69 @@ namespace EVEMon.Common.Service
                         {
                             id = it.Current.Key;
                             esiKey = it.Current.Value;
-                            m_pendingIDs.Remove(id);
                         }
                     }
                 }
                 if (id != 0L)
                 {
+                    if (esiKey == null)
+                    {
+                        lock (m_pendingIDs)
+                        {
+                            m_pendingIDs.Remove(id);
+                        }
+                        OnLookupComplete();
+                        return;
+                    }
+
+                    string accessToken = esiKey.GetAccessTokenForQuery();
+                    if (string.IsNullOrEmpty(accessToken))
+                    {
+                        // Token refresh in flight. Leave the id in the queue and clear
+                        // the pending flag so RetryPendingLookups can re-enter once the
+                        // refresh settles. We deliberately call TriggerEvent here
+                        // outside the OnLookupComplete path documented on the base
+                        // class: OnLookupComplete with a non-empty queue would loop on
+                        // the same null token, and no async callback site exists for
+                        // this exit. Atomically check-and-clear m_resolvedSinceTrigger
+                        // so a concurrent retry tick cannot fire the same event twice.
+                        lock (m_pendingIDs)
+                        {
+                            m_queryPending = false;
+                        }
+                        if (Interlocked.Exchange(ref m_resolvedSinceTrigger, 0) == 1)
+                            TriggerEvent();
+                        return;
+                    }
+
+                    lock (m_pendingIDs)
+                    {
+                        m_pendingIDs.Remove(id);
+                    }
+
                     CitadelIDInfo info;
                     lock (m_cache)
                     {
                         m_cache.TryGetValue(id, out info);
                     }
                     // info should never be null at this stage
-                    if (esiKey != null)
+                    info.OnRequestStart(esiKey);
+                    // Query ESI for the citadel information
+                    // No response is given because requests are only made to ESI once per
+                    // key per session
+                    EveMonClient.APIProviders.CurrentProvider.QueryEsi<EsiAPIStructure>(
+                        ESIAPIGenericMethods.CitadelInfo, OnQueryStationUpdatedEsi,
+                        new ESIParams(null, accessToken)
+                        {
+                            ParamOne = id
+                        }, info);
+                    EveMonClient.Trace("ESI lookup for {0:D} using {1}", id, esiKey);
+                }
+                else
+                {
+                    lock (m_pendingIDs)
                     {
-                        info.OnRequestStart(esiKey);
-                        // Query ESI for the citadel information
-                        // No response is given because requests are only made to ESI once per
-                        // key per session
-                        EveMonClient.APIProviders.CurrentProvider.QueryEsi<EsiAPIStructure>(
-                            ESIAPIGenericMethods.CitadelInfo, OnQueryStationUpdatedEsi,
-                            new ESIParams(null, esiKey.AccessToken)
-                            {
-                                ParamOne = id
-                            }, info);
-                        EveMonClient.Trace("ESI lookup for {0:D} using {1}", id, esiKey);
+                        m_queryPending = false;
                     }
                 }
             }
@@ -227,6 +277,7 @@ namespace EVEMon.Common.Service
                     EveMonClient.Notifications.InvalidateAPIError();
                     info.OnRequestComplete(result.Result.ToXMLItem(info.ID));
                 }
+                Interlocked.Exchange(ref m_resolvedSinceTrigger, 1);
                 OnLookupComplete();
             }
 
@@ -243,11 +294,41 @@ namespace EVEMon.Common.Service
             {
                 var key = character?.Identity?.FindAPIKeyWithAccess(ESIAPICharacterMethods.
                     CitadelInfo);
+                if (key == null)
+                {
+                    lock (m_cache)
+                    {
+                        return m_cache.TryGetValue(id, out CitadelIDInfo info) ? info.Value : null;
+                    }
+                }
                 return LookupID(id, bypass, key);
             }
-            
+
+            /// <summary>
+            /// Retries pending lookups once an access token becomes available again, such as
+            /// after resume from sleep.
+            /// </summary>
+            public void RetryPendingLookups()
+            {
+                bool start = false;
+
+                lock (m_pendingIDs)
+                {
+                    if (!m_queryPending && m_pendingIDs.Count > 0 &&
+                        !EsiErrors.IsErrorCountExceeded)
+                    {
+                        m_queryPending = true;
+                        start = true;
+                    }
+                }
+
+                if (start)
+                    FetchIDs();
+            }
+
             protected override void TriggerEvent()
             {
+                Interlocked.Exchange(ref m_resolvedSinceTrigger, 0);
                 EveMonClient.OnConquerableStationListUpdated();
                 s_savePending = true;
             }
