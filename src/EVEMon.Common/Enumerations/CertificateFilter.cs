@@ -13,7 +13,7 @@ namespace EVEMon.Common.Enumerations
         [Description("Hide Completed")]
         HideMaxLevel = 2,
 
-        [Description("Trrainable Next Level")]
+        [Description("Trainable Next Level")]
         NextLevelTrainable = 3,
 
         [Description("Untrainable Next Level")]
