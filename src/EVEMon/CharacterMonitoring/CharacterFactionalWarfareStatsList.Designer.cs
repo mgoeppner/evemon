@@ -100,7 +100,7 @@
             this.noFactionalWarfareLabel.Name = "noFactionalWarfareLabel";
             this.noFactionalWarfareLabel.Size = new System.Drawing.Size(409, 607);
             this.noFactionalWarfareLabel.TabIndex = 3;
-            this.noFactionalWarfareLabel.Text = "Factional Warfare information not available.";
+            this.noFactionalWarfareLabel.Text = resources.GetString("this.noFactionalWarfareLabel.Text");
             this.noFactionalWarfareLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // notEnlistedLabel
@@ -112,7 +112,7 @@
             this.notEnlistedLabel.Name = "notEnlistedLabel";
             this.notEnlistedLabel.Size = new System.Drawing.Size(409, 607);
             this.notEnlistedLabel.TabIndex = 4;
-            this.notEnlistedLabel.Text = "Character not enlisted in Factional Warfare.";
+            this.notEnlistedLabel.Text = resources.GetString("this.notEnlistedLabel.Text");
             this.notEnlistedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ListPanel
@@ -188,17 +188,17 @@
             // 
             // chDescription
             // 
-            this.chDescription.Text = "Personal";
+            this.chDescription.Text = resources.GetString("this.chDescription.Text");
             this.chDescription.Width = 101;
             // 
             // chYou
             // 
-            this.chYou.Text = "You";
+            this.chYou.Text = resources.GetString("this.chYou.Text");
             this.chYou.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // chAll
             // 
-            this.chAll.Text = "All";
+            this.chAll.Text = resources.GetString("this.chAll.Text");
             this.chAll.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lvMilitia
@@ -252,27 +252,27 @@
             // 
             // chMilitia
             // 
-            this.chMilitia.Text = "Militia";
+            this.chMilitia.Text = resources.GetString("this.chMilitia.Text");
             this.chMilitia.Width = 101;
             // 
             // chAmarr
             // 
-            this.chAmarr.Text = "Amarr";
+            this.chAmarr.Text = resources.GetString("this.chAmarr.Text");
             this.chAmarr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // chCaldari
             // 
-            this.chCaldari.Text = "Caldari";
+            this.chCaldari.Text = resources.GetString("this.chCaldari.Text");
             this.chCaldari.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // chGallente
             // 
-            this.chGallente.Text = "Gallente";
+            this.chGallente.Text = resources.GetString("this.chGallente.Text");
             this.chGallente.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // chMinmatar
             // 
-            this.chMinmatar.Text = "Minmatar";
+            this.chMinmatar.Text = resources.GetString("this.chMinmatar.Text");
             this.chMinmatar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // HeaderTableLayoutPanel
@@ -407,7 +407,7 @@
             this.RankLabel.Name = "RankLabel";
             this.RankLabel.Size = new System.Drawing.Size(36, 13);
             this.RankLabel.TabIndex = 3;
-            this.RankLabel.Text = "Rank:";
+            this.RankLabel.Text = resources.GetString("this.RankLabel.Text");
             this.RankLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TimeServedLabel
@@ -417,7 +417,7 @@
             this.TimeServedLabel.Name = "TimeServedLabel";
             this.TimeServedLabel.Size = new System.Drawing.Size(68, 13);
             this.TimeServedLabel.TabIndex = 4;
-            this.TimeServedLabel.Text = "Time served:";
+            this.TimeServedLabel.Text = resources.GetString("this.TimeServedLabel.Text");
             this.TimeServedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FactionLabel
@@ -429,7 +429,7 @@
             this.FactionLabel.Name = "FactionLabel";
             this.FactionLabel.Size = new System.Drawing.Size(45, 13);
             this.FactionLabel.TabIndex = 10;
-            this.FactionLabel.Text = "Faction:";
+            this.FactionLabel.Text = resources.GetString("this.FactionLabel.Text");
             this.FactionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // CorporationLabel
@@ -440,7 +440,7 @@
             this.CorporationLabel.Name = "CorporationLabel";
             this.CorporationLabel.Size = new System.Drawing.Size(64, 13);
             this.CorporationLabel.TabIndex = 11;
-            this.CorporationLabel.Text = "Corporation:";
+            this.CorporationLabel.Text = resources.GetString("this.CorporationLabel.Text");
             // 
             // CharacterFactionalWarfareStatsList
             // 

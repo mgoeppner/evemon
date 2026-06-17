@@ -50,7 +50,7 @@
             this.noWalletTransactionsLabel.Name = "noWalletTransactionsLabel";
             this.noWalletTransactionsLabel.Size = new System.Drawing.Size(454, 434);
             this.noWalletTransactionsLabel.TabIndex = 3;
-            this.noWalletTransactionsLabel.Text = "No wallet transactions are available.";
+            this.noWalletTransactionsLabel.Text = resources.GetString("this.noWalletTransactionsLabel.Text");
             this.noWalletTransactionsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lvWalletTransactions
@@ -76,22 +76,22 @@
             // 
             // chDate
             // 
-            this.chDate.Text = "Date";
+            this.chDate.Text = resources.GetString("this.chDate.Text");
             this.chDate.Width = 125;
             // 
             // chItem
             // 
-            this.chItem.Text = "Item";
+            this.chItem.Text = resources.GetString("this.chItem.Text");
             this.chItem.Width = 169;
             // 
             // chPrice
             // 
-            this.chPrice.Text = "Price";
+            this.chPrice.Text = resources.GetString("this.chPrice.Text");
             this.chPrice.Width = 77;
             // 
             // chQuantity
             // 
-            this.chQuantity.Text = "Quantity";
+            this.chQuantity.Text = resources.GetString("this.chQuantity.Text");
             this.chQuantity.Width = 81;
             // 
             // contextMenu
@@ -105,7 +105,7 @@
             // 
             this.exportToCSVToolStripMenuItem.Name = "exportToCSVToolStripMenuItem";
             this.exportToCSVToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.exportToCSVToolStripMenuItem.Text = "Export To CSV...";
+            this.exportToCSVToolStripMenuItem.Text = resources.GetString("this.exportToCSVToolStripMenuItem.Text");
             this.exportToCSVToolStripMenuItem.Click += new System.EventHandler(this.exportToCSVToolStripMenuItem_Click);
             // 
             // ilIcons

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Name1" xml:space="preserve">
+    <value>这是我的长绳子</value>
+  </data>
+  <data name="AuthenticationErrorGuideLabel.Text" xml:space="preserve">
+    <value>您提供的 ID 或验证码（或两者）均错误。
+
+选择“上一步”按钮并重试，输入正确的凭据。
+
+如果这个账户是新创建的，你必须等待，至少一个小时，
+CCP 将其包含在 API 中。</value>
+  </data>
+  <data name="LoginDeniedLinkLabel.Text" xml:space="preserve">
+    <value>该 API 密钥所属账户的订阅已过期。
+
+如果 API 密钥属于您的帐户之一，请考虑在以下位置重新订阅：
+https://secure.eveonline.com/AccountManMenu.aspx
+</value>
+  </data>
+  <data name="this.ButtonNext.Text" xml:space="preserve">
+    <value>下一步&gt;</value>
+  </data>
+  <data name="this.ButtonPrevious.Text" xml:space="preserve">
+    <value>&lt;&amp;上一页</value>
+  </data>
+  <data name="this.ButtonCancel.Text" xml:space="preserve">
+    <value>取消(&amp;C)</value>
+  </data>
+  <data name="this.CredentialsPage.Text" xml:space="preserve">
+    <value>凭证页面</value>
+  </data>
+  <data name="this.ResultPage.Text" xml:space="preserve">
+    <value>结果页</value>
+  </data>
+  <data name="this.KeyLabel.Text" xml:space="preserve">
+    <value>关于信息检索过程的简短描述。</value>
+  </data>
+  <data name="this.CharactersGroupBox.Text" xml:space="preserve">
+    <value>API 密钥公开的字符</value>
+  </data>
+  <data name="this.CharactersListPage.Text" xml:space="preserve">
+    <value>字符列表页</value>
+  </data>
+  <data name="this.AuthenticationErrorPage.Text" xml:space="preserve">
+    <value>认证错误页面</value>
+  </data>
+  <data name="this.LoginDeniedErrorPage.Text" xml:space="preserve">
+    <value>登录被拒绝错误页面</value>
+  </data>
+  <data name="this.GeneralErrorPage.Text" xml:space="preserve">
+    <value>一般错误页面</value>
+  </data>
+  <data name="this.CachedWarningPage.Text" xml:space="preserve">
+    <value>缓存警告页面</value>
+  </data>
+  <data name="this.LabelShiftClick.Text" xml:space="preserve">
+    <value>SHIFT+单击会将 ESI 身份验证 URL 复制到剪贴板</value>
+  </data>
+  <data name="this.Text" xml:space="preserve">
+    <value>ESI 密钥导入</value>
+  </data>
+</root>

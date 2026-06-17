@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Name1" xml:space="preserve">
+    <value>这是我的长绳子</value>
+  </data>
+  <data name="this.grpPlanName.Text" xml:space="preserve">
+    <value>所选技能详细信息</value>
+  </data>
+  <data name="this.lblSkillInfo.Text" xml:space="preserve">
+    <value>技能信息</value>
+  </data>
+  <data name="this.btnClose.Text" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="this.lblRedFont.Text" xml:space="preserve">
+    <value>红色</value>
+  </data>
+  <data name="this.lblDimmedFont.Text" xml:space="preserve">
+    <value>变暗</value>
+  </data>
+  <data name="this.lblRedFontInfo.Text" xml:space="preserve">
+    <value>= 需要其他未经培训的技能</value>
+  </data>
+  <data name="this.lblDimmedFontInfo.Text" xml:space="preserve">
+    <value>= 通过此技能等级解锁</value>
+  </data>
+  <data name="this.lblNormalFont.Text" xml:space="preserve">
+    <value>普通字体 = 已训练</value>
+  </data>
+  <data name="treeNode1.Text" xml:space="preserve">
+    <value>节点0</value>
+  </data>
+  <data name="this.lblSkills.Text" xml:space="preserve">
+    <value>启用技能</value>
+  </data>
+  <data name="treeNode2.Text" xml:space="preserve">
+    <value>节点0</value>
+  </data>
+  <data name="this.lblItems.Text" xml:space="preserve">
+    <value>启用项目</value>
+  </data>
+  <data name="this.planToMenu.Text" xml:space="preserve">
+    <value>计划...</value>
+  </data>
+  <data name="this.tsRemove.Text" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="this.tsAddL1.Text" xml:space="preserve">
+    <value>1级</value>
+  </data>
+  <data name="this.tsAddL2.Text" xml:space="preserve">
+    <value>2级</value>
+  </data>
+  <data name="this.tsAddL3.Text" xml:space="preserve">
+    <value>3级</value>
+  </data>
+  <data name="this.tsAddL4.Text" xml:space="preserve">
+    <value>4级</value>
+  </data>
+  <data name="this.tsAddL5.Text" xml:space="preserve">
+    <value>5级</value>
+  </data>
+  <data name="this.showInSkillBrowserMenu.Text" xml:space="preserve">
+    <value>在技能浏览器中显示...</value>
+  </data>
+  <data name="this.showInSkillExplorerMenu.Text" xml:space="preserve">
+    <value>告诉我这个技能可以解锁什么</value>
+  </data>
+  <data name="this.showPrerequisitiesMenu.Text" xml:space="preserve">
+    <value>显示未经训练的先决条件</value>
+  </data>
+  <data name="this.tsmiSkillsExpandAll.Text" xml:space="preserve">
+    <value>全部展开(&amp;A)</value>
+  </data>
+  <data name="this.tsmiSkillsCollapseAll.Text" xml:space="preserve">
+    <value>全部折叠(&amp;C)</value>
+  </data>
+  <data name="this.planToObject.Text" xml:space="preserve">
+    <value>添加到计划...</value>
+  </data>
+  <data name="this.showObjectInBrowserMenuItem.Text" xml:space="preserve">
+    <value>在浏览器中显示...</value>
+  </data>
+  <data name="this.showObjectPrerequisitiesMenu.Text" xml:space="preserve">
+    <value>显示未经训练的先决条件</value>
+  </data>
+  <data name="this.tsmiObjectsExpandAll.Text" xml:space="preserve">
+    <value>全部展开(&amp;A)</value>
+  </data>
+  <data name="this.tsmiObjectsCollapseAll.Text" xml:space="preserve">
+    <value>全部折叠(&amp;C)</value>
+  </data>
+  <data name="this.groupBox2.Text" xml:space="preserve">
+    <value>选项</value>
+  </data>
+  <data name="this.cbShowBaseOnly.Text" xml:space="preserve">
+    <value>只显示T1/T2</value>
+  </data>
+  <data name="this.rbShowAlpha.Text" xml:space="preserve">
+    <value>显示字母列表</value>
+  </data>
+  <data name="this.rbShowTree.Text" xml:space="preserve">
+    <value>显示类别树</value>
+  </data>
+  <data name="this.Text" xml:space="preserve">
+    <value>技能探索者 - 该技能有什么用？</value>
+  </data>
+</root>

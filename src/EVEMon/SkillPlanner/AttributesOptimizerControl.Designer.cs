@@ -107,7 +107,7 @@ namespace EVEMon.SkillPlanner
             this.lblImplants.Name = "lblImplants";
             this.lblImplants.Size = new System.Drawing.Size(65, 16);
             this.lblImplants.TabIndex = 60;
-            this.lblImplants.Text = "Implants";
+            this.lblImplants.Text = resources.GetString("this.lblImplants.Text");
             this.lblImplants.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox5
@@ -222,7 +222,7 @@ namespace EVEMon.SkillPlanner
             this.lblMemory.Name = "lblMemory";
             this.lblMemory.Size = new System.Drawing.Size(44, 13);
             this.lblMemory.TabIndex = 47;
-            this.lblMemory.Text = "Memory";
+            this.lblMemory.Text = resources.GetString("this.lblMemory.Text");
             // 
             // lblWillpower
             // 
@@ -231,7 +231,7 @@ namespace EVEMon.SkillPlanner
             this.lblWillpower.Name = "lblWillpower";
             this.lblWillpower.Size = new System.Drawing.Size(53, 13);
             this.lblWillpower.TabIndex = 45;
-            this.lblWillpower.Text = "Willpower";
+            this.lblWillpower.Text = resources.GetString("this.lblWillpower.Text");
             // 
             // lblCharisma
             // 
@@ -240,7 +240,7 @@ namespace EVEMon.SkillPlanner
             this.lblCharisma.Name = "lblCharisma";
             this.lblCharisma.Size = new System.Drawing.Size(50, 13);
             this.lblCharisma.TabIndex = 43;
-            this.lblCharisma.Text = "Charisma";
+            this.lblCharisma.Text = resources.GetString("this.lblCharisma.Text");
             // 
             // lblPerception
             // 
@@ -249,7 +249,7 @@ namespace EVEMon.SkillPlanner
             this.lblPerception.Name = "lblPerception";
             this.lblPerception.Size = new System.Drawing.Size(58, 13);
             this.lblPerception.TabIndex = 41;
-            this.lblPerception.Text = "Perception";
+            this.lblPerception.Text = resources.GetString("this.lblPerception.Text");
             // 
             // lblIntelligence
             // 
@@ -258,7 +258,7 @@ namespace EVEMon.SkillPlanner
             this.lblIntelligence.Name = "lblIntelligence";
             this.lblIntelligence.Size = new System.Drawing.Size(61, 13);
             this.lblIntelligence.TabIndex = 39;
-            this.lblIntelligence.Text = "Intelligence";
+            this.lblIntelligence.Text = resources.GetString("this.lblIntelligence.Text");
             // 
             // lblBase
             // 
@@ -266,7 +266,7 @@ namespace EVEMon.SkillPlanner
             this.lblBase.Name = "lblBase";
             this.lblBase.Size = new System.Drawing.Size(108, 16);
             this.lblBase.TabIndex = 59;
-            this.lblBase.Text = "Remappable";
+            this.lblBase.Text = resources.GetString("this.lblBase.Text");
             this.lblBase.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbMEM
@@ -276,7 +276,7 @@ namespace EVEMon.SkillPlanner
             this.lbMEM.Name = "lbMEM";
             this.lbMEM.Size = new System.Drawing.Size(57, 13);
             this.lbMEM.TabIndex = 48;
-            this.lbMEM.Text = "Points : 20";
+            this.lbMEM.Text = resources.GetString("this.lbMEM.Text");
             // 
             // lbWIL
             // 
@@ -285,7 +285,7 @@ namespace EVEMon.SkillPlanner
             this.lbWIL.Name = "lbWIL";
             this.lbWIL.Size = new System.Drawing.Size(57, 13);
             this.lbWIL.TabIndex = 46;
-            this.lbWIL.Text = "Points : 20";
+            this.lbWIL.Text = resources.GetString("this.lbWIL.Text");
             // 
             // lbCHA
             // 
@@ -294,7 +294,7 @@ namespace EVEMon.SkillPlanner
             this.lbCHA.Name = "lbCHA";
             this.lbCHA.Size = new System.Drawing.Size(57, 13);
             this.lbCHA.TabIndex = 44;
-            this.lbCHA.Text = "Points : 20";
+            this.lbCHA.Text = resources.GetString("this.lbCHA.Text");
             // 
             // lbPER
             // 
@@ -303,7 +303,7 @@ namespace EVEMon.SkillPlanner
             this.lbPER.Name = "lbPER";
             this.lbPER.Size = new System.Drawing.Size(57, 13);
             this.lbPER.TabIndex = 42;
-            this.lbPER.Text = "Points : 20";
+            this.lbPER.Text = resources.GetString("this.lbPER.Text");
             // 
             // lbINT
             // 
@@ -312,7 +312,7 @@ namespace EVEMon.SkillPlanner
             this.lbINT.Name = "lbINT";
             this.lbINT.Size = new System.Drawing.Size(113, 13);
             this.lbINT.TabIndex = 40;
-            this.lbINT.Text = "20 (new : 18 ; old : 17)";
+            this.lbINT.Text = resources.GetString("this.lbINT.Text");
             // 
             // tblayoutComparePanel
             // 
@@ -343,7 +343,7 @@ namespace EVEMon.SkillPlanner
             this.lbGain.Name = "lbGain";
             this.lbGain.Size = new System.Drawing.Size(156, 13);
             this.lbGain.TabIndex = 17;
-            this.lbGain.Text = "Your skills are already optimized";
+            this.lbGain.Text = resources.GetString("this.lbGain.Text");
             // 
             // lbOptimizedTimeInfo
             // 
@@ -353,7 +353,7 @@ namespace EVEMon.SkillPlanner
             this.lbOptimizedTimeInfo.Name = "lbOptimizedTimeInfo";
             this.lbOptimizedTimeInfo.Size = new System.Drawing.Size(110, 13);
             this.lbOptimizedTimeInfo.TabIndex = 16;
-            this.lbOptimizedTimeInfo.Text = "With these attributes :";
+            this.lbOptimizedTimeInfo.Text = resources.GetString("this.lbOptimizedTimeInfo.Text");
             // 
             // lbCurrentTime
             // 
@@ -363,7 +363,7 @@ namespace EVEMon.SkillPlanner
             this.lbCurrentTime.Name = "lbCurrentTime";
             this.lbCurrentTime.Size = new System.Drawing.Size(50, 13);
             this.lbCurrentTime.TabIndex = 19;
-            this.lbCurrentTime.Text = "0h 0m 0s";
+            this.lbCurrentTime.Text = resources.GetString("this.lbCurrentTime.Text");
             // 
             // lbOptimizedTime
             // 
@@ -383,7 +383,7 @@ namespace EVEMon.SkillPlanner
             this.lbCurrentTimeInfo.Name = "lbCurrentTimeInfo";
             this.lbCurrentTimeInfo.Size = new System.Drawing.Size(69, 13);
             this.lbCurrentTimeInfo.TabIndex = 15;
-            this.lbCurrentTimeInfo.Text = "Current time :";
+            this.lbCurrentTimeInfo.Text = resources.GetString("this.lbCurrentTimeInfo.Text");
             // 
             // lbWarning
             // 
@@ -397,7 +397,7 @@ namespace EVEMon.SkillPlanner
             this.lbWarning.Name = "lbWarning";
             this.lbWarning.Size = new System.Drawing.Size(159, 26);
             this.lbWarning.TabIndex = 74;
-            this.lbWarning.Text = "Training will be complete before   the end of 12 month period.";
+            this.lbWarning.Text = resources.GetString("this.lbWarning.Text");
             this.lbWarning.Visible = false;
             // 
             // buttonCurrent
@@ -406,7 +406,7 @@ namespace EVEMon.SkillPlanner
             this.buttonCurrent.Name = "buttonCurrent";
             this.buttonCurrent.Size = new System.Drawing.Size(117, 23);
             this.buttonCurrent.TabIndex = 75;
-            this.buttonCurrent.Text = "Reset to current";
+            this.buttonCurrent.Text = resources.GetString("this.buttonCurrent.Text");
             this.buttonCurrent.UseVisualStyleBackColor = true;
             this.buttonCurrent.Click += new System.EventHandler(this.buttonCurrent_Click);
             // 
@@ -417,7 +417,7 @@ namespace EVEMon.SkillPlanner
             this.lblUnassignedAttributePoints.Name = "lblUnassignedAttributePoints";
             this.lblUnassignedAttributePoints.Size = new System.Drawing.Size(140, 13);
             this.lblUnassignedAttributePoints.TabIndex = 77;
-            this.lblUnassignedAttributePoints.Text = "Unassigned Attribute Points:";
+            this.lblUnassignedAttributePoints.Text = resources.GetString("this.lblUnassignedAttributePoints.Text");
             // 
             // buttonOptimize
             // 
@@ -425,7 +425,7 @@ namespace EVEMon.SkillPlanner
             this.buttonOptimize.Name = "buttonOptimize";
             this.buttonOptimize.Size = new System.Drawing.Size(117, 23);
             this.buttonOptimize.TabIndex = 79;
-            this.buttonOptimize.Text = "Optimized";
+            this.buttonOptimize.Text = resources.GetString("this.buttonOptimize.Text");
             this.buttonOptimize.UseVisualStyleBackColor = true;
             this.buttonOptimize.Click += new System.EventHandler(this.buttonOptimize_Click);
             // 
@@ -441,7 +441,7 @@ namespace EVEMon.SkillPlanner
             this.lblNotice.Name = "lblNotice";
             this.lblNotice.Size = new System.Drawing.Size(294, 13);
             this.lblNotice.TabIndex = 112;
-            this.lblNotice.Text = "Notice! This is not the active \"Implant Set\" of your character.";
+            this.lblNotice.Text = resources.GetString("this.lblNotice.Text");
             this.lblNotice.Visible = false;
             // 
             // labelDescription
@@ -454,7 +454,7 @@ namespace EVEMon.SkillPlanner
             this.labelDescription.Padding = new System.Windows.Forms.Padding(8);
             this.labelDescription.Size = new System.Drawing.Size(98, 29);
             this.labelDescription.TabIndex = 113;
-            this.labelDescription.Text = "labelDescription";
+            this.labelDescription.Text = resources.GetString("this.labelDescription.Text");
             // 
             // abMEMInc
             // 
@@ -708,7 +708,7 @@ namespace EVEMon.SkillPlanner
             this.lblBooster.Name = "lblBooster";
             this.lblBooster.Size = new System.Drawing.Size(103, 16);
             this.lblBooster.TabIndex = 119;
-            this.lblBooster.Text = "Active Booster: +99";
+            this.lblBooster.Text = resources.GetString("this.lblBooster.Text");
             this.lblBooster.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AttributesOptimizerControl

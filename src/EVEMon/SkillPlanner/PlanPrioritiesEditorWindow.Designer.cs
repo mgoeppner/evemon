@@ -66,7 +66,7 @@ namespace EVEMon.SkillPlanner
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Priority";
+            this.label1.Text = resources.GetString("this.label1.Text");
             // 
             // btnCancel
             // 
@@ -76,7 +76,7 @@ namespace EVEMon.SkillPlanner
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 4;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = resources.GetString("this.btnCancel.Text");
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // btnOk
@@ -86,7 +86,7 @@ namespace EVEMon.SkillPlanner
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
             this.btnOk.TabIndex = 3;
-            this.btnOk.Text = "OK";
+            this.btnOk.Text = resources.GetString("this.btnOk.Text");
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
@@ -113,7 +113,7 @@ namespace EVEMon.SkillPlanner
             this.Controls.Add(this.label2);
             this.Name = "PlanPrioritiesEditorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Change Plan Entry Priorty";
+            this.Text = resources.GetString("this.Text");
             this.Load += new System.EventHandler(this.ChangePriorityForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudPriority)).EndInit();
             this.ResumeLayout(false);

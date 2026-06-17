@@ -62,7 +62,7 @@ namespace EVEMon.SkillPlanner
             this.btnAddSkills.Name = "btnAddSkills";
             this.btnAddSkills.Size = new System.Drawing.Size(88, 23);
             this.btnAddSkills.TabIndex = 0;
-            this.btnAddSkills.Text = "Add All To Plan";
+            this.btnAddSkills.Text = resources.GetString("this.btnAddSkills.Text");
             this.btnAddSkills.UseVisualStyleBackColor = true;
             this.btnAddSkills.Click += new System.EventHandler(this.btnAddSkills_Click);
             // 
@@ -84,7 +84,7 @@ namespace EVEMon.SkillPlanner
             this.lblTimeRequired.Name = "lblTimeRequired";
             this.lblTimeRequired.Size = new System.Drawing.Size(71, 13);
             this.lblTimeRequired.TabIndex = 1;
-            this.lblTimeRequired.Text = "Time required";
+            this.lblTimeRequired.Text = resources.GetString("this.lblTimeRequired.Text");
             // 
             // panel2
             // 
@@ -121,48 +121,48 @@ namespace EVEMon.SkillPlanner
             this.planToMenu.Image = ((System.Drawing.Image)(resources.GetObject("planToMenu.Image")));
             this.planToMenu.Name = "planToMenu";
             this.planToMenu.Size = new System.Drawing.Size(194, 22);
-            this.planToMenu.Text = "&Plan to...";
+            this.planToMenu.Text = resources.GetString("this.planToMenu.Text");
             // 
             // level0ToolStripMenuItem
             // 
             this.level0ToolStripMenuItem.Name = "level0ToolStripMenuItem";
             this.level0ToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-            this.level0ToolStripMenuItem.Text = "&Remove";
+            this.level0ToolStripMenuItem.Text = resources.GetString("this.level0ToolStripMenuItem.Text");
             this.level0ToolStripMenuItem.Click += new System.EventHandler(this.planToMenuItem_Click);
             // 
             // level1ToolStripMenuItem
             // 
             this.level1ToolStripMenuItem.Name = "level1ToolStripMenuItem";
             this.level1ToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-            this.level1ToolStripMenuItem.Text = "Level &1";
+            this.level1ToolStripMenuItem.Text = resources.GetString("this.level1ToolStripMenuItem.Text");
             this.level1ToolStripMenuItem.Click += new System.EventHandler(this.planToMenuItem_Click);
             // 
             // level2ToolStripMenuItem
             // 
             this.level2ToolStripMenuItem.Name = "level2ToolStripMenuItem";
             this.level2ToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-            this.level2ToolStripMenuItem.Text = "Level &2";
+            this.level2ToolStripMenuItem.Text = resources.GetString("this.level2ToolStripMenuItem.Text");
             this.level2ToolStripMenuItem.Click += new System.EventHandler(this.planToMenuItem_Click);
             // 
             // level3ToolStripMenuItem
             // 
             this.level3ToolStripMenuItem.Name = "level3ToolStripMenuItem";
             this.level3ToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-            this.level3ToolStripMenuItem.Text = "Level &3";
+            this.level3ToolStripMenuItem.Text = resources.GetString("this.level3ToolStripMenuItem.Text");
             this.level3ToolStripMenuItem.Click += new System.EventHandler(this.planToMenuItem_Click);
             // 
             // level4ToolStripMenuItem
             // 
             this.level4ToolStripMenuItem.Name = "level4ToolStripMenuItem";
             this.level4ToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-            this.level4ToolStripMenuItem.Text = "Level &4";
+            this.level4ToolStripMenuItem.Text = resources.GetString("this.level4ToolStripMenuItem.Text");
             this.level4ToolStripMenuItem.Click += new System.EventHandler(this.planToMenuItem_Click);
             // 
             // level5ToolStripMenuItem
             // 
             this.level5ToolStripMenuItem.Name = "level5ToolStripMenuItem";
             this.level5ToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-            this.level5ToolStripMenuItem.Text = "Level &5";
+            this.level5ToolStripMenuItem.Text = resources.GetString("this.level5ToolStripMenuItem.Text");
             this.level5ToolStripMenuItem.Click += new System.EventHandler(this.planToMenuItem_Click);
             // 
             // showInMenuSeparator
@@ -174,7 +174,7 @@ namespace EVEMon.SkillPlanner
             // 
             this.showInSkillBrowserMenu.Name = "showInSkillBrowserMenu";
             this.showInSkillBrowserMenu.Size = new System.Drawing.Size(194, 22);
-            this.showInSkillBrowserMenu.Text = "Show in Skill &Browser";
+            this.showInSkillBrowserMenu.Text = resources.GetString("this.showInSkillBrowserMenu.Text");
             this.showInSkillBrowserMenu.Click += new System.EventHandler(this.showInSkillBrowserMenu_Click);
             // 
             // showInSkillExplorerMenu
@@ -182,7 +182,7 @@ namespace EVEMon.SkillPlanner
             this.showInSkillExplorerMenu.Image = ((System.Drawing.Image)(resources.GetObject("showInSkillExplorerMenu.Image")));
             this.showInSkillExplorerMenu.Name = "showInSkillExplorerMenu";
             this.showInSkillExplorerMenu.Size = new System.Drawing.Size(194, 22);
-            this.showInSkillExplorerMenu.Text = "Show in Skill &Explorer...";
+            this.showInSkillExplorerMenu.Text = resources.GetString("this.showInSkillExplorerMenu.Text");
             this.showInSkillExplorerMenu.Click += new System.EventHandler(this.showInSkillExplorerMenu_Click);
             // 
             // tsSeparatorBrowser
@@ -194,14 +194,14 @@ namespace EVEMon.SkillPlanner
             // 
             this.tsmExpand.Name = "tsmExpand";
             this.tsmExpand.Size = new System.Drawing.Size(194, 22);
-            this.tsmExpand.Text = "&Expand all";
+            this.tsmExpand.Text = resources.GetString("this.tsmExpand.Text");
             this.tsmExpand.Click += new System.EventHandler(this.tsmExpandAll_Click);
             // 
             // tsmCollapse
             // 
             this.tsmCollapse.Name = "tsmCollapse";
             this.tsmCollapse.Size = new System.Drawing.Size(194, 22);
-            this.tsmCollapse.Text = "&Collapse all";
+            this.tsmCollapse.Text = resources.GetString("this.tsmCollapse.Text");
             this.tsmCollapse.Click += new System.EventHandler(this.tsmCollapseAll_Click);
             // 
             // ilIcons

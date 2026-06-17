@@ -470,4 +470,73 @@
         fzblsiKhnEkYfCITbDg+VGbxF8mwYf8FXNyO9VVdS+0AAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="this.lblImplants.Text" xml:space="preserve">
+    <value>Implants</value>
+  </data>
+  <data name="this.lblMemory.Text" xml:space="preserve">
+    <value>Memory</value>
+  </data>
+  <data name="this.lblWillpower.Text" xml:space="preserve">
+    <value>Willpower</value>
+  </data>
+  <data name="this.lblCharisma.Text" xml:space="preserve">
+    <value>Charisma</value>
+  </data>
+  <data name="this.lblPerception.Text" xml:space="preserve">
+    <value>Perception</value>
+  </data>
+  <data name="this.lblIntelligence.Text" xml:space="preserve">
+    <value>Intelligence</value>
+  </data>
+  <data name="this.lblBase.Text" xml:space="preserve">
+    <value>Remappable</value>
+  </data>
+  <data name="this.lbMEM.Text" xml:space="preserve">
+    <value>Points : 20</value>
+  </data>
+  <data name="this.lbWIL.Text" xml:space="preserve">
+    <value>Points : 20</value>
+  </data>
+  <data name="this.lbCHA.Text" xml:space="preserve">
+    <value>Points : 20</value>
+  </data>
+  <data name="this.lbPER.Text" xml:space="preserve">
+    <value>Points : 20</value>
+  </data>
+  <data name="this.lbINT.Text" xml:space="preserve">
+    <value>20 (new : 18 ; old : 17)</value>
+  </data>
+  <data name="this.lbGain.Text" xml:space="preserve">
+    <value>Your skills are already optimized</value>
+  </data>
+  <data name="this.lbOptimizedTimeInfo.Text" xml:space="preserve">
+    <value>With these attributes :</value>
+  </data>
+  <data name="this.lbCurrentTime.Text" xml:space="preserve">
+    <value>0h 0m 0s</value>
+  </data>
+  <data name="this.lbCurrentTimeInfo.Text" xml:space="preserve">
+    <value>Current time :</value>
+  </data>
+  <data name="this.lbWarning.Text" xml:space="preserve">
+    <value>Training will be complete before   the end of 12 month period.</value>
+  </data>
+  <data name="this.buttonCurrent.Text" xml:space="preserve">
+    <value>Reset to current</value>
+  </data>
+  <data name="this.lblUnassignedAttributePoints.Text" xml:space="preserve">
+    <value>Unassigned Attribute Points:</value>
+  </data>
+  <data name="this.buttonOptimize.Text" xml:space="preserve">
+    <value>Optimized</value>
+  </data>
+  <data name="this.lblNotice.Text" xml:space="preserve">
+    <value>Notice! This is not the active "Implant Set" of your character.</value>
+  </data>
+  <data name="this.labelDescription.Text" xml:space="preserve">
+    <value>labelDescription</value>
+  </data>
+  <data name="this.lblBooster.Text" xml:space="preserve">
+    <value>Active Booster: +99</value>
+  </data>
 </root>

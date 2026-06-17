@@ -163,7 +163,7 @@
             this.KillTimeLabel.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.KillTimeLabel.Size = new System.Drawing.Size(46, 16);
             this.KillTimeLabel.TabIndex = 5;
-            this.KillTimeLabel.Text = "Kill Time";
+            this.KillTimeLabel.Text = resources.GetString("this.KillTimeLabel.Text");
             // 
             // SolarSystemFlowLayoutPanel
             // 
@@ -191,7 +191,7 @@
             this.SolarSystemLabel.Name = "SolarSystemLabel";
             this.SolarSystemLabel.Size = new System.Drawing.Size(80, 13);
             this.SolarSystemLabel.TabIndex = 0;
-            this.SolarSystemLabel.Text = "Solar System";
+            this.SolarSystemLabel.Text = resources.GetString("this.SolarSystemLabel.Text");
             // 
             // SecStatusLabel
             // 
@@ -222,7 +222,7 @@
             this.ConstelationLabel.Name = "ConstelationLabel";
             this.ConstelationLabel.Size = new System.Drawing.Size(77, 13);
             this.ConstelationLabel.TabIndex = 2;
-            this.ConstelationLabel.Text = "Constelation";
+            this.ConstelationLabel.Text = resources.GetString("this.ConstelationLabel.Text");
             // 
             // Separator2Label
             // 
@@ -243,7 +243,7 @@
             this.RegionLabel.Name = "RegionLabel";
             this.RegionLabel.Size = new System.Drawing.Size(47, 13);
             this.RegionLabel.TabIndex = 5;
-            this.RegionLabel.Text = "Region";
+            this.RegionLabel.Text = resources.GetString("this.RegionLabel.Text");
             // 
             // CorpAllianceFlowLayoutPanel
             // 
@@ -266,7 +266,7 @@
             this.CorpNameLabel.Name = "CorpNameLabel";
             this.CorpNameLabel.Size = new System.Drawing.Size(108, 13);
             this.CorpNameLabel.TabIndex = 4;
-            this.CorpNameLabel.Text = "Corporation Name";
+            this.CorpNameLabel.Text = resources.GetString("this.CorpNameLabel.Text");
             // 
             // AllianceNameLabel
             // 
@@ -276,7 +276,7 @@
             this.AllianceNameLabel.Name = "AllianceNameLabel";
             this.AllianceNameLabel.Size = new System.Drawing.Size(88, 13);
             this.AllianceNameLabel.TabIndex = 5;
-            this.AllianceNameLabel.Text = "Alliance Name";
+            this.AllianceNameLabel.Text = resources.GetString("this.AllianceNameLabel.Text");
             // 
             // ShipNameGroupFlowLayoutPanel
             // 
@@ -300,7 +300,7 @@
             this.ShipNameLabel.Name = "ShipNameLabel";
             this.ShipNameLabel.Size = new System.Drawing.Size(68, 13);
             this.ShipNameLabel.TabIndex = 3;
-            this.ShipNameLabel.Text = "Ship Name";
+            this.ShipNameLabel.Text = resources.GetString("this.ShipNameLabel.Text");
             // 
             // ShipGroupLabel
             // 
@@ -332,7 +332,7 @@
             this.CopyPictureBox.Size = new System.Drawing.Size(16, 16);
             this.CopyPictureBox.TabIndex = 1;
             this.CopyPictureBox.TabStop = false;
-            this.toolTip.SetToolTip(this.CopyPictureBox, "Copy Kill Information to Clipboard");
+            this.toolTip.SetToolTip(this.CopyPictureBox, resources.GetString("this.CopyPictureBox.ToolTip"));
             this.CopyPictureBox.Click += new System.EventHandler(this.CopyPictureBox_Click);
             // 
             // CharacterNameLabel
@@ -344,7 +344,7 @@
             this.CharacterNameLabel.Name = "CharacterNameLabel";
             this.CharacterNameLabel.Size = new System.Drawing.Size(146, 20);
             this.CharacterNameLabel.TabIndex = 0;
-            this.CharacterNameLabel.Text = "Character Name";
+            this.CharacterNameLabel.Text = resources.GetString("this.CharacterNameLabel.Text");
             // 
             // contextMenuStrip
             // 
@@ -357,7 +357,7 @@
             // 
             this.showInShipBrowserMenuItem.Name = "showInShipBrowserMenuItem";
             this.showInShipBrowserMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.showInShipBrowserMenuItem.Text = "Show In Ship Browser...";
+            this.showInShipBrowserMenuItem.Text = resources.GetString("this.showInShipBrowserMenuItem.Text");
             this.showInShipBrowserMenuItem.Click += new System.EventHandler(this.showInShipBrowserMenuItem_Click);
             // 
             // KillReportVictim

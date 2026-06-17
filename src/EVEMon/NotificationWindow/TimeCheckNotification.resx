@@ -161,4 +161,34 @@
   <data name="uxMessageLabel1.Text" xml:space="preserve">
     <value>EVEMon checked your system's time compared to NIST and found that they do not agree on what your current time is. This may be because your Time Zone is not set correctly, or your clock is set to the wrong time. </value>
   </data>
+  <data name="this.uxCloseButton.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="this.uxTitleLabel.Text" xml:space="preserve">
+    <value>Your system\'s clock settings may be wrong.</value>
+  </data>
+  <data name="this.uxTimeZoneLabel.Text" xml:space="preserve">
+    <value>Your Time Zone:</value>
+  </data>
+  <data name="this.uxExpectedTimeLabel.Text" xml:space="preserve">
+    <value>Expected Time:</value>
+  </data>
+  <data name="this.uxActualTimeLabel.Text" xml:space="preserve">
+    <value>Your Actual Time:</value>
+  </data>
+  <data name="this.uxTimeZoneField.Text" xml:space="preserve">
+    <value>TimeZone</value>
+  </data>
+  <data name="this.uxExpectedTimeField.Text" xml:space="preserve">
+    <value>ServerTime</value>
+  </data>
+  <data name="this.uxActualTimeField.Text" xml:space="preserve">
+    <value>SystemTime</value>
+  </data>
+  <data name="this.uxCheckTimeOnStartUpCheckBox.Text" xml:space="preserve">
+    <value>Check my system\'s clock when EVEMon starts</value>
+  </data>
+  <data name="this.Text" xml:space="preserve">
+    <value>Time Synchronisation Problem</value>
+  </data>
 </root>

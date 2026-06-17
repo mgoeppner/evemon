@@ -134,4 +134,34 @@
         AgAB/AE/AfgBHwL/AgAB/gF/AfABDwL/AgAG/wIABv8CAAb/AgAG/wIABv8CAAb/AgAL
 </value>
   </data>
+  <data name="this.noAssetsLabel.Text" xml:space="preserve">
+    <value>No assets are available.</value>
+  </data>
+  <data name="this.chItem.Text" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="this.chQuantity.Text" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="this.chVolume.Text" xml:space="preserve">
+    <value>Volume</value>
+  </data>
+  <data name="this.chGroup.Text" xml:space="preserve">
+    <value>Group</value>
+  </data>
+  <data name="this.chCategory.Text" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="this.exportToCSVToolStripMenuItem.Text" xml:space="preserve">
+    <value>Export to CSV...</value>
+  </data>
+  <data name="this.noPricesFoundLabel.Text" xml:space="preserve">
+    <value>* Prices for some items could not be found.</value>
+  </data>
+  <data name="this.lblTotalCost.Text" xml:space="preserve">
+    <value>Estimated Cost of shown items: {0:N2} ISK</value>
+  </data>
+  <data name="this.showInBrowserMenuItem.Text" xml:space="preserve">
+    <value>Show In Browser...</value>
+  </data>
 </root>

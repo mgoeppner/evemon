@@ -137,4 +137,19 @@
   <metadata name="timer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>98, 17</value>
   </metadata>
+  <data name="this.chSenderName.Text" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="this.chType.Text" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="this.chSentDate.Text" xml:space="preserve">
+    <value>Received</value>
+  </data>
+  <data name="this.exportToCSVToolStripMenuItem.Text" xml:space="preserve">
+    <value>Export To CSV...</value>
+  </data>
+  <data name="this.noEVENotificationsLabel.Text" xml:space="preserve">
+    <value>No EVE notifications are available.</value>
+  </data>
 </root>

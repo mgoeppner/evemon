@@ -124,4 +124,13 @@ After selecting an item, you can compare similar items.
 To do this,  hold down your CTRL key and click the item you wish to compare. 
 You may compare several items at once.</value>
   </data>
+  <data name="this.gbDescription.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="this.lblEveObjCategory.Text" xml:space="preserve">
+    <value>EveObject Category</value>
+  </data>
+  <data name="this.lblEveObjName.Text" xml:space="preserve">
+    <value>EveObject Name</value>
+  </data>
 </root>

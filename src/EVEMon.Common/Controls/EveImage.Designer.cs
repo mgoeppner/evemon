@@ -48,7 +48,7 @@ namespace EVEMon.Common.Controls
             this.pbImage.TabStop = false;
             this.pbImage.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pbImage_MouseDoubleClick);
             this.pbImage.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pbImage_MouseClick);
-            this.toolTip.SetToolTip(this.pbImage, "Double-click to view a larger image");
+            this.toolTip.SetToolTip(this.pbImage, resources.GetString("this.pbImage.ToolTip"));
             // 
             // overlayImageList
             // 

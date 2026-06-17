@@ -76,6 +76,7 @@ namespace EVEMon
             // Initialization
             EveMonClient.Initialize();
             Settings.Initialize();
+            LocalizationHelper.ApplyCulture(Settings.Language);
 
             // Did something requested an exit before we entered Run() ?
             if (s_exitRequested)

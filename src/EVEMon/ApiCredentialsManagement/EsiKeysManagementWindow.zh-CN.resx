@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Name1" xml:space="preserve">
+    <value>这是我的长绳子</value>
+  </data>
+  <data name="this.esiKeysLabel.Text" xml:space="preserve">
+    <value>ESI键</value>
+  </data>
+  <data name="this.charactersLabel.Text" xml:space="preserve">
+    <value>人物</value>
+  </data>
+  <data name="this.esiKeyListLabel.Text" xml:space="preserve">
+    <value>首先使用上述按钮添加您的 ESI 密钥。</value>
+  </data>
+  <data name="this.closeButton.Text" xml:space="preserve">
+    <value>关闭(&amp;C)</value>
+  </data>
+  <data name="this.charactersTabPage.Text" xml:space="preserve">
+    <value>人物</value>
+  </data>
+  <data name="this.charactersListPage.Text" xml:space="preserve">
+    <value>字符列表页</value>
+  </data>
+  <data name="this.columnType.Text" xml:space="preserve">
+    <value>类型</value>
+  </data>
+  <data name="this.columnID.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="this.columnName.Text" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="this.columnESIKeyID.Text" xml:space="preserve">
+    <value>钥匙编号</value>
+  </data>
+  <data name="this.columnStatus.Text" xml:space="preserve">
+    <value>状态</value>
+  </data>
+  <data name="this.columnUri.Text" xml:space="preserve">
+    <value>乌里</value>
+  </data>
+  <data name="this.noCharactersPage.Text" xml:space="preserve">
+    <value>无字符页</value>
+  </data>
+  <data name="this.importCharacterMenu.Text" xml:space="preserve">
+    <value>&amp;Import...</value>
+  </data>
+  <data name="this.deleteCharacterMenu.Text" xml:space="preserve">
+    <value>删除(&amp;D)...</value>
+  </data>
+  <data name="this.editUriMenu.Text" xml:space="preserve">
+    <value>编辑 Uri(&amp;E)...</value>
+  </data>
+  <data name="this.groupingMenu.Text" xml:space="preserve">
+    <value>字符组(&amp;G)</value>
+  </data>
+  <data name="this.esiKeysTabPage.Text" xml:space="preserve">
+    <value>ESI键</value>
+  </data>
+  <data name="this.addESIKeyMenu.Text" xml:space="preserve">
+    <value>添加(&amp;A)...</value>
+  </data>
+  <data name="this.deleteESIKeyMenu.Text" xml:space="preserve">
+    <value>删除(&amp;D)...</value>
+  </data>
+  <data name="this.editESIKeyMenu.Text" xml:space="preserve">
+    <value>编辑(&amp;E)...</value>
+  </data>
+  <data name="this.Text" xml:space="preserve">
+    <value>ESI 密钥管理</value>
+  </data>
+</root>

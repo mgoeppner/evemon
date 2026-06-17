@@ -64,7 +64,7 @@ namespace EVEMon.DetailsWindow
             this.BidsButton.Name = "BidsButton";
             this.BidsButton.Size = new System.Drawing.Size(95, 23);
             this.BidsButton.TabIndex = 1;
-            this.BidsButton.Text = "Show Bids";
+            this.BidsButton.Text = resources.GetString("this.BidsButton.Text");
             this.BidsButton.UseVisualStyleBackColor = true;
             this.BidsButton.Click += new System.EventHandler(this.BidsButton_Click);
             // 
@@ -124,7 +124,7 @@ namespace EVEMon.DetailsWindow
             this.CurrentToStartLinkLabel.Size = new System.Drawing.Size(59, 17);
             this.CurrentToStartLinkLabel.TabIndex = 9;
             this.CurrentToStartLinkLabel.TabStop = true;
-            this.CurrentToStartLinkLabel.Text = "show route";
+            this.CurrentToStartLinkLabel.Text = resources.GetString("this.CurrentToStartLinkLabel.Text");
             this.CurrentToStartLinkLabel.UseCompatibleTextRendering = true;
             this.CurrentToStartLinkLabel.Visible = false;
             this.CurrentToStartLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.CurrentToStartLinkLabel_LinkClicked);
@@ -138,7 +138,7 @@ namespace EVEMon.DetailsWindow
             this.CurrentToEndLinkLabel.Size = new System.Drawing.Size(59, 17);
             this.CurrentToEndLinkLabel.TabIndex = 10;
             this.CurrentToEndLinkLabel.TabStop = true;
-            this.CurrentToEndLinkLabel.Text = "show route";
+            this.CurrentToEndLinkLabel.Text = resources.GetString("this.CurrentToEndLinkLabel.Text");
             this.CurrentToEndLinkLabel.UseCompatibleTextRendering = true;
             this.CurrentToEndLinkLabel.Visible = false;
             this.CurrentToEndLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.CurrentToEndLinkLabel_LinkClicked);
@@ -152,7 +152,7 @@ namespace EVEMon.DetailsWindow
             this.StartToEndLinkLabel.Size = new System.Drawing.Size(59, 17);
             this.StartToEndLinkLabel.TabIndex = 11;
             this.StartToEndLinkLabel.TabStop = true;
-            this.StartToEndLinkLabel.Text = "show route";
+            this.StartToEndLinkLabel.Text = resources.GetString("this.StartToEndLinkLabel.Text");
             this.StartToEndLinkLabel.UseCompatibleTextRendering = true;
             this.StartToEndLinkLabel.Visible = false;
             this.StartToEndLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.StartToEndLinkLabel_LinkClicked);
@@ -184,7 +184,7 @@ namespace EVEMon.DetailsWindow
             this.MaximumSize = new System.Drawing.Size(480, 1280);
             this.MinimumSize = new System.Drawing.Size(480, 465);
             this.Name = "ContractDetailsWindow";
-            this.Text = "Contract Details";
+            this.Text = resources.GetString("this.Text");
             this.ButtonPanel.ResumeLayout(false);
             this.RoutePanelParent.ResumeLayout(false);
             this.ResumeLayout(false);

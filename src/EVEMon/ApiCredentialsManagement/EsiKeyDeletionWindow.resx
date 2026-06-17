@@ -158,4 +158,22 @@
         JP41yQEi7v98+w927K1tbAtjLPB/l3OEO2LTS/UAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="this.deletionLabel.Text" xml:space="preserve">
+    <value>You are about to delete the ESI key with ID : {0}.</value>
+  </data>
+  <data name="this.cancelButton.Text" xml:space="preserve">
+    <value>&amp;Cancel</value>
+  </data>
+  <data name="this.deleteButton.Text" xml:space="preserve">
+    <value>&amp;Delete</value>
+  </data>
+  <data name="this.deleteWarningLabel.Text" xml:space="preserve">
+    <value>Removing characters means losing all their data and plans!</value>
+  </data>
+  <data name="this.charactersListGroupBox.Text" xml:space="preserve">
+    <value>Select the characters you want to remove</value>
+  </data>
+  <data name="this.Text" xml:space="preserve">
+    <value>Delete an ESI key</value>
+  </data>
 </root>

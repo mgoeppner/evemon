@@ -199,4 +199,16 @@
         8QqlJwniFgAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="this.buttonWholePlan.Text" xml:space="preserve">
+    <value>Attributes that would be best for the first year of this plan.</value>
+  </data>
+  <data name="this.buttonRemappingPoints.Text" xml:space="preserve">
+    <value>Use the remapping points I set up.</value>
+  </data>
+  <data name="this.buttonCharacter.Text" xml:space="preserve">
+    <value>Attributes that would have been best for what I have trained so far.</value>
+  </data>
+  <data name="this.Text" xml:space="preserve">
+    <value>Attributes Optimizer Options</value>
+  </data>
 </root>

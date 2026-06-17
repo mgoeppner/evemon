@@ -67,21 +67,21 @@
             // 
             this.updatePicture.Name = "updatePicture";
             this.updatePicture.Size = new System.Drawing.Size(243, 22);
-            this.updatePicture.Text = "Update Portrait From The Web";
+            this.updatePicture.Text = resources.GetString("this.updatePicture.Text");
             this.updatePicture.Click += new System.EventHandler(this.miUpdatePicture_Click);
             // 
             // updatePictureFromEVECache
             // 
             this.updatePictureFromEVECache.Name = "updatePictureFromEVECache";
             this.updatePictureFromEVECache.Size = new System.Drawing.Size(243, 22);
-            this.updatePictureFromEVECache.Text = "Update Portrait From EVE Cache";
+            this.updatePictureFromEVECache.Text = resources.GetString("this.updatePictureFromEVECache.Text");
             this.updatePictureFromEVECache.Click += new System.EventHandler(this.miUpdatePictureFromEVECache_Click);
             // 
             // setEVEFolder
             // 
             this.setEVEFolder.Name = "setEVEFolder";
             this.setEVEFolder.Size = new System.Drawing.Size(243, 22);
-            this.setEVEFolder.Text = "Set Portrait Folder";
+            this.setEVEFolder.Text = resources.GetString("this.setEVEFolder.Text");
             this.setEVEFolder.Click += new System.EventHandler(this.miSetEVEFolder_Click);
             // 
             // CharacterPortrait

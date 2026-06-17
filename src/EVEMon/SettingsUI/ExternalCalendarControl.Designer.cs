@@ -97,7 +97,7 @@
             gbReminder.Size = new System.Drawing.Size(497, 111);
             gbReminder.TabIndex = 13;
             gbReminder.TabStop = false;
-            gbReminder.Text = "Reminder Setting";
+            gbReminder.Text = resources.GetString("gbReminder.Text");
             // 
             // lblMinutes
             // 
@@ -107,7 +107,7 @@
             lblMinutes.Name = "lblMinutes";
             lblMinutes.Size = new System.Drawing.Size(50, 15);
             lblMinutes.TabIndex = 11;
-            lblMinutes.Text = "minutes";
+            lblMinutes.Text = resources.GetString("lblMinutes.Text");
             // 
             // cbSetReminder
             // 
@@ -117,7 +117,7 @@
             cbSetReminder.Name = "cbSetReminder";
             cbSetReminder.Size = new System.Drawing.Size(96, 19);
             cbSetReminder.TabIndex = 6;
-            cbSetReminder.Text = "Use reminder";
+            cbSetReminder.Text = resources.GetString("cbSetReminder.Text");
             cbSetReminder.UseVisualStyleBackColor = true;
             cbSetReminder.Click += OnMustEnableOrDisable;
             // 
@@ -129,7 +129,7 @@
             lblLateReminder.Name = "lblLateReminder";
             lblLateReminder.Size = new System.Drawing.Size(86, 15);
             lblLateReminder.TabIndex = 6;
-            lblLateReminder.Text = "Late Reminder:";
+            lblLateReminder.Text = resources.GetString("lblLateReminder.Text");
             // 
             // dtpLateReminder
             // 
@@ -150,7 +150,7 @@
             lblEarlyReminder.Name = "lblEarlyReminder";
             lblEarlyReminder.Size = new System.Drawing.Size(89, 15);
             lblEarlyReminder.TabIndex = 4;
-            lblEarlyReminder.Text = "Early Reminder:";
+            lblEarlyReminder.Text = resources.GetString("lblEarlyReminder.Text");
             // 
             // tbReminder
             // 
@@ -170,7 +170,7 @@
             cbUseAlterateReminder.Name = "cbUseAlterateReminder";
             cbUseAlterateReminder.Size = new System.Drawing.Size(145, 19);
             cbUseAlterateReminder.TabIndex = 8;
-            cbUseAlterateReminder.Text = "Use alternate reminder";
+            cbUseAlterateReminder.Text = resources.GetString("cbUseAlterateReminder.Text");
             cbUseAlterateReminder.UseVisualStyleBackColor = true;
             cbUseAlterateReminder.Click += OnMustEnableOrDisable;
             // 
@@ -193,7 +193,7 @@
             cbLastQueuedSkillOnly.Name = "cbLastQueuedSkillOnly";
             cbLastQueuedSkillOnly.Size = new System.Drawing.Size(144, 19);
             cbLastQueuedSkillOnly.TabIndex = 12;
-            cbLastQueuedSkillOnly.Text = "Last Queued Skill Only";
+            cbLastQueuedSkillOnly.Text = resources.GetString("cbLastQueuedSkillOnly.Text");
             cbLastQueuedSkillOnly.UseVisualStyleBackColor = true;
             // 
             // rbGoogle
@@ -205,7 +205,7 @@
             rbGoogle.Name = "rbGoogle";
             rbGoogle.Size = new System.Drawing.Size(63, 19);
             rbGoogle.TabIndex = 2;
-            rbGoogle.Text = "Google";
+            rbGoogle.Text = resources.GetString("rbGoogle.Text");
             rbGoogle.UseVisualStyleBackColor = true;
             rbGoogle.CheckedChanged += rbGoogle_CheckedChanged;
             // 
@@ -228,7 +228,7 @@
             gbGoogle.Size = new System.Drawing.Size(498, 158);
             gbGoogle.TabIndex = 3;
             gbGoogle.TabStop = false;
-            gbGoogle.Text = "Google Information";
+            gbGoogle.Text = resources.GetString("gbGoogle.Text");
             // 
             // calendarIDLinkLabel
             // 
@@ -240,7 +240,7 @@
             calendarIDLinkLabel.Size = new System.Drawing.Size(436, 21);
             calendarIDLinkLabel.TabIndex = 12;
             calendarIDLinkLabel.TabStop = true;
-            calendarIDLinkLabel.Text = "Tip: Leave Calendar ID blank to use default calendar. How to find a Calendar ID.";
+            calendarIDLinkLabel.Text = resources.GetString("calendarIDLinkLabel.Text");
             calendarIDLinkLabel.UseCompatibleTextRendering = true;
             calendarIDLinkLabel.LinkClicked += calendarIDLinkLabel_LinkClicked;
             // 
@@ -252,7 +252,7 @@
             apiResponseLabel.Name = "apiResponseLabel";
             apiResponseLabel.Size = new System.Drawing.Size(484, 28);
             apiResponseLabel.TabIndex = 11;
-            apiResponseLabel.Text = "APIResponse";
+            apiResponseLabel.Text = resources.GetString("apiResponseLabel.Text");
             apiResponseLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnRevokeAuth
@@ -263,7 +263,7 @@
             btnRevokeAuth.Name = "btnRevokeAuth";
             btnRevokeAuth.Size = new System.Drawing.Size(88, 27);
             btnRevokeAuth.TabIndex = 9;
-            btnRevokeAuth.Text = "Reset";
+            btnRevokeAuth.Text = resources.GetString("btnRevokeAuth.Text");
             btnRevokeAuth.UseVisualStyleBackColor = true;
             btnRevokeAuth.Click += btnRevokeAuth_Click;
             // 
@@ -275,7 +275,7 @@
             btnRequestAuth.Name = "btnRequestAuth";
             btnRequestAuth.Size = new System.Drawing.Size(172, 27);
             btnRequestAuth.TabIndex = 8;
-            btnRequestAuth.Text = "Request Authentication";
+            btnRequestAuth.Text = resources.GetString("btnRequestAuth.Text");
             btnRequestAuth.UseVisualStyleBackColor = true;
             btnRequestAuth.Click += btnRequestAuth_Click;
             // 
@@ -297,7 +297,7 @@
             lblReminder.Name = "lblReminder";
             lblReminder.Size = new System.Drawing.Size(61, 15);
             lblReminder.TabIndex = 6;
-            lblReminder.Text = "Reminder:";
+            lblReminder.Text = resources.GetString("lblReminder.Text");
             // 
             // lblCalendarId
             // 
@@ -307,7 +307,7 @@
             lblCalendarId.Name = "lblCalendarId";
             lblCalendarId.Size = new System.Drawing.Size(71, 15);
             lblCalendarId.TabIndex = 5;
-            lblCalendarId.Text = "Calendar ID:";
+            lblCalendarId.Text = resources.GetString("lblCalendarId.Text");
             // 
             // tbGoogleCalendarName
             // 
@@ -317,7 +317,7 @@
             tbGoogleCalendarName.Name = "tbGoogleCalendarName";
             tbGoogleCalendarName.Size = new System.Drawing.Size(400, 23);
             tbGoogleCalendarName.TabIndex = 5;
-            tbGoogleCalendarName.Text = "primary";
+            tbGoogleCalendarName.Text = resources.GetString("tbGoogleCalendarName.Text");
             // 
             // throbber
             // 
@@ -346,7 +346,7 @@
             gbMSOutlook.Size = new System.Drawing.Size(498, 158);
             gbMSOutlook.TabIndex = 14;
             gbMSOutlook.TabStop = false;
-            gbMSOutlook.Text = "MS Outlook Information";
+            gbMSOutlook.Text = resources.GetString("gbMSOutlook.Text");
             // 
             // calendarPathExampleLabel
             // 
@@ -368,7 +368,7 @@
             rbCustomCalendar.Size = new System.Drawing.Size(139, 19);
             rbCustomCalendar.TabIndex = 3;
             rbCustomCalendar.TabStop = true;
-            rbCustomCalendar.Text = "Use Custom Calendar";
+            rbCustomCalendar.Text = resources.GetString("rbCustomCalendar.Text");
             rbCustomCalendar.UseVisualStyleBackColor = true;
             rbCustomCalendar.Click += OnMustEnableOrDisable;
             // 
@@ -382,7 +382,7 @@
             rbDefaultCalendar.Size = new System.Drawing.Size(135, 19);
             rbDefaultCalendar.TabIndex = 2;
             rbDefaultCalendar.TabStop = true;
-            rbDefaultCalendar.Text = "Use Default Calendar";
+            rbDefaultCalendar.Text = resources.GetString("rbDefaultCalendar.Text");
             rbDefaultCalendar.UseVisualStyleBackColor = true;
             rbDefaultCalendar.Click += OnMustEnableOrDisable;
             // 
@@ -404,7 +404,7 @@
             calendarPathLabel.Name = "calendarPathLabel";
             calendarPathLabel.Size = new System.Drawing.Size(84, 15);
             calendarPathLabel.TabIndex = 0;
-            calendarPathLabel.Text = "Calendar Path:";
+            calendarPathLabel.Text = resources.GetString("calendarPathLabel.Text");
             // 
             // ExternalCalendarControl
             // 

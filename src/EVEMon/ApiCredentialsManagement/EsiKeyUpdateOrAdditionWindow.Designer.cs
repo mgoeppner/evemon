@@ -111,7 +111,7 @@ namespace EVEMon.ApiCredentialsManagement
 			this.ButtonNext.Name = "ButtonNext";
 			this.ButtonNext.Size = new System.Drawing.Size(75, 23);
 			this.ButtonNext.TabIndex = 1;
-			this.ButtonNext.Text = "&Next >";
+			this.ButtonNext.Text = resources.GetString("this.ButtonNext.Text");
 			this.ButtonNext.UseVisualStyleBackColor = true;
 			this.ButtonNext.Click += new System.EventHandler(this.ButtonNext_Click);
 			// 
@@ -123,7 +123,7 @@ namespace EVEMon.ApiCredentialsManagement
 			this.ButtonPrevious.Name = "ButtonPrevious";
 			this.ButtonPrevious.Size = new System.Drawing.Size(75, 23);
 			this.ButtonPrevious.TabIndex = 0;
-			this.ButtonPrevious.Text = "< &Previous";
+			this.ButtonPrevious.Text = resources.GetString("this.ButtonPrevious.Text");
 			this.ButtonPrevious.UseVisualStyleBackColor = true;
 			this.ButtonPrevious.Click += new System.EventHandler(this.ButtonPrevious_Click);
 			// 
@@ -136,7 +136,7 @@ namespace EVEMon.ApiCredentialsManagement
 			this.ButtonCancel.Name = "ButtonCancel";
 			this.ButtonCancel.Size = new System.Drawing.Size(75, 23);
 			this.ButtonCancel.TabIndex = 2;
-			this.ButtonCancel.Text = "&Cancel";
+			this.ButtonCancel.Text = resources.GetString("this.ButtonCancel.Text");
 			this.ButtonCancel.UseVisualStyleBackColor = true;
 			this.ButtonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
 			// 
@@ -164,7 +164,7 @@ namespace EVEMon.ApiCredentialsManagement
 			this.CredentialsPage.Name = "CredentialsPage";
 			this.CredentialsPage.Size = new System.Drawing.Size(522, 171);
 			this.CredentialsPage.TabIndex = 0;
-			this.CredentialsPage.Text = "credentialsPage";
+			this.CredentialsPage.Text = resources.GetString("this.CredentialsPage.Text");
 			// 
 			// Throbber
 			// 
@@ -199,7 +199,7 @@ namespace EVEMon.ApiCredentialsManagement
 			this.ResultPage.Name = "ResultPage";
 			this.ResultPage.Size = new System.Drawing.Size(522, 171);
 			this.ResultPage.TabIndex = 2;
-			this.ResultPage.Text = "resultPage";
+			this.ResultPage.Text = resources.GetString("this.ResultPage.Text");
 			// 
 			// KeyTableLayoutPanel
 			// 
@@ -226,7 +226,7 @@ namespace EVEMon.ApiCredentialsManagement
 			this.KeyLabel.Name = "KeyLabel";
 			this.KeyLabel.Size = new System.Drawing.Size(452, 38);
 			this.KeyLabel.TabIndex = 1;
-			this.KeyLabel.Text = "Short description on info retrieval procedure.";
+			this.KeyLabel.Text = resources.GetString("this.KeyLabel.Text");
 			this.KeyLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// KeyPicture
@@ -247,7 +247,7 @@ namespace EVEMon.ApiCredentialsManagement
 			this.CharactersGroupBox.Size = new System.Drawing.Size(479, 118);
 			this.CharactersGroupBox.TabIndex = 3;
 			this.CharactersGroupBox.TabStop = false;
-			this.CharactersGroupBox.Text = "Characters exposed by API key";
+			this.CharactersGroupBox.Text = resources.GetString("this.CharactersGroupBox.Text");
 			// 
 			// ResultsMultiPanel
 			// 
@@ -274,7 +274,7 @@ namespace EVEMon.ApiCredentialsManagement
 			this.CharactersListPage.Name = "CharactersListPage";
 			this.CharactersListPage.Size = new System.Drawing.Size(473, 99);
 			this.CharactersListPage.TabIndex = 0;
-			this.CharactersListPage.Text = "charactersListPage";
+			this.CharactersListPage.Text = resources.GetString("this.CharactersListPage.Text");
 			// 
 			// CharactersListView
 			// 
@@ -315,7 +315,7 @@ namespace EVEMon.ApiCredentialsManagement
 			this.AuthenticationErrorPage.Name = "AuthenticationErrorPage";
 			this.AuthenticationErrorPage.Size = new System.Drawing.Size(473, 99);
 			this.AuthenticationErrorPage.TabIndex = 1;
-			this.AuthenticationErrorPage.Text = "authenticationErrorPage";
+			this.AuthenticationErrorPage.Text = resources.GetString("this.AuthenticationErrorPage.Text");
 			// 
 			// AuthenticationErrorGuideLabel
 			// 
@@ -336,7 +336,7 @@ namespace EVEMon.ApiCredentialsManagement
 			this.LoginDeniedErrorPage.Name = "LoginDeniedErrorPage";
 			this.LoginDeniedErrorPage.Size = new System.Drawing.Size(473, 99);
 			this.LoginDeniedErrorPage.TabIndex = 2;
-			this.LoginDeniedErrorPage.Text = "loginDeniedErrorPage";
+			this.LoginDeniedErrorPage.Text = resources.GetString("this.LoginDeniedErrorPage.Text");
 			// 
 			// LoginDeniedLinkLabel
 			// 
@@ -361,7 +361,7 @@ namespace EVEMon.ApiCredentialsManagement
 			this.GeneralErrorPage.Name = "GeneralErrorPage";
 			this.GeneralErrorPage.Size = new System.Drawing.Size(473, 99);
 			this.GeneralErrorPage.TabIndex = 3;
-			this.GeneralErrorPage.Text = "generalErrorPage";
+			this.GeneralErrorPage.Text = resources.GetString("this.GeneralErrorPage.Text");
 			// 
 			// GeneralErrorLabel
 			// 
@@ -405,7 +405,7 @@ namespace EVEMon.ApiCredentialsManagement
 			this.CachedWarningPage.Name = "CachedWarningPage";
 			this.CachedWarningPage.Size = new System.Drawing.Size(473, 98);
 			this.CachedWarningPage.TabIndex = 6;
-			this.CachedWarningPage.Text = "cachedWarningPage";
+			this.CachedWarningPage.Text = resources.GetString("this.CachedWarningPage.Text");
 			// 
 			// CachedWarningLabel
 			// 
@@ -430,7 +430,7 @@ namespace EVEMon.ApiCredentialsManagement
 			this.LabelShiftClick.Name = "LabelShiftClick";
 			this.LabelShiftClick.Size = new System.Drawing.Size(301, 13);
 			this.LabelShiftClick.TabIndex = 2;
-			this.LabelShiftClick.Text = "SHIFT+Click will copy ESI authentication URL to the clipboard";
+			this.LabelShiftClick.Text = resources.GetString("this.LabelShiftClick.Text");
 			this.LabelShiftClick.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// EsiKeyUpdateOrAdditionWindow
@@ -449,7 +449,7 @@ namespace EVEMon.ApiCredentialsManagement
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "EsiKeyUpdateOrAdditionWindow";
-			this.Text = "ESI Key Import";
+			this.Text = resources.GetString("this.Text");
 			this.MultiPanel.ResumeLayout(false);
 			this.CredentialsPage.ResumeLayout(false);
 			this.CredentialsPage.PerformLayout();

@@ -140,4 +140,16 @@
   <metadata name="ttToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="this.showInSkillExplorerMenuItem.Text" xml:space="preserve">
+    <value>Show In Skill &amp;Explorer...</value>
+  </data>
+  <data name="this.tsmiAddSkill.Text" xml:space="preserve">
+    <value>Add skill</value>
+  </data>
+  <data name="this.noSkillsLabel.Text" xml:space="preserve">
+    <value>Skills information not available.</value>
+  </data>
+  <data name="this.showInSkillBrowserMenuItem.Text" xml:space="preserve">
+    <value>Show In Skill &amp;Browser...</value>
+  </data>
 </root>

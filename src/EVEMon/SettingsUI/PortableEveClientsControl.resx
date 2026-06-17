@@ -134,4 +134,7 @@
         qzUAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="this.BrowseButton.Text" xml:space="preserve">
+    <value>Browse</value>
+  </data>
 </root>

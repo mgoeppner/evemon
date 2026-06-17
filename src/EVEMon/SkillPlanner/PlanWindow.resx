@@ -902,4 +902,91 @@
         Af4Bdwr/Cw==
 </value>
   </data>
+  <data name="this.ObsoleteEntriesStatusLabel.Text" xml:space="preserve">
+    <value>Obsolete Entries...</value>
+  </data>
+  <data name="this.SkillsStatusLabel.Text" xml:space="preserve">
+    <value>0 Skills Planned</value>
+  </data>
+  <data name="this.TimeStatusLabel.Text" xml:space="preserve">
+    <value>356d 23h 25m 10s</value>
+  </data>
+  <data name="this.CostStatusLabel.Text" xml:space="preserve">
+    <value>0 ISK Required</value>
+  </data>
+  <data name="this.SkillPointsStatusLabel.Text" xml:space="preserve">
+    <value>0 SP Required</value>
+  </data>
+  <data name="this.upperToolStrip.Text" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
+  <data name="this.tsddbPlans.Text" xml:space="preserve">
+    <value>Select Plan</value>
+  </data>
+  <data name="this.newPlanToolStripMenuItem.Text" xml:space="preserve">
+    <value>New Plan...</value>
+  </data>
+  <data name="this.createPlanFromSkillQueueToolStripMenuItem.Text" xml:space="preserve">
+    <value>Create Plan from Skill Queue...</value>
+  </data>
+  <data name="this.tsddbSave.Text" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="this.tsmiExportPlan.Text" xml:space="preserve">
+    <value>&amp;Plan...</value>
+  </data>
+  <data name="this.tsmiAfterPlanCharacter.Text" xml:space="preserve">
+    <value>After Plan &amp;Character...</value>
+  </data>
+  <data name="this.tsbDeletePlan.Text" xml:space="preserve">
+    <value>Delete...</value>
+  </data>
+  <data name="this.tsbPrintPlan.Text" xml:space="preserve">
+    <value>Print...</value>
+  </data>
+  <data name="this.tsbPrintPlan.ToolTipText" xml:space="preserve">
+    <value>Print this plan</value>
+  </data>
+  <data name="this.tsbCopyToClipboard.Text" xml:space="preserve">
+    <value>Copy to Clipboard...</value>
+  </data>
+  <data name="this.tsbImplantCalculator.Text" xml:space="preserve">
+    <value>Implant Calc...</value>
+  </data>
+  <data name="this.attributesOptimizerStripButton.Text" xml:space="preserve">
+    <value>Attributes Optimizer...</value>
+  </data>
+  <data name="this.tsbLoadoutImport.Text" xml:space="preserve">
+    <value>Loadout Import...</value>
+  </data>
+  <data name="this.tsbClipboardImport.Text" xml:space="preserve">
+    <value>Clipboard Import</value>
+  </data>
+  <data name="this.tsbClipboardImport.ToolTipText" xml:space="preserve">
+    <value>Clipboard Import...</value>
+  </data>
+  <data name="this.sfdSave.Title" xml:space="preserve">
+    <value>Save to File</value>
+  </data>
+  <data name="this.tpPlanEditor.Text" xml:space="preserve">
+    <value>Plan editor</value>
+  </data>
+  <data name="this.tpSkillBrowser.Text" xml:space="preserve">
+    <value>Skill browser</value>
+  </data>
+  <data name="this.tpCertificateBrowser.Text" xml:space="preserve">
+    <value>Certificate browser</value>
+  </data>
+  <data name="this.tpShipBrowser.Text" xml:space="preserve">
+    <value>Ship browser</value>
+  </data>
+  <data name="this.tpItemBrowser.Text" xml:space="preserve">
+    <value>Item browser</value>
+  </data>
+  <data name="this.tpBlueprintBrowser.Text" xml:space="preserve">
+    <value>Blueprint browser</value>
+  </data>
+  <data name="this.Text" xml:space="preserve">
+    <value>EVEMon Skill Planner</value>
+  </data>
 </root>

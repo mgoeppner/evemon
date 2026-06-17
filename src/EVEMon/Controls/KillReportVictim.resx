@@ -401,4 +401,34 @@
   <metadata name="contextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>107, 17</value>
   </metadata>
+  <data name="this.KillTimeLabel.Text" xml:space="preserve">
+    <value>Kill Time</value>
+  </data>
+  <data name="this.SolarSystemLabel.Text" xml:space="preserve">
+    <value>Solar System</value>
+  </data>
+  <data name="this.ConstelationLabel.Text" xml:space="preserve">
+    <value>Constelation</value>
+  </data>
+  <data name="this.RegionLabel.Text" xml:space="preserve">
+    <value>Region</value>
+  </data>
+  <data name="this.CorpNameLabel.Text" xml:space="preserve">
+    <value>Corporation Name</value>
+  </data>
+  <data name="this.AllianceNameLabel.Text" xml:space="preserve">
+    <value>Alliance Name</value>
+  </data>
+  <data name="this.ShipNameLabel.Text" xml:space="preserve">
+    <value>Ship Name</value>
+  </data>
+  <data name="this.CharacterNameLabel.Text" xml:space="preserve">
+    <value>Character Name</value>
+  </data>
+  <data name="this.showInShipBrowserMenuItem.Text" xml:space="preserve">
+    <value>Show In Ship Browser...</value>
+  </data>
+  <data name="this.CopyPictureBox.ToolTip" xml:space="preserve">
+    <value>Copy Kill Information to Clipboard</value>
+  </data>
 </root>

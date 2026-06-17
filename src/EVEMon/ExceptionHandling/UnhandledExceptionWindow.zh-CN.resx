@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Name1" xml:space="preserve">
+    <value>这是我的长绳子</value>
+  </data>
+  <data name="LatestBinariesLinkLabel.Text" xml:space="preserve">
+    <value>使用最新的快照二进制文件（测试版），因为问题可能已经解决或 
+转到 EVEMon 的数据目录（通过单击下面的相关按钮）并删除您的设置文件 
+（备份后），缓存文件夹和数据文件（*.gzip），看看问题是否仍然存在。</value>
+  </data>
+  <data name="this.ReportLinkLabel.Text" xml:space="preserve">
+    <value>如果这些都不起作用，请报告问题
+</value>
+  </data>
+  <data name="this.WhatCanYouDoLabel.Text" xml:space="preserve">
+    <value>你能做什么？</value>
+  </data>
+  <data name="this.CopyDetailsLinkLabel.Text" xml:space="preserve">
+    <value>复制详细信息</value>
+  </data>
+  <data name="this.TitleLabel.Text" xml:space="preserve">
+    <value>EVEMon 遇到意外错误。</value>
+  </data>
+  <data name="this.TechnicalDetailsLabel.Text" xml:space="preserve">
+    <value>此错误的技术细节：</value>
+  </data>
+  <data name="this.DataDirectoryButton.Text" xml:space="preserve">
+    <value>数据目录</value>
+  </data>
+  <data name="this.CloseButton.Text" xml:space="preserve">
+    <value>关闭 EVEMon</value>
+  </data>
+  <data name="this.Text" xml:space="preserve">
+    <value>EVEMon错误</value>
+  </data>
+</root>

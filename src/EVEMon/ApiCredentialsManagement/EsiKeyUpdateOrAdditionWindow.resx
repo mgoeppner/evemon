@@ -217,4 +217,46 @@ https://secure.eveonline.com/AccountManMenu.aspx
   <metadata name="errorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="this.ButtonNext.Text" xml:space="preserve">
+    <value>&amp;Next &gt;</value>
+  </data>
+  <data name="this.ButtonPrevious.Text" xml:space="preserve">
+    <value>&lt; &amp;Previous</value>
+  </data>
+  <data name="this.ButtonCancel.Text" xml:space="preserve">
+    <value>&amp;Cancel</value>
+  </data>
+  <data name="this.CredentialsPage.Text" xml:space="preserve">
+    <value>credentialsPage</value>
+  </data>
+  <data name="this.ResultPage.Text" xml:space="preserve">
+    <value>resultPage</value>
+  </data>
+  <data name="this.KeyLabel.Text" xml:space="preserve">
+    <value>Short description on info retrieval procedure.</value>
+  </data>
+  <data name="this.CharactersGroupBox.Text" xml:space="preserve">
+    <value>Characters exposed by API key</value>
+  </data>
+  <data name="this.CharactersListPage.Text" xml:space="preserve">
+    <value>charactersListPage</value>
+  </data>
+  <data name="this.AuthenticationErrorPage.Text" xml:space="preserve">
+    <value>authenticationErrorPage</value>
+  </data>
+  <data name="this.LoginDeniedErrorPage.Text" xml:space="preserve">
+    <value>loginDeniedErrorPage</value>
+  </data>
+  <data name="this.GeneralErrorPage.Text" xml:space="preserve">
+    <value>generalErrorPage</value>
+  </data>
+  <data name="this.CachedWarningPage.Text" xml:space="preserve">
+    <value>cachedWarningPage</value>
+  </data>
+  <data name="this.LabelShiftClick.Text" xml:space="preserve">
+    <value>SHIFT+Click will copy ESI authentication URL to the clipboard</value>
+  </data>
+  <data name="this.Text" xml:space="preserve">
+    <value>ESI Key Import</value>
+  </data>
 </root>

@@ -786,4 +786,94 @@
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>44</value>
   </metadata>
+  <data name="this.label1.Text" xml:space="preserve">
+    <value>Select a plan to open, or multiple plans to merge:</value>
+  </data>
+  <data name="this.btnClose.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="this.ofdOpenDialog.Filter" xml:space="preserve">
+    <value>Plan Files (*.emp)|*.emp|Plan Files (*.xml)|*.xml|All Files (*.*)|*.*</value>
+  </data>
+  <data name="this.ofdOpenDialog.Title" xml:space="preserve">
+    <value>Open Plan File</value>
+  </data>
+  <data name="this.PlanName.Text" xml:space="preserve">
+    <value>Plan Name</value>
+  </data>
+  <data name="this.PlanDate.Text" xml:space="preserve">
+    <value>Completion Time</value>
+  </data>
+  <data name="this.PlanSkills.Text" xml:space="preserve">
+    <value>Skills</value>
+  </data>
+  <data name="this.PlanDescription.Text" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="this.cmiOpen.Text" xml:space="preserve">
+    <value>Open...</value>
+  </data>
+  <data name="this.cmiExport.Text" xml:space="preserve">
+    <value>Export...</value>
+  </data>
+  <data name="this.cmiRenameEdit.Text" xml:space="preserve">
+    <value>Rename...</value>
+  </data>
+  <data name="this.cmiDelete.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="this.toolStrip.Text" xml:space="preserve">
+    <value>toolStrip</value>
+  </data>
+  <data name="this.toolStripLabel1.Text" xml:space="preserve">
+    <value>Move:</value>
+  </data>
+  <data name="this.tsbMoveUp.Text" xml:space="preserve">
+    <value>Move Up</value>
+  </data>
+  <data name="this.tsbMoveDown.Text" xml:space="preserve">
+    <value>Move Down</value>
+  </data>
+  <data name="this.btnOpen.Text" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="this.menuStrip.Text" xml:space="preserve">
+    <value>menuBar</value>
+  </data>
+  <data name="this.mFile.Text" xml:space="preserve">
+    <value>&amp;File</value>
+  </data>
+  <data name="this.miNewPlan.Text" xml:space="preserve">
+    <value>&amp;New Plan…</value>
+  </data>
+  <data name="this.miImportPlanFromFile.Text" xml:space="preserve">
+    <value>&amp;Import Plan from File…</value>
+  </data>
+  <data name="this.miImportPlanFromCharacter.Text" xml:space="preserve">
+    <value>Import Plan from &amp;Character…</value>
+  </data>
+  <data name="this.miExportPlan.Text" xml:space="preserve">
+    <value>&amp;Export Plan...</value>
+  </data>
+  <data name="this.miExportCharacterSkillsAsPlan.Text" xml:space="preserve">
+    <value>Export Character &amp;Skills as Plan...</value>
+  </data>
+  <data name="this.miRestorePlans.Text" xml:space="preserve">
+    <value>&amp;Restore Plans...</value>
+  </data>
+  <data name="this.miSavePlans.Text" xml:space="preserve">
+    <value>&amp;Save Plans...</value>
+  </data>
+  <data name="this.mEdit.Text" xml:space="preserve">
+    <value>&amp;Edit</value>
+  </data>
+  <data name="this.miRenameEdit.Text" xml:space="preserve">
+    <value>&amp;Rename...</value>
+  </data>
+  <data name="this.miDelete.Text" xml:space="preserve">
+    <value>&amp;Delete</value>
+  </data>
+  <data name="this.Text" xml:space="preserve">
+    <value>Manage Plans</value>
+  </data>
 </root>

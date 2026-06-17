@@ -1113,4 +1113,283 @@
         oVSW+RdE39jOuVjT+Ph6AAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="this.preferencesMenu.Text" xml:space="preserve">
+    <value>Preferences</value>
+  </data>
+  <data name="this.preferencesMenu.ToolTipText" xml:space="preserve">
+    <value>Preferences</value>
+  </data>
+  <data name="this.columnSettingsMenuItem.Text" xml:space="preserve">
+    <value>Column Settings</value>
+  </data>
+  <data name="this.autoSizeColumnMenuItem.Text" xml:space="preserve">
+    <value>Auto-Size Columns</value>
+  </data>
+  <data name="this.hideInactiveMenuItem.Text" xml:space="preserve">
+    <value>Hide Inactive Orders</value>
+  </data>
+  <data name="this.numberAbsFormatMenuItem.Text" xml:space="preserve">
+    <value>Number Abbreviating Format</value>
+  </data>
+  <data name="this.showOnlyCharMenuItem.Text" xml:space="preserve">
+    <value>Show Only Issued for Character</value>
+  </data>
+  <data name="this.showOnlyCorpMenuItem.Text" xml:space="preserve">
+    <value>Show Only Issued for Corporation</value>
+  </data>
+  <data name="this.readingPaneMenuItem.Text" xml:space="preserve">
+    <value>Reading Pane</value>
+  </data>
+  <data name="this.paneRightMenuItem.Text" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="this.paneBottomMenuItem.Text" xml:space="preserve">
+    <value>Bottom</value>
+  </data>
+  <data name="this.paneOffMenuItem.Text" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="this.combatLogMenuItem.Text" xml:space="preserve">
+    <value>Show Condensed Combat Logs</value>
+  </data>
+  <data name="this.showOnlyExtractorMenuItem.Text" xml:space="preserve">
+    <value>Show Only Extractor Control Unit</value>
+  </data>
+  <data name="this.searchTextDel.Text" xml:space="preserve">
+    <value>searchTextDel</value>
+  </data>
+  <data name="this.searchTextDel.ToolTipText" xml:space="preserve">
+    <value>Delete search text</value>
+  </data>
+  <data name="this.searchTextBox.ToolTipText" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="this.groupMenu.Text" xml:space="preserve">
+    <value>Group By...</value>
+  </data>
+  <data name="this.walletJournalCharts.Text" xml:space="preserve">
+    <value>Wallet Journal Charts</value>
+  </data>
+  <data name="this.walletJournalCharts.ToolTipText" xml:space="preserve">
+    <value>Charts</value>
+  </data>
+  <data name="this.allContacts.Text" xml:space="preserve">
+    <value>All contacts</value>
+  </data>
+  <data name="this.contactsExcellent.Text" xml:space="preserve">
+    <value>Excellent standing</value>
+  </data>
+  <data name="this.contactsGood.Text" xml:space="preserve">
+    <value>Good standing</value>
+  </data>
+  <data name="this.contactsNeutral.Text" xml:space="preserve">
+    <value>Neutral standing</value>
+  </data>
+  <data name="this.contactsBad.Text" xml:space="preserve">
+    <value>Bad standing</value>
+  </data>
+  <data name="this.contactsTerrible.Text" xml:space="preserve">
+    <value>Terrible standing</value>
+  </data>
+  <data name="this.inWatchList.Text" xml:space="preserve">
+    <value>Watch List</value>
+  </data>
+  <data name="this.skillsIcon.Text" xml:space="preserve">
+    <value>Skills</value>
+  </data>
+  <data name="this.skillsIcon.ToolTipText" xml:space="preserve">
+    <value>Display skills list</value>
+  </data>
+  <data name="this.skillQueueIcon.Text" xml:space="preserve">
+    <value>Queue</value>
+  </data>
+  <data name="this.skillQueueIcon.ToolTipText" xml:space="preserve">
+    <value>Display skills in queue</value>
+  </data>
+  <data name="this.employmentIcon.Text" xml:space="preserve">
+    <value>Employment History</value>
+  </data>
+  <data name="this.employmentIcon.ToolTipText" xml:space="preserve">
+    <value>Display employment history</value>
+  </data>
+  <data name="this.standingsIcon.Text" xml:space="preserve">
+    <value>Standings</value>
+  </data>
+  <data name="this.standingsIcon.ToolTipText" xml:space="preserve">
+    <value>Display standings</value>
+  </data>
+  <data name="this.contactsIcon.Text" xml:space="preserve">
+    <value>Contacts</value>
+  </data>
+  <data name="this.contactsIcon.ToolTipText" xml:space="preserve">
+    <value>Display contacts</value>
+  </data>
+  <data name="this.factionalWarfareStatsIcon.Text" xml:space="preserve">
+    <value>Factional Warfare</value>
+  </data>
+  <data name="this.factionalWarfareStatsIcon.ToolTipText" xml:space="preserve">
+    <value>Display factional warfare stats</value>
+  </data>
+  <data name="this.medalsIcon.Text" xml:space="preserve">
+    <value>Medals</value>
+  </data>
+  <data name="this.medalsIcon.ToolTipText" xml:space="preserve">
+    <value>Display medals</value>
+  </data>
+  <data name="this.killLogIcon.Text" xml:space="preserve">
+    <value>Combat Log</value>
+  </data>
+  <data name="this.killLogIcon.ToolTipText" xml:space="preserve">
+    <value>Display combat log</value>
+  </data>
+  <data name="this.assetsIcon.Text" xml:space="preserve">
+    <value>Assets</value>
+  </data>
+  <data name="this.assetsIcon.ToolTipText" xml:space="preserve">
+    <value>Display assets</value>
+  </data>
+  <data name="this.ordersIcon.Text" xml:space="preserve">
+    <value>Market</value>
+  </data>
+  <data name="this.ordersIcon.ToolTipText" xml:space="preserve">
+    <value>Display market orders</value>
+  </data>
+  <data name="this.contractsIcon.Text" xml:space="preserve">
+    <value>Contracts</value>
+  </data>
+  <data name="this.contractsIcon.ToolTipText" xml:space="preserve">
+    <value>Display contracts</value>
+  </data>
+  <data name="this.walletJournalIcon.Text" xml:space="preserve">
+    <value>Wallet Journal</value>
+  </data>
+  <data name="this.walletJournalIcon.ToolTipText" xml:space="preserve">
+    <value>Display wallet journal</value>
+  </data>
+  <data name="this.walletTransactionsIcon.Text" xml:space="preserve">
+    <value>Wallet Transactions</value>
+  </data>
+  <data name="this.walletTransactionsIcon.ToolTipText" xml:space="preserve">
+    <value>Display wallet transactions</value>
+  </data>
+  <data name="this.jobsIcon.Text" xml:space="preserve">
+    <value>Industry</value>
+  </data>
+  <data name="this.jobsIcon.ToolTipText" xml:space="preserve">
+    <value>Display industry jobs</value>
+  </data>
+  <data name="this.loyaltyIcon.Text" xml:space="preserve">
+    <value>Loyalty Points</value>
+  </data>
+  <data name="this.loyaltyIcon.ToolTipText" xml:space="preserve">
+    <value>Display loyalty point balances</value>
+  </data>
+  <data name="this.planetaryIcon.Text" xml:space="preserve">
+    <value>Planetary Colonies</value>
+  </data>
+  <data name="this.planetaryIcon.ToolTipText" xml:space="preserve">
+    <value>Display planetary colonies</value>
+  </data>
+  <data name="this.researchIcon.Text" xml:space="preserve">
+    <value>Research</value>
+  </data>
+  <data name="this.researchIcon.ToolTipText" xml:space="preserve">
+    <value>Display research points</value>
+  </data>
+  <data name="this.mailMessagesIcon.Text" xml:space="preserve">
+    <value>Mail</value>
+  </data>
+  <data name="this.mailMessagesIcon.ToolTipText" xml:space="preserve">
+    <value>Display EVE mails</value>
+  </data>
+  <data name="this.eveNotificationsIcon.Text" xml:space="preserve">
+    <value>Notification</value>
+  </data>
+  <data name="this.eveNotificationsIcon.ToolTipText" xml:space="preserve">
+    <value>Display EVE notifications</value>
+  </data>
+  <data name="this.calendarEventsIcon.Text" xml:space="preserve">
+    <value>Calendar</value>
+  </data>
+  <data name="this.calendarEventsIcon.ToolTipText" xml:space="preserve">
+    <value>Display calendar events</value>
+  </data>
+  <data name="this.featuresMenu.Text" xml:space="preserve">
+    <value>More features</value>
+  </data>
+  <data name="this.featuresMenu.ToolTipText" xml:space="preserve">
+    <value>Advanced features</value>
+  </data>
+  <data name="this.EnableAllToolStripMenuItem.Text" xml:space="preserve">
+    <value>Enable All</value>
+  </data>
+  <data name="this.DisableAllToolStripMenuItem.Text" xml:space="preserve">
+    <value>Disable All</value>
+  </data>
+  <data name="this.toggleSkillsIcon.Text" xml:space="preserve">
+    <value>Toggle All Skills</value>
+  </data>
+  <data name="this.toggleSkillsIcon.ToolTipText" xml:space="preserve">
+    <value>Toggle all skills</value>
+  </data>
+  <data name="this.loyaltyPage.Text" xml:space="preserve">
+    <value>loyaltyPage</value>
+  </data>
+  <data name="this.standingsPage.Text" xml:space="preserve">
+    <value>standingsPage</value>
+  </data>
+  <data name="this.skillsPage.Text" xml:space="preserve">
+    <value>skillsPage</value>
+  </data>
+  <data name="this.ordersPage.Text" xml:space="preserve">
+    <value>ordersPage</value>
+  </data>
+  <data name="this.skillQueuePage.Text" xml:space="preserve">
+    <value>skillQueuePage</value>
+  </data>
+  <data name="this.jobsPage.Text" xml:space="preserve">
+    <value>jobsPage</value>
+  </data>
+  <data name="this.researchPage.Text" xml:space="preserve">
+    <value>researchPage</value>
+  </data>
+  <data name="this.mailMessagesPage.Text" xml:space="preserve">
+    <value>mailMessagesPage</value>
+  </data>
+  <data name="this.eveNotificationsPage.Text" xml:space="preserve">
+    <value>eveNotificationsPage</value>
+  </data>
+  <data name="this.employmentPage.Text" xml:space="preserve">
+    <value>employmentPage</value>
+  </data>
+  <data name="this.contractsPage.Text" xml:space="preserve">
+    <value>contractsPage</value>
+  </data>
+  <data name="this.assetsPage.Text" xml:space="preserve">
+    <value>assetsPage</value>
+  </data>
+  <data name="this.walletJournalPage.Text" xml:space="preserve">
+    <value>walletJournalPage</value>
+  </data>
+  <data name="this.walletTransactionsPage.Text" xml:space="preserve">
+    <value>walletTransactionsPage</value>
+  </data>
+  <data name="this.factionalWarfareStatsPage.Text" xml:space="preserve">
+    <value>factionalWarfareStatsPage</value>
+  </data>
+  <data name="this.contactsPage.Text" xml:space="preserve">
+    <value>contactsPage</value>
+  </data>
+  <data name="this.medalsPage.Text" xml:space="preserve">
+    <value>medalsPage</value>
+  </data>
+  <data name="this.killLogPage.Text" xml:space="preserve">
+    <value>killLogPage</value>
+  </data>
+  <data name="this.planetaryPage.Text" xml:space="preserve">
+    <value>planetaryPage</value>
+  </data>
+  <data name="this.warningLabel.Text" xml:space="preserve">
+    <value>This character has no associated API key, data won\'t be updated.</value>
+  </data>
 </root>

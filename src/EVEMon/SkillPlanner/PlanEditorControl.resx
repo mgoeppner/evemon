@@ -318,4 +318,148 @@
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>83</value>
   </metadata>
+  <data name="this.miChangeNote.Text" xml:space="preserve">
+    <value>View/Change Note...</value>
+  </data>
+  <data name="this.miChangePriority.Text" xml:space="preserve">
+    <value>Change Priority...</value>
+  </data>
+  <data name="this.miChangeLevel.Text" xml:space="preserve">
+    <value>Change Planned Level...</value>
+  </data>
+  <data name="this.miChangeTo0.Text" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="this.miChangeTo1.Text" xml:space="preserve">
+    <value>Level 1</value>
+  </data>
+  <data name="this.miChangeTo2.Text" xml:space="preserve">
+    <value>Level 2</value>
+  </data>
+  <data name="this.miChangeTo3.Text" xml:space="preserve">
+    <value>Level 3</value>
+  </data>
+  <data name="this.miChangeTo4.Text" xml:space="preserve">
+    <value>Level 4</value>
+  </data>
+  <data name="this.miChangeTo5.Text" xml:space="preserve">
+    <value>Level 5</value>
+  </data>
+  <data name="this.miRemoveFromPlan.Text" xml:space="preserve">
+    <value>Remove from Plan</value>
+  </data>
+  <data name="this.MoveToTopMenuItem.Text" xml:space="preserve">
+    <value>Move to top of Plan</value>
+  </data>
+  <data name="this.miShowInSkillBrowser.Text" xml:space="preserve">
+    <value>Show in Skill &amp;Browser</value>
+  </data>
+  <data name="this.miShowInSkillExplorer.Text" xml:space="preserve">
+    <value>Show in Skill &amp;Explorer...</value>
+  </data>
+  <data name="this.miMarkOwned.Text" xml:space="preserve">
+    <value>Mark as Owned</value>
+  </data>
+  <data name="this.miCopyTo.Text" xml:space="preserve">
+    <value>Copy selected entries to</value>
+  </data>
+  <data name="this.miCopyToNewPlan.Text" xml:space="preserve">
+    <value>New Plan...</value>
+  </data>
+  <data name="this.miCopySelectedToClipboard.Text" xml:space="preserve">
+    <value>Clipboard...</value>
+  </data>
+  <data name="this.miPlanGroups.Text" xml:space="preserve">
+    <value>Select entries from group...</value>
+  </data>
+  <data name="this.sfdSave.Title" xml:space="preserve">
+    <value>Save Plan As...</value>
+  </data>
+  <data name="this.tsPlan.Text" xml:space="preserve">
+    <value>planToolStrip</value>
+  </data>
+  <data name="this.tslMove.Text" xml:space="preserve">
+    <value>Move:</value>
+  </data>
+  <data name="this.tsbMoveUp.Text" xml:space="preserve">
+    <value>Move up</value>
+  </data>
+  <data name="this.tsbMoveDown.Text" xml:space="preserve">
+    <value>Move down</value>
+  </data>
+  <data name="this.tslSort.Text" xml:space="preserve">
+    <value>Sort:</value>
+  </data>
+  <data name="this.tsSortPriorities.Text" xml:space="preserve">
+    <value>Group by priorities (Ascending only)</value>
+  </data>
+  <data name="this.tsbToggleSkills.Text" xml:space="preserve">
+    <value>Toggle skills</value>
+  </data>
+  <data name="this.tsbToggleSkills.ToolTipText" xml:space="preserve">
+    <value>Toggle skill pane</value>
+  </data>
+  <data name="this.tsbToggleRemapping.Text" xml:space="preserve">
+    <value>Toggle remapping</value>
+  </data>
+  <data name="this.tsbToggleRemapping.ToolTipText" xml:space="preserve">
+    <value>Toggle remapping point (F9)</value>
+  </data>
+  <data name="this.tsbColorKey.Text" xml:space="preserve">
+    <value>Toggle Color Key Panel</value>
+  </data>
+  <data name="this.tsbColorKey.ToolTipText" xml:space="preserve">
+    <value>Toggle Color Key Panel</value>
+  </data>
+  <data name="this.gbColorKey.Text" xml:space="preserve">
+    <value>Color Keys</value>
+  </data>
+  <data name="this.lblTrainable.Text" xml:space="preserve">
+    <value>Trainable</value>
+  </data>
+  <data name="this.lblNonPublic.Text" xml:space="preserve">
+    <value>Non Public</value>
+  </data>
+  <data name="this.lblPrereqNotMet.Text" xml:space="preserve">
+    <value>Prereq Not Met</value>
+  </data>
+  <data name="this.lblDepended.Text" xml:space="preserve">
+    <value>Depended</value>
+  </data>
+  <data name="this.lblQueued.Text" xml:space="preserve">
+    <value>Queued</value>
+  </data>
+  <data name="this.lblPrereqMetNotKnown.Text" xml:space="preserve">
+    <value>Prereq Met - Not Known</value>
+  </data>
+  <data name="this.lblDowntime.Text" xml:space="preserve">
+    <value>Downtime</value>
+  </data>
+  <data name="this.lblCurrentlyTraining.Text" xml:space="preserve">
+    <value>Currently Training</value>
+  </data>
+  <data name="this.lblPartiallyTrained.Text" xml:space="preserve">
+    <value>Partially Trained</value>
+  </data>
+  <data name="this.lblOmegaOnly.Text" xml:space="preserve">
+    <value>Requires Omega</value>
+  </data>
+  <data name="this.lblChooseImplantSet.Text" xml:space="preserve">
+    <value>Choose Implant Set:</value>
+  </data>
+  <data name="this.tsPreferences.Text" xml:space="preserve">
+    <value>tsPreferences</value>
+  </data>
+  <data name="this.preferencesMenu.Text" xml:space="preserve">
+    <value>Preferences</value>
+  </data>
+  <data name="this.preferencesMenu.ToolTipText" xml:space="preserve">
+    <value>Preferences</value>
+  </data>
+  <data name="this.columnSettingsMenuItem.Text" xml:space="preserve">
+    <value>Column Settings</value>
+  </data>
+  <data name="this.autoSizeColumnsMenuItem.Text" xml:space="preserve">
+    <value>Auto-Size Columns</value>
+  </data>
 </root>

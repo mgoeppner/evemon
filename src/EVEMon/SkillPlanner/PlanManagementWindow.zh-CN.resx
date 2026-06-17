@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Name1" xml:space="preserve">
+    <value>这是我的长绳子</value>
+  </data>
+  <data name="this.label1.Text" xml:space="preserve">
+    <value>选择要打开的计划或要合并的多个计划：</value>
+  </data>
+  <data name="this.btnClose.Text" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="this.ofdOpenDialog.Filter" xml:space="preserve">
+    <value>Plan Files (*.emp)|*.emp|Plan Files (*.xml)|*.xml|All Files (*.*)|*.*</value>
+  </data>
+  <data name="this.ofdOpenDialog.Title" xml:space="preserve">
+    <value>打开计划文件</value>
+  </data>
+  <data name="this.PlanName.Text" xml:space="preserve">
+    <value>计划名称</value>
+  </data>
+  <data name="this.PlanDate.Text" xml:space="preserve">
+    <value>完成时间</value>
+  </data>
+  <data name="this.PlanSkills.Text" xml:space="preserve">
+    <value>技能</value>
+  </data>
+  <data name="this.PlanDescription.Text" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="this.cmiOpen.Text" xml:space="preserve">
+    <value>打开...</value>
+  </data>
+  <data name="this.cmiExport.Text" xml:space="preserve">
+    <value>出口...</value>
+  </data>
+  <data name="this.cmiRenameEdit.Text" xml:space="preserve">
+    <value>重命名...</value>
+  </data>
+  <data name="this.cmiDelete.Text" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="this.toolStrip.Text" xml:space="preserve">
+    <value>工具条</value>
+  </data>
+  <data name="this.toolStripLabel1.Text" xml:space="preserve">
+    <value>移动：</value>
+  </data>
+  <data name="this.tsbMoveUp.Text" xml:space="preserve">
+    <value>向上移动</value>
+  </data>
+  <data name="this.tsbMoveDown.Text" xml:space="preserve">
+    <value>下移</value>
+  </data>
+  <data name="this.btnOpen.Text" xml:space="preserve">
+    <value>打开</value>
+  </data>
+  <data name="this.menuStrip.Text" xml:space="preserve">
+    <value>菜单栏</value>
+  </data>
+  <data name="this.mFile.Text" xml:space="preserve">
+    <value>文件(&amp;F)</value>
+  </data>
+  <data name="this.miNewPlan.Text" xml:space="preserve">
+    <value>新计划(&amp;N)...</value>
+  </data>
+  <data name="this.miImportPlanFromFile.Text" xml:space="preserve">
+    <value>从文件导入计划(&amp;I)...</value>
+  </data>
+  <data name="this.miImportPlanFromCharacter.Text" xml:space="preserve">
+    <value>从角色导入计划(&amp;C)...</value>
+  </data>
+  <data name="this.miExportPlan.Text" xml:space="preserve">
+    <value>出口计划(&amp;E)...</value>
+  </data>
+  <data name="this.miExportCharacterSkillsAsPlan.Text" xml:space="preserve">
+    <value>按计划导出角色和技能...</value>
+  </data>
+  <data name="this.miRestorePlans.Text" xml:space="preserve">
+    <value>恢复计划(&amp;R)...</value>
+  </data>
+  <data name="this.miSavePlans.Text" xml:space="preserve">
+    <value>保存计划(&amp;S)...</value>
+  </data>
+  <data name="this.mEdit.Text" xml:space="preserve">
+    <value>编辑(&amp;E)</value>
+  </data>
+  <data name="this.miRenameEdit.Text" xml:space="preserve">
+    <value>重命名(&amp;E)...</value>
+  </data>
+  <data name="this.miDelete.Text" xml:space="preserve">
+    <value>删除(&amp;D)</value>
+  </data>
+  <data name="this.Text" xml:space="preserve">
+    <value>管理计划</value>
+  </data>
+</root>

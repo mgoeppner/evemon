@@ -71,7 +71,7 @@ namespace EVEMon.CharacterMonitoring
 			this.noEVEMailMessagesLabel.Name = "noEVEMailMessagesLabel";
 			this.noEVEMailMessagesLabel.Size = new System.Drawing.Size(454, 434);
 			this.noEVEMailMessagesLabel.TabIndex = 1;
-			this.noEVEMailMessagesLabel.Text = "No EVE mail messages are available.";
+			this.noEVEMailMessagesLabel.Text = resources.GetString("this.noEVEMailMessagesLabel.Text");
 			this.noEVEMailMessagesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// contextMenu
@@ -88,7 +88,7 @@ namespace EVEMon.CharacterMonitoring
 			// 
 			this.mailReadLocal.Name = "mailReadLocal";
 			this.mailReadLocal.Size = new System.Drawing.Size(156, 22);
-			this.mailReadLocal.Text = "Read";
+			this.mailReadLocal.Text = resources.GetString("this.mailReadLocal.Text");
 			this.mailReadLocal.Click += new System.EventHandler(this.mailReadLocal_Click);
 			// 
 			// toolStripSeparator
@@ -100,7 +100,7 @@ namespace EVEMon.CharacterMonitoring
 			// 
 			this.exportToCSVToolStripMenuItem.Name = "exportToCSVToolStripMenuItem";
 			this.exportToCSVToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-			this.exportToCSVToolStripMenuItem.Text = "Export To CSV...";
+			this.exportToCSVToolStripMenuItem.Text = resources.GetString("this.exportToCSVToolStripMenuItem.Text");
 			this.exportToCSVToolStripMenuItem.Click += new System.EventHandler(this.exportToCSVToolStripMenuItem_Click);
 			// 
 			// splitContainerMailMessages
@@ -153,29 +153,29 @@ namespace EVEMon.CharacterMonitoring
 			// 
 			// chSenderName
 			// 
-			this.chSenderName.Text = "From";
+			this.chSenderName.Text = resources.GetString("this.chSenderName.Text");
 			// 
 			// chTitle
 			// 
-			this.chTitle.Text = "Subject";
+			this.chTitle.Text = resources.GetString("this.chTitle.Text");
 			this.chTitle.Width = 121;
 			// 
 			// chSentDate
 			// 
-			this.chSentDate.Text = "Received";
+			this.chSentDate.Text = resources.GetString("this.chSentDate.Text");
 			this.chSentDate.Width = 90;
 			// 
 			// chToCharacterIDs
 			// 
-			this.chToCharacterIDs.Text = "To";
+			this.chToCharacterIDs.Text = resources.GetString("this.chToCharacterIDs.Text");
 			// 
 			// chToCorpOrAlliance
 			// 
-			this.chToCorpOrAlliance.Text = "To Corp Or Alliance";
+			this.chToCorpOrAlliance.Text = resources.GetString("this.chToCorpOrAlliance.Text");
 			// 
 			// chToListID
 			// 
-			this.chToListID.Text = "To Mailing List";
+			this.chToListID.Text = resources.GetString("this.chToListID.Text");
 			// 
 			// eveMailReadingPane
 			// 

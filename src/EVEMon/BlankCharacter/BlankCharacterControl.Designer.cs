@@ -139,7 +139,7 @@
             this.gbRace.Size = new System.Drawing.Size(470, 135);
             this.gbRace.TabIndex = 5;
             this.gbRace.TabStop = false;
-            this.gbRace.Text = "Race";
+            this.gbRace.Text = resources.GetString("this.gbRace.Text");
             // 
             // tlpRaces
             // 
@@ -264,7 +264,7 @@
             this.gbBloodline.Size = new System.Drawing.Size(148, 212);
             this.gbBloodline.TabIndex = 6;
             this.gbBloodline.TabStop = false;
-            this.gbBloodline.Text = "Bloodline";
+            this.gbBloodline.Text = resources.GetString("this.gbBloodline.Text");
             // 
             // tlpBloodline
             // 
@@ -372,7 +372,7 @@
             this.gbAncestry.Size = new System.Drawing.Size(166, 212);
             this.gbAncestry.TabIndex = 7;
             this.gbAncestry.TabStop = false;
-            this.gbAncestry.Text = "Ancestry";
+            this.gbAncestry.Text = resources.GetString("this.gbAncestry.Text");
             // 
             // tlpAncestry
             // 
@@ -412,7 +412,7 @@
             this.lblAncestry1.Name = "lblAncestry1";
             this.lblAncestry1.Size = new System.Drawing.Size(104, 18);
             this.lblAncestry1.TabIndex = 8;
-            this.lblAncestry1.Text = "Liberal Holders";
+            this.lblAncestry1.Text = resources.GetString("this.lblAncestry1.Text");
             this.lblAncestry1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // rbAncestry2
@@ -477,7 +477,7 @@
             this.lblAncestry3.Name = "lblAncestry3";
             this.lblAncestry3.Size = new System.Drawing.Size(104, 19);
             this.lblAncestry3.TabIndex = 9;
-            this.lblAncestry3.Text = "Religious Reclaimers";
+            this.lblAncestry3.Text = resources.GetString("this.lblAncestry3.Text");
             this.lblAncestry3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblAncestry2
@@ -490,7 +490,7 @@
             this.lblAncestry2.Name = "lblAncestry2";
             this.lblAncestry2.Size = new System.Drawing.Size(104, 18);
             this.lblAncestry2.TabIndex = 7;
-            this.lblAncestry2.Text = "Weathy Commoners";
+            this.lblAncestry2.Text = resources.GetString("this.lblAncestry2.Text");
             this.lblAncestry2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pbAncestry2
@@ -562,7 +562,7 @@
             this.gbGender.Size = new System.Drawing.Size(146, 212);
             this.gbGender.TabIndex = 8;
             this.gbGender.TabStop = false;
-            this.gbGender.Text = "Gender";
+            this.gbGender.Text = resources.GetString("this.gbGender.Text");
             // 
             // gbCharacterName
             // 
@@ -573,7 +573,7 @@
             this.gbCharacterName.Size = new System.Drawing.Size(226, 46);
             this.gbCharacterName.TabIndex = 9;
             this.gbCharacterName.TabStop = false;
-            this.gbCharacterName.Text = "Blank Character Name";
+            this.gbCharacterName.Text = resources.GetString("this.gbCharacterName.Text");
             // 
             // ilBloodline
             // 
@@ -644,7 +644,7 @@
             this.lblFemale.Name = "lblFemale";
             this.lblFemale.Size = new System.Drawing.Size(85, 20);
             this.lblFemale.TabIndex = 4;
-            this.lblFemale.Text = "Female";
+            this.lblFemale.Text = resources.GetString("this.lblFemale.Text");
             this.lblFemale.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblMale
@@ -655,7 +655,7 @@
             this.lblMale.Name = "lblMale";
             this.lblMale.Size = new System.Drawing.Size(85, 21);
             this.lblMale.TabIndex = 5;
-            this.lblMale.Text = "Male";
+            this.lblMale.Text = resources.GetString("this.lblMale.Text");
             this.lblMale.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // BlankCharacterControl

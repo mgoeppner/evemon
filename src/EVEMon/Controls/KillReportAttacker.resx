@@ -207,4 +207,19 @@
   <metadata name="contextMenuStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="this.DamageDoneLabel.Text" xml:space="preserve">
+    <value>{0:N0} ({1:P1})</value>
+  </data>
+  <data name="this.CharacterNameLabel.Text" xml:space="preserve">
+    <value>Character Name</value>
+  </data>
+  <data name="this.AllianceNameLabel.Text" xml:space="preserve">
+    <value>Alliance Name</value>
+  </data>
+  <data name="this.CorpNameLabel.Text" xml:space="preserve">
+    <value>Corporation Name</value>
+  </data>
+  <data name="this.showInBrowserMenuItem.Text" xml:space="preserve">
+    <value>Show In Browser...</value>
+  </data>
 </root>

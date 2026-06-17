@@ -151,4 +151,28 @@
         AAAASUVORK5CYII=
 </value>
   </data>
+  <data name="this.itemColumn.Text" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="this.locationColumn.Text" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="this.unitaryPriceColumn.Text" xml:space="preserve">
+    <value>Unit Price</value>
+  </data>
+  <data name="this.quantityColumn.Text" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="this.showInBrowserMenuItem.Text" xml:space="preserve">
+    <value>Show In Browser...</value>
+  </data>
+  <data name="this.exportToCSVToolStripMenuItem.Text" xml:space="preserve">
+    <value>Export To CSV ...</value>
+  </data>
+  <data name="this.noOrdersLabel.Text" xml:space="preserve">
+    <value>No market orders are available.</value>
+  </data>
+  <data name="this.marketExpPanelControl.HeaderText" xml:space="preserve">
+    <value>Header Text</value>
+  </data>
 </root>

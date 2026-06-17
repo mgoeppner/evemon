@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Name1" xml:space="preserve">
+    <value>这是我的长绳子</value>
+  </data>
+  <data name="this.miPlanTo0.Text" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="this.miPlanTo1.Text" xml:space="preserve">
+    <value>计划至 1 级</value>
+  </data>
+  <data name="this.miPlanTo2.Text" xml:space="preserve">
+    <value>计划到 2 级</value>
+  </data>
+  <data name="this.miPlanTo3.Text" xml:space="preserve">
+    <value>计划升级至 3 级</value>
+  </data>
+  <data name="this.miPlanTo4.Text" xml:space="preserve">
+    <value>计划升级至 4 级</value>
+  </data>
+  <data name="this.miPlanTo5.Text" xml:space="preserve">
+    <value>计划升级至 5 级</value>
+  </data>
+  <data name="this.toolStrip.Text" xml:space="preserve">
+    <value>工具条</value>
+  </data>
+  <data name="this.showSkillExplorerMenu.Text" xml:space="preserve">
+    <value>在技能资源管理器中显示...</value>
+  </data>
+  <data name="this.showSkillExplorerMenu.ToolTipText" xml:space="preserve">
+    <value>打开技能浏览器。</value>
+  </data>
+  <data name="this.ownsBookToolStripButton.Text" xml:space="preserve">
+    <value>拥有书籍(&amp;O)</value>
+  </data>
+  <data name="this.planToLevel.Text" xml:space="preserve">
+    <value>计划...</value>
+  </data>
+  <data name="this.planTo0Menu.Text" xml:space="preserve">
+    <value>删除(&amp;R)</value>
+  </data>
+  <data name="this.planTo1Menu.Text" xml:space="preserve">
+    <value>等级&amp;1</value>
+  </data>
+  <data name="this.planTo2Menu.Text" xml:space="preserve">
+    <value>等级&amp;2</value>
+  </data>
+  <data name="this.planTo3Menu.Text" xml:space="preserve">
+    <value>等级&amp;3</value>
+  </data>
+  <data name="this.planTo4Menu.Text" xml:space="preserve">
+    <value>4级</value>
+  </data>
+  <data name="this.planTo5Menu.Text" xml:space="preserve">
+    <value>5级</value>
+  </data>
+  <data name="this.lblSkillName.Text" xml:space="preserve">
+    <value>技能名称</value>
+  </data>
+  <data name="this.lblSkillCost.Text" xml:space="preserve">
+    <value>技能成本</value>
+  </data>
+  <data name="this.lblSkillClass.Text" xml:space="preserve">
+    <value>技能类别</value>
+  </data>
+  <data name="this.descriptionTextBox.Text" xml:space="preserve">
+    <value>技能描述</value>
+  </data>
+  <data name="this.lblAttributes.Text" xml:space="preserve">
+    <value>主要：智力，次要：感知（SP/小时：2,000）</value>
+  </data>
+  <data name="this.lblLevel5Time.Text" xml:space="preserve">
+    <value>V级：63d、18hh、27m、56s（加上154d、2h、54m、24s）</value>
+  </data>
+  <data name="this.lblLevel4Time.Text" xml:space="preserve">
+    <value>IV级：11d、6h、33m、3s（加上142d、20h、21m、21s）</value>
+  </data>
+  <data name="this.lblLevel3Time.Text" xml:space="preserve">
+    <value>III级：1d、23h、49m、36s（加上140d、12h、31m、10s）</value>
+  </data>
+  <data name="this.lblLevel2Time.Text" xml:space="preserve">
+    <value>II级：8h、27m、17s（加上140d、12h、4m、26s）</value>
+  </data>
+  <data name="this.lblLevel1Time.Text" xml:space="preserve">
+    <value>I级：1h、48m、55s（加上140d、10h、15m、30s）</value>
+  </data>
+  <data name="this.lblHelp.Text" xml:space="preserve">
+    <value>使用左侧的树选择要查看的技能。</value>
+  </data>
+</root>

@@ -158,4 +158,22 @@
         JP41yQEi7v98+w927K1tbAtjLPB/l3OEO2LTS/UAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="this.characterToRemoveLabel.Text" xml:space="preserve">
+    <value>You are about to delete the character "{0}".</value>
+  </data>
+  <data name="this.label2.Text" xml:space="preserve">
+    <value>All your data and plans will be lost!</value>
+  </data>
+  <data name="this.cancelButton.Text" xml:space="preserve">
+    <value>&amp;Cancel</value>
+  </data>
+  <data name="this.deleteButton.Text" xml:space="preserve">
+    <value>&amp;Delete</value>
+  </data>
+  <data name="this.noCharactersLabel.Text" xml:space="preserve">
+    <value>The ESI key{0} will also be removed:</value>
+  </data>
+  <data name="this.Text" xml:space="preserve">
+    <value>Delete Character</value>
+  </data>
 </root>

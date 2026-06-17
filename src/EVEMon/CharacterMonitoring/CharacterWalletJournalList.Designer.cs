@@ -50,7 +50,7 @@
             this.noWalletJournalLabel.Name = "noWalletJournalLabel";
             this.noWalletJournalLabel.Size = new System.Drawing.Size(454, 434);
             this.noWalletJournalLabel.TabIndex = 3;
-            this.noWalletJournalLabel.Text = "No wallet journal is available.";
+            this.noWalletJournalLabel.Text = resources.GetString("this.noWalletJournalLabel.Text");
             this.noWalletJournalLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lvWalletJournal
@@ -76,22 +76,22 @@
             // 
             // chDate
             // 
-            this.chDate.Text = "Date";
+            this.chDate.Text = resources.GetString("this.chDate.Text");
             this.chDate.Width = 106;
             // 
             // chType
             // 
-            this.chType.Text = "Type";
+            this.chType.Text = resources.GetString("this.chType.Text");
             this.chType.Width = 100;
             // 
             // chAmount
             // 
-            this.chAmount.Text = "Amount";
+            this.chAmount.Text = resources.GetString("this.chAmount.Text");
             this.chAmount.Width = 99;
             // 
             // chBalance
             // 
-            this.chBalance.Text = "Balance";
+            this.chBalance.Text = resources.GetString("this.chBalance.Text");
             this.chBalance.Width = 106;
             // 
             // ilIcons
@@ -113,7 +113,7 @@
             // 
             this.exportToCSVToolStripMenuItem.Name = "exportToCSVToolStripMenuItem";
             this.exportToCSVToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.exportToCSVToolStripMenuItem.Text = "Export To CSV...";
+            this.exportToCSVToolStripMenuItem.Text = resources.GetString("this.exportToCSVToolStripMenuItem.Text");
             this.exportToCSVToolStripMenuItem.Click += new System.EventHandler(this.exportToCSVToolStripMenuItem_Click);
             // 
             // CharacterWalletJournalList

@@ -97,42 +97,42 @@ namespace EVEMon.SkillPlanner
             // 
             this.miPlanTo0.Name = "miPlanTo0";
             this.miPlanTo0.Size = new System.Drawing.Size(150, 22);
-            this.miPlanTo0.Text = "Remove";
+            this.miPlanTo0.Text = resources.GetString("this.miPlanTo0.Text");
             this.miPlanTo0.Click += new System.EventHandler(this.planToMenu_Click);
             // 
             // miPlanTo1
             // 
             this.miPlanTo1.Name = "miPlanTo1";
             this.miPlanTo1.Size = new System.Drawing.Size(150, 22);
-            this.miPlanTo1.Text = "Plan to Level 1";
+            this.miPlanTo1.Text = resources.GetString("this.miPlanTo1.Text");
             this.miPlanTo1.Click += new System.EventHandler(this.planToMenu_Click);
             // 
             // miPlanTo2
             // 
             this.miPlanTo2.Name = "miPlanTo2";
             this.miPlanTo2.Size = new System.Drawing.Size(150, 22);
-            this.miPlanTo2.Text = "Plan to Level 2";
+            this.miPlanTo2.Text = resources.GetString("this.miPlanTo2.Text");
             this.miPlanTo2.Click += new System.EventHandler(this.planToMenu_Click);
             // 
             // miPlanTo3
             // 
             this.miPlanTo3.Name = "miPlanTo3";
             this.miPlanTo3.Size = new System.Drawing.Size(150, 22);
-            this.miPlanTo3.Text = "Plan to Level 3";
+            this.miPlanTo3.Text = resources.GetString("this.miPlanTo3.Text");
             this.miPlanTo3.Click += new System.EventHandler(this.planToMenu_Click);
             // 
             // miPlanTo4
             // 
             this.miPlanTo4.Name = "miPlanTo4";
             this.miPlanTo4.Size = new System.Drawing.Size(150, 22);
-            this.miPlanTo4.Text = "Plan to Level 4";
+            this.miPlanTo4.Text = resources.GetString("this.miPlanTo4.Text");
             this.miPlanTo4.Click += new System.EventHandler(this.planToMenu_Click);
             // 
             // miPlanTo5
             // 
             this.miPlanTo5.Name = "miPlanTo5";
             this.miPlanTo5.Size = new System.Drawing.Size(150, 22);
-            this.miPlanTo5.Text = "Plan to Level 5";
+            this.miPlanTo5.Text = resources.GetString("this.miPlanTo5.Text");
             this.miPlanTo5.Click += new System.EventHandler(this.planToMenu_Click);
             // 
             // tmrTrainingSkillTick
@@ -219,7 +219,7 @@ namespace EVEMon.SkillPlanner
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(637, 25);
             this.toolStrip.TabIndex = 20;
-            this.toolStrip.Text = "toolStrip";
+            this.toolStrip.Text = resources.GetString("this.toolStrip.Text");
             // 
             // showSkillExplorerMenu
             // 
@@ -228,8 +228,8 @@ namespace EVEMon.SkillPlanner
             this.showSkillExplorerMenu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.showSkillExplorerMenu.Name = "showSkillExplorerMenu";
             this.showSkillExplorerMenu.Size = new System.Drawing.Size(147, 22);
-            this.showSkillExplorerMenu.Text = "Show In Skill Explorer...";
-            this.showSkillExplorerMenu.ToolTipText = "Opens the Skill Explorer.";
+            this.showSkillExplorerMenu.Text = resources.GetString("this.showSkillExplorerMenu.Text");
+            this.showSkillExplorerMenu.ToolTipText = resources.GetString("this.showSkillExplorerMenu.ToolTipText");
             this.showSkillExplorerMenu.Click += new System.EventHandler(this.showSkillExplorerMenu_Click);
             // 
             // toolStripSeparator1
@@ -247,7 +247,7 @@ namespace EVEMon.SkillPlanner
             this.ownsBookToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ownsBookToolStripButton.Name = "ownsBookToolStripButton";
             this.ownsBookToolStripButton.Size = new System.Drawing.Size(71, 22);
-            this.ownsBookToolStripButton.Text = "&Owns book";
+            this.ownsBookToolStripButton.Text = resources.GetString("this.ownsBookToolStripButton.Text");
             this.ownsBookToolStripButton.CheckedChanged += new System.EventHandler(this.ownsBookToolStripButton_CheckedChanged);
             // 
             // planToLevel
@@ -263,48 +263,48 @@ namespace EVEMon.SkillPlanner
             this.planToLevel.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.planToLevel.Name = "planToLevel";
             this.planToLevel.Size = new System.Drawing.Size(82, 22);
-            this.planToLevel.Text = "&Plan to...";
+            this.planToLevel.Text = resources.GetString("this.planToLevel.Text");
             // 
             // planTo0Menu
             // 
             this.planTo0Menu.Name = "planTo0Menu";
             this.planTo0Menu.Size = new System.Drawing.Size(117, 22);
-            this.planTo0Menu.Text = "&Remove";
+            this.planTo0Menu.Text = resources.GetString("this.planTo0Menu.Text");
             this.planTo0Menu.Click += new System.EventHandler(this.planToMenu_Click);
             // 
             // planTo1Menu
             // 
             this.planTo1Menu.Name = "planTo1Menu";
             this.planTo1Menu.Size = new System.Drawing.Size(117, 22);
-            this.planTo1Menu.Text = "Level &1";
+            this.planTo1Menu.Text = resources.GetString("this.planTo1Menu.Text");
             this.planTo1Menu.Click += new System.EventHandler(this.planToMenu_Click);
             // 
             // planTo2Menu
             // 
             this.planTo2Menu.Name = "planTo2Menu";
             this.planTo2Menu.Size = new System.Drawing.Size(117, 22);
-            this.planTo2Menu.Text = "Level &2";
+            this.planTo2Menu.Text = resources.GetString("this.planTo2Menu.Text");
             this.planTo2Menu.Click += new System.EventHandler(this.planToMenu_Click);
             // 
             // planTo3Menu
             // 
             this.planTo3Menu.Name = "planTo3Menu";
             this.planTo3Menu.Size = new System.Drawing.Size(117, 22);
-            this.planTo3Menu.Text = "Level &3";
+            this.planTo3Menu.Text = resources.GetString("this.planTo3Menu.Text");
             this.planTo3Menu.Click += new System.EventHandler(this.planToMenu_Click);
             // 
             // planTo4Menu
             // 
             this.planTo4Menu.Name = "planTo4Menu";
             this.planTo4Menu.Size = new System.Drawing.Size(117, 22);
-            this.planTo4Menu.Text = "Level &4";
+            this.planTo4Menu.Text = resources.GetString("this.planTo4Menu.Text");
             this.planTo4Menu.Click += new System.EventHandler(this.planToMenu_Click);
             // 
             // planTo5Menu
             // 
             this.planTo5Menu.Name = "planTo5Menu";
             this.planTo5Menu.Size = new System.Drawing.Size(117, 22);
-            this.planTo5Menu.Text = "Level &5";
+            this.planTo5Menu.Text = resources.GetString("this.planTo5Menu.Text");
             this.planTo5Menu.Click += new System.EventHandler(this.planToMenu_Click);
             // 
             // pnlPlanControl
@@ -343,7 +343,7 @@ namespace EVEMon.SkillPlanner
             this.lblSkillName.Name = "lblSkillName";
             this.lblSkillName.Size = new System.Drawing.Size(57, 13);
             this.lblSkillName.TabIndex = 0;
-            this.lblSkillName.Text = "Skill Name";
+            this.lblSkillName.Text = resources.GetString("this.lblSkillName.Text");
             // 
             // lblSkillCost
             // 
@@ -354,7 +354,7 @@ namespace EVEMon.SkillPlanner
             this.lblSkillCost.Name = "lblSkillCost";
             this.lblSkillCost.Size = new System.Drawing.Size(50, 13);
             this.lblSkillCost.TabIndex = 19;
-            this.lblSkillCost.Text = "Skill Cost";
+            this.lblSkillCost.Text = resources.GetString("this.lblSkillCost.Text");
             // 
             // lblSkillClass
             // 
@@ -363,7 +363,7 @@ namespace EVEMon.SkillPlanner
             this.lblSkillClass.Name = "lblSkillClass";
             this.lblSkillClass.Size = new System.Drawing.Size(71, 13);
             this.lblSkillClass.TabIndex = 18;
-            this.lblSkillClass.Text = "Skill Category";
+            this.lblSkillClass.Text = resources.GetString("this.lblSkillClass.Text");
             // 
             // descriptionTextBox
             // 
@@ -379,7 +379,7 @@ namespace EVEMon.SkillPlanner
             this.descriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.descriptionTextBox.Size = new System.Drawing.Size(300, 81);
             this.descriptionTextBox.TabIndex = 17;
-            this.descriptionTextBox.Text = "Description of the skill";
+            this.descriptionTextBox.Text = resources.GetString("this.descriptionTextBox.Text");
             // 
             // lblAttributes
             // 
@@ -388,7 +388,7 @@ namespace EVEMon.SkillPlanner
             this.lblAttributes.Name = "lblAttributes";
             this.lblAttributes.Size = new System.Drawing.Size(338, 13);
             this.lblAttributes.TabIndex = 14;
-            this.lblAttributes.Text = "Primary: Intelligence, Secondary: Perception (SP/Hour : 2,000)";
+            this.lblAttributes.Text = resources.GetString("this.lblAttributes.Text");
             this.lblAttributes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblLevel5Time
@@ -398,7 +398,7 @@ namespace EVEMon.SkillPlanner
             this.lblLevel5Time.Name = "lblLevel5Time";
             this.lblLevel5Time.Size = new System.Drawing.Size(268, 13);
             this.lblLevel5Time.TabIndex = 5;
-            this.lblLevel5Time.Text = "Level V: 63d, 18hh, 27m, 56s (plus 154d, 2h, 54m, 24s)";
+            this.lblLevel5Time.Text = resources.GetString("this.lblLevel5Time.Text");
             // 
             // lblLevel4Time
             // 
@@ -407,7 +407,7 @@ namespace EVEMon.SkillPlanner
             this.lblLevel4Time.Name = "lblLevel4Time";
             this.lblLevel4Time.Size = new System.Drawing.Size(259, 13);
             this.lblLevel4Time.TabIndex = 4;
-            this.lblLevel4Time.Text = "Level IV: 11d, 6h, 33m, 3s (plus 142d, 20h, 21m, 21s)";
+            this.lblLevel4Time.Text = resources.GetString("this.lblLevel4Time.Text");
             // 
             // lblLevel3Time
             // 
@@ -416,7 +416,7 @@ namespace EVEMon.SkillPlanner
             this.lblLevel3Time.Name = "lblLevel3Time";
             this.lblLevel3Time.Size = new System.Drawing.Size(264, 13);
             this.lblLevel3Time.TabIndex = 3;
-            this.lblLevel3Time.Text = "Level III: 1d, 23h, 49m, 36s (plus 140d, 12h, 31m, 10s)";
+            this.lblLevel3Time.Text = resources.GetString("this.lblLevel3Time.Text");
             // 
             // lblLevel2Time
             // 
@@ -425,7 +425,7 @@ namespace EVEMon.SkillPlanner
             this.lblLevel2Time.Name = "lblLevel2Time";
             this.lblLevel2Time.Size = new System.Drawing.Size(231, 13);
             this.lblLevel2Time.TabIndex = 2;
-            this.lblLevel2Time.Text = "Level II: 8h, 27m, 17s (plus 140d, 12h, 4m, 26s)";
+            this.lblLevel2Time.Text = resources.GetString("this.lblLevel2Time.Text");
             // 
             // lblLevel1Time
             // 
@@ -434,7 +434,7 @@ namespace EVEMon.SkillPlanner
             this.lblLevel1Time.Name = "lblLevel1Time";
             this.lblLevel1Time.Size = new System.Drawing.Size(234, 13);
             this.lblLevel1Time.TabIndex = 1;
-            this.lblLevel1Time.Text = "Level I: 1h, 48m, 55s (plus 140d, 10h, 15m, 30s)";
+            this.lblLevel1Time.Text = resources.GetString("this.lblLevel1Time.Text");
             // 
             // lblHelp
             // 
@@ -443,7 +443,7 @@ namespace EVEMon.SkillPlanner
             this.lblHelp.Name = "lblHelp";
             this.lblHelp.Size = new System.Drawing.Size(218, 13);
             this.lblHelp.TabIndex = 30;
-            this.lblHelp.Text = "Use the tree on the left to select skill to view.";
+            this.lblHelp.Text = resources.GetString("this.lblHelp.Text");
             // 
             // SkillBrowserControl
             // 

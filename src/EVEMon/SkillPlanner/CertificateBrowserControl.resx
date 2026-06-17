@@ -293,4 +293,55 @@
         QmCC
 </value>
   </data>
+  <data name="this.lblLevel5Time.Text" xml:space="preserve">
+    <value>Level V : 11d, 6h, 33m, 3s</value>
+  </data>
+  <data name="this.tslbTextForEligibility.Text" xml:space="preserve">
+    <value>After this plan you will be eligible to :</value>
+  </data>
+  <data name="this.tslbEligible.Text" xml:space="preserve">
+    <value>none</value>
+  </data>
+  <data name="this.planToLevel.Text" xml:space="preserve">
+    <value>Plan To...</value>
+  </data>
+  <data name="this.planToLevel.ToolTipText" xml:space="preserve">
+    <value>Plan To...</value>
+  </data>
+  <data name="this.tsPlanToLevelOne.Text" xml:space="preserve">
+    <value>&amp;Level I</value>
+  </data>
+  <data name="this.tsPlanToLevelTwo.Text" xml:space="preserve">
+    <value>&amp;Level II</value>
+  </data>
+  <data name="this.tsPlanToLevelThree.Text" xml:space="preserve">
+    <value>&amp;Level III</value>
+  </data>
+  <data name="this.tsPlanToLevelFour.Text" xml:space="preserve">
+    <value>&amp;Level IV</value>
+  </data>
+  <data name="this.tsPlanToLevelFive.Text" xml:space="preserve">
+    <value>&amp;Level V</value>
+  </data>
+  <data name="this.lblCategory.Text" xml:space="preserve">
+    <value>Skill Category</value>
+  </data>
+  <data name="this.lblLevel4Time.Text" xml:space="preserve">
+    <value>Level IV : 5d, 12h, 15m, 24s</value>
+  </data>
+  <data name="this.lblLevel3Time.Text" xml:space="preserve">
+    <value>Level III : 1d, 23h, 49m, 36s</value>
+  </data>
+  <data name="this.lblLevel2Time.Text" xml:space="preserve">
+    <value>Level II : 8h, 27m, 17s</value>
+  </data>
+  <data name="this.lblLevel1Time.Text" xml:space="preserve">
+    <value>Level I : 1h, 48m, 55s</value>
+  </data>
+  <data name="this.lblName.Text" xml:space="preserve">
+    <value>Skill Name</value>
+  </data>
+  <data name="this.lblHelp.Text" xml:space="preserve">
+    <value>Use the tree on the left to select certificate to view.</value>
+  </data>
 </root>

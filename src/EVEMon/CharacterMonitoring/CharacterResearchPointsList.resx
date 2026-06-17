@@ -134,4 +134,31 @@
   <metadata name="contextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>103, 17</value>
   </metadata>
+  <data name="this.noResearchPointsLabel.Text" xml:space="preserve">
+    <value>No research points are available.</value>
+  </data>
+  <data name="this.chAgentName.Text" xml:space="preserve">
+    <value>Agent</value>
+  </data>
+  <data name="this.chSolarSystem.Text" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="this.chSkill.Text" xml:space="preserve">
+    <value>Field</value>
+  </data>
+  <data name="this.chCurrentRP.Text" xml:space="preserve">
+    <value>Current RP</value>
+  </data>
+  <data name="this.chPRPerDay.Text" xml:space="preserve">
+    <value>RP/Day</value>
+  </data>
+  <data name="this.showInSkillBrowserMenuItem.Text" xml:space="preserve">
+    <value>Show Field In Skill Browser...</value>
+  </data>
+  <data name="this.showObjectInBrowserMenuItem.Text" xml:space="preserve">
+    <value>Show Researchable In Item Browser...</value>
+  </data>
+  <data name="this.exportToCSVToolStripMenuItem.Text" xml:space="preserve">
+    <value>Export To CSV...</value>
+  </data>
 </root>

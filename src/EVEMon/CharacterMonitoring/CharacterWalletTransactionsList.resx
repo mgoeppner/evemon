@@ -134,4 +134,22 @@
         AgAB/AE/AfgBHwL/AgAB/gF/AfABDwL/AgAG/wIABv8CAAb/AgAG/wIABv8CAAb/AgAL
 </value>
   </data>
+  <data name="this.noWalletTransactionsLabel.Text" xml:space="preserve">
+    <value>No wallet transactions are available.</value>
+  </data>
+  <data name="this.chDate.Text" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="this.chItem.Text" xml:space="preserve">
+    <value>Item</value>
+  </data>
+  <data name="this.chPrice.Text" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="this.chQuantity.Text" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="this.exportToCSVToolStripMenuItem.Text" xml:space="preserve">
+    <value>Export To CSV...</value>
+  </data>
 </root>

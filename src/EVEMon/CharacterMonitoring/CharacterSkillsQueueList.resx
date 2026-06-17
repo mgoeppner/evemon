@@ -161,4 +161,19 @@
         SUVORK5CYII=
 </value>
   </data>
+  <data name="this.noSkillsQueueLabel.Text" xml:space="preserve">
+    <value>Skills Queue information not available.</value>
+  </data>
+  <data name="this.showInSkillExplorerMenuItem.Text" xml:space="preserve">
+    <value>Show In Skill &amp;Explorer...</value>
+  </data>
+  <data name="this.tsmiAddSkill.Text" xml:space="preserve">
+    <value>Add skill</value>
+  </data>
+  <data name="this.tsmiCreatePlanFromSkillQueue.Text" xml:space="preserve">
+    <value>Create Plan from Skill Queue...</value>
+  </data>
+  <data name="this.showInSkillBrowserMenuItem.Text" xml:space="preserve">
+    <value>Show In Skill Browser...</value>
+  </data>
 </root>

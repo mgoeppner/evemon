@@ -134,4 +134,22 @@
         AgAB/AE/AfgBHwL/AgAB/gF/AfABDwL/AgAG/wIABv8CAAb/AgAG/wIABv8CAAb/AgAL
 </value>
   </data>
+  <data name="this.noWalletJournalLabel.Text" xml:space="preserve">
+    <value>No wallet journal is available.</value>
+  </data>
+  <data name="this.chDate.Text" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="this.chType.Text" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="this.chAmount.Text" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="this.chBalance.Text" xml:space="preserve">
+    <value>Balance</value>
+  </data>
+  <data name="this.exportToCSVToolStripMenuItem.Text" xml:space="preserve">
+    <value>Export To CSV...</value>
+  </data>
 </root>

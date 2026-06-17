@@ -71,19 +71,19 @@ namespace EVEMon.CharacterMonitoring
             // 
             // chState
             // 
-            this.chState.Text = "State";
+            this.chState.Text = resources.GetString("this.chState.Text");
             // 
             // chTTC
             // 
-            this.chTTC.Text = "TTC";
+            this.chTTC.Text = resources.GetString("this.chTTC.Text");
             // 
             // chInstalledItem
             // 
-            this.chInstalledItem.Text = "Installed Item";
+            this.chInstalledItem.Text = resources.GetString("this.chInstalledItem.Text");
             // 
             // chOutputItem
             // 
-            this.chOutputItem.Text = "Output Item";
+            this.chOutputItem.Text = resources.GetString("this.chOutputItem.Text");
             // 
             // contextMenu
             // 
@@ -100,14 +100,14 @@ namespace EVEMon.CharacterMonitoring
             // 
             this.showInstalledInBrowserMenuItem.Name = "showInstalledInBrowserMenuItem";
             this.showInstalledInBrowserMenuItem.Size = new System.Drawing.Size(217, 22);
-            this.showInstalledInBrowserMenuItem.Text = "Show Input In Blueprint Browser...";
+            this.showInstalledInBrowserMenuItem.Text = resources.GetString("this.showInstalledInBrowserMenuItem.Text");
             this.showInstalledInBrowserMenuItem.Click += new System.EventHandler(this.showInBrowserMenuItem_Click);
             // 
             // showProducedInBrowserMenuItem
             // 
             this.showProducedInBrowserMenuItem.Name = "showProducedInBrowserMenuItem";
             this.showProducedInBrowserMenuItem.Size = new System.Drawing.Size(217, 22);
-            this.showProducedInBrowserMenuItem.Text = "Show Output In Browser...";
+            this.showProducedInBrowserMenuItem.Text = resources.GetString("this.showProducedInBrowserMenuItem.Text");
             this.showProducedInBrowserMenuItem.Click += new System.EventHandler(this.showInBrowserMenuItem_Click);
             // 
             // showInBrowserMenuSeparator
@@ -119,7 +119,7 @@ namespace EVEMon.CharacterMonitoring
             // 
             this.exportToCSVToolStripMenuItem.Name = "exportToCSVToolStripMenuItem";
             this.exportToCSVToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
-            this.exportToCSVToolStripMenuItem.Text = "Export To CSV...";
+            this.exportToCSVToolStripMenuItem.Text = resources.GetString("this.exportToCSVToolStripMenuItem.Text");
             this.exportToCSVToolStripMenuItem.Click += new System.EventHandler(this.exportToCSVToolStripMenuItem_Click);
             // 
             // ilIcons
@@ -138,7 +138,7 @@ namespace EVEMon.CharacterMonitoring
             this.noJobsLabel.Name = "noJobsLabel";
             this.noJobsLabel.Size = new System.Drawing.Size(454, 434);
             this.noJobsLabel.TabIndex = 2;
-            this.noJobsLabel.Text = "No industry jobs are available.";
+            this.noJobsLabel.Text = resources.GetString("this.noJobsLabel.Text");
             this.noJobsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // industryExpPanelControl
@@ -150,7 +150,7 @@ namespace EVEMon.CharacterMonitoring
             this.industryExpPanelControl.ExpandedHeight = 100;
             this.industryExpPanelControl.ExpandedOnStartup = false;
             this.industryExpPanelControl.HeaderHeight = 30;
-            this.industryExpPanelControl.HeaderText = "Header Text";
+            this.industryExpPanelControl.HeaderText = resources.GetString("this.industryExpPanelControl.HeaderText");
             this.industryExpPanelControl.ImageCollapse = ((System.Drawing.Bitmap)(resources.GetObject("industryExpPanelControl.ImageCollapse")));
             this.industryExpPanelControl.ImageExpand = ((System.Drawing.Bitmap)(resources.GetObject("industryExpPanelControl.ImageExpand")));
             this.industryExpPanelControl.Location = new System.Drawing.Point(0, 334);

@@ -144,6 +144,7 @@ namespace EVEMon.SettingsUI
             }
 
             // Misc settings
+            InitializeLanguageDropDown();
             cbWorksafeMode.Checked = m_settings.UI.SafeForWork;
             compatibilityCombo.SelectedIndex = (int)m_settings.Compatibility;
 
@@ -256,9 +257,13 @@ namespace EVEMon.SettingsUI
         {
             // Return settings
             ApplyToSettings();
+            bool languageChanged = LanguageChanged;
 
             if (SettingsChanged)
                 await Settings.ImportAsync(m_settings, true);
+
+            if (languageChanged)
+                ShowLanguageRestartRequiredMessage();
 
             Close();
         }
@@ -272,12 +277,16 @@ namespace EVEMon.SettingsUI
         private async void applyButton_Click(object sender, EventArgs e)
         {
             ApplyToSettings();
+            bool languageChanged = LanguageChanged;
 
             if (!SettingsChanged)
                 return;
 
             // Import the new settings
             await Settings.ImportAsync(m_settings, true);
+
+            if (languageChanged)
+                ShowLanguageRestartRequiredMessage();
 
             // Refresh the old settings
             m_oldSettings = Settings.Export();
@@ -287,6 +296,14 @@ namespace EVEMon.SettingsUI
 
 
         #region Core methods
+
+        /// <summary>
+        /// Gets a value indicating whether the selected language changed.
+        /// </summary>
+        private bool LanguageChanged => !string.Equals(
+            LocalizationHelper.NormalizeCultureName(m_settings.Language),
+            LocalizationHelper.NormalizeCultureName(m_oldSettings.Language),
+            StringComparison.OrdinalIgnoreCase);
 
         /// <summary>
         /// Sets the tray icon settings.
@@ -430,6 +447,8 @@ namespace EVEMon.SettingsUI
             int extraIndex = extraInfoComboBox.SelectedIndex;
 
             // General - Compatibility
+            m_settings.Language = (languageComboBox.SelectedItem as SupportedLanguage)?.CultureName ??
+                LocalizationHelper.DefaultCultureName;
             m_settings.Compatibility = (CompatibilityMode)Math.Max(0, compatibilityCombo.SelectedIndex);
             m_settings.UI.SafeForWork = cbWorksafeMode.Checked;
 
@@ -591,6 +610,36 @@ namespace EVEMon.SettingsUI
 
             if (cbProvidersList.SelectedIndex == -1 && cbProvidersList.Items.Count > 0)
                 cbProvidersList.SelectedIndex = 0;
+        }
+
+        /// <summary>
+        /// Populates the combobox for supported UI languages.
+        /// </summary>
+        private void InitializeLanguageDropDown()
+        {
+            languageComboBox.Items.Clear();
+            languageComboBox.Items.AddRange(LocalizationHelper.SupportedLanguages.Cast<object>().ToArray());
+
+            string selectedCultureName = LocalizationHelper.NormalizeCultureName(m_settings.Language);
+            SupportedLanguage selectedLanguage = LocalizationHelper.SupportedLanguages.First(language =>
+                string.Equals(language.CultureName, selectedCultureName, StringComparison.OrdinalIgnoreCase));
+
+            languageComboBox.SelectedItem = selectedLanguage;
+        }
+
+        /// <summary>
+        /// Shows the restart required message for language changes.
+        /// </summary>
+        private void ShowLanguageRestartRequiredMessage()
+        {
+            string message = string.Equals(
+                LocalizationHelper.NormalizeCultureName(m_settings.Language),
+                LocalizationHelper.ChineseCultureName,
+                StringComparison.OrdinalIgnoreCase)
+                ? "语言更改将在重启 EVEMon 后生效。"
+                : "The language change will take effect after restarting EVEMon.";
+
+            MessageBox.Show(message, "EVEMon", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         /// <summary>

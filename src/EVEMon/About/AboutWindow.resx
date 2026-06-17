@@ -364,4 +364,70 @@ You should have received a copy of the GNU General Public License along with thi
         07/Tv9O/0/93k8/3/wAELnmClucj0gAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="this.EVEMonLabel.Text" xml:space="preserve">
+    <value>EVEMon</value>
+  </data>
+  <data name="this.VersionLabel.Text" xml:space="preserve">
+    <value>Version {0}</value>
+  </data>
+  <data name="this.CopyrightLabel.Text" xml:space="preserve">
+    <value>Copyright � 2006-{0}</value>
+  </data>
+  <data name="this.DevelopmentTeamLabel.Text" xml:space="preserve">
+    <value>EVEMon Development Team</value>
+  </data>
+  <data name="this.HomePageLinkLabel.Text" xml:space="preserve">
+    <value>http://</value>
+  </data>
+  <data name="this.CreatedByLabel.Text" xml:space="preserve">
+    <value>Originally created by Timothy \'Six Anari\' Fries of Goonfleet.</value>
+  </data>
+  <data name="this.ContinuedByLabel.Text" xml:space="preserve">
+    <value>Continued by the listed \'Developers and contributors\'.</value>
+  </data>
+  <data name="this.DonationsLabel.Text" xml:space="preserve">
+    <value>Donations of ISK are always appreciated. ;)</value>
+  </data>
+  <data name="this.DevContribLabel.Text" xml:space="preserve">
+    <value>Developers and contributors</value>
+  </data>
+  <data name="this.CredentialsLabels.Text" xml:space="preserve">
+    <value>External contributions and credentials</value>
+  </data>
+  <data name="this.ccpGamesLinkLabel.Text" xml:space="preserve">
+    <value>CCP Games for their efforts towards community developers.</value>
+  </data>
+  <data name="this.ccpDocsLinkLabel.Text" xml:space="preserve">
+    <value>CCP 3rd party docs for their documentation.</value>
+  </data>
+  <data name="this.bitbucketLinkLabel.Text" xml:space="preserve">
+    <value>Bitbucket for hosting the project.</value>
+  </data>
+  <data name="this.gitHubLinkLabel.Text" xml:space="preserve">
+    <value>GitHub for hosting the project and providing our representation site.</value>
+  </data>
+  <data name="this.eveMarketerLinkLabel.Text" xml:space="preserve">
+    <value>EVEMarketer for their market data and API.</value>
+  </data>
+  <data name="this.eveMarketDataLinkLabel.Text" xml:space="preserve">
+    <value>EVE-MarketData for their market data and API.</value>
+  </data>
+  <data name="this.googleApisLinkLabel.Text" xml:space="preserve">
+    <value>Google for their API SDK.</value>
+  </data>
+  <data name="this.dropboxSDKLinkLabel.Text" xml:space="preserve">
+    <value>Dropbox for their API SDK.</value>
+  </data>
+  <data name="this.oneDriveSDKLinkLabel.Text" xml:space="preserve">
+    <value>Microsoft OneDrive for their API SDK.</value>
+  </data>
+  <data name="this.lironLeviLinkLabel.Text" xml:space="preserve">
+    <value>Liron Levi for his MultiPanel</value>
+  </data>
+  <data name="this.stackOverflowLinkLabel.Text" xml:space="preserve">
+    <value>The users of Stack Overflow who contributed advice and code snippits.</value>
+  </data>
+  <data name="this.Text" xml:space="preserve">
+    <value>About EVEMon</value>
+  </data>
 </root>

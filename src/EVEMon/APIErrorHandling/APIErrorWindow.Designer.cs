@@ -49,7 +49,7 @@
             this.ErrorLabel.Name = "ErrorLabel";
             this.ErrorLabel.Size = new System.Drawing.Size(521, 40);
             this.ErrorLabel.TabIndex = 1;
-            this.ErrorLabel.Text = "Error details.";
+            this.ErrorLabel.Text = resources.GetString("this.ErrorLabel.Text");
             // 
             // IconPictureBox
             // 
@@ -96,7 +96,7 @@
             this.CopyToClipboardLinkLabel.Size = new System.Drawing.Size(90, 23);
             this.CopyToClipboardLinkLabel.TabIndex = 4;
             this.CopyToClipboardLinkLabel.TabStop = true;
-            this.CopyToClipboardLinkLabel.Text = "Copy to Clipboard";
+            this.CopyToClipboardLinkLabel.Text = resources.GetString("this.CopyToClipboardLinkLabel.Text");
             this.CopyToClipboardLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.CopyToClipboardLinkLabel_LinkClicked);
             // 
             // DetailsPanel
@@ -126,7 +126,7 @@
             this.DetailsTextBox.ReadOnly = true;
             this.DetailsTextBox.Size = new System.Drawing.Size(545, 349);
             this.DetailsTextBox.TabIndex = 3;
-            this.DetailsTextBox.Text = "No error details are available.";
+            this.DetailsTextBox.Text = resources.GetString("this.DetailsTextBox.Text");
             // 
             // TroubleshooterPanel
             // 
@@ -156,7 +156,7 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(500, 500);
             this.Name = "ApiErrorWindow";
-            this.Text = "API Error Details";
+            this.Text = resources.GetString("this.Text");
             ((System.ComponentModel.ISupportInitialize)(this.IconPictureBox)).EndInit();
             this.MainTableLayoutPanel.ResumeLayout(false);
             this.MainTableLayoutPanel.PerformLayout();

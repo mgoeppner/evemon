@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Name1" xml:space="preserve">
+    <value>这是我的长绳子</value>
+  </data>
+  <data name="uxMessageLabel1.Text" xml:space="preserve">
+    <value>EVEMon 检查了您的系统时间与 NIST 的比较，发现他们对您当前的时间不一致。这可能是因为您的时区设置不正确，或者您的时钟设置为错误的时间。 </value>
+  </data>
+  <data name="this.uxCloseButton.Text" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="this.uxTitleLabel.Text" xml:space="preserve">
+    <value>您的系统时钟设置可能有误。</value>
+  </data>
+  <data name="this.uxTimeZoneLabel.Text" xml:space="preserve">
+    <value>您的时区：</value>
+  </data>
+  <data name="this.uxExpectedTimeLabel.Text" xml:space="preserve">
+    <value>预计时间：</value>
+  </data>
+  <data name="this.uxActualTimeLabel.Text" xml:space="preserve">
+    <value>您的实际时间：</value>
+  </data>
+  <data name="this.uxTimeZoneField.Text" xml:space="preserve">
+    <value>时区</value>
+  </data>
+  <data name="this.uxExpectedTimeField.Text" xml:space="preserve">
+    <value>服务器时间</value>
+  </data>
+  <data name="this.uxActualTimeField.Text" xml:space="preserve">
+    <value>系统时间</value>
+  </data>
+  <data name="this.uxCheckTimeOnStartUpCheckBox.Text" xml:space="preserve">
+    <value>EVEMon 启动时检查我的系统时钟</value>
+  </data>
+  <data name="this.Text" xml:space="preserve">
+    <value>时间同步问题</value>
+  </data>
+</root>

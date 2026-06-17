@@ -149,4 +149,106 @@
   <metadata name="toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>333, 19</value>
   </metadata>
+  <data name="this.grpPlanName.Text" xml:space="preserve">
+    <value>Selected Skill Details</value>
+  </data>
+  <data name="this.lblSkillInfo.Text" xml:space="preserve">
+    <value>Skill Info</value>
+  </data>
+  <data name="this.btnClose.Text" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="this.lblRedFont.Text" xml:space="preserve">
+    <value>Red</value>
+  </data>
+  <data name="this.lblDimmedFont.Text" xml:space="preserve">
+    <value>Dimmed</value>
+  </data>
+  <data name="this.lblRedFontInfo.Text" xml:space="preserve">
+    <value>= other untrained skills needed</value>
+  </data>
+  <data name="this.lblDimmedFontInfo.Text" xml:space="preserve">
+    <value>= unlocked by this skill level</value>
+  </data>
+  <data name="this.lblNormalFont.Text" xml:space="preserve">
+    <value>Normal font = already trained</value>
+  </data>
+  <data name="treeNode1.Text" xml:space="preserve">
+    <value>Node0</value>
+  </data>
+  <data name="this.lblSkills.Text" xml:space="preserve">
+    <value>Enabled Skills</value>
+  </data>
+  <data name="treeNode2.Text" xml:space="preserve">
+    <value>Node0</value>
+  </data>
+  <data name="this.lblItems.Text" xml:space="preserve">
+    <value>Enabled Items</value>
+  </data>
+  <data name="this.planToMenu.Text" xml:space="preserve">
+    <value>Plan to...</value>
+  </data>
+  <data name="this.tsRemove.Text" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="this.tsAddL1.Text" xml:space="preserve">
+    <value>Level 1</value>
+  </data>
+  <data name="this.tsAddL2.Text" xml:space="preserve">
+    <value>Level 2</value>
+  </data>
+  <data name="this.tsAddL3.Text" xml:space="preserve">
+    <value>Level 3</value>
+  </data>
+  <data name="this.tsAddL4.Text" xml:space="preserve">
+    <value>Level 4</value>
+  </data>
+  <data name="this.tsAddL5.Text" xml:space="preserve">
+    <value>Level 5</value>
+  </data>
+  <data name="this.showInSkillBrowserMenu.Text" xml:space="preserve">
+    <value>Show In Skill Browser...</value>
+  </data>
+  <data name="this.showInSkillExplorerMenu.Text" xml:space="preserve">
+    <value>Show me what this skill unlocks</value>
+  </data>
+  <data name="this.showPrerequisitiesMenu.Text" xml:space="preserve">
+    <value>Show Untrained Prerequisites</value>
+  </data>
+  <data name="this.tsmiSkillsExpandAll.Text" xml:space="preserve">
+    <value>&amp;Expand All</value>
+  </data>
+  <data name="this.tsmiSkillsCollapseAll.Text" xml:space="preserve">
+    <value>&amp;Collapse All</value>
+  </data>
+  <data name="this.planToObject.Text" xml:space="preserve">
+    <value>Add To Plan...</value>
+  </data>
+  <data name="this.showObjectInBrowserMenuItem.Text" xml:space="preserve">
+    <value>Show In Browser...</value>
+  </data>
+  <data name="this.showObjectPrerequisitiesMenu.Text" xml:space="preserve">
+    <value>Show Untrained Prerequisites</value>
+  </data>
+  <data name="this.tsmiObjectsExpandAll.Text" xml:space="preserve">
+    <value>&amp;Expand All</value>
+  </data>
+  <data name="this.tsmiObjectsCollapseAll.Text" xml:space="preserve">
+    <value>&amp;Collapse All</value>
+  </data>
+  <data name="this.groupBox2.Text" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="this.cbShowBaseOnly.Text" xml:space="preserve">
+    <value>Only show T1/T2</value>
+  </data>
+  <data name="this.rbShowAlpha.Text" xml:space="preserve">
+    <value>Show Alphabetic List</value>
+  </data>
+  <data name="this.rbShowTree.Text" xml:space="preserve">
+    <value>Show Category Trees</value>
+  </data>
+  <data name="this.Text" xml:space="preserve">
+    <value>Skill Explorer - What Is This Skill Used For?</value>
+  </data>
 </root>

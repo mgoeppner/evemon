@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Name1" xml:space="preserve">
+    <value>这是我的长绳子</value>
+  </data>
+  <data name="this.label1.Text" xml:space="preserve">
+    <value>将添加以下条目。</value>
+  </data>
+  <data name="this.label5.Text" xml:space="preserve">
+    <value>优先添加：</value>
+  </data>
+  <data name="this.label3.Text" xml:space="preserve">
+    <value>您的计划中已有先决条件，因此您必须
+
+</value>
+  </data>
+  <data name="this.previousButton.Text" xml:space="preserve">
+    <value>&lt;&amp;上一页</value>
+  </data>
+  <data name="this.cancelButton.Text" xml:space="preserve">
+    <value>取消(&amp;C)</value>
+  </data>
+  <data name="this.nextButton.Text" xml:space="preserve">
+    <value>下一页&gt;</value>
+  </data>
+  <data name="this.additionPage.Text" xml:space="preserve">
+    <value>加法页</value>
+  </data>
+  <data name="this.priorityGroup.Text" xml:space="preserve">
+    <value>现有的优先事项</value>
+  </data>
+  <data name="this.priorityLabel.Text" xml:space="preserve">
+    <value>您可以设置的最高优先级是 3</value>
+  </data>
+  <data name="this.lbExisting.Text" xml:space="preserve">
+    <value>选择比现有条目低的优先级。</value>
+  </data>
+  <data name="this.dependenciesSuppressionPage.Text" xml:space="preserve">
+    <value>依赖抑制页面</value>
+  </data>
+  <data name="this.label2.Text" xml:space="preserve">
+    <value>以下条目将被删除：</value>
+  </data>
+  <data name="this.uselessPrereqsSuppressionPage.Text" xml:space="preserve">
+    <value>无用先决条件抑制页面</value>
+  </data>
+  <data name="this.uselessPrereqsCheckbox.Text" xml:space="preserve">
+    <value>删除下面列出的现在无用的先决条件。</value>
+  </data>
+  <data name="this.Text" xml:space="preserve">
+    <value>计划到操作表</value>
+  </data>
+</root>

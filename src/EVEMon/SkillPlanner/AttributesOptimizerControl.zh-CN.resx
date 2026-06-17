@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Name1" xml:space="preserve">
+    <value>这是我的长绳子</value>
+  </data>
+  <data name="this.lblImplants.Text" xml:space="preserve">
+    <value>植入物</value>
+  </data>
+  <data name="this.lblMemory.Text" xml:space="preserve">
+    <value>内存</value>
+  </data>
+  <data name="this.lblWillpower.Text" xml:space="preserve">
+    <value>意志力</value>
+  </data>
+  <data name="this.lblCharisma.Text" xml:space="preserve">
+    <value>魅力</value>
+  </data>
+  <data name="this.lblPerception.Text" xml:space="preserve">
+    <value>感知</value>
+  </data>
+  <data name="this.lblIntelligence.Text" xml:space="preserve">
+    <value>情报</value>
+  </data>
+  <data name="this.lblBase.Text" xml:space="preserve">
+    <value>可重新映射</value>
+  </data>
+  <data name="this.lbMEM.Text" xml:space="preserve">
+    <value>积分：20</value>
+  </data>
+  <data name="this.lbWIL.Text" xml:space="preserve">
+    <value>积分：20</value>
+  </data>
+  <data name="this.lbCHA.Text" xml:space="preserve">
+    <value>积分：20</value>
+  </data>
+  <data name="this.lbPER.Text" xml:space="preserve">
+    <value>积分：20</value>
+  </data>
+  <data name="this.lbINT.Text" xml:space="preserve">
+    <value>20（新：18；旧：17）</value>
+  </data>
+  <data name="this.lbGain.Text" xml:space="preserve">
+    <value>你的技能已经优化</value>
+  </data>
+  <data name="this.lbOptimizedTimeInfo.Text" xml:space="preserve">
+    <value>具有这些属性：</value>
+  </data>
+  <data name="this.lbCurrentTime.Text" xml:space="preserve">
+    <value>0小时0分0秒</value>
+  </data>
+  <data name="this.lbCurrentTimeInfo.Text" xml:space="preserve">
+    <value>当前时间：</value>
+  </data>
+  <data name="this.lbWarning.Text" xml:space="preserve">
+    <value>培训将在 12 个月期限结束前完成。</value>
+  </data>
+  <data name="this.buttonCurrent.Text" xml:space="preserve">
+    <value>重置为当前状态</value>
+  </data>
+  <data name="this.lblUnassignedAttributePoints.Text" xml:space="preserve">
+    <value>未分配的属性点：</value>
+  </data>
+  <data name="this.buttonOptimize.Text" xml:space="preserve">
+    <value>优化</value>
+  </data>
+  <data name="this.lblNotice.Text" xml:space="preserve">
+    <value>注意！这不是您角色的活动“植入装置”。</value>
+  </data>
+  <data name="this.labelDescription.Text" xml:space="preserve">
+    <value>标签描述</value>
+  </data>
+  <data name="this.lblBooster.Text" xml:space="preserve">
+    <value>活跃助推器：+99</value>
+  </data>
+</root>

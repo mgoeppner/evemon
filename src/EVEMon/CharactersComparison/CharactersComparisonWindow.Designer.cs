@@ -101,7 +101,7 @@
 			// 
 			// chCharacters
 			// 
-			this.chCharacters.Text = "Characters";
+			this.chCharacters.Text = resources.GetString("this.chCharacters.Text");
 			this.chCharacters.Width = 190;
 			// 
 			// filterPanel
@@ -136,7 +136,7 @@
 			this.filterLabel.Name = "filterLabel";
 			this.filterLabel.Size = new System.Drawing.Size(32, 13);
 			this.filterLabel.TabIndex = 0;
-			this.filterLabel.Text = "Filter:";
+			this.filterLabel.Text = resources.GetString("this.filterLabel.Text");
 			// 
 			// gbSkills
 			// 
@@ -147,7 +147,7 @@
 			this.gbSkills.Size = new System.Drawing.Size(574, 436);
 			this.gbSkills.TabIndex = 1;
 			this.gbSkills.TabStop = false;
-			this.gbSkills.Text = "Skills";
+			this.gbSkills.Text = resources.GetString("this.gbSkills.Text");
 			// 
 			// lvCharacterInfo
 			// 
@@ -172,12 +172,12 @@
 			// 
 			// chSkill
 			// 
-			this.chSkill.Text = "Skill";
+			this.chSkill.Text = resources.GetString("this.chSkill.Text");
 			this.chSkill.Width = 166;
 			// 
 			// chCharacter
 			// 
-			this.chCharacter.Text = "Character Name";
+			this.chCharacter.Text = resources.GetString("this.chCharacter.Text");
 			this.chCharacter.Width = 131;
 			// 
 			// characterInfoContextMenu
@@ -193,14 +193,14 @@
 			// 
 			this.exportSelectedSkillsAsPlanFromToolStripMenuItem.Name = "exportSelectedSkillsAsPlanFromToolStripMenuItem";
 			this.exportSelectedSkillsAsPlanFromToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
-			this.exportSelectedSkillsAsPlanFromToolStripMenuItem.Text = "Export Selected Skills as Plan from...";
+			this.exportSelectedSkillsAsPlanFromToolStripMenuItem.Text = resources.GetString("this.exportSelectedSkillsAsPlanFromToolStripMenuItem.Text");
 			this.exportSelectedSkillsAsPlanFromToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.exportSelectedSkillsAsPlanFromToolStripMenuItem_DropDownItemClicked);
 			// 
 			// exportToCSVToolStripMenuItem
 			// 
 			this.exportToCSVToolStripMenuItem.Name = "exportToCSVToolStripMenuItem";
 			this.exportToCSVToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
-			this.exportToCSVToolStripMenuItem.Text = "Export To CSV...";
+			this.exportToCSVToolStripMenuItem.Text = resources.GetString("this.exportToCSVToolStripMenuItem.Text");
 			this.exportToCSVToolStripMenuItem.Click += new System.EventHandler(this.exportToCSVToolStripMenuItem_Click);
 			// 
 			// lblHelp
@@ -231,7 +231,7 @@
 			this.exportCharacterSkillsAsPlanToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("exportCharacterSkillsAsPlanToolStripMenuItem.Image")));
 			this.exportCharacterSkillsAsPlanToolStripMenuItem.Name = "exportCharacterSkillsAsPlanToolStripMenuItem";
 			this.exportCharacterSkillsAsPlanToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
-			this.exportCharacterSkillsAsPlanToolStripMenuItem.Text = "Export Character Skills as Plan...";
+			this.exportCharacterSkillsAsPlanToolStripMenuItem.Text = resources.GetString("this.exportCharacterSkillsAsPlanToolStripMenuItem.Text");
 			// 
 			// CharactersComparisonWindow
 			// 
@@ -241,7 +241,7 @@
 			this.Controls.Add(this.persistentSplitContainer);
 			this.MinimumSize = new System.Drawing.Size(800, 480);
 			this.Name = "CharactersComparisonWindow";
-			this.Text = "Characters Comparison";
+			this.Text = resources.GetString("this.Text");
 			this.persistentSplitContainer.Panel1.ResumeLayout(false);
 			this.persistentSplitContainer.Panel2.ResumeLayout(false);
 			this.persistentSplitContainer.Panel2.PerformLayout();

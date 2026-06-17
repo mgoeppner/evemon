@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Name1" xml:space="preserve">
+    <value>这是我的长绳子</value>
+  </data>
+  <data name="GplLabel.Text" xml:space="preserve">
+    <value>该程序是免费软件；您可以根据自由软件基金会发布的 GNU 通用公共许可证第 2 版的条款重新分发和/或修改它。
+
+分发此程序的目的是希望它有用，但不提供任何保证；甚至没有适销性或特定用途适用性的默示保证。有关更多详细信息，请参阅 GNU 通用公共许可证。
+
+您应该随该程序一起收到 GNU 通用公共许可证的副本；如果没有，请写信给 Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA</value>
+  </data>
+  <data name="this.EVEMonLabel.Text" xml:space="preserve">
+    <value>伊芙蒙</value>
+  </data>
+  <data name="this.VersionLabel.Text" xml:space="preserve">
+    <value>版本{0}</value>
+  </data>
+  <data name="this.CopyrightLabel.Text" xml:space="preserve">
+    <value>版权所有 � 2006-{0}</value>
+  </data>
+  <data name="this.DevelopmentTeamLabel.Text" xml:space="preserve">
+    <value>EVEMon开发团队</value>
+  </data>
+  <data name="this.HomePageLinkLabel.Text" xml:space="preserve">
+    <value>http://</value>
+  </data>
+  <data name="this.CreatedByLabel.Text" xml:space="preserve">
+    <value>最初由 Timothy“Six Anari”Fries of Goonfleet 创建。</value>
+  </data>
+  <data name="this.ContinuedByLabel.Text" xml:space="preserve">
+    <value>继续列出“开发人员和贡献者”。</value>
+  </data>
+  <data name="this.DonationsLabel.Text" xml:space="preserve">
+    <value>ISK 的捐赠始终受到赞赏。 ;)</value>
+  </data>
+  <data name="this.DevContribLabel.Text" xml:space="preserve">
+    <value>开发者和贡献者</value>
+  </data>
+  <data name="this.CredentialsLabels.Text" xml:space="preserve">
+    <value>外部贡献和证书</value>
+  </data>
+  <data name="this.ccpGamesLinkLabel.Text" xml:space="preserve">
+    <value>CCP Games 对社区开发者所做的努力。</value>
+  </data>
+  <data name="this.ccpDocsLinkLabel.Text" xml:space="preserve">
+    <value>CCP 3rd party docs 的文档。</value>
+  </data>
+  <data name="this.bitbucketLinkLabel.Text" xml:space="preserve">
+    <value>用于托管项目的 Bitbucket。</value>
+  </data>
+  <data name="this.gitHubLinkLabel.Text" xml:space="preserve">
+    <value>GitHub 用于托管项目并提供我们的代表网站。</value>
+  </data>
+  <data name="this.eveMarketerLinkLabel.Text" xml:space="preserve">
+    <value>EVEMarketer 提供他们的市场数据和 API。</value>
+  </data>
+  <data name="this.eveMarketDataLinkLabel.Text" xml:space="preserve">
+    <value>EVE-MarketData 提供其市场数据和 API。</value>
+  </data>
+  <data name="this.googleApisLinkLabel.Text" xml:space="preserve">
+    <value>Google 的 API SDK。</value>
+  </data>
+  <data name="this.dropboxSDKLinkLabel.Text" xml:space="preserve">
+    <value>Dropbox 的 API SDK。</value>
+  </data>
+  <data name="this.oneDriveSDKLinkLabel.Text" xml:space="preserve">
+    <value>Microsoft OneDrive 的 API SDK。</value>
+  </data>
+  <data name="this.lironLeviLinkLabel.Text" xml:space="preserve">
+    <value>Liron Levi 的 MultiPanel</value>
+  </data>
+  <data name="this.stackOverflowLinkLabel.Text" xml:space="preserve">
+    <value>提供建议和代码片段的 Stack Overflow 用户。</value>
+  </data>
+  <data name="this.Text" xml:space="preserve">
+    <value>关于EVEMon</value>
+  </data>
+</root>

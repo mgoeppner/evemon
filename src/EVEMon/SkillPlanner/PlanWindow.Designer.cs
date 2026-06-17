@@ -101,7 +101,7 @@ namespace EVEMon.SkillPlanner
             this.ObsoleteEntriesStatusLabel.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
             this.ObsoleteEntriesStatusLabel.Name = "ObsoleteEntriesStatusLabel";
             this.ObsoleteEntriesStatusLabel.Size = new System.Drawing.Size(117, 17);
-            this.ObsoleteEntriesStatusLabel.Text = "Obsolete Entries...";
+            this.ObsoleteEntriesStatusLabel.Text = resources.GetString("this.ObsoleteEntriesStatusLabel.Text");
             this.ObsoleteEntriesStatusLabel.Visible = false;
             this.ObsoleteEntriesStatusLabel.Click += new System.EventHandler(this.obsoleteEntriesToolStripStatusLabel_Click);
             // 
@@ -111,7 +111,7 @@ namespace EVEMon.SkillPlanner
             this.SkillsStatusLabel.Image = ((System.Drawing.Image)(resources.GetObject("SkillsStatusLabel.Image")));
             this.SkillsStatusLabel.Name = "SkillsStatusLabel";
             this.SkillsStatusLabel.Size = new System.Drawing.Size(104, 17);
-            this.SkillsStatusLabel.Text = "0 Skills Planned";
+            this.SkillsStatusLabel.Text = resources.GetString("this.SkillsStatusLabel.Text");
             this.SkillsStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // TimeStatusLabel
@@ -119,7 +119,7 @@ namespace EVEMon.SkillPlanner
             this.TimeStatusLabel.Image = ((System.Drawing.Image)(resources.GetObject("TimeStatusLabel.Image")));
             this.TimeStatusLabel.Name = "TimeStatusLabel";
             this.TimeStatusLabel.Size = new System.Drawing.Size(116, 17);
-            this.TimeStatusLabel.Text = "356d 23h 25m 10s";
+            this.TimeStatusLabel.Text = resources.GetString("this.TimeStatusLabel.Text");
             this.TimeStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // CostStatusLabel
@@ -127,7 +127,7 @@ namespace EVEMon.SkillPlanner
             this.CostStatusLabel.Image = ((System.Drawing.Image)(resources.GetObject("CostStatusLabel.Image")));
             this.CostStatusLabel.Name = "CostStatusLabel";
             this.CostStatusLabel.Size = new System.Drawing.Size(98, 17);
-            this.CostStatusLabel.Text = "0 ISK Required";
+            this.CostStatusLabel.Text = resources.GetString("this.CostStatusLabel.Text");
             this.CostStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // SkillPointsStatusLabel
@@ -135,7 +135,7 @@ namespace EVEMon.SkillPlanner
             this.SkillPointsStatusLabel.Image = ((System.Drawing.Image)(resources.GetObject("SkillPointsStatusLabel.Image")));
             this.SkillPointsStatusLabel.Name = "SkillPointsStatusLabel";
             this.SkillPointsStatusLabel.Size = new System.Drawing.Size(95, 17);
-            this.SkillPointsStatusLabel.Text = "0 SP Required";
+            this.SkillPointsStatusLabel.Text = resources.GetString("this.SkillPointsStatusLabel.Text");
             this.SkillPointsStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // upperToolStrip
@@ -157,7 +157,7 @@ namespace EVEMon.SkillPlanner
             this.upperToolStrip.Name = "upperToolStrip";
             this.upperToolStrip.Size = new System.Drawing.Size(943, 25);
             this.upperToolStrip.TabIndex = 3;
-            this.upperToolStrip.Text = "toolStrip1";
+            this.upperToolStrip.Text = resources.GetString("this.upperToolStrip.Text");
             // 
             // tsddbPlans
             // 
@@ -169,7 +169,7 @@ namespace EVEMon.SkillPlanner
             this.tsddbPlans.ImageTransparentColor = System.Drawing.Color.Black;
             this.tsddbPlans.Name = "tsddbPlans";
             this.tsddbPlans.Size = new System.Drawing.Size(93, 22);
-            this.tsddbPlans.Text = "Select Plan";
+            this.tsddbPlans.Text = resources.GetString("this.tsddbPlans.Text");
             this.tsddbPlans.DropDownOpening += new System.EventHandler(this.tsddbPlans_DropDownOpening);
             this.tsddbPlans.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.tsddbPlans_DropDownItemClicked);
             // 
@@ -178,7 +178,7 @@ namespace EVEMon.SkillPlanner
             this.newPlanToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("newPlanToolStripMenuItem.Image")));
             this.newPlanToolStripMenuItem.Name = "newPlanToolStripMenuItem";
             this.newPlanToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
-            this.newPlanToolStripMenuItem.Text = "New Plan...";
+            this.newPlanToolStripMenuItem.Text = resources.GetString("this.newPlanToolStripMenuItem.Text");
             this.newPlanToolStripMenuItem.Click += new System.EventHandler(this.newPlanToolStripMenuItem_Click);
             // 
             // createPlanFromSkillQueueToolStripMenuItem
@@ -186,7 +186,7 @@ namespace EVEMon.SkillPlanner
             this.createPlanFromSkillQueueToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("createPlanFromSkillQueueToolStripMenuItem.Image")));
             this.createPlanFromSkillQueueToolStripMenuItem.Name = "createPlanFromSkillQueueToolStripMenuItem";
             this.createPlanFromSkillQueueToolStripMenuItem.Size = new System.Drawing.Size(234, 22);
-            this.createPlanFromSkillQueueToolStripMenuItem.Text = "Create Plan from Skill Queue...";
+            this.createPlanFromSkillQueueToolStripMenuItem.Text = resources.GetString("this.createPlanFromSkillQueueToolStripMenuItem.Text");
             this.createPlanFromSkillQueueToolStripMenuItem.Click += new System.EventHandler(this.createPlanFromSkillQueueToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
@@ -203,14 +203,14 @@ namespace EVEMon.SkillPlanner
             this.tsddbSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsddbSave.Name = "tsddbSave";
             this.tsddbSave.Size = new System.Drawing.Size(69, 22);
-            this.tsddbSave.Text = "Export";
+            this.tsddbSave.Text = resources.GetString("this.tsddbSave.Text");
             // 
             // tsmiExportPlan
             // 
             this.tsmiExportPlan.Image = ((System.Drawing.Image)(resources.GetObject("tsmiExportPlan.Image")));
             this.tsmiExportPlan.Name = "tsmiExportPlan";
             this.tsmiExportPlan.Size = new System.Drawing.Size(189, 22);
-            this.tsmiExportPlan.Text = "&Plan...";
+            this.tsmiExportPlan.Text = resources.GetString("this.tsmiExportPlan.Text");
             this.tsmiExportPlan.Click += new System.EventHandler(this.tsmiExportPlan_Click);
             // 
             // tsmiAfterPlanCharacter
@@ -218,7 +218,7 @@ namespace EVEMon.SkillPlanner
             this.tsmiAfterPlanCharacter.Image = ((System.Drawing.Image)(resources.GetObject("tsmiAfterPlanCharacter.Image")));
             this.tsmiAfterPlanCharacter.Name = "tsmiAfterPlanCharacter";
             this.tsmiAfterPlanCharacter.Size = new System.Drawing.Size(189, 22);
-            this.tsmiAfterPlanCharacter.Text = "After Plan &Character...";
+            this.tsmiAfterPlanCharacter.Text = resources.GetString("this.tsmiAfterPlanCharacter.Text");
             this.tsmiAfterPlanCharacter.Click += new System.EventHandler(this.tsmiAfterPlanCharacter_Click);
             // 
             // tsbDeletePlan
@@ -227,7 +227,7 @@ namespace EVEMon.SkillPlanner
             this.tsbDeletePlan.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDeletePlan.Name = "tsbDeletePlan";
             this.tsbDeletePlan.Size = new System.Drawing.Size(69, 22);
-            this.tsbDeletePlan.Text = "Delete...";
+            this.tsbDeletePlan.Text = resources.GetString("this.tsbDeletePlan.Text");
             this.tsbDeletePlan.Click += new System.EventHandler(this.tsbDeletePlan_Click);
             // 
             // tsbPrintPlan
@@ -236,8 +236,8 @@ namespace EVEMon.SkillPlanner
             this.tsbPrintPlan.ImageTransparentColor = System.Drawing.Color.Black;
             this.tsbPrintPlan.Name = "tsbPrintPlan";
             this.tsbPrintPlan.Size = new System.Drawing.Size(61, 22);
-            this.tsbPrintPlan.Text = "Print...";
-            this.tsbPrintPlan.ToolTipText = "Print this plan";
+            this.tsbPrintPlan.Text = resources.GetString("this.tsbPrintPlan.Text");
+            this.tsbPrintPlan.ToolTipText = resources.GetString("this.tsbPrintPlan.ToolTipText");
             this.tsbPrintPlan.Click += new System.EventHandler(this.tsbPrintPlan_Click);
             // 
             // tsbCopyToClipboard
@@ -246,7 +246,7 @@ namespace EVEMon.SkillPlanner
             this.tsbCopyToClipboard.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbCopyToClipboard.Name = "tsbCopyToClipboard";
             this.tsbCopyToClipboard.Size = new System.Drawing.Size(133, 22);
-            this.tsbCopyToClipboard.Text = "Copy to Clipboard...";
+            this.tsbCopyToClipboard.Text = resources.GetString("this.tsbCopyToClipboard.Text");
             this.tsbCopyToClipboard.Click += new System.EventHandler(this.tsbCopyToClipboard_Click);
             // 
             // toolStripSeparator1
@@ -260,7 +260,7 @@ namespace EVEMon.SkillPlanner
             this.tsbImplantCalculator.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbImplantCalculator.Name = "tsbImplantCalculator";
             this.tsbImplantCalculator.Size = new System.Drawing.Size(103, 22);
-            this.tsbImplantCalculator.Text = "Implant Calc...";
+            this.tsbImplantCalculator.Text = resources.GetString("this.tsbImplantCalculator.Text");
             this.tsbImplantCalculator.Click += new System.EventHandler(this.tsbImplantCalculator_Click);
             // 
             // attributesOptimizerStripButton
@@ -269,7 +269,7 @@ namespace EVEMon.SkillPlanner
             this.attributesOptimizerStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.attributesOptimizerStripButton.Name = "attributesOptimizerStripButton";
             this.attributesOptimizerStripButton.Size = new System.Drawing.Size(143, 22);
-            this.attributesOptimizerStripButton.Text = "Attributes Optimizer...";
+            this.attributesOptimizerStripButton.Text = resources.GetString("this.attributesOptimizerStripButton.Text");
             this.attributesOptimizerStripButton.Click += new System.EventHandler(this.tsbAttributesOptimizer_Click);
             // 
             // toolStripSeparator2
@@ -283,7 +283,7 @@ namespace EVEMon.SkillPlanner
             this.tsbLoadoutImport.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbLoadoutImport.Name = "tsbLoadoutImport";
             this.tsbLoadoutImport.Size = new System.Drawing.Size(119, 22);
-            this.tsbLoadoutImport.Text = "Loadout Import...";
+            this.tsbLoadoutImport.Text = resources.GetString("this.tsbLoadoutImport.Text");
             this.tsbLoadoutImport.Click += new System.EventHandler(this.tsbLoadoutImport_Click);
             // 
             // tsbClipboardImport
@@ -292,8 +292,8 @@ namespace EVEMon.SkillPlanner
             this.tsbClipboardImport.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbClipboardImport.Name = "tsbClipboardImport";
             this.tsbClipboardImport.Size = new System.Drawing.Size(118, 22);
-            this.tsbClipboardImport.Text = "Clipboard Import";
-            this.tsbClipboardImport.ToolTipText = "Clipboard Import...";
+            this.tsbClipboardImport.Text = resources.GetString("this.tsbClipboardImport.Text");
+            this.tsbClipboardImport.ToolTipText = resources.GetString("this.tsbClipboardImport.ToolTipText");
             this.tsbClipboardImport.Click += new System.EventHandler(this.tsbClipboardImport_Click);
             // 
             // ttToolTip
@@ -306,7 +306,7 @@ namespace EVEMon.SkillPlanner
             // 
             this.sfdSave.Filter = "EVEMon Plan Format (*.emp)|*.emp|XML  Format (*.xml)|*.xml|Text Format (*.txt)|*." +
     "txt";
-            this.sfdSave.Title = "Save to File";
+            this.sfdSave.Title = resources.GetString("this.sfdSave.Title");
             // 
             // tabControl
             // 
@@ -334,7 +334,7 @@ namespace EVEMon.SkillPlanner
             this.tpPlanEditor.Name = "tpPlanEditor";
             this.tpPlanEditor.Size = new System.Drawing.Size(935, 480);
             this.tpPlanEditor.TabIndex = 1;
-            this.tpPlanEditor.Text = "Plan editor";
+            this.tpPlanEditor.Text = resources.GetString("this.tpPlanEditor.Text");
             this.tpPlanEditor.UseVisualStyleBackColor = true;
             // 
             // planEditor
@@ -355,7 +355,7 @@ namespace EVEMon.SkillPlanner
             this.tpSkillBrowser.Name = "tpSkillBrowser";
             this.tpSkillBrowser.Size = new System.Drawing.Size(935, 480);
             this.tpSkillBrowser.TabIndex = 0;
-            this.tpSkillBrowser.Text = "Skill browser";
+            this.tpSkillBrowser.Text = resources.GetString("this.tpSkillBrowser.Text");
             this.tpSkillBrowser.UseVisualStyleBackColor = true;
             // 
             // skillBrowser
@@ -375,7 +375,7 @@ namespace EVEMon.SkillPlanner
             this.tpCertificateBrowser.Padding = new System.Windows.Forms.Padding(3);
             this.tpCertificateBrowser.Size = new System.Drawing.Size(935, 480);
             this.tpCertificateBrowser.TabIndex = 6;
-            this.tpCertificateBrowser.Text = "Certificate browser";
+            this.tpCertificateBrowser.Text = resources.GetString("this.tpCertificateBrowser.Text");
             this.tpCertificateBrowser.UseVisualStyleBackColor = true;
             // 
             // certBrowser
@@ -395,7 +395,7 @@ namespace EVEMon.SkillPlanner
             this.tpShipBrowser.Name = "tpShipBrowser";
             this.tpShipBrowser.Size = new System.Drawing.Size(935, 480);
             this.tpShipBrowser.TabIndex = 2;
-            this.tpShipBrowser.Text = "Ship browser";
+            this.tpShipBrowser.Text = resources.GetString("this.tpShipBrowser.Text");
             this.tpShipBrowser.UseVisualStyleBackColor = true;
             // 
             // shipBrowser
@@ -415,7 +415,7 @@ namespace EVEMon.SkillPlanner
             this.tpItemBrowser.Name = "tpItemBrowser";
             this.tpItemBrowser.Size = new System.Drawing.Size(935, 480);
             this.tpItemBrowser.TabIndex = 3;
-            this.tpItemBrowser.Text = "Item browser";
+            this.tpItemBrowser.Text = resources.GetString("this.tpItemBrowser.Text");
             this.tpItemBrowser.UseVisualStyleBackColor = true;
             // 
             // itemBrowser
@@ -434,7 +434,7 @@ namespace EVEMon.SkillPlanner
             this.tpBlueprintBrowser.Name = "tpBlueprintBrowser";
             this.tpBlueprintBrowser.Size = new System.Drawing.Size(935, 480);
             this.tpBlueprintBrowser.TabIndex = 5;
-            this.tpBlueprintBrowser.Text = "Blueprint browser";
+            this.tpBlueprintBrowser.Text = resources.GetString("this.tpBlueprintBrowser.Text");
             this.tpBlueprintBrowser.UseVisualStyleBackColor = true;
             // 
             // blueprintBrowser
@@ -467,7 +467,7 @@ namespace EVEMon.SkillPlanner
             this.MinimumSize = new System.Drawing.Size(780, 350);
             this.Name = "PlanWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EVEMon Skill Planner";
+            this.Text = resources.GetString("this.Text");
             this.MainStatusStrip.ResumeLayout(false);
             this.MainStatusStrip.PerformLayout();
             this.upperToolStrip.ResumeLayout(false);

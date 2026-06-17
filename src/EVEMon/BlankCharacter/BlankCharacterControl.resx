@@ -2527,4 +2527,34 @@
         AeMF/wH8AQABHwT/Af4BAAE/Bv8Bzwz/AQBs/ws=
 </value>
   </data>
+  <data name="this.gbRace.Text" xml:space="preserve">
+    <value>Race</value>
+  </data>
+  <data name="this.gbBloodline.Text" xml:space="preserve">
+    <value>Bloodline</value>
+  </data>
+  <data name="this.gbAncestry.Text" xml:space="preserve">
+    <value>Ancestry</value>
+  </data>
+  <data name="this.lblAncestry1.Text" xml:space="preserve">
+    <value>Liberal Holders</value>
+  </data>
+  <data name="this.lblAncestry3.Text" xml:space="preserve">
+    <value>Religious Reclaimers</value>
+  </data>
+  <data name="this.lblAncestry2.Text" xml:space="preserve">
+    <value>Weathy Commoners</value>
+  </data>
+  <data name="this.gbGender.Text" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="this.gbCharacterName.Text" xml:space="preserve">
+    <value>Blank Character Name</value>
+  </data>
+  <data name="this.lblFemale.Text" xml:space="preserve">
+    <value>Female</value>
+  </data>
+  <data name="this.lblMale.Text" xml:space="preserve">
+    <value>Male</value>
+  </data>
 </root>

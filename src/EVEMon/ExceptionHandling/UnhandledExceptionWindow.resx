@@ -155,4 +155,29 @@ go to EVEMon's data directory (by clicking on the related button below) and dele
         DyJn8xIVAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="this.ReportLinkLabel.Text" xml:space="preserve">
+    <value>If none of that worked, please report the problem
+</value>
+  </data>
+  <data name="this.WhatCanYouDoLabel.Text" xml:space="preserve">
+    <value>What can you do ?</value>
+  </data>
+  <data name="this.CopyDetailsLinkLabel.Text" xml:space="preserve">
+    <value>Copy details</value>
+  </data>
+  <data name="this.TitleLabel.Text" xml:space="preserve">
+    <value>EVEMon has encountered an unexpected error.</value>
+  </data>
+  <data name="this.TechnicalDetailsLabel.Text" xml:space="preserve">
+    <value>Technical details of this error:</value>
+  </data>
+  <data name="this.DataDirectoryButton.Text" xml:space="preserve">
+    <value>Data Directory</value>
+  </data>
+  <data name="this.CloseButton.Text" xml:space="preserve">
+    <value>Close EVEMon</value>
+  </data>
+  <data name="this.Text" xml:space="preserve">
+    <value>EVEMon Error</value>
+  </data>
 </root>

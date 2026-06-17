@@ -24,6 +24,7 @@ namespace EVEMon.Common.Serialization.Settings
             m_monitoredCharacters = new Collection<MonitoredCharacterSettings>();
             SSOClientID = string.Empty;
             SSOClientSecret = string.Empty;
+            Language = LocalizationHelper.DefaultCultureName;
             CloudStorageServiceProvider = new CloudStorageServiceProviderSettings();
             PortableEveInstallations = new PortableEveInstallationsSettings();
             Notifications = new NotificationSettings();
@@ -47,6 +48,9 @@ namespace EVEMon.Common.Serialization.Settings
 
         [XmlElement("compatibility")]
         public CompatibilityMode Compatibility { get; set; }
+
+        [XmlElement("language")]
+        public string Language { get; set; }
 
         [XmlArray("esiKeys")]
         [XmlArrayItem("esikey")]

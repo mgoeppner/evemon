@@ -218,4 +218,43 @@
         Bv8BwAEDBv8BwAEHAv8L
 </value>
   </data>
+  <data name="this.btnAddSkills.Text" xml:space="preserve">
+    <value>Add All To Plan</value>
+  </data>
+  <data name="this.lblTimeRequired.Text" xml:space="preserve">
+    <value>Time required</value>
+  </data>
+  <data name="this.planToMenu.Text" xml:space="preserve">
+    <value>&amp;Plan to...</value>
+  </data>
+  <data name="this.level0ToolStripMenuItem.Text" xml:space="preserve">
+    <value>&amp;Remove</value>
+  </data>
+  <data name="this.level1ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Level &amp;1</value>
+  </data>
+  <data name="this.level2ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Level &amp;2</value>
+  </data>
+  <data name="this.level3ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Level &amp;3</value>
+  </data>
+  <data name="this.level4ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Level &amp;4</value>
+  </data>
+  <data name="this.level5ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Level &amp;5</value>
+  </data>
+  <data name="this.showInSkillBrowserMenu.Text" xml:space="preserve">
+    <value>Show in Skill &amp;Browser</value>
+  </data>
+  <data name="this.showInSkillExplorerMenu.Text" xml:space="preserve">
+    <value>Show in Skill &amp;Explorer...</value>
+  </data>
+  <data name="this.tsmExpand.Text" xml:space="preserve">
+    <value>&amp;Expand all</value>
+  </data>
+  <data name="this.tsmCollapse.Text" xml:space="preserve">
+    <value>&amp;Collapse all</value>
+  </data>
 </root>

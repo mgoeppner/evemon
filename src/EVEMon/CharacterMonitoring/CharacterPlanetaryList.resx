@@ -134,4 +134,43 @@
         AgAB/AE/AfgBHwL/AgAB/gF/AfABDwL/AgAG/wIABv8CAAb/AgAG/wIABv8CAAb/AgAL
 </value>
   </data>
+  <data name="this.showInBrowserMenuItem.Text" xml:space="preserve">
+    <value>Show In Item Browser</value>
+  </data>
+  <data name="this.showCommodityInBrowserMenuItem.Text" xml:space="preserve">
+    <value>Commodity...</value>
+  </data>
+  <data name="this.showInstallationInBrowserMenuItem.Text" xml:space="preserve">
+    <value>Installation...</value>
+  </data>
+  <data name="this.showPlanetInBrowserMenuItem.Text" xml:space="preserve">
+    <value>Planet...</value>
+  </data>
+  <data name="this.exportToCSVToolStripMenuItem.Text" xml:space="preserve">
+    <value>Export To CSV...</value>
+  </data>
+  <data name="this.noPlanetaryColoniesLabel.Text" xml:space="preserve">
+    <value>No planetary info is available.</value>
+  </data>
+  <data name="this.chState.Text" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="this.chTTC.Text" xml:space="preserve">
+    <value>TTC</value>
+  </data>
+  <data name="this.chInstallation.Text" xml:space="preserve">
+    <value>Installation</value>
+  </data>
+  <data name="this.chCommodity.Text" xml:space="preserve">
+    <value>Commodity</value>
+  </data>
+  <data name="this.chQuantityPerCycle.Text" xml:space="preserve">
+    <value>Quantity / Cycle</value>
+  </data>
+  <data name="this.chQuantity.Text" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="this.chVolume.Text" xml:space="preserve">
+    <value>Volume</value>
+  </data>
 </root>

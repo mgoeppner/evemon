@@ -68,7 +68,7 @@ namespace EVEMon.NotificationWindow
             this.uxCloseButton.Name = "uxCloseButton";
             this.uxCloseButton.Size = new System.Drawing.Size(75, 23);
             this.uxCloseButton.TabIndex = 0;
-            this.uxCloseButton.Text = "Close";
+            this.uxCloseButton.Text = resources.GetString("this.uxCloseButton.Text");
             this.uxCloseButton.UseVisualStyleBackColor = true;
             this.uxCloseButton.Click += new System.EventHandler(this.uxCloseButton_Click);
             // 
@@ -100,7 +100,7 @@ namespace EVEMon.NotificationWindow
             this.uxTitleLabel.Name = "uxTitleLabel";
             this.uxTitleLabel.Size = new System.Drawing.Size(322, 32);
             this.uxTitleLabel.TabIndex = 1;
-            this.uxTitleLabel.Text = "Your system\'s clock settings may be wrong.";
+            this.uxTitleLabel.Text = resources.GetString("this.uxTitleLabel.Text");
             this.uxTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uxContentPanel
@@ -148,7 +148,7 @@ namespace EVEMon.NotificationWindow
             this.uxTimeZoneLabel.Name = "uxTimeZoneLabel";
             this.uxTimeZoneLabel.Size = new System.Drawing.Size(91, 19);
             this.uxTimeZoneLabel.TabIndex = 3;
-            this.uxTimeZoneLabel.Text = "Your Time Zone:";
+            this.uxTimeZoneLabel.Text = resources.GetString("this.uxTimeZoneLabel.Text");
             this.uxTimeZoneLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // uxExpectedTimeLabel
@@ -159,7 +159,7 @@ namespace EVEMon.NotificationWindow
             this.uxExpectedTimeLabel.Name = "uxExpectedTimeLabel";
             this.uxExpectedTimeLabel.Size = new System.Drawing.Size(91, 19);
             this.uxExpectedTimeLabel.TabIndex = 4;
-            this.uxExpectedTimeLabel.Text = "Expected Time:";
+            this.uxExpectedTimeLabel.Text = resources.GetString("this.uxExpectedTimeLabel.Text");
             this.uxExpectedTimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // uxActualTimeLabel
@@ -170,7 +170,7 @@ namespace EVEMon.NotificationWindow
             this.uxActualTimeLabel.Name = "uxActualTimeLabel";
             this.uxActualTimeLabel.Size = new System.Drawing.Size(91, 20);
             this.uxActualTimeLabel.TabIndex = 5;
-            this.uxActualTimeLabel.Text = "Your Actual Time:";
+            this.uxActualTimeLabel.Text = resources.GetString("this.uxActualTimeLabel.Text");
             this.uxActualTimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // uxTimeZoneField
@@ -181,7 +181,7 @@ namespace EVEMon.NotificationWindow
             this.uxTimeZoneField.Name = "uxTimeZoneField";
             this.uxTimeZoneField.Size = new System.Drawing.Size(222, 19);
             this.uxTimeZoneField.TabIndex = 6;
-            this.uxTimeZoneField.Text = "TimeZone";
+            this.uxTimeZoneField.Text = resources.GetString("this.uxTimeZoneField.Text");
             this.uxTimeZoneField.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uxExpectedTimeField
@@ -192,7 +192,7 @@ namespace EVEMon.NotificationWindow
             this.uxExpectedTimeField.Name = "uxExpectedTimeField";
             this.uxExpectedTimeField.Size = new System.Drawing.Size(222, 19);
             this.uxExpectedTimeField.TabIndex = 7;
-            this.uxExpectedTimeField.Text = "ServerTime";
+            this.uxExpectedTimeField.Text = resources.GetString("this.uxExpectedTimeField.Text");
             this.uxExpectedTimeField.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uxActualTimeField
@@ -203,7 +203,7 @@ namespace EVEMon.NotificationWindow
             this.uxActualTimeField.Name = "uxActualTimeField";
             this.uxActualTimeField.Size = new System.Drawing.Size(222, 20);
             this.uxActualTimeField.TabIndex = 8;
-            this.uxActualTimeField.Text = "SystemTime";
+            this.uxActualTimeField.Text = resources.GetString("this.uxActualTimeField.Text");
             this.uxActualTimeField.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // uxMessageLabel1
@@ -224,7 +224,7 @@ namespace EVEMon.NotificationWindow
             this.uxCheckTimeOnStartUpCheckBox.Name = "uxCheckTimeOnStartUpCheckBox";
             this.uxCheckTimeOnStartUpCheckBox.Size = new System.Drawing.Size(246, 17);
             this.uxCheckTimeOnStartUpCheckBox.TabIndex = 1;
-            this.uxCheckTimeOnStartUpCheckBox.Text = "Check my system\'s clock when EVEMon starts";
+            this.uxCheckTimeOnStartUpCheckBox.Text = resources.GetString("this.uxCheckTimeOnStartUpCheckBox.Text");
             this.uxCheckTimeOnStartUpCheckBox.UseVisualStyleBackColor = true;
             // 
             // uxMessageLabel
@@ -252,7 +252,7 @@ namespace EVEMon.NotificationWindow
             this.MinimizeBox = false;
             this.Name = "TimeCheckNotification";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Time Synchronisation Problem";
+            this.Text = resources.GetString("this.Text");
             this.uxButtonPanel.ResumeLayout(false);
             this.uxTitlePanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.uxWarningIconPictureBox)).EndInit();

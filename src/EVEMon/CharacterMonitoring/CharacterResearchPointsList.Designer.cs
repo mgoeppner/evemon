@@ -54,7 +54,7 @@ namespace EVEMon.CharacterMonitoring
             this.noResearchPointsLabel.Name = "noResearchPointsLabel";
             this.noResearchPointsLabel.Size = new System.Drawing.Size(454, 434);
             this.noResearchPointsLabel.TabIndex = 1;
-            this.noResearchPointsLabel.Text = "No research points are available.";
+            this.noResearchPointsLabel.Text = resources.GetString("this.noResearchPointsLabel.Text");
             this.noResearchPointsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ilIcons
@@ -67,23 +67,23 @@ namespace EVEMon.CharacterMonitoring
             // 
             // chAgentName
             // 
-            this.chAgentName.Text = "Agent";
+            this.chAgentName.Text = resources.GetString("this.chAgentName.Text");
             // 
             // chSolarSystem
             // 
-            this.chSolarSystem.Text = "System";
+            this.chSolarSystem.Text = resources.GetString("this.chSolarSystem.Text");
             // 
             // chSkill
             // 
-            this.chSkill.Text = "Field";
+            this.chSkill.Text = resources.GetString("this.chSkill.Text");
             // 
             // chCurrentRP
             // 
-            this.chCurrentRP.Text = "Current RP";
+            this.chCurrentRP.Text = resources.GetString("this.chCurrentRP.Text");
             // 
             // chPRPerDay
             // 
-            this.chPRPerDay.Text = "RP/Day";
+            this.chPRPerDay.Text = resources.GetString("this.chPRPerDay.Text");
             // 
             // lvResearchPoints
             // 
@@ -122,14 +122,14 @@ namespace EVEMon.CharacterMonitoring
             // 
             this.showInSkillBrowserMenuItem.Name = "showInSkillBrowserMenuItem";
             this.showInSkillBrowserMenuItem.Size = new System.Drawing.Size(260, 22);
-            this.showInSkillBrowserMenuItem.Text = "Show Field In Skill Browser...";
+            this.showInSkillBrowserMenuItem.Text = resources.GetString("this.showInSkillBrowserMenuItem.Text");
             this.showInSkillBrowserMenuItem.Click += new System.EventHandler(this.showInBrowserMenuItem_Click);
             // 
             // showObjectInBrowserMenuItem
             // 
             this.showObjectInBrowserMenuItem.Name = "showObjectInBrowserMenuItem";
             this.showObjectInBrowserMenuItem.Size = new System.Drawing.Size(260, 22);
-            this.showObjectInBrowserMenuItem.Text = "Show Researchable In Item Browser...";
+            this.showObjectInBrowserMenuItem.Text = resources.GetString("this.showObjectInBrowserMenuItem.Text");
             this.showObjectInBrowserMenuItem.Click += new System.EventHandler(this.showInBrowserMenuItem_Click);
             // 
             // showInSkillBrowserMenuSeparator
@@ -141,7 +141,7 @@ namespace EVEMon.CharacterMonitoring
             // 
             this.exportToCSVToolStripMenuItem.Name = "exportToCSVToolStripMenuItem";
             this.exportToCSVToolStripMenuItem.Size = new System.Drawing.Size(260, 22);
-            this.exportToCSVToolStripMenuItem.Text = "Export To CSV...";
+            this.exportToCSVToolStripMenuItem.Text = resources.GetString("this.exportToCSVToolStripMenuItem.Text");
             this.exportToCSVToolStripMenuItem.Click += new System.EventHandler(this.exportToCSVToolStripMenuItem_Click);
             // 
             // CharacterResearchPointsList

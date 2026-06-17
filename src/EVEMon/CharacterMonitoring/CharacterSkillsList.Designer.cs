@@ -58,7 +58,7 @@ namespace EVEMon.CharacterMonitoring
             this.showInSkillExplorerMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("showInSkillExplorerMenuItem.Image")));
             this.showInSkillExplorerMenuItem.Name = "showInSkillExplorerMenuItem";
             this.showInSkillExplorerMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.showInSkillExplorerMenuItem.Text = "Show In Skill &Explorer...";
+            this.showInSkillExplorerMenuItem.Text = resources.GetString("this.showInSkillExplorerMenuItem.Text");
             this.showInSkillExplorerMenuItem.Click += new System.EventHandler(this.showInSkillExplorerMenuItem_Click);
             // 
             // showInMenuSeparator
@@ -70,7 +70,7 @@ namespace EVEMon.CharacterMonitoring
             // 
             this.tsmiAddSkill.Name = "tsmiAddSkill";
             this.tsmiAddSkill.Size = new System.Drawing.Size(194, 22);
-            this.tsmiAddSkill.Text = "Add skill";
+            this.tsmiAddSkill.Text = resources.GetString("this.tsmiAddSkill.Text");
             // 
             // ttToolTip
             // 
@@ -89,7 +89,7 @@ namespace EVEMon.CharacterMonitoring
             this.noSkillsLabel.Name = "noSkillsLabel";
             this.noSkillsLabel.Size = new System.Drawing.Size(287, 320);
             this.noSkillsLabel.TabIndex = 4;
-            this.noSkillsLabel.Text = "Skills information not available.";
+            this.noSkillsLabel.Text = resources.GetString("this.noSkillsLabel.Text");
             this.noSkillsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbSkills
@@ -115,7 +115,7 @@ namespace EVEMon.CharacterMonitoring
             // 
             this.showInSkillBrowserMenuItem.Name = "showInSkillBrowserMenuItem";
             this.showInSkillBrowserMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.showInSkillBrowserMenuItem.Text = "Show In Skill &Browser...";
+            this.showInSkillBrowserMenuItem.Text = resources.GetString("this.showInSkillBrowserMenuItem.Text");
             this.showInSkillBrowserMenuItem.Click += new System.EventHandler(this.showInSkillBrowserMenuItem_Click);
             // 
             // CharacterSkillsList

@@ -237,4 +237,13 @@
         FFFABRRRQAUUUUAFFFFABRRRQB//2Q==
 </value>
   </data>
+  <data name="this.updatePicture.Text" xml:space="preserve">
+    <value>Update Portrait From The Web</value>
+  </data>
+  <data name="this.updatePictureFromEVECache.Text" xml:space="preserve">
+    <value>Update Portrait From EVE Cache</value>
+  </data>
+  <data name="this.setEVEFolder.Text" xml:space="preserve">
+    <value>Set Portrait Folder</value>
+  </data>
 </root>

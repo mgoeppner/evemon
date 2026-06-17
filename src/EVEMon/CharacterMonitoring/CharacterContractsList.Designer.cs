@@ -57,7 +57,7 @@
             this.noContractsLabel.Name = "noContractsLabel";
             this.noContractsLabel.Size = new System.Drawing.Size(454, 434);
             this.noContractsLabel.TabIndex = 2;
-            this.noContractsLabel.Text = "No contracts are available.";
+            this.noContractsLabel.Text = resources.GetString("this.noContractsLabel.Text");
             this.noContractsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lvContracts
@@ -87,31 +87,31 @@
             // 
             // chContract
             // 
-            this.chContract.Text = "Contract";
+            this.chContract.Text = resources.GetString("this.chContract.Text");
             // 
             // chType
             // 
-            this.chType.Text = "Type";
+            this.chType.Text = resources.GetString("this.chType.Text");
             // 
             // chStatus
             // 
-            this.chStatus.Text = "Status";
+            this.chStatus.Text = resources.GetString("this.chStatus.Text");
             // 
             // chIssuer
             // 
-            this.chIssuer.Text = "From";
+            this.chIssuer.Text = resources.GetString("this.chIssuer.Text");
             // 
             // chAssignee
             // 
-            this.chAssignee.Text = "To";
+            this.chAssignee.Text = resources.GetString("this.chAssignee.Text");
             // 
             // chIssued
             // 
-            this.chIssued.Text = "Date Issued";
+            this.chIssued.Text = resources.GetString("this.chIssued.Text");
             // 
             // chRemainingTime
             // 
-            this.chRemainingTime.Text = "Time Left";
+            this.chRemainingTime.Text = resources.GetString("this.chRemainingTime.Text");
             // 
             // contextMenu
             // 
@@ -129,7 +129,7 @@
             // 
             this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
             this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.showDetailsToolStripMenuItem.Text = "Show Details...";
+            this.showDetailsToolStripMenuItem.Text = resources.GetString("this.showDetailsToolStripMenuItem.Text");
             this.showDetailsToolStripMenuItem.Click += new System.EventHandler(this.showDetailsToolStripMenuItem_Click);
             // 
             // showDetailsMenuSeparator
@@ -141,7 +141,7 @@
             // 
             this.showInBrowserMenuItem.Name = "showInBrowserMenuItem";
             this.showInBrowserMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.showInBrowserMenuItem.Text = "Show In Browser...";
+            this.showInBrowserMenuItem.Text = resources.GetString("this.showInBrowserMenuItem.Text");
             this.showInBrowserMenuItem.Click += new System.EventHandler(this.showInBrowserMenuItem_Click);
             // 
             // showInBrowserMenuSeparator
@@ -153,7 +153,7 @@
             // 
             this.exportToCSVToolStripMenuItem.Name = "exportToCSVToolStripMenuItem";
             this.exportToCSVToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.exportToCSVToolStripMenuItem.Text = "Export To CSV...";
+            this.exportToCSVToolStripMenuItem.Text = resources.GetString("this.exportToCSVToolStripMenuItem.Text");
             this.exportToCSVToolStripMenuItem.Click += new System.EventHandler(this.exportToCSVToolStripMenuItem_Click);
             // 
             // ilIcons

@@ -39,6 +39,7 @@ namespace EVEMon.Common
         {
             SSOClientID = string.Empty;
             SSOClientSecret = string.Empty;
+            Language = LocalizationHelper.DefaultCultureName;
             UI = new UISettings();
             Proxy = new ProxySettings();
             Updates = new UpdateSettings();
@@ -85,6 +86,11 @@ namespace EVEMon.Common
         /// Gets or sets the compatibility mode.
         /// </summary>
         public static CompatibilityMode Compatibility { get; private set; }
+
+        /// <summary>
+        /// Gets the selected UI language.
+        /// </summary>
+        public static string Language { get; private set; }
 
         /// <summary>
         /// Gets the settings for updates.
@@ -187,6 +193,7 @@ namespace EVEMon.Common
                 // API settings
                 SSOClientID = s_settings.SSOClientID ?? string.Empty;
                 SSOClientSecret = s_settings.SSOClientSecret ?? string.Empty;
+                Language = LocalizationHelper.NormalizeCultureName(s_settings.Language);
 
                 // User settings
                 UI = s_settings.UI;
@@ -348,6 +355,7 @@ namespace EVEMon.Common
             {
                 SSOClientID = SSOClientID,
                 SSOClientSecret = SSOClientSecret,
+                Language = Language,
                 Revision = Revision,
                 Compatibility = Compatibility,
                 Scheduler = Scheduler.Export(),

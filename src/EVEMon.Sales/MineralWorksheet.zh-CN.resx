@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Name1" xml:space="preserve">
+    <value>这是我的长绳子</value>
+  </data>
+  <data name="this.btnLockPrices.Text" xml:space="preserve">
+    <value>锁定价格</value>
+  </data>
+  <data name="this.tsddFetch.Text" xml:space="preserve">
+    <value>获取在线价格</value>
+  </data>
+  <data name="this.btnReset.Text" xml:space="preserve">
+    <value>重置数量</value>
+  </data>
+  <data name="this.copyTotalDropDownButton.Text" xml:space="preserve">
+    <value>复制总数</value>
+  </data>
+  <data name="this.copyFormattedTotalToolStripMenuItem.Text" xml:space="preserve">
+    <value>格式化</value>
+  </data>
+  <data name="this.copyUnformattedTotalToolStripMenuItem.Text" xml:space="preserve">
+    <value>未格式化</value>
+  </data>
+  <data name="this.MineralWorksheetStatusStrip.Text" xml:space="preserve">
+    <value>状态条1</value>
+  </data>
+  <data name="this.TotalValueToolStripStatusLabel.Text" xml:space="preserve">
+    <value>总价值：</value>
+  </data>
+  <data name="this.tslTotal.Text" xml:space="preserve">
+    <value>0.00 ISK</value>
+  </data>
+  <data name="this.tslCourtesy.Text" xml:space="preserve">
+    <value>矿物价格由 --- 提供</value>
+  </data>
+  <data name="this.Text" xml:space="preserve">
+    <value>矿物工作表</value>
+  </data>
+</root>

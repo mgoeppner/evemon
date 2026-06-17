@@ -76,7 +76,7 @@ namespace EVEMon.Sales
             this.btnLockPrices.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLockPrices.Name = "btnLockPrices";
             this.btnLockPrices.Size = new System.Drawing.Size(86, 22);
-            this.btnLockPrices.Text = "Lock Prices";
+            this.btnLockPrices.Text = resources.GetString("this.btnLockPrices.Text");
             this.btnLockPrices.Click += new System.EventHandler(this.btnLockPrices_Click);
             // 
             // toolStripSeparator1
@@ -90,7 +90,7 @@ namespace EVEMon.Sales
             this.tsddFetch.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsddFetch.Name = "tsddFetch";
             this.tsddFetch.Size = new System.Drawing.Size(137, 22);
-            this.tsddFetch.Text = "Fetch Online Prices";
+            this.tsddFetch.Text = resources.GetString("this.tsddFetch.Text");
             // 
             // btnReset
             // 
@@ -98,7 +98,7 @@ namespace EVEMon.Sales
             this.btnReset.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(112, 22);
-            this.btnReset.Text = "Reset Quantities";
+            this.btnReset.Text = resources.GetString("this.btnReset.Text");
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // copyTotalDropDownButton
@@ -110,21 +110,21 @@ namespace EVEMon.Sales
             this.copyTotalDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.copyTotalDropDownButton.Name = "copyTotalDropDownButton";
             this.copyTotalDropDownButton.Size = new System.Drawing.Size(93, 22);
-            this.copyTotalDropDownButton.Text = "Copy Total";
+            this.copyTotalDropDownButton.Text = resources.GetString("this.copyTotalDropDownButton.Text");
             this.copyTotalDropDownButton.DropDownOpening += new System.EventHandler(this.copyTotalDropDownButton_DropDownOpening);
             // 
             // copyFormattedTotalToolStripMenuItem
             // 
             this.copyFormattedTotalToolStripMenuItem.Name = "copyFormattedTotalToolStripMenuItem";
             this.copyFormattedTotalToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
-            this.copyFormattedTotalToolStripMenuItem.Text = "Formatted";
+            this.copyFormattedTotalToolStripMenuItem.Text = resources.GetString("this.copyFormattedTotalToolStripMenuItem.Text");
             this.copyFormattedTotalToolStripMenuItem.Click += new System.EventHandler(this.copyFormattedTotalToolStripMenuItem_Click);
             // 
             // copyUnformattedTotalToolStripMenuItem
             // 
             this.copyUnformattedTotalToolStripMenuItem.Name = "copyUnformattedTotalToolStripMenuItem";
             this.copyUnformattedTotalToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
-            this.copyUnformattedTotalToolStripMenuItem.Text = "Unformatted";
+            this.copyUnformattedTotalToolStripMenuItem.Text = resources.GetString("this.copyUnformattedTotalToolStripMenuItem.Text");
             this.copyUnformattedTotalToolStripMenuItem.Click += new System.EventHandler(this.copyUnformattedTotalToolStripMenuItem_Click);
             // 
             // MineralWorksheetStatusStrip
@@ -138,13 +138,13 @@ namespace EVEMon.Sales
             this.MineralWorksheetStatusStrip.Size = new System.Drawing.Size(538, 22);
             this.MineralWorksheetStatusStrip.SizingGrip = false;
             this.MineralWorksheetStatusStrip.TabIndex = 10;
-            this.MineralWorksheetStatusStrip.Text = "statusStrip1";
+            this.MineralWorksheetStatusStrip.Text = resources.GetString("this.MineralWorksheetStatusStrip.Text");
             // 
             // TotalValueToolStripStatusLabel
             // 
             this.TotalValueToolStripStatusLabel.Name = "TotalValueToolStripStatusLabel";
             this.TotalValueToolStripStatusLabel.Size = new System.Drawing.Size(67, 17);
-            this.TotalValueToolStripStatusLabel.Text = "Total Value:";
+            this.TotalValueToolStripStatusLabel.Text = resources.GetString("this.TotalValueToolStripStatusLabel.Text");
             // 
             // tslTotal
             // 
@@ -152,7 +152,7 @@ namespace EVEMon.Sales
             this.tslTotal.Margin = new System.Windows.Forms.Padding(5, 3, 0, 2);
             this.tslTotal.Name = "tslTotal";
             this.tslTotal.Size = new System.Drawing.Size(63, 17);
-            this.tslTotal.Text = "0.00 ISK";
+            this.tslTotal.Text = resources.GetString("this.tslTotal.Text");
             // 
             // tslCourtesy
             // 
@@ -161,7 +161,7 @@ namespace EVEMon.Sales
             this.tslCourtesy.Margin = new System.Windows.Forms.Padding(15, 3, 0, 2);
             this.tslCourtesy.Name = "tslCourtesy";
             this.tslCourtesy.Size = new System.Drawing.Size(179, 17);
-            this.tslCourtesy.Text = "Mineral Prices Courtesy of ---";
+            this.tslCourtesy.Text = resources.GetString("this.tslCourtesy.Text");
             this.tslCourtesy.Visible = false;
             this.tslCourtesy.Click += new System.EventHandler(this.tslCourtesy_Click);
             // 
@@ -362,7 +362,7 @@ namespace EVEMon.Sales
             this.MaximizeBox = false;
             this.Name = "MineralWorksheet";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mineral Worksheet";
+            this.Text = resources.GetString("this.Text");
             this.Load += new System.EventHandler(this.MineralWorksheet_Load);
             this.MineralWorksheetToolStrip.ResumeLayout(false);
             this.MineralWorksheetToolStrip.PerformLayout();
