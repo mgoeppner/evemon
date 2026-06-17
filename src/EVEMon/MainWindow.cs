@@ -28,7 +28,6 @@ using EVEMon.PieChart;
 using EVEMon.SettingsUI;
 using EVEMon.SkillPlanner;
 using EVEMon.Updater;
-using EVEMon.Watchdog;
 using EVEMon.WindowsApi;
 using Microsoft.Win32;
 using System;
@@ -1241,7 +1240,7 @@ namespace EVEMon
             m_isUpdatingData = true;
 
             // Find the expected path for 'EVEMon.Watchdog.exe'
-            string executable = typeof(WatchdogWindow).Assembly.Location;
+            string executable = Path.Combine(AppContext.BaseDirectory, "EVEMon.Watchdog.exe");
 
             // If the 'Watchdog' exist start the process
             if (File.Exists(executable))

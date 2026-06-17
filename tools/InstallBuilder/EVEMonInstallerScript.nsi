@@ -13,7 +13,6 @@ RequestExecutionLevel admin
 !include "Library.nsh"
 !include "FileFunc.nsh"
 !include "MUI.nsh"
-!include "NETFrameworkCheck.nsh"
 
 Name "EVEMon"
 OutFile "${OUTDIR}\EVEMon-install-${VERSION}.exe"
@@ -77,14 +76,6 @@ Function .onInit
 	UAC_Success:
 	Call EnsureNotRunning
 	
-	# fix it so it only computes the space needed for EVEMon itself if .net is not installed
-	SectionSetSize 0 0
-	Call GetDotNETVersion
-	Pop $0
-	StrCmp $0 "" 0 .NetIsInstalled
-	SectionSetSize 0 66095 ; The size of .NET v4.6.1 in KiB
-
-	.NetIsInstalled:
 	StrCmp "$INSTDIR" "$PROGRAMFILES\EVEMon\" checkForExeInDir
 	StrCmp "$INSTDIR" "$PROGRAMFILES\EVEMon" checkForExeInDir
 	Goto done
