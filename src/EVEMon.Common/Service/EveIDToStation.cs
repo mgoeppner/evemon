@@ -42,6 +42,7 @@ namespace EVEMon.Common.Service
         static EveIDToStation()
         {
             EveMonClient.TimerTick += EveMonClient_TimerTick;
+            EveMonClient.ESIKeyInfoUpdated += EveMonClient_ESIKeyInfoUpdated;
         }
 
         /// <summary>
@@ -53,6 +54,14 @@ namespace EVEMon.Common.Service
         private static async void EveMonClient_TimerTick(object sender, EventArgs e)
         {
             await UpdateOnOneSecondTickAsync();
+        }
+
+        /// <summary>
+        /// Handles the ESIKeyInfoUpdated event of the EveMonClient control.
+        /// </summary>
+        private static void EveMonClient_ESIKeyInfoUpdated(object sender, EventArgs e)
+        {
+            s_cita.RetryPendingLookups();
         }
         
         /// <summary>
@@ -109,8 +118,6 @@ namespace EVEMon.Common.Service
         /// </summary>
         private static Task UpdateOnOneSecondTickAsync()
         {
-            s_cita.RetryPendingLookups();
-
             // Is a save requested and is the last save older than 10s ?
             if (s_savePending && DateTime.UtcNow > s_lastSaveTime.AddSeconds(10))
                 return SaveImmediateAsync();
@@ -158,14 +165,8 @@ namespace EVEMon.Common.Service
         /// </summary>
         private class CitadelStationProvider : IDToObjectProvider<SerializableOutpost, ESIKey>
         {
-            // 1 if at least one citadel lookup has resolved since the last TriggerEvent
-            // fired, 0 otherwise. Used to gate TriggerEvent in the token-not-ready
-            // early-exit so we do not spam OnConquerableStationListUpdated and
-            // s_savePending every RetryPendingLookups tick (1 Hz) when there is nothing
-            // new to publish. Manipulated via Interlocked.Exchange so the early-exit can
-            // atomically check-and-clear the flag against concurrent ESI callbacks (set
-            // to 1) and base-class TriggerEvent calls (clear to 0).
-            private int m_resolvedSinceTrigger;
+            // 1 when a lookup resolved but has not yet been published by TriggerEvent.
+            private int m_unpublishedResolution;
 
             public CitadelStationProvider(IDictionary<long, CitadelIDInfo> cacheList) :
                 base(cacheList)
@@ -209,19 +210,10 @@ namespace EVEMon.Common.Service
                     string accessToken = esiKey.GetAccessTokenForQuery();
                     if (string.IsNullOrEmpty(accessToken))
                     {
-                        // Token refresh in flight. Leave the id in the queue and clear
-                        // the pending flag so RetryPendingLookups can re-enter once the
-                        // refresh settles. We deliberately call TriggerEvent here
-                        // outside the OnLookupComplete path documented on the base
-                        // class: OnLookupComplete with a non-empty queue would loop on
-                        // the same null token, and no async callback site exists for
-                        // this exit. Atomically check-and-clear m_resolvedSinceTrigger
-                        // so a concurrent retry tick cannot fire the same event twice.
-                        lock (m_pendingIDs)
-                        {
-                            m_queryPending = false;
-                        }
-                        if (Interlocked.Exchange(ref m_resolvedSinceTrigger, 0) == 1)
+                        // Token refresh in flight. Leave the id queued and retry when
+                        // ESIKeyInfoUpdated reports that the refresh settled.
+                        DeferPendingLookup();
+                        if (Interlocked.Exchange(ref m_unpublishedResolution, 0) == 1)
                             TriggerEvent();
                         return;
                     }
@@ -277,7 +269,7 @@ namespace EVEMon.Common.Service
                     EveMonClient.Notifications.InvalidateAPIError();
                     info.OnRequestComplete(result.Result.ToXMLItem(info.ID));
                 }
-                Interlocked.Exchange(ref m_resolvedSinceTrigger, 1);
+                Interlocked.Exchange(ref m_unpublishedResolution, 1);
                 OnLookupComplete();
             }
 
@@ -304,31 +296,9 @@ namespace EVEMon.Common.Service
                 return LookupID(id, bypass, key);
             }
 
-            /// <summary>
-            /// Retries pending lookups once an access token becomes available again, such as
-            /// after resume from sleep.
-            /// </summary>
-            public void RetryPendingLookups()
-            {
-                bool start = false;
-
-                lock (m_pendingIDs)
-                {
-                    if (!m_queryPending && m_pendingIDs.Count > 0 &&
-                        !EsiErrors.IsErrorCountExceeded)
-                    {
-                        m_queryPending = true;
-                        start = true;
-                    }
-                }
-
-                if (start)
-                    FetchIDs();
-            }
-
             protected override void TriggerEvent()
             {
-                Interlocked.Exchange(ref m_resolvedSinceTrigger, 0);
+                Interlocked.Exchange(ref m_unpublishedResolution, 0);
                 EveMonClient.OnConquerableStationListUpdated();
                 s_savePending = true;
             }
