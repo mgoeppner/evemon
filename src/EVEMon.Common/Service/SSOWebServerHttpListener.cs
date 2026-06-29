@@ -66,14 +66,14 @@ namespace EVEMon.Common.Service
             listener.MapGet("/callback", HandleCallback);
         }
 
-        private async void HandleCallback(HttpContext context, [FromQuery] string code, [FromQuery] string state)
+        private Task HandleCallback(HttpContext context, [FromQuery] string code, [FromQuery] string state)
         {
             if (codeCompletionSource != null)
             {
-                codeCompletionSource.SetResult((code, state));
+                codeCompletionSource.TrySetResult((code, state));
             }
 
-            await SendReponseAsync(context, code, state);
+            return SendReponseAsync(context, code, state);
         }
 
         /// <summary>
@@ -90,11 +90,12 @@ namespace EVEMon.Common.Service
                 callback?.Invoke(result)));
         }
 
-        public async void Dispose()
+        public void Dispose()
         {
             try
             {
-                await listener.StopAsync();
+                Stop();
+                listener.DisposeAsync().AsTask().GetAwaiter().GetResult();
             }
             catch
             {
@@ -141,17 +142,17 @@ namespace EVEMon.Common.Service
         /// <summary>
         /// Starts the web server.
         /// </summary>
-        public async void Start()
+        public void Start()
         {
-            await listener.RunAsync();
+            listener.StartAsync().GetAwaiter().GetResult();
         }
 
         /// <summary>
         /// Stops the web server.
         /// </summary>
-        public async void Stop()
+        public void Stop()
         {
-            await listener.StopAsync();
+            listener.StopAsync().GetAwaiter().GetResult();
         }
 
         /// <summary>
