@@ -532,13 +532,16 @@ namespace EVEMon.Common.QueryMonitor
             {
                 var endedOrders = new LinkedList<MarketOrder>();
                 var allOrders = new EsiAPIMarketOrders();
-                m_orderHistoryResponse = result.Response;
-                // Ignore the If-Modified-Since and cache timer on order history to ensure
-                // that old orders are not wiped out
-                if (m_orderHistoryResponse != null)
+                if (result != null)
                 {
-                    m_orderHistoryResponse.Expires = null;
-                    m_orderHistoryResponse.ETag = null;
+                    m_orderHistoryResponse = result.Response;
+                    // Ignore the If-Modified-Since and cache timer on order history to
+                    // ensure that old orders are not wiped out
+                    if (m_orderHistoryResponse != null)
+                    {
+                        m_orderHistoryResponse.Expires = null;
+                        m_orderHistoryResponse.ETag = null;
+                    }
                 }
                 // Add normal orders first
                 if (orders != null)
