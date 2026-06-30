@@ -41,6 +41,11 @@ namespace EVEMon.Common.QueryMonitor
         }
 
         /// <summary>
+        /// Gets whether the bound ESI key currently has a usable access token.
+        /// </summary>
+        internal override bool CanQueryNow => m_esiKey?.HasUsableAccessToken ?? false;
+
+        /// <summary>
         /// Performs the query to the provider, passing the required arguments.
         /// </summary>
         /// <param name="provider">The API provider to use.</param>
@@ -53,7 +58,7 @@ namespace EVEMon.Common.QueryMonitor
             provider.ThrowIfNull(nameof(provider));
 
             provider.QueryEsi(Method, callback, new ESIParams(LastResult?.Response, m_esiKey.
-                AccessToken));
+                GetAccessTokenForQuery()));
         }
     }
 }

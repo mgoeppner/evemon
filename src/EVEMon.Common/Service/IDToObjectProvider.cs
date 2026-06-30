@@ -168,6 +168,39 @@ namespace EVEMon.Common.Service
         }
 
         /// <summary>
+        /// Leaves pending IDs queued, but allows a later retry to claim them. Use when a
+        /// request cannot start yet, e.g. an authentication token is being refreshed.
+        /// </summary>
+        protected void DeferPendingLookup()
+        {
+            lock (m_pendingIDs)
+            {
+                m_queryPending = false;
+            }
+        }
+
+        /// <summary>
+        /// Retries queued lookups after a previous deferred start becomes possible.
+        /// </summary>
+        internal void RetryPendingLookups()
+        {
+            bool start = false;
+
+            lock (m_pendingIDs)
+            {
+                if (!m_queryPending && m_pendingIDs.Count > 0 &&
+                    !EsiErrors.IsErrorCountExceeded)
+                {
+                    m_queryPending = true;
+                    start = true;
+                }
+            }
+
+            if (start)
+                FetchIDs();
+        }
+
+        /// <summary>
         /// Called before any item is added to the queue; if the item can be resolved locally
         /// with no cache lookup cheaply, this method should do it.
         /// </summary>

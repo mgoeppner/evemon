@@ -368,10 +368,14 @@ namespace EVEMon.Common.QueryMonitor
             // This is only invoked where the character has already been checked against null
             ESIKey esiKey = target.Identity.FindAPIKeyWithAccess(ESIAPICharacterMethods.
                 Attributes);
-            if (esiKey != null && !EsiErrors.IsErrorCountExceeded)
+            string accessToken = esiKey?.GetAccessTokenForQuery();
+            // Skip if no key or the token is not usable yet (e.g. refresh after resume);
+            // the next periodic refresh will retry once the token is fresh.
+            if (esiKey != null && !string.IsNullOrEmpty(accessToken) &&
+                !EsiErrors.IsErrorCountExceeded)
                 EveMonClient.APIProviders.CurrentProvider.QueryEsi<EsiAPIAttributes>(
                     ESIAPICharacterMethods.Attributes, OnCharacterAttributesUpdated,
-                    new ESIParams(m_attrResponse, esiKey.AccessToken)
+                    new ESIParams(m_attrResponse, accessToken)
                     {
                         ParamOne = target.CharacterID
                     });
@@ -528,13 +532,16 @@ namespace EVEMon.Common.QueryMonitor
             {
                 var endedOrders = new LinkedList<MarketOrder>();
                 var allOrders = new EsiAPIMarketOrders();
-                m_orderHistoryResponse = result.Response;
-                // Ignore the If-Modified-Since and cache timer on order history to ensure
-                // that old orders are not wiped out
-                if (m_orderHistoryResponse != null)
+                if (result != null)
                 {
-                    m_orderHistoryResponse.Expires = null;
-                    m_orderHistoryResponse.ETag = null;
+                    m_orderHistoryResponse = result.Response;
+                    // Ignore the If-Modified-Since and cache timer on order history to
+                    // ensure that old orders are not wiped out
+                    if (m_orderHistoryResponse != null)
+                    {
+                        m_orderHistoryResponse.Expires = null;
+                        m_orderHistoryResponse.ETag = null;
+                    }
                 }
                 // Add normal orders first
                 if (orders != null)
@@ -566,10 +573,14 @@ namespace EVEMon.Common.QueryMonitor
             {
                 var esiKey = target.Identity.FindAPIKeyWithAccess(ESIAPICharacterMethods.
                     MarketOrders);
-                if (esiKey != null && !EsiErrors.IsErrorCountExceeded)
+                string accessToken = esiKey?.GetAccessTokenForQuery();
+                // Skip if no key or the token is not usable yet (e.g. refresh after resume);
+                // route through OnMarketOrdersCompleted to preserve the existing chain.
+                if (esiKey != null && !string.IsNullOrEmpty(accessToken) &&
+                    !EsiErrors.IsErrorCountExceeded)
                     EveMonClient.APIProviders.CurrentProvider.QueryEsi<EsiAPIMarketOrders>(
                         ESIAPICharacterMethods.MarketOrdersHistory, OnMarketOrdersCompleted,
-                        new ESIParams(m_orderHistoryResponse, esiKey.AccessToken)
+                        new ESIParams(m_orderHistoryResponse, accessToken)
                         {
                             ParamOne = target.CharacterID
                         }, result);

@@ -38,11 +38,21 @@ namespace EVEMon.Common.Models.Collections
         {
             if (m_eventCounter == 0)
             {
+                ESIKey apiKey = m_character.Identity.FindAPIKeyWithAccess(ESIAPICharacterMethods.
+                    UpcomingCalendarEventDetails);
+                string accessToken = apiKey?.GetAccessTokenForQuery();
+                // Detail requests are character-scoped authenticated calls. If a token
+                // refresh is in flight, leave the counter at zero so the next calendar
+                // monitor refresh can retry instead of wedging this collection.
+                if (apiKey == null || string.IsNullOrEmpty(accessToken) ||
+                    EsiErrors.IsErrorCountExceeded)
+                    return;
+
                 Items.Clear();
                 EveMonClient.Notifications.InvalidateAPIError();
                 lock (m_counterLock)
                 {
-                    m_eventCounter = events.Count;
+                    m_eventCounter = 0;
                 }
                 // Import the events from the API; note that a request must be made for details
                 // for every event!
@@ -51,13 +61,18 @@ namespace EVEMon.Common.Models.Collections
                     long id = srcEvent.EventID;
                     if (EsiErrors.IsErrorCountExceeded)
                         break;
+                    lock (m_counterLock)
+                    {
+                        m_eventCounter++;
+                    }
                     // Query each individual event; maintaining etags/expiration for all of
                     // them is not really worth it
                     EveMonClient.APIProviders.CurrentProvider.QueryEsi<EsiAPICalendarEvent>(
                         ESIAPICharacterMethods.UpcomingCalendarEventDetails,
-                        OnCalendarEventDownloaded, new ESIParams()
+                        OnCalendarEventDownloaded, new ESIParams(null, accessToken)
                         {
-                            ParamOne = id
+                            ParamOne = m_character.CharacterID,
+                            ParamTwo = id
                         }, id);
                 }
             }

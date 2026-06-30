@@ -9,6 +9,7 @@ using EVEMon.Common.Serialization.Eve;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 using CitadelIDInfo = EVEMon.Common.Service.IDInformation<EVEMon.Common.Serialization.Eve.
@@ -41,6 +42,7 @@ namespace EVEMon.Common.Service
         static EveIDToStation()
         {
             EveMonClient.TimerTick += EveMonClient_TimerTick;
+            EveMonClient.ESIKeyInfoUpdated += EveMonClient_ESIKeyInfoUpdated;
         }
 
         /// <summary>
@@ -52,6 +54,14 @@ namespace EVEMon.Common.Service
         private static async void EveMonClient_TimerTick(object sender, EventArgs e)
         {
             await UpdateOnOneSecondTickAsync();
+        }
+
+        /// <summary>
+        /// Handles the ESIKeyInfoUpdated event of the EveMonClient control.
+        /// </summary>
+        private static void EveMonClient_ESIKeyInfoUpdated(object sender, EventArgs e)
+        {
+            s_cita.RetryPendingLookups();
         }
         
         /// <summary>
@@ -155,6 +165,9 @@ namespace EVEMon.Common.Service
         /// </summary>
         private class CitadelStationProvider : IDToObjectProvider<SerializableOutpost, ESIKey>
         {
+            // 1 when a lookup resolved but has not yet been published by TriggerEvent.
+            private int m_unpublishedResolution;
+
             public CitadelStationProvider(IDictionary<long, CitadelIDInfo> cacheList) :
                 base(cacheList)
             {
@@ -179,31 +192,60 @@ namespace EVEMon.Common.Service
                         {
                             id = it.Current.Key;
                             esiKey = it.Current.Value;
-                            m_pendingIDs.Remove(id);
                         }
                     }
                 }
                 if (id != 0L)
                 {
+                    if (esiKey == null)
+                    {
+                        lock (m_pendingIDs)
+                        {
+                            m_pendingIDs.Remove(id);
+                        }
+                        OnLookupComplete();
+                        return;
+                    }
+
+                    string accessToken = esiKey.GetAccessTokenForQuery();
+                    if (string.IsNullOrEmpty(accessToken))
+                    {
+                        // Token refresh in flight. Leave the id queued and retry when
+                        // ESIKeyInfoUpdated reports that the refresh settled.
+                        DeferPendingLookup();
+                        if (Interlocked.Exchange(ref m_unpublishedResolution, 0) == 1)
+                            TriggerEvent();
+                        return;
+                    }
+
+                    lock (m_pendingIDs)
+                    {
+                        m_pendingIDs.Remove(id);
+                    }
+
                     CitadelIDInfo info;
                     lock (m_cache)
                     {
                         m_cache.TryGetValue(id, out info);
                     }
                     // info should never be null at this stage
-                    if (esiKey != null)
+                    info.OnRequestStart(esiKey);
+                    // Query ESI for the citadel information
+                    // No response is given because requests are only made to ESI once per
+                    // key per session
+                    EveMonClient.APIProviders.CurrentProvider.QueryEsi<EsiAPIStructure>(
+                        ESIAPIGenericMethods.CitadelInfo, OnQueryStationUpdatedEsi,
+                        new ESIParams(null, accessToken)
+                        {
+                            ParamOne = id
+                        }, info);
+                    EveMonClient.Trace("ESI lookup for {0:D} using {1}", id, esiKey);
+                }
+                else
+                {
+                    lock (m_pendingIDs)
                     {
-                        info.OnRequestStart(esiKey);
-                        // Query ESI for the citadel information
-                        // No response is given because requests are only made to ESI once per
-                        // key per session
-                        EveMonClient.APIProviders.CurrentProvider.QueryEsi<EsiAPIStructure>(
-                            ESIAPIGenericMethods.CitadelInfo, OnQueryStationUpdatedEsi,
-                            new ESIParams(null, esiKey.AccessToken)
-                            {
-                                ParamOne = id
-                            }, info);
-                        EveMonClient.Trace("ESI lookup for {0:D} using {1}", id, esiKey);
+                        m_queryPending = false;
                     }
                 }
             }
@@ -227,6 +269,7 @@ namespace EVEMon.Common.Service
                     EveMonClient.Notifications.InvalidateAPIError();
                     info.OnRequestComplete(result.Result.ToXMLItem(info.ID));
                 }
+                Interlocked.Exchange(ref m_unpublishedResolution, 1);
                 OnLookupComplete();
             }
 
@@ -243,11 +286,19 @@ namespace EVEMon.Common.Service
             {
                 var key = character?.Identity?.FindAPIKeyWithAccess(ESIAPICharacterMethods.
                     CitadelInfo);
+                if (key == null)
+                {
+                    lock (m_cache)
+                    {
+                        return m_cache.TryGetValue(id, out CitadelIDInfo info) ? info.Value : null;
+                    }
+                }
                 return LookupID(id, bypass, key);
             }
-            
+
             protected override void TriggerEvent()
             {
+                Interlocked.Exchange(ref m_unpublishedResolution, 0);
                 EveMonClient.OnConquerableStationListUpdated();
                 s_savePending = true;
             }
