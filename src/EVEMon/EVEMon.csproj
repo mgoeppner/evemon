@@ -27,7 +27,8 @@
     <PublishSingleFile>true</PublishSingleFile>
   </PropertyGroup>
   <PropertyGroup>
-    <Win32Resource>EVEMon.res</Win32Resource>
+    <ApplicationIcon>..\EVEMon.Common\Resources\Icons\EVEMon.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
@@ -283,10 +284,4 @@
   <ItemGroup>
     <PackageReference Include="WinForms.DataVisualization" Version="1.9.2" />
   </ItemGroup>
-  <PropertyGroup>
-    <PreBuildEvent>
-        cd "$(SolutionDir)tools/ResFileCreator/bin/$(Configuration)/$(TargetFramework)"
-        ./EVEMonResFileCreator
-    </PreBuildEvent>
-  </PropertyGroup>
 </Project>
