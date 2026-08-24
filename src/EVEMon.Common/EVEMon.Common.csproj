@@ -153,33 +153,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Update="Resources\Skill_Select\Group0\Default.resources">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\Skill_Select\Group1\Dice_Spots.resources">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\Skill_Select\Group2\Slashes.resources">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\Skill_Select\Group3\Pie_Slices.resources">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\Skill_Select\Group4\Pentagons.resources">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\Skill_Select\Group5\Pentagrams.resources">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\Skill_Select\Group6\Black_Dice.resources">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\Skill_Select\Group7\Red_Dice.resources">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Resources\Skill_Select\Group8\Bars.resources">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <!-- Certificate level icons (untrained) -->
     <EmbeddedResource Include="Resources\Images\level0_24.png" />
     <EmbeddedResource Include="Resources\Images\level1_24.png" />
