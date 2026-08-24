@@ -12,7 +12,6 @@
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
     <DebugType>none</DebugType>
     <UseVSHostingProcess>false</UseVSHostingProcess>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <UseVSHostingProcess>false</UseVSHostingProcess>

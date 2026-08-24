@@ -13,7 +13,6 @@
     <DefineConstants>TRACE;NO_THREAD_SAFETY</DefineConstants>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
     <UseVSHostingProcess>false</UseVSHostingProcess>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <DefineConstants>TRACE;NO_THREAD_SAFETY</DefineConstants>
