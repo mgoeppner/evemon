@@ -235,7 +235,7 @@ namespace EVEMon
             await GlobalDatafileCollection.LoadAsync();
 
             // Load cache data
-            await TaskHelper.RunIOBoundTaskAsync(() => {
+            await Task.Run(() => {
                 EveIDToName.InitializeFromFile();
                 EveIDToStation.InitializeFromFile();
             });

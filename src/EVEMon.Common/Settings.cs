@@ -218,7 +218,7 @@ namespace EVEMon.Common
                 return;
 
             IsRestoring = true;
-            await TaskHelper.RunCPUBoundTaskAsync(() => ImportData());
+            await Task.Run(() => ImportData());
             await SaveImmediateAsync();
             IsRestoring = false;
         }

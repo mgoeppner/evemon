@@ -108,7 +108,7 @@ namespace EVEMon.SkillPlanner
 
             EveMonClient.PlanNameChanged += EveMonClient_PlanNameChanged;
 
-            await TaskHelper.RunCPUBoundTaskAsync(() => Run());
+            await Task.Run(() => Run());
         }
         
         /// <summary>
@@ -541,7 +541,7 @@ namespace EVEMon.SkillPlanner
         {
             panelWait.Show();
 
-            return TaskHelper.RunCPUBoundTaskAsync(() => Run(update: true));
+            return Task.Run(() => Run(update: true));
         }
 
         #endregion

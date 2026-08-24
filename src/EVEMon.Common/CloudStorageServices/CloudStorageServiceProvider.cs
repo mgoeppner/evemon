@@ -362,7 +362,7 @@ namespace EVEMon.Common.CloudStorageServices
         /// When the rest of the providers implement it correctly it should be removed.
         /// </remarks>
         public bool CheckAPIAuthIsValid()
-            => !TaskHelper.RunCPUBoundTaskAsync(CheckAuthenticationAsync).Result.HasError;
+            => !Task.Run(CheckAuthenticationAsync).Result.HasError;
 
         /// <summary>
         /// Asynchronously checks that API authentication is valid.
