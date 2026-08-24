@@ -40,7 +40,7 @@
             this.EstimatedTotalLossLabel = new System.Windows.Forms.Label();
             this.BorderPanel = new EVEMon.Common.Controls.BorderPanel();
             this.noItemsLabel = new System.Windows.Forms.Label();
-            this.FittingContentListBox = new EVEMon.Common.Controls.NoFlickerListBox();
+            this.FittingContentListBox = new System.Windows.Forms.ListBox();
             this.ColorKeyPanel = new System.Windows.Forms.Panel();
             this.ColorKeyGroupBox = new System.Windows.Forms.GroupBox();
             this.ColorKeyGroupBoxPanel = new System.Windows.Forms.Panel();
@@ -325,7 +325,7 @@
         private System.Windows.Forms.Panel FooterPanel;
         private System.Windows.Forms.Label ItemsCostLabel;
         private System.Windows.Forms.Label EstimatedTotalLossLabel;
-        private Common.Controls.NoFlickerListBox FittingContentListBox;
+        private System.Windows.Forms.ListBox FittingContentListBox;
         private System.Windows.Forms.Label noItemsLabel;
         private Common.Controls.BorderPanel BorderPanel;
         private System.Windows.Forms.Panel ColorKeyPanel;

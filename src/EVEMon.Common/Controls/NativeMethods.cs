@@ -17,17 +17,7 @@ namespace EVEMon.Common.Controls
         private const uint WS_VSCROLL = 0x200000;
         private const uint WS_HSCROLL = 0x100000;
 
-        internal const int WM_NULL = 0x0000;
         internal const int WM_SETREDRAW = 0x000B;
-        internal const int WM_ERASEBKGND = 0x0014;
-        internal const int WM_POINTERDOWN = 0x0246;
-        internal const int WM_POINTERUP = 0x0247;
-
-        internal const int PT_POINTER = 0x00000001;
-        internal const int PT_TOUCH = 0x00000002;
-        internal const int PT_PEN = 0x00000003;
-        internal const int PT_MOUSE = 0x00000004;
-        internal const uint PT_POINTERID_MASK = 0x0000FFFF;
 
         [DllImport("psapi.dll", CharSet = CharSet.Auto)]
         [return: MarshalAs(UnmanagedType.Bool)]
@@ -54,16 +44,6 @@ namespace EVEMon.Common.Controls
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         [return: MarshalAs(UnmanagedType.Bool)]
         private static extern bool LockWindowUpdate(IntPtr hWndLock);
-
-        /// <summary>
-        /// Retrieves the (touch) pointer event type, given the pointer ID.
-        /// </summary>
-        /// <param name="pPointerID">The pointer ID from the window event.</param>
-        /// <param name="pPointerType">The location where the pointer event type will be placed.</param>
-        /// <returns>true if the event type was placed into pPointerType, or false otherwise</returns>
-        [DllImport("User32.dll")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        public static extern bool GetPointerType(uint pPointerID, out int pPointerType);
 
         /// <summary>
         /// Locks or unlocks updates on this control; used to avoid the window blinking problem

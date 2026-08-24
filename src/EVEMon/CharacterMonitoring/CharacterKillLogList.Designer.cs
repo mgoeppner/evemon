@@ -45,7 +45,7 @@
             this.showInBrowserMenuSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.copyKillInfoMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ilIcons = new System.Windows.Forms.ImageList(this.components);
-            this.lbKillLog = new EVEMon.Common.Controls.NoFlickerListBox();
+            this.lbKillLog = new System.Windows.Forms.ListBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.contextMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -205,7 +205,7 @@
         #endregion
 
         private System.Windows.Forms.Label noKillLogLabel;
-        private Common.Controls.NoFlickerListBox lbKillLog;
+        private System.Windows.Forms.ListBox lbKillLog;
         private System.Windows.Forms.ListView lvKillLog;
         private System.Windows.Forms.ColumnHeader chDate;
         private System.Windows.Forms.ColumnHeader chType;

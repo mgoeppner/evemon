@@ -31,7 +31,7 @@ namespace EVEMon.CharacterMonitoring
         private void InitializeComponent()
         {
             this.noStandingsLabel = new System.Windows.Forms.Label();
-            this.lbStandings = new EVEMon.Common.Controls.NoFlickerListBox();
+            this.lbStandings = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // noStandingsLabel
@@ -79,6 +79,6 @@ namespace EVEMon.CharacterMonitoring
         #endregion
 
         private System.Windows.Forms.Label noStandingsLabel;
-        private NoFlickerListBox lbStandings;
+        private System.Windows.Forms.ListBox lbStandings;
     }
 }

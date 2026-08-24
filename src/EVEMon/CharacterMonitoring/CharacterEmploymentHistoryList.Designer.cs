@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.noEmploymentHistoryLabel = new System.Windows.Forms.Label();
-            this.lbEmploymentHistory = new EVEMon.Common.Controls.NoFlickerListBox();
+            this.lbEmploymentHistory = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // noEmploymentHistoryLabel
@@ -76,6 +76,6 @@
         #endregion
 
         private System.Windows.Forms.Label noEmploymentHistoryLabel;
-        private Common.Controls.NoFlickerListBox lbEmploymentHistory;
+        private System.Windows.Forms.ListBox lbEmploymentHistory;
     }
 }

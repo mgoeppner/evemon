@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.noLoyaltyLabel = new System.Windows.Forms.Label();
-            this.lbLoyalty = new EVEMon.Common.Controls.NoFlickerListBox();
+            this.lbLoyalty = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // noLoyaltyLabel
@@ -77,6 +77,6 @@
         #endregion
 
         private System.Windows.Forms.Label noLoyaltyLabel;
-        private Common.Controls.NoFlickerListBox lbLoyalty;
+        private System.Windows.Forms.ListBox lbLoyalty;
     }
 }

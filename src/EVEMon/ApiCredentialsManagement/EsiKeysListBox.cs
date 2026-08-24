@@ -15,7 +15,7 @@ namespace EVEMon.ApiCredentialsManagement
     /// <summary>
     /// Displays a list of API keys.
     /// </summary>
-    public sealed class EsiKeysListBox : NoFlickerListBox
+    public sealed class EsiKeysListBox : ListBox
     {
         private readonly Font m_smallFont;
         private readonly Font m_smallBoldFont;
