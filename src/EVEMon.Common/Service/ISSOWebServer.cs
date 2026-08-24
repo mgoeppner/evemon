@@ -22,12 +22,12 @@ namespace EVEMon.Common.Service
         /// <summary>
         /// Starts the web server.
         /// </summary>
-        void Start();
+        Task StartAsync();
 
         /// <summary>
         /// Stops the web server.
         /// </summary>
-        void Stop();
+        Task StopAsync();
 
         /// <summary>
         /// Waits for the auth code asynchronously; the reported state must match the argument.
