@@ -98,16 +98,6 @@ namespace EVEMon.SkillPlanner
             EveMonClient.SettingsChanged += EveMonClient_SettingsChanged;
             EveMonClient.ItemPricesUpdated += EveMonClient_ItemPricesUpdated;
 
-            // Compatibility mode : Mac OS
-            if (Settings.Compatibility == CompatibilityMode.Wine)
-            {
-                // Under Wine, the upper tool bar is not displayed
-                // We move it at the top of the first tab
-                Controls.Remove(upperToolStrip);
-                tabControl.TabPages[0].Controls.Add(upperToolStrip);
-                tabControl.TabPages[0].Controls.SetChildIndex(upperToolStrip, 0);
-            }
-
             //Update the controls
             UpdateControlsVisibility();
 

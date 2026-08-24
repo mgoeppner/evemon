@@ -82,11 +82,6 @@ namespace EVEMon.Common
         public static string SSOClientSecret { get; private set; }
 
         /// <summary>
-        /// Gets or sets the compatibility mode.
-        /// </summary>
-        public static CompatibilityMode Compatibility { get; private set; }
-
-        /// <summary>
         /// Gets the settings for updates.
         /// </summary>
         public static UpdateSettings Updates { get; private set; }
@@ -196,7 +191,6 @@ namespace EVEMon.Common
                 Exportation = s_settings.Exportation;
                 MarketPricer = s_settings.MarketPricer;
                 Notifications = s_settings.Notifications;
-                Compatibility = s_settings.Compatibility;
                 LoadoutsProvider = s_settings.LoadoutsProvider;
                 PortableEveInstallations = s_settings.PortableEveInstallations;
                 CloudStorageServiceProvider = s_settings.CloudStorageServiceProvider;
@@ -349,7 +343,6 @@ namespace EVEMon.Common
                 SSOClientID = SSOClientID,
                 SSOClientSecret = SSOClientSecret,
                 Revision = Revision,
-                Compatibility = Compatibility,
                 Scheduler = Scheduler.Export(),
                 Calendar = Calendar,
                 CloudStorageServiceProvider = CloudStorageServiceProvider,

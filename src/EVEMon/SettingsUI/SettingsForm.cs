@@ -145,7 +145,6 @@ namespace EVEMon.SettingsUI
 
             // Misc settings
             cbWorksafeMode.Checked = m_settings.UI.SafeForWork;
-            compatibilityCombo.SelectedIndex = (int)m_settings.Compatibility;
 
             // Skills icon sets
             cbSkillIconSet.Items.Clear();
@@ -429,8 +428,6 @@ namespace EVEMon.SettingsUI
             var pws = m_settings.UI.PlanWindow;
             int extraIndex = extraInfoComboBox.SelectedIndex;
 
-            // General - Compatibility
-            m_settings.Compatibility = (CompatibilityMode)Math.Max(0, compatibilityCombo.SelectedIndex);
             m_settings.UI.SafeForWork = cbWorksafeMode.Checked;
 
             // Skill Planner

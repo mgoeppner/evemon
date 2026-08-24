@@ -45,9 +45,6 @@ namespace EVEMon.Common.Serialization.Settings
         [XmlAttribute("revision")]
         public int Revision { get; set; }
 
-        [XmlElement("compatibility")]
-        public CompatibilityMode Compatibility { get; set; }
-
         [XmlArray("esiKeys")]
         [XmlArrayItem("esikey")]
         public Collection<SerializableESIKey> ESIKeys => m_esiKeys;

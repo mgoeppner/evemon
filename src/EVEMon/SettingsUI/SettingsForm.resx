@@ -125,7 +125,7 @@
     <value>150, 24</value>
   </metadata>
   <data name="lblGeneralPage.Text" xml:space="preserve">
-    <value>Select whether EVEMon will start every time you startup your system. You can choose to disable EVEMon's graphics and select the enviroment it will run in. You can also open EVEMon's Data folder by clicking the related button.</value>
+    <value>Select whether EVEMon will start every time you startup your system. You can choose to disable EVEMon's graphics. You can also open EVEMon's Data folder by clicking the related button.</value>
   </data>
   <data name="lblExternalCalendarPage.Text" xml:space="preserve">
     <value>EVEMon can export your current training queue to Microsoft Outlook or Google. This allows you to sync your calendar with your Smart phone, Blackberry etc. so you can take your reminders with you. Early and Late reminders allow you to set the times you will not be available or near EVE to update your queue and the reminder will be set to trigger at these times instead of standard reminder interval.
