@@ -16,33 +16,9 @@ namespace EVEMon.Common.Controls
         public NoFlickerListBox() : base()
         {
             pointerDown = DateTime.MinValue;
+            DoubleBuffered = true;
         }
 
-        /// <summary>
-        /// Raises the <see cref="E:System.Windows.Forms.ListBox.DrawItem"/> event.
-        /// </summary>
-        /// <param name="e">A <see cref="T:System.Windows.Forms.DrawItemEventArgs"/> that contains the event data.</param>
-        protected override void OnDrawItem(DrawItemEventArgs e)
-        {
-            var newBounds = new Rectangle(0, 0, e.Bounds.Width, e.Bounds.Height);
-
-            if (newBounds.Width == 0 || newBounds.Height == 0)
-                return;
-
-            // stacked using blocks to avoid indentation, don't need to call IDisposable.Dispose explicitly
-            using (var currentContext = new BufferedGraphicsContext())
-            using (BufferedGraphics bufferedGraphics = currentContext.Allocate(e.Graphics, newBounds))
-            {
-                var newArgs = new DrawItemEventArgs(bufferedGraphics.Graphics, e.Font,
-                    newBounds, e.Index, e.State, e.ForeColor, e.BackColor);
-
-                // Supply the real DrawItem with the off-screen graphics context
-                base.OnDrawItem(newArgs);
-
-                NativeMethods.CopyGraphics(e.Graphics, e.Bounds, bufferedGraphics.Graphics, new Point(0, 0));
-            }
-        }
-        
         /// <summary>
         /// The list's window procedure.
         /// </summary>

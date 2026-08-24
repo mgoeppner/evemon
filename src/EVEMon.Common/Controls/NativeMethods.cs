@@ -14,7 +14,6 @@ namespace EVEMon.Common.Controls
         public const uint SWP_NOMOVE = 0x0002;
         private const uint SW_SHOWNOACTIVATE = 0x0004;
         private const uint SWP_NOACTIVATE = 0x0010;
-        private const uint SRCCOPY = 0x00CC0020;
         private const uint WS_VSCROLL = 0x200000;
         private const uint WS_HSCROLL = 0x100000;
 
@@ -51,11 +50,6 @@ namespace EVEMon.Common.Controls
 
         [DllImport("user32.dll", SetLastError = true)]
         private static extern uint GetWindowLong(IntPtr hWnd, int nIndex);
-
-        [DllImport("gdi32.dll", CharSet = CharSet.Auto)]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        private static extern bool BitBlt(IntPtr hObject, int nXDest, int nYDest, int nWidth,
-            int nHeight, IntPtr hObjSource, int nXSrc, int nYSrc, uint dwRop);
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         [return: MarshalAs(UnmanagedType.Bool)]
@@ -103,26 +97,6 @@ namespace EVEMon.Common.Controls
             SetWindowPos(form.Handle, HWND_TOPMOST, left, top, form.Width, form.Height, SWP_NOACTIVATE | uFlags);
             ShowWindow(form.Handle, SW_SHOWNOACTIVATE);
         }
-
-        /// <summary>
-        /// Wrapper around BitBlt.
-        /// </summary>
-        /// <param name="dest"></param>
-        /// <param name="destClip">Clipping rectangle on dest</param>
-        /// <param name="graphics"></param>
-        /// <param name="bltFrom">Upper-left point on src to blt from</param>
-        /// <returns></returns>
-        /// <exception cref="System.ArgumentNullException">dest or graphics</exception>
-        public static void CopyGraphics(Graphics dest, Rectangle destClip, Graphics graphics, Point bltFrom)
-        {
-            dest.ThrowIfNull(nameof(dest));
-
-            graphics.ThrowIfNull(nameof(graphics));
-
-            BitBlt(dest.GetHdc(), destClip.Left, destClip.Top, destClip.Width, destClip.Height,
-                graphics.GetHdc(), bltFrom.X, bltFrom.Y, SRCCOPY);
-        }
-
 
         #region Graphic Text Character Spacing
 
