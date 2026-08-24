@@ -12,6 +12,7 @@
     <FileVersion>1.0.0.0</FileVersion>
     <InformationalVersion>1.0.0</InformationalVersion>
     <NeutralLanguage>en-US</NeutralLanguage>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Snapshot|AnyCPU'">
     <OutputPath>bin\Snapshot\</OutputPath>

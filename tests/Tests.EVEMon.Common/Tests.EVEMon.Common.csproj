@@ -5,6 +5,7 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
@@ -19,7 +20,6 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System.Configuration" />
     <Reference Update="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
