@@ -59,8 +59,8 @@ namespace EVEMon.CharacterMonitoring
             lvMailMessages.AllowColumnReorder = true;
             lvMailMessages.Columns.Clear();
             
-            mailReadLocal.Font = FontFactory.GetFont("Segoe UI", 9F, FontStyle.Bold);
-            noEVEMailMessagesLabel.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
+            mailReadLocal.Font = new Font(mailReadLocal.Font, FontStyle.Bold);
+            noEVEMailMessagesLabel.Font = new Font(noEVEMailMessagesLabel.Font.FontFamily, 11.25F, FontStyle.Bold);
 
             ListViewHelper.EnableDoubleBuffer(lvMailMessages);
 

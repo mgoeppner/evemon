@@ -9,7 +9,6 @@ using EVEMon.Common.CustomEventArgs;
 using EVEMon.Common.Enumerations;
 using EVEMon.Common.Enumerations.UISettings;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Models;
 using EVEMon.Common.Notifications;
 using EVEMon.Common.SettingsObjects;
@@ -36,8 +35,8 @@ namespace EVEMon.Controls
         {
             InitializeComponent();
 
-            labelNoCharacters.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
-            labelLoading.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
+            labelNoCharacters.Font = new Font(labelNoCharacters.Font.FontFamily, 11.25F, FontStyle.Bold);
+            labelLoading.Font = new Font(labelLoading.Font.FontFamily, 11.25F, FontStyle.Bold);
             overviewLoadingThrobber.BringToFront();
         }
 

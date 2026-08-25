@@ -15,7 +15,6 @@ using EVEMon.Common.Data;
 using EVEMon.Common.Enumerations;
 using EVEMon.Common.Enumerations.UISettings;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Helpers;
 using EVEMon.Common.Interfaces;
 using EVEMon.Common.Models;
@@ -63,7 +62,7 @@ namespace EVEMon.CharacterMonitoring
             estimatedCostPanel.Hide();
             noPricesFoundLabel.Hide();
 
-            noAssetsLabel.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
+            noAssetsLabel.Font = new Font(noAssetsLabel.Font.FontFamily, 11.25F, FontStyle.Bold);
 
             ListViewHelper.EnableDoubleBuffer(lvAssets);
 

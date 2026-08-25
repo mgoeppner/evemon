@@ -12,7 +12,6 @@ using EVEMon.Common.Data;
 using EVEMon.Common.Enumerations;
 using EVEMon.Common.Enumerations.CCPAPI;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Helpers;
 using EVEMon.Common.Models;
 using EVEMon.Common.Models.Comparers;
@@ -98,9 +97,9 @@ namespace EVEMon.DetailsWindow
             ButtonPanel.Visible = m_contract.ContractType == ContractType.Auction &&
                 m_contract.ContractBids.Any();
 
-            m_boldFont = FontFactory.GetDefaultFont(FontStyle.Bold);
-            m_mediumBoldFont = FontFactory.GetDefaultFont(9.25f, FontStyle.Bold);
-            m_bigBoldFont = FontFactory.GetDefaultFont(10.25f, FontStyle.Bold);
+            m_boldFont = new Font(Font, FontStyle.Bold);
+            m_mediumBoldFont = new Font(Font.FontFamily, 9.25f, FontStyle.Bold);
+            m_bigBoldFont = new Font(Font.FontFamily, 10.25f, FontStyle.Bold);
 
             // Initialize a control for the contract's outgoing items
             if (m_contractItems.Any(x => x.Included) && m_contractItems.Count(x => x.Included) > 1)
@@ -869,7 +868,7 @@ namespace EVEMon.DetailsWindow
                 headerImage.Width, headerImage.Height));
 
             // Draw the header text
-            Font headerTextFont = FontFactory.GetDefaultFont(10.25f);
+            Font headerTextFont = new Font(Font.FontFamily, 10.25f);
             string headerText = $"{m_contract.ContractText} ({m_contract.ContractType.GetDescription()})";
             Size textSize = g.MeasureString(headerText, headerTextFont).ToSize();
             int imageWidth = headerImage.Width + Pad * 2;

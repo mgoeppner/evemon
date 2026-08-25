@@ -10,7 +10,6 @@ using EVEMon.Common.Controls;
 using EVEMon.Common.Data;
 using EVEMon.Common.Enumerations;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Helpers;
 using EVEMon.Common.Models;
 using EVEMon.Common.SettingsObjects;
@@ -74,11 +73,11 @@ namespace EVEMon.SkillPlanner
             if (DesignMode || this.IsDesignModeHosted())
                 return;
 
-            lblNoItemManufacturing.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
-            lblNoItemCopy.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
-            lblNoItemME.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
-            lblNoItemTE.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
-            lblNoItemInvention.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
+            lblNoItemManufacturing.Font = new Font(lblNoItemManufacturing.Font.FontFamily, 11.25F, FontStyle.Bold);
+            lblNoItemCopy.Font = new Font(lblNoItemCopy.Font.FontFamily, 11.25F, FontStyle.Bold);
+            lblNoItemME.Font = new Font(lblNoItemME.Font.FontFamily, 11.25F, FontStyle.Bold);
+            lblNoItemTE.Font = new Font(lblNoItemTE.Font.FontFamily, 11.25F, FontStyle.Bold);
+            lblNoItemInvention.Font = new Font(lblNoItemInvention.Font.FontFamily, 11.25F, FontStyle.Bold);
 
             lblHelp.Text = Properties.Resources.MessageBlueprintSelect;
             gbDescription.Text = @"Attributes";

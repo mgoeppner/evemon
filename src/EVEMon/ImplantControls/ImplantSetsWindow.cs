@@ -4,7 +4,6 @@ using EVEMon.Common.CustomEventArgs;
 using EVEMon.Common.Data;
 using EVEMon.Common.Enumerations;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Models;
 using EVEMon.Common.Serialization.Settings;
 using System;
@@ -37,8 +36,8 @@ namespace EVEMon.ImplantControls
         private ImplantSetsWindow()
         {
             InitializeComponent();
-            ImplantSetsLabel.Font = FontFactory.GetFont("Tahoma", 12F);
-            ImplantsLabel.Font = FontFactory.GetFont("Tahoma", 12F);
+            ImplantSetsLabel.Font = new Font(ImplantSetsLabel.Font.FontFamily, 12F);
+            ImplantsLabel.Font = new Font(ImplantsLabel.Font.FontFamily, 12F);
             RememberPositionKey = "ImplantSetsWindow";
         }
 

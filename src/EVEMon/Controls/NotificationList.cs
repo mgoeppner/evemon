@@ -79,8 +79,6 @@ namespace EVEMon.Controls
             if (!DesignMode && !this.IsDesignModeHosted())
                 return;
 
-            listBox.Font = FontFactory.GetFont("Tahoma", 8.25F);
-
             Notifications = new List<NotificationEventArgs>
             {
                 new NotificationEventArgs(null, NotificationCategory.AccountNotInTraining)
@@ -397,14 +395,14 @@ namespace EVEMon.Controls
             while ((CalculateMaxTextLength(font) > availableTextSpace) && (fontSize > 6.5f))
             {
                 fontSize -= 0.05f;
-                font = FontFactory.GetFont("Tahoma", fontSize);
+                font = new Font(Font.FontFamily, fontSize);
             }
 
             // If any text length fits better in our bounds we increase the font size
             while ((CalculateMaxTextLength(font) < availableTextSpace) && (fontSize < 8.25f))
             {
                 fontSize += 0.05f;
-                font = FontFactory.GetFont("Tahoma", fontSize);
+                font = new Font(Font.FontFamily, fontSize);
             }
 
             Font = font;

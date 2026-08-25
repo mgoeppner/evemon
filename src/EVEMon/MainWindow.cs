@@ -85,8 +85,8 @@ namespace EVEMon
             RememberPositionKey = "MainWindow";
             notificationList.Notifications = null;
 
-            tabLoadingLabel.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
-            noCharactersLabel.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
+            tabLoadingLabel.Font = new Font(tabLoadingLabel.Font.FontFamily, 11.25F, FontStyle.Bold);
+            noCharactersLabel.Font = new Font(noCharactersLabel.Font.FontFamily, 11.25F, FontStyle.Bold);
 
             noCharactersLabel.Hide();
 
@@ -1661,7 +1661,7 @@ namespace EVEMon
         private void InitializePlanItem(ToolStripItem planItem, Plan plan)
         {
             if (WindowsFactory.GetByTag<PlanWindow, Character>((Character)plan.Character)?.Plan == plan)
-                planItem.Font = FontFactory.GetFont(planItem.Font, FontStyle.Italic | FontStyle.Bold);
+                planItem.Font = new Font(planItem.Font, FontStyle.Italic | FontStyle.Bold);
 
             planItem.Tag = plan;
             planItem.Click += planItem_Click;

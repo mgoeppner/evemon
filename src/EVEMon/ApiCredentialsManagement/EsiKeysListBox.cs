@@ -1,6 +1,5 @@
 ﻿using EVEMon.Common.Constants;
 using EVEMon.Common.Controls;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Models;
 using EVEMon.Common.Properties;
 using System;
@@ -34,11 +33,11 @@ namespace EVEMon.ApiCredentialsManagement
             DrawMode = DrawMode.OwnerDrawFixed;
             DrawItem += OnDrawItem;
             
-            m_smallFont = FontFactory.GetFont(Font.FontFamily, 6.5f);
-            m_smallBoldFont = FontFactory.GetFont(m_smallFont, FontStyle.Bold);
-            m_strikeoutFont = FontFactory.GetFont(m_smallFont, FontStyle.Strikeout);
-            m_middleFont = FontFactory.GetFont(Font.FontFamily, 8.0f);
-            m_boldFont = FontFactory.GetFont(Font, FontStyle.Bold);
+            m_smallFont = new Font(Font.FontFamily, 6.5f);
+            m_smallBoldFont = new Font(m_smallFont, FontStyle.Bold);
+            m_strikeoutFont = new Font(m_smallFont, FontStyle.Strikeout);
+            m_middleFont = new Font(Font.FontFamily, 8.0f);
+            m_boldFont = new Font(Font, FontStyle.Bold);
         }
 
         /// <summary>

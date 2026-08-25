@@ -10,7 +10,6 @@ using EVEMon.Common.Constants;
 using EVEMon.Common.Controls;
 using EVEMon.Common.CustomEventArgs;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Helpers;
 using EVEMon.Common.Interfaces;
 using EVEMon.Common.Models;
@@ -51,7 +50,7 @@ namespace EVEMon.CharacterMonitoring
             lvResearchPoints.AllowColumnReorder = true;
             lvResearchPoints.Columns.Clear();
 
-            noResearchPointsLabel.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
+            noResearchPointsLabel.Font = new Font(noResearchPointsLabel.Font.FontFamily, 11.25F, FontStyle.Bold);
 
             ListViewHelper.EnableDoubleBuffer(lvResearchPoints);
 

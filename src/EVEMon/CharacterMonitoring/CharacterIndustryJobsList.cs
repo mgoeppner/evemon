@@ -14,7 +14,6 @@ using EVEMon.Common.Data;
 using EVEMon.Common.Enumerations;
 using EVEMon.Common.Enumerations.UISettings;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Helpers;
 using EVEMon.Common.Interfaces;
 using EVEMon.Common.Models;
@@ -74,8 +73,7 @@ namespace EVEMon.CharacterMonitoring
 
             m_showIssuedFor = IssuedFor.All;
 
-            noJobsLabel.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
-            industryExpPanelControl.Font = FontFactory.GetFont("Tahoma", 8.25f);
+            noJobsLabel.Font = new Font(noJobsLabel.Font.FontFamily, 11.25F, FontStyle.Bold);
 
             ListViewHelper.EnableDoubleBuffer(lvJobs);
 

@@ -10,7 +10,6 @@ using EVEMon.Common.Controls;
 using EVEMon.Common.Data;
 using EVEMon.Common.Enumerations;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Helpers;
 using EVEMon.Common.Interfaces;
 using EVEMon.Common.Models;
@@ -171,7 +170,7 @@ namespace EVEMon.SkillPlanner
             m_emptyImageList.ImageSize = new Size(24, 24);
             m_emptyImageList.Images.Add(new Bitmap(24, 24));
 
-            m_iconsFont = FontFactory.GetFont("Tahoma", 8.0f, FontStyle.Bold, GraphicsUnit.Pixel);
+            m_iconsFont = new Font(Font.FontFamily, 8.0f, FontStyle.Bold, GraphicsUnit.Pixel);
 
             // Initialize the filters controls
             InitializeFiltersControls();

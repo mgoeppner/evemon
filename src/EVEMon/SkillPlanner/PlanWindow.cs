@@ -1088,7 +1088,7 @@ namespace EVEMon.SkillPlanner
 
                     // Disable selection of the current plan and make it italic and bold
                     menuPlanItem.Enabled = false;
-                    menuPlanItem.Font = FontFactory.GetFont(menuPlanItem.Font, FontStyle.Italic | FontStyle.Bold);
+                    menuPlanItem.Font = new Font(menuPlanItem.Font, FontStyle.Italic | FontStyle.Bold);
                 });
         }
 

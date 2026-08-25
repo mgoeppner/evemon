@@ -13,7 +13,6 @@ using EVEMon.Common.Data;
 using EVEMon.Common.Enumerations;
 using EVEMon.Common.Enumerations.UISettings;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Helpers;
 using EVEMon.Common.Interfaces;
 using EVEMon.Common.Models;
@@ -54,7 +53,7 @@ namespace EVEMon.CharacterMonitoring
             lvWalletTransactions.AllowColumnReorder = true;
             lvWalletTransactions.Columns.Clear();
 
-            noWalletTransactionsLabel.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
+            noWalletTransactionsLabel.Font = new Font(noWalletTransactionsLabel.Font.FontFamily, 11.25F, FontStyle.Bold);
 
             ListViewHelper.EnableDoubleBuffer(lvWalletTransactions);
 

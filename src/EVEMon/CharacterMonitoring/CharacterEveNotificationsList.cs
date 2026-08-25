@@ -59,7 +59,7 @@ namespace EVEMon.CharacterMonitoring
             lvNotifications.AllowColumnReorder = true;
             lvNotifications.Columns.Clear();
 
-            noEVENotificationsLabel.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
+            noEVENotificationsLabel.Font = new Font(noEVENotificationsLabel.Font.FontFamily, 11.25F, FontStyle.Bold);
 
             ListViewHelper.EnableDoubleBuffer(lvNotifications);
 

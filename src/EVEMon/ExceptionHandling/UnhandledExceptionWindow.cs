@@ -9,7 +9,6 @@ using EVEMon.Common.Constants;
 using EVEMon.Common.Controls;
 using EVEMon.Common.Data;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Helpers;
 using EVEMon.Common.Properties;
 
@@ -55,7 +54,7 @@ namespace EVEMon.ExceptionHandling
         /// <param name="e"></param>
         private void UnhandledExceptionWindow_Load(object sender, EventArgs e)
         {
-            WhatCanYouDoLabel.Font = FontFactory.GetFont("Tahoma", 10F);
+            WhatCanYouDoLabel.Font = new Font(WhatCanYouDoLabel.Font.FontFamily, 10F);
 
             SetBugImage();
 

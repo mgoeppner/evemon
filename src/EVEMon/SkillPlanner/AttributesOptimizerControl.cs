@@ -6,7 +6,6 @@ using EVEMon.Common.Constants;
 using EVEMon.Common.CustomEventArgs;
 using EVEMon.Common.Enumerations;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Helpers;
 using EVEMon.Common.Models;
 
@@ -39,11 +38,6 @@ namespace EVEMon.SkillPlanner
                                              RemappingResult remapping, string description)
         {
             InitializeComponent();
-            lbMEM.Font = FontFactory.GetFont("Tahoma");
-            lbWIL.Font = FontFactory.GetFont("Tahoma");
-            lbCHA.Font = FontFactory.GetFont("Tahoma");
-            lbPER.Font = FontFactory.GetFont("Tahoma");
-            lbINT.Font = FontFactory.GetFont("Tahoma");
 
             m_character = character;
             m_plan = plan;
@@ -51,23 +45,6 @@ namespace EVEMon.SkillPlanner
             m_description = description;
 
             UpdateControls(m_character, m_plan, m_remapping, m_description);
-        }
-
-        /// <summary>
-        /// On load, use the <see cref="FontFactory"/> to retrieve fonts.
-        /// </summary>
-        /// <param name="e"></param>
-        protected override void OnLoad(EventArgs e)
-        {
-            base.OnLoad(e);
-
-            lblUnassignedAttributePoints.Font = FontFactory.GetFont("Tahoma", 8.25F);
-            lbWarning.Font = FontFactory.GetFont("Microsoft Sans Serif", 8.25F);
-            lblMemory.Font = FontFactory.GetFont("Microsoft Sans Serif", 8.25F);
-            lblWillpower.Font = FontFactory.GetFont("Microsoft Sans Serif", 8.25F);
-            lblCharisma.Font = FontFactory.GetFont("Microsoft Sans Serif", 8.25F);
-            lblPerception.Font = FontFactory.GetFont("Microsoft Sans Serif", 8.25F);
-            lblIntelligence.Font = FontFactory.GetFont("Microsoft Sans Serif", 8.25F);
         }
 
         /// <summary>

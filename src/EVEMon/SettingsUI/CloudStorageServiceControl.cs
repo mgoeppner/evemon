@@ -7,7 +7,6 @@ using EVEMon.Common;
 using EVEMon.Common.CloudStorageServices;
 using EVEMon.Common.CustomEventArgs;
 using EVEMon.Common.Enumerations;
-using EVEMon.Common.Factories;
 
 namespace EVEMon.SettingsUI
 {
@@ -21,7 +20,7 @@ namespace EVEMon.SettingsUI
         public CloudStorageServiceControl()
         {
             InitializeComponent();
-            apiResponseLabel.Font = FontFactory.GetFont("Tahoma", FontStyle.Bold);
+            apiResponseLabel.Font = new Font(apiResponseLabel.Font, FontStyle.Bold);
             apiResponseLabel.ResetText();
 
             throbber.Visible = false;
@@ -56,7 +55,6 @@ namespace EVEMon.SettingsUI
         /// <param name="e">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         private async void CloudStorageServiceControl_Load(object sender, EventArgs e)
         {
-            Font = FontFactory.GetFont("Tahoma");
             Disposed += OnDisposed;
 
             CloudStorageServiceProvider.CredentialsChecked += CloudStorageServiceProvider_CheckCredentials;

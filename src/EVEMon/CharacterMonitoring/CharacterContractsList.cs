@@ -62,8 +62,8 @@ namespace EVEMon.CharacterMonitoring
 
             m_showIssuedFor = IssuedFor.All;
 
-            showDetailsToolStripMenuItem.Font = FontFactory.GetFont("Segoe UI", 9F, FontStyle.Bold);
-            noContractsLabel.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
+            showDetailsToolStripMenuItem.Font = new Font(showDetailsToolStripMenuItem.Font, FontStyle.Bold);
+            noContractsLabel.Font = new Font(noContractsLabel.Font.FontFamily, 11.25F, FontStyle.Bold);
 
             ListViewHelper.EnableDoubleBuffer(lvContracts);
 

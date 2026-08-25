@@ -57,9 +57,6 @@ namespace EVEMon.CharacterMonitoring
             if (DesignMode || this.IsDesignModeHosted())
                 return;
 
-            // Fonts
-            Font = FontFactory.GetFont("Tahoma");
-
             // We make a copy of the preference menu for later use
             m_preferenceMenu = new ToolStripItem[preferencesMenu.DropDownItems.Count];
             preferencesMenu.DropDownItems.CopyTo(m_preferenceMenu, 0);

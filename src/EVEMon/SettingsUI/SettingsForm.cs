@@ -5,7 +5,6 @@ using EVEMon.Common.Controls;
 using EVEMon.Common.Controls.MultiPanel;
 using EVEMon.Common.Enumerations.UISettings;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Helpers;
 using EVEMon.Common.MarketPricer;
 using EVEMon.Common.Models.Comparers;
@@ -47,11 +46,10 @@ namespace EVEMon.SettingsUI
         {
             InitializeComponent();
 
-            treeView.Font = FontFactory.GetFont("Tahoma", 9.75F);
-            alwaysAskRadioButton.Font = FontFactory.GetFont("Tahoma", 8.25F, FontStyle.Bold);
-            removeAllRadioButton.Font = FontFactory.GetFont("Tahoma", 8.25F, FontStyle.Bold);
-            removeConfirmedRadioButton.Font = FontFactory.GetFont("Tahoma", 8.25F, FontStyle.Bold);
-            settingsFileStorageControl.Font = FontFactory.GetFont("Tahoma", 8.25F);
+            treeView.Font = new Font(treeView.Font.FontFamily, 9.75F);
+            alwaysAskRadioButton.Font = new Font(alwaysAskRadioButton.Font, FontStyle.Bold);
+            removeAllRadioButton.Font = new Font(removeAllRadioButton.Font, FontStyle.Bold);
+            removeConfirmedRadioButton.Font = new Font(removeConfirmedRadioButton.Font, FontStyle.Bold);
             extraInfoComboBox.SelectedIndex = 0;
 
             m_settings = Settings.Export();

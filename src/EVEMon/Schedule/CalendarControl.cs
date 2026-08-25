@@ -5,7 +5,6 @@ using System.Windows.Forms;
 using EVEMon.Common.Constants;
 using EVEMon.Common.CustomEventArgs;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 
 namespace EVEMon.Schedule
 {
@@ -156,7 +155,7 @@ namespace EVEMon.Schedule
 
             DayOfWeek firstDayDow = mdt.DayOfWeek;
             DayOfWeek cDow = m_firstDayOfWeek;
-            using (Font boldf = FontFactory.GetDefaultFont(FontStyle.Bold))
+            using (Font boldf = new Font(Font, FontStyle.Bold))
             {
                 Rectangle headerRect = new Rectangle(m_calTopLeft.X, m_calTopLeft.Y,
                                                      m_cellSize.Width * 7, HeaderHeight);

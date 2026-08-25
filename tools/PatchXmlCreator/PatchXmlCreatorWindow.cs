@@ -14,7 +14,6 @@ using EVEMon.Common.Collections;
 using EVEMon.Common.Constants;
 using EVEMon.Common.Controls;
 using EVEMon.Common.Data;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Helpers;
 using EVEMon.Common.Serialization.PatchXml;
 using System.Net;
@@ -56,33 +55,8 @@ namespace EVEMon.PatchXmlCreator
         private PatchXmlCreatorWindow()
         {
             InitializeComponent();
-
-            lblEVEMonReleaseDate.Font = FontFactory.GetFont("Tahoma");
-            lblVersion.Font = FontFactory.GetFont("Tahoma");
-            dtpRelease.Font = FontFactory.GetFont("Tahoma");
-            lblEVEMonVersion.Font = FontFactory.GetFont("Tahoma");
-            gbRelease.Font = FontFactory.GetFont("Tahoma", 8.25F, FontStyle.Bold);
-            lblMD5Sum.Font = FontFactory.GetFont("Tahoma");
-            btnInstallerClear.Font = FontFactory.GetFont("Tahoma");
-            btnLoadReleaseInfo.Font = FontFactory.GetFont("Tahoma");
-            lblMessage.Font = FontFactory.GetFont("Tahoma");
-            rtbReleaseMessage.Font = FontFactory.GetFont("Tahoma");
-            rtbReleaseUrl.Font = FontFactory.GetFont("Tahoma");
-            lblInstallerUrl.Font = FontFactory.GetFont("Tahoma");
-            rtbTopicUrl.Font = FontFactory.GetFont("Tahoma");
-            lblForumUrl.Font = FontFactory.GetFont("Tahoma");
-            gbDatafiles.Font = FontFactory.GetFont("Tahoma", FontStyle.Bold);
-            lblExpVersion.Font = FontFactory.GetFont("Tahoma");
-            tbExpVersion.Font = FontFactory.GetFont("Tahoma");
-            btnDatafilesClear.Font = FontFactory.GetFont("Tahoma");
-            btnLoadDatafileInfo.Font = FontFactory.GetFont("Tahoma");
-            lblRevision.Font = FontFactory.GetFont("Tahoma");
-            tbExpRevision.Font = FontFactory.GetFont("Tahoma");
-            lblExpansion.Font = FontFactory.GetFont("Tahoma");
-            rtbDatafileUrl.Font = FontFactory.GetFont("Tahoma");
-            tbExpansion.Font = FontFactory.GetFont("Tahoma");
-            lblUrl.Font = FontFactory.GetFont("Tahoma");
-            datafileControl.Font = FontFactory.GetFont("Tahoma");
+            gbRelease.Font = new Font(gbRelease.Font, FontStyle.Bold);
+            gbDatafiles.Font = new Font(gbDatafiles.Font, FontStyle.Bold);
 
             rtbReleaseUrl.Text = NetworkConstants.GitHubDownloadsBase;
             rtbDatafileUrl.Text = NetworkConstants.BitBucketDatafilesBase;

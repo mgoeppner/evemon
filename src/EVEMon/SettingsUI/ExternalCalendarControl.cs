@@ -3,7 +3,6 @@ using EVEMon.Common.Constants;
 using EVEMon.Common.Enumerations;
 using EVEMon.Common.Enumerations.UISettings;
 using EVEMon.Common.ExternalCalendar;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Serialization;
 using EVEMon.Common.Serialization.Settings;
 using System;
@@ -25,7 +24,7 @@ namespace EVEMon.SettingsUI
         {
             InitializeComponent();
 
-            apiResponseLabel.Font = FontFactory.GetFont("Tahoma", FontStyle.Bold);
+            apiResponseLabel.Font = new Font(apiResponseLabel.Font, FontStyle.Bold);
             apiResponseLabel.ResetText();
 
             throbber.Visible = false;

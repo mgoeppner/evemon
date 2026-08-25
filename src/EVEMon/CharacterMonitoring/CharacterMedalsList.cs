@@ -11,7 +11,6 @@ using EVEMon.Common.Controls;
 using EVEMon.Common.CustomEventArgs;
 using EVEMon.Common.Enumerations;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Models;
 using EVEMon.Common.Models.Comparers;
 using EVEMon.Common.Properties;
@@ -54,9 +53,9 @@ namespace EVEMon.CharacterMonitoring
 
             lbMedals.Visible = false;
 
-            m_medalsFont = FontFactory.GetFont("Tahoma", 8.25F);
-            m_medalsBoldFont = FontFactory.GetFont("Tahoma", 8.25F, FontStyle.Bold);
-            noMedalsLabel.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
+            m_medalsFont = new Font(Font.FontFamily, 8.25F);
+            m_medalsBoldFont = new Font(Font.FontFamily, 8.25F, FontStyle.Bold);
+            noMedalsLabel.Font = new Font(noMedalsLabel.Font.FontFamily, 11.25F, FontStyle.Bold);
         }
 
         #endregion
