@@ -1,12 +1,15 @@
 [![GPL licensed](https://img.shields.io/badge/license-GPL%20v2-blue.svg)]()
 [![GitHub tag](https://img.shields.io/github/tag/mgoeppner/evemon.svg)]()
-[![CircleCI](https://circleci.com/gh/mgoeppner/evemon/tree/main.svg?style=svg)](https://circleci.com/gh/mgoeppner/evemon/tree/main)
+[![CI](https://github.com/mgoeppner/evemon/actions/workflows/ci.yml/badge.svg)](https://github.com/mgoeppner/evemon/actions/workflows/ci.yml)
+[![Installer](https://github.com/mgoeppner/evemon/actions/workflows/installer.yml/badge.svg)](https://github.com/mgoeppner/evemon/actions/workflows/installer.yml)
 
 # **EVEMon** 
 
 A lightweight, easy-to-use standalone Windows application designed to assist you in keeping track of your EVE Online character progression.
 
 For complete info on *How To Contribute* please visit the [wiki](https://bitbucket.org/EVEMonDevTeam/evemon/wiki) section
+
+EVEMon is currently maintained on Linux. There may be bugs on Windows, PRs are welcome to fix Windows specific bugs, but may be rejected if they regress Linux builds.
 
 **Maintainer of the ESI fork:**
 
