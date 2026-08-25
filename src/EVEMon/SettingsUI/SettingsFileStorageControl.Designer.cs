@@ -45,9 +45,9 @@ namespace EVEMon.SettingsUI
             // alwaysDownloadCheckBox
             // 
             this.alwaysDownloadCheckBox.AutoSize = true;
-            this.alwaysDownloadCheckBox.Location = new System.Drawing.Point(166, 69);
+            this.alwaysDownloadCheckBox.Location = new System.Drawing.Point(194, 80);
             this.alwaysDownloadCheckBox.Name = "alwaysDownloadCheckBox";
-            this.alwaysDownloadCheckBox.Size = new System.Drawing.Size(213, 17);
+            this.alwaysDownloadCheckBox.Size = new System.Drawing.Size(249, 20);
             this.alwaysDownloadCheckBox.TabIndex = 7;
             this.alwaysDownloadCheckBox.Text = "Always download when EVEMon starts.";
             this.alwaysDownloadCheckBox.UseVisualStyleBackColor = true;
@@ -56,9 +56,9 @@ namespace EVEMon.SettingsUI
             // alwaysUploadCheckBox
             // 
             this.alwaysUploadCheckBox.AutoSize = true;
-            this.alwaysUploadCheckBox.Location = new System.Drawing.Point(166, 7);
+            this.alwaysUploadCheckBox.Location = new System.Drawing.Point(194, 8);
             this.alwaysUploadCheckBox.Name = "alwaysUploadCheckBox";
-            this.alwaysUploadCheckBox.Size = new System.Drawing.Size(208, 17);
+            this.alwaysUploadCheckBox.Size = new System.Drawing.Size(243, 20);
             this.alwaysUploadCheckBox.TabIndex = 6;
             this.alwaysUploadCheckBox.Text = "Always upload before EVEMon closes.";
             this.alwaysUploadCheckBox.UseVisualStyleBackColor = true;
@@ -66,9 +66,9 @@ namespace EVEMon.SettingsUI
             // 
             // downloadSettingsFileButton
             // 
-            this.downloadSettingsFileButton.Location = new System.Drawing.Point(25, 65);
+            this.downloadSettingsFileButton.Location = new System.Drawing.Point(29, 75);
             this.downloadSettingsFileButton.Name = "downloadSettingsFileButton";
-            this.downloadSettingsFileButton.Size = new System.Drawing.Size(122, 23);
+            this.downloadSettingsFileButton.Size = new System.Drawing.Size(142, 27);
             this.downloadSettingsFileButton.TabIndex = 5;
             this.downloadSettingsFileButton.Text = "Download settings file";
             this.downloadSettingsFileButton.UseVisualStyleBackColor = true;
@@ -76,9 +76,9 @@ namespace EVEMon.SettingsUI
             // 
             // uploadSettingsFileButton
             // 
-            this.uploadSettingsFileButton.Location = new System.Drawing.Point(25, 3);
+            this.uploadSettingsFileButton.Location = new System.Drawing.Point(29, 3);
             this.uploadSettingsFileButton.Name = "uploadSettingsFileButton";
-            this.uploadSettingsFileButton.Size = new System.Drawing.Size(122, 23);
+            this.uploadSettingsFileButton.Size = new System.Drawing.Size(142, 27);
             this.uploadSettingsFileButton.TabIndex = 4;
             this.uploadSettingsFileButton.Text = "Upload settings file";
             this.uploadSettingsFileButton.UseVisualStyleBackColor = true;
@@ -86,9 +86,9 @@ namespace EVEMon.SettingsUI
             // 
             // apiResponseLabel
             // 
-            this.apiResponseLabel.Location = new System.Drawing.Point(0, 30);
+            this.apiResponseLabel.Location = new System.Drawing.Point(0, 35);
             this.apiResponseLabel.Name = "apiResponseLabel";
-            this.apiResponseLabel.Size = new System.Drawing.Size(405, 31);
+            this.apiResponseLabel.Size = new System.Drawing.Size(473, 36);
             this.apiResponseLabel.TabIndex = 8;
             this.apiResponseLabel.Text = "API Response";
             this.apiResponseLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -96,9 +96,9 @@ namespace EVEMon.SettingsUI
             // useImmediatelyCheckBox
             // 
             this.useImmediatelyCheckBox.AutoSize = true;
-            this.useImmediatelyCheckBox.Location = new System.Drawing.Point(185, 89);
+            this.useImmediatelyCheckBox.Location = new System.Drawing.Point(216, 103);
             this.useImmediatelyCheckBox.Name = "useImmediatelyCheckBox";
-            this.useImmediatelyCheckBox.Size = new System.Drawing.Size(155, 17);
+            this.useImmediatelyCheckBox.Size = new System.Drawing.Size(181, 20);
             this.useImmediatelyCheckBox.TabIndex = 10;
             this.useImmediatelyCheckBox.Text = "Use immediately on startup.";
             this.useImmediatelyCheckBox.UseVisualStyleBackColor = true;
@@ -107,7 +107,7 @@ namespace EVEMon.SettingsUI
             // throbber
             // 
             this.throbber.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.throbber.Location = new System.Drawing.Point(190, 33);
+            this.throbber.Location = new System.Drawing.Point(222, 38);
             this.throbber.MaximumSize = new System.Drawing.Size(24, 24);
             this.throbber.MinimumSize = new System.Drawing.Size(24, 24);
             this.throbber.Name = "throbber";
@@ -118,8 +118,7 @@ namespace EVEMon.SettingsUI
             // 
             // SettingsFileStorageControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.Controls.Add(this.useImmediatelyCheckBox);
             this.Controls.Add(this.apiResponseLabel);
             this.Controls.Add(this.throbber);
@@ -128,7 +127,7 @@ namespace EVEMon.SettingsUI
             this.Controls.Add(this.downloadSettingsFileButton);
             this.Controls.Add(this.uploadSettingsFileButton);
             this.Name = "SettingsFileStorageControl";
-            this.Size = new System.Drawing.Size(405, 109);
+            this.Size = new System.Drawing.Size(473, 126);
             this.Load += new System.EventHandler(this.SettingsFileStorageControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.throbber)).EndInit();
             this.ResumeLayout(false);

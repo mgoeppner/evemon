@@ -2066,7 +2066,6 @@ namespace EVEMon.SettingsUI
             // cloudStorageServiceControl
             // 
             cloudStorageServiceControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            cloudStorageServiceControl.Font = new System.Drawing.Font("Tahoma", 8.25F);
             cloudStorageServiceControl.Location = new System.Drawing.Point(4, 19);
             cloudStorageServiceControl.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             cloudStorageServiceControl.Name = "cloudStorageServiceControl";
@@ -2144,7 +2143,6 @@ namespace EVEMon.SettingsUI
             // settingsFileStorageControl
             // 
             settingsFileStorageControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            settingsFileStorageControl.Font = new System.Drawing.Font("Tahoma", 8.25F);
             settingsFileStorageControl.Location = new System.Drawing.Point(4, 19);
             settingsFileStorageControl.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             settingsFileStorageControl.Name = "settingsFileStorageControl";
