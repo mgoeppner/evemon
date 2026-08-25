@@ -381,14 +381,17 @@ namespace EVEMon.Common
         /// Will attempt to fetch and initialize settings from a storage server, if user has specified so.
         /// Otherwise attempts to initialize from a locally stored file.
         /// </remarks>
-        public static void Initialize()
+        public static async Task InitializeAsync()
         {
             // Deserialize the local settings file to determine
             // which cloud storage service provider should be used
             s_settings = TryDeserializeFromFile();
 
             // Try to download the settings file from the cloud
-            CloudStorageServiceAPIFile settingsFile = s_settings?.CloudStorageServiceProvider?.Provider?.DownloadSettingsFile();
+            CloudStorageServiceAPIFile settingsFile = null;
+            var provider = s_settings?.CloudStorageServiceProvider?.Provider;
+            if (provider != null)
+                settingsFile = await provider.DownloadSettingsFileOnStartupAsync();
 
             // If a settings file was downloaded try to deserialize it
             s_settings = settingsFile != null

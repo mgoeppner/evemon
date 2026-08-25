@@ -68,6 +68,7 @@ namespace EVEMon
         private bool m_isUpdatingTabOrder;
         private bool m_isUpdateEventsSubscribed;
         private bool m_initialized;
+        private bool m_uploadOnExitDone;
 
         #endregion
 
@@ -312,10 +313,22 @@ namespace EVEMon
             // Should we actually exit ?
             if (Settings.UI.MainWindowCloseBehaviour == CloseBehaviour.Exit)
             {
-                // Prevents the closing if we are restoring the settings at that time 
+                // Prevents the closing if we are restoring the settings at that time
                 // or we are still initializing
-                // or user has set to upload to cloud storage service provider and it fails
-                e.Cancel = Settings.IsRestoring || !m_initialized || !TryUploadToCloudStorageProviderAsync().Result;
+                if (Settings.IsRestoring || !m_initialized)
+                {
+                    e.Cancel = true;
+                    return;
+                }
+
+                // If the settings need uploading to the cloud storage service provider,
+                // cancel this close and re-close once the upload has finished; blocking
+                // on the upload here would deadlock the UI thread
+                if (!m_uploadOnExitDone && NeedsUploadOnExit)
+                {
+                    e.Cancel = true;
+                    _ = UploadOnExitThenCloseAsync();
+                }
 
                 return;
             }
@@ -2326,6 +2339,29 @@ namespace EVEMon
         }
 
         /// <summary>
+        /// Gets whether closing the window requires uploading the settings
+        /// to the cloud storage service provider first.
+        /// </summary>
+        private static bool NeedsUploadOnExit
+            => Settings.CloudStorageServiceProvider.Provider != null &&
+               CloudStorageServiceSettings.Default.UploadAlways &&
+               Settings.CloudStorageServiceProvider.Provider.HasCredentialsStored;
+
+        /// <summary>
+        /// Uploads the settings to the cloud storage service provider,
+        /// then closes the window unless the upload failed and the user aborted.
+        /// </summary>
+        private async Task UploadOnExitThenCloseAsync()
+        {
+            if (!await TryUploadToCloudStorageProviderAsync())
+                return;
+
+            m_uploadOnExitDone = true;
+            Close();
+            m_uploadOnExitDone = false;
+        }
+
+        /// <summary>
         /// Asynchronously tries to upload to cloud storage provider.
         /// </summary>
         /// <returns></returns>
@@ -2342,8 +2378,7 @@ namespace EVEMon
                 lblCSSProviderStatus.Visible = true;
             }
 
-            bool success = await Settings.CloudStorageServiceProvider.Provider.UploadSettingsFileOnExitAsync()
-                .ConfigureAwait(false);
+            bool success = await Settings.CloudStorageServiceProvider.Provider.UploadSettingsFileOnExitAsync();
 
             lblCSSProviderStatus.Visible = false;
 

@@ -75,7 +75,7 @@ namespace EVEMon
 
             // Initialization
             EveMonClient.Initialize();
-            Settings.Initialize();
+            Settings.InitializeAsync().GetAwaiter().GetResult();
 
             // Did something requested an exit before we entered Run() ?
             if (s_exitRequested)
