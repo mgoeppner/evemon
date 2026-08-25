@@ -1,0 +1,55 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs"
+     xmlns:ui="http://wixtoolset.org/schemas/v4/wxs/ui">
+
+  <Package Name="EVEMon"
+           Manufacturer="EVEMon Development Team"
+           Version="$(var.ProductVersion)"
+           UpgradeCode="126A4646-6B70-4D9F-B10D-22C32B37236A"
+           Language="1033"
+           Compressed="yes">
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of EVEMon is already installed." />
+
+    <MediaTemplate EmbedCab="yes" />
+
+    <Icon Id="EVEMonIcon" SourceFile="..\..\src\EVEMon.Common\Resources\Icons\EVEMon.ico" />
+    <Property Id="ARPPRODUCTICON" Value="EVEMonIcon" />
+
+    <StandardDirectory Id="ProgramFiles64Folder">
+      <Directory Id="INSTALLFOLDER" Name="EVEMon" />
+    </StandardDirectory>
+
+    <StandardDirectory Id="ProgramMenuFolder">
+      <Directory Id="ApplicationProgramsFolder" Name="EVEMon">
+        <Component Id="ApplicationShortcut" Guid="9A2C5F5F-8B2E-4E3B-9E3E-6D2B7C4C3A11">
+          <Shortcut Id="ApplicationStartMenuShortcut"
+                    Name="EVEMon"
+                    Description="EVEMon - EVE Online character monitor"
+                    Target="[INSTALLFOLDER]EVEMon.exe"
+                    WorkingDirectory="INSTALLFOLDER"
+                    Icon="EVEMonIcon" />
+          <RemoveFolder Id="RemoveApplicationProgramsFolder" On="uninstall" />
+          <RegistryValue Root="HKCU"
+                          Key="Software\EVEMon Development Team\EVEMon"
+                          Name="installed"
+                          Type="integer"
+                          Value="1"
+                          KeyPath="yes" />
+        </Component>
+      </Directory>
+    </StandardDirectory>
+
+    <ComponentGroup Id="MainComponents" Directory="INSTALLFOLDER">
+      <Files Include="$(var.PublishDir)**" />
+    </ComponentGroup>
+
+    <Feature Id="MainApplication" Title="EVEMon" Level="1">
+      <ComponentGroupRef Id="MainComponents" />
+      <ComponentRef Id="ApplicationShortcut" />
+    </Feature>
+
+    <WixVariable Id="WixUILicenseRtf" Value="License.rtf" />
+    <ui:WixUI Id="WixUI_InstallDir" InstallDirectory="INSTALLFOLDER" />
+
+  </Package>
+</Wix>

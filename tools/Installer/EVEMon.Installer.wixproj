@@ -1,0 +1,24 @@
+<Project>
+  <Sdk Name="WixToolset.Sdk" Version="7.0.0" />
+
+  <PropertyGroup>
+    <OutputType>Package</OutputType>
+    <OutputName>EVEMon-$(Version)</OutputName>
+    <Platforms>x64</Platforms>
+    <Version Condition="'$(Version)' == ''">5.0.0</Version>
+    <PublishDir Condition="'$(PublishDir)' == ''">$(MSBuildThisFileDirectory)..\..\publish\</PublishDir>
+    <DefineConstants>PublishDir=$(PublishDir);ProductVersion=$(Version)</DefineConstants>
+    <AcceptEula>wix7</AcceptEula>
+    <EnableDefaultItems Condition="'$([MSBuild]::IsOSPlatform(`Windows`))' != 'true'">false</EnableDefaultItems>
+    <SkipCopyBuildProduct Condition="'$([MSBuild]::IsOSPlatform(`Windows`))' != 'true'">true</SkipCopyBuildProduct>
+    <SkipCopyingSymbolsToOutputDirectory Condition="'$([MSBuild]::IsOSPlatform(`Windows`))' != 'true'">true</SkipCopyingSymbolsToOutputDirectory>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WixToolset.UI.wixext" Version="7.0.0" />
+  </ItemGroup>
+
+  <Target Name="_WarnIfNotWindows" BeforeTargets="Build" Condition="'$([MSBuild]::IsOSPlatform(`Windows`))' != 'true'">
+    <Message Importance="high" Text="Skipping EVEMon.Installer: the WiX Toolset only supports building on Windows." />
+  </Target>
+</Project>

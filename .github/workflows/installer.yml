@@ -1,0 +1,59 @@
+# Builds the EVEMon MSI installer with WiX.
+
+name: Installer
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    permissions:
+      contents: write
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+    - name: Extract version
+      id: version
+      shell: pwsh
+      run: |
+        $content = Get-Content -Raw SharedAssemblyInfo.cs
+        $match = [regex]::Match($content, 'AssemblyInformationalVersion\("([^"]+)"\)')
+        "version=$($match.Groups[1].Value)" >> $env:GITHUB_OUTPUT
+    - name: Restore WiX tool
+      run: |
+        dotnet tool restore
+    - name: Restore dependencies
+      run: dotnet restore -p:EnableWindowsTargeting=true
+    - name: Build
+      run: dotnet build --no-restore -p:EnableWindowsTargeting=true
+    - name: Publish
+      run: dotnet publish ./src/EVEMon --self-contained true -r win-x64 -p:EnableWindowsTargeting=true -p:PublishSingleFile=false -c Release -o ./publish
+    - name: Build installer
+      run: >-
+        dotnet build tools/Installer/EVEMon.Installer.wixproj
+        -c Release
+        -p:Version=${{ steps.version.outputs.version }}
+        -p:PublishDir=${{ github.workspace }}\publish\
+    - name: Upload installer artifact
+      uses: actions/upload-artifact@v7.0.1
+      with:
+        name: EVEMon-installer-${{ steps.version.outputs.version }}
+        path: tools/Installer/bin/**/*.msi
+        if-no-files-found: error
+    - name: Create GitHub release
+      uses: softprops/action-gh-release@v2
+      with:
+        tag_name: v${{ steps.version.outputs.version }}
+        name: EVEMon ${{ steps.version.outputs.version }}
+        files: tools/Installer/bin/**/*.msi
+        generate_release_notes: true
+        fail_on_unmatched_files: true
