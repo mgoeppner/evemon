@@ -224,3 +224,7 @@ tools/XmlGenerator/sqlite-latest.sqlite-journal
 
 # Crash log
 crash_log.txt
+
+# Flatpak
+flatpak
+.flatpak-builder

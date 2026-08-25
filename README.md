@@ -27,3 +27,7 @@ For complete info on *How To Contribute* please visit the [wiki](https://bitbuck
 **Documentation:** [EVEMon Docs](https://evemon.readthedocs.org/)
 
 **Feedback & Ideas:** [On UserVoice](https://evemon.uservoice.com/)
+
+## Linux
+
+To build and install the flatpak: `flatpak-builder --force-clean --user --install-deps-from=flathub --install flatpak io.github.mgoeppner.evemon.yml`

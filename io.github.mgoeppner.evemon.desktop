@@ -1,0 +1,10 @@
+[Desktop Entry]
+Categories=Game;
+Keywords=EVE;EVE Online;
+Comment=A lightweight, easy-to-use standalone Windows application designed to assist you in keeping track of your EVE Online character progression.
+Exec=run-evemon
+Icon=io.github.mgoeppner.evemon
+Name=EVEMon
+Terminal=false
+Type=Application
+Version=1.0
