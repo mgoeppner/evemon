@@ -37,24 +37,6 @@ namespace EVEMon.Common.Controls
         [DllImport("user32.dll", SetLastError = true)]
         private static extern uint GetWindowLong(IntPtr hWnd, int nIndex);
 
-        [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        private static extern bool LockWindowUpdate(IntPtr hWndLock);
-
-        /// <summary>
-        /// Locks or unlocks updates on this control; used to avoid the window blinking problem
-        /// which occurs when Suspend/ResumeDrawing is called.
-        /// </summary>
-        /// <param name="form">The form to update.</param>
-        /// <param name="locked">true to lock window drawing updates, or false to enable them.</param>
-        public static void LockWindowUpdate(this Control form, bool locked)
-        {
-            if (locked)
-                LockWindowUpdate(form.Handle);
-            else
-                LockWindowUpdate(IntPtr.Zero);
-        }
-
         /// <summary>
         /// Show the given form on topmost without activating it.
         /// </summary>
