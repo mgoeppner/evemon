@@ -7,7 +7,6 @@ using System.Windows.Forms;
 using EVEMon.Common.Enumerations.CCPAPI;
 using EVEMon.Common.Enumerations.UISettings;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Models.Extended;
 using EVEMon.Common.Properties;
 using EVEMon.Common.SettingsObjects;
@@ -29,8 +28,8 @@ namespace EVEMon.SettingsUI
         public UpdateSettingsControl()
         {
             InitializeComponent();
-            labelPeriod.Font = FontFactory.GetFont("Tahoma", 8.25F, FontStyle.Bold);
-            labelMethod.Font = FontFactory.GetFont("Tahoma", 8.25F, FontStyle.Bold);
+            labelPeriod.Font = new Font(labelPeriod.Font, FontStyle.Bold);
+            labelMethod.Font = new Font(labelMethod.Font, FontStyle.Bold);
 
             PopulateControl();
         }

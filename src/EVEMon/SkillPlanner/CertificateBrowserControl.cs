@@ -10,7 +10,6 @@ using EVEMon.Common.CustomEventArgs;
 using EVEMon.Common.Data;
 using EVEMon.Common.Enumerations;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Helpers;
 using EVEMon.Common.Interfaces;
 using EVEMon.Common.Models;
@@ -49,7 +48,7 @@ namespace EVEMon.SkillPlanner
             if (DesignMode || this.IsDesignModeHosted())
                 return;
 
-            lblName.Font = FontFactory.GetFont("Tahoma", 8.25F, FontStyle.Bold);
+            lblName.Font = new Font(lblName.Font, FontStyle.Bold);
 
             certSelectControl.SelectionChanged += certSelectControl_SelectionChanged;
 

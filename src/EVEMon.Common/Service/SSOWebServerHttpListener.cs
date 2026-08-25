@@ -1,4 +1,5 @@
 ﻿using EVEMon.Common.Constants;
+using EVEMon.Common.Helpers;
 using EVEMon.Common.Threading;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -7,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Net;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace EVEMon.Common.Service
@@ -63,10 +65,10 @@ namespace EVEMon.Common.Service
 
             listener = builder.Build();
 
-            listener.MapGet("/callback", HandleCallback);
+            listener.MapGet("/callback", HandleCallbackAsync);
         }
 
-        private Task HandleCallback(HttpContext context, [FromQuery] string code, [FromQuery] string state)
+        private Task HandleCallbackAsync(HttpContext context, [FromQuery] string code, [FromQuery] string state)
         {
             if (codeCompletionSource != null)
             {
@@ -86,20 +88,36 @@ namespace EVEMon.Common.Service
         {
             if (string.IsNullOrEmpty(state))
                 throw new ArgumentNullException("state");
-            WaitForCodeAsync(state).ContinueWith((result) => Dispatcher.Invoke(() =>
-                callback?.Invoke(result)));
+            _ = WaitForCodeAsync(state).ContinueWith((result) => Dispatcher.Invoke(() =>
+                callback?.Invoke(result)), TaskScheduler.Default);
         }
 
         public void Dispose()
         {
+            var host = Interlocked.Exchange(ref listener, null);
+            if (host == null)
+                return;
+
+            // Unblock anyone awaiting the auth code. Without this the never-completed
+            // TCS pins the BeginWaitForCode continuation, and through it the disposed
+            // window; UpdateTokens already handles IsCanceled
+            codeCompletionSource?.TrySetCanceled();
+
+            // Shut down in the background; Dispose is called on the UI thread when the
+            // owning form closes, and blocking it on Kestrel shutdown deadlocks
+            _ = DisposeServerAsync(host);
+        }
+
+        private static async Task DisposeServerAsync(WebApplication host)
+        {
             try
             {
-                Stop();
-                listener.DisposeAsync().AsTask().GetAwaiter().GetResult();
+                await host.StopAsync();
+                await host.DisposeAsync();
             }
-            catch
+            catch (Exception ex)
             {
-                // Ignore
+                ExceptionHandler.LogException(ex, true);
             }
         }
 
@@ -142,17 +160,19 @@ namespace EVEMon.Common.Service
         /// <summary>
         /// Starts the web server.
         /// </summary>
-        public void Start()
+        public Task StartAsync()
         {
-            listener.StartAsync().GetAwaiter().GetResult();
+            var host = listener ?? throw new ObjectDisposedException(nameof(SSOWebServerHttpListener));
+            return host.StartAsync();
         }
 
         /// <summary>
         /// Stops the web server.
         /// </summary>
-        public void Stop()
+        public Task StopAsync()
         {
-            listener.StopAsync().GetAwaiter().GetResult();
+            var host = listener ?? throw new ObjectDisposedException(nameof(SSOWebServerHttpListener));
+            return host.StopAsync();
         }
 
         /// <summary>
@@ -162,7 +182,9 @@ namespace EVEMon.Common.Service
         /// <returns>The token received, or null if none was received.</returns>
         public async Task<string> WaitForCodeAsync(string expectedState)
         {
-            codeCompletionSource = new();
+            // Run continuations asynchronously so completing the TCS from Kestrel's
+            // request thread never runs UI-bound continuations inline on it
+            codeCompletionSource = new(TaskCreationOptions.RunContinuationsAsynchronously);
 
             var (code, state) = await codeCompletionSource.Task;
 

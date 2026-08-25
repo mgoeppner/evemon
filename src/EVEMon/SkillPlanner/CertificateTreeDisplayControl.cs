@@ -9,7 +9,6 @@ using EVEMon.Common.CustomEventArgs;
 using EVEMon.Common.Data;
 using EVEMon.Common.Enumerations;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Helpers;
 using EVEMon.Common.Interfaces;
 using EVEMon.Common.Models;
@@ -149,8 +148,7 @@ namespace EVEMon.SkillPlanner
             if (DesignMode || this.IsDesignModeHosted())
                 return;
 
-            m_boldFont = FontFactory.GetFont(Font, FontStyle.Bold);
-            treeView.Font = FontFactory.GetFont("Microsoft Sans Serif", 8.25F);
+            m_boldFont = new Font(Font, FontStyle.Bold);
             treeView.ItemHeight = treeView.Font.Height * 2 + 6;
 
             m_emptyImageList.ImageSize = new Size(30, 24);

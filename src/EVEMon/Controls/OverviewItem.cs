@@ -12,7 +12,6 @@ using EVEMon.Common.Enumerations;
 using EVEMon.Common.Enumerations.CCPAPI;
 using EVEMon.Common.Enumerations.UISettings;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Interfaces;
 using EVEMon.Common.Models;
 using EVEMon.Common.Scheduling;
@@ -120,14 +119,14 @@ namespace EVEMon.Controls
             m_bigFontSize = 11.25F;
 
             // Initializes fonts
-            lblCharName.Font = FontFactory.GetFont("Tahoma", m_bigFontSize, FontStyle.Bold);
-            lblBalance.Font = FontFactory.GetFont("Tahoma", m_mediumFontSize, FontStyle.Bold);
-            lblRemainingTime.Font = FontFactory.GetFont("Tahoma", m_mediumFontSize);
-            lblSkillInTraining.Font = FontFactory.GetFont("Tahoma", m_regularFontSize);
-            lblCompletionTime.Font = FontFactory.GetFont("Tahoma", m_regularFontSize);
-            lblSkillQueueTrainingTime.Font = FontFactory.GetFont("Tahoma", m_regularFontSize);
-            lblExtraInfo.Font = FontFactory.GetFont("Tahoma", m_regularFontSize);
-            lblBoosterDuration.Font = FontFactory.GetFont("Tahoma", m_regularFontSize);
+            lblCharName.Font = new Font(lblCharName.Font.FontFamily, m_bigFontSize, FontStyle.Bold);
+            lblBalance.Font = new Font(lblBalance.Font.FontFamily, m_mediumFontSize, FontStyle.Bold);
+            lblRemainingTime.Font = new Font(lblRemainingTime.Font.FontFamily, m_mediumFontSize);
+            lblSkillInTraining.Font = new Font(lblSkillInTraining.Font.FontFamily, m_regularFontSize);
+            lblCompletionTime.Font = new Font(lblCompletionTime.Font.FontFamily, m_regularFontSize);
+            lblSkillQueueTrainingTime.Font = new Font(lblSkillQueueTrainingTime.Font.FontFamily, m_regularFontSize);
+            lblExtraInfo.Font = new Font(lblExtraInfo.Font.FontFamily, m_regularFontSize);
+            lblBoosterDuration.Font = new Font(lblBoosterDuration.Font.FontFamily, m_regularFontSize);
 
             // Initializes the portrait
             pbCharacterPortrait.Hide();
@@ -872,7 +871,7 @@ namespace EVEMon.Controls
         private static Size GetSizeForLabel(Label label, float fontSize, int left, int top,
             int rightPad, int labelWidth, int labelHeight)
         {
-            Font font = FontFactory.GetFont(label.Font.FontFamily, fontSize, label.Font.Style);
+            Font font = new Font(label.Font.FontFamily, fontSize, label.Font.Style);
             label.Font = font;
             label.Location = new Point(left, top);
             labelWidth = Math.Max(labelWidth, label.PreferredWidth + rightPad);

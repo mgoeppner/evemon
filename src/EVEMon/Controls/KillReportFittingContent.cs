@@ -11,7 +11,6 @@ using EVEMon.Common.Controls;
 using EVEMon.Common.Data;
 using EVEMon.Common.Enumerations;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Models;
 using EVEMon.SkillPlanner;
 
@@ -53,9 +52,9 @@ namespace EVEMon.Controls
             SaveFittingButton.Visible = false;
             ColorKeyGroupBox.Visible = false;
 
-            m_fittingFont = FontFactory.GetFont("Tahoma", 8.25F);
-            m_fittingBoldFont = FontFactory.GetFont("Tahoma", 8.25F, FontStyle.Bold);
-            noItemsLabel.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
+            m_fittingFont = new Font(Font.FontFamily, 8.25F);
+            m_fittingBoldFont = new Font(Font.FontFamily, 8.25F, FontStyle.Bold);
+            noItemsLabel.Font = new Font(noItemsLabel.Font.FontFamily, 11.25F, FontStyle.Bold);
         }
 
         #endregion

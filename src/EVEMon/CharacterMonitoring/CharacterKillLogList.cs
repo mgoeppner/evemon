@@ -87,9 +87,9 @@ namespace EVEMon.CharacterMonitoring
 
             m_sortCriteria = lvKillLog.Columns[0];
 
-            m_killFont = FontFactory.GetFont("Tahoma", 6.25F);
-            m_killBoldFont = FontFactory.GetFont("Tahoma", 6.25F, FontStyle.Bold);
-            noKillLogLabel.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
+            m_killFont = new Font(Font.FontFamily, 6.25F);
+            m_killBoldFont = new Font(Font.FontFamily, 6.25F, FontStyle.Bold);
+            noKillLogLabel.Font = new Font(noKillLogLabel.Font.FontFamily, 11.25F, FontStyle.Bold);
 
             lvKillLog.ColumnClick += lvKillLog_ColumnClick;
         }
@@ -714,9 +714,6 @@ namespace EVEMon.CharacterMonitoring
             {
                 g.DrawLine(p, e.Bounds.Left, e.Bounds.Top, e.Bounds.Right + 1, e.Bounds.Top);
             }
-
-            // Setting character spacing
-            NativeMethods.SetTextCharacterSpacing(g, 4);
 
             // Measure texts
             Size standingGroupTextSize = TextRenderer.MeasureText(g, group.ToUpper(CultureConstants.DefaultCulture),

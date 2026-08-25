@@ -54,11 +54,11 @@ namespace EVEMon.ApiCredentialsManagement
         /// <summary>
         /// Starts the SSO server.
         /// </summary>
-        private void StartServer()
+        private async Task StartServerAsync()
         {
             try
             {
-                m_server.Start();
+                await m_server.StartAsync();
                 WaitForToken();
             }
             catch (IOException)
@@ -66,6 +66,11 @@ namespace EVEMon.ApiCredentialsManagement
                 MessageBox.Show(string.Format(Properties.Resources.ErrorSSOStartup,
                     SSOWebServerHttpListener.PORT), @"Cannot start authentication", MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
+            }
+            catch (Exception ex)
+            {
+                // The task is fire-and-forget, so anything unlogged here is lost
+                ExceptionHandler.LogException(ex, true);
             }
         }
 
@@ -150,7 +155,7 @@ namespace EVEMon.ApiCredentialsManagement
         {
             bool nextPrev = false;
             if (newPage == CredentialsPage)
-                StartServer();
+                _ = StartServerAsync();
             else
             {
                 nextPrev = true;

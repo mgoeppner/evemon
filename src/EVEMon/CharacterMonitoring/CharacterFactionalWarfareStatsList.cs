@@ -9,7 +9,6 @@ using EVEMon.Common.Controls;
 using EVEMon.Common.CustomEventArgs;
 using EVEMon.Common.Enumerations;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Models;
 using EVEMon.Common.Service;
 
@@ -33,8 +32,8 @@ namespace EVEMon.CharacterMonitoring
             ListPanel.Visible = false;
             notEnlistedLabel.Visible = false;
 
-            notEnlistedLabel.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
-            noFactionalWarfareLabel.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
+            notEnlistedLabel.Font = new Font(notEnlistedLabel.Font.FontFamily, 11.25F, FontStyle.Bold);
+            noFactionalWarfareLabel.Font = new Font(noFactionalWarfareLabel.Font.FontFamily, 11.25F, FontStyle.Bold);
         }
 
         #endregion

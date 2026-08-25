@@ -6,7 +6,6 @@ using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Windows.Forms;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Scheduling;
 
 namespace EVEMon.Schedule
@@ -35,7 +34,7 @@ namespace EVEMon.Schedule
             SingleColor = Color.Blue;
             BlockingColor = Color.Red;
             TextColor = Color.White;
-            EntryFont = FontFactory.GetDefaultFont(7.0f);
+            EntryFont = new Font(Font.FontFamily, 7.0f);
         }
 
         /// <summary>

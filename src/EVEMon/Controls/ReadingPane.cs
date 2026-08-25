@@ -6,7 +6,6 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using EVEMon.Common;
 using EVEMon.Common.Constants;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Interfaces;
 using EVEMon.Common.Models;
 
@@ -26,7 +25,7 @@ namespace EVEMon.Controls
         {
             InitializeComponent();
 
-            lblMessageHeader.Font = FontFactory.GetDefaultFont(10F, FontStyle.Bold);
+            lblMessageHeader.Font = new Font(SystemFonts.DefaultFont.FontFamily, 10F, FontStyle.Bold);
             flPanelHeader.ForeColor = SystemColors.ControlText;
         }
 

@@ -31,7 +31,7 @@ namespace EVEMon.Controls
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.listBox = new NoFlickerListBox();
+            this.listBox = new System.Windows.Forms.ListBox();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
@@ -69,7 +69,7 @@ namespace EVEMon.Controls
 
         #endregion
 
-        private NoFlickerListBox listBox;
+        private System.Windows.Forms.ListBox listBox;
         private System.Windows.Forms.ToolTip toolTip;
     }
 }

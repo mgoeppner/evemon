@@ -14,7 +14,6 @@ using EVEMon.Common.Data;
 using EVEMon.Common.Enumerations;
 using EVEMon.Common.Enumerations.UISettings;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Helpers;
 using EVEMon.Common.Interfaces;
 using EVEMon.Common.Models;
@@ -94,8 +93,7 @@ namespace EVEMon.CharacterMonitoring
 
             m_showIssuedFor = IssuedFor.All;
 
-            noOrdersLabel.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
-            marketExpPanelControl.Font = FontFactory.GetFont("Tahoma", 8.25f);
+            noOrdersLabel.Font = new Font(noOrdersLabel.Font.FontFamily, 11.25F, FontStyle.Bold);
             marketExpPanelControl.Hide();
 
             ListViewHelper.EnableDoubleBuffer(lvOrders);

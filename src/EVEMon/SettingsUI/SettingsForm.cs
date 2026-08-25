@@ -5,7 +5,6 @@ using EVEMon.Common.Controls;
 using EVEMon.Common.Controls.MultiPanel;
 using EVEMon.Common.Enumerations.UISettings;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Helpers;
 using EVEMon.Common.MarketPricer;
 using EVEMon.Common.Models.Comparers;
@@ -47,11 +46,10 @@ namespace EVEMon.SettingsUI
         {
             InitializeComponent();
 
-            treeView.Font = FontFactory.GetFont("Tahoma", 9.75F);
-            alwaysAskRadioButton.Font = FontFactory.GetFont("Tahoma", 8.25F, FontStyle.Bold);
-            removeAllRadioButton.Font = FontFactory.GetFont("Tahoma", 8.25F, FontStyle.Bold);
-            removeConfirmedRadioButton.Font = FontFactory.GetFont("Tahoma", 8.25F, FontStyle.Bold);
-            settingsFileStorageControl.Font = FontFactory.GetFont("Tahoma", 8.25F);
+            treeView.Font = new Font(treeView.Font.FontFamily, 9.75F);
+            alwaysAskRadioButton.Font = new Font(alwaysAskRadioButton.Font, FontStyle.Bold);
+            removeAllRadioButton.Font = new Font(removeAllRadioButton.Font, FontStyle.Bold);
+            removeConfirmedRadioButton.Font = new Font(removeConfirmedRadioButton.Font, FontStyle.Bold);
             extraInfoComboBox.SelectedIndex = 0;
 
             m_settings = Settings.Export();
@@ -145,7 +143,6 @@ namespace EVEMon.SettingsUI
 
             // Misc settings
             cbWorksafeMode.Checked = m_settings.UI.SafeForWork;
-            compatibilityCombo.SelectedIndex = (int)m_settings.Compatibility;
 
             // Skills icon sets
             cbSkillIconSet.Items.Clear();
@@ -429,8 +426,6 @@ namespace EVEMon.SettingsUI
             var pws = m_settings.UI.PlanWindow;
             int extraIndex = extraInfoComboBox.SelectedIndex;
 
-            // General - Compatibility
-            m_settings.Compatibility = (CompatibilityMode)Math.Max(0, compatibilityCombo.SelectedIndex);
             m_settings.UI.SafeForWork = cbWorksafeMode.Checked;
 
             // Skill Planner
@@ -819,99 +814,6 @@ namespace EVEMon.SettingsUI
         #region Other handlers
 
         /// <summary>
-        /// Gets the custom icon set.
-        /// </summary>
-        /// <param name="index">The index.</param>
-        /// <returns></returns>
-        private static ImageList GetCustomIconSet(int index)
-        {
-            string groupname = string.Empty;
-
-            if (index > 0 && index < IconSettings.Default.Properties.Count)
-            {
-                SettingsProperty iconSettingsProperty =
-                    IconSettings.Default.Properties["Group" + index];
-                if (iconSettingsProperty != null)
-                    groupname = iconSettingsProperty.DefaultValue.ToString();
-            }
-
-            string groupDirectory = $"{AppDomain.CurrentDomain.BaseDirectory}Resources\\Skill_Select\\Group";
-            string defaultResourcesPath = $"{groupDirectory}0\\Default.resx";
-            string groupResourcesPath = $"{groupDirectory}{index}\\{groupname}.resx";
-
-            if (!File.Exists(defaultResourcesPath) ||
-                (!string.IsNullOrEmpty(groupname) && !File.Exists(groupResourcesPath)))
-            {
-                groupname = string.Empty;
-            }
-
-            return string.IsNullOrEmpty(groupname) ? null : GetCustomIconSet(defaultResourcesPath, groupResourcesPath);
-        }
-
-        /// <summary>
-        /// Gets the icon set for the given index, using the given list for missing icons.
-        /// </summary>
-        /// <param name="defaultResourcesPath">The default resources path.</param>
-        /// <param name="groupResourcesPath">The group resources path.</param>
-        /// <returns></returns>
-        private static ImageList GetCustomIconSet(string defaultResourcesPath, string groupResourcesPath)
-        {
-            ImageList customIconSet;
-            ImageList tempImageList = null;
-            try
-            {
-                tempImageList = new ImageList();
-                IDictionaryEnumerator basicx;
-                IResourceReader defaultGroupReader = null;
-                tempImageList.ColorDepth = ColorDepth.Depth32Bit;
-                try
-                {
-                    defaultGroupReader = new ResourceReader(defaultResourcesPath);
-
-                    basicx = defaultGroupReader.GetEnumerator();
-
-                    while (basicx.MoveNext())
-                    {
-                        tempImageList.Images.Add(basicx.Key.ToString(), (Icon)basicx.Value);
-                    }
-                }
-                finally
-                {
-                    defaultGroupReader?.Close();
-                }
-
-                IResourceReader groupReader = null;
-                try
-                {
-                    groupReader = new ResourceReader(groupResourcesPath);
-
-                    basicx = groupReader.GetEnumerator();
-
-                    while (basicx.MoveNext())
-                    {
-                        if (tempImageList.Images.ContainsKey(basicx.Key.ToString()))
-                            tempImageList.Images.RemoveByKey(basicx.Key.ToString());
-
-                        tempImageList.Images.Add(basicx.Key.ToString(), (Icon)basicx.Value);
-                    }
-                }
-                finally
-                {
-                    groupReader?.Close();
-                }
-
-                customIconSet = tempImageList;
-                tempImageList = null;
-            }
-            finally
-            {
-                tempImageList?.Dispose();
-            }
-
-            return customIconSet;
-        }
-
-        /// <summary>
         /// Skill Planner > Skill browser icon set > Icons set combo.
         /// Updates the sample below the combo box.
         /// </summary>
@@ -920,7 +822,7 @@ namespace EVEMon.SettingsUI
         private void skillIconSetComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             tvlist.Nodes.Clear();
-            tvlist.ImageList = GetCustomIconSet(cbSkillIconSet.SelectedIndex + 1);
+            tvlist.ImageList = SkillIconSets.GetIconSet(cbSkillIconSet.SelectedIndex + 1);
 
             if (tvlist.ImageList == null)
                 return;

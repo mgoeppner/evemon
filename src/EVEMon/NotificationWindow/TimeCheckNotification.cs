@@ -1,8 +1,8 @@
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 using EVEMon.Common;
 using EVEMon.Common.Controls;
-using EVEMon.Common.Factories;
 
 namespace EVEMon.NotificationWindow
 {
@@ -20,7 +20,7 @@ namespace EVEMon.NotificationWindow
         private TimeCheckNotification()
         {
             InitializeComponent();
-            uxTitleLabel.Font = FontFactory.GetFont("Tahoma", 12F);
+            uxTitleLabel.Font = new Font(uxTitleLabel.Font.FontFamily, 12F);
         }
 
         /// <summary>

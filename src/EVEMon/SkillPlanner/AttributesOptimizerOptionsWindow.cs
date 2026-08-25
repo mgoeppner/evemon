@@ -1,4 +1,5 @@
 using System;
+using System.Drawing;
 using EVEMon.Common.Controls;
 using EVEMon.Common.Extensions;
 using EVEMon.Common.Factories;
@@ -29,9 +30,9 @@ namespace EVEMon.SkillPlanner
         {
             planEditorControl.ThrowIfNull(nameof(planEditorControl));
 
-            buttonWholePlan.Font = FontFactory.GetFont("Microsoft Sans Serif", 10F);
-            buttonCharacter.Font = FontFactory.GetFont("Microsoft Sans Serif", 10F);
-            buttonRemappingPoints.Font = FontFactory.GetFont("Microsoft Sans Serif", 10F);
+            buttonWholePlan.Font = new Font(buttonWholePlan.Font.FontFamily, 10F);
+            buttonCharacter.Font = new Font(buttonCharacter.Font.FontFamily, 10F);
+            buttonRemappingPoints.Font = new Font(buttonRemappingPoints.Font.FontFamily, 10F);
 
             m_planEditorControl = planEditorControl;
         }

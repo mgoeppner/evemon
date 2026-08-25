@@ -61,26 +61,26 @@ namespace EVEMon.Common.Collections.Global
 
             // Must always run first
             // It will have finished loading until static skills finish
-            Task properties = TaskHelper.RunIOBoundTaskAsync(() => StaticProperties.Load());
+            Task properties = Task.Run(() => StaticProperties.Load());
 
             // Must always run before items
-            Task skills = TaskHelper.RunIOBoundTaskAsync(() => StaticSkills.Load());
+            Task skills = Task.Run(() => StaticSkills.Load());
 
             await Task.WhenAll(skills, properties);
 
             // Must always run synchronously as blueprints, reprocessing and certificates depend on it
-            await TaskHelper.RunIOBoundTaskAsync(() => StaticItems.Load());
+            await Task.Run(() => StaticItems.Load());
 
             // Must always run synchronously as masteries depend on it
-            await TaskHelper.RunIOBoundTaskAsync(() => StaticCertificates.Load());
+            await Task.Run(() => StaticCertificates.Load());
 
             // Must always run synchronously as ID to name depends on it
-            await TaskHelper.RunIOBoundTaskAsync(() => StaticGeography.Load());
+            await Task.Run(() => StaticGeography.Load());
 
             // Non critical loadings as all dependencies have been loaded
-            Task blueprints = TaskHelper.RunIOBoundTaskAsync(() => StaticBlueprints.Load());
-            Task reprocessing = TaskHelper.RunIOBoundTaskAsync(() => StaticReprocessing.Load());
-            await TaskHelper.RunIOBoundTaskAsync(() => StaticMasteries.Load());
+            Task blueprints = Task.Run(() => StaticBlueprints.Load());
+            Task reprocessing = Task.Run(() => StaticReprocessing.Load());
+            await Task.Run(() => StaticMasteries.Load());
 
             EveMonClient.Trace("Datafiles.Load - done", printMethod: false);
         }

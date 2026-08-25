@@ -15,7 +15,6 @@ using EVEMon.Common.Data;
 using EVEMon.Common.Enumerations;
 using EVEMon.Common.Enumerations.UISettings;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Helpers;
 using EVEMon.Common.Interfaces;
 using EVEMon.Common.Models;
@@ -63,7 +62,7 @@ namespace EVEMon.CharacterMonitoring
             estimatedCostPanel.Hide();
             noPricesFoundLabel.Hide();
 
-            noAssetsLabel.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
+            noAssetsLabel.Font = new Font(noAssetsLabel.Font.FontFamily, 11.25F, FontStyle.Bold);
 
             ListViewHelper.EnableDoubleBuffer(lvAssets);
 
@@ -391,7 +390,7 @@ namespace EVEMon.CharacterMonitoring
         private async Task UpdateItemsCostAsync(IList<Asset> assets)
         {
             lblTotalCost.Text = string.Format(CultureConstants.DefaultCulture,
-                m_totalCostLabelDefaultText, await TaskHelper.RunCPUBoundTaskAsync(() =>
+                m_totalCostLabelDefaultText, await Task.Run(() =>
                 assets.Sum(asset => asset.Price * asset.Quantity)));
 
             if (!totalCostThrobber.Visible && !Settings.MarketPricer.Pricer.Queried)
@@ -404,7 +403,7 @@ namespace EVEMon.CharacterMonitoring
 
             totalCostThrobber.State = ThrobberState.Stopped;
             totalCostThrobber.Hide();
-            noPricesFoundLabel.Visible = await TaskHelper.RunCPUBoundTaskAsync(() =>
+            noPricesFoundLabel.Visible = await Task.Run(() =>
                 assets.Where(asset => asset.TypeOfBlueprint != BlueprintType.Copy.ToString()).
                 Any(asset => Math.Abs(asset.Price) < double.Epsilon));
         }
@@ -502,7 +501,7 @@ namespace EVEMon.CharacterMonitoring
         /// </summary>
         /// <param name="assets">The assets.</param>
         private Task UpdateNoGroupContentAsync(IEnumerable<Asset> assets)
-            => TaskHelper.RunCPUBoundTaskAsync(() =>
+            => Task.Run(() =>
             {
                 return assets.Select(asset => new
                 {
@@ -529,7 +528,7 @@ namespace EVEMon.CharacterMonitoring
         /// <typeparam name="TKey"></typeparam>
         /// <param name="groups"></param>
         private Task UpdateContentAsync<TKey>(IEnumerable<IGrouping<TKey, Asset>> groups)
-            => TaskHelper.RunCPUBoundTaskAsync(() =>
+            => Task.Run(() =>
             {
                 var listOfGroups = new List<ListViewGroup>();
                 var listOfItems = new List<ListViewItem>();
@@ -800,7 +799,7 @@ namespace EVEMon.CharacterMonitoring
         {
             // Invoke it on a worker thread cause it may be time intensive
             // if character owns many stuff in several locations
-            await TaskHelper.RunCPUBoundTaskAsync(() =>
+            await Task.Run(() =>
             {
                 Character.Assets.UpdateLocation();
                 lock (m_list)

@@ -8,7 +8,6 @@ using EVEMon.Common.Controls;
 using EVEMon.Common.CustomEventArgs;
 using EVEMon.Common.Extensions;
 using EVEMon.Common.ExternalCalendar;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Models;
 using EVEMon.Common.Scheduling;
 
@@ -42,8 +41,7 @@ namespace EVEMon.CharacterMonitoring
                 return;
 
             // Fonts
-            Font = FontFactory.GetFont("Tahoma");
-            lblScheduleWarning.Font = FontFactory.GetFont("Tahoma", FontStyle.Bold);
+            lblScheduleWarning.Font = new Font(lblScheduleWarning.Font, FontStyle.Bold);
 
             CCPCharacter ccpCharacter = m_character as CCPCharacter;
 

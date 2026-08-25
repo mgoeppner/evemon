@@ -48,8 +48,7 @@ namespace EVEMon.CharacterMonitoring
             InitializeComponent();
 
             // Fonts
-            Font = FontFactory.GetFont("Tahoma");
-            CharacterNameLabel.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
+            CharacterNameLabel.Font = new Font(CharacterNameLabel.Font.FontFamily, 11.25F, FontStyle.Bold);
             m_updatingLabels = m_updatingStatus = false;
             AccountStatusModeComboBox.SelectedIndex = 0;
         }
@@ -376,12 +375,12 @@ namespace EVEMon.CharacterMonitoring
             if (!Settings.UI.SafeForWork && !ccpCharacter.HasSufficientBalance && marketMonitor != null && marketMonitor.Enabled)
             {
                 BalanceLabel.ForeColor = Color.Orange;
-                BalanceLabel.Font = FontFactory.GetFont(Font, FontStyle.Bold);
+                BalanceLabel.Font = new Font(Font, FontStyle.Bold);
                 return;
             }
 
             BalanceLabel.ForeColor = !Settings.UI.SafeForWork && m_character.Balance < 0 ? Color.Red : SystemColors.ControlText;
-            BalanceLabel.Font = FontFactory.GetFont(Font);
+            BalanceLabel.Font = new Font(Font, FontStyle.Regular);
         }
 
         /// <summary>

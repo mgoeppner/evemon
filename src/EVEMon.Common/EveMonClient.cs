@@ -53,6 +53,9 @@ namespace EVEMon.Common
 
             Trace("begin");
 
+            // Route Google API client library logging into the trace file
+            Google.ApplicationContext.RegisterLogger(new Helpers.GoogleApisTraceLogger());
+
             // Network monitoring (connection availability changes)
             NetworkMonitor.Initialize();
 

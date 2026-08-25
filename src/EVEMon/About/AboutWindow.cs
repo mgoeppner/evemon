@@ -6,7 +6,6 @@ using System.Windows.Forms;
 using EVEMon.Common;
 using EVEMon.Common.Constants;
 using EVEMon.Common.Controls;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Helpers;
 
 namespace EVEMon.About
@@ -29,9 +28,9 @@ namespace EVEMon.About
 
             devsList.SelectedIndexChanged += devsList_SelectedIndexChanged;
 
-            EVEMonLabel.Font = FontFactory.GetDefaultFont(8.25F, FontStyle.Bold);
-            DevContribLabel.Font = FontFactory.GetDefaultFont(8.25F, FontStyle.Bold);
-            CredentialsLabels.Font = FontFactory.GetDefaultFont(8.25F, FontStyle.Bold);
+            EVEMonLabel.Font = new Font(EVEMonLabel.Font, FontStyle.Bold);
+            DevContribLabel.Font = new Font(DevContribLabel.Font, FontStyle.Bold);
+            CredentialsLabels.Font = new Font(CredentialsLabels.Font, FontStyle.Bold);
 
             // list of headings
             m_headers = new SortedList

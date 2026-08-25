@@ -74,7 +74,6 @@ namespace EVEMon.SettingsUI
             cbSkillInTitle = new System.Windows.Forms.CheckBox();
             cbTitleToTime = new System.Windows.Forms.CheckBox();
             lblGeneralPage = new System.Windows.Forms.Label();
-            lblEnvironment = new System.Windows.Forms.Label();
             lblSkillPlannerPage = new System.Windows.Forms.Label();
             lblNetworkPageProxy = new System.Windows.Forms.Label();
             lblProxyHostIPAddress = new System.Windows.Forms.Label();
@@ -110,7 +109,6 @@ namespace EVEMon.SettingsUI
             generalPage = new MultiPanelPage();
             btnEVEMonDataDir = new System.Windows.Forms.Button();
             cbWorksafeMode = new System.Windows.Forms.CheckBox();
-            compatibilityCombo = new System.Windows.Forms.ComboBox();
             runAtStartupComboBox = new System.Windows.Forms.CheckBox();
             mainWindowPage = new MultiPanelPage();
             OverviewGroupBox = new System.Windows.Forms.GroupBox();
@@ -560,16 +558,6 @@ namespace EVEMon.SettingsUI
             lblGeneralPage.Size = new System.Drawing.Size(495, 48);
             lblGeneralPage.TabIndex = 20;
             lblGeneralPage.Text = resources.GetString("lblGeneralPage.Text");
-            // 
-            // lblEnvironment
-            // 
-            lblEnvironment.AutoSize = true;
-            lblEnvironment.Location = new System.Drawing.Point(4, 209);
-            lblEnvironment.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            lblEnvironment.Name = "lblEnvironment";
-            lblEnvironment.Size = new System.Drawing.Size(236, 15);
-            lblEnvironment.TabIndex = 1;
-            lblEnvironment.Text = "Environment (requires restart to take effect)";
             // 
             // lblSkillPlannerPage
             // 
@@ -1033,8 +1021,6 @@ namespace EVEMon.SettingsUI
             generalPage.Controls.Add(btnEVEMonDataDir);
             generalPage.Controls.Add(lblGeneralPage);
             generalPage.Controls.Add(cbWorksafeMode);
-            generalPage.Controls.Add(compatibilityCombo);
-            generalPage.Controls.Add(lblEnvironment);
             generalPage.Controls.Add(runAtStartupComboBox);
             generalPage.Dock = System.Windows.Forms.DockStyle.Fill;
             generalPage.Location = new System.Drawing.Point(6, 6);
@@ -1068,17 +1054,6 @@ namespace EVEMon.SettingsUI
             cbWorksafeMode.Text = "Run in \"safe for work\" mode (no portraits or colors)";
             cbWorksafeMode.UseVisualStyleBackColor = true;
             cbWorksafeMode.CheckedChanged += OnMustEnableOrDisable;
-            // 
-            // compatibilityCombo
-            // 
-            compatibilityCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            compatibilityCombo.FormattingEnabled = true;
-            compatibilityCombo.Items.AddRange(new object[] { "Windows", "Wine" });
-            compatibilityCombo.Location = new System.Drawing.Point(270, 205);
-            compatibilityCombo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            compatibilityCombo.Name = "compatibilityCombo";
-            compatibilityCombo.Size = new System.Drawing.Size(140, 23);
-            compatibilityCombo.TabIndex = 7;
             // 
             // runAtStartupComboBox
             // 
@@ -2091,7 +2066,6 @@ namespace EVEMon.SettingsUI
             // cloudStorageServiceControl
             // 
             cloudStorageServiceControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            cloudStorageServiceControl.Font = new System.Drawing.Font("Tahoma", 8.25F);
             cloudStorageServiceControl.Location = new System.Drawing.Point(4, 19);
             cloudStorageServiceControl.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             cloudStorageServiceControl.Name = "cloudStorageServiceControl";
@@ -2169,7 +2143,6 @@ namespace EVEMon.SettingsUI
             // settingsFileStorageControl
             // 
             settingsFileStorageControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            settingsFileStorageControl.Font = new System.Drawing.Font("Tahoma", 8.25F);
             settingsFileStorageControl.Location = new System.Drawing.Point(4, 19);
             settingsFileStorageControl.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             settingsFileStorageControl.Name = "settingsFileStorageControl";
@@ -2299,7 +2272,6 @@ namespace EVEMon.SettingsUI
         private System.Windows.Forms.CheckBox cbShowNonPublicSkills;
         private System.Windows.Forms.CheckBox cbCheckTime;
         private System.Windows.Forms.CheckBox cbShowOverViewTab;
-        private System.Windows.Forms.ComboBox compatibilityCombo;
         private EVEMon.SettingsUI.NotificationsControl notificationsControl;
         private System.Windows.Forms.TreeView treeView;
         private MultiPanel multiPanel;
@@ -2365,7 +2337,6 @@ namespace EVEMon.SettingsUI
         private System.Windows.Forms.GroupBox CharacterMonitorGroupBox;
         private System.Windows.Forms.GroupBox WindowTitleGroupBox;
         private System.Windows.Forms.Label lblGeneralPage;
-        private System.Windows.Forms.Label lblEnvironment;
         private System.Windows.Forms.Label lblSkillPlannerPage;
         private System.Windows.Forms.Label lblNetworkPageProxy;
         private System.Windows.Forms.Label lblProxyHostIPAddress;

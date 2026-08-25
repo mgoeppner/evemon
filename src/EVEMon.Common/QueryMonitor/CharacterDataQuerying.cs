@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using EVEMon.Common.Enumerations;
 using EVEMon.Common.Enumerations.CCPAPI;
 using EVEMon.Common.Extensions;
@@ -510,7 +511,7 @@ namespace EVEMon.Common.QueryMonitor
             var target = m_ccpCharacter;
             // Character may have been deleted since we queried
             if (target != null)
-                TaskHelper.RunCPUBoundTaskAsync(() => target.Assets.Import(result)).
+                Task.Run(() => target.Assets.Import(result)).
                     ContinueWith(_ =>
                     {
                         EveMonClient.OnCharacterAssetsUpdated(target);

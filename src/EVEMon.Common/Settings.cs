@@ -82,11 +82,6 @@ namespace EVEMon.Common
         public static string SSOClientSecret { get; private set; }
 
         /// <summary>
-        /// Gets or sets the compatibility mode.
-        /// </summary>
-        public static CompatibilityMode Compatibility { get; private set; }
-
-        /// <summary>
         /// Gets the settings for updates.
         /// </summary>
         public static UpdateSettings Updates { get; private set; }
@@ -196,7 +191,6 @@ namespace EVEMon.Common
                 Exportation = s_settings.Exportation;
                 MarketPricer = s_settings.MarketPricer;
                 Notifications = s_settings.Notifications;
-                Compatibility = s_settings.Compatibility;
                 LoadoutsProvider = s_settings.LoadoutsProvider;
                 PortableEveInstallations = s_settings.PortableEveInstallations;
                 CloudStorageServiceProvider = s_settings.CloudStorageServiceProvider;
@@ -224,7 +218,7 @@ namespace EVEMon.Common
                 return;
 
             IsRestoring = true;
-            await TaskHelper.RunCPUBoundTaskAsync(() => ImportData());
+            await Task.Run(() => ImportData());
             await SaveImmediateAsync();
             IsRestoring = false;
         }
@@ -349,7 +343,6 @@ namespace EVEMon.Common
                 SSOClientID = SSOClientID,
                 SSOClientSecret = SSOClientSecret,
                 Revision = Revision,
-                Compatibility = Compatibility,
                 Scheduler = Scheduler.Export(),
                 Calendar = Calendar,
                 CloudStorageServiceProvider = CloudStorageServiceProvider,
@@ -388,14 +381,17 @@ namespace EVEMon.Common
         /// Will attempt to fetch and initialize settings from a storage server, if user has specified so.
         /// Otherwise attempts to initialize from a locally stored file.
         /// </remarks>
-        public static void Initialize()
+        public static async Task InitializeAsync()
         {
             // Deserialize the local settings file to determine
             // which cloud storage service provider should be used
             s_settings = TryDeserializeFromFile();
 
             // Try to download the settings file from the cloud
-            CloudStorageServiceAPIFile settingsFile = s_settings?.CloudStorageServiceProvider?.Provider?.DownloadSettingsFile();
+            CloudStorageServiceAPIFile settingsFile = null;
+            var provider = s_settings?.CloudStorageServiceProvider?.Provider;
+            if (provider != null)
+                settingsFile = await provider.DownloadSettingsFileOnStartupAsync();
 
             // If a settings file was downloaded try to deserialize it
             s_settings = settingsFile != null

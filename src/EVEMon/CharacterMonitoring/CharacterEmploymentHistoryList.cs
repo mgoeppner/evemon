@@ -7,7 +7,6 @@ using EVEMon.Common.Controls;
 using EVEMon.Common.CustomEventArgs;
 using EVEMon.Common.Enumerations;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Models;
 
 namespace EVEMon.CharacterMonitoring
@@ -43,9 +42,9 @@ namespace EVEMon.CharacterMonitoring
 
             lbEmploymentHistory.Visible = false;
 
-            m_recordFont = FontFactory.GetFont("Tahoma", 8.25F);
-            m_recordBoldFont = FontFactory.GetFont("Tahoma", 8.25F, FontStyle.Bold);
-            noEmploymentHistoryLabel.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
+            m_recordFont = new Font(Font.FontFamily, 8.25F);
+            m_recordBoldFont = new Font(Font.FontFamily, 8.25F, FontStyle.Bold);
+            noEmploymentHistoryLabel.Font = new Font(noEmploymentHistoryLabel.Font.FontFamily, 11.25F, FontStyle.Bold);
         }
 
         #endregion

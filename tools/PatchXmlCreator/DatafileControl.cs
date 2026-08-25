@@ -1,6 +1,5 @@
 using System;
 using System.Windows.Forms;
-using EVEMon.Common.Factories;
 
 namespace EVEMon.PatchXmlCreator
 {
@@ -12,8 +11,6 @@ namespace EVEMon.PatchXmlCreator
         public DatafileControl()
         {
             InitializeComponent();
-            dtpDatafiles.Font = FontFactory.GetFont("Tahoma");
-            lblDatafileDate.Font = FontFactory.GetFont("Tahoma");
         }
 
         /// <summary>

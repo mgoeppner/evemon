@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.noContactsLabel = new System.Windows.Forms.Label();
-            this.lbContacts = new EVEMon.Common.Controls.NoFlickerListBox();
+            this.lbContacts = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // noContactsLabel
@@ -77,6 +77,6 @@
         #endregion
 
         private System.Windows.Forms.Label noContactsLabel;
-        private Common.Controls.NoFlickerListBox lbContacts;
+        private System.Windows.Forms.ListBox lbContacts;
     }
 }

@@ -1,0 +1,67 @@
+id: io.github.mgoeppner.evemon
+runtime: org.freedesktop.Platform
+runtime-version: '25.08'
+base: org.winehq.Wine
+base-version: wow64-25.08
+sdk: org.freedesktop.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.dotnet8
+
+build-options:
+  prepend-path: "/usr/lib/sdk/dotnet8/bin"
+  append-ld-library-path: "/usr/lib/sdk/dotnet8/lib"
+  prepend-pkg-config-path: "/usr/lib/sdk/dotnet8/lib/pkgconfig"
+  build-args:
+    - --share=network
+    
+finish-args:
+  - --share=ipc
+  - --socket=wayland
+  - --socket=x11
+  - --device=dri
+  - --socket=pulseaudio
+  - --share=network
+  - --filesystem=xdg-documents
+  - --env=WINEPREFIX=/var/data/wine
+  - --talk-name=org.kde.StatusNotifierWatcher
+  - --talk-name=org.freedesktop.Notifications
+
+command: run-evemon
+modules:
+  - name: evemon
+    buildsystem: simple
+    build-commands:
+        - dotnet publish ./src/EVEMon --self-contained true -r win-x64 -p:PublishSingleFile=false -c Release
+        - mkdir -p /app/bin
+        - cp -r /run/build/evemon/src/EVEMon/bin/Release/net8.0-windows/win-x64/publish/* ${FLATPAK_DEST}/bin
+    sources:
+      - type: dir
+        path: .
+  - name: run-evemon
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 run-evemon.sh /app/bin/run-evemon
+      - install -Dm644 ${FLATPAK_ID}.desktop -t /app/share/applications
+      - install -Dm644 EVEMon_1_128x128x32.png /app/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png
+      - install -Dm644 EVEMon_2_64x64x32.png /app/share/icons/hicolor/64x64/apps/${FLATPAK_ID}.png
+      - install -Dm644 EVEMon_3_48x48x32.png /app/share/icons/hicolor/48x48/apps/${FLATPAK_ID}.png
+      - install -Dm644 EVEMon_4_32x32x32.png /app/share/icons/hicolor/32x32/apps/${FLATPAK_ID}.png
+      - install -Dm644 EVEMon_5_16x16x32.png /app/share/icons/hicolor/16x16/apps/${FLATPAK_ID}.png
+    sources:
+      - type: file
+        path: io.github.mgoeppner.evemon.desktop
+      - type: file
+        path: EVEMon_1_128x128x32.png
+      - type: file
+        path: EVEMon_2_64x64x32.png
+      - type: file
+        path: EVEMon_3_48x48x32.png
+      - type: file
+        path: EVEMon_4_32x32x32.png    
+      - type: file
+        path: EVEMon_5_16x16x32.png
+      - type: script
+        dest-filename: run-evemon.sh
+        commands:
+          - wine /app/bin/EVEMon.exe
+

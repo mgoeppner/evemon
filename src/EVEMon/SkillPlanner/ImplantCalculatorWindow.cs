@@ -232,7 +232,7 @@ namespace EVEMon.SkillPlanner
         /// <param name="character"></param>
         /// <returns></returns>
         private Task<TimeSpan> UpdateTimesForCharacter(BaseCharacter character)
-            => TaskHelper.RunCPUBoundTaskAsync(() => character.GetTrainingTimeToMultipleSkills(m_plan));
+            => Task.Run(() => character.GetTrainingTimeToMultipleSkills(m_plan));
 
         #endregion
 

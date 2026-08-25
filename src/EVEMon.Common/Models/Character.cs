@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using EVEMon.Common.Attributes;
 using EVEMon.Common.Collections;
 using EVEMon.Common.Constants;
@@ -1068,7 +1069,7 @@ namespace EVEMon.Common.Models
         /// </summary>
         private void UpdateMasteries()
         {
-            TaskHelper.RunCPUBoundTaskAsync(() =>
+            Task.Run(() =>
             {
                 // Certificates and masteries
                 Certificates.Initialize();

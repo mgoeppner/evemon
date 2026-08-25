@@ -6,7 +6,6 @@ using System.Windows.Forms;
 using EVEMon.Common;
 using EVEMon.Common.Constants;
 using EVEMon.Common.Controls;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Models;
 using EVEMon.Common.Extensions;
 
@@ -23,7 +22,7 @@ namespace EVEMon.ApiCredentialsManagement
         private CharacterDeletionWindow()
         {
             InitializeComponent();
-            characterToRemoveLabel.Font = FontFactory.GetFont("Tahoma", FontStyle.Bold);
+            characterToRemoveLabel.Font = new Font(characterToRemoveLabel.Font, FontStyle.Bold);
         }
 
         /// <summary>

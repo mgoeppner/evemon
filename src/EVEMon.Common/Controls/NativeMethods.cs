@@ -14,25 +14,10 @@ namespace EVEMon.Common.Controls
         public const uint SWP_NOMOVE = 0x0002;
         private const uint SW_SHOWNOACTIVATE = 0x0004;
         private const uint SWP_NOACTIVATE = 0x0010;
-        private const uint SRCCOPY = 0x00CC0020;
         private const uint WS_VSCROLL = 0x200000;
         private const uint WS_HSCROLL = 0x100000;
 
-        internal const int WM_NULL = 0x0000;
         internal const int WM_SETREDRAW = 0x000B;
-        internal const int WM_ERASEBKGND = 0x0014;
-        internal const int WM_POINTERDOWN = 0x0246;
-        internal const int WM_POINTERUP = 0x0247;
-
-        internal const int PT_POINTER = 0x00000001;
-        internal const int PT_TOUCH = 0x00000002;
-        internal const int PT_PEN = 0x00000003;
-        internal const int PT_MOUSE = 0x00000004;
-        internal const uint PT_POINTERID_MASK = 0x0000FFFF;
-
-        [DllImport("psapi.dll", CharSet = CharSet.Auto)]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        internal static extern bool EmptyWorkingSet(IntPtr proc);
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         internal static extern IntPtr SendMessage(IntPtr handle, int messg, IntPtr wparam, IntPtr lparam);
@@ -52,39 +37,6 @@ namespace EVEMon.Common.Controls
         [DllImport("user32.dll", SetLastError = true)]
         private static extern uint GetWindowLong(IntPtr hWnd, int nIndex);
 
-        [DllImport("gdi32.dll", CharSet = CharSet.Auto)]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        private static extern bool BitBlt(IntPtr hObject, int nXDest, int nYDest, int nWidth,
-            int nHeight, IntPtr hObjSource, int nXSrc, int nYSrc, uint dwRop);
-
-        [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        private static extern bool LockWindowUpdate(IntPtr hWndLock);
-
-        /// <summary>
-        /// Retrieves the (touch) pointer event type, given the pointer ID.
-        /// </summary>
-        /// <param name="pPointerID">The pointer ID from the window event.</param>
-        /// <param name="pPointerType">The location where the pointer event type will be placed.</param>
-        /// <returns>true if the event type was placed into pPointerType, or false otherwise</returns>
-        [DllImport("User32.dll")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        public static extern bool GetPointerType(uint pPointerID, out int pPointerType);
-
-        /// <summary>
-        /// Locks or unlocks updates on this control; used to avoid the window blinking problem
-        /// which occurs when Suspend/ResumeDrawing is called.
-        /// </summary>
-        /// <param name="form">The form to update.</param>
-        /// <param name="locked">true to lock window drawing updates, or false to enable them.</param>
-        public static void LockWindowUpdate(this Control form, bool locked)
-        {
-            if (locked)
-                LockWindowUpdate(form.Handle);
-            else
-                LockWindowUpdate(IntPtr.Zero);
-        }
-
         /// <summary>
         /// Show the given form on topmost without activating it.
         /// </summary>
@@ -103,49 +55,6 @@ namespace EVEMon.Common.Controls
             SetWindowPos(form.Handle, HWND_TOPMOST, left, top, form.Width, form.Height, SWP_NOACTIVATE | uFlags);
             ShowWindow(form.Handle, SW_SHOWNOACTIVATE);
         }
-
-        /// <summary>
-        /// Wrapper around BitBlt.
-        /// </summary>
-        /// <param name="dest"></param>
-        /// <param name="destClip">Clipping rectangle on dest</param>
-        /// <param name="graphics"></param>
-        /// <param name="bltFrom">Upper-left point on src to blt from</param>
-        /// <returns></returns>
-        /// <exception cref="System.ArgumentNullException">dest or graphics</exception>
-        public static void CopyGraphics(Graphics dest, Rectangle destClip, Graphics graphics, Point bltFrom)
-        {
-            dest.ThrowIfNull(nameof(dest));
-
-            graphics.ThrowIfNull(nameof(graphics));
-
-            BitBlt(dest.GetHdc(), destClip.Left, destClip.Top, destClip.Width, destClip.Height,
-                graphics.GetHdc(), bltFrom.X, bltFrom.Y, SRCCOPY);
-        }
-
-
-        #region Graphic Text Character Spacing
-
-        /// <summary>
-        /// Sets the text character spacing.
-        /// </summary>
-        /// <param name="graphics">The g.</param>
-        /// <param name="spacing">The spacing.</param>
-        /// <exception cref="System.ArgumentNullException">graphics</exception>
-        public static void SetTextCharacterSpacing(Graphics graphics, int spacing)
-        {
-            graphics.ThrowIfNull(nameof(graphics));
-
-            IntPtr hdc = graphics.GetHdc();
-            SetTextCharacterExtra(hdc, spacing);
-            graphics.ReleaseHdc();
-        }
-
-        [DllImport("gdi32.dll", CharSet = CharSet.Auto)]
-        private static extern int SetTextCharacterExtra(IntPtr hdc, int nCharExtra);
-
-        #endregion
-
 
         #region Scrollbar visibility
 

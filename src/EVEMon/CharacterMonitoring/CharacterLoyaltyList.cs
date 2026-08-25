@@ -10,7 +10,6 @@ using EVEMon.Common.Controls;
 using EVEMon.Common.CustomEventArgs;
 using EVEMon.Common.Enumerations;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Models;
 using EVEMon.Common.Properties;
 
@@ -44,9 +43,9 @@ namespace EVEMon.CharacterMonitoring
 
             lbLoyalty.Visible = false;
 
-            m_loyaltyFont = FontFactory.GetFont("Tahoma", 8.25F);
-            m_loyaltyBoldFont = FontFactory.GetFont("Tahoma", 8.25F, FontStyle.Bold);
-            noLoyaltyLabel.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
+            m_loyaltyFont = new Font(Font.FontFamily, 8.25F);
+            m_loyaltyBoldFont = new Font(Font.FontFamily, 8.25F, FontStyle.Bold);
+            noLoyaltyLabel.Font = new Font(noLoyaltyLabel.Font.FontFamily, 11.25F, FontStyle.Bold);
         }
 
         #endregion

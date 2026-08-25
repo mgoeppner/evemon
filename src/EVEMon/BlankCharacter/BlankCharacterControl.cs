@@ -3,7 +3,6 @@ using System.Drawing;
 using System.Windows.Forms;
 using EVEMon.Common.Constants;
 using EVEMon.Common.Enumerations;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Helpers;
 using EVEMon.Common.Extensions;
 
@@ -79,10 +78,10 @@ namespace EVEMon.BlankCharacter
         {
             ForeColor = SystemColors.GrayText;
 
-            m_amarrFont = FontFactory.GetFont("Niagara Solid", 10f);
-            m_caldariFont = FontFactory.GetFont("Impact", 8.25f);
-            m_gallenteFont = FontFactory.GetFont("Arial Rounded MT Bold", 8.25f);
-            m_minmatarFont = FontFactory.GetFont("Moolboran", 9f);
+            m_amarrFont = new Font("Niagara Solid", 10f);
+            m_caldariFont = new Font("Impact", 8.25f);
+            m_gallenteFont = new Font("Arial Rounded MT Bold", 8.25f);
+            m_minmatarFont = new Font("Moolboran", 9f);
 
             BlankCharacterUIHelper.Race = Race.Amarr;
 

@@ -12,7 +12,6 @@ using EVEMon.Common.Controls;
 using EVEMon.Common.CustomEventArgs;
 using EVEMon.Common.Enumerations;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Helpers;
 using EVEMon.Common.Interfaces;
 using EVEMon.Common.Models;
@@ -70,9 +69,9 @@ namespace EVEMon.CharacterMonitoring
 
             lbSkills.Visible = false;
 
-            m_skillsFont = FontFactory.GetFont("Tahoma", 8.25F);
-            m_boldSkillsFont = FontFactory.GetFont("Tahoma", 8.25F, FontStyle.Bold);
-            noSkillsLabel.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
+            m_skillsFont = new Font(Font.FontFamily, 8.25F);
+            m_boldSkillsFont = new Font(Font.FontFamily, 8.25F, FontStyle.Bold);
+            noSkillsLabel.Font = new Font(noSkillsLabel.Font.FontFamily, 11.25F, FontStyle.Bold);
         }
 
         #endregion

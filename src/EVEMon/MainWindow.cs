@@ -68,6 +68,7 @@ namespace EVEMon
         private bool m_isUpdatingTabOrder;
         private bool m_isUpdateEventsSubscribed;
         private bool m_initialized;
+        private bool m_uploadOnExitDone;
 
         #endregion
 
@@ -84,8 +85,8 @@ namespace EVEMon
             RememberPositionKey = "MainWindow";
             notificationList.Notifications = null;
 
-            tabLoadingLabel.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
-            noCharactersLabel.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
+            tabLoadingLabel.Font = new Font(tabLoadingLabel.Font.FontFamily, 11.25F, FontStyle.Bold);
+            noCharactersLabel.Font = new Font(noCharactersLabel.Font.FontFamily, 11.25F, FontStyle.Bold);
 
             noCharactersLabel.Hide();
 
@@ -113,18 +114,6 @@ namespace EVEMon
                 DisplayTestMenu();
 
             m_startMinimized = Environment.GetCommandLineArgs().Contains("-startMinimized");
-        }
-
-        /// <summary>
-        /// Forces cleanup, we will jump from 50MB to less than 10MB.
-        /// </summary>
-        private static void TriggerAutoShrink()
-        {
-            // Quit if the client has been shut down
-            if (EveMonClient.Closed)
-                return;
-
-            AutoShrink.Dirty(TimeSpan.FromSeconds(5).Seconds);
         }
 
         #endregion
@@ -235,7 +224,7 @@ namespace EVEMon
             await GlobalDatafileCollection.LoadAsync();
 
             // Load cache data
-            await TaskHelper.RunIOBoundTaskAsync(() => {
+            await Task.Run(() => {
                 EveIDToName.InitializeFromFile();
                 EveIDToStation.InitializeFromFile();
             });
@@ -244,9 +233,6 @@ namespace EVEMon
             await Settings.ImportDataAsync();
 
             m_initialized = true;
-
-            // Force cleanup
-            TriggerAutoShrink();
         }
 
         /// <summary>
@@ -312,10 +298,22 @@ namespace EVEMon
             // Should we actually exit ?
             if (Settings.UI.MainWindowCloseBehaviour == CloseBehaviour.Exit)
             {
-                // Prevents the closing if we are restoring the settings at that time 
+                // Prevents the closing if we are restoring the settings at that time
                 // or we are still initializing
-                // or user has set to upload to cloud storage service provider and it fails
-                e.Cancel = Settings.IsRestoring || !m_initialized || !TryUploadToCloudStorageProviderAsync().Result;
+                if (Settings.IsRestoring || !m_initialized)
+                {
+                    e.Cancel = true;
+                    return;
+                }
+
+                // If the settings need uploading to the cloud storage service provider,
+                // cancel this close and re-close once the upload has finished; blocking
+                // on the upload here would deadlock the UI thread
+                if (!m_uploadOnExitDone && NeedsUploadOnExit)
+                {
+                    e.Cancel = true;
+                    _ = UploadOnExitThenCloseAsync();
+                }
 
                 return;
             }
@@ -356,19 +354,6 @@ namespace EVEMon
             EveMonClient.QueuedSkillsCompleted -= EveMonClient_QueuedSkillsCompleted;
             EveMonClient.SettingsChanged -= EveMonClient_SettingsChanged;
             EveMonClient.TimerTick -= EveMonClient_TimerTick;
-        }
-
-        /// <summary>
-        /// On minimizing, we force garbage collection.
-        /// </summary>
-        /// <param name="e"></param>
-        protected override void OnDeactivate(EventArgs e)
-        {
-            base. OnDeactivate(e);
-
-            // Only cleanup if we're deactivating to the minimized state (e.g. systray)
-            if (WindowState == FormWindowState.Minimized)
-                TriggerAutoShrink();
         }
 
         /// <summary>
@@ -442,7 +427,7 @@ namespace EVEMon
         /// </summary>
         private void LayoutTabPages()
         {
-            this.LockWindowUpdate(true);
+            this.SuspendDrawing();
 
             try
             {
@@ -507,7 +492,7 @@ namespace EVEMon
             finally
             {
                 tcCharacterTabs.Visible = tcCharacterTabs.Controls.Count > 0;
-                this.LockWindowUpdate(false);
+                this.ResumeDrawing();
             }
         }
 
@@ -646,15 +631,30 @@ namespace EVEMon
 
             if (tab.Controls.Count == 0)
             {
-                CreateCharacterMonitor(character, tab);
+                // Suppress painting while the monitor is created and populated,
+                // otherwise the half-built control (undocked, unfiltered toolbar,
+                // empty labels) paints on the already-visible tab page
+                tab.SuspendDrawing();
+                try
+                {
+                    // The selection change invalidated the tab strip; paint it now,
+                    // so that it doesn't stay blank until everything is built
+                    tcCharacterTabs.Update();
 
-                // Force OnVisibleChanged to fire on the newly created monitor so that
-                // all sub-controls (header, body, footer) populate their data.
-                // Without this, the controls miss the initial update because OnLoad
-                // fires before the control is fully visible in the layout.
-                var monitor = tab.Controls[0];
-                monitor.Visible = false;
-                monitor.Visible = true;
+                    CreateCharacterMonitor(character, tab);
+
+                    // Force OnVisibleChanged to fire on the newly created monitor so that
+                    // all sub-controls (header, body, footer) populate their data.
+                    // Without this, the controls miss the initial update because OnLoad
+                    // fires before the control is fully visible in the layout.
+                    var monitor = tab.Controls[0];
+                    monitor.Visible = false;
+                    monitor.Visible = true;
+                }
+                finally
+                {
+                    tab.ResumeDrawing();
+                }
             }
 
             return tab.Controls[0] as CharacterMonitor;
@@ -1403,8 +1403,8 @@ namespace EVEMon
             await Settings.RestoreAsync(openFileDialog.FileName);
 
             // Remove the tip window if it exist and is confirmed in settings
-            if (Settings.UI.ConfirmedTips.Contains("startup") && Controls.OfType<TipWindow>().Any())
-                Controls.Remove(Controls.OfType<TipWindow>().First());
+            if (Settings.UI.ConfirmedTips.Contains("startup"))
+                OwnedForms.OfType<TipWindow>().FirstOrDefault()?.Close();
         }
 
         /// <summary>
@@ -1661,7 +1661,7 @@ namespace EVEMon
         private void InitializePlanItem(ToolStripItem planItem, Plan plan)
         {
             if (WindowsFactory.GetByTag<PlanWindow, Character>((Character)plan.Character)?.Plan == plan)
-                planItem.Font = FontFactory.GetFont(planItem.Font, FontStyle.Italic | FontStyle.Bold);
+                planItem.Font = new Font(planItem.Font, FontStyle.Italic | FontStyle.Bold);
 
             planItem.Tag = plan;
             planItem.Click += planItem_Click;
@@ -2151,7 +2151,6 @@ namespace EVEMon
         private void trayIcon_MouseLeave(object sender, EventArgs e)
         {
             HidePopup();
-            TriggerAutoShrink();
         }
 
         /// <summary>
@@ -2326,6 +2325,29 @@ namespace EVEMon
         }
 
         /// <summary>
+        /// Gets whether closing the window requires uploading the settings
+        /// to the cloud storage service provider first.
+        /// </summary>
+        private static bool NeedsUploadOnExit
+            => Settings.CloudStorageServiceProvider.Provider != null &&
+               CloudStorageServiceSettings.Default.UploadAlways &&
+               Settings.CloudStorageServiceProvider.Provider.HasCredentialsStored;
+
+        /// <summary>
+        /// Uploads the settings to the cloud storage service provider,
+        /// then closes the window unless the upload failed and the user aborted.
+        /// </summary>
+        private async Task UploadOnExitThenCloseAsync()
+        {
+            if (!await TryUploadToCloudStorageProviderAsync())
+                return;
+
+            m_uploadOnExitDone = true;
+            Close();
+            m_uploadOnExitDone = false;
+        }
+
+        /// <summary>
         /// Asynchronously tries to upload to cloud storage provider.
         /// </summary>
         /// <returns></returns>
@@ -2342,8 +2364,7 @@ namespace EVEMon
                 lblCSSProviderStatus.Visible = true;
             }
 
-            bool success = await Settings.CloudStorageServiceProvider.Provider.UploadSettingsFileOnExitAsync()
-                .ConfigureAwait(false);
+            bool success = await Settings.CloudStorageServiceProvider.Provider.UploadSettingsFileOnExitAsync();
 
             lblCSSProviderStatus.Visible = false;
 

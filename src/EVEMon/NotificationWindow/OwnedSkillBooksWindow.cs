@@ -7,7 +7,6 @@ using EVEMon.Common;
 using EVEMon.Common.Constants;
 using EVEMon.Common.Controls;
 using EVEMon.Common.CustomEventArgs;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Models;
 
 namespace EVEMon.NotificationWindow
@@ -29,7 +28,7 @@ namespace EVEMon.NotificationWindow
             RememberPositionKey = "OwnedSkillBooksWindow";
 
             lvOwnedSkillBooks.Visible = false;
-            noOwnedSkillbooksLabel.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
+            noOwnedSkillbooksLabel.Font = new Font(noOwnedSkillbooksLabel.Font.FontFamily, 11.25F, FontStyle.Bold);
 
             ListViewHelper.EnableDoubleBuffer(lvOwnedSkillBooks);
         }

@@ -6,7 +6,6 @@ using EVEMon.Common.Constants;
 using EVEMon.Common.Controls;
 using EVEMon.Common.Enumerations;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Models;
 using EVEMon.Common.SettingsObjects;
 
@@ -40,8 +39,8 @@ namespace EVEMon.Common.Helpers
             m_character = (Character)plan.Character;
             m_settings = Settings.Exportation.PlanToText;
 
-            m_font = FontFactory.GetFont("Arial", 10);
-            m_boldFont = FontFactory.GetFont("Arial", 10, FontStyle.Bold | FontStyle.Underline);
+            m_font = new Font("Arial", 10);
+            m_boldFont = new Font("Arial", 10, FontStyle.Bold | FontStyle.Underline);
         }
 
         /// <summary>

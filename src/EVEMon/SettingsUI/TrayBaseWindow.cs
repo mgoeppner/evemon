@@ -3,7 +3,6 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using EVEMon.Common.Controls;
-using EVEMon.Common.Factories;
 
 namespace EVEMon.SettingsUI
 {
@@ -78,7 +77,6 @@ namespace EVEMon.SettingsUI
                 return;
 
             // Look'n feel
-            Font = FontFactory.GetFont(SystemFonts.MessageBoxFont.Name, SystemFonts.MessageBoxFont.SizeInPoints);
             
             UpdateContent();
         }

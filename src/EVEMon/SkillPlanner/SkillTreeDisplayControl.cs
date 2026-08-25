@@ -11,7 +11,6 @@ using EVEMon.Common.Controls;
 using EVEMon.Common.CustomEventArgs;
 using EVEMon.Common.Enumerations;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Models;
 
 namespace EVEMon.SkillPlanner
@@ -243,7 +242,7 @@ namespace EVEMon.SkillPlanner
             }
 
             // Draw the cells
-            using (Font boldFont = FontFactory.GetFont(Font, FontStyle.Bold))
+            using (Font boldFont = new Font(Font, FontStyle.Bold))
             {
                 foreach (Cell cell in m_rootCell.AllCells)
                 {

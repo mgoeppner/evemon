@@ -317,14 +317,6 @@ namespace EVEMon.Common.CloudStorageServices
         }
 
         /// <summary>
-        /// Synchronously checks the API authentication with credentials is valid.
-        /// </summary>
-        /// <param name="userID">The user identifier.</param>
-        /// <param name="apiKey">The API key.</param>
-        public bool CheckAPIAuthWithCredentialsIsValid(uint userID, string apiKey)
-            => !CheckProviderAuthWithCredentialsIsValidAsync(userID, apiKey).Result.HasError;
-
-        /// <summary>
         /// Asynchronously checks the API authentication with credentials is valid.
         /// </summary>
         /// <param name="userID">The user identifier.</param>
@@ -353,16 +345,6 @@ namespace EVEMon.Common.CloudStorageServices
             EveMonClient.Trace($"CloudStorageServiceProvider.CheckAPIAuthWithCredentialsIsValidAsync - {resultText}",
                 printMethod: false);
         }
-
-        /// <summary>
-        /// Synchronously checks that API authentication is valid.
-        /// </summary>
-        /// <remarks>Because only Google and Dropbox are correctly implementing the use of "<![CDATA[ Task<T>.Result ]]>"
-        /// we are forced to use "<![CDATA[ Task.Run ]]>" to avoid deadlocks.
-        /// When the rest of the providers implement it correctly it should be removed.
-        /// </remarks>
-        public bool CheckAPIAuthIsValid()
-            => !TaskHelper.RunCPUBoundTaskAsync(CheckAuthenticationAsync).Result.HasError;
 
         /// <summary>
         /// Asynchronously checks that API authentication is valid.
@@ -417,10 +399,8 @@ namespace EVEMon.Common.CloudStorageServices
             if (!CloudStorageServiceSettings.Default.UploadAlways || !HasCredentialsStored)
                 return true;
 
-            //var isValid = CheckAPIAuthIsValid();
-
             // Quit if user is not authenticated
-            if (!IsAuthenticated && !CheckAPIAuthIsValid())
+            if (!IsAuthenticated && (await CheckAuthenticationAsync()).HasError)
             {
                 MessageBox.Show($"The {Name} API credentials could not be authenticated.", $"{Name} API Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -433,7 +413,7 @@ namespace EVEMon.Common.CloudStorageServices
             // Ask for user action if uploading fails
             while (true)
             {
-                SerializableAPIResult<CloudStorageServiceAPIFile> result = await UploadFileAsync().ConfigureAwait(false);
+                SerializableAPIResult<CloudStorageServiceAPIFile> result = await UploadFileAsync();
                 FileUploaded?.ThreadSafeInvoke(this, new CloudStorageServiceProviderEventArgs(result.Error?.ErrorMessage));
 
                 if (!result.HasError)
@@ -463,12 +443,12 @@ namespace EVEMon.Common.CloudStorageServices
         /// Downloads the settings file.
         /// </summary>
         /// <returns></returns>
-        public CloudStorageServiceAPIFile DownloadSettingsFile()
+        public async Task<CloudStorageServiceAPIFile> DownloadSettingsFileOnStartupAsync()
         {
             if (!CloudStorageServiceSettings.Default.DownloadAlways || !HasCredentialsStored)
                 return null;
 
-            if (!IsAuthenticated && !CheckAPIAuthIsValid())
+            if (!IsAuthenticated && (await CheckAuthenticationAsync()).HasError)
             {
                 MessageBox.Show($"The {Name} API credentials could not be authenticated.",
                     $"{Name} API Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -478,7 +458,7 @@ namespace EVEMon.Common.CloudStorageServices
 
             EveMonClient.Trace("Initiated");
 
-            SerializableAPIResult<CloudStorageServiceAPIFile> result = DownloadFileAsync().Result;
+            SerializableAPIResult<CloudStorageServiceAPIFile> result = await DownloadFileAsync();
             FileDownloaded?.ThreadSafeInvoke(this, new CloudStorageServiceProviderEventArgs(result.Error?.ErrorMessage));
 
             if (CloudStorageServiceSettings.Default.UseImmediately)

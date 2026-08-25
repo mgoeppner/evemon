@@ -103,12 +103,11 @@ namespace EVEMon.SkillPlanner
         {
             base.OnLoad(e);
 
-            lvPoints.Font = FontFactory.GetFont("Arial", 9F);
             throbber.State = ThrobberState.Rotating;
 
             EveMonClient.PlanNameChanged += EveMonClient_PlanNameChanged;
 
-            await TaskHelper.RunCPUBoundTaskAsync(() => Run());
+            await Task.Run(() => Run());
         }
         
         /// <summary>
@@ -342,7 +341,7 @@ namespace EVEMon.SkillPlanner
 
             // Notify plan updated
             ListViewItem lvi = new ListViewItem("Your plan has been updated.", globalGroup)
-                                   { Font = FontFactory.GetFont(lvPoints.Font, FontStyle.Bold) };
+                                   { Font = new Font(lvPoints.Font, FontStyle.Bold) };
             lvPoints.Items.Add(lvi);
 
             // Add pages and summary informations
@@ -541,7 +540,7 @@ namespace EVEMon.SkillPlanner
         {
             panelWait.Show();
 
-            return TaskHelper.RunCPUBoundTaskAsync(() => Run(update: true));
+            return Task.Run(() => Run(update: true));
         }
 
         #endregion

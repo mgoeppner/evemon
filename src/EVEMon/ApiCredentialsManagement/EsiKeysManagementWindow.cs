@@ -8,7 +8,6 @@ using EVEMon.Common.Constants;
 using EVEMon.Common.Controls;
 using EVEMon.Common.CustomEventArgs;
 using EVEMon.Common.Enumerations.CCPAPI;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Models;
 
 namespace EVEMon.ApiCredentialsManagement
@@ -26,12 +25,12 @@ namespace EVEMon.ApiCredentialsManagement
         {
             InitializeComponent();
 
-            esiKeysListBox.Font = FontFactory.GetFont("Tahoma", 9.75f);
-            charactersListView.Font = FontFactory.GetFont("Tahoma", 9.75f);
-            esiKeysLabel.Font = FontFactory.GetFont("Tahoma", 12F);
-            esiKeyListLabel.Font = FontFactory.GetFont("Tahoma", 12F);
-            charactersLabel.Font = FontFactory.GetFont("Tahoma", 12F);
-            charactersListLabel.Font = FontFactory.GetFont("Tahoma", 12F);
+            esiKeysListBox.Font = new Font(esiKeysListBox.Font.FontFamily, 9.75f);
+            charactersListView.Font = new Font(charactersListView.Font.FontFamily, 9.75f);
+            esiKeysLabel.Font = new Font(esiKeysLabel.Font.FontFamily, 12F);
+            esiKeyListLabel.Font = new Font(esiKeyListLabel.Font.FontFamily, 12F);
+            charactersLabel.Font = new Font(charactersLabel.Font.FontFamily, 12F);
+            charactersListLabel.Font = new Font(charactersListLabel.Font.FontFamily, 12F);
         }
 
         /// <summary>

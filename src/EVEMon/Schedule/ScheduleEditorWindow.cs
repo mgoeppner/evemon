@@ -8,7 +8,6 @@ using EVEMon.Common;
 using EVEMon.Common.Constants;
 using EVEMon.Common.Controls;
 using EVEMon.Common.CustomEventArgs;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Scheduling;
 
 namespace EVEMon.Schedule
@@ -28,8 +27,7 @@ namespace EVEMon.Schedule
         {
             InitializeComponent();
 
-            newScheduleEntryToolStripMenuItem.Font = FontFactory.GetFont("Segoe UI", 9F, FontStyle.Bold);
-            calControl.EntryFont = FontFactory.GetFont("Microsoft Sans Serif", 7F);
+            newScheduleEntryToolStripMenuItem.Font = new Font(newScheduleEntryToolStripMenuItem.Font, FontStyle.Bold);
 
             // Load Calendar Colors
             calControl.BlockingColor = (Color)Settings.UI.Scheduler.BlockingColor;

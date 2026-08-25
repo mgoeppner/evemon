@@ -53,7 +53,7 @@ namespace EVEMon.SkillPlanner
             if (DesignMode || this.IsDesignModeHosted())
                 return;
 
-            lblSkillName.Font = FontFactory.GetFont("Tahoma", 8.25F, FontStyle.Bold);
+            lblSkillName.Font = new Font(lblSkillName.Font, FontStyle.Bold);
 
             // Reposition the help text along side the treeview
             Control[] result = skillSelectControl.Controls.Find("pnlResults", true);

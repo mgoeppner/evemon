@@ -2,7 +2,6 @@
 using System.Drawing;
 using System.Windows.Forms;
 using EVEMon.Common.Data;
-using EVEMon.Common.Factories;
 
 namespace EVEMon.ImplantControls
 {
@@ -15,8 +14,8 @@ namespace EVEMon.ImplantControls
             TextFormatFlags.WordBreak | TextFormatFlags.Left | TextFormatFlags.EndEllipsis;
 
         private Implant m_implant;
-        private readonly Font m_toolTipFont = FontFactory.GetFont("Tahoma", 8.25f);
-        private readonly Font m_titleFont = FontFactory.GetFont("Tahoma", 9.75f, FontStyle.Bold);
+        private readonly Font m_toolTipFont;
+        private readonly Font m_titleFont;
         private const int ToolTipMargin = 5;
         private const int InnerMargin = 10;
         private const int MaxWidth = 250;
@@ -27,6 +26,8 @@ namespace EVEMon.ImplantControls
         public ImplantTooltip()
         {
             InitializeComponent();
+            m_toolTipFont = new Font(Font, FontStyle.Regular);
+            m_titleFont = new Font(Font.FontFamily, 9.75f, FontStyle.Bold);
             ShowInTaskbar = false;
             TopMost = true;
         }

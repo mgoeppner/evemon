@@ -6,7 +6,6 @@ using System.Linq;
 using System.Windows.Forms;
 using EVEMon.Common;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Notifications;
 using EVEMon.Common.SettingsObjects;
 
@@ -27,9 +26,9 @@ namespace EVEMon.SettingsUI
         public NotificationsControl()
         {
             InitializeComponent();
-            labelBehaviour.Font = FontFactory.GetFont("Tahoma", 8.25F, FontStyle.Bold);
-            labelNotification.Font = FontFactory.GetFont("Tahoma", 8.25F, FontStyle.Bold);
-            labelMainWindow.Font = FontFactory.GetFont("Tahoma", 8.25F, FontStyle.Bold);
+            labelBehaviour.Font = new Font(labelBehaviour.Font, FontStyle.Bold);
+            labelNotification.Font = new Font(labelNotification.Font, FontStyle.Bold);
+            labelMainWindow.Font = new Font(labelMainWindow.Font, FontStyle.Bold);
 
             PopulateControl();
         }

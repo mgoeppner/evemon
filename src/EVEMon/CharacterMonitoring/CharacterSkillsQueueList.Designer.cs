@@ -40,7 +40,7 @@ namespace EVEMon.CharacterMonitoring
             this.tsmiAddSkill = new System.Windows.Forms.ToolStripMenuItem();
             this.addSkillSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiCreatePlanFromSkillQueue = new System.Windows.Forms.ToolStripMenuItem();
-            this.lbSkillsQueue = new EVEMon.Common.Controls.NoFlickerListBox();
+            this.lbSkillsQueue = new System.Windows.Forms.ListBox();
             this.showInSkillBrowserMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -153,7 +153,7 @@ namespace EVEMon.CharacterMonitoring
 
         private System.Windows.Forms.Label noSkillsQueueLabel;
         private System.Windows.Forms.ToolTip ttToolTip;
-        private NoFlickerListBox lbSkillsQueue;
+        private System.Windows.Forms.ListBox lbSkillsQueue;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem showInSkillExplorerMenuItem;
         private System.Windows.Forms.ToolStripSeparator showInMenuSeparator;

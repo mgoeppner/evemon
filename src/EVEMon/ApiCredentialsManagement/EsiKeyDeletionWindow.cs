@@ -6,7 +6,6 @@ using EVEMon.Common;
 using EVEMon.Common.Constants;
 using EVEMon.Common.Controls;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Models;
 
 namespace EVEMon.ApiCredentialsManagement
@@ -21,7 +20,7 @@ namespace EVEMon.ApiCredentialsManagement
         private EsiKeyDeletionWindow()
         {
             InitializeComponent();
-            deletionLabel.Font = FontFactory.GetFont("Tahoma", FontStyle.Bold);
+            deletionLabel.Font = new Font(deletionLabel.Font, FontStyle.Bold);
         }
 
         /// <summary>
@@ -69,7 +68,7 @@ namespace EVEMon.ApiCredentialsManagement
                 // Strikeout and gray out a character in the API key's ignored list
                 if (item.Tag == null)
                 {
-                    item.Font = FontFactory.GetFont(Font, FontStyle.Strikeout);
+                    item.Font = new Font(Font, FontStyle.Strikeout);
                     item.ForeColor = SystemColors.GrayText;
                     item.Checked = true;
                 }

@@ -4,7 +4,6 @@ using System.Windows.Forms;
 using EVEMon.Common;
 using EVEMon.Common.Controls;
 using EVEMon.Common.Enumerations.UISettings;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Models;
 
 namespace EVEMon.SkillPlanner
@@ -166,7 +165,7 @@ namespace EVEMon.SkillPlanner
         private static void FormatListViewNormalStyle(ListViewItem lvi)
         {
             lvi.ForeColor = Color.Black;
-            lvi.Font = FontFactory.GetFont(lvi.Font);
+            lvi.Font = new Font(lvi.Font, FontStyle.Regular);
         }
 
         /// <summary>
@@ -176,7 +175,7 @@ namespace EVEMon.SkillPlanner
         private static void FormatListViewRemoveStyle(ListViewItem lvi)
         {
             lvi.ForeColor = Color.Red;
-            lvi.Font = FontFactory.GetFont(lvi.Font, FontStyle.Strikeout);
+            lvi.Font = new Font(lvi.Font, FontStyle.Strikeout);
         }
 
         /// <summary>
@@ -186,7 +185,7 @@ namespace EVEMon.SkillPlanner
         private static void FormatListViewKeepStyle(ListViewItem lvi)
         {
             lvi.ForeColor = Color.DarkGreen;
-            lvi.Font = FontFactory.GetFont(lvi.Font);
+            lvi.Font = new Font(lvi.Font, FontStyle.Regular);
         }
 
         /// <summary>

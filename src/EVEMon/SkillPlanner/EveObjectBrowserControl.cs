@@ -9,7 +9,6 @@ using EVEMon.Common.Controls;
 using EVEMon.Common.CustomEventArgs;
 using EVEMon.Common.Data;
 using EVEMon.Common.Enumerations;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Models;
 using EVEMon.Common.Models.Collections;
 using EVEMon.Common.Serialization.Datafiles;
@@ -40,7 +39,7 @@ namespace EVEMon.SkillPlanner
         protected EveObjectBrowserControl()
         {
             InitializeComponent();
-            lblEveObjName.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
+            lblEveObjName.Font = new Font(lblEveObjName.Font.FontFamily, 11.25F, FontStyle.Bold);
         }
 
         /// <summary>
@@ -71,7 +70,7 @@ namespace EVEMon.SkillPlanner
             ListViewHelper.EnableDoubleBuffer(PropertiesList);
             PropertiesList.ShowItemToolTips = true;
 
-            lblEveObjName.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
+            lblEveObjName.Font = new Font(lblEveObjName.Font.FontFamily, 11.25F, FontStyle.Bold);
 
             // Watch for selection changes
             SelectControl.SelectionChanged += OnSelectionChanged;

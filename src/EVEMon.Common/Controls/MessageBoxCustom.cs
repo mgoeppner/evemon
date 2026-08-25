@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using EVEMon.Common.Factories;
 
 namespace EVEMon.Common.Controls
 {
@@ -21,12 +20,6 @@ namespace EVEMon.Common.Controls
         public MessageBoxCustom()
         {
             InitializeComponent();
-
-            msgText.Font = FontFactory.GetFont("Segoe UI", 9f);
-            cbOption.Font = FontFactory.GetFont("Segoe UI", 9f);
-            button1.Font = FontFactory.GetFont("Segoe UI", 9f);
-            button2.Font = FontFactory.GetFont("Segoe UI", 9f);
-            button3.Font = FontFactory.GetFont("Segoe UI", 9f);
         }
 
         #endregion

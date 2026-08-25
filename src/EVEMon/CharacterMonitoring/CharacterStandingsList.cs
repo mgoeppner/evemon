@@ -10,7 +10,6 @@ using EVEMon.Common.Controls;
 using EVEMon.Common.CustomEventArgs;
 using EVEMon.Common.Enumerations;
 using EVEMon.Common.Extensions;
-using EVEMon.Common.Factories;
 using EVEMon.Common.Models;
 using EVEMon.Common.Properties;
 
@@ -49,9 +48,9 @@ namespace EVEMon.CharacterMonitoring
 
             lbStandings.Visible = false;
 
-            m_standingsFont = FontFactory.GetFont("Tahoma", 8.25F);
-            m_standingsBoldFont = FontFactory.GetFont("Tahoma", 8.25F, FontStyle.Bold);
-            noStandingsLabel.Font = FontFactory.GetFont("Tahoma", 11.25F, FontStyle.Bold);
+            m_standingsFont = new Font(Font.FontFamily, 8.25F);
+            m_standingsBoldFont = new Font(Font.FontFamily, 8.25F, FontStyle.Bold);
+            noStandingsLabel.Font = new Font(noStandingsLabel.Font.FontFamily, 11.25F, FontStyle.Bold);
         }
 
         #endregion
@@ -312,9 +311,6 @@ namespace EVEMon.CharacterMonitoring
             {
                 g.DrawLine(p, e.Bounds.Left, e.Bounds.Top, e.Bounds.Right + 1, e.Bounds.Top);
             }
-
-            // Setting character spacing
-            NativeMethods.SetTextCharacterSpacing(g, 4);
 
             // Measure texts
             Size standingGroupTextSize = TextRenderer.MeasureText(g, group.ToUpper(CultureConstants.DefaultCulture),

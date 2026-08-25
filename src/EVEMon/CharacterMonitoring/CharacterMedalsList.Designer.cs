@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.noMedalsLabel = new System.Windows.Forms.Label();
-            this.lbMedals = new EVEMon.Common.Controls.NoFlickerListBox();
+            this.lbMedals = new System.Windows.Forms.ListBox();
             this.ttToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
@@ -87,7 +87,7 @@
         #endregion
 
         private System.Windows.Forms.Label noMedalsLabel;
-        private Common.Controls.NoFlickerListBox lbMedals;
+        private System.Windows.Forms.ListBox lbMedals;
         private System.Windows.Forms.ToolTip ttToolTip;
     }
 }
