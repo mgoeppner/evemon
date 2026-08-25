@@ -3,10 +3,10 @@
 
   <PropertyGroup>
     <OutputType>Package</OutputType>
-    <OutputName>EVEMon-$(Version)</OutputName>
     <Platforms>x64</Platforms>
     <InstallerPlatform>x64</InstallerPlatform>
     <Version Condition="'$(Version)' == ''">5.0.0</Version>
+    <OutputName>EVEMon-$(Version)</OutputName>
     <PublishDir Condition="'$(PublishDir)' == ''">$(MSBuildThisFileDirectory)..\..\publish\</PublishDir>
     <DefineConstants>PublishDir=$(PublishDir);ProductVersion=$(Version)</DefineConstants>
     <AcceptEula>wix7</AcceptEula>

@@ -47,13 +47,13 @@ jobs:
       uses: actions/upload-artifact@v7.0.1
       with:
         name: EVEMon-installer-${{ steps.version.outputs.version }}
-        path: tools/Installer/bin/**/*.msi
+        path: tools/Installer/bin/**/Release/**/EVEMon-${{ steps.version.outputs.version }}.msi
         if-no-files-found: error
     - name: Create GitHub release
       uses: softprops/action-gh-release@v2
       with:
         tag_name: v${{ steps.version.outputs.version }}
         name: EVEMon ${{ steps.version.outputs.version }}
-        files: tools/Installer/bin/**/*.msi
+        files: tools/Installer/bin/**/Release/**/EVEMon-${{ steps.version.outputs.version }}.msi
         generate_release_notes: true
         fail_on_unmatched_files: true
