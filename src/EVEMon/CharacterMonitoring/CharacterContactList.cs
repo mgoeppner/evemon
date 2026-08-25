@@ -366,9 +366,6 @@ namespace EVEMon.CharacterMonitoring
                 g.DrawLine(p, e.Bounds.Left, e.Bounds.Top, e.Bounds.Right + 1, e.Bounds.Top);
             }
 
-            // Setting character spacing
-            NativeMethods.SetTextCharacterSpacing(g, 4);
-
             // Measure texts
             Size standingGroupTextSize = TextRenderer.MeasureText(g, group.ToUpper(CultureConstants.DefaultCulture),
                                                                   m_contactsBoldFont, Size.Empty, Format);

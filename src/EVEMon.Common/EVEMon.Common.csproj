@@ -59,9 +59,6 @@
     <Compile Update="Controls\NoFlickerListBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Controls\NoFlickerPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Update="Controls\PersistentSplitContainer.cs">
       <SubType>Component</SubType>
     </Compile>

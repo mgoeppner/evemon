@@ -56,29 +56,6 @@ namespace EVEMon.Common.Controls
             ShowWindow(form.Handle, SW_SHOWNOACTIVATE);
         }
 
-        #region Graphic Text Character Spacing
-
-        /// <summary>
-        /// Sets the text character spacing.
-        /// </summary>
-        /// <param name="graphics">The g.</param>
-        /// <param name="spacing">The spacing.</param>
-        /// <exception cref="System.ArgumentNullException">graphics</exception>
-        public static void SetTextCharacterSpacing(Graphics graphics, int spacing)
-        {
-            graphics.ThrowIfNull(nameof(graphics));
-
-            IntPtr hdc = graphics.GetHdc();
-            SetTextCharacterExtra(hdc, spacing);
-            graphics.ReleaseHdc();
-        }
-
-        [DllImport("gdi32.dll", CharSet = CharSet.Auto)]
-        private static extern int SetTextCharacterExtra(IntPtr hdc, int nCharExtra);
-
-        #endregion
-
-
         #region Scrollbar visibility
 
         /// <summary>
