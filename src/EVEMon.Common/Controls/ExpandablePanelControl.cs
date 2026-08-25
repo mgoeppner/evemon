@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace EVEMon.Common.Controls
 {
-    public class ExpandablePanelControl : NoFlickerPanel
+    public class ExpandablePanelControl : Panel
     {
         #region Fields
 
@@ -90,7 +90,7 @@ namespace EVEMon.Common.Controls
         /// </summary>
         private void CreateHeader()
         {
-            Header = new NoFlickerPanel
+            Header = new Panel
             {
                 Width = Width,
                 Height = 30,
@@ -230,7 +230,7 @@ namespace EVEMon.Common.Controls
         /// Gets the Header of the Panel.
         /// </summary>
         [Browsable(false)]
-        public NoFlickerPanel Header { get; private set; }
+        public Panel Header { get; private set; }
 
         /// <summary>
         /// Gets or sets the expanded Height of the Panel.
