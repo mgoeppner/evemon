@@ -116,18 +116,6 @@ namespace EVEMon
             m_startMinimized = Environment.GetCommandLineArgs().Contains("-startMinimized");
         }
 
-        /// <summary>
-        /// Forces cleanup, we will jump from 50MB to less than 10MB.
-        /// </summary>
-        private static void TriggerAutoShrink()
-        {
-            // Quit if the client has been shut down
-            if (EveMonClient.Closed)
-                return;
-
-            AutoShrink.Dirty(TimeSpan.FromSeconds(5).Seconds);
-        }
-
         #endregion
 
 
@@ -245,9 +233,6 @@ namespace EVEMon
             await Settings.ImportDataAsync();
 
             m_initialized = true;
-
-            // Force cleanup
-            TriggerAutoShrink();
         }
 
         /// <summary>
@@ -369,19 +354,6 @@ namespace EVEMon
             EveMonClient.QueuedSkillsCompleted -= EveMonClient_QueuedSkillsCompleted;
             EveMonClient.SettingsChanged -= EveMonClient_SettingsChanged;
             EveMonClient.TimerTick -= EveMonClient_TimerTick;
-        }
-
-        /// <summary>
-        /// On minimizing, we force garbage collection.
-        /// </summary>
-        /// <param name="e"></param>
-        protected override void OnDeactivate(EventArgs e)
-        {
-            base. OnDeactivate(e);
-
-            // Only cleanup if we're deactivating to the minimized state (e.g. systray)
-            if (WindowState == FormWindowState.Minimized)
-                TriggerAutoShrink();
         }
 
         /// <summary>
@@ -2164,7 +2136,6 @@ namespace EVEMon
         private void trayIcon_MouseLeave(object sender, EventArgs e)
         {
             HidePopup();
-            TriggerAutoShrink();
         }
 
         /// <summary>

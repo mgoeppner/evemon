@@ -19,10 +19,6 @@ namespace EVEMon.Common.Controls
 
         internal const int WM_SETREDRAW = 0x000B;
 
-        [DllImport("psapi.dll", CharSet = CharSet.Auto)]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        internal static extern bool EmptyWorkingSet(IntPtr proc);
-
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
         internal static extern IntPtr SendMessage(IntPtr handle, int messg, IntPtr wparam, IntPtr lparam);
 
