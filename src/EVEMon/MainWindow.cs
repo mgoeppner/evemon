@@ -631,15 +631,30 @@ namespace EVEMon
 
             if (tab.Controls.Count == 0)
             {
-                CreateCharacterMonitor(character, tab);
+                // Suppress painting while the monitor is created and populated,
+                // otherwise the half-built control (undocked, unfiltered toolbar,
+                // empty labels) paints on the already-visible tab page
+                tab.SuspendDrawing();
+                try
+                {
+                    // The selection change invalidated the tab strip; paint it now,
+                    // so that it doesn't stay blank until everything is built
+                    tcCharacterTabs.Update();
 
-                // Force OnVisibleChanged to fire on the newly created monitor so that
-                // all sub-controls (header, body, footer) populate their data.
-                // Without this, the controls miss the initial update because OnLoad
-                // fires before the control is fully visible in the layout.
-                var monitor = tab.Controls[0];
-                monitor.Visible = false;
-                monitor.Visible = true;
+                    CreateCharacterMonitor(character, tab);
+
+                    // Force OnVisibleChanged to fire on the newly created monitor so that
+                    // all sub-controls (header, body, footer) populate their data.
+                    // Without this, the controls miss the initial update because OnLoad
+                    // fires before the control is fully visible in the layout.
+                    var monitor = tab.Controls[0];
+                    monitor.Visible = false;
+                    monitor.Visible = true;
+                }
+                finally
+                {
+                    tab.ResumeDrawing();
+                }
             }
 
             return tab.Controls[0] as CharacterMonitor;
