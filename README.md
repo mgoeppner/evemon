@@ -1,6 +1,5 @@
 [![GPL licensed](https://img.shields.io/badge/license-GPL%20v2-blue.svg)]()
 [![GitHub tag](https://img.shields.io/github/tag/mgoeppner/evemon.svg)]()
-[![CircleCI](https://circleci.com/gh/mgoeppner/evemon/tree/main.svg?style=svg)](https://circleci.com/gh/mgoeppner/evemon/tree/main)
 
 # **EVEMon** 
 
