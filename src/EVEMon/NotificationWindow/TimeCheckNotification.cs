@@ -43,7 +43,7 @@ namespace EVEMon.NotificationWindow
         {
             base.OnShown(e);
 
-            uxTimeZoneField.Text = TimeZone.CurrentTimeZone.StandardName;
+            uxTimeZoneField.Text = TimeZoneInfo.Local.StandardName;
             uxExpectedTimeField.Text = $"{m_serverTime}";
             uxActualTimeField.Text = $"{m_localTime}";
             uxCheckTimeOnStartUpCheckBox.Checked = Settings.Updates.CheckTimeOnStartup;
