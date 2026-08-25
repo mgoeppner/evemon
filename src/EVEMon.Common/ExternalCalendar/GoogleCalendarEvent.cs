@@ -10,6 +10,7 @@ using EVEMon.Common.Constants;
 using EVEMon.Common.Enumerations.UISettings;
 using EVEMon.Common.Exceptions;
 using EVEMon.Common.Extensions;
+using EVEMon.Common.Helpers;
 using EVEMon.Common.Serialization;
 using EVEMon.Common.SettingsObjects;
 using Google;
@@ -364,7 +365,8 @@ namespace EVEMon.Common.ExternalCalendar
             {
                 s_credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(clientSecrets,
                     new[] { CalendarService.Scope.Calendar }, UserId, CancellationToken.None,
-                    new FileDataStore(GetCredentialsPath(checkAuth), true));
+                    new FileDataStore(GetCredentialsPath(checkAuth), true),
+                    new ShellExecuteCodeReceiver());
 
                 if (checkAuth)
                 {

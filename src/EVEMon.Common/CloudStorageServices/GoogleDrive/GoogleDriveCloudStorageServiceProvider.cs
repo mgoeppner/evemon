@@ -8,6 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using EVEMon.Common.Constants;
 using EVEMon.Common.Exceptions;
+using EVEMon.Common.Helpers;
 using EVEMon.Common.Serialization;
 using Google;
 using Google.Apis.Auth.OAuth2;
@@ -373,9 +374,14 @@ namespace EVEMon.Common.CloudStorageServices.GoogleDrive
                     CultureConstants.InvariantCulture.NativeName)
             };
 
+            EveMonClient.Trace("GoogleDrive.GetCredentialsAsync - Authorizing", printMethod: false);
+
             s_credential = await GoogleWebAuthorizationBroker.AuthorizeAsync(clientSecrets,
                 new[] { DriveService.Scope.DriveAppdata }, UserId, CancellationToken.None,
-                new FileDataStore(GetCredentialsPath(), true)).ConfigureAwait(false);
+                new FileDataStore(GetCredentialsPath(), true),
+                new ShellExecuteCodeReceiver()).ConfigureAwait(false);
+
+            EveMonClient.Trace("GoogleDrive.GetCredentialsAsync - Authorized", printMethod: false);
         }
 
         /// <summary>
