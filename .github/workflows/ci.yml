@@ -21,11 +21,11 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore -p:EnableWindowsTargeting=true
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build --no-restore -p:EnableWindowsTargeting=true
     - name: Publish
-      run: dotnet publish ./src/EVEMon --self-contained true -r win-x64 -p:PublishSingleFile=false -c Release -o ./publish
+      run: dotnet publish ./src/EVEMon --self-contained true -r win-x64 -p:EnableWindowsTargeting=true -p:PublishSingleFile=false -c Release -o ./publish
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v7.0.1
       with:
