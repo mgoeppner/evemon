@@ -858,6 +858,21 @@ namespace EVEMon.CharacterMonitoring
 
             if (m_blinkAction == BlinkAction.Stop)
                 m_blinkAction = BlinkAction.Reset;
+
+            // Redraw only the row showing live training data (blinking level box,
+            // progress); repainting the whole list every tick makes it flicker
+            for (int i = 0; i < lbSkillsQueue.Items.Count; i++)
+            {
+                QueuedSkill item = lbSkillsQueue.Items[i] as QueuedSkill;
+                if (item != null && item.IsTraining)
+                {
+                    // GetItemRectangle returns an empty rectangle for scrolled-out rows,
+                    // and Invalidate treats an empty rectangle as "invalidate everything"
+                    Rectangle itemRect = lbSkillsQueue.GetItemRectangle(i);
+                    if (!itemRect.IsEmpty)
+                        lbSkillsQueue.Invalidate(itemRect);
+                }
+            }
         }
 
         /// <summary>

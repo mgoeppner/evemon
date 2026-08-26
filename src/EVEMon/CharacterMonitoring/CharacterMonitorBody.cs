@@ -158,11 +158,17 @@ namespace EVEMon.CharacterMonitoring
         /// </summary>
         private void UpdateFrequentControls()
         {
+            // Hides or shows the warning about a character with no API key
+            // Only touch the layout when the visibility actually changes; a repaint of the
+            // whole body every timer tick makes the owner-drawn lists flicker
+            bool warningVisible = !m_character.Identity.ESIKeys.Any();
+            if (warningLabel.Visible == warningVisible)
+                return;
+
             SuspendLayout();
             try
             {
-                // Hides or shows the warning about a character with no API key
-                warningLabel.Visible = !m_character.Identity.ESIKeys.Any();
+                warningLabel.Visible = warningVisible;
             }
             finally
             {
