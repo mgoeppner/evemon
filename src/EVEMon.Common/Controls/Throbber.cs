@@ -34,9 +34,6 @@ namespace EVEMon.Common.Controls
             if (s_timer == null)
                 s_timer = new Timer();
 
-            // Always subscribed to the timer (ridiculous CPU overhead, less work for the GC with no subscriptions/unsubscriptions, cleaner code)
-            s_timer.Tick += TimerTick;
-
             // Forces the control to be 24*24
             MinimumSize = new Size(24, 24);
             MaximumSize = new Size(24, 24);
@@ -49,7 +46,10 @@ namespace EVEMon.Common.Controls
         /// <param name="disposing">true to release managed and unmanaged resources; false to release unmanaged resources only.</param>
         protected override void Dispose(bool disposing)
         {
-            s_timer.Tick -= TimerTick;
+            // Stop if running, otherwise s_runners never decrements and the
+            // shared timer keeps firing with every throbber idle
+            if (disposing)
+                Stop();
             base.Dispose(disposing);
         }
 
@@ -100,6 +100,10 @@ namespace EVEMon.Common.Controls
                 return;
             m_running = true;
 
+            // Only running instances are subscribed, so a spinning throbber
+            // does not repaint every other throbber in the app
+            s_timer.Tick += TimerTick;
+
             // Start
             s_runners++;
             if (s_runners == 1)
@@ -116,6 +120,8 @@ namespace EVEMon.Common.Controls
                 return;
             m_running = false;
 
+            s_timer.Tick -= TimerTick;
+
             // Stop
             s_runners--;
             if (s_runners == 0)
@@ -130,7 +136,7 @@ namespace EVEMon.Common.Controls
         private void TimerTick(object sender, EventArgs e)
         {
             // Invalidates the control
-            Refresh();
+            Invalidate();
             m_ticks++;
         }
 
