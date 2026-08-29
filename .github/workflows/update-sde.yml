@@ -285,35 +285,6 @@ jobs:
             echo "Recorded unchanged SDE build with lightweight tag $TAG at $EXPECTED_SHA."
           fi
 
-      - name: Diff size sanity check
-        if: steps.sde.outputs.action == 'generate' && steps.changes.outputs.changed == 'true'
-        id: diffcheck
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          DIFF_BYTES=$(git diff --numstat src/EVEMon.Common/Resources/ | \
-            awk '{ total += $1 + $2 } END { print total+0 }')
-          echo "diff_bytes=$DIFF_BYTES" >> "$GITHUB_OUTPUT"
-
-          CHANGED_SIZE=0
-          for file in src/EVEMon.Common/Resources/*.xml.gzip; do
-            if ! git diff --quiet -- "$file" 2>/dev/null; then
-              SIZE=$(stat -c%s "$file" 2>/dev/null || stat -f%z "$file" 2>/dev/null || echo 0)
-              CHANGED_SIZE=$((CHANGED_SIZE + SIZE))
-            fi
-          done
-          echo "changed_size=$CHANGED_SIZE" >> "$GITHUB_OUTPUT"
-
-          THRESHOLD=2097152
-          if [[ "$CHANGED_SIZE" -gt "$THRESHOLD" ]]; then
-            echo "large=true" >> "$GITHUB_OUTPUT"
-            echo "WARNING: Large diff detected (${CHANGED_SIZE} bytes changed). Flagging for review."
-          else
-            echo "large=false" >> "$GITHUB_OUTPUT"
-            echo "Diff size OK (${CHANGED_SIZE} bytes changed)."
-          fi
-
       - name: Build PatchXmlCreator
         if: steps.sde.outputs.action == 'generate' && steps.changes.outputs.changed == 'true'
         run: dotnet build tools/PatchXmlCreator/PatchXmlCreator.csproj -c Release
@@ -497,7 +468,6 @@ jobs:
           BUILD="${{ steps.sde.outputs.build }}"
           BRANCH="${{ steps.sde.outputs.branch }}"
           TAG="${{ steps.sde.outputs.tag }}"
-          LARGE="${{ steps.diffcheck.outputs.large }}"
           SANDBOX="${{ steps.sde.outputs.sandbox }}"
 
           EXISTING_PR="$(gh pr list \
@@ -525,14 +495,40 @@ jobs:
 
           echo "Generated from [eve-sde-converter ${{ steps.sde.outputs.upstream_tag }}](https://github.com/noirsoldats/eve-sde-converter/releases/tag/${{ steps.sde.outputs.upstream_tag }})." >> "$BODY_FILE"
           echo "" >> "$BODY_FILE"
+
+          CHANGE_LINES=()
+          while IFS= read -r FILE; do
+            if [[ "$FILE" == "src/EVEMon.Common/Resources/MD5Sums.txt" ]]; then
+              continue
+            fi
+
+            OLD_SIZE=0
+            NEW_SIZE=0
+            if git cat-file -e "HEAD^:$FILE" 2>/dev/null; then
+              OLD_SIZE="$(git cat-file -s "HEAD^:$FILE")"
+            fi
+            if git cat-file -e "HEAD:$FILE" 2>/dev/null; then
+              NEW_SIZE="$(git cat-file -s "HEAD:$FILE")"
+            fi
+
+            DELTA=$((NEW_SIZE - OLD_SIZE))
+            if [[ "$DELTA" -gt 0 ]]; then
+              DELTA_TEXT="+$DELTA"
+            else
+              DELTA_TEXT="$DELTA"
+            fi
+            CHANGE_LINES+=("- \`${FILE##*/}\`: $OLD_SIZE -> $NEW_SIZE bytes ($DELTA_TEXT bytes)")
+          done < <(git diff --name-only HEAD^ HEAD -- \
+            src/EVEMon.Common/Resources/ \
+            src/EVEMon.Common/Serialization/Flags.xml)
+
+          echo "Changed generated files: ${#CHANGE_LINES[@]}" >> "$BODY_FILE"
+          printf '%s\n' "${CHANGE_LINES[@]}" >> "$BODY_FILE"
+          echo "" >> "$BODY_FILE"
+
           echo "Datafiles: [$TAG](https://github.com/${GITHUB_REPOSITORY}/tree/${TAG}/src/EVEMon.Common/Resources)" >> "$BODY_FILE"
           echo "" >> "$BODY_FILE"
           echo "Validation: all 8 tagged downloads succeeded and matched the MD5 hashes in \`patch.xml\`." >> "$BODY_FILE"
-
-          if [[ "$LARGE" == "true" ]]; then
-            echo "" >> "$BODY_FILE"
-            echo "> Warning: This update is unusually large. Please inspect the generated data before merging." >> "$BODY_FILE"
-          fi
 
           TITLE="Update datafiles for SDE $BUILD"
           if [[ "$SANDBOX" == "true" ]]; then
