@@ -5,6 +5,16 @@ on:
     # Check daily at 14:00 UTC (after CCP's typical downtime)
     - cron: '0 14 * * *'
   workflow_dispatch:
+    inputs:
+      sandbox:
+        description: 'Use isolated test refs and create a draft test PR'
+        required: false
+        default: false
+        type: boolean
+
+concurrency:
+  group: update-sde-datafiles
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -15,57 +25,216 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout workflow revision
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+
+      - name: Stage validation helper
+        shell: pwsh
+        run: Copy-Item -LiteralPath .github/scripts/Test-SdeDatafiles.ps1 -Destination "$env:RUNNER_TEMP/Test-SdeDatafiles.ps1"
+
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Inspect latest SDE and existing refs
+        id: sde
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          UPSTREAM_TAG="$(gh release view --repo noirsoldats/eve-sde-converter --json tagName -q '.tagName')"
+          if [[ "$UPSTREAM_TAG" =~ ^sde-([0-9]+([.][0-9]+)*)$ ]]; then
+            BUILD="${BASH_REMATCH[1]}"
+          else
+            echo "Unexpected eve-sde-converter tag: $UPSTREAM_TAG" >&2
+            exit 1
+          fi
+
+          if [[ "$SANDBOX_MODE" == "true" ]]; then
+            BRANCH="automated/sde-test-$BUILD-$GITHUB_RUN_ID"
+            TAG="test-sde-$BUILD-$GITHUB_RUN_ID"
+            echo "Sandbox mode uses isolated branch $BRANCH and tag $TAG."
+          else
+            BRANCH="automated/sde-update-$BUILD"
+            TAG="sde-$BUILD"
+          fi
+          BRANCH_REF="refs/heads/$BRANCH"
+          TAG_REF="refs/tags/$TAG"
+
+          remote_ref_sha() {
+            git ls-remote --refs origin "$1" | awk 'NR == 1 { print $1 }'
+          }
+
+          BRANCH_SHA="$(remote_ref_sha "$BRANCH_REF")"
+          TAG_REF_SHA="$(remote_ref_sha "$TAG_REF")"
+          TAG_COMMIT=""
+          if [[ -n "$TAG_REF_SHA" ]]; then
+            git fetch --quiet --no-tags origin "$TAG_REF"
+            TAG_COMMIT="$(git rev-parse 'FETCH_HEAD^{commit}')"
+          fi
+
+          if [[ -n "$BRANCH_SHA" && -n "$TAG_COMMIT" && "$BRANCH_SHA" != "$TAG_COMMIT" ]]; then
+            echo "Ref conflict for SDE $BUILD: $BRANCH_REF=$BRANCH_SHA but $TAG_REF resolves to $TAG_COMMIT." >&2
+            echo "Refusing to move the existing tag." >&2
+            exit 1
+          fi
+
+          PR_INFO="$(gh pr list \
+            --repo "$GITHUB_REPOSITORY" \
+            --state all \
+            --head "$BRANCH" \
+            --limit 100 \
+            --json number,state,url,headRefOid \
+            --jq 'if length == 0 then "" else .[0] | [.number, .state, .url, .headRefOid] | @tsv end')"
+          PR_NUMBER=""
+          PR_STATE=""
+          PR_URL=""
+          PR_HEAD_SHA=""
+          if [[ -n "$PR_INFO" ]]; then
+            IFS=$'\t' read -r PR_NUMBER PR_STATE PR_URL PR_HEAD_SHA <<< "$PR_INFO"
+            if [[ -z "$PR_HEAD_SHA" ]]; then
+              echo "PR #$PR_NUMBER has no resolvable head commit; refusing to repair refs." >&2
+              exit 1
+            fi
+            if [[ -n "$BRANCH_SHA" && "$BRANCH_SHA" != "$PR_HEAD_SHA" ]]; then
+              echo "Ref conflict for SDE $BUILD: $BRANCH_REF=$BRANCH_SHA but PR #$PR_NUMBER points to $PR_HEAD_SHA." >&2
+              exit 1
+            fi
+            if [[ -n "$TAG_COMMIT" && "$TAG_COMMIT" != "$PR_HEAD_SHA" ]]; then
+              echo "Ref conflict for SDE $BUILD: $TAG_REF resolves to $TAG_COMMIT but PR #$PR_NUMBER points to $PR_HEAD_SHA." >&2
+              echo "Refusing to move the existing tag." >&2
+              exit 1
+            fi
+          fi
+
+          ACTION="generate"
+          if [[ -n "$TAG_COMMIT" && -n "$BRANCH_SHA" && -n "$PR_NUMBER" ]]; then
+            # The complete publication state already agrees at one commit.
+            ACTION="processed"
+          elif [[ -n "$TAG_COMMIT" && -n "$PR_NUMBER" && "$PR_STATE" != "OPEN" ]]; then
+            # Deleted branches are normal after a pull request is closed or merged.
+            ACTION="processed"
+          elif [[ -n "$BRANCH_SHA" ]]; then
+            # Reconcile a missing tag and/or pull request from the branch commit.
+            ACTION="existing_branch"
+          elif [[ -n "$TAG_COMMIT" ]]; then
+            if [[ -n "$PR_NUMBER" ]]; then
+              # Recreate the branch for an open pull request at its agreeing tag commit.
+              ACTION="existing_tag"
+            elif git merge-base --is-ancestor "$TAG_COMMIT" HEAD; then
+              # A tag on main with no branch/PR records a build with no data changes.
+              ACTION="processed"
+            else
+              # Recreate a missing branch at the immutable tag commit.
+              ACTION="existing_tag"
+            fi
+          elif [[ -n "$PR_NUMBER" ]]; then
+            echo "PR #$PR_NUMBER exists for $BRANCH, but both its branch and $TAG are missing." >&2
+            echo "Refusing to guess a replacement commit." >&2
+            exit 1
+          fi
+
+          echo "upstream_tag=$UPSTREAM_TAG" >> "$GITHUB_OUTPUT"
+          echo "build=$BUILD" >> "$GITHUB_OUTPUT"
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "branch_sha=$BRANCH_SHA" >> "$GITHUB_OUTPUT"
+          echo "tag_commit=$TAG_COMMIT" >> "$GITHUB_OUTPUT"
+          echo "pr_number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
+          echo "pr_head_sha=$PR_HEAD_SHA" >> "$GITHUB_OUTPUT"
+          echo "sandbox=$SANDBOX_MODE" >> "$GITHUB_OUTPUT"
+          echo "action=$ACTION" >> "$GITHUB_OUTPUT"
+
+          if [[ "$ACTION" == "processed" ]]; then
+            if [[ -n "$PR_NUMBER" ]]; then
+              echo "SDE $BUILD is already tracked by $TAG and PR #$PR_NUMBER ($PR_STATE): $PR_URL"
+            else
+              echo "SDE $BUILD is already recorded by $TAG on main (no data changes)."
+            fi
+          else
+            echo "SDE $BUILD requires workflow action: $ACTION"
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SANDBOX_MODE: ${{ github.event_name == 'workflow_dispatch' && (inputs.sandbox || github.ref_name != github.event.repository.default_branch) }}
+
+      - name: Checkout existing SDE commit and stage baseline
+        if: steps.sde.outputs.action == 'existing_branch' || steps.sde.outputs.action == 'existing_tag'
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          BRANCH="${{ steps.sde.outputs.branch }}"
+          if [[ "${{ steps.sde.outputs.action }}" == "existing_branch" ]]; then
+            BRANCH_REF="refs/heads/$BRANCH"
+            git fetch --force --no-tags origin "$BRANCH_REF:refs/remotes/origin/$BRANCH"
+            FETCHED_BRANCH_SHA="$(git rev-parse "refs/remotes/origin/$BRANCH^{commit}")"
+            if [[ "$FETCHED_BRANCH_SHA" != "${{ steps.sde.outputs.branch_sha }}" ]]; then
+              echo "$BRANCH_REF changed during inspection; refusing to repair from a different commit." >&2
+              exit 1
+            fi
+            git checkout -B "$BRANCH" "refs/remotes/origin/$BRANCH"
+          else
+            TAG_REF="refs/tags/${{ steps.sde.outputs.tag }}"
+            git fetch --quiet --no-tags origin "$TAG_REF"
+            TAG_COMMIT="$(git rev-parse 'FETCH_HEAD^{commit}')"
+            if [[ "$TAG_COMMIT" != "${{ steps.sde.outputs.tag_commit }}" ]]; then
+              echo "$TAG_REF changed during inspection; refusing to repair from a moved tag." >&2
+              exit 1
+            fi
+            git checkout -B "$BRANCH" "$TAG_COMMIT"
+          fi
+
+          RECOVERED_SHA="$(git rev-parse 'HEAD^{commit}')"
+          PARENT_TEXT="$(git show -s --format=%P "$RECOVERED_SHA")"
+          read -r -a PARENTS <<< "$PARENT_TEXT"
+          if [[ "${#PARENTS[@]}" -ne 1 ]]; then
+            echo "Recovered SDE commit $RECOVERED_SHA must have exactly one parent; found ${#PARENTS[@]}." >&2
+            exit 1
+          fi
+          PARENT_SHA="${PARENTS[0]}"
+          if ! git cat-file -e "${PARENT_SHA}^{commit}" 2>/dev/null; then
+            echo "Recovered SDE parent $PARENT_SHA is unavailable; refusing to validate without it." >&2
+            exit 1
+          fi
+          if ! git show "${PARENT_SHA}:updates/patch.xml" > "$RUNNER_TEMP/patch-before-sde.xml"; then
+            echo "Could not read updates/patch.xml from recovered SDE parent $PARENT_SHA." >&2
+            exit 1
+          fi
 
       - name: Setup .NET 8
+        if: steps.sde.outputs.action == 'generate'
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
 
-      - name: Get latest SDE release from eve-sde-converter
-        id: sde-release
-        shell: bash
-        run: |
-          RELEASE=$(gh release view --repo noirsoldats/eve-sde-converter --json tagName,publishedAt -q '.tagName')
-          echo "tag=$RELEASE" >> "$GITHUB_OUTPUT"
-
-          # Extract build number from tag (e.g., sde-3279491 -> 3279491)
-          BUILD=$(echo "$RELEASE" | sed 's/sde-//')
-          echo "build=$BUILD" >> "$GITHUB_OUTPUT"
-
-          # Check if a PR branch for this version already exists
-          if git ls-remote --heads origin "automated/sde-update-$BUILD" | grep -q .; then
-            echo "skip=true" >> "$GITHUB_OUTPUT"
-            echo "SDE $BUILD already applied, skipping."
-          else
-            echo "skip=false" >> "$GITHUB_OUTPUT"
-            echo "New SDE version: $BUILD"
-          fi
-        env:
-          GH_TOKEN: ${{ github.token }}
-
       - name: Download SDE database
-        if: steps.sde-release.outputs.skip == 'false'
+        if: steps.sde.outputs.action == 'generate'
         shell: bash
         run: |
-          gh release download ${{ steps.sde-release.outputs.tag }} \
+          set -euo pipefail
+
+          gh release download "${{ steps.sde.outputs.upstream_tag }}" \
             --repo noirsoldats/eve-sde-converter \
             --pattern "eve.db" \
             --dir tools/XmlGenerator
-          # XmlGenerator expects sqlite-latest.sqlite
           mv tools/XmlGenerator/eve.db tools/XmlGenerator/sqlite-latest.sqlite
-          echo "Downloaded SDE database (${{ steps.sde-release.outputs.tag }})"
+          echo "Downloaded SDE database (${{ steps.sde.outputs.upstream_tag }})"
           ls -lh tools/XmlGenerator/sqlite-latest.sqlite
         env:
           GH_TOKEN: ${{ github.token }}
 
       - name: Build XmlGenerator
-        if: steps.sde-release.outputs.skip == 'false'
+        if: steps.sde.outputs.action == 'generate'
         run: dotnet build tools/XmlGenerator/XmlGenerator.csproj -c Release
 
       - name: Run XmlGenerator
-        if: steps.sde-release.outputs.skip == 'false'
+        if: steps.sde.outputs.action == 'generate'
         shell: cmd
         run: |
           REM App.config has Data Source=..\..\sqlite-latest.sqlite
@@ -73,13 +242,15 @@ jobs:
           copy tools\XmlGenerator\sqlite-latest.sqlite tools\XmlGenerator\bin\sqlite-latest.sqlite
           cd tools\XmlGenerator\bin\Release\net8.0-windows
           EVEMonXmlGenerator.exe
-          if %ERRORLEVEL% NEQ 0 echo XmlGenerator exited with code %ERRORLEVEL%
+          if %ERRORLEVEL% NEQ 0 exit /b %ERRORLEVEL%
 
       - name: Check for changes
-        if: steps.sde-release.outputs.skip == 'false'
+        if: steps.sde.outputs.action == 'generate'
         id: changes
         shell: bash
         run: |
+          set -euo pipefail
+
           if git diff --quiet src/EVEMon.Common/Resources/ src/EVEMon.Common/Serialization/Flags.xml; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "No datafile changes detected."
@@ -89,136 +260,291 @@ jobs:
             git diff --stat src/EVEMon.Common/Resources/ src/EVEMon.Common/Serialization/Flags.xml
           fi
 
-      - name: Diff size sanity check
-        if: steps.sde-release.outputs.skip == 'false' && steps.changes.outputs.changed == 'true'
-        id: diffcheck
+      - name: Record unchanged SDE build
+        if: steps.sde.outputs.action == 'generate' && steps.changes.outputs.changed == 'false'
         shell: bash
         run: |
-          # Calculate total size of changed datafiles in bytes
-          DIFF_BYTES=$(git diff --numstat src/EVEMon.Common/Resources/ | \
-            awk '{ total += $1 + $2 } END { print total+0 }')
-          echo "diff_bytes=$DIFF_BYTES" >> "$GITHUB_OUTPUT"
+          set -euo pipefail
 
-          # Binary files report as - / - in numstat, so also check raw byte diff
-          CHANGED_SIZE=0
-          for f in src/EVEMon.Common/Resources/*.xml.gzip; do
-            if ! git diff --quiet -- "$f" 2>/dev/null; then
-              SIZE=$(stat -c%s "$f" 2>/dev/null || stat -f%z "$f" 2>/dev/null || echo 0)
-              CHANGED_SIZE=$((CHANGED_SIZE + SIZE))
+          TAG="${{ steps.sde.outputs.tag }}"
+          TAG_REF="refs/tags/$TAG"
+          EXPECTED_SHA="$(git rev-parse HEAD)"
+          REMOTE_TAG_REF_SHA="$(git ls-remote --refs origin "$TAG_REF" | awk 'NR == 1 { print $1 }')"
+
+          if [[ -n "$REMOTE_TAG_REF_SHA" ]]; then
+            git fetch --quiet --no-tags origin "$TAG_REF"
+            REMOTE_TAG_COMMIT="$(git rev-parse 'FETCH_HEAD^{commit}')"
+            if [[ "$REMOTE_TAG_COMMIT" != "$EXPECTED_SHA" ]]; then
+              echo "$TAG already exists at $REMOTE_TAG_COMMIT, expected $EXPECTED_SHA. Refusing to move it." >&2
+              exit 1
             fi
-          done
-          echo "changed_size=$CHANGED_SIZE" >> "$GITHUB_OUTPUT"
-
-          # Threshold: 2MB of changed file size is unusual for a routine SDE update
-          THRESHOLD=2097152
-          if [ "$CHANGED_SIZE" -gt "$THRESHOLD" ]; then
-            echo "large=true" >> "$GITHUB_OUTPUT"
-            echo "WARNING: Large diff detected (${CHANGED_SIZE} bytes changed). Flagging for review."
+            echo "$TAG already records this unchanged SDE build."
           else
-            echo "large=false" >> "$GITHUB_OUTPUT"
-            echo "Diff size OK (${CHANGED_SIZE} bytes changed)."
+            git tag "$TAG" "$EXPECTED_SHA"
+            git push origin "$TAG_REF:$TAG_REF"
+            echo "Recorded unchanged SDE build with lightweight tag $TAG at $EXPECTED_SHA."
           fi
 
       - name: Build PatchXmlCreator
-        if: steps.sde-release.outputs.skip == 'false' && steps.changes.outputs.changed == 'true'
+        if: steps.sde.outputs.action == 'generate' && steps.changes.outputs.changed == 'true'
         run: dotnet build tools/PatchXmlCreator/PatchXmlCreator.csproj -c Release
 
       - name: Update patch.xml
-        if: steps.sde-release.outputs.skip == 'false' && steps.changes.outputs.changed == 'true'
+        if: steps.sde.outputs.action == 'generate' && steps.changes.outputs.changed == 'true'
         shell: bash
         run: |
-          BUILD=${{ steps.sde-release.outputs.build }}
-          REPO="${{ github.repository }}"
+          set -euo pipefail
+
+          BUILD="${{ steps.sde.outputs.build }}"
+          TAG="${{ steps.sde.outputs.tag }}"
+          RAW_BASE="https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/${TAG}/src/EVEMon.Common/Resources"
+          cp updates/patch.xml "$RUNNER_TEMP/patch-before-sde.xml"
           dotnet run --project tools/PatchXmlCreator/PatchXmlCreator.csproj -c Release --no-build -- \
             datafiles-only \
             updates/patch.xml \
             src/EVEMon.Common/Resources \
-            "https://github.com/${REPO}/releases/download/sde-${BUILD}" \
+            "$RAW_BASE" \
             "$BUILD"
 
-      - name: Create branch and commit
-        if: steps.sde-release.outputs.skip == 'false' && steps.changes.outputs.changed == 'true'
+      - name: Create local SDE commit
+        if: steps.sde.outputs.action == 'generate' && steps.changes.outputs.changed == 'true'
         shell: bash
         run: |
-          BUILD=${{ steps.sde-release.outputs.build }}
-          BRANCH="automated/sde-update-$BUILD"
-          DATE=$(date -u +%Y-%m-%d)
+          set -euo pipefail
+
+          BUILD="${{ steps.sde.outputs.build }}"
+          BRANCH="${{ steps.sde.outputs.branch }}"
+          DATE="$(date -u +%Y-%m-%d)"
+
+          if [[ "${{ steps.sde.outputs.sandbox }}" == "true" ]]; then
+            COMMIT_MESSAGE="[TEST] Update datafiles for SDE $BUILD ($DATE)"
+          else
+            COMMIT_MESSAGE="Update datafiles for SDE $BUILD ($DATE)"
+          fi
 
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -b "$BRANCH"
           git add src/EVEMon.Common/Resources/ src/EVEMon.Common/Serialization/Flags.xml updates/patch.xml
-          git commit -m "Update datafiles for SDE $BUILD ($DATE)"
-          git push origin "$BRANCH"
+          git commit -m "$COMMIT_MESSAGE"
 
-      - name: Create release with datafile assets
-        if: steps.sde-release.outputs.skip == 'false' && steps.changes.outputs.changed == 'true'
+      - name: Validate local datafile manifest
+        if: steps.sde.outputs.action != 'processed' && (steps.sde.outputs.action != 'generate' || steps.changes.outputs.changed == 'true')
+        shell: pwsh
+        run: |
+          $validationParameters = @{
+            Build = "${{ steps.sde.outputs.build }}"
+            Repository = "${{ github.repository }}"
+            TagName = "${{ steps.sde.outputs.tag }}"
+            BaselinePatch = "$env:RUNNER_TEMP/patch-before-sde.xml"
+          }
+          & "$env:RUNNER_TEMP/Test-SdeDatafiles.ps1" @validationParameters
+
+      - name: Publish or reconcile branch and tag
+        if: steps.sde.outputs.action != 'processed' && (steps.sde.outputs.action != 'generate' || steps.changes.outputs.changed == 'true')
         shell: bash
         run: |
-          BUILD=${{ steps.sde-release.outputs.build }}
+          set -euo pipefail
 
-          # Create release with datafile assets (skip if it already exists)
-          if gh release view "sde-${BUILD}" > /dev/null 2>&1; then
-            echo "Release sde-${BUILD} already exists, skipping."
-          else
-            gh release create "sde-${BUILD}" \
-              --title "SDE ${BUILD} Datafiles" \
-              --notes "Automated datafile release from CCP SDE build ${BUILD}." \
-              --target "automated/sde-update-${BUILD}" \
-              src/EVEMon.Common/Resources/eve-*-en-US.xml.gzip
+          ACTION="${{ steps.sde.outputs.action }}"
+          BRANCH="${{ steps.sde.outputs.branch }}"
+          TAG="${{ steps.sde.outputs.tag }}"
+          BRANCH_REF="refs/heads/$BRANCH"
+          TAG_REF="refs/tags/$TAG"
+          EXPECTED_SHA="$(git rev-parse HEAD)"
+          INSPECTED_BRANCH_SHA="${{ steps.sde.outputs.branch_sha }}"
+          INSPECTED_TAG_COMMIT="${{ steps.sde.outputs.tag_commit }}"
+
+          remote_ref_sha() {
+            git ls-remote --refs origin "$1" | awk 'NR == 1 { print $1 }'
+          }
+
+          remote_tag_commit() {
+            local tag_ref_sha
+            tag_ref_sha="$(remote_ref_sha "$TAG_REF")"
+            if [[ -z "$tag_ref_sha" ]]; then
+              echo ""
+              return 0
+            fi
+            git fetch --quiet --no-tags origin "$TAG_REF"
+            git rev-parse 'FETCH_HEAD^{commit}'
+          }
+
+          CURRENT_BRANCH_SHA="$(remote_ref_sha "$BRANCH_REF")"
+          CURRENT_TAG_COMMIT="$(remote_tag_commit)"
+
+          if [[ -n "$INSPECTED_BRANCH_SHA" && "$CURRENT_BRANCH_SHA" != "$INSPECTED_BRANCH_SHA" ]]; then
+            echo "$BRANCH_REF changed during the run: inspected=$INSPECTED_BRANCH_SHA current=$CURRENT_BRANCH_SHA." >&2
+            exit 1
           fi
-        env:
-          GH_TOKEN: ${{ github.token }}
+          if [[ -n "$INSPECTED_TAG_COMMIT" && "$CURRENT_TAG_COMMIT" != "$INSPECTED_TAG_COMMIT" ]]; then
+            echo "$TAG_REF changed during the run: inspected=$INSPECTED_TAG_COMMIT current=$CURRENT_TAG_COMMIT." >&2
+            echo "Refusing to move or repair from a moved tag." >&2
+            exit 1
+          fi
 
-      - name: Create Pull Request
-        if: steps.sde-release.outputs.skip == 'false' && steps.changes.outputs.changed == 'true'
+          if [[ -n "$CURRENT_BRANCH_SHA" && -n "$CURRENT_TAG_COMMIT" && "$CURRENT_BRANCH_SHA" != "$CURRENT_TAG_COMMIT" ]]; then
+            echo "Ref conflict: $BRANCH_REF=$CURRENT_BRANCH_SHA but $TAG_REF resolves to $CURRENT_TAG_COMMIT." >&2
+            echo "Refusing to move the existing tag." >&2
+            exit 1
+          fi
+
+          case "$ACTION" in
+            generate)
+              if [[ -n "$CURRENT_BRANCH_SHA" || -n "$CURRENT_TAG_COMMIT" ]]; then
+                echo "A remote SDE ref appeared after inspection; refusing to overwrite it." >&2
+                exit 1
+              fi
+              git tag "$TAG" "$EXPECTED_SHA"
+              git push --atomic origin \
+                "$BRANCH_REF:$BRANCH_REF" \
+                "$TAG_REF:$TAG_REF"
+              ;;
+
+            existing_branch)
+              if [[ "$CURRENT_BRANCH_SHA" != "$EXPECTED_SHA" ]]; then
+                echo "$BRANCH_REF moved from $EXPECTED_SHA to $CURRENT_BRANCH_SHA; refusing to continue." >&2
+                exit 1
+              fi
+              if [[ -z "$CURRENT_TAG_COMMIT" ]]; then
+                git tag "$TAG" "$EXPECTED_SHA"
+                git push --atomic \
+                  --force-with-lease="$BRANCH_REF:$EXPECTED_SHA" \
+                  origin \
+                  "$BRANCH_REF:$BRANCH_REF" \
+                  "$TAG_REF:$TAG_REF"
+              elif [[ "$CURRENT_TAG_COMMIT" != "$EXPECTED_SHA" ]]; then
+                echo "$TAG_REF resolves to $CURRENT_TAG_COMMIT, expected $EXPECTED_SHA. Refusing to move it." >&2
+                exit 1
+              fi
+              ;;
+
+            existing_tag)
+              if [[ "$CURRENT_TAG_COMMIT" != "$EXPECTED_SHA" ]]; then
+                echo "$TAG_REF moved from $EXPECTED_SHA to $CURRENT_TAG_COMMIT; refusing to continue." >&2
+                exit 1
+              fi
+              if [[ -z "$CURRENT_BRANCH_SHA" ]]; then
+                git push \
+                  --force-with-lease="$BRANCH_REF:" \
+                  origin \
+                  "$BRANCH_REF:$BRANCH_REF"
+              elif [[ "$CURRENT_BRANCH_SHA" != "$EXPECTED_SHA" ]]; then
+                echo "$BRANCH_REF is at $CURRENT_BRANCH_SHA, expected $EXPECTED_SHA." >&2
+                exit 1
+              fi
+              ;;
+
+            *)
+              echo "Unsupported SDE action: $ACTION" >&2
+              exit 1
+              ;;
+          esac
+
+          FINAL_BRANCH_SHA="$(remote_ref_sha "$BRANCH_REF")"
+          FINAL_TAG_COMMIT="$(remote_tag_commit)"
+          if [[ "$FINAL_BRANCH_SHA" != "$EXPECTED_SHA" || "$FINAL_TAG_COMMIT" != "$EXPECTED_SHA" ]]; then
+            echo "Remote ref verification failed: branch=$FINAL_BRANCH_SHA tag=$FINAL_TAG_COMMIT expected=$EXPECTED_SHA" >&2
+            exit 1
+          fi
+          echo "Verified $BRANCH_REF and lightweight $TAG_REF at $EXPECTED_SHA."
+
+      - name: Validate tagged datafile downloads
+        if: steps.sde.outputs.action != 'processed' && (steps.sde.outputs.action != 'generate' || steps.changes.outputs.changed == 'true')
+        shell: pwsh
+        run: >-
+          & "$env:RUNNER_TEMP/Test-SdeDatafiles.ps1"
+          -Build "${{ steps.sde.outputs.build }}"
+          -Repository "${{ github.repository }}"
+          -TagName "${{ steps.sde.outputs.tag }}"
+          -Remote
+
+      - name: Create missing pull request
+        if: steps.sde.outputs.action != 'processed' && (steps.sde.outputs.action != 'generate' || steps.changes.outputs.changed == 'true')
         shell: bash
         run: |
-          BUILD=${{ steps.sde-release.outputs.build }}
-          DATE=$(date -u +%Y-%m-%d)
-          LARGE="${{ steps.diffcheck.outputs.large }}"
-          CHANGED_SIZE="${{ steps.diffcheck.outputs.changed_size }}"
-          DIFF_STAT=$(git diff --stat HEAD~1)
+          set -euo pipefail
 
-          # Build PR body in a temp file to avoid YAML/heredoc issues
-          BODY_FILE=$(mktemp)
-          echo "## Summary" >> "$BODY_FILE"
-          echo "" >> "$BODY_FILE"
-          echo "Automated update of EVEMon datafiles from CCP's Static Data Export." >> "$BODY_FILE"
-          echo "" >> "$BODY_FILE"
-          echo "- **SDE Build:** $BUILD" >> "$BODY_FILE"
-          echo "- **Source:** [eve-sde-converter ${{ steps.sde-release.outputs.tag }}](https://github.com/noirsoldats/eve-sde-converter/releases/tag/${{ steps.sde-release.outputs.tag }})" >> "$BODY_FILE"
-          echo "- **Date:** $DATE" >> "$BODY_FILE"
-          echo "- **Release:** [sde-${BUILD}](https://github.com/${{ github.repository }}/releases/tag/sde-${BUILD})" >> "$BODY_FILE"
+          BUILD="${{ steps.sde.outputs.build }}"
+          BRANCH="${{ steps.sde.outputs.branch }}"
+          TAG="${{ steps.sde.outputs.tag }}"
+          SANDBOX="${{ steps.sde.outputs.sandbox }}"
 
-          if [ "$LARGE" = "true" ]; then
+          EXISTING_PR="$(gh pr list \
+            --repo "$GITHUB_REPOSITORY" \
+            --state all \
+            --head "$BRANCH" \
+            --limit 100 \
+            --json number,state,url \
+            --jq 'if length == 0 then "" else .[0] | "#\(.number) (\(.state)): \(.url)" end')"
+          if [[ -n "$EXISTING_PR" ]]; then
+            echo "SDE $BUILD already has a pull request: $EXISTING_PR"
+            exit 0
+          fi
+
+          BODY_FILE="$(mktemp)"
+          trap 'rm -f "$BODY_FILE"' EXIT
+
+          if [[ "$SANDBOX" == "true" ]]; then
+            echo "> [!WARNING]" >> "$BODY_FILE"
+            echo "> Sandbox test only. Do not merge this pull request." >> "$BODY_FILE"
             echo "" >> "$BODY_FILE"
-            echo "> **Warning:** This update is unusually large (${CHANGED_SIZE} bytes of changed datafiles). This may indicate a major game patch or warrants closer inspection before merging." >> "$BODY_FILE"
+            echo "Workflow run: [${GITHUB_RUN_ID}](https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID})" >> "$BODY_FILE"
+            echo "" >> "$BODY_FILE"
           fi
 
+          echo "Generated from [eve-sde-converter ${{ steps.sde.outputs.upstream_tag }}](https://github.com/noirsoldats/eve-sde-converter/releases/tag/${{ steps.sde.outputs.upstream_tag }})." >> "$BODY_FILE"
           echo "" >> "$BODY_FILE"
-          echo "### Changes" >> "$BODY_FILE"
-          echo "" >> "$BODY_FILE"
-          echo "- Updated datafiles in \`src/EVEMon.Common/Resources/\`" >> "$BODY_FILE"
-          echo "- Updated \`updates/patch.xml\` with new MD5 checksums and release asset URLs" >> "$BODY_FILE"
-          echo "- Created release \`sde-${BUILD}\` with datafile assets for live patching" >> "$BODY_FILE"
-          echo "" >> "$BODY_FILE"
-          echo "### Changed files" >> "$BODY_FILE"
-          echo "" >> "$BODY_FILE"
-          echo "$DIFF_STAT" >> "$BODY_FILE"
-          echo "" >> "$BODY_FILE"
-          echo "## Test plan" >> "$BODY_FILE"
-          echo "" >> "$BODY_FILE"
-          echo "- [ ] Verify EVEMon loads without errors" >> "$BODY_FILE"
-          echo "- [ ] Spot-check new items/skills appear in the skill browser" >> "$BODY_FILE"
-          echo "- [ ] Verify live patching works (patch.xml points to correct release assets)" >> "$BODY_FILE"
 
-          gh pr create \
-            --title "Update datafiles for SDE $BUILD" \
-            --body-file "$BODY_FILE" \
-            --base main \
-            --head "automated/sde-update-$BUILD"
+          CHANGE_LINES=()
+          while IFS= read -r FILE; do
+            if [[ "$FILE" == "src/EVEMon.Common/Resources/MD5Sums.txt" ]]; then
+              continue
+            fi
 
-          rm -f "$BODY_FILE"
+            OLD_SIZE=0
+            NEW_SIZE=0
+            if git cat-file -e "HEAD^:$FILE" 2>/dev/null; then
+              OLD_SIZE="$(git cat-file -s "HEAD^:$FILE")"
+            fi
+            if git cat-file -e "HEAD:$FILE" 2>/dev/null; then
+              NEW_SIZE="$(git cat-file -s "HEAD:$FILE")"
+            fi
+
+            DELTA=$((NEW_SIZE - OLD_SIZE))
+            if [[ "$DELTA" -gt 0 ]]; then
+              DELTA_TEXT="+$DELTA"
+            else
+              DELTA_TEXT="$DELTA"
+            fi
+            CHANGE_LINES+=("- \`${FILE##*/}\`: $OLD_SIZE -> $NEW_SIZE bytes ($DELTA_TEXT bytes)")
+          done < <(git diff --name-only HEAD^ HEAD -- \
+            src/EVEMon.Common/Resources/ \
+            src/EVEMon.Common/Serialization/Flags.xml)
+
+          echo "Changed generated files: ${#CHANGE_LINES[@]}" >> "$BODY_FILE"
+          printf '%s\n' "${CHANGE_LINES[@]}" >> "$BODY_FILE"
+          echo "" >> "$BODY_FILE"
+
+          echo "Datafiles: [$TAG](https://github.com/${GITHUB_REPOSITORY}/tree/${TAG}/src/EVEMon.Common/Resources)" >> "$BODY_FILE"
+          echo "" >> "$BODY_FILE"
+          echo "Validation: all 8 tagged downloads succeeded and matched the MD5 hashes in \`patch.xml\`." >> "$BODY_FILE"
+
+          TITLE="Update datafiles for SDE $BUILD"
+          if [[ "$SANDBOX" == "true" ]]; then
+            TITLE="[TEST] $TITLE"
+          fi
+
+          PR_ARGS=(
+            --title "$TITLE"
+            --body-file "$BODY_FILE"
+            --base main
+            --head "$BRANCH"
+          )
+          if [[ "$SANDBOX" == "true" ]]; then
+            PR_ARGS+=(--draft)
+          fi
+
+          gh pr create "${PR_ARGS[@]}"
         env:
           GH_TOKEN: ${{ github.token }}
