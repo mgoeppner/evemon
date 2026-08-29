@@ -56,7 +56,7 @@ jobs:
           fi
 
           if [[ "$SANDBOX_MODE" == "true" ]]; then
-            BRANCH="test/sde-update-$BUILD-$GITHUB_RUN_ID"
+            BRANCH="automated/sde-test-$BUILD-$GITHUB_RUN_ID"
             TAG="test-sde-$BUILD-$GITHUB_RUN_ID"
             echo "Sandbox mode uses isolated branch $BRANCH and tag $TAG."
           else
