@@ -1,5 +1,5 @@
 [![GPL licensed](https://img.shields.io/badge/license-GPL%20v2-blue.svg)]()
-[![GitHub tag](https://img.shields.io/github/tag/mgoeppner/evemon.svg)]()
+[![GitHub tag](https://img.shields.io/github/v/tag/mgoeppner/evemon?filter=v%2A&sort=semver)]()
 [![CI](https://github.com/mgoeppner/evemon/actions/workflows/ci.yml/badge.svg)](https://github.com/mgoeppner/evemon/actions/workflows/ci.yml)
 [![Installer](https://github.com/mgoeppner/evemon/actions/workflows/installer.yml/badge.svg)](https://github.com/mgoeppner/evemon/actions/workflows/installer.yml)
 
