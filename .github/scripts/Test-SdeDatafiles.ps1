@@ -8,6 +8,9 @@ param(
     [ValidatePattern('^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$')]
     [string]$Repository,
 
+    [ValidatePattern('^[A-Za-z0-9][A-Za-z0-9._-]*$')]
+    [string]$TagName,
+
     [string]$BaselinePatch,
 
     [switch]$Remote
@@ -36,7 +39,7 @@ else {
 
 $resourcesDirectory = Join-Path $workspace 'src/EVEMon.Common/Resources'
 $patchPath = Join-Path $workspace 'updates/patch.xml'
-$tag = "sde-$Build"
+$tag = if ($TagName) { $TagName } else { "sde-$Build" }
 $expectedBaseUrl = "https://raw.githubusercontent.com/$Repository/$tag/src/EVEMon.Common/Resources"
 
 if (-not (Test-Path -LiteralPath $patchPath -PathType Leaf)) {

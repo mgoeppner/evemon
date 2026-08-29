@@ -5,6 +5,12 @@ on:
     # Check daily at 14:00 UTC (after CCP's typical downtime)
     - cron: '0 14 * * *'
   workflow_dispatch:
+    inputs:
+      sandbox:
+        description: 'Use isolated test refs and create a draft test PR'
+        required: false
+        default: false
+        type: boolean
 
 concurrency:
   group: update-sde-datafiles
@@ -49,8 +55,14 @@ jobs:
             exit 1
           fi
 
-          BRANCH="automated/sde-update-$BUILD"
-          TAG="sde-$BUILD"
+          if [[ "$SANDBOX_MODE" == "true" ]]; then
+            BRANCH="test/sde-update-$BUILD-$GITHUB_RUN_ID"
+            TAG="test-sde-$BUILD-$GITHUB_RUN_ID"
+            echo "Sandbox mode uses isolated branch $BRANCH and tag $TAG."
+          else
+            BRANCH="automated/sde-update-$BUILD"
+            TAG="sde-$BUILD"
+          fi
           BRANCH_REF="refs/heads/$BRANCH"
           TAG_REF="refs/tags/$TAG"
 
@@ -135,6 +147,7 @@ jobs:
           echo "tag_commit=$TAG_COMMIT" >> "$GITHUB_OUTPUT"
           echo "pr_number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
           echo "pr_head_sha=$PR_HEAD_SHA" >> "$GITHUB_OUTPUT"
+          echo "sandbox=$SANDBOX_MODE" >> "$GITHUB_OUTPUT"
           echo "action=$ACTION" >> "$GITHUB_OUTPUT"
 
           if [[ "$ACTION" == "processed" ]]; then
@@ -148,6 +161,7 @@ jobs:
           fi
         env:
           GH_TOKEN: ${{ github.token }}
+          SANDBOX_MODE: ${{ github.event_name == 'workflow_dispatch' && (inputs.sandbox || github.ref_name != github.event.repository.default_branch) }}
 
       - name: Checkout existing SDE commit and stage baseline
         if: steps.sde.outputs.action == 'existing_branch' || steps.sde.outputs.action == 'existing_tag'
@@ -331,11 +345,17 @@ jobs:
           BRANCH="${{ steps.sde.outputs.branch }}"
           DATE="$(date -u +%Y-%m-%d)"
 
+          if [[ "${{ steps.sde.outputs.sandbox }}" == "true" ]]; then
+            COMMIT_MESSAGE="[TEST] Update datafiles for SDE $BUILD ($DATE)"
+          else
+            COMMIT_MESSAGE="Update datafiles for SDE $BUILD ($DATE)"
+          fi
+
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -b "$BRANCH"
           git add src/EVEMon.Common/Resources/ src/EVEMon.Common/Serialization/Flags.xml updates/patch.xml
-          git commit -m "Update datafiles for SDE $BUILD ($DATE)"
+          git commit -m "$COMMIT_MESSAGE"
 
       - name: Validate local datafile manifest
         if: steps.sde.outputs.action != 'processed' && (steps.sde.outputs.action != 'generate' || steps.changes.outputs.changed == 'true')
@@ -344,6 +364,7 @@ jobs:
           $validationParameters = @{
             Build = "${{ steps.sde.outputs.build }}"
             Repository = "${{ github.repository }}"
+            TagName = "${{ steps.sde.outputs.tag }}"
             BaselinePatch = "$env:RUNNER_TEMP/patch-before-sde.xml"
           }
           & "$env:RUNNER_TEMP/Test-SdeDatafiles.ps1" @validationParameters
@@ -464,6 +485,7 @@ jobs:
           & "$env:RUNNER_TEMP/Test-SdeDatafiles.ps1"
           -Build "${{ steps.sde.outputs.build }}"
           -Repository "${{ github.repository }}"
+          -TagName "${{ steps.sde.outputs.tag }}"
           -Remote
 
       - name: Create missing pull request
@@ -476,6 +498,7 @@ jobs:
           BRANCH="${{ steps.sde.outputs.branch }}"
           TAG="${{ steps.sde.outputs.tag }}"
           LARGE="${{ steps.diffcheck.outputs.large }}"
+          SANDBOX="${{ steps.sde.outputs.sandbox }}"
 
           EXISTING_PR="$(gh pr list \
             --repo "$GITHUB_REPOSITORY" \
@@ -492,6 +515,14 @@ jobs:
           BODY_FILE="$(mktemp)"
           trap 'rm -f "$BODY_FILE"' EXIT
 
+          if [[ "$SANDBOX" == "true" ]]; then
+            echo "> [!WARNING]" >> "$BODY_FILE"
+            echo "> Sandbox test only. Do not merge this pull request." >> "$BODY_FILE"
+            echo "" >> "$BODY_FILE"
+            echo "Workflow run: [${GITHUB_RUN_ID}](https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID})" >> "$BODY_FILE"
+            echo "" >> "$BODY_FILE"
+          fi
+
           echo "Generated from [eve-sde-converter ${{ steps.sde.outputs.upstream_tag }}](https://github.com/noirsoldats/eve-sde-converter/releases/tag/${{ steps.sde.outputs.upstream_tag }})." >> "$BODY_FILE"
           echo "" >> "$BODY_FILE"
           echo "Datafiles: [$TAG](https://github.com/${GITHUB_REPOSITORY}/tree/${TAG}/src/EVEMon.Common/Resources)" >> "$BODY_FILE"
@@ -503,10 +534,21 @@ jobs:
             echo "> Warning: This update is unusually large. Please inspect the generated data before merging." >> "$BODY_FILE"
           fi
 
-          gh pr create \
-            --title "Update datafiles for SDE $BUILD" \
-            --body-file "$BODY_FILE" \
-            --base main \
+          TITLE="Update datafiles for SDE $BUILD"
+          if [[ "$SANDBOX" == "true" ]]; then
+            TITLE="[TEST] $TITLE"
+          fi
+
+          PR_ARGS=(
+            --title "$TITLE"
+            --body-file "$BODY_FILE"
+            --base main
             --head "$BRANCH"
+          )
+          if [[ "$SANDBOX" == "true" ]]; then
+            PR_ARGS+=(--draft)
+          fi
+
+          gh pr create "${PR_ARGS[@]}"
         env:
           GH_TOKEN: ${{ github.token }}
