@@ -19,15 +19,21 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout workflow revision
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ github.sha }}
           fetch-depth: 0
 
       - name: Stage validation helper
         shell: pwsh
         run: Copy-Item -LiteralPath .github/scripts/Test-SdeDatafiles.ps1 -Destination "$env:RUNNER_TEMP/Test-SdeDatafiles.ps1"
+
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
 
       - name: Inspect latest SDE and existing refs
         id: sde
