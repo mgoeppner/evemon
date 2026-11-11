@@ -25,12 +25,6 @@ EVEMon is currently maintained on Linux. There may be bugs on Windows, PRs are w
 
 [EVEMonDevTeam](https://bitbucket.org/EVEMonDevTeam) (Bitbucket)
 
-**Website:** [EVEMon](https://evemondevteam.github.io/evemon/)
-
-**Documentation:** [EVEMon Docs](https://evemon.readthedocs.org/)
-
-**Feedback & Ideas:** [On UserVoice](https://evemon.uservoice.com/)
-
 ## Linux
 
 To build and install the flatpak: `flatpak-builder --force-clean --user --install-deps-from=flathub --install flatpak io.github.mgoeppner.evemon.yml`
